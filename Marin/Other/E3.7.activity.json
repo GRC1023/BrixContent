@@ -1,0 +1,174 @@
+{
+  "@context" : "http://purl.org/pearson/content/v1/ctx/metadata/envelope",
+  "@type" : "Envelope",
+  "metadata" : {
+    "title" : "Retina, photo receptors and close up of rods and cones",
+    "guid" : "53CCF623-0358-438B-A6DB-AEE840D2C3A3",
+    "description" : "Image Carousel of retina, photo receptors and close up of rods and cones",
+    "contentTypeTier1" : "Demonstration",
+    "contentTypeTier2" : [ "DemonstrationImage" ],
+    "subject" : [ "Psychology" ],
+    "intendedEndUserRole" : [ "Student" ],
+    "format" : [ 
+      "application/vnd.pearson.sanvan.v1.activity"
+    ],
+    "timeRequired" : "PT20S",
+    "created" : "2013-12-06T19:56:00-00:00",
+    "educationalAlignment" : [ "http://purl.org/pearson/objectives/183725473384362" ]
+  },
+  "body" : {
+   "containerConfig":
+                [
+                    {
+                        "description": "Container for the ImageViewer bric",
+                        "containerId": "imgContainer",
+                        "brixConfig":
+                            [
+                                {
+                                    "bricId": "image1",
+                                    "bricType": "Image",
+                                    "config":
+                                        {
+                                            "id": "img1",
+                                            "actualSize": { "height": 379, "width": 570 },
+                                            "caption":  "The retina contains photoreceptor cells.",
+                                            "captionPosition": "below"
+                                        },
+                                    "configFixup":
+                                        [
+                                            {
+                                                "type": "set-property",
+                                                "name": "URI",
+                                                "value":
+                                                    {
+                                                        "type": "join",
+                                                        "parts":
+                                                        [
+                                                            { "type": "ref", "domain": "info", "refId": "imgBaseUrl" },
+                                                            { "type": "constant", "value": "img/03-07_frame_01.png" }
+                                                        ]
+                                                    }
+                                            }
+                                        ]
+                                                       
+                                },
+                                {
+                                    "bricId": "image2",
+                                    "bricType": "Image",
+                                    "config":
+                                        {
+                                            "id": "img2",
+                                            "actualSize": { "height": 379, "width": 570 },
+                                            "caption":  "These photoreceptor cells are called rods and cones.",
+                                            "captionPosition": "below"
+                                        },
+                                    "configFixup":
+                                        [
+                                            {
+                                                "type": "set-property",
+                                                "name": "URI",
+                                                "value":
+                                                    {
+                                                        "type": "join",
+                                                        "parts":
+                                                        [
+                                                            { "type": "ref", "domain": "info", "refId": "imgBaseUrl" },
+                                                            { "type": "constant", "value": "img/03-07_frame_02.png" }
+                                                        ]
+                                                    }
+                                            }
+                                        ]
+                                                       
+                                },
+                                {
+                                    "bricId": "image3",
+                                    "bricType": "Image",
+                                    "config":
+                                        {
+                                            "id": "img3",
+                                            "actualSize": { "height": 379, "width": 570 },
+                                            "caption":  "Take a look at the photograph for a real-life view of rods and cones.",
+                                            "captionPosition": "below"
+                                        },
+                                    "configFixup":
+                                        [
+                                            {
+                                                "type": "set-property",
+                                                "name": "URI",
+                                                "value":
+                                                    {
+                                                        "type": "join",
+                                                        "parts":
+                                                        [
+                                                            { "type": "ref", "domain": "info", "refId": "imgBaseUrl" },
+                                                            { "type": "constant", "value": "img/03-07_frame_03.png" }
+                                                        ]
+                                                    }
+                                            }
+                                        ]
+                                                       
+                                },
+                                {
+                                    "bricId": "carousel1",
+                                    "bricType": "ImageViewer",
+                                    "config":
+                                        {
+                                            "id": "csel1",
+                                            "displayWidth": 579
+                                        },
+                                    "configFixup":
+                                        [
+                                            {
+                                                "type": "set-property",
+                                                "name": "items",
+                                                "value":
+                                                    {
+                                                        "type": "array",
+                                                        "elements":
+                                                                [
+                                                                   { "type": "ref", "domain": "brix", "refId": "image1" },
+                                                                   { "type": "ref", "domain": "brix", "refId": "image2" },
+                                                                   { "type": "ref", "domain": "brix", "refId": "image3" }
+                                                                ]
+                                                    }
+                                            }
+                                        ]
+                                },
+                                {
+                                    "bricId": "cntr1",
+                                    "bricType": "SvgContainer",
+                                    "config":
+                                        {
+                                            "maxSize": {"height": "570", "width": "579"},
+                                        },
+                                    "configFixup":
+                                        [
+                                            {
+                                                "type": "set-property",
+                                                "name": "node",
+                                                "value":
+                                                    {
+                                                        "type": "d3select",
+                                                        "selector": "#b8e5d57f829c34e4785a88658ec794b80"
+                                                    }
+                                            }
+                                        ]
+                                }
+                            ],
+                        "hookupActions":
+                            [
+                                {
+                                    "description": "Append the captioned image to the svg container",
+                                    "type": "method-call",
+                                    "instance": {"type": "ref", "domain": "brix", "refId": "cntr1"},
+                                    "methodName": "append",
+                                    "args":
+                                        [
+                                            { "type": "ref", "domain": "brix", "refId": "carousel1" }
+                                        ]
+                                }
+                            ]
+                    }
+                ]
+    }
+}

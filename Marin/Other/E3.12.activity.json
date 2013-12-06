@@ -1,0 +1,167 @@
+{
+  "@context" : "http://purl.org/pearson/content/v1/ctx/metadata/envelope",
+  "@type" : "Envelope",
+  "metadata" : {
+    "title" : "frequency and amplitude",
+    "guid" : "78E0B113-109C-4F97-8DA6-A678E80767CA",
+    "description" : "Image Carousel showing frequency and amplitude",
+    "contentTypeTier1" : "Demonstration",
+    "contentTypeTier2" : [ "DemonstrationImage" ],
+    "subject" : [ "Psychology" ],
+    "intendedEndUserRole" : [ "Student" ],
+    "format" : [ 
+      "application/vnd.pearson.sanvan.v1.activity"
+    ],
+    "timeRequired" : "PT20S",
+    "created" : "2013-12-06T18:30:00-00:00",
+    "educationalAlignment" : [ "http://purl.org/pearson/objectives/183725473384362" ]
+  },
+  "body" : {
+  "containerConfig":
+                [
+                    {
+                        "description": "Container for the LabelCarousel",
+                        "containerId": "imgContainer",
+                        "brixConfig":
+                            [
+                                {
+                                    "bricId": "lblCarousel1",
+                                    "bricType": "LabelCarousel",
+                                    "config":
+                                        {
+                                            "id": "lblCrsl1",
+                                            "type": "textLabels",
+                                            "imagesActualSize": { "height": 338, "width": 800 },
+                                            "displayWidth": 579
+                                        },
+                                    "configFixup":
+                                        [
+                                            {
+                                                "type": "set-property",
+                                                "name": "images",
+                                                "value":
+                                                    {
+                                                        "type": "array",
+                                                        "elements":
+                                                            [
+                                                                {
+                                                                    "type": "object",
+                                                                    "properties":
+                                                                        [
+                                                                            {
+                                                                                "name": "URI",
+                                                                                "value":
+                                                                                    {
+                                                                                        "type": "join",
+                                                                                        "parts":
+                                                                                        [
+                                                                                            { "type": "ref", "domain": "info", "refId": "imgBaseUrl" },
+                                                                                            { "type": "constant", "value": "img/03-12_frame_01.png" }
+                                                                                        ]
+                                                                                    }
+                                                                            },
+                                                                            {
+                                                                                "name": "caption",
+                                                                                "value": { "type": "constant", "value": "Characteristics of Sound" }
+                                                                            },
+                                                                            {
+                                                                                "name": "selectorLabel",
+                                                                                "value": { "type": "constant", "value": "Sensory Coding" }
+                                                                            }
+                                                                        ]
+                                                                },
+                                                                {
+                                                                    "type": "object",
+                                                                    "properties":
+                                                                        [
+                                                                            {
+                                                                                "name": "URI",
+                                                                                "value":
+                                                                                    {
+                                                                                        "type": "join",
+                                                                                        "parts":
+                                                                                        [
+                                                                                            { "type": "ref", "domain": "info", "refId": "imgBaseUrl" },
+                                                                                            { "type": "constant", "value": "img/03-12_frame_02.png"}
+                                                                                        ]
+                                                                                    }
+                                                                            },
+                                                                            {
+                                                                                "name": "caption",
+                                                                                "value": { "type": "constant", "value": "The number of wavelengths per second determines the pitch." }
+                                                                            },
+                                                                            {
+                                                                                "name": "selectorLabel",
+                                                                                "value": { "type": "constant", "value": "Frequency" }
+                                                                            }
+                                                                        ]
+                                                                },
+                                                                {
+                                                                    "type": "object",
+                                                                    "properties":
+                                                                        [
+                                                                            {
+                                                                                "name": "URI",
+                                                                                "value":
+                                                                                    {
+                                                                                        "type": "join",
+                                                                                        "parts":
+                                                                                        [
+                                                                                            { "type": "ref", "domain": "info", "refId": "imgBaseUrl" },
+                                                                                            { "type": "constant", "value": "img/03-12_frame_03.png"}
+                                                                                        ]
+                                                                                    }
+                                                                            },
+                                                                            {
+                                                                                "name": "caption",
+                                                                                "value": { "type": "constant", "value": "The height of the wavelength determines loudness." }
+                                                                            },
+                                                                            {
+                                                                                "name": "selectorLabel",
+                                                                                "value": { "type": "constant", "value": "Amplitude" }
+                                                                            }
+                                                                        ]
+                                                                }
+                                                            ]
+                                                    }
+                                            }
+                                        ]
+                                },
+                                {
+                                    "bricId": "cntr1",
+                                    "bricType": "SvgContainer",
+                                    "config":
+                                        {
+                                            "maxSize": { "height": 350, "width": 579 },
+                                        },
+                                    "configFixup":
+                                        [
+                                            {
+                                                "type": "set-property",
+                                                "name": "node",
+                                                "value":
+                                                    {
+                                                        "type": "d3select",
+                                                        "selector": "#b6b09f40fc76d490aa5156f975233d4a2"
+                                                    }
+                                            }
+                                        ]
+                                }
+                            ],
+                        "hookupActions":
+                            [
+                                {
+                                    "description": "Append the label image carousel to the svg container",
+                                    "type": "method-call",
+                                    "instance": {"type": "ref", "domain": "brix", "refId": "cntr1"},
+                                    "methodName": "append",
+                                    "args":
+                                        [
+                                            { "type": "ref", "domain": "brix", "refId": "lblCarousel1" }
+                                        ]
+                                }
+                            ]
+                    }
+            ]
+    }
+}
