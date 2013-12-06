@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="Template for Label Selector Image Carousel Brix" name="description">
+    
+    <!-- widgets.css contains styling for the interactive brix -->
+    <link href="css/widgets.css" rel="stylesheet">
+</head>
+<body>
+    <div id="brix8bc00f6ff15d47648ab8bc4e578b3af5"></div>
+    <script src="js/d3.v3.min.js"></script>
+    
+    <script src="js/brixlib-compiled.js"></script>
+
+<script>
+    // Create an object that will contain the objects needed for the activities
+    // on this page.
+    pearson.brix.activity = {};
+    var a = pearson.brix.activity;
+
+    // The activity config that defines the brix and mortar for this page
+    // 
+    // Set imgBaseUrl to imgBaseUrl": "http://localhost:8088/images/", or whatever server the IPS is running
+    // on to serve the images that route, or just leave it empty ("imgBaseUrl": "",) to point to images
+    // local to this html file
+
+    a.config =
+        {
+			"description": "A Sample Activity containing a LabelCarousel",
+            //"imgBaseUrl": "http://localhost:8088/images/",
+            "imgBaseUrl": "",
+            "containerConfig":
+                [
+                    {
+                        "description": "Container for the LabelCarousel",
+                        "containerId": "imgContainer",
+                        "brixConfig":
+                            [
+                                {
+                                    "bricId": "lblCarousel1",
+                                    "bricType": "LabelCarousel",
+                                    "config":
+                                        {
+                                            "id": "lblCrsl1",
+                                            "type": "textLabels",
+                                            "imagesActualSize": { "height": 250, "width": 290 },
+                                            "displayWidth": 579
+                                        },
+                                    "configFixup":
+                                        [
+                                            {
+                                                "type": "set-property",
+                                                "name": "images",
+                                                "value":
+                                                    {
+                                                        "type": "array",
+                                                        "elements":
+                                                            [
+                                                                {
+                                                                    "type": "object",
+                                                                    "properties":
+                                                                        [
+                                                                            {
+                                                                                "name": "URI",
+                                                                                "value":
+                                                                                    {
+                                                                                        "type": "join",
+                                                                                        "parts":
+                                                                                        [
+                                                                                            { "type": "ref", "domain": "info", "refId": "imgBaseUrl" },
+                                                                                            { "type": "constant", "value": "img/03-24_frame_01.png" }
+                                                                                        ]
+                                                                                    }
+                                                                            },
+                                                                            {
+                                                                                "name": "caption",
+                                                                                "value": { "type": "constant", "value": "The idea that an object stays the same size regardless of the distance is known as size constancy. Like the example of your friends across the field, the brain knows that a 5- or 6-ft tall individual stays 5 or 6 ft tall regardless of how the image appears on the retina of the eye. &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;" }
+                                                                            },
+                                                                            {
+                                                                                "name": "selectorLabel",
+                                                                                "value": { "type": "constant", "value": "Size Constancy" }
+                                                                            }
+                                                                        ]
+                                                                },
+                                                                {
+                                                                    "type": "object",
+                                                                    "properties":
+                                                                        [
+                                                                            {
+                                                                                "name": "URI",
+                                                                                "value":
+                                                                                    {
+                                                                                        "type": "join",
+                                                                                        "parts":
+                                                                                        [
+                                                                                            { "type": "ref", "domain": "info", "refId": "imgBaseUrl" },
+                                                                                            { "type": "constant", "value": "img/03-24_frame_02.png"}
+                                                                                        ]
+                                                                                    }
+                                                                            },
+                                                                            {
+                                                                                "name": "caption",
+                                                                                "value": { "type": "constant", "value": "Shape constancy means that shapes stay the same, regardless of their orientation. What is the shape of a door? A rectangle, of course. But a rectangle isn’t always the image that’s cast on your retina. Look at the three doors. Regardless of whether the image on your retina is a trapezoid or a rhombus, you still know that doors are rectangular." }
+                                                                            },
+                                                                            {
+                                                                                "name": "selectorLabel",
+                                                                                "value": { "type": "constant", "value": "Shape Constancy" }
+                                                                            }
+                                                                        ]
+                                                                },
+                                                                {
+                                                                    "type": "object",
+                                                                    "properties":
+                                                                        [
+                                                                            {
+                                                                                "name": "URI",
+                                                                                "value":
+                                                                                    {
+                                                                                        "type": "join",
+                                                                                        "parts":
+                                                                                        [
+                                                                                            { "type": "ref", "domain": "info", "refId": "imgBaseUrl" },
+                                                                                            { "type": "constant", "value": "img/03-24_frame_03.png"}
+                                                                                        ]
+                                                                                    }
+                                                                            },
+                                                                            {
+                                                                                "name": "caption",
+                                                                                "value": { "type": "constant", "value": "Brightness stays the same regardless of the lighting, a concept known as brightness constancy. Even though half of the balloon is in sunlight and half is in shadow, you see the colors on both sides as the same. As light changes in intensity, colors change their hues on your retina; however, if you already know the color of an object, you tend to perceive it as the same color regardless of the amount of light." }
+                                                                            },
+                                                                            {
+                                                                                "name": "selectorLabel",
+                                                                                "value": { "type": "constant", "value": "Brightness Constancy" }
+                                                                            }
+                                                                        ]
+                                                                }
+                                                            ]
+                                                    }
+                                            }
+                                        ]
+                                },
+                                {
+                                    "bricId": "cntr1",
+                                    "bricType": "SvgContainer",
+                                    "config":
+                                        {
+                                            "maxSize": { "height": 700, "width": 579 },
+                                        },
+                                    "configFixup":
+                                        [
+                                            {
+                                                "type": "set-property",
+                                                "name": "node",
+                                                "value":
+                                                    {
+                                                        "type": "d3select",
+                                                        "selector": "#brix8bc00f6ff15d47648ab8bc4e578b3af5"
+                                                    }
+                                            }
+                                        ]
+                                }
+                            ],
+                        "hookupActions":
+                            [
+                                {
+                                    "description": "Append the label image carousel to the svg container",
+                                    "type": "method-call",
+                                    "instance": {"type": "ref", "domain": "brix", "refId": "cntr1"},
+                                    "methodName": "append",
+                                    "args":
+                                        [
+                                            { "type": "ref", "domain": "brix", "refId": "lblCarousel1" }
+                                        ]
+                                }
+                            ]
+                    }
+            ]
+        };
+
+    // create the eventmanager to be used by the created brix, and the
+    // bricLayer which will create them, and then tell the bricLayer to build.
+    a.eventManager = new pearson.utils.EventManager();
+    a.answerMan = new pearson.brix.utils.LocalAnswerMan();
+    a.submitManager = new pearson.brix.utils.SubmitManager(a.eventManager, a.answerMan);
+
+    a.bricLayer = new pearson.brix.BricLayer(null, a.eventManager, a.submitManager);
+
+    a.building = a.bricLayer.build(a.config);
+
+    </script>
+</body>
+</html>

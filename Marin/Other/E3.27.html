@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="Template for Label Selector Image Carousel Brix" name="description">
+    
+    <!-- widgets.css contains styling for the interactive brix -->
+    <link href="css/widgets.css" rel="stylesheet">
+</head>
+<body>
+    <div id="brix3c0874d7e4d741488b2e5fc143c7f9ea"></div>
+    <script src="js/d3.v3.min.js"></script>
+    
+    <script src="js/brixlib-compiled.js"></script>
+
+<script>
+    // Create an object that will contain the objects needed for the activities
+    // on this page.
+    pearson.brix.activity = {};
+    var a = pearson.brix.activity;
+
+    // The activity config that defines the brix and mortar for this page
+    // 
+    // Set imgBaseUrl to imgBaseUrl": "http://localhost:8088/images/", or whatever server the IPS is running
+    // on to serve the images that route, or just leave it empty ("imgBaseUrl": "",) to point to images
+    // local to this html file
+
+    a.config =
+        {
+			"description": "A Sample Activity containing a LabelCarousel",
+            //"imgBaseUrl": "http://localhost:8088/images/",
+            "imgBaseUrl": "",
+            "containerConfig":
+                [
+                    {
+                        "description": "Container for the LabelCarousel",
+                        "containerId": "imgContainer",
+                        "brixConfig":
+                            [
+                                {
+                                    "bricId": "lblCarousel1",
+                                    "bricType": "LabelCarousel",
+                                    "config":
+                                        {
+                                            "id": "lblCrsl1",
+                                            "type": "textLabels",
+                                            "imagesActualSize": { "height": 245, "width": 480 },
+                                            "displayWidth": 579
+                                        },
+                                    "configFixup":
+                                        [
+                                            {
+                                                "type": "set-property",
+                                                "name": "images",
+                                                "value":
+                                                    {
+                                                        "type": "array",
+                                                        "elements":
+                                                            [
+                                                                {
+                                                                    "type": "object",
+                                                                    "properties":
+                                                                        [
+                                                                            {
+                                                                                "name": "URI",
+                                                                                "value":
+                                                                                    {
+                                                                                        "type": "join",
+                                                                                        "parts":
+                                                                                        [
+                                                                                            { "type": "ref", "domain": "info", "refId": "imgBaseUrl" },
+                                                                                            { "type": "constant", "value": "img/fig03-21a_frame01.png" }
+                                                                                        ]
+                                                                                    }
+                                                                            },
+                                                                            {
+                                                                                "name": "caption",
+                                                                                "value": { "type": "constant", "value": "Objects that are close together in space or time are grouped together. Would you describe these patterns as rows or columns? Your answer is most likely columns. Because the dots are grouped together vertically, we perceive them as columns. &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;" }
+                                                                            },
+                                                                            {
+                                                                                "name": "selectorLabel",
+                                                                                "value": { "type": "constant", "value": "Nearness" }
+                                                                            }
+                                                                        ]
+                                                                },
+                                                                {
+                                                                    "type": "object",
+                                                                    "properties":
+                                                                        [
+                                                                            {
+                                                                                "name": "URI",
+                                                                                "value":
+                                                                                    {
+                                                                                        "type": "join",
+                                                                                        "parts":
+                                                                                        [
+                                                                                            { "type": "ref", "domain": "info", "refId": "imgBaseUrl" },
+                                                                                            { "type": "constant", "value": "img/fig03-21b_frame02.png"}
+                                                                                        ]
+                                                                                    }
+                                                                            },
+                                                                            {
+                                                                                "name": "caption",
+                                                                                "value": { "type": "constant", "value": "Objects that are similar to each other tend to be grouped together. Here the dots appear to us as distinct rows, because the brain naturally groups circles of the same color together." }
+                                                                            },
+                                                                            {
+                                                                                "name": "selectorLabel",
+                                                                                "value": { "type": "constant", "value": "Similarity" }
+                                                                            }
+                                                                        ]
+                                                                },
+                                                                {
+                                                                    "type": "object",
+                                                                    "properties":
+                                                                        [
+                                                                            {
+                                                                                "name": "URI",
+                                                                                "value":
+                                                                                    {
+                                                                                        "type": "join",
+                                                                                        "parts":
+                                                                                        [
+                                                                                            { "type": "ref", "domain": "info", "refId": "imgBaseUrl" },
+                                                                                            { "type": "constant", "value": "img/fig03-21c_frame03.png"}
+                                                                                        ]
+                                                                                    }
+                                                                            },
+                                                                            {
+                                                                                "name": "caption",
+                                                                                "value": { "type": "constant", "value": "The brain will close in the gaps of an object, enabling us to see a whole object, as in this picture where we see a circle and a square. Remember the picture of the cat from the beginning of the session? Even though the lines don’t touch, the brain is able to complete the object for us." }
+                                                                            },
+                                                                            {
+                                                                                "name": "selectorLabel",
+                                                                                "value": { "type": "constant", "value": "Closure" }
+                                                                            }
+                                                                        ]
+                                                                },
+                                                                {
+                                                                    "type": "object",
+                                                                    "properties":
+                                                                        [
+                                                                            {
+                                                                                "name": "URI",
+                                                                                "value":
+                                                                                    {
+                                                                                        "type": "join",
+                                                                                        "parts":
+                                                                                        [
+                                                                                            { "type": "ref", "domain": "info", "refId": "imgBaseUrl" },
+                                                                                            { "type": "constant", "value": "img/fig03-21d_frame04.png"}
+                                                                                        ]
+                                                                                    }
+                                                                            },
+                                                                            {
+                                                                                "name": "caption",
+                                                                                "value": { "type": "constant", "value": "The brain would prefer to see one continuous, flowing movement, rather than broken up parts. How would you describe this image? Thanks to the principle of continuity, you are more likely to see one piece of string twisted around a bar than two shorter pieces of string resting on or stuck to a bar." }
+                                                                            },
+                                                                            {
+                                                                                "name": "selectorLabel",
+                                                                                "value": { "type": "constant", "value": "Continuity" }
+                                                                            }
+                                                                        ]
+                                                                }
+                                                            ]
+                                                    }
+                                            }
+                                        ]
+                                },
+                                {
+                                    "bricId": "cntr1",
+                                    "bricType": "SvgContainer",
+                                    "config":
+                                        {
+                                            "maxSize": { "height": 450, "width": 579 },
+                                        },
+                                    "configFixup":
+                                        [
+                                            {
+                                                "type": "set-property",
+                                                "name": "node",
+                                                "value":
+                                                    {
+                                                        "type": "d3select",
+                                                        "selector": "#brix3c0874d7e4d741488b2e5fc143c7f9ea"
+                                                    }
+                                            }
+                                        ]
+                                }
+                            ],
+                        "hookupActions":
+                            [
+                                {
+                                    "description": "Append the label image carousel to the svg container",
+                                    "type": "method-call",
+                                    "instance": {"type": "ref", "domain": "brix", "refId": "cntr1"},
+                                    "methodName": "append",
+                                    "args":
+                                        [
+                                            { "type": "ref", "domain": "brix", "refId": "lblCarousel1" }
+                                        ]
+                                }
+                            ]
+                    }
+            ]
+        };
+
+    // create the eventmanager to be used by the created brix, and the
+    // bricLayer which will create them, and then tell the bricLayer to build.
+    a.eventManager = new pearson.utils.EventManager();
+    a.answerMan = new pearson.brix.utils.LocalAnswerMan();
+    a.submitManager = new pearson.brix.utils.SubmitManager(a.eventManager, a.answerMan);
+
+    a.bricLayer = new pearson.brix.BricLayer(null, a.eventManager, a.submitManager);
+
+    a.building = a.bricLayer.build(a.config);
+
+    </script>
+</body>
+</html>
