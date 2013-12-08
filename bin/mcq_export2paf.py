@@ -6,6 +6,12 @@ import datetime #imports the datetime module
 import re       # imports the regular expression module
 import sys      # imports the sys module
 
+#
+# Still to do:
+# * Invoke the Upload to PAF script (or write a shell script to do it)
+#
+
+
 def fixupTrailingCommas(lines):
     """Removed trailing comma from lines immediately before a line that starts with a ] or }."""
     endOfObjOrArray = re.compile(r"^\s*[}\]]")
@@ -28,6 +34,9 @@ class PAFActivity(object):
     def __init__(self, info):
         """Initializes the PAFActivity"""
         self.uuid = info.pafActivityGuid or uuid.uuid4()
+        # Update the info record just to make sure it has the uuid
+        info.pafActivityGuid = self.uuid
+
         self.fileName = info.fileName
         self.quizName = info.quizName
         b, t = os.path.splitext(self.fileName)
@@ -91,7 +100,7 @@ class PAFActivity(object):
         fixupTrailingCommas(activityStrs)
         activityStr = ''.join(activityStrs)
         try:
-            self.PAFjson['body'] = json.loads(activityStr)
+            self.PAFjson['body'] = json.loads(activityStr, "windows-1252")
             for key in ['sequenceNodeKey','maxAttempts','imgBaseUrl']:
                 if key in self.PAFjson['body']: del self.PAFjson['body'][key]
 
@@ -109,6 +118,9 @@ class PAFAssignment(object):
     def __init__(self, info):
         """Initializes the PAFAssignment"""
         self.uuid = info.pafAssignmentGuid or uuid.uuid4()
+        # Update the info record just to make sure it has the uuid
+        info.pafAssignmentGuid = self.uuid
+
         self.chapter = info.chapter
         self.module = info.module
         self.quizName = info.quizName
@@ -184,6 +196,8 @@ class PAFAssignment(object):
         for activity in self.activities:
             activity.writeJSON()
 
+
+
 class MCQSpreadsheetInfoRow(object):
     """
     Simple struct that parses a row from a csv file into its properties
@@ -197,8 +211,8 @@ class MCQSpreadsheetInfoRow(object):
         self.comments = row[4]
         self.pafContentType = 'Brix'
         self.assetName = row[6]
-        self.pafAssignmentGuid = row[7]
-        self.pafActivityGuid = row[8]
+        self.pafAssignmentGuid = row[7] if not row[7] else uuid.UUID(row[7])
+        self.pafActivityGuid = row[8] if not row[8] else uuid.UUID(row[8])
         self.containerId = row[9]
 
     def __str__(self):
@@ -215,6 +229,19 @@ class MCQSpreadsheetInfoRow(object):
                        "activity": self.pafActivityGuid,
                        "containerId": self.containerId }
 
+    def getRowTuple(self):
+        """Return a tuple of the info properties in column order"""
+        return (self.chapter,
+                self.module,
+                self.quizName,
+                self.fileName,
+                self.comments,
+                self.pafContentType,
+                self.assetName,
+                self.pafAssignmentGuid,
+                self.pafActivityGuid,
+                self.containerId)
+
 def buildPAFAssignments(spreadsheetRows):
     """Build the spreadsheet info into assignments containing the activities"""
     assignments = []
@@ -222,6 +249,8 @@ def buildPAFAssignments(spreadsheetRows):
     for info in spreadsheetRows:
         if info.module in assignmentByModule:
             assignmentByModule[info.module].addActivity(PAFActivity(info))
+            # Update the info record just to make sure it has the right assignment uuid for the activity
+            info.pafAssignmentGuid = assignmentByModule[info.module].uuid
         else:
             assignment = PAFAssignment(info)
             assignmentByModule[assignment.module] = assignment
@@ -232,21 +261,28 @@ def buildPAFAssignments(spreadsheetRows):
 #
 #
 #
-f = open(sys.argv[1], 'rb') # opens the csv file
-try:
+
+# opens the csv file
+csvfn = sys.argv[1]
+spreadsheetRows = []
+with open(csvfn, 'rb') as f:
     reader = csv.reader(f)  # creates the reader object
-    spreadsheetRows = []
     for row in reader:   # iterates the rows of the file in order
         spreadsheetRows.append(MCQSpreadsheetInfoRow(row))
         #print spreadsheetRows[len(spreadsheetRows)-1]
 
-    assignments = buildPAFAssignments(spreadsheetRows)
-    print len(assignments)
+assignments = buildPAFAssignments(spreadsheetRows)
 
-    for assignment in assignments:
-        print assignment
+for assignment in assignments:
+    print assignment
 
-    assignments[0].writeJSON()
+with open(csvfn + ".updated", "wb") as f:
+    writer = csv.writer(f)
+    for info in spreadsheetRows:
+        writer.writerow(info.getRowTuple())
 
-finally:
-    f.close()      # closing
+# Test writing assignment and activity json w/ the 1st assignment
+assignments[0].writeJSON()
+#for assignment in assignments:
+#    assignment.writeJSON()
+
