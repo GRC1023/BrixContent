@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="Template for Multiple Choice Question Brix" name="description">
+   
+    <!-- widgets.css contains styling for the interactive brix -->
+    <link href="css/widgets.css" rel="stylesheet">
+</head>
+<body>
+    <div id="target1"></div>
+    <script src="js/d3.v3.min.js"></script>
+    
+	<script src="js/brixlib-compiled.js"></script>
+
+    <script type="text/javascript">
+	// Create an object that will contain the objects needed for the activities
+	// on this page.
+	pearson.brix.activity = {};
+	var a = pearson.brix.activity;
+
+	// The activity config that defines the brix and mortar for this page
+	a.config =
+		{
+			"description": "A Sample Activity containing a swappable graph",
+			"containerConfig":
+				[
+					{
+						"description": "container for the graph and labels",
+						"containerId": "target1",
+						"brixConfig":
+							[
+								{
+									"bricId": "swapGraph",
+									"bricType": "LineGraph",
+									"config":
+										{
+											"id": "graph1",
+											"type": "lines",
+											"xAxisFormat":
+												{ 
+													"type": "linear", 
+													"ticks": [1940, 1955, 1970, 1985, 2000, 2015],
+													"format": "0f",
+													"orientation": "bottom",
+													"label": "Year"
+												},
+											"yAxisFormat":
+												{
+													"type": "linear",
+													"orientation": "left",
+													"ticks": [0, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100],
+													"label": "Percentage (%)"
+												},
+										},
+                                    "configFixup":
+                                        [
+                                            {
+                                                "type": "set-property",
+                                                "name": "Data",
+                                                "value": { "type": "ref", "domain": "data", "refId": "intermarriage" }
+                                            }
+                                        ]
+								},
+								{
+									"bricId": "legend1",
+									"bricType": "Legend",
+									"config":
+										{
+											"id": "legendSchools",
+											"type": "line",
+											"xPos": "right",
+											"yPos": "top",
+											//"labels":
+											//[
+												//{"content": "Separate"}, 
+											//	{"content": "Same"}
+											//],
+										},
+									 "configFixup":
+                                        [
+                                            {
+                                                "type": "set-property",
+                                                "name": "labels",
+                                                "value": { "type": "ref", "domain": "data", "refId": "intermarriageLegend" }
+                                            }
+                                        ]
+								},
+                                {
+                                    "bricId": "labelSelector1",
+                                    "bricType": "LabelSelector",
+                                    "config":
+                                        {
+                                            "id": "dataLabels",
+                                            "labels": ["Intermarriage","Schools","Neighborhoods"],
+                                            "layout": "vertical",
+                                            "itemMargin": {"top": 5, "bottom": 5, "left": 0, "right": 0}
+                                        }
+                                },
+								{
+									"bricId": "cntr1",
+									"bricType": "SvgContainer",
+									"config":
+										{
+											//"node": d3.select("#target1"),
+											"maxSize": {"height": 400, "width": 600},
+										},
+									"configFixup":
+                                        [
+                                            {
+                                                "type": "set-property",
+                                                "name": "node",
+                                                "value":
+                                                    {
+                                                        "type": "d3select",
+                                                        "selector": "#target1"
+                                                    }
+                                            }
+                                        ]
+								}
+							],
+                            "mortarConfig":
+                            [
+                                // We will need mortar to update the linegraph data on button clicks
+                                {
+                                    "mortarId": "dataswap1",
+                                    "mortarType": "Dataswap",
+                                    "config":
+                                        {
+                                            //"topic": pearson.brix.LabelSelector.getEventTopic('selected', 'dataLabels'),
+                                            "eventDetailsProperty": "index",
+                                            //"sourceDataArray": array built of data below,
+                                            //"targetBric": swapGraph,
+                                            "dataPropertySetter": "setData",
+                                        },
+                                    "configFixup":
+                                        [
+                                            {
+                                                "type": "set-property",
+                                                "name": "topic",
+                                                "value":
+                                                    {
+                                                        "type": "brix-topic",
+                                                        "bricType": "LabelSelector",
+                                                        "instanceId": "dataLabels",
+                                                        "eventName": "selected"
+                                                    }
+                                            },
+                                            {
+                                                "type": "set-property",
+                                                "name": "sourceDataArray",
+                                                "value": 
+                                                    {
+                                                        "type": "array", 
+                                                        "elements": 
+                                                            [
+                                                                { "type": "ref", "domain": "data", "refId": "intermarriage" },
+                                                                { "type": "ref", "domain": "data", "refId": "schools" },
+                                                                { "type": "ref", "domain": "data", "refId": "neighborhoods" }
+                                                            ]
+                                                    } 
+                                            },
+                                            {
+                                                "type": "set-property",
+                                                "name": "targetBric",
+                                                "value": { "type": "ref", "domain": "brix", "refId": "swapGraph" }
+                                            }
+                                        ]
+                                },
+                                // We will need mortar to update the legend data on button clicks
+                                {
+                                    "mortarId": "dataswap2",
+                                    "mortarType": "Dataswap",
+                                    "config":
+                                        {
+                                            //"topic": pearson.brix.LabelSelector.getEventTopic('selected', 'dataLabels'),
+                                            "eventDetailsProperty": "index",
+                                            //"sourceDataArray": array built of data below,
+                                            //"targetBric": swapGraph,
+                                            "dataPropertySetter": "setLabels",
+                                        },
+                                    "configFixup":
+                                        [
+                                            {
+                                                "type": "set-property",
+                                                "name": "topic",
+                                                "value":
+                                                    {
+                                                        "type": "brix-topic",
+                                                        "bricType": "LabelSelector",
+                                                        "instanceId": "dataLabels",
+                                                        "eventName": "selected"
+                                                    }
+                                            },
+                                            {
+                                                "type": "set-property",
+                                                "name": "sourceDataArray",
+                                                "value": 
+                                                    {
+                                                        "type": "array", 
+                                                        "elements": 
+                                                            [
+                                                                { "type": "ref", "domain": "data", "refId": "intermarriageLegend" },
+                                                                { "type": "ref", "domain": "data", "refId": "schoolsLegend" },
+                                                                { "type": "ref", "domain": "data", "refId": "neighborhoodsLegend" }
+                                                            ]
+                                                    } 
+                                            },
+                                            {
+                                                "type": "set-property",
+                                                "name": "targetBric",
+                                                "value": { "type": "ref", "domain": "brix", "refId": "legend1" }
+                                            }
+                                        ]
+                                },
+                                // And mortar to highlight the graph lines with the legend
+                                {
+                                    "mortarId": "hilite3",
+                                    "mortarType": "Hilite",
+                                    "config":
+                                        {
+                                            "eventDetailsProperty": "selectKey"
+                                        },
+                                    "configFixup":
+                                        [
+                                            {
+                                                "type": "set-property",
+                                                "name": "topic",
+                                                // This value type will have to change to lookup a bric type's particular event id
+                                                "value":
+                                                    {
+                                                        "type": "brix-topic",
+                                                        "bricType": "Legend",
+                                                        "instanceId": "legendSchools",
+                                                        "eventName": "selected"
+                                                    }
+                                            },
+                                            {
+                                                "type": "set-property",
+                                                "name": "targetBric",
+                                                "value": { "type": "ref", "domain": "brix", "refId": "swapGraph" }
+                                            }
+                                        ]
+                                },
+                                // and mortar to highlight the legend with clicks on the graph lines
+                                {
+                                    "mortarId": "hilite2",
+                                    "mortarType": "Hilite",
+                                    "config":
+                                        {
+                                            "eventDetailsProperty": "selectKey"
+                                        },
+                                    "configFixup":
+                                        [
+                                            {
+                                                "type": "set-property",
+                                                "name": "topic",
+                                                // This value type will have to change to lookup a bric type's particular event id
+                                                // this is the labels1's selectedEventId
+                                                "value":
+                                                    {
+                                                        "type": "brix-topic",
+                                                        "bricType": "LineGraph",
+                                                        "instanceId": "graph1",
+                                                        "eventName": "selected"
+                                                    }
+                                            },
+                                            {
+                                                "type": "set-property",
+                                                "name": "targetBric",
+                                                "value": { "type": "ref", "domain": "brix", "refId": "legend1" }
+                                            }
+                                        ]
+                                }
+                            ],
+						"hookupActions":
+							[
+								{
+									"description": "Append the swap graph to the svg container",
+									"type": "method-call",
+									"instance": {"type": "ref", "domain": "brix", "refId": "cntr1"},
+									"methodName": "append",
+									"args":
+										[
+											{ "type": "ref", "domain": "brix", "refId": "swapGraph" },
+                                            { "type": "constant", 
+                                              "value": {"topPercentOffset": 0.15, "leftPercentOffset": 0, "heightPercent": 0.85, "widthPercent": 1}
+                                            }
+										]
+								},
+								{
+									"description": "Append the legend to the svg container",
+									"type": "method-call",
+									"instance": {"type": "ref", "domain": "brix", "refId": "swapGraph"},
+									"methodName": "append",
+									"args":
+										[
+											{ "type": "ref", "domain": "brix", "refId": "legend1" }
+										]
+								},
+                                {
+                                    "description": "Append the labels to the svg container",
+                                    "type": "method-call",
+                                    "instance": {"type": "ref", "domain": "brix", "refId": "cntr1"},
+                                    "methodName": "append",
+                                    "args":
+                                        [
+                                            { "type": "ref", "domain": "brix", "refId": "labelSelector1" },
+                                            { "type": "constant", 
+                                              "value": {"topPercentOffset": 0.0, "leftPercentOffset": 0, "heightPercent": 0.2, "widthPercent": 1}
+                                            }
+                                        ]
+                                },
+                                {
+                                    "description": "Initial condition: select 1st label",
+                                    "type": "method-call",
+                                    "instance": {"type": "ref", "domain": "brix", "refId": "labelSelector1"},
+                                    "methodName": "lite",
+                                    "args":
+                                        [
+                                            { "type": "constant", "value": "0" }
+                                        ]
+                                },
+                                {
+                                    "description": "Initial condition: select 1st legend",
+                                    "type": "method-call",
+                                    "instance": {"type": "ref", "domain": "brix", "refId": "legend1"},
+                                    "methodName": "lite",
+                                    "args":
+                                        [
+                                            { "type": "constant", "value": "0" }
+                                        ]
+                                }
+							]
+					},
+					{
+                        "description": "The 'target1' container contains the swappable callouts",
+                        "containerId": "target1",
+                        "brixConfig":
+                            [
+                                {
+                                    "bricId": "lbltbl1",
+                                    "bricType": "Callouts",
+                                    "config":
+                                        {
+                                            "id": "callme",
+                                            //"show": "all",
+                                            //"type": "numbered",
+                                            //"headers": ["Nuclear Reactor function"],
+                                            "textBits":
+                                                [
+                                                    {"cols": ["<b>Survey Question Asked:</b><br>Do you approve or disapprove of racial intermarriage?"]},
+                                                    {"cols": ["<b>Survey Question Asked:</b><br>Do you think white people and black/negroes should go to the same schools or separate schools?"]},
+                                                    {"cols": [ "<b>Survey Question Asked:</b><br>Do you agree or disagree with the statement: White people have a right to keep (Negroes/blacks/African Americans) out of their neighborhoods if they want to, and (Negroes/blacks/African Americans) should respect that right."]}
+                                                ]
+                                        }
+                                }
+                            ],
+                        "mortarConfig":
+                            [
+                              // and mortar to update the callouts on button clicks
+                                {
+                                    "mortarId": "hilite1",
+                                    "mortarType": "Hilite",
+                                    "config":
+                                        {
+                                            "eventDetailsProperty": "selectKey"
+                                        },
+                                    "configFixup":
+                                        [
+                                            {
+                                                "type": "set-property",
+                                                "name": "topic",
+                                                // This value type will have to change to lookup a bric type's particular event id
+                                                // this is the labels1's selectedEventId
+                                                "value":
+                                                    {
+                                                        "type": "brix-topic",
+                                                        "bricType": "LabelSelector",
+                                                        "instanceId": "dataLabels",
+                                                        "eventName": "selected"
+                                                    }
+                                            },
+                                            {
+                                                "type": "set-property",
+                                                "name": "targetBric",
+                                                "value": { "type": "ref", "domain": "brix", "refId": "lbltbl1" }
+                                            }
+                                        ]
+                                }
+                            ],
+                        "hookupActions":
+                            [
+                                {
+                                    "description": "draw the label table",
+                                    "type": "method-call",
+                                    "instance": {"type": "ref", "domain": "brix", "refId": "lbltbl1"},
+                                    "methodName": "draw",
+                                    "args":
+                                        [
+                                            { "type": "d3select", "selector": "#target1" }
+                                        ]
+                                },
+                                {
+                                    "description": "Initial condition: select 1st table row (note that we may want to use the state field to do this later)",
+                                    "type": "method-call",
+                                    "instance": {"type": "ref", "domain": "brix", "refId": "lbltbl1"},
+                                    "methodName": "lite",
+                                    "args":
+                                        [
+                                            { "type": "constant", "value": "0" }
+                                        ]
+                                }
+
+                            ]
+                    }
+				],
+			"data":
+                {
+                    "intermarriageLegend":
+                        [
+                            {"content": "Approve"},
+                            {"content": "Disapprove"}
+                        ],
+					"intermarriage": 
+                        [
+    					    [
+                                {"x": 1958, "y": 4},
+                                {"x": 1972, "y": 27 },
+                                {"x": 1991, "y": 51 },
+                                {"x": 2011, "y": 84 }
+                            ],
+                            [
+                    			{"x": 1958, "y": 96},
+                    			{"x": 1972, "y": 73 },
+                    			{"x": 1991, "y": 49 },
+                    			{"x": 2011, "y": 16 }
+        					]
+               				
+                        ],
+                    "schoolsLegend":
+                        [
+                            {"content": "Same"},
+                            {"content": "Separate"}
+                        ],
+					"schools":
+                        [
+    						[
+    							{"x": 1942, "y": 32},
+                    			{"x": 1964, "y": 63 },
+                    			{"x": 1984, "y": 92 },
+                    			{"x": 1995, "y": 96 }
+    						],
+                            [
+                                {"x": 1942, "y": 68},
+                                {"x": 1964, "y": 37 },
+                                {"x": 1984, "y": 8 },
+                                {"x": 1995, "y": 4 }
+                            ]
+                        ],
+                     "neighborhoodsLegend":
+                        [
+                                {"content": "Disagree"}, 
+                                {"content": "Agree"},
+
+                        ],
+					"neighborhoods":
+                        [
+    						[
+                                {"x": 1963, "y": 39},
+                                {"x": 1976, "y": 60 },
+                                {"x": 1990, "y": 76 },
+                                {"x": 1996, "y": 86 }
+                            ],
+                            [
+                    			{"x": 1963, "y": 60},
+                    			{"x": 1976, "y": 40 },
+                    			{"x": 1990, "y": 24 },
+                    			{"x": 1996, "y": 13 }
+    						]
+                        ]
+                }
+		};
+
+	// create the eventmanager to be used by the created brix, and the
+	// bricLayer which will create them, and then tell the bricLayer to build.
+	a.eventManager = new pearson.utils.EventManager();
+	a.answerMan = new pearson.brix.utils.LocalAnswerMan();
+	a.submitManager = new pearson.brix.utils.SubmitManager(a.eventManager, a.answerMan);
+
+	a.bricLayer = new pearson.brix.BricLayer(null, a.eventManager, a.submitManager);
+
+	pearson.utils.logToConsole(true, "FINER");
+
+	a.building = a.bricLayer.build(a.config);
+
+
+    /* 
+    a.answerMan.setMaxAttempts(a.config.maxAttempts);
+	a.answerMan.registerAnswerKey(a.config.sequenceNodeKey,
+								  a.config.containerConfig[0].brixConfig[0].answerKey);
+	*/
+
+    </script>
+</body>
+</html>
