@@ -1,27 +1,41 @@
-{
-  "@context" : "http://purl.org/pearson/content/v1/ctx/metadata/envelope",
-  "@type" : "Envelope",
-  "metadata" : {
-    "title" : "frequency and amplitude",
-    "guid" : "05D248AB-60F4-4128-84FA-46B431CECEA7",
-    "description" : "Image Carousel showing frequency and amplitude",
-    "contentTypeTier1" : "Demonstration",
-    "contentTypeTier2" : [ "DemonstrationImage" ],
-    "subject" : [ "Psychology" ],
-    "intendedEndUserRole" : [ "Student" ],
-    "format" : [ 
-      "application/vnd.pearson.sanvan.v1.activity"
-    ],
-    "timeRequired" : "PT20S",
-    "created" : "2013-12-09T09:22:00-00:00",
-    "educationalAlignment" : [ "http://purl.org/pearson/objectives/183725473384362" ]
-  },
-  "body" : {
-  "containerConfig":
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="Template for Label Selector Image Carousel Brix" name="description">
+    
+    <!-- widgets.css contains styling for the interactive brix -->
+    <link href="css/widgets.css" rel="stylesheet">
+</head>
+<body>
+    <div id="bd5e7f0acf9f143898f40a08acd072471"></div>
+    <script src="js/d3.v3.min.js"></script>
+    
+    <script src="js/brixlib-compiled.js"></script>
+
+<script>
+    // Create an object that will contain the objects needed for the activities
+    // on this page.
+    pearson.brix.activity = {};
+    var a = pearson.brix.activity;
+
+    // The activity config that defines the brix and mortar for this page
+    // 
+    // Set imgBaseUrl to imgBaseUrl": "http://localhost:8088/images/", or whatever server the IPS is running
+    // on to serve the images that route, or just leave it empty ("imgBaseUrl": "",) to point to images
+    // local to this html file
+
+    a.config =
+        {
+			"description": "Image carousel showing where on the face babies focus (typical development and babies with autism)",
+            //"imgBaseUrl": "http://localhost:8088/images/",
+            "imgBaseUrl": "",
+            "containerConfig":
                 [
                     {
                         "description": "Container for the LabelCarousel",
-                        "containerId": "#b6b09f40fc76d490aa5156f975233d4a2",
+                        "containerId": "imgContainer",
                         "brixConfig":
                             [
                                 {
@@ -30,8 +44,8 @@
                                     "config":
                                         {
                                             "id": "lblCrsl1",
-                                            "type": "textLabels",
-                                            "imagesActualSize": { "height": 338, "width": 800 },
+                                            "type": "bullets",
+                                            "imagesActualSize": { "height": 379, "width": 570 },
                                             "displayWidth": 579
                                         },
                                     "configFixup":
@@ -56,17 +70,13 @@
                                                                                         "parts":
                                                                                         [
                                                                                             { "type": "ref", "domain": "info", "refId": "imgBaseUrl" },
-                                                                                            { "type": "constant", "value": "img/03-12_frame_01.png" }
+                                                                                            { "type": "constant", "value": "img/03-30_frame_01.png" }
                                                                                         ]
                                                                                     }
                                                                             },
                                                                             {
                                                                                 "name": "caption",
-                                                                                "value": { "type": "constant", "value": "Characteristics of Sound" }
-                                                                            },
-                                                                            {
-                                                                                "name": "selectorLabel",
-                                                                                "value": { "type": "constant", "value": "Sensory Coding" }
+                                                                                "value": { "type": "constant", "value": "Studies of preferential looking are sometimes used as a predictor of social disability." }
                                                                             }
                                                                         ]
                                                                 },
@@ -82,17 +92,13 @@
                                                                                         "parts":
                                                                                         [
                                                                                             { "type": "ref", "domain": "info", "refId": "imgBaseUrl" },
-                                                                                            { "type": "constant", "value": "img/03-12_frame_02.png"}
+                                                                                            { "type": "constant", "value": "img/03-30_frame_02.png"}
                                                                                         ]
                                                                                     }
                                                                             },
                                                                             {
                                                                                 "name": "caption",
-                                                                                "value": { "type": "constant", "value": "The number of wavelengths per second determines the pitch." }
-                                                                            },
-                                                                            {
-                                                                                "name": "selectorLabel",
-                                                                                "value": { "type": "constant", "value": "Frequency" }
+                                                                                "value": { "type": "constant", "value": "Typically developing babies focus their attention on the eyes when viewing a face." }
                                                                             }
                                                                         ]
                                                                 },
@@ -108,17 +114,13 @@
                                                                                         "parts":
                                                                                         [
                                                                                             { "type": "ref", "domain": "info", "refId": "imgBaseUrl" },
-                                                                                            { "type": "constant", "value": "img/03-12_frame_03.png"}
+                                                                                            { "type": "constant", "value": "img/03-30_frame_03.png"}
                                                                                         ]
                                                                                     }
                                                                             },
                                                                             {
                                                                                 "name": "caption",
-                                                                                "value": { "type": "constant", "value": "The height of the wavelength determines loudness." }
-                                                                            },
-                                                                            {
-                                                                                "name": "selectorLabel",
-                                                                                "value": { "type": "constant", "value": "Amplitude" }
+                                                                                "value": { "type": "constant", "value": "Babies with autism are more likely to focus their attention on the mouth when viewing a face (McPartland et al., 2011)." }
                                                                             }
                                                                         ]
                                                                 }
@@ -132,7 +134,7 @@
                                     "bricType": "SvgContainer",
                                     "config":
                                         {
-                                            "maxSize": { "height": 350, "width": 579 },
+                                            "maxSize": { "height": 500, "width": 579 },
                                         },
                                     "configFixup":
                                         [
@@ -142,7 +144,7 @@
                                                 "value":
                                                     {
                                                         "type": "d3select",
-                                                        "selector": "#b6b09f40fc76d490aa5156f975233d4a2"
+                                                        "selector": "#bd5e7f0acf9f143898f40a08acd072471"
                                                     }
                                             }
                                         ]
@@ -163,5 +165,18 @@
                             ]
                     }
             ]
-    }
-}
+        };
+
+    // create the eventmanager to be used by the created brix, and the
+    // bricLayer which will create them, and then tell the bricLayer to build.
+    a.eventManager = new pearson.utils.EventManager();
+    a.answerMan = new pearson.brix.utils.LocalAnswerMan();
+    a.submitManager = new pearson.brix.utils.SubmitManager(a.eventManager, a.answerMan);
+
+    a.bricLayer = new pearson.brix.BricLayer(null, a.eventManager, a.submitManager);
+
+    a.building = a.bricLayer.build(a.config);
+
+    </script>
+</body>
+</html>
