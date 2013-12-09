@@ -23,7 +23,7 @@ def fixupTrailingCommas(lines):
         if endOfObjOrArray.match(lines[lineno]):
             m = trailingComma.match(lines[lineno - 1])
             if m:
-                print "replacing ", lines[lineno - 1], "with ", m.group(1)
+                print("replacing ", lines[lineno - 1], "with ", m.group(1))
                 lines[lineno - 1] = m.group(1)
         lineno += 1
 
@@ -75,7 +75,7 @@ class PAFActivity(object):
     def writeJSON(self):
         """Write the PAF JSON for this activity copying the activity config from the html file"""
         with open(self.jsonFilename, "w") as ofile:
-            print "writing ", self.jsonFilename
+            print("writing ", self.jsonFilename)
             self.readActivityConfig()
             json.dump(self.PAFjson, ofile, indent=2)
 
@@ -85,7 +85,7 @@ class PAFActivity(object):
         lastline = re.compile(r"^\s*};\s*$")
         activityStrs = []
         started = False
-        with open(self.fileName, "r") as f:
+        with open(self.fileName, "rt", encoding="windows-1252") as f:
             for line in f:
                 if started:
                     if lastline.match(line):
@@ -96,18 +96,18 @@ class PAFActivity(object):
                 elif startafter.match(line):
                     started = True
 
-        #print self.activityStrs
+        #print(self.activityStrs)
         fixupTrailingCommas(activityStrs)
         activityStr = ''.join(activityStrs)
         try:
-            self.PAFjson['body'] = json.loads(activityStr, "windows-1252")
+            self.PAFjson['body'] = json.loads(activityStr)
             for key in ['sequenceNodeKey','maxAttempts','imgBaseUrl']:
                 if key in self.PAFjson['body']: del self.PAFjson['body'][key]
 
         except UnicodeError as e:
-            print e, "\nreason: ", e.reason, "\nobject: ", e.object, "\nstart, end", e.start, e.end
+            print(e, "\nreason: ", e.reason, "\nobject: ", e.object, "\nstart, end", e.start, e.end)
         except Exception as e:
-            print e
+            print(e)
 
 
 
@@ -190,7 +190,7 @@ class PAFAssignment(object):
     def writeJSON(self):
         """Write the PAF JSON for this assignment and all of its activities"""
         with open(self.jsonFilename, "w") as ofile:
-            print "writing ", self.jsonFilename
+            print("writing ", self.jsonFilename)
             json.dump(self.PAFjson, ofile, indent=2)
 
         for activity in self.activities:
@@ -265,18 +265,18 @@ def buildPAFAssignments(spreadsheetRows):
 # opens the csv file
 csvfn = sys.argv[1]
 spreadsheetRows = []
-with open(csvfn, 'rb') as f:
+with open(csvfn, 'rt') as f:
     reader = csv.reader(f)  # creates the reader object
     for row in reader:   # iterates the rows of the file in order
         spreadsheetRows.append(MCQSpreadsheetInfoRow(row))
-        #print spreadsheetRows[len(spreadsheetRows)-1]
+        #print(spreadsheetRows[len(spreadsheetRows)-1])
 
 assignments = buildPAFAssignments(spreadsheetRows)
 
 for assignment in assignments:
-    print assignment
+    print(assignment)
 
-with open(csvfn + ".updated", "wb") as f:
+with open(csvfn + ".updated", "wt") as f:
     writer = csv.writer(f)
     for info in spreadsheetRows:
         writer.writerow(info.getRowTuple())
