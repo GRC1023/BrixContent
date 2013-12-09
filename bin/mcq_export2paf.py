@@ -5,25 +5,35 @@ import json     # imports the json module
 import datetime #imports the datetime module
 import re       # imports the regular expression module
 import sys      # imports the sys module
+import traceback
 
 #
 # Still to do:
 # * Invoke the Upload to PAF script (or write a shell script to do it)
 #
 
+# A global log file for issues we should report after execution of the script
+problemlog = []
 
-def fixupTrailingCommas(lines):
+def fixupCommentsAndTrailingCommas(lines):
     """Removed trailing comma from lines immediately before a line that starts with a ] or }."""
+    commentLine = re.compile(r"^\s*//")
     endOfObjOrArray = re.compile(r"^\s*[}\]]")
     trailingComma = re.compile(r"^(.*),\s*$")
 
     lineno = 1
     numlines = len(lines)
     while lineno < numlines:
+        if commentLine.match(lines[lineno]):
+            #print("deleting comment line: " + lines[lineno])
+            del lines[lineno]
+            numlines -= 1
+            continue
+
         if endOfObjOrArray.match(lines[lineno]):
             m = trailingComma.match(lines[lineno - 1])
             if m:
-                print("replacing ", lines[lineno - 1], "with ", m.group(1))
+                #print("replacing ", lines[lineno - 1], "with ", m.group(1))
                 lines[lineno - 1] = m.group(1)
         lineno += 1
 
@@ -39,6 +49,7 @@ class PAFActivity(object):
 
         self.fileName = info.fileName
         self.quizName = info.quizName
+        self.subject = info.subject
         b, t = os.path.splitext(self.fileName)
         self.jsonFilename = b + ".activity.json"
         self.PAFjson = \
@@ -48,11 +59,11 @@ class PAFActivity(object):
                 "metadata" :
                     {
                         "guid" : str(self.uuid),
-                        "title" : "PAF Title of this Activity",
-                        "description" : "",
-                        "contentTypeTier1" : "Demonstration",
-                        "contentTypeTier2" : [ "DemonstrationImage" ],
-                        "subject" : [ "Psychology" ],
+                        "title" : self.fileName,
+                        "description" : self.fileName,
+                        "contentTypeTier1" : "Test and Assessment",
+                        "contentTypeTier2" : [ "assessment item" ],
+                        "subject" : [ self.subject ],
                         "intendedEndUserRole" : [ "Student" ],
                         "format" : [ "application/vnd.pearson.sanvan.v1.activity" ],
                         "timeRequired" : "PT20S",
@@ -84,29 +95,33 @@ class PAFActivity(object):
         startafter = re.compile(r"^\s*a\.config =\s*$")
         lastline = re.compile(r"^\s*};\s*$")
         activityStrs = []
+        activityStr = ""
         started = False
-        with open(self.fileName, "rt", encoding="windows-1252") as f:
-            for line in f:
-                if started:
-                    if lastline.match(line):
-                        activityStrs.append("}")
-                        break
-                    activityStrs.append(line)
-
-                elif startafter.match(line):
-                    started = True
-
-        #print(self.activityStrs)
-        fixupTrailingCommas(activityStrs)
-        activityStr = ''.join(activityStrs)
         try:
+            with open(self.fileName, "rt", encoding="utf-8") as f:
+                for line in f:
+                    if started:
+                        if lastline.match(line):
+                            activityStrs.append("}")
+                            break
+                        activityStrs.append(line)
+
+                    elif startafter.match(line):
+                        started = True
+
+            #print(self.activityStrs)
+            fixupCommentsAndTrailingCommas(activityStrs)
+            activityStr = ''.join(activityStrs)
             self.PAFjson['body'] = json.loads(activityStr)
             for key in ['sequenceNodeKey','maxAttempts','imgBaseUrl']:
                 if key in self.PAFjson['body']: del self.PAFjson['body'][key]
 
         except UnicodeError as e:
+            problemlog.append("Problem w/ activity file: " + self.fileName + " UnicodeDecodeException: " + str(e) + "\n" + str(e.object[e.start -10:e.end + 10]))
             print(e, "\nreason: ", e.reason, "\nobject: ", e.object, "\nstart, end", e.start, e.end)
         except Exception as e:
+            tb = traceback.format_exc()
+            problemlog.append("Problem w/ activity file: " + self.fileName + " Exception: " + "".join(tb) + "\n" + activityStr)
             print(e)
 
 
@@ -115,8 +130,12 @@ class PAFAssignment(object):
     """
     A PAF assignment with its associated activities
     """
+    # Count of the number of instances of PAFAssignment, used to create the instance jsonFilename
+    instanceCount = 0
+
     def __init__(self, info):
         """Initializes the PAFAssignment"""
+        self.__class__.instanceCount += 1
         self.uuid = info.pafAssignmentGuid or uuid.uuid4()
         # Update the info record just to make sure it has the uuid
         info.pafAssignmentGuid = self.uuid
@@ -124,8 +143,9 @@ class PAFAssignment(object):
         self.chapter = info.chapter
         self.module = info.module
         self.quizName = info.quizName
+        self.subject = info.subject
         self.activities = []
-        self.jsonFilename = "Module_" + self.module + ".activity.json"
+        self.jsonFilename = "Quiz_" + str(self.__class__.instanceCount) + ".assignment.json"
         self.PAFjson = \
             {
                 "@context" : "http://purl.org/pearson/content/v1/ctx/metadata/envelope",
@@ -133,11 +153,11 @@ class PAFAssignment(object):
                 "metadata" :
                     {
                         "guid" : str(self.uuid),
-                        "title" : "PAF Title of this Assignment",
-                        "description" : "",
-                        "contentTypeTier1" : "Assessment",
-                        "contentTypeTier2" : [ "AssessmentItem" ],
-                        "subject" : [ "Psychology" ],
+                        "title" : self.quizName,
+                        "description" : self.quizName,
+                        "contentTypeTier1" : "Test and Assessment",
+                        "contentTypeTier2" : [ "quiz" ],
+                        "subject" : [ self.subject ],
                         "intendedEndUserRole" : [ "Student" ],
                         "timeRequired" : "PT20S",
                         "educationalAlignment" : [ "http://purl.org/pearson/objectives/183725473384362" ]
@@ -146,7 +166,7 @@ class PAFAssignment(object):
                 {
                     "@context" : "http://purl.org/pearson/paf/v1/ctx/core/StructuredAssignment",
                     "@type" : "StructuredAssignment",
-                    "title" : "Stages of sensory coding",
+                    "title" : self.quizName,
                     "guid" : str(self.uuid),
                     "assignmentContents" :
                         {
@@ -215,6 +235,9 @@ class MCQSpreadsheetInfoRow(object):
         self.pafActivityGuid = row[8] if not row[8] else uuid.UUID(row[8])
         self.containerId = row[9]
 
+        # this needs to come from the csv, but isn't there yet
+        self.subject = "Psychology"
+
     def __str__(self):
         """Friendly string representation of the MCQSpreadsheetInfoRow"""
         fmt = 'filename: %(filename)s'\
@@ -245,15 +268,15 @@ class MCQSpreadsheetInfoRow(object):
 def buildPAFAssignments(spreadsheetRows):
     """Build the spreadsheet info into assignments containing the activities"""
     assignments = []
-    assignmentByModule = {}
+    assignmentByQuiz = {}
     for info in spreadsheetRows:
-        if info.module in assignmentByModule:
-            assignmentByModule[info.module].addActivity(PAFActivity(info))
+        if info.quizName in assignmentByQuiz:
+            assignmentByQuiz[info.quizName].addActivity(PAFActivity(info))
             # Update the info record just to make sure it has the right assignment uuid for the activity
-            info.pafAssignmentGuid = assignmentByModule[info.module].uuid
+            info.pafAssignmentGuid = assignmentByQuiz[info.quizName].uuid
         else:
             assignment = PAFAssignment(info)
-            assignmentByModule[assignment.module] = assignment
+            assignmentByQuiz[assignment.quizName] = assignment
             assignments.append(assignment)
 
     return assignments
@@ -282,7 +305,11 @@ with open(csvfn + ".updated", "wt") as f:
         writer.writerow(info.getRowTuple())
 
 # Test writing assignment and activity json w/ the 1st assignment
-assignments[0].writeJSON()
-#for assignment in assignments:
-#    assignment.writeJSON()
+#assignments[0].writeJSON()
+for assignment in assignments:
+    assignment.writeJSON()
+
+with open("mcq_export2paf.log", "wt") as f:
+    f.write("\n".join(problemlog) + "\n")
+
 
