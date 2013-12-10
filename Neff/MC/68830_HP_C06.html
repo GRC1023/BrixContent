@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head> 
+	<meta charset="UTF-8">
+	<meta content="width=device-width, initial-scale=1.0" name="viewport">
+	<meta content="Neff, Our Changing Planet" name="description">   	
+ 
+  	<!-- widgets.css contains styling for the interactive brix -->
+	<link href="../css/widgets.css" rel="stylesheet">
+
+
+
+</head>
+<body>
+	<div id="radioRnd"></div>
+	<script src="../js/d3.v3.min.js"></script>
+	<script src="../js/brixlib-compiled.js"></script>
+	<script src="../js/neff12activitydb.js"></script>
+
+	<script>
+
+	var eventManager = new pearson.utils.EventManager();
+
+	var MultipleChoiceQuestion = pearson.brix.MultipleChoiceQuestion;
+	var Button = pearson.brix.Button;
+	var RadioGroup = pearson.brix.RadioGroup;
+	var AnswerMan = pearson.brix.AnswerMan;
+	var SubmitManager = pearson.brix.SubmitManager;
+	
+	pearson.brix.test.extendActivityDb(activitiesNeff);
+
+	var submitManager = new SubmitManager(eventManager, new AnswerMan());
+
+
+	var Q1Choices = [
+		{
+			content: "Kenya will have high health care costs and the problem of declining population growth",
+			answerKey: "answer0"
+		},
+		{
+			content: "Kenya will have high infrastructure costs such as those associated with education and will require rapid economic growth to provide jobs to a growing population",
+			answerKey: "answer1"
+		},
+		{
+			content: "Japan will have high health care costs and a shrinking amount of government revenue (taxes)",
+			answerKey: "answer2"
+	
+		},
+		{
+			content: "Japan may have difficulty finding people to work in some types of jobs and will have to change societal investments from education to health care",
+			answerKey: "answer3"
+
+		},
+		{
+			content: "Both countries face the challenge of providing for non-working members of society in economic conditions that are likely to generate less income for investment in society",
+			answerKey: "answer4"
+		}
+		];
+
+	// Test a select one question using a radio group widget
+	var Q1 = new MultipleChoiceQuestion({
+			id: "Q1",
+			questionId: "NeffCH12006",
+			question: "A high dependency ratio can create stresses for a society, but those stresses vary depending on the age of population. Using Japan as an example of a population with a large number of older citizens and Kenya as an example of a population with a large number of younger citizens, which of the following statements is not likely to be true?",
+			choices: Q1Choices,
+			order: "randomized",
+			widget: RadioGroup,
+			widgetConfig: { numberFormat: "" },
+		}, eventManager);
+	
+	Q1.draw(d3.select("#radioRnd"));
+	
+	submitManager.handleRequestsFrom(Q1);
+
+
+	</script>
+</body>
+</html>

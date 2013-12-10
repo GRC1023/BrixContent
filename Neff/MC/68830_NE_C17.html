@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta content="Template for Multiple Choice Question Brix" name="description">
+
+        <!-- widgets.css contains styling for the interactive brix -->
+        <link href="css/widgets.css" rel="stylesheet">
+    </head>
+    <body>
+        <div id="target1"></div>
+        <script src="js/d3.v3.min.js"></script>
+        <script src="js/brixlib-compiled.js"></script>
+
+        <script>
+
+            // Create an object that will contain the objects needed for the activities
+            // on this page.
+            pearson.brix.activity = {};
+            var a = pearson.brix.activity;
+
+            // The activity config that defines the brix and mortar for this page
+            a.config =
+                    {
+                        "description": "A Sample Activity containing a single multiple choice bric",
+                        "sequenceNodeKey": "b3d5b510-34dd-480f-b8e1-b474522c9b03",
+                        "containerConfig":
+                                [
+                                    {
+                                        "description": "container for the sample multiple choice question",
+                                        "containerId": "target1",
+                                        "brixConfig":
+                                                [
+                                                    {
+                                                        "bricId": "Q1",
+                                                        "bricType": "MultipleChoiceQuestion",
+                                                        "config":
+                                                                {
+                                                                    "id": "sampleQ1",
+                                                                    "order": "randomized",
+                                                                    "presenterType": "RadioGroup",
+                                                                    "presenterConfig": {"numberFormat": ""},
+                                                                    "question": "Which of the following is NOT a concern when deciding whether to increase nuclear power generation on a global scale?",
+                                                                    "choices":
+                                                                            [
+                                                                                {
+                                                                                    "content": "No one has experience with managing the long-term high-level waste from reactors.",
+                                                                                    "answerKey": "answer1"
+                                                                                },
+                                                                                {
+                                                                                    "content": "Nuclear power produces more CO<sub>2</sub> than coal-fired power plants.",
+                                                                                    "answerKey": "answer2"
+                                                                                },
+                                                                                {
+                                                                                    "content": "The unlikely but possible impact of a nuclear reaction is huge.",
+                                                                                    "answerKey": "answer3"
+                                                                                },
+                                                                                {
+                                                                                    "content": "There is a societal aversion in many places to nuclear power based on previous nuclear accidents.",
+                                                                                    "answerKey": "answer4"
+                                                                                }
+                                                                            ]
+                                                                },
+                                                        "configFixup":
+                                                                [
+                                                                    {
+                                                                        "type": "set-property",
+                                                                        "name": "questionId",
+                                                                        "value": {"type": "ref", "domain": "info", "refId": "sequenceNodeKey"}
+                                                                    }
+                                                                ],
+                                                        "answerKey":
+                                                                {
+                                                                    "assessmentType": "multiplechoice",
+                                                                    "answers":
+                                                                            {
+                                                                                "answer1":
+                                                                                        {
+                                                                                            "score": 0,
+                                                                                            "response": "Have any countries come up with safe and feasible ways to store their nuclear waste?"
+                                                                                        },
+                                                                                "answer2":
+                                                                                        {
+                                                                                            "score": 1,
+                                                                                            "response": "Correct. Using nuclear energy produces almost no CO<sub>2</sub>."
+                                                                                        },
+                                                                                "answer3":
+                                                                                        {
+                                                                                            "score": 0,
+                                                                                            "response": "What do you know about the impacts of nuclear plant accidents such as Three Mile Island, Chernobyl, and Fukushima?"
+                                                                                        },
+                                                                                "answer4":
+                                                                                        {
+                                                                                            "score": 0,
+                                                                                            "response": "How did Germany change its stance on using nuclear power after Fukushima?"
+                                                                                        }
+                                                                            }
+                                                                }
+                                                    }
+                                                ],
+                                        "hookupActions":
+                                                [
+                                                    {
+                                                        "description": "Hookup the submit manager to evaluate answers",
+                                                        "type": "method-call",
+                                                        "instance": {"type": "submit-manager"},
+                                                        "methodName": "handleRequestsFrom",
+                                                        "args":
+                                                                [
+                                                                    {"type": "ref", "domain": "brix", "refId": "Q1"},
+                                                                ]
+                                                    },
+                                                    {
+                                                        "description": "Draw the question",
+                                                        "type": "method-call",
+                                                        "instance": {"type": "ref", "domain": "brix", "refId": "Q1"},
+                                                        "methodName": "draw",
+                                                        "args":
+                                                                [
+                                                                    {"type": "d3select", "selector": "#target1"},
+                                                                ]
+                                                    }
+                                                ]
+                                    }
+                                ]
+                    };
+
+            // create the eventmanager to be used by the created brix, and the
+            // bricLayer which will create them, and then tell the bricLayer to build.
+            a.eventManager = new pearson.utils.EventManager();
+            a.answerMan = new pearson.brix.utils.LocalAnswerMan();
+            a.submitManager = new pearson.brix.utils.SubmitManager(a.eventManager, a.answerMan);
+
+            a.bricLayer = new pearson.brix.BricLayer(null, a.eventManager, a.submitManager);
+
+            a.building = a.bricLayer.build(a.config);
+
+            a.answerMan.registerAnswerKey(a.config.sequenceNodeKey,
+                    a.config.containerConfig[0].brixConfig[0].answerKey);
+
+        </script>
+    </body>
+</html>

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head> 
+	<meta charset="UTF-8">
+	<meta content="width=device-width, initial-scale=1.0" name="viewport">
+	<meta content="Neff, Our Changing Planet" name="description">   	
+ 
+  	<!-- widgets.css contains styling for the interactive brix -->
+	<link href="../css/widgets.css" rel="stylesheet">
+
+
+
+</head>
+<body>
+	<div id="radioRnd"></div>
+	<script src="../js/d3.v3.min.js"></script>
+	<script src="../js/brixlib-compiled.js"></script>
+	<script src="../js/Neff12activitydb.js"></script>
+
+	<script>
+
+	var eventManager = new pearson.utils.EventManager();
+
+	var MultipleChoiceQuestion = pearson.brix.MultipleChoiceQuestion;
+	var Button = pearson.brix.Button;
+	var RadioGroup = pearson.brix.RadioGroup;
+	var AnswerMan = pearson.brix.AnswerMan;
+	var SubmitManager = pearson.brix.SubmitManager;
+	
+	pearson.brix.test.extendActivityDb(activitiesNeff);
+
+	var submitManager = new SubmitManager(eventManager, new AnswerMan());
+
+
+	var Q1Choices = [
+		{
+			content: "Because the growth rate increases as the population rises",
+			answerKey: "answer0"
+		},
+		{
+			content: "Because the total fertility rate increases with population",
+			answerKey: "answer1"
+		},
+		{
+			content: "Because as the population increases, the total number of births increases even though the growth rate stays constant",
+			answerKey: "answer2"
+	
+		},
+		{
+			content: "Because social behaviors change and people decide to have more children",
+			answerKey: "answer3"
+		}
+		];
+
+	// Test a select one question using a radio group widget
+	var Q1 = new MultipleChoiceQuestion({
+			id: "Q1",
+			questionId: "NeffMD1001",
+			question: "Why does it take less and less time to add each additional billion people to the planet?",
+			choices: Q1Choices,
+			order: "randomized",
+			widget: RadioGroup,
+			widgetConfig: { numberFormat: "" },
+		}, eventManager);
+	
+	Q1.draw(d3.select("#radioRnd"));
+	
+	submitManager.handleRequestsFrom(Q1);
+
+
+	</script>
+</body>
+</html>

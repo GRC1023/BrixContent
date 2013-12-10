@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head> 
+	<meta charset="UTF-8">
+	<meta content="width=device-width, initial-scale=1.0" name="viewport">
+	<meta content="Neff, Our Changing Planet" name="description">   	
+ 
+  	<!-- widgets.css contains styling for the interactive brix -->
+	<link href="../css/widgets.css" rel="stylesheet">
+
+
+
+</head>
+<body>
+	<div id="radioRnd"></div>
+	<script src="../js/d3.v3.min.js"></script>
+	<script src="../js/brixlib-compiled.js"></script>
+	<script src="../js/neff12activitydb.js"></script>
+
+	<script>
+
+	var eventManager = new pearson.utils.EventManager();
+
+	var MultipleChoiceQuestion = pearson.brix.MultipleChoiceQuestion;
+	var Button = pearson.brix.Button;
+	var RadioGroup = pearson.brix.RadioGroup;
+	var AnswerMan = pearson.brix.AnswerMan;
+	var SubmitManager = pearson.brix.SubmitManager;
+	
+	pearson.brix.test.extendActivityDb(activitiesNeff);
+
+	var submitManager = new SubmitManager(eventManager, new AnswerMan());
+
+
+	var Q1Choices = [
+		{
+			content: "Wealth can be used to buy more goods, and this is generally good for the environment",
+			answerKey: "answer0"
+		},
+		{
+			content: "Wealth can be invested in infrastructure that helps people lead more happy and productive lives",
+			answerKey: "answer1"
+		},
+		{
+			content: "Wealth can be used to invest in technologies that reduce the impact of consumption on the environment",
+			answerKey: "answer2"
+	
+		},
+		{
+			content: "Wealth doesn’t matter much for the environment—it’s really the overall population that is most important",
+			answerKey: "answer3"
+
+		},
+		{
+			content: "There are no examples of how rising affluence can have a positive impact on environmental problems",
+			answerKey: "answer4"
+
+		}
+		];
+
+	// Test a select one question using a radio group widget
+	var Q1 = new MultipleChoiceQuestion({
+			id: "Q1",
+			questionId: "NeffCH12012",
+			question: "A high dependency ratio can create stresses for a society, but those stresses vary depending on the age of population. Using Japan as an example of a population with a large number of older citizens and Kenya as an example of a population with a large number of younger citizens, which of the following statements is not likely to be true?",
+			choices: Q1Choices,
+			order: "randomized",
+			widget: RadioGroup,
+			widgetConfig: { numberFormat: "" },
+		}, eventManager);
+	
+	Q1.draw(d3.select("#radioRnd"));
+	
+	submitManager.handleRequestsFrom(Q1);
+
+
+	</script>
+</body>
+</html>

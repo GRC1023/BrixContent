@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head> 
+	<meta charset="UTF-8">
+	<meta content="width=device-width, initial-scale=1.0" name="viewport">
+	<meta content="Neff, Our Changing Planet" name="description">   	
+ 
+  	<!-- widgets.css contains styling for the interactive brix -->
+	<link href="../css/widgets.css" rel="stylesheet">
+
+
+
+</head>
+<body>
+	<div id="radioRnd"></div>
+	<script src="../js/d3.v3.min.js"></script>
+	<script src="../js/brixlib-compiled.js"></script>
+	<script src="../js/Neff12activitydb.js"></script>
+
+	<script>
+
+	var eventManager = new pearson.utils.EventManager();
+
+	var MultipleChoiceQuestion = pearson.brix.MultipleChoiceQuestion;
+	var Button = pearson.brix.Button;
+	var RadioGroup = pearson.brix.RadioGroup;
+	var AnswerMan = pearson.brix.AnswerMan;
+	var SubmitManager = pearson.brix.SubmitManager;
+	
+	pearson.brix.test.extendActivityDb(activitiesNeff);
+
+	var submitManager = new SubmitManager(eventManager, new AnswerMan());
+
+
+	var Q1Choices = [
+		{
+			content: "new deep ocean oil extraction; wind energy capture technologies",
+			answerKey: "answer0"
+		},
+		{
+			content: "faster cars; bigger airplanes",
+			answerKey: "answer1"
+		},
+		{
+			content: "air pollution-control equipment; more powerful car engines",
+			response: "Does the fertility rate change with population size?",
+			answerKey: "answer2"
+	
+		},
+		{
+			content: "solar energy collectors; air pollution-control equipment",
+			answerKey: "answer3"
+		},
+		{
+			content: "faster jet airplanes; bigger cars",
+			answerKey: "answer4"
+		}
+		];
+
+	// Test a select one question using a radio group widget
+	var Q1 = new MultipleChoiceQuestion({
+			id: "Q1",
+			questionId: "NeffCH12014",
+			question: "The role of technology in reducing or increasing the impacts of population is complicated. For example, _________________ is an example of a technology that could benefit the environment, whereas ______________ is an example of a technology that negatively impacts the environment.",
+			choices: Q1Choices,
+			order: "randomized",
+			widget: RadioGroup,
+			widgetConfig: { numberFormat: "" },
+		}, eventManager);
+	
+	Q1.draw(d3.select("#radioRnd"));
+	
+	submitManager.handleRequestsFrom(Q1);
+
+
+	</script>
+</body>
+</html>

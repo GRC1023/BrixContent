@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta content="Template for Multiple Choice Question Brix" name="description">
+
+        <!-- widgets.css contains styling for the interactive brix -->
+        <link href="css/widgets.css" rel="stylesheet">
+    </head>
+    <body>
+        <div id="target1"></div>
+        <script src="js/d3.v3.min.js"></script>
+        <script src="js/brixlib-compiled.js"></script>
+
+        <script>
+
+            // Create an object that will contain the objects needed for the activities
+            // on this page.
+            pearson.brix.activity = {};
+            var a = pearson.brix.activity;
+
+            // The activity config that defines the brix and mortar for this page
+            a.config =
+                    {
+                        "description": "A Sample Activity containing a single multiple choice bric",
+                        "sequenceNodeKey": "b3d5b510-34dd-480f-b8e1-b474522c9b03",
+                        "containerConfig":
+                                [
+                                    {
+                                        "description": "container for the sample multiple choice question",
+                                        "containerId": "target1",
+                                        "brixConfig":
+                                                [
+                                                    {
+                                                        "bricId": "Q1",
+                                                        "bricType": "MultipleChoiceQuestion",
+                                                        "config":
+                                                                {
+                                                                    "id": "sampleQ1",
+                                                                    "order": "randomized",
+                                                                    "presenterType": "RadioGroup",
+                                                                    "presenterConfig": {"numberFormat": ""},
+                                                                    "question": "Tar sands are currently an economically viable and widely used unconventional fuel source. What non-renewable fuel source do tar sands replace? Why?",
+                                                                    "choices":
+                                                                            [
+                                                                                {
+                                                                                    "content": "Oil; The sands are heated, and crude oil separates from the sand.",
+                                                                                    "answerKey": "answer1"
+                                                                                },
+                                                                                {
+                                                                                    "content": "Natural gas; The sands are broken apart in a controlled setting, and natural gas is released from within them.",
+                                                                                    "answerKey": "answer2"
+                                                                                },
+                                                                                {
+                                                                                    "content": "Coal; The sands are mined in chunks and can then be used to create electricity in existing coal-fired power plants.",
+                                                                                    "answerKey": "answer3"
+                                                                                },
+                                                                                {
+                                                                                    "content": "Nuclear; The tar sands are radioactive much like uranium and can be mined for use in existing nuclear power plants.",
+                                                                                    "answerKey": "answer4"
+                                                                                }
+                                                                            ]
+                                                                },
+                                                        "configFixup":
+                                                                [
+                                                                    {
+                                                                        "type": "set-property",
+                                                                        "name": "questionId",
+                                                                        "value": {"type": "ref", "domain": "info", "refId": "sequenceNodeKey"}
+                                                                    }
+                                                                ],
+                                                        "answerKey":
+                                                                {
+                                                                    "assessmentType": "multiplechoice",
+                                                                    "answers":
+                                                                            {
+                                                                                "answer1":
+                                                                                        {
+                                                                                            "score": 1,
+                                                                                            "response": "Correct."
+                                                                                        },
+                                                                                "answer2":
+                                                                                        {
+                                                                                            "score": 0,
+                                                                                            "response": "Is gas likely to stay trapped inside of sand?"
+                                                                                        },
+                                                                                "answer3":
+                                                                                        {
+                                                                                            "score": 0,
+                                                                                            "response": "Why would we replace coal with an unconventional source when we still have relatively easy and cheap access to so much of it?"
+                                                                                        },
+                                                                                "answer4":
+                                                                                        {
+                                                                                            "score": 0,
+                                                                                            "response": "Compared to other available energy sources, is nuclear widely used?"
+                                                                                        }
+                                                                            }
+                                                                }
+                                                    }
+                                                ],
+                                        "hookupActions":
+                                                [
+                                                    {
+                                                        "description": "Hookup the submit manager to evaluate answers",
+                                                        "type": "method-call",
+                                                        "instance": {"type": "submit-manager"},
+                                                        "methodName": "handleRequestsFrom",
+                                                        "args":
+                                                                [
+                                                                    {"type": "ref", "domain": "brix", "refId": "Q1"},
+                                                                ]
+                                                    },
+                                                    {
+                                                        "description": "Draw the question",
+                                                        "type": "method-call",
+                                                        "instance": {"type": "ref", "domain": "brix", "refId": "Q1"},
+                                                        "methodName": "draw",
+                                                        "args":
+                                                                [
+                                                                    {"type": "d3select", "selector": "#target1"},
+                                                                ]
+                                                    }
+                                                ]
+                                    }
+                                ]
+                    };
+
+            // create the eventmanager to be used by the created brix, and the
+            // bricLayer which will create them, and then tell the bricLayer to build.
+            a.eventManager = new pearson.utils.EventManager();
+            a.answerMan = new pearson.brix.utils.LocalAnswerMan();
+            a.submitManager = new pearson.brix.utils.SubmitManager(a.eventManager, a.answerMan);
+
+            a.bricLayer = new pearson.brix.BricLayer(null, a.eventManager, a.submitManager);
+
+            a.building = a.bricLayer.build(a.config);
+
+            a.answerMan.registerAnswerKey(a.config.sequenceNodeKey,
+                    a.config.containerConfig[0].brixConfig[0].answerKey);
+
+        </script>
+    </body>
+</html>
