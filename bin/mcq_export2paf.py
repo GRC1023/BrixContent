@@ -228,15 +228,16 @@ class MCQSpreadsheetInfoRow(object):
         self.module = row[1]
         self.quizName = row[2]
         self.fileName = row[3]
-        self.comments = row[4]
+        self.status = row[4]
+        self.comments = row[5]
+        self.subject =  row[6]
         self.pafContentType = 'Brix'
-        self.assetName = row[6]
-        self.pafAssignmentGuid = row[7] if not row[7] else uuid.UUID(row[7])
-        self.pafActivityGuid = row[8] if not row[8] else uuid.UUID(row[8])
-        self.containerId = row[9]
+        self.assetName = row[8]
+        self.pafAssignmentGuid = row[9] if not row[9] else uuid.UUID(row[9])
+        self.pafActivityGuid = row[10] if not row[10] else uuid.UUID(row[10])
+        self.containerId = row[11]
 
         # this needs to come from the csv, but isn't there yet
-        self.subject = "Psychology"
 
     def __str__(self):
         """Friendly string representation of the MCQSpreadsheetInfoRow"""
