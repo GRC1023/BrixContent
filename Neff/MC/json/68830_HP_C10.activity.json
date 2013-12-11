@@ -1,0 +1,142 @@
+{
+  "body": {
+    "containerConfig": [
+      {
+        "brixConfig": [
+          {
+            "config": {
+              "presenterType": "RadioGroup", 
+              "question": "How will population growth rates most likely change over the next 100 years (according to projections from the United Nations)?", 
+              "presenterConfig": {
+                "numberFormat": ""
+              }, 
+              "choices": [
+                {
+                  "content": "Growth rates will increase quickly because of the large global population.", 
+                  "answerKey": "answer1"
+                }, 
+                {
+                  "content": "Growth rates will increase slowly because of the demographic transition.", 
+                  "answerKey": "answer2"
+                }, 
+                {
+                  "content": "Growth rates will decrease slowly because of the demographic transition.", 
+                  "answerKey": "answer3"
+                }, 
+                {
+                  "content": "Growth rates will decrease slowly because of limited access to oil supplies.", 
+                  "answerKey": "answer4"
+                }, 
+                {
+                  "content": "Growth rates will remain the same.", 
+                  "answerKey": "answer5"
+                }
+              ], 
+              "order": "randomized", 
+              "id": "sampleQ1"
+            }, 
+            "answerKey": {
+              "assessmentType": "multiplechoice", 
+              "answers": {
+                "answer5": {
+                  "score": 0, 
+                  "response": "As more countries move through the demographic transition, is it likely that their growth rates will stay constant?"
+                }, 
+                "answer4": {
+                  "score": 0, 
+                  "response": "Does access to oil drive growth rates? Think of the countries that currently have the highest growth rates and their relative access to oil."
+                }, 
+                "answer1": {
+                  "score": 0, 
+                  "response": "How have growth rates changed over the past 50 years, despite a growing total population?"
+                }, 
+                "answer3": {
+                  "score": 1, 
+                  "response": "Correct."
+                }, 
+                "answer2": {
+                  "score": 0, 
+                  "response": "As countries move through the demographic transition, do their growth rates typically increase or decrease?"
+                }
+              }
+            }, 
+            "bricType": "MultipleChoiceQuestion", 
+            "bricId": "Q1", 
+            "configFixup": [
+              {
+                "type": "set-property", 
+                "name": "questionId", 
+                "value": {
+                  "domain": "info", 
+                  "type": "ref", 
+                  "refId": "sequenceNodeKey"
+                }
+              }
+            ]
+          }
+        ], 
+        "description": "container for the sample multiple choice question", 
+        "hookupActions": [
+          {
+            "instance": {
+              "type": "submit-manager"
+            }, 
+            "args": [
+              {
+                "domain": "brix", 
+                "type": "ref", 
+                "refId": "Q1"
+              }
+            ], 
+            "type": "method-call", 
+            "description": "Hookup the submit manager to evaluate answers", 
+            "methodName": "handleRequestsFrom"
+          }, 
+          {
+            "instance": {
+              "domain": "brix", 
+              "type": "ref", 
+              "refId": "Q1"
+            }, 
+            "args": [
+              {
+                "type": "d3select", 
+                "selector": "#target1"
+              }
+            ], 
+            "type": "method-call", 
+            "description": "Draw the question", 
+            "methodName": "draw"
+          }
+        ], 
+        "containerId": "target1"
+      }
+    ], 
+    "description": "A Sample Activity containing a single multiple choice bric"
+  }, 
+  "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope", 
+  "@type": "Envelope", 
+  "metadata": {
+    "intendedEndUserRole": [
+      "Student"
+    ], 
+    "description": "68830_HP_C10.html", 
+    "format": [
+      "application/vnd.pearson.sanvan.v1.activity"
+    ], 
+    "educationalAlignment": [
+      "http://purl.org/pearson/objectives/183725473384362"
+    ], 
+    "guid": "07a0710e-5149-4b4d-adc1-e0573b7a8426", 
+    "subject": [
+      "EnvironmentalScience"
+    ], 
+    "timeRequired": "PT20S", 
+    "created": "2013-12-11T14:24:43.641914", 
+    "title": "68830_HP_C10.html", 
+    "contentTypeTier1": "Test and Assessment", 
+    "contentTypeTier2": [
+      "assessment item"
+    ]
+  }
+}

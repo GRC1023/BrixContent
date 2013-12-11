@@ -1,0 +1,142 @@
+{
+  "body": {
+    "containerConfig": [
+      {
+        "brixConfig": [
+          {
+            "config": {
+              "presenterType": "RadioGroup", 
+              "question": "If you were put in charge of reducing U.S. dependence on foreign fossil fuels, which of the following innovations would most quickly achieve this goal?", 
+              "presenterConfig": {
+                "numberFormat": ""
+              }, 
+              "choices": [
+                {
+                  "content": "Furthering the development of clean coal", 
+                  "answerKey": "answer1"
+                }, 
+                {
+                  "content": "Creating incentives for solar panels on houses", 
+                  "answerKey": "answer2"
+                }, 
+                {
+                  "content": "Developing much more efficient cars", 
+                  "answerKey": "answer3"
+                }, 
+                {
+                  "content": "Making economically viable wind farms", 
+                  "answerKey": "answer4"
+                }, 
+                {
+                  "content": "Investing heavily in nuclear power plants", 
+                  "answerKey": "answer5"
+                }
+              ], 
+              "order": "randomized", 
+              "id": "sampleQ1"
+            }, 
+            "answerKey": {
+              "assessmentType": "multiplechoice", 
+              "answers": {
+                "answer5": {
+                  "score": 0, 
+                  "response": "What fuel source is most easily replaced by nuclear energy? Is this a fuel source we import from other countries?"
+                }, 
+                "answer4": {
+                  "score": 0, 
+                  "response": "What fuel source is most easily replaced by renewable energy? Is this a fuel source we import from other countries?"
+                }, 
+                "answer1": {
+                  "score": 0, 
+                  "response": "Does the United States import coal from foreign countries?"
+                }, 
+                "answer3": {
+                  "score": 1, 
+                  "response": "Correct."
+                }, 
+                "answer2": {
+                  "score": 0, 
+                  "response": "What fuel source is most easily replaced by renewable energy? Is this a fuel source we import from other countries?"
+                }
+              }
+            }, 
+            "bricType": "MultipleChoiceQuestion", 
+            "bricId": "Q1", 
+            "configFixup": [
+              {
+                "type": "set-property", 
+                "name": "questionId", 
+                "value": {
+                  "domain": "info", 
+                  "type": "ref", 
+                  "refId": "sequenceNodeKey"
+                }
+              }
+            ]
+          }
+        ], 
+        "description": "container for the sample multiple choice question", 
+        "hookupActions": [
+          {
+            "instance": {
+              "type": "submit-manager"
+            }, 
+            "args": [
+              {
+                "domain": "brix", 
+                "type": "ref", 
+                "refId": "Q1"
+              }
+            ], 
+            "type": "method-call", 
+            "description": "Hookup the submit manager to evaluate answers", 
+            "methodName": "handleRequestsFrom"
+          }, 
+          {
+            "instance": {
+              "domain": "brix", 
+              "type": "ref", 
+              "refId": "Q1"
+            }, 
+            "args": [
+              {
+                "type": "d3select", 
+                "selector": "#target1"
+              }
+            ], 
+            "type": "method-call", 
+            "description": "Draw the question", 
+            "methodName": "draw"
+          }
+        ], 
+        "containerId": "target1"
+      }
+    ], 
+    "description": "A Sample Activity containing a single multiple choice bric"
+  }, 
+  "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope", 
+  "@type": "Envelope", 
+  "metadata": {
+    "intendedEndUserRole": [
+      "Student"
+    ], 
+    "description": "68830_EU_C06.html", 
+    "format": [
+      "application/vnd.pearson.sanvan.v1.activity"
+    ], 
+    "educationalAlignment": [
+      "http://purl.org/pearson/objectives/183725473384362"
+    ], 
+    "guid": "1637997e-f930-4600-b489-7934bb309cfd", 
+    "subject": [
+      "EnvironmentalScience"
+    ], 
+    "timeRequired": "PT20S", 
+    "created": "2013-12-11T14:24:43.644613", 
+    "title": "68830_EU_C06.html", 
+    "contentTypeTier1": "Test and Assessment", 
+    "contentTypeTier2": [
+      "assessment item"
+    ]
+  }
+}

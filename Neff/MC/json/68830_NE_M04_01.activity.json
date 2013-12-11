@@ -1,0 +1,134 @@
+{
+  "body": {
+    "containerConfig": [
+      {
+        "brixConfig": [
+          {
+            "config": {
+              "presenterType": "RadioGroup", 
+              "question": "In what setting would dewatering be used to obtain natural gas and why?", 
+              "presenterConfig": {
+                "numberFormat": ""
+              }, 
+              "choices": [
+                {
+                  "content": "In shale and sand layers to remove the water so the gas can flow to the drilling machinery.", 
+                  "answerKey": "answer1"
+                }, 
+                {
+                  "content": "In coalbed deposits to remove the water from pores so the gas can then move toward the gas well.", 
+                  "answerKey": "answer2"
+                }, 
+                {
+                  "content": "In deep sea environments where water prevents the extraction of natural gas.", 
+                  "answerKey": "answer3"
+                }, 
+                {
+                  "content": "In dry areas where water is found only in underground settings as a cap that prevents the movement of natural gas to the surface.", 
+                  "answerKey": "answer4"
+                }
+              ], 
+              "order": "randomized", 
+              "id": "sampleQ1"
+            }, 
+            "answerKey": {
+              "assessmentType": "multiplechoice", 
+              "answers": {
+                "answer4": {
+                  "score": 0, 
+                  "response": ""
+                }, 
+                "answer1": {
+                  "score": 0, 
+                  "response": ""
+                }, 
+                "answer3": {
+                  "score": 0, 
+                  "response": ""
+                }, 
+                "answer2": {
+                  "score": 1, 
+                  "response": ""
+                }
+              }
+            }, 
+            "bricType": "MultipleChoiceQuestion", 
+            "bricId": "Q1", 
+            "configFixup": [
+              {
+                "type": "set-property", 
+                "name": "questionId", 
+                "value": {
+                  "domain": "info", 
+                  "type": "ref", 
+                  "refId": "sequenceNodeKey"
+                }
+              }
+            ]
+          }
+        ], 
+        "description": "container for the sample multiple choice question", 
+        "hookupActions": [
+          {
+            "instance": {
+              "type": "submit-manager"
+            }, 
+            "args": [
+              {
+                "domain": "brix", 
+                "type": "ref", 
+                "refId": "Q1"
+              }
+            ], 
+            "type": "method-call", 
+            "description": "Hookup the submit manager to evaluate answers", 
+            "methodName": "handleRequestsFrom"
+          }, 
+          {
+            "instance": {
+              "domain": "brix", 
+              "type": "ref", 
+              "refId": "Q1"
+            }, 
+            "args": [
+              {
+                "type": "d3select", 
+                "selector": "#target1"
+              }
+            ], 
+            "type": "method-call", 
+            "description": "Draw the question", 
+            "methodName": "draw"
+          }
+        ], 
+        "containerId": "target1"
+      }
+    ], 
+    "description": "A Sample Activity containing a single multiple choice bric"
+  }, 
+  "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope", 
+  "@type": "Envelope", 
+  "metadata": {
+    "intendedEndUserRole": [
+      "Student"
+    ], 
+    "description": "68830_NE_M04_01.html", 
+    "format": [
+      "application/vnd.pearson.sanvan.v1.activity"
+    ], 
+    "educationalAlignment": [
+      "http://purl.org/pearson/objectives/183725473384362"
+    ], 
+    "guid": "3cc0e8fe-a37e-4f47-bf3d-5ac19a2f92df", 
+    "subject": [
+      "EnvironmentalScience"
+    ], 
+    "timeRequired": "PT20S", 
+    "created": "2013-12-11T14:24:43.645245", 
+    "title": "68830_NE_M04_01.html", 
+    "contentTypeTier1": "Test and Assessment", 
+    "contentTypeTier2": [
+      "assessment item"
+    ]
+  }
+}

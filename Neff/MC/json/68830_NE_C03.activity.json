@@ -1,0 +1,134 @@
+{
+  "body": {
+    "containerConfig": [
+      {
+        "brixConfig": [
+          {
+            "config": {
+              "presenterType": "RadioGroup", 
+              "question": "Tar sands are currently an economically viable and widely used unconventional fuel source. What non-renewable fuel source do tar sands replace? Why?", 
+              "presenterConfig": {
+                "numberFormat": ""
+              }, 
+              "choices": [
+                {
+                  "content": "Oil; The sands are heated, and crude oil separates from the sand.", 
+                  "answerKey": "answer1"
+                }, 
+                {
+                  "content": "Natural gas; The sands are broken apart in a controlled setting, and natural gas is released from within them.", 
+                  "answerKey": "answer2"
+                }, 
+                {
+                  "content": "Coal; The sands are mined in chunks and can then be used to create electricity in existing coal-fired power plants.", 
+                  "answerKey": "answer3"
+                }, 
+                {
+                  "content": "Nuclear; The tar sands are radioactive much like uranium and can be mined for use in existing nuclear power plants.", 
+                  "answerKey": "answer4"
+                }
+              ], 
+              "order": "randomized", 
+              "id": "sampleQ1"
+            }, 
+            "answerKey": {
+              "assessmentType": "multiplechoice", 
+              "answers": {
+                "answer4": {
+                  "score": 0, 
+                  "response": "Compared to other available energy sources, is nuclear widely used?"
+                }, 
+                "answer1": {
+                  "score": 1, 
+                  "response": "Correct."
+                }, 
+                "answer3": {
+                  "score": 0, 
+                  "response": "Why would we replace coal with an unconventional source when we still have relatively easy and cheap access to so much of it?"
+                }, 
+                "answer2": {
+                  "score": 0, 
+                  "response": "Is gas likely to stay trapped inside of sand?"
+                }
+              }
+            }, 
+            "bricType": "MultipleChoiceQuestion", 
+            "bricId": "Q1", 
+            "configFixup": [
+              {
+                "type": "set-property", 
+                "name": "questionId", 
+                "value": {
+                  "domain": "info", 
+                  "type": "ref", 
+                  "refId": "sequenceNodeKey"
+                }
+              }
+            ]
+          }
+        ], 
+        "description": "container for the sample multiple choice question", 
+        "hookupActions": [
+          {
+            "instance": {
+              "type": "submit-manager"
+            }, 
+            "args": [
+              {
+                "domain": "brix", 
+                "type": "ref", 
+                "refId": "Q1"
+              }
+            ], 
+            "type": "method-call", 
+            "description": "Hookup the submit manager to evaluate answers", 
+            "methodName": "handleRequestsFrom"
+          }, 
+          {
+            "instance": {
+              "domain": "brix", 
+              "type": "ref", 
+              "refId": "Q1"
+            }, 
+            "args": [
+              {
+                "type": "d3select", 
+                "selector": "#target1"
+              }
+            ], 
+            "type": "method-call", 
+            "description": "Draw the question", 
+            "methodName": "draw"
+          }
+        ], 
+        "containerId": "target1"
+      }
+    ], 
+    "description": "A Sample Activity containing a single multiple choice bric"
+  }, 
+  "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope", 
+  "@type": "Envelope", 
+  "metadata": {
+    "intendedEndUserRole": [
+      "Student"
+    ], 
+    "description": "68830_NE_C03.html", 
+    "format": [
+      "application/vnd.pearson.sanvan.v1.activity"
+    ], 
+    "educationalAlignment": [
+      "http://purl.org/pearson/objectives/183725473384362"
+    ], 
+    "guid": "81a5da8b-f5f8-4128-9965-ce1d74f0bcb9", 
+    "subject": [
+      "EnvironmentalScience"
+    ], 
+    "timeRequired": "PT20S", 
+    "created": "2013-12-11T14:24:43.645562", 
+    "title": "68830_NE_C03.html", 
+    "contentTypeTier1": "Test and Assessment", 
+    "contentTypeTier2": [
+      "assessment item"
+    ]
+  }
+}

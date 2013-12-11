@@ -1,0 +1,134 @@
+{
+  "body": {
+    "containerConfig": [
+      {
+        "brixConfig": [
+          {
+            "config": {
+              "presenterType": "RadioGroup", 
+              "question": "Why are hybrid cars more fuel-efficient than traditional cars?", 
+              "presenterConfig": {
+                "numberFormat": ""
+              }, 
+              "choices": [
+                {
+                  "content": "A hybrid car does not have an internal combustion engine.", 
+                  "answerKey": "answer1"
+                }, 
+                {
+                  "content": "A hybrid car must meet different air pollution standards, thereby making them seem more efficient.", 
+                  "answerKey": "answer2"
+                }, 
+                {
+                  "content": "A hybrid uses the internal combustion engine less than traditional cars by using the energy from the electric motor to push the car forward.", 
+                  "answerKey": "answer3"
+                }, 
+                {
+                  "content": "A hybrid car is a product of foreign car manufacturers, who value fuel efficiency more than American car manufacturers.", 
+                  "answerKey": "answer4"
+                }
+              ], 
+              "order": "randomized", 
+              "id": "sampleQ1"
+            }, 
+            "answerKey": {
+              "assessmentType": "multiplechoice", 
+              "answers": {
+                "answer4": {
+                  "score": 0, 
+                  "response": ""
+                }, 
+                "answer1": {
+                  "score": 0, 
+                  "response": ""
+                }, 
+                "answer3": {
+                  "score": 1, 
+                  "response": ""
+                }, 
+                "answer2": {
+                  "score": 0, 
+                  "response": ""
+                }
+              }
+            }, 
+            "bricType": "MultipleChoiceQuestion", 
+            "bricId": "Q1", 
+            "configFixup": [
+              {
+                "type": "set-property", 
+                "name": "questionId", 
+                "value": {
+                  "domain": "info", 
+                  "type": "ref", 
+                  "refId": "sequenceNodeKey"
+                }
+              }
+            ]
+          }
+        ], 
+        "description": "container for the sample multiple choice question", 
+        "hookupActions": [
+          {
+            "instance": {
+              "type": "submit-manager"
+            }, 
+            "args": [
+              {
+                "domain": "brix", 
+                "type": "ref", 
+                "refId": "Q1"
+              }
+            ], 
+            "type": "method-call", 
+            "description": "Hookup the submit manager to evaluate answers", 
+            "methodName": "handleRequestsFrom"
+          }, 
+          {
+            "instance": {
+              "domain": "brix", 
+              "type": "ref", 
+              "refId": "Q1"
+            }, 
+            "args": [
+              {
+                "type": "d3select", 
+                "selector": "#target1"
+              }
+            ], 
+            "type": "method-call", 
+            "description": "Draw the question", 
+            "methodName": "draw"
+          }
+        ], 
+        "containerId": "target1"
+      }
+    ], 
+    "description": "A Sample Activity containing a single multiple choice bric"
+  }, 
+  "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope", 
+  "@type": "Envelope", 
+  "metadata": {
+    "intendedEndUserRole": [
+      "Student"
+    ], 
+    "description": "68830_EU_M06_06.html", 
+    "format": [
+      "application/vnd.pearson.sanvan.v1.activity"
+    ], 
+    "educationalAlignment": [
+      "http://purl.org/pearson/objectives/183725473384362"
+    ], 
+    "guid": "b9c5bcb0-8529-4b3d-b083-535d771641ca", 
+    "subject": [
+      "EnvironmentalScience"
+    ], 
+    "timeRequired": "PT20S", 
+    "created": "2013-12-11T14:24:43.642925", 
+    "title": "68830_EU_M06_06.html", 
+    "contentTypeTier1": "Test and Assessment", 
+    "contentTypeTier2": [
+      "assessment item"
+    ]
+  }
+}

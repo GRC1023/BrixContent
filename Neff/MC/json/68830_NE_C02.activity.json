@@ -1,0 +1,134 @@
+{
+  "body": {
+    "containerConfig": [
+      {
+        "brixConfig": [
+          {
+            "config": {
+              "presenterType": "RadioGroup", 
+              "question": "Assuming that there are abundant quantities of fossil fuels in the ground, when the prices of these fuels rise, do reserve estimates increase, decrease, or stay the same? Why?", 
+              "presenterConfig": {
+                "numberFormat": ""
+              }, 
+              "choices": [
+                {
+                  "content": "Reserve estimates decrease because of the principles of supply and demand:  The price of something usually rises as its supply dwindles.", 
+                  "answerKey": "answer1"
+                }, 
+                {
+                  "content": "Reserve estimates increase because when we pay more for fossil fuels, we are able to extract from reserves that were simply too expensive to access before.", 
+                  "answerKey": "answer2"
+                }, 
+                {
+                  "content": "Reserve estimates stay the same because companies control the prices of fossil fuels for other reasons besides geologic availability.", 
+                  "answerKey": "answer3"
+                }, 
+                {
+                  "content": "Reserve estimates stay the same because we have not found any new fossil fuel reserves in a very long time.", 
+                  "answerKey": "answer4"
+                }
+              ], 
+              "order": "randomized", 
+              "id": "sampleQ1"
+            }, 
+            "answerKey": {
+              "assessmentType": "multiplechoice", 
+              "answers": {
+                "answer4": {
+                  "score": 0, 
+                  "response": "Which fossil fuel has recently boomed in the United States due to the discovery of new reserves?"
+                }, 
+                "answer1": {
+                  "score": 0, 
+                  "response": "Is it likely that the market would allow for one fuel to become so expensive without encouraging the development of new reserves or different sources at more competitive prices?"
+                }, 
+                "answer3": {
+                  "score": 0, 
+                  "response": "While these companies may hold a lot of power, would the market or the government typically allow for unregulated price increases on fuels?"
+                }, 
+                "answer2": {
+                  "score": 1, 
+                  "response": "Correct."
+                }
+              }
+            }, 
+            "bricType": "MultipleChoiceQuestion", 
+            "bricId": "Q1", 
+            "configFixup": [
+              {
+                "type": "set-property", 
+                "name": "questionId", 
+                "value": {
+                  "domain": "info", 
+                  "type": "ref", 
+                  "refId": "sequenceNodeKey"
+                }
+              }
+            ]
+          }
+        ], 
+        "description": "container for the sample multiple choice question", 
+        "hookupActions": [
+          {
+            "instance": {
+              "type": "submit-manager"
+            }, 
+            "args": [
+              {
+                "domain": "brix", 
+                "type": "ref", 
+                "refId": "Q1"
+              }
+            ], 
+            "type": "method-call", 
+            "description": "Hookup the submit manager to evaluate answers", 
+            "methodName": "handleRequestsFrom"
+          }, 
+          {
+            "instance": {
+              "domain": "brix", 
+              "type": "ref", 
+              "refId": "Q1"
+            }, 
+            "args": [
+              {
+                "type": "d3select", 
+                "selector": "#target1"
+              }
+            ], 
+            "type": "method-call", 
+            "description": "Draw the question", 
+            "methodName": "draw"
+          }
+        ], 
+        "containerId": "target1"
+      }
+    ], 
+    "description": "A Sample Activity containing a single multiple choice bric"
+  }, 
+  "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope", 
+  "@type": "Envelope", 
+  "metadata": {
+    "intendedEndUserRole": [
+      "Student"
+    ], 
+    "description": "68830_NE_C02.html", 
+    "format": [
+      "application/vnd.pearson.sanvan.v1.activity"
+    ], 
+    "educationalAlignment": [
+      "http://purl.org/pearson/objectives/183725473384362"
+    ], 
+    "guid": "e62c9a2b-cf68-4648-b3f0-dcfffdf223f8", 
+    "subject": [
+      "EnvironmentalScience"
+    ], 
+    "timeRequired": "PT20S", 
+    "created": "2013-12-11T14:24:43.645530", 
+    "title": "68830_NE_C02.html", 
+    "contentTypeTier1": "Test and Assessment", 
+    "contentTypeTier2": [
+      "assessment item"
+    ]
+  }
+}
