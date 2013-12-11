@@ -1,72 +1,144 @@
 <!DOCTYPE html>
 <html>
-<head> 
-	<meta charset="UTF-8">
-	<meta content="width=device-width, initial-scale=1.0" name="viewport">
-	<meta content="Neff, Our Changing Planet" name="description">   	
- 
-  	<!-- widgets.css contains styling for the interactive brix -->
-	<link href="../css/widgets.css" rel="stylesheet">
-
-
-
+<head>
+    <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="Template for Multiple Choice Question Brix" name="description">
+    
+    <!-- widgets.css contains styling for the interactive brix -->
+    <link href="css/widgets.css" rel="stylesheet">
 </head>
 <body>
-	<div id="radioRnd"></div>
-	<script src="../js/d3.v3.min.js"></script>
-	<script src="../js/brixlib-compiled.js"></script>
-	<script src="../js/Neff12activitydb.js"></script>
+    <div id="target1"></div>
+    <script src="js/d3.v3.min.js"></script>
+    <script src="js/brixlib-compiled.js"></script>
 
-	<script>
+    <script>
 
-	var eventManager = new pearson.utils.EventManager();
+	// Create an object that will contain the objects needed for the activities
+	// on this page.
+	pearson.brix.activity = {};
+	var a = pearson.brix.activity;
 
-	var MultipleChoiceQuestion = pearson.brix.MultipleChoiceQuestion;
-	var Button = pearson.brix.Button;
-	var RadioGroup = pearson.brix.RadioGroup;
-	var AnswerMan = pearson.brix.AnswerMan;
-	var SubmitManager = pearson.brix.SubmitManager;
-	
-	pearson.brix.test.extendActivityDb(activitiesNeff);
-
-	var submitManager = new SubmitManager(eventManager, new AnswerMan());
-
-
-	var Q1Choices = [
+	// The activity config that defines the brix and mortar for this page
+	a.config =
 		{
-			content: "Because birth control was outlawed",
-			answerKey: "answer0"
-		},
-		{
-			content: "Because there was a large increase in the fertility rate at the start of the industrial revolution as people became more well off and therefore had more children",
-			answerKey: "answer1"
-		},
-		{
-			content: "Because improved sanitation and medicine associated with the technological advances of the industrial revolution increased human life expectancy",
-			answerKey: "answer2"
-		},
-		{
-			content: "Because fertilizers were invented and there was finally enough food to support the world population",
-			answerKey: "answer3"
-		}
-		];
+			"description": "A Sample Activity containing a single multiple choice bric",
+			"sequenceNodeKey": "b3d5b510-34dd-480f-b8e1-b474522c9b03",
+			"containerConfig":
+				[
+					{
+						"description": "container for the sample multiple choice question",
+						"containerId": "target1",
+						"brixConfig":
+							[
+								{
+									"bricId": "Q1",
+									"bricType": "MultipleChoiceQuestion",
+									"config":
+										{
+											"id": "sampleQ1",
+											"order": "randomized",
+											"presenterType": "RadioGroup",
+											"presenterConfig": { "numberFormat": "" },
+											"question": "Why did the global population start to grow so quickly in the 1700s?",
+											"choices":
+												[
+													{
+														"content": "Because birth control was outlawed",
+														"answerKey": "answer1"
+													},
+													{
+														"content": "Because there was a large increase in the fertility rate at the start of the industrial revolution as people became more well off and therefore had more children",
+														"answerKey": "answer2"
+													},
+													{
+														"content": "Because improved sanitation and medicine associated with the technological advances of the industrial revolution increased human life expectancy",
+														"answerKey": "answer3"
+													},
+													{
+														"content": "Because fertilizers were invented and there was finally enough food to support the world population",
+														"answerKey": "answer4"
+													}
+												]
+										},
+									"configFixup":
+                                        [
+                                            {
+                                                "type": "set-property",
+                                                "name": "questionId",
+                                                "value": { "type": "ref", "domain": "info", "refId": "sequenceNodeKey" }
+                                            }
+                                        ],
+									"answerKey":
+										{
+											"assessmentType": "multiplechoice",
+											"answers":
+												{
+													"answer1":
+														{
+															"score": 0,
+															"response": ""
+														},
+													"answer2":
+														{
+															"score": 0,
+															"response": ""
+														},
+													"answer3":
+														{
+															"score": 1,
+															"response": ""
+														},
+													"answer4":
+														{
+															"score": 0,
+															"response": ""
+														}
+												}
+										}
+								}
+							],
+						"hookupActions":
+							[
+								{
+									"description": "Hookup the submit manager to evaluate answers",
+									"type": "method-call",
+									"instance": { "type": "submit-manager" },
+									"methodName": "handleRequestsFrom",
+									"args":
+										[
+											{ "type": "ref", "domain": "brix", "refId": "Q1" },
+										]
+								},
+								{
+									"description": "Draw the question",
+									"type": "method-call",
+									"instance": {"type": "ref", "domain": "brix", "refId": "Q1"},
+									"methodName": "draw",
+									"args":
+										[
+											{ "type": "d3select", "selector": "#target1" },
+										]
+								}
+							]
+					}
+				]
+		};
 
-	// Test a select one question using a radio group widget
-	var Q1 = new MultipleChoiceQuestion({
-			id: "Q1",
-			questionId: "NeffMD1003",
-			question: "Why did the global population start to grow so quickly in the 1700s?",
-			choices: Q1Choices,
-			order: "randomized",
-			widget: RadioGroup,
-			widgetConfig: { numberFormat: "" },
-		}, eventManager);
-	
-	Q1.draw(d3.select("#radioRnd"));
-	
-	submitManager.handleRequestsFrom(Q1);
+	// create the eventmanager to be used by the created brix, and the
+	// bricLayer which will create them, and then tell the bricLayer to build.
+	a.eventManager = new pearson.utils.EventManager();
+	a.answerMan = new pearson.brix.utils.LocalAnswerMan();
+	a.submitManager = new pearson.brix.utils.SubmitManager(a.eventManager, a.answerMan);
 
+	a.bricLayer = new pearson.brix.BricLayer(null, a.eventManager, a.submitManager);
 
-	</script>
+	a.building = a.bricLayer.build(a.config);
+
+	a.answerMan.registerAnswerKey(a.config.sequenceNodeKey,
+								  a.config.containerConfig[0].brixConfig[0].answerKey);
+
+    </script>
 </body>
 </html>

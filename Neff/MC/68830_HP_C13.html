@@ -1,76 +1,155 @@
 <!DOCTYPE html>
 <html>
-<head> 
-	<meta charset="UTF-8">
-	<meta content="width=device-width, initial-scale=1.0" name="viewport">
-	<meta content="Neff, Our Changing Planet" name="description">   	
- 
-  	<!-- widgets.css contains styling for the interactive brix -->
-	<link href="../css/widgets.css" rel="stylesheet">
+    <head>
+        <meta charset="UTF-8">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta content="Template for Multiple Choice Question Brix" name="description">
 
+        <!-- widgets.css contains styling for the interactive brix -->
+        <link href="css/widgets.css" rel="stylesheet">
+    </head>
+    <body>
+        <div id="target1"></div>
+        <script src="js/d3.v3.min.js"></script>
+        <script src="js/brixlib-compiled.js"></script>
 
+        <script>
 
-</head>
-<body>
-	<div id="radioRnd"></div>
-	<script src="../js/d3.v3.min.js"></script>
-	<script src="../js/brixlib-compiled.js"></script>
-	<script src="../js/Neff12activitydb.js"></script>
+            // Create an object that will contain the objects needed for the activities
+            // on this page.
+            pearson.brix.activity = {};
+            var a = pearson.brix.activity;
 
-	<script>
+            // The activity config that defines the brix and mortar for this page
+            a.config =
+                    {
+                        "description": "A Sample Activity containing a single multiple choice bric",
+                        "sequenceNodeKey": "b3d5b510-34dd-480f-b8e1-b474522c9b03",
+                        "containerConfig":
+                                [
+                                    {
+                                        "description": "container for the sample multiple choice question",
+                                        "containerId": "target1",
+                                        "brixConfig":
+                                                [
+                                                    {
+                                                        "bricId": "Q1",
+                                                        "bricType": "MultipleChoiceQuestion",
+                                                        "config":
+                                                                {
+                                                                    "id": "sampleQ1",
+                                                                    "order": "randomized",
+                                                                    "presenterType": "RadioGroup",
+                                                                    "presenterConfig": {"numberFormat": ""},
+                                                                    "question": "In what way can wealth (affluence) increase the impacts of population growth on the environment?",
+                                                                    "choices":
+                                                                            [
+                                                                                {
+                                                                                    "content": "Rising affluence leads to rising consumption of goods and services, and this increases the impacts of population growth on the environment.",
+                                                                                    "answerKey": "answer1"
+                                                                                },
+                                                                                {
+                                                                                    "content": "Wealth doesn’t matter much for the environment—it’s really the overall population that is most important.",
+                                                                                    "answerKey": "answer2"
+                                                                                },
+                                                                                {
+                                                                                    "content": "There are no examples of how rising affluence can have a negative impact on environmental problems.",
+                                                                                    "answerKey": "answer3"
+                                                                                },
+                                                                                {
+                                                                                    "content": "Wealth can be used to invest in technologies that reduce the impact of consumption on the environment.",
+                                                                                    "answerKey": "answer4"
+                                                                                },
 
-	var eventManager = new pearson.utils.EventManager();
+																				{
+                                                                                    "content": "The accumulation of wealth/rise in affluence is uniformly good for the environment because richer people care more about wildlife preservation and similar things.",
+                                                                                    "answerKey": "answer5"
+                                                                                }
 
-	var MultipleChoiceQuestion = pearson.brix.MultipleChoiceQuestion;
-	var Button = pearson.brix.Button;
-	var RadioGroup = pearson.brix.RadioGroup;
-	var AnswerMan = pearson.brix.AnswerMan;
-	var SubmitManager = pearson.brix.SubmitManager;
-	
-	pearson.brix.test.extendActivityDb(activitiesNeff);
+                                                                            ]
+                                                                },
+                                                        "configFixup":
+                                                                [
+                                                                    {
+                                                                        "type": "set-property",
+                                                                        "name": "questionId",
+                                                                        "value": {"type": "ref", "domain": "info", "refId": "sequenceNodeKey"}
+                                                                    }
+                                                                ],
+                                                        "answerKey":
+                                                                {
+                                                                    "assessmentType": "multiplechoice",
+                                                                    "answers":
+                                                                            {
+                                                                                "answer1":
+                                                                                        {
+                                                                                            "score": 1,
+                                                                                            "response": "Correct."
+                                                                                        },
+                                                                                "answer2":
+                                                                                        {
+                                                                                            "score": 0,
+                                                                                            "response": "If the overall population behaves (i.e., spends their wealth) differently, could wealth have no impact on the environment?"
+                                                                                        },
+                                                                                "answer3":
+                                                                                        {
+                                                                                            "score": 0,
+                                                                                            "response": "How may affluent people behave (i.e., spend their money) differently than less affluent people, and what affect could this have?"
+                                                                                        },
+                                                                                "answer4":
+                                                                                        {
+                                                                                            "score": 0,
+                                                                                            "response": "Does this increase or decrease the impacts of population growth on the environment?"
+                                                                                        },
+																				"answer5":
+                                                                                        {
+                                                                                            "score": 0,
+                                                                                            "response": "Is this true for all affluent people?"
+                                                                                        }
+                                                                            }
+                                                                }
+                                                    }
+                                                ],
+                                        "hookupActions":
+                                                [
+                                                    {
+                                                        "description": "Hookup the submit manager to evaluate answers",
+                                                        "type": "method-call",
+                                                        "instance": {"type": "submit-manager"},
+                                                        "methodName": "handleRequestsFrom",
+                                                        "args":
+                                                                [
+                                                                    {"type": "ref", "domain": "brix", "refId": "Q1"},
+                                                                ]
+                                                    },
+                                                    {
+                                                        "description": "Draw the question",
+                                                        "type": "method-call",
+                                                        "instance": {"type": "ref", "domain": "brix", "refId": "Q1"},
+                                                        "methodName": "draw",
+                                                        "args":
+                                                                [
+                                                                    {"type": "d3select", "selector": "#target1"},
+                                                                ]
+                                                    }
+                                                ]
+                                    }
+                                ]
+                    };
 
-	var submitManager = new SubmitManager(eventManager, new AnswerMan());
+            // create the eventmanager to be used by the created brix, and the
+            // bricLayer which will create them, and then tell the bricLayer to build.
+            a.eventManager = new pearson.utils.EventManager();
+            a.answerMan = new pearson.brix.utils.LocalAnswerMan();
+            a.submitManager = new pearson.brix.utils.SubmitManager(a.eventManager, a.answerMan);
 
+            a.bricLayer = new pearson.brix.BricLayer(null, a.eventManager, a.submitManager);
 
-	var Q1Choices = [
-		{
-			content: "Rising affluence leads to rising consumption of goods and services, and this increases the impacts of population growth on the environment",
-			answerKey: "answer0"
-		},
-		{
-			content: "Wealth doesn’t matter much for the environment—it’s really the overall population that is most important",
-			answerKey: "answer1"
-		},
-		{
-			content: "There are no examples of how rising affluence can have a negative impact on environmental problems",
-			answerKey: "answer2"
-		},
-		{
-			content: "Wealth can be used to invest in technologies that reduce the impact of consumption on the environment",
-			answerKey: "answer3"
-		},
-		{
-			content: "The accumulation of wealth/rise in affluence is uniformly good for the environment because richer people care more about wildlife preservation and similar things",
-			answerKey: "answer4"
-		},
-		];
+            a.building = a.bricLayer.build(a.config);
 
-	// Test a select one question using a radio group widget
-	var Q1 = new MultipleChoiceQuestion({
-			id: "Q1",
-			questionId: "NeffCH12013",
-			question: "In what way can wealth (affluence) increase the impacts of population growth on the environment?",
-			choices: Q1Choices,
-			order: "randomized",
-			widget: RadioGroup,
-			widgetConfig: { numberFormat: "" },
-		}, eventManager);
-	
-	Q1.draw(d3.select("#radioRnd"));
-	
-	submitManager.handleRequestsFrom(Q1);
+            a.answerMan.registerAnswerKey(a.config.sequenceNodeKey,
+                    a.config.containerConfig[0].brixConfig[0].answerKey);
 
-
-	</script>
-</body>
+        </script>
+    </body>
 </html>

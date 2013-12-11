@@ -1,78 +1,155 @@
 <!DOCTYPE html>
 <html>
-<head> 
-	<meta charset="UTF-8">
-	<meta content="width=device-width, initial-scale=1.0" name="viewport">
-	<meta content="Neff, Our Changing Planet" name="description">   	
- 
-  	<!-- widgets.css contains styling for the interactive brix -->
-	<link href="../css/widgets.css" rel="stylesheet">
+    <head>
+        <meta charset="UTF-8">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta content="Template for Multiple Choice Question Brix" name="description">
 
+        <!-- widgets.css contains styling for the interactive brix -->
+        <link href="css/widgets.css" rel="stylesheet">
+    </head>
+    <body>
+        <div id="target1"></div>
+        <script src="js/d3.v3.min.js"></script>
+        <script src="js/brixlib-compiled.js"></script>
 
+        <script>
 
-</head>
-<body>
-	<div id="radioRnd"></div>
-	<script src="../js/d3.v3.min.js"></script>
-	<script src="../js/brixlib-compiled.js"></script>
-	<script src="../js/neff12activitydb.js"></script>
+            // Create an object that will contain the objects needed for the activities
+            // on this page.
+            pearson.brix.activity = {};
+            var a = pearson.brix.activity;
 
-	<script>
+            // The activity config that defines the brix and mortar for this page
+            a.config =
+                    {
+                        "description": "A Sample Activity containing a single multiple choice bric",
+                        "sequenceNodeKey": "b3d5b510-34dd-480f-b8e1-b474522c9b03",
+                        "containerConfig":
+                                [
+                                    {
+                                        "description": "container for the sample multiple choice question",
+                                        "containerId": "target1",
+                                        "brixConfig":
+                                                [
+                                                    {
+                                                        "bricId": "Q1",
+                                                        "bricType": "MultipleChoiceQuestion",
+                                                        "config":
+                                                                {
+                                                                    "id": "sampleQ1",
+                                                                    "order": "randomized",
+                                                                    "presenterType": "RadioGroup",
+                                                                    "presenterConfig": {"numberFormat": ""},
+                                                                    "question": "A high dependency ratio can create stresses for a society, but those stresses vary depending on the age of population. Using Japan as an example of a population with a large number of older citizens and Kenya as an example of a population with a large number of younger citizens, which of the following statements is not likely to be true?",
+                                                                    "choices":
+                                                                            [
+                                                                                {
+                                                                                    "content": "Kenya will have high health care costs and the problem of declining population growth.",
+                                                                                    "answerKey": "answer1"
+                                                                                },
+                                                                                {
+                                                                                    "content": "Kenya will have high infrastructure costs such as those associated with education and will require rapid economic growth to provide jobs to a growing population.",
+                                                                                    "answerKey": "answer2"
+                                                                                },
+                                                                                {
+                                                                                    "content": "Japan will have high health care costs and a shrinking amount of government revenue (taxes).",
+                                                                                    "answerKey": "answer3"
+                                                                                },
+                                                                                {
+                                                                                    "content": "Japan may have difficulty finding people to work in some types of jobs and will have to change societal investments from education to health care.",
+                                                                                    "answerKey": "answer4"
+                                                                                },
 
-	var eventManager = new pearson.utils.EventManager();
+																				{
+                                                                                    "content": "Both countries face the challenge of providing for non-working members of society in economic conditions that are likely to generate less income for investment in society. ",
+                                                                                    "answerKey": "answer5"
+                                                                                }
 
-	var MultipleChoiceQuestion = pearson.brix.MultipleChoiceQuestion;
-	var Button = pearson.brix.Button;
-	var RadioGroup = pearson.brix.RadioGroup;
-	var AnswerMan = pearson.brix.AnswerMan;
-	var SubmitManager = pearson.brix.SubmitManager;
-	
-	pearson.brix.test.extendActivityDb(activitiesNeff);
+                                                                            ]
+                                                                },
+                                                        "configFixup":
+                                                                [
+                                                                    {
+                                                                        "type": "set-property",
+                                                                        "name": "questionId",
+                                                                        "value": {"type": "ref", "domain": "info", "refId": "sequenceNodeKey"}
+                                                                    }
+                                                                ],
+                                                        "answerKey":
+                                                                {
+                                                                    "assessmentType": "multiplechoice",
+                                                                    "answers":
+                                                                            {
+                                                                                "answer1":
+                                                                                        {
+                                                                                            "score": 1,
+                                                                                            "response": "Correct."
+                                                                                        },
+                                                                                "answer2":
+                                                                                        {
+                                                                                            "score": 0,
+                                                                                            "response": "If Kenya is an example of a population with a large number of younger citizens, is this likely to become true as they grow older?"
+                                                                                        },
+                                                                                "answer3":
+                                                                                        {
+                                                                                            "score": 0,
+                                                                                            "response": "If Japan is an example of a population with a large number of older citizens, is this likely to be true as they continue to age?"
+                                                                                        },
+                                                                                "answer4":
+                                                                                        {
+                                                                                            "score": 0,
+                                                                                            "response": "If Japan’s trend of having a mostly older population continues, is Japan more likely to invest in things that benefit older or younger people?"
+                                                                                        },
+																				"answer5":
+                                                                                        {
+                                                                                            "score": 0,
+                                                                                            "response": "Will both countries continue to have a non-working population for very long?"
+                                                                                        }
+                                                                            }
+                                                                }
+                                                    }
+                                                ],
+                                        "hookupActions":
+                                                [
+                                                    {
+                                                        "description": "Hookup the submit manager to evaluate answers",
+                                                        "type": "method-call",
+                                                        "instance": {"type": "submit-manager"},
+                                                        "methodName": "handleRequestsFrom",
+                                                        "args":
+                                                                [
+                                                                    {"type": "ref", "domain": "brix", "refId": "Q1"},
+                                                                ]
+                                                    },
+                                                    {
+                                                        "description": "Draw the question",
+                                                        "type": "method-call",
+                                                        "instance": {"type": "ref", "domain": "brix", "refId": "Q1"},
+                                                        "methodName": "draw",
+                                                        "args":
+                                                                [
+                                                                    {"type": "d3select", "selector": "#target1"},
+                                                                ]
+                                                    }
+                                                ]
+                                    }
+                                ]
+                    };
 
-	var submitManager = new SubmitManager(eventManager, new AnswerMan());
+            // create the eventmanager to be used by the created brix, and the
+            // bricLayer which will create them, and then tell the bricLayer to build.
+            a.eventManager = new pearson.utils.EventManager();
+            a.answerMan = new pearson.brix.utils.LocalAnswerMan();
+            a.submitManager = new pearson.brix.utils.SubmitManager(a.eventManager, a.answerMan);
 
+            a.bricLayer = new pearson.brix.BricLayer(null, a.eventManager, a.submitManager);
 
-	var Q1Choices = [
-		{
-			content: "Kenya will have high health care costs and the problem of declining population growth",
-			answerKey: "answer0"
-		},
-		{
-			content: "Kenya will have high infrastructure costs such as those associated with education and will require rapid economic growth to provide jobs to a growing population",
-			answerKey: "answer1"
-		},
-		{
-			content: "Japan will have high health care costs and a shrinking amount of government revenue (taxes)",
-			answerKey: "answer2"
-	
-		},
-		{
-			content: "Japan may have difficulty finding people to work in some types of jobs and will have to change societal investments from education to health care",
-			answerKey: "answer3"
+            a.building = a.bricLayer.build(a.config);
 
-		},
-		{
-			content: "Both countries face the challenge of providing for non-working members of society in economic conditions that are likely to generate less income for investment in society",
-			answerKey: "answer4"
-		}
-		];
+            a.answerMan.registerAnswerKey(a.config.sequenceNodeKey,
+                    a.config.containerConfig[0].brixConfig[0].answerKey);
 
-	// Test a select one question using a radio group widget
-	var Q1 = new MultipleChoiceQuestion({
-			id: "Q1",
-			questionId: "NeffCH12006",
-			question: "A high dependency ratio can create stresses for a society, but those stresses vary depending on the age of population. Using Japan as an example of a population with a large number of older citizens and Kenya as an example of a population with a large number of younger citizens, which of the following statements is not likely to be true?",
-			choices: Q1Choices,
-			order: "randomized",
-			widget: RadioGroup,
-			widgetConfig: { numberFormat: "" },
-		}, eventManager);
-	
-	Q1.draw(d3.select("#radioRnd"));
-	
-	submitManager.handleRequestsFrom(Q1);
-
-
-	</script>
-</body>
+        </script>
+    </body>
 </html>

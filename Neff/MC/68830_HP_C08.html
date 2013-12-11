@@ -1,78 +1,155 @@
 <!DOCTYPE html>
 <html>
-<head> 
-	<meta charset="UTF-8">
-	<meta content="width=device-width, initial-scale=1.0" name="viewport">
-	<meta content="Neff, Our Changing Planet" name="description">   	
- 
-  	<!-- widgets.css contains styling for the interactive brix -->
-	<link href="../css/widgets.css" rel="stylesheet">
+    <head>
+        <meta charset="UTF-8">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta content="Template for Multiple Choice Question Brix" name="description">
 
+        <!-- widgets.css contains styling for the interactive brix -->
+        <link href="css/widgets.css" rel="stylesheet">
+    </head>
+    <body>
+        <div id="target1"></div>
+        <script src="js/d3.v3.min.js"></script>
+        <script src="js/brixlib-compiled.js"></script>
 
+        <script>
 
-</head>
-<body>
-	<div id="radioRnd"></div>
-	<script src="../js/d3.v3.min.js"></script>
-	<script src="../js/brixlib-compiled.js"></script>
-	<script src="../js/Neff12activitydb.js"></script>
+            // Create an object that will contain the objects needed for the activities
+            // on this page.
+            pearson.brix.activity = {};
+            var a = pearson.brix.activity;
 
-	<script>
+            // The activity config that defines the brix and mortar for this page
+            a.config =
+                    {
+                        "description": "A Sample Activity containing a single multiple choice bric",
+                        "sequenceNodeKey": "b3d5b510-34dd-480f-b8e1-b474522c9b03",
+                        "containerConfig":
+                                [
+                                    {
+                                        "description": "container for the sample multiple choice question",
+                                        "containerId": "target1",
+                                        "brixConfig":
+                                                [
+                                                    {
+                                                        "bricId": "Q1",
+                                                        "bricType": "MultipleChoiceQuestion",
+                                                        "config":
+                                                                {
+                                                                    "id": "sampleQ1",
+                                                                    "order": "randomized",
+                                                                    "presenterType": "RadioGroup",
+                                                                    "presenterConfig": {"numberFormat": ""},
+                                                                    "question": "In the demographic transition model, why do birth rates changes lag changes in death rates?",
+                                                                    "choices":
+                                                                            [
+                                                                                {
+                                                                                    "content": "Because death rates are largely controlled by advances in the treatment of heart disease and strokes.",
+                                                                                    "answerKey": "answer1"
+                                                                                },
+                                                                                {
+                                                                                    "content": "Because birth rates are largely controlled by technical factors such as access to birth control or family planning.",
+                                                                                    "answerKey": "answer2"
+                                                                                },
+                                                                                {
+                                                                                    "content": "Because technology and investment play a large role in birth rates but social factors and cultural norms such as religion play a role in death rates.",
+                                                                                    "answerKey": "answer3"
+                                                                                },
+                                                                                {
+                                                                                    "content": "Because technology and investment play a large role in death rates but social factors and cultural norms such as religion play a large role in birth rates.",
+                                                                                    "answerKey": "answer4"
+                                                                                },
 
-	var eventManager = new pearson.utils.EventManager();
+																				{
+                                                                                    "content": "Because most investments in health are usually first targeted to the elderly and then to children.",
+                                                                                    "answerKey": "answer5"
+                                                                                }
 
-	var MultipleChoiceQuestion = pearson.brix.MultipleChoiceQuestion;
-	var Button = pearson.brix.Button;
-	var RadioGroup = pearson.brix.RadioGroup;
-	var AnswerMan = pearson.brix.AnswerMan;
-	var SubmitManager = pearson.brix.SubmitManager;
-	
-	pearson.brix.test.extendActivityDb(activitiesNeff);
+                                                                            ]
+                                                                },
+                                                        "configFixup":
+                                                                [
+                                                                    {
+                                                                        "type": "set-property",
+                                                                        "name": "questionId",
+                                                                        "value": {"type": "ref", "domain": "info", "refId": "sequenceNodeKey"}
+                                                                    }
+                                                                ],
+                                                        "answerKey":
+                                                                {
+                                                                    "assessmentType": "multiplechoice",
+                                                                    "answers":
+                                                                            {
+                                                                                "answer1":
+                                                                                        {
+                                                                                            "score": 0,
+                                                                                            "response": "While this may be true, does this provide a reason for why birth rate changes lag death rate changes?"
+                                                                                        },
+                                                                                "answer2":
+                                                                                        {
+                                                                                            "score": 0,
+                                                                                            "response": "While this may be true, does this provide a reason for why death rates change more quickly than birth rates?"
+                                                                                        },
+                                                                                "answer3":
+                                                                                        {
+                                                                                            "score": 0,
+                                                                                            "response": "Do cultural factors such as religion typically determine when someone dies?"
+                                                                                        },
+                                                                                "answer4":
+                                                                                        {
+                                                                                            "score": 1,
+                                                                                            "response": "Correct."
+                                                                                        },
+																				"answer5":
+                                                                                        {
+                                                                                            "score": 0,
+                                                                                            "response": "Would this actually change birth rates or just affect other statistics such as childhood mortality?"
+                                                                                        }
+                                                                            }
+                                                                }
+                                                    }
+                                                ],
+                                        "hookupActions":
+                                                [
+                                                    {
+                                                        "description": "Hookup the submit manager to evaluate answers",
+                                                        "type": "method-call",
+                                                        "instance": {"type": "submit-manager"},
+                                                        "methodName": "handleRequestsFrom",
+                                                        "args":
+                                                                [
+                                                                    {"type": "ref", "domain": "brix", "refId": "Q1"},
+                                                                ]
+                                                    },
+                                                    {
+                                                        "description": "Draw the question",
+                                                        "type": "method-call",
+                                                        "instance": {"type": "ref", "domain": "brix", "refId": "Q1"},
+                                                        "methodName": "draw",
+                                                        "args":
+                                                                [
+                                                                    {"type": "d3select", "selector": "#target1"},
+                                                                ]
+                                                    }
+                                                ]
+                                    }
+                                ]
+                    };
 
-	var submitManager = new SubmitManager(eventManager, new AnswerMan());
+            // create the eventmanager to be used by the created brix, and the
+            // bricLayer which will create them, and then tell the bricLayer to build.
+            a.eventManager = new pearson.utils.EventManager();
+            a.answerMan = new pearson.brix.utils.LocalAnswerMan();
+            a.submitManager = new pearson.brix.utils.SubmitManager(a.eventManager, a.answerMan);
 
+            a.bricLayer = new pearson.brix.BricLayer(null, a.eventManager, a.submitManager);
 
-	var Q1Choices = [
-		{
-			content: "Because death rates are largely controlled by advances in the treatment of heart disease and strokes",
-			answerKey: "answer0"
-		},
-		{
-			content: "Because birth rates are largely controlled by technical factors such as access to birth control or family planning",
-			answerKey: "answer1"
-		},
-		{
-			content: "Because technology and investment play a large role in birth rates but social factors and cultural norms such as religion play a role in death rates",
-			response: "Does the fertility rate change with population size?",
-			answerKey: "answer2"
-	
-		},
-		{
-			content: "Because technology and investment play a large role in death rates but social factors and cultural norms such as religion play a large role in birth rates",
-			answerKey: "answer3"
-		},
-		{
-			content: "Because most investments in health are usually first targeted to the elderly and then to children",
-			answerKey: "answer4"
-		}
-		];
+            a.building = a.bricLayer.build(a.config);
 
-	// Test a select one question using a radio group widget
-	var Q1 = new MultipleChoiceQuestion({
-			id: "Q1",
-			questionId: "NeffCH12008",
-			question: "In the demographic transition model, why do birth rates changes lag changes in death rates?",
-			choices: Q1Choices,
-			order: "randomized",
-			widget: RadioGroup,
-			widgetConfig: { numberFormat: "" },
-		}, eventManager);
-	
-	Q1.draw(d3.select("#radioRnd"));
-	
-	submitManager.handleRequestsFrom(Q1);
+            a.answerMan.registerAnswerKey(a.config.sequenceNodeKey,
+                    a.config.containerConfig[0].brixConfig[0].answerKey);
 
-
-	</script>
-</body>
+        </script>
+    </body>
 </html>
