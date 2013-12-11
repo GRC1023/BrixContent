@@ -231,11 +231,11 @@ class MCQSpreadsheetInfoRow(object):
         self.status = row[4]
         self.comments = row[5]
         self.subject =  row[6]
-        self.pafContentType = 'Brix'
+        self.pafContentType = 'Brix' #row[7]
         self.assetName = row[8]
         self.pafAssignmentGuid = row[9] if not row[9] else uuid.UUID(row[9])
         self.pafActivityGuid = row[10] if not row[10] else uuid.UUID(row[10])
-        self.containerId = row[11]
+        self.containerId = "target1" #row[11]
 
         # this needs to come from the csv, but isn't there yet
 
@@ -259,7 +259,9 @@ class MCQSpreadsheetInfoRow(object):
                 self.module,
                 self.quizName,
                 self.fileName,
+                self.status,
                 self.comments,
+                self.subject,
                 self.pafContentType,
                 self.assetName,
                 self.pafAssignmentGuid,
