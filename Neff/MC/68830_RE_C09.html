@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta content="Template for Multiple Choice Question Brix" name="description">
+
+        <!-- widgets.css contains styling for the interactive brix -->
+        <link href="css/widgets.css" rel="stylesheet">
+    </head>
+    <body>
+        <div id="target1"></div>
+        <script src="js/d3.v3.min.js"></script>
+        <script src="js/brixlib-compiled.js"></script>
+
+        <script>
+
+            // Create an object that will contain the objects needed for the activities
+            // on this page.
+            pearson.brix.activity = {};
+            var a = pearson.brix.activity;
+
+            // The activity config that defines the brix and mortar for this page
+            a.config =
+                    {
+                        "description": "A Sample Activity containing a single multiple choice bric",
+                        "sequenceNodeKey": "b3d5b510-34dd-480f-b8e1-b474522c9b03",
+                        "containerConfig":
+                                [
+                                    {
+                                        "description": "container for the sample multiple choice question",
+                                        "containerId": "target1",
+                                        "brixConfig":
+                                                [
+                                                    {
+                                                        "bricId": "Q1",
+                                                        "bricType": "MultipleChoiceQuestion",
+                                                        "config":
+                                                                {
+                                                                    "id": "sampleQ1",
+                                                                    "order": "randomized",
+                                                                    "presenterType": "RadioGroup",
+                                                                    "presenterConfig": {"numberFormat": ""},
+                                                                    "question": "One of the major concerns about current first generation biomass fuels is that they take a lot of energy to produce and therefore won’t help to reduce the emissions of greenhouse gases. In the following example, would this be true? A gallon of gasoline releases about 9 Kg CO2 when burned. If it takes about 2 Kg of coal to produce the electricity to make one gallon of biofuel and each Kg of coal results in the emission of 3.75 Kg CO2, how much would CO2 emissions be reduced or increased by using biofuel instead of gasoline? You can assume that a gallon of biofuel and a gallon of gasoline have exactly the same amount of energy in them.",
+                                                                    "choices":
+                                                                            [
+                                                                                {
+                                                                                    "content": "increased emission of 12.75 Kg CO2",
+                                                                                    "answerKey": "answer1"
+                                                                                },
+                                                                                {
+                                                                                    "content": "increased emission of 1.5 Kg CO2",
+                                                                                    "answerKey": "answer2"
+                                                                                },
+                                                                                {
+                                                                                    "content": "no change in emissions",
+                                                                                    "answerKey": "answer3"
+                                                                                },
+                                                                                {
+                                                                                    "content": "decreased emission of 1.5 Kg CO2",
+                                                                                    "answerKey": "answer4"
+                                                                                },
+
+																				{
+                                                                                    "content": "decreased emission of 12.75 Kg CO2",
+                                                                                    "answerKey": "answer5"
+                                                                                }
+
+                                                                            ]
+                                                                },
+                                                        "configFixup":
+                                                                [
+                                                                    {
+                                                                        "type": "set-property",
+                                                                        "name": "questionId",
+                                                                        "value": {"type": "ref", "domain": "info", "refId": "sequenceNodeKey"}
+                                                                    }
+                                                                ],
+                                                        "answerKey":
+                                                                {
+                                                                    "assessmentType": "multiplechoice",
+                                                                    "answers":
+                                                                            {
+                                                                                "answer1":
+                                                                                        {
+                                                                                            "score": 0,
+                                                                                            "response": "Calculate the CO2 emissions produced for 2 Kg of coal (the amount it takes to make one gallon of biofuel). Are these emissions greater or less than the amount of CO2 released from one gallon of traditional gasoline?"
+                                                                                        },
+                                                                                "answer2":
+                                                                                        {
+                                                                                            "score": 0,
+                                                                                            "response": "Calculate the CO2 emissions produced for 2 Kg of coal (the amount it takes to make one gallon of biofuel). Are these emissions greater or less than the amount of CO2 released from one gallon of traditional gasoline?"
+                                                                                        },
+                                                                                "answer3":
+                                                                                        {
+                                                                                            "score": 0,
+                                                                                            "response": "Calculate the CO2 emissions produced for 2 Kg of coal (the amount it takes to make one gallon of biofuel). Are these emissions greater or less than the amount of CO2 released from one gallon of traditional gasoline?"
+                                                                                        },
+                                                                                "answer4":
+                                                                                        {
+                                                                                            "score": 1,
+                                                                                            "response": "Correct."
+                                                                                        },
+																				"answer5":
+                                                                                        {
+                                                                                            "score": 0,
+                                                                                            "response": "Calculate the CO2 emissions produced for 2 Kg of coal (the amount it takes to make one gallon of biofuel). Are these emissions greater or less than the amount of CO2 released from one gallon of traditional gasoline?"
+                                                                                        }
+                                                                            }
+                                                                }
+                                                    }
+                                                ],
+                                        "hookupActions":
+                                                [
+                                                    {
+                                                        "description": "Hookup the submit manager to evaluate answers",
+                                                        "type": "method-call",
+                                                        "instance": {"type": "submit-manager"},
+                                                        "methodName": "handleRequestsFrom",
+                                                        "args":
+                                                                [
+                                                                    {"type": "ref", "domain": "brix", "refId": "Q1"},
+                                                                ]
+                                                    },
+                                                    {
+                                                        "description": "Draw the question",
+                                                        "type": "method-call",
+                                                        "instance": {"type": "ref", "domain": "brix", "refId": "Q1"},
+                                                        "methodName": "draw",
+                                                        "args":
+                                                                [
+                                                                    {"type": "d3select", "selector": "#target1"},
+                                                                ]
+                                                    }
+                                                ]
+                                    }
+                                ]
+                    };
+
+            // create the eventmanager to be used by the created brix, and the
+            // bricLayer which will create them, and then tell the bricLayer to build.
+            a.eventManager = new pearson.utils.EventManager();
+            a.answerMan = new pearson.brix.utils.LocalAnswerMan();
+            a.submitManager = new pearson.brix.utils.SubmitManager(a.eventManager, a.answerMan);
+
+            a.bricLayer = new pearson.brix.BricLayer(null, a.eventManager, a.submitManager);
+
+            a.building = a.bricLayer.build(a.config);
+
+            a.answerMan.registerAnswerKey(a.config.sequenceNodeKey,
+                    a.config.containerConfig[0].brixConfig[0].answerKey);
+
+        </script>
+    </body>
+</html>

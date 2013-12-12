@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta content="Template for Multiple Choice Question Brix" name="description">
+
+        <!-- widgets.css contains styling for the interactive brix -->
+        <link href="css/widgets.css" rel="stylesheet">
+    </head>
+    <body>
+        <div id="target1"></div>
+        <script src="js/d3.v3.min.js"></script>
+        <script src="js/brixlib-compiled.js"></script>
+
+        <script>
+
+            // Create an object that will contain the objects needed for the activities
+            // on this page.
+            pearson.brix.activity = {};
+            var a = pearson.brix.activity;
+
+            // The activity config that defines the brix and mortar for this page
+            a.config =
+                    {
+                        "description": "A Sample Activity containing a single multiple choice bric",
+                        "sequenceNodeKey": "b3d5b510-34dd-480f-b8e1-b474522c9b03",
+                        "containerConfig":
+                                [
+                                    {
+                                        "description": "container for the sample multiple choice question",
+                                        "containerId": "target1",
+                                        "brixConfig":
+                                                [
+                                                    {
+                                                        "bricId": "Q1",
+                                                        "bricType": "MultipleChoiceQuestion",
+                                                        "config":
+                                                                {
+                                                                    "id": "sampleQ1",
+                                                                    "order": "randomized",
+                                                                    "presenterType": "RadioGroup",
+                                                                    "presenterConfig": {"numberFormat": ""},
+                                                                    "question": "5)	You know that the U.S. electricity grid is fragmented—in fact, it is actually separated into three major grids with few connections between sections.  However, you are wondering why these three grids don’t just become mini-grid systems that remain centralized but run completely on the renewable resources that are available in each respective section.  What major issue still stands in the way of this plan to implement renewable power on a large, centralized scale in the future?",
+                                                                    "choices":
+                                                                            [
+                                                                                {
+                                                                                    "content": "Energy from many renewable sources, such as solar and wind, are only available at certain times and are difficult to store for use during “off” times, regardless of the size or interconnectivity of the grid.",
+                                                                                    "answerKey": "answer1"
+                                                                                },
+                                                                                {
+                                                                                    "content": "The U.S. government is not in favor of taking this mini-grid approach because they don’t want one area to have a major competitive advantage over another area, so they plan to continue work and research on a more connected structure.",
+                                                                                    "answerKey": "answer2"
+                                                                                },
+                                                                                {
+                                                                                    "content": "Renewable resources only exist in certain areas of the country, so it is likely that at least one of these mini-grids will be left completely without any renewable sources to put in place.",
+                                                                                    "answerKey": "answer3"
+                                                                                },
+                                                                                {
+                                                                                    "content": "There are no major foreseeable problems with this mini-grid idea.",
+                                                                                    "answerKey": "answer4"
+                                                                                }
+
+                                                                            ]
+                                                                },
+                                                        "configFixup":
+                                                                [
+                                                                    {
+                                                                        "type": "set-property",
+                                                                        "name": "questionId",
+                                                                        "value": {"type": "ref", "domain": "info", "refId": "sequenceNodeKey"}
+                                                                    }
+                                                                ],
+                                                        "answerKey":
+                                                                {
+                                                                    "assessmentType": "multiplechoice",
+                                                                    "answers":
+                                                                            {
+                                                                                "answer1":
+                                                                                        {
+                                                                                            "score": 1,
+                                                                                            "response": "Correct."
+                                                                                        },
+                                                                                "answer2":
+                                                                                        {
+                                                                                            "score": 0,
+                                                                                            "response": "Is it likely that the United States would restrict renewable integration in one grid area solely on the premise of being fair to the other areas?"
+                                                                                        },
+                                                                                "answer3":
+                                                                                        {
+                                                                                            "score": 0,
+                                                                                            "response": "Do any of the three major areas that the grid covers (the West, the Midwest and East, and Texas) completely lack renewable resources?"
+                                                                                        },
+                                                                                "answer4":
+                                                                                        {
+                                                                                            "score": 0,
+                                                                                            "response": "Even if a certain resource such as solar was widely available in one of these mini-grids, does solar energy work at all times, and is it easy to store it for “off” times?"
+                                                                                        }
+                                                                            }
+                                                                }
+                                                    }
+                                                ],
+                                        "hookupActions":
+                                                [
+                                                    {
+                                                        "description": "Hookup the submit manager to evaluate answers",
+                                                        "type": "method-call",
+                                                        "instance": {"type": "submit-manager"},
+                                                        "methodName": "handleRequestsFrom",
+                                                        "args":
+                                                                [
+                                                                    {"type": "ref", "domain": "brix", "refId": "Q1"},
+                                                                ]
+                                                    },
+                                                    {
+                                                        "description": "Draw the question",
+                                                        "type": "method-call",
+                                                        "instance": {"type": "ref", "domain": "brix", "refId": "Q1"},
+                                                        "methodName": "draw",
+                                                        "args":
+                                                                [
+                                                                    {"type": "d3select", "selector": "#target1"},
+                                                                ]
+                                                    }
+                                                ]
+                                    }
+                                ]
+                    };
+
+            // create the eventmanager to be used by the created brix, and the
+            // bricLayer which will create them, and then tell the bricLayer to build.
+            a.eventManager = new pearson.utils.EventManager();
+            a.answerMan = new pearson.brix.utils.LocalAnswerMan();
+            a.submitManager = new pearson.brix.utils.SubmitManager(a.eventManager, a.answerMan);
+
+            a.bricLayer = new pearson.brix.BricLayer(null, a.eventManager, a.submitManager);
+
+            a.building = a.bricLayer.build(a.config);
+
+            a.answerMan.registerAnswerKey(a.config.sequenceNodeKey,
+                    a.config.containerConfig[0].brixConfig[0].answerKey);
+
+        </script>
+    </body>
+</html>
