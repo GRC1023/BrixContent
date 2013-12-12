@@ -1,12 +1,63 @@
 {
+  "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope", 
+  "metadata": {
+    "owner": "Brix", 
+    "contentTypeTier2": [
+      "assessment item"
+    ], 
+    "intendedEndUserRole": [
+      "Student"
+    ], 
+    "subject": [
+      "EnvironmentalScience"
+    ], 
+    "created": "2013-12-12T11:38:04.525791", 
+    "contentTypeTier1": "Test and Assessment", 
+    "timeRequired": "PT20S", 
+    "description": "68830_HP_C09.html", 
+    "title": "68830_HP_C09.html", 
+    "format": [
+      "application/vnd.pearson.sanvan.v1.activity"
+    ], 
+    "guid": "d345d109-a234-4629-b39a-904c55056bbd"
+  }, 
   "body": {
     "containerConfig": [
       {
         "brixConfig": [
           {
+            "bricId": "Q1", 
+            "answerKey": {
+              "answers": {
+                "answer3": {
+                  "score": 1, 
+                  "response": "Correct."
+                }, 
+                "answer2": {
+                  "score": 0, 
+                  "response": "Will this necessarily decrease population and improve equity for all members of a society?"
+                }, 
+                "answer1": {
+                  "score": 0, 
+                  "response": "Does more available food directly decrease population?"
+                }, 
+                "answer5": {
+                  "score": 0, 
+                  "response": "Does the economic status of men or women matter more when it comes to population growth?"
+                }, 
+                "answer4": {
+                  "score": 0, 
+                  "response": "While this may ensure that the population decreases, does it necessarily improve equity or not increase human suffering?"
+                }
+              }, 
+              "assessmentType": "multiplechoice"
+            }, 
+            "bricType": "MultipleChoiceQuestion", 
             "config": {
-              "presenterType": "RadioGroup", 
+              "id": "sampleQ1", 
+              "order": "randomized", 
               "question": "Which of the following is an effective way to reduce population growth that does not increase human suffering and improves equity in society?", 
+              "presenterType": "RadioGroup", 
               "presenterConfig": {
                 "numberFormat": ""
               }, 
@@ -31,53 +82,25 @@
                   "content": "Make sure men have good jobs", 
                   "answerKey": "answer5"
                 }
-              ], 
-              "order": "randomized", 
-              "id": "sampleQ1"
+              ]
             }, 
-            "answerKey": {
-              "assessmentType": "multiplechoice", 
-              "answers": {
-                "answer5": {
-                  "score": 0, 
-                  "response": "Does the economic status of men or women matter more when it comes to population growth?"
-                }, 
-                "answer4": {
-                  "score": 0, 
-                  "response": "While this may ensure that the population decreases, does it necessarily improve equity or not increase human suffering?"
-                }, 
-                "answer1": {
-                  "score": 0, 
-                  "response": "Does more available food directly decrease population?"
-                }, 
-                "answer3": {
-                  "score": 1, 
-                  "response": "Correct."
-                }, 
-                "answer2": {
-                  "score": 0, 
-                  "response": "Will this necessarily decrease population and improve equity for all members of a society?"
-                }
-              }
-            }, 
-            "bricType": "MultipleChoiceQuestion", 
-            "bricId": "Q1", 
             "configFixup": [
               {
-                "type": "set-property", 
-                "name": "questionId", 
                 "value": {
                   "domain": "info", 
                   "type": "ref", 
                   "refId": "sequenceNodeKey"
-                }
+                }, 
+                "type": "set-property", 
+                "name": "questionId"
               }
             ]
           }
         ], 
-        "description": "container for the sample multiple choice question", 
+        "containerId": "target1", 
         "hookupActions": [
           {
+            "methodName": "handleRequestsFrom", 
             "instance": {
               "type": "submit-manager"
             }, 
@@ -89,10 +112,10 @@
               }
             ], 
             "type": "method-call", 
-            "description": "Hookup the submit manager to evaluate answers", 
-            "methodName": "handleRequestsFrom"
+            "description": "Hookup the submit manager to evaluate answers"
           }, 
           {
+            "methodName": "draw", 
             "instance": {
               "domain": "brix", 
               "type": "ref", 
@@ -105,38 +128,13 @@
               }
             ], 
             "type": "method-call", 
-            "description": "Draw the question", 
-            "methodName": "draw"
+            "description": "Draw the question"
           }
         ], 
-        "containerId": "target1"
+        "description": "container for the sample multiple choice question"
       }
     ], 
     "description": "A Sample Activity containing a single multiple choice bric"
   }, 
-  "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope", 
-  "@type": "Envelope", 
-  "metadata": {
-    "intendedEndUserRole": [
-      "Student"
-    ], 
-    "description": "68830_HP_C09.html", 
-    "format": [
-      "application/vnd.pearson.sanvan.v1.activity"
-    ], 
-    "educationalAlignment": [
-      "http://purl.org/pearson/objectives/183725473384362"
-    ], 
-    "guid": "d345d109-a234-4629-b39a-904c55056bbd", 
-    "subject": [
-      "EnvironmentalScience"
-    ], 
-    "timeRequired": "PT20S", 
-    "created": "2013-12-11T14:24:43.641893", 
-    "title": "68830_HP_C09.html", 
-    "contentTypeTier1": "Test and Assessment", 
-    "contentTypeTier2": [
-      "assessment item"
-    ]
-  }
+  "@type": "Envelope"
 }

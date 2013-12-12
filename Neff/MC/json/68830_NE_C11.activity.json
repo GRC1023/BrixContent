@@ -1,0 +1,140 @@
+{
+  "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope", 
+  "metadata": {
+    "owner": "Brix", 
+    "contentTypeTier2": [
+      "assessment item"
+    ], 
+    "intendedEndUserRole": [
+      "Student"
+    ], 
+    "subject": [
+      "EnvironmentalScience"
+    ], 
+    "created": "2013-12-12T11:38:04.527382", 
+    "contentTypeTier1": "Test and Assessment", 
+    "timeRequired": "PT20S", 
+    "description": "68830_NE_C11.html", 
+    "title": "68830_NE_C11.html", 
+    "format": [
+      "application/vnd.pearson.sanvan.v1.activity"
+    ], 
+    "guid": "0918f5c2-505f-4b15-a729-a52690ff98a3"
+  }, 
+  "body": {
+    "containerConfig": [
+      {
+        "brixConfig": [
+          {
+            "bricId": "Q1", 
+            "answerKey": {
+              "answers": {
+                "answer3": {
+                  "score": 1, 
+                  "response": "Correct. These actions will slow down the reaction"
+                }, 
+                "answer2": {
+                  "score": 0, 
+                  "response": "Does coolant typically speed up or slow down a nuclear reaction?"
+                }, 
+                "answer1": {
+                  "score": 0, 
+                  "response": "What is the only way a nuclear reaction actually stops?"
+                }, 
+                "answer5": {
+                  "score": 0, 
+                  "response": "Does coolant typically speed up or slow down a nuclear reaction?"
+                }, 
+                "answer4": {
+                  "score": 0, 
+                  "response": "Do neutron absorbers typically speed up or slow down a nuclear reaction?"
+                }
+              }, 
+              "assessmentType": "multiplechoice"
+            }, 
+            "bricType": "MultipleChoiceQuestion", 
+            "config": {
+              "id": "sampleQ1", 
+              "order": "randomized", 
+              "question": "During a catastrophic nuclear meltdown, certain changes occur in the reactor that can lead to the loss of containment of the materials in the reactor core. Which of the following might be a reasonable response to this worse case scenario?", 
+              "presenterType": "RadioGroup", 
+              "presenterConfig": {
+                "numberFormat": ""
+              }, 
+              "choices": [
+                {
+                  "content": "Turn off power to the reactor.", 
+                  "answerKey": "answer1"
+                }, 
+                {
+                  "content": "Stop the flow of coolant and pull the neutron absorbing rods out of the reactor.", 
+                  "answerKey": "answer2"
+                }, 
+                {
+                  "content": "Increase the flow of coolant and add more neutron absorbing rods into the reactor", 
+                  "answerKey": "answer3"
+                }, 
+                {
+                  "content": "Put on a suit and go into the reactor and pull out the neutron absorbers.", 
+                  "answerKey": "answer4"
+                }, 
+                {
+                  "content": "Reduce the flow of coolant while increasing electricity output.", 
+                  "answerKey": "answer5"
+                }
+              ]
+            }, 
+            "configFixup": [
+              {
+                "value": {
+                  "domain": "info", 
+                  "type": "ref", 
+                  "refId": "sequenceNodeKey"
+                }, 
+                "type": "set-property", 
+                "name": "questionId"
+              }
+            ]
+          }
+        ], 
+        "containerId": "target1", 
+        "hookupActions": [
+          {
+            "methodName": "handleRequestsFrom", 
+            "instance": {
+              "type": "submit-manager"
+            }, 
+            "args": [
+              {
+                "domain": "brix", 
+                "type": "ref", 
+                "refId": "Q1"
+              }
+            ], 
+            "type": "method-call", 
+            "description": "Hookup the submit manager to evaluate answers"
+          }, 
+          {
+            "methodName": "draw", 
+            "instance": {
+              "domain": "brix", 
+              "type": "ref", 
+              "refId": "Q1"
+            }, 
+            "args": [
+              {
+                "type": "d3select", 
+                "selector": "#target1"
+              }
+            ], 
+            "type": "method-call", 
+            "description": "Draw the question"
+          }
+        ], 
+        "description": "container for the sample multiple choice question"
+      }
+    ], 
+    "description": "A Sample Activity containing a single multiple choice bric"
+  }, 
+  "@type": "Envelope"
+}

@@ -1,12 +1,63 @@
 {
+  "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope", 
+  "metadata": {
+    "owner": "Brix", 
+    "contentTypeTier2": [
+      "assessment item"
+    ], 
+    "intendedEndUserRole": [
+      "Student"
+    ], 
+    "subject": [
+      "EnvironmentalScience"
+    ], 
+    "created": "2013-12-12T11:38:04.525791", 
+    "contentTypeTier1": "Test and Assessment", 
+    "timeRequired": "PT20S", 
+    "description": "68830_HP_C11.html", 
+    "title": "68830_HP_C11.html", 
+    "format": [
+      "application/vnd.pearson.sanvan.v1.activity"
+    ], 
+    "guid": "5c2f4bae-e7a7-4fbd-960a-5b96525ac60b"
+  }, 
   "body": {
     "containerConfig": [
       {
         "brixConfig": [
           {
+            "bricId": "Q1", 
+            "answerKey": {
+              "answers": {
+                "answer3": {
+                  "score": 1, 
+                  "response": "Correct."
+                }, 
+                "answer2": {
+                  "score": 0, 
+                  "response": "If the population growth rate is a percentage of the total population that is added to the Earth each year, would the number of new people on the Earth each year decrease?"
+                }, 
+                "answer1": {
+                  "score": 0, 
+                  "response": "If the population growth rate is a percentage of the total population that is added to the Earth each year, could the number remain constant if the population itself is increasing?"
+                }, 
+                "answer5": {
+                  "score": 0, 
+                  "response": "If this were true and you had a population of 1 million people, would more people be added each year with a growth rate of 1% or 5%"
+                }, 
+                "answer4": {
+                  "score": 0, 
+                  "response": "If we know the growth rate and approximate population size, will this number actually be random?"
+                }
+              }, 
+              "assessmentType": "multiplechoice"
+            }, 
+            "bricType": "MultipleChoiceQuestion", 
             "config": {
-              "presenterType": "RadioGroup", 
+              "id": "sampleQ1", 
+              "order": "randomized", 
               "question": "If the human population is growing at a constant rate of 1.1% per year, how will the number of people added to the global population change each year in the future?", 
+              "presenterType": "RadioGroup", 
               "presenterConfig": {
                 "numberFormat": ""
               }, 
@@ -31,53 +82,25 @@
                   "content": "The number of people added to a population is independent of growth rate and depends completely on the population size.", 
                   "answerKey": "answer5"
                 }
-              ], 
-              "order": "randomized", 
-              "id": "sampleQ1"
+              ]
             }, 
-            "answerKey": {
-              "assessmentType": "multiplechoice", 
-              "answers": {
-                "answer5": {
-                  "score": 0, 
-                  "response": "If this were true and you had a population of 1 million people, would more people be added each year with a growth rate of 1% or 5%"
-                }, 
-                "answer4": {
-                  "score": 0, 
-                  "response": "If we know the growth rate and approximate population size, will this number actually be random?"
-                }, 
-                "answer1": {
-                  "score": 0, 
-                  "response": "If the population growth rate is a percentage of the total population that is added to the Earth each year, could the number remain constant if the population itself is increasing?"
-                }, 
-                "answer3": {
-                  "score": 1, 
-                  "response": "Correct."
-                }, 
-                "answer2": {
-                  "score": 0, 
-                  "response": "If the population growth rate is a percentage of the total population that is added to the Earth each year, would the number of new people on the Earth each year decrease?"
-                }
-              }
-            }, 
-            "bricType": "MultipleChoiceQuestion", 
-            "bricId": "Q1", 
             "configFixup": [
               {
-                "type": "set-property", 
-                "name": "questionId", 
                 "value": {
                   "domain": "info", 
                   "type": "ref", 
                   "refId": "sequenceNodeKey"
-                }
+                }, 
+                "type": "set-property", 
+                "name": "questionId"
               }
             ]
           }
         ], 
-        "description": "container for the sample multiple choice question", 
+        "containerId": "target1", 
         "hookupActions": [
           {
+            "methodName": "handleRequestsFrom", 
             "instance": {
               "type": "submit-manager"
             }, 
@@ -89,10 +112,10 @@
               }
             ], 
             "type": "method-call", 
-            "description": "Hookup the submit manager to evaluate answers", 
-            "methodName": "handleRequestsFrom"
+            "description": "Hookup the submit manager to evaluate answers"
           }, 
           {
+            "methodName": "draw", 
             "instance": {
               "domain": "brix", 
               "type": "ref", 
@@ -105,38 +128,13 @@
               }
             ], 
             "type": "method-call", 
-            "description": "Draw the question", 
-            "methodName": "draw"
+            "description": "Draw the question"
           }
         ], 
-        "containerId": "target1"
+        "description": "container for the sample multiple choice question"
       }
     ], 
     "description": "A Sample Activity containing a single multiple choice bric"
   }, 
-  "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope", 
-  "@type": "Envelope", 
-  "metadata": {
-    "intendedEndUserRole": [
-      "Student"
-    ], 
-    "description": "68830_HP_C11.html", 
-    "format": [
-      "application/vnd.pearson.sanvan.v1.activity"
-    ], 
-    "educationalAlignment": [
-      "http://purl.org/pearson/objectives/183725473384362"
-    ], 
-    "guid": "5c2f4bae-e7a7-4fbd-960a-5b96525ac60b", 
-    "subject": [
-      "EnvironmentalScience"
-    ], 
-    "timeRequired": "PT20S", 
-    "created": "2013-12-11T14:24:43.641937", 
-    "title": "68830_HP_C11.html", 
-    "contentTypeTier1": "Test and Assessment", 
-    "contentTypeTier2": [
-      "assessment item"
-    ]
-  }
+  "@type": "Envelope"
 }

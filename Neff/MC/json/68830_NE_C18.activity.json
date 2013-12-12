@@ -1,0 +1,132 @@
+{
+  "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope", 
+  "metadata": {
+    "owner": "Brix", 
+    "contentTypeTier2": [
+      "assessment item"
+    ], 
+    "intendedEndUserRole": [
+      "Student"
+    ], 
+    "subject": [
+      "EnvironmentalScience"
+    ], 
+    "created": "2013-12-12T11:38:04.527497", 
+    "contentTypeTier1": "Test and Assessment", 
+    "timeRequired": "PT20S", 
+    "description": "68830_NE_C18.html", 
+    "title": "68830_NE_C18.html", 
+    "format": [
+      "application/vnd.pearson.sanvan.v1.activity"
+    ], 
+    "guid": "ac74d481-0743-40a8-964f-1b5a70fe6927"
+  }, 
+  "body": {
+    "containerConfig": [
+      {
+        "brixConfig": [
+          {
+            "bricId": "Q1", 
+            "answerKey": {
+              "answers": {
+                "answer3": {
+                  "score": 1, 
+                  "response": "Correct"
+                }, 
+                "answer2": {
+                  "score": 0, 
+                  "response": "Would softer form of coal like lignite help reduce pollutants?"
+                }, 
+                "answer1": {
+                  "score": 0, 
+                  "response": "Does natural gas produce this type of pollution?"
+                }, 
+                "answer4": {
+                  "score": 0, 
+                  "response": "Is the purpose of hydraulic fracturing to help reduce water use during natural gas extraction?"
+                }
+              }, 
+              "assessmentType": "multiplechoice"
+            }, 
+            "bricType": "MultipleChoiceQuestion", 
+            "config": {
+              "id": "sampleQ1", 
+              "order": "randomized", 
+              "question": "Which of these use/extraction techniques is correctly matched with the fossil fuel for which it would perform the most environmental benefit?", 
+              "presenterType": "RadioGroup", 
+              "presenterConfig": {
+                "numberFormat": ""
+              }, 
+              "choices": [
+                {
+                  "content": "installation of devices to remove sulfur from waste gases when burning natural gas", 
+                  "answerKey": "answer1"
+                }, 
+                {
+                  "content": "mining of lignite as opposed to harder forms of coal", 
+                  "answerKey": "answer2"
+                }, 
+                {
+                  "content": "applying carbon sequestration techniques during the burning of coal", 
+                  "answerKey": "answer3"
+                }, 
+                {
+                  "content": "the use of hydraulic fracturing to reduce water use during natural gas production", 
+                  "answerKey": "answer4"
+                }
+              ]
+            }, 
+            "configFixup": [
+              {
+                "value": {
+                  "domain": "info", 
+                  "type": "ref", 
+                  "refId": "sequenceNodeKey"
+                }, 
+                "type": "set-property", 
+                "name": "questionId"
+              }
+            ]
+          }
+        ], 
+        "containerId": "target1", 
+        "hookupActions": [
+          {
+            "methodName": "handleRequestsFrom", 
+            "instance": {
+              "type": "submit-manager"
+            }, 
+            "args": [
+              {
+                "domain": "brix", 
+                "type": "ref", 
+                "refId": "Q1"
+              }
+            ], 
+            "type": "method-call", 
+            "description": "Hookup the submit manager to evaluate answers"
+          }, 
+          {
+            "methodName": "draw", 
+            "instance": {
+              "domain": "brix", 
+              "type": "ref", 
+              "refId": "Q1"
+            }, 
+            "args": [
+              {
+                "type": "d3select", 
+                "selector": "#target1"
+              }
+            ], 
+            "type": "method-call", 
+            "description": "Draw the question"
+          }
+        ], 
+        "description": "container for the sample multiple choice question"
+      }
+    ], 
+    "description": "A Sample Activity containing a single multiple choice bric"
+  }, 
+  "@type": "Envelope"
+}

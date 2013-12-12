@@ -1,12 +1,59 @@
 {
+  "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope", 
+  "metadata": {
+    "owner": "Brix", 
+    "contentTypeTier2": [
+      "assessment item"
+    ], 
+    "intendedEndUserRole": [
+      "Student"
+    ], 
+    "subject": [
+      "EnvironmentalScience"
+    ], 
+    "created": "2013-12-12T11:38:04.525637", 
+    "contentTypeTier1": "Test and Assessment", 
+    "timeRequired": "PT20S", 
+    "description": "68830_HP_M06_03.html", 
+    "title": "68830_HP_M06_03.html", 
+    "format": [
+      "application/vnd.pearson.sanvan.v1.activity"
+    ], 
+    "guid": "1a5096d5-d935-4380-b090-9be61971625a"
+  }, 
   "body": {
     "containerConfig": [
       {
         "brixConfig": [
           {
+            "bricId": "Q1", 
+            "answerKey": {
+              "answers": {
+                "answer3": {
+                  "score": 1, 
+                  "response": ""
+                }, 
+                "answer2": {
+                  "score": 0, 
+                  "response": ""
+                }, 
+                "answer1": {
+                  "score": 0, 
+                  "response": ""
+                }, 
+                "answer4": {
+                  "score": 0, 
+                  "response": ""
+                }
+              }, 
+              "assessmentType": "multiplechoice"
+            }, 
+            "bricType": "MultipleChoiceQuestion", 
             "config": {
-              "presenterType": "RadioGroup", 
+              "id": "sampleQ1", 
+              "order": "randomized", 
               "question": "What is the major source of population momentum around the world today?", 
+              "presenterType": "RadioGroup", 
               "presenterConfig": {
                 "numberFormat": ""
               }, 
@@ -27,49 +74,25 @@
                   "content": "20-40 years olds in sub-Saharan Africa and Asia", 
                   "answerKey": "answer4"
                 }
-              ], 
-              "order": "randomized", 
-              "id": "sampleQ1"
+              ]
             }, 
-            "answerKey": {
-              "assessmentType": "multiplechoice", 
-              "answers": {
-                "answer4": {
-                  "score": 0, 
-                  "response": ""
-                }, 
-                "answer1": {
-                  "score": 0, 
-                  "response": ""
-                }, 
-                "answer3": {
-                  "score": 1, 
-                  "response": ""
-                }, 
-                "answer2": {
-                  "score": 0, 
-                  "response": ""
-                }
-              }
-            }, 
-            "bricType": "MultipleChoiceQuestion", 
-            "bricId": "Q1", 
             "configFixup": [
               {
-                "type": "set-property", 
-                "name": "questionId", 
                 "value": {
                   "domain": "info", 
                   "type": "ref", 
                   "refId": "sequenceNodeKey"
-                }
+                }, 
+                "type": "set-property", 
+                "name": "questionId"
               }
             ]
           }
         ], 
-        "description": "container for the sample multiple choice question", 
+        "containerId": "target1", 
         "hookupActions": [
           {
+            "methodName": "handleRequestsFrom", 
             "instance": {
               "type": "submit-manager"
             }, 
@@ -81,10 +104,10 @@
               }
             ], 
             "type": "method-call", 
-            "description": "Hookup the submit manager to evaluate answers", 
-            "methodName": "handleRequestsFrom"
+            "description": "Hookup the submit manager to evaluate answers"
           }, 
           {
+            "methodName": "draw", 
             "instance": {
               "domain": "brix", 
               "type": "ref", 
@@ -97,38 +120,13 @@
               }
             ], 
             "type": "method-call", 
-            "description": "Draw the question", 
-            "methodName": "draw"
+            "description": "Draw the question"
           }
         ], 
-        "containerId": "target1"
+        "description": "container for the sample multiple choice question"
       }
     ], 
     "description": "A Sample Activity containing a single multiple choice bric"
   }, 
-  "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope", 
-  "@type": "Envelope", 
-  "metadata": {
-    "intendedEndUserRole": [
-      "Student"
-    ], 
-    "description": "68830_HP_M06_03.html", 
-    "format": [
-      "application/vnd.pearson.sanvan.v1.activity"
-    ], 
-    "educationalAlignment": [
-      "http://purl.org/pearson/objectives/183725473384362"
-    ], 
-    "guid": "1a5096d5-d935-4380-b090-9be61971625a", 
-    "subject": [
-      "EnvironmentalScience"
-    ], 
-    "timeRequired": "PT20S", 
-    "created": "2013-12-11T14:24:43.641446", 
-    "title": "68830_HP_M06_03.html", 
-    "contentTypeTier1": "Test and Assessment", 
-    "contentTypeTier2": [
-      "assessment item"
-    ]
-  }
+  "@type": "Envelope"
 }

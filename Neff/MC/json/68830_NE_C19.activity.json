@@ -1,0 +1,132 @@
+{
+  "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope", 
+  "metadata": {
+    "owner": "Brix", 
+    "contentTypeTier2": [
+      "assessment item"
+    ], 
+    "intendedEndUserRole": [
+      "Student"
+    ], 
+    "subject": [
+      "EnvironmentalScience"
+    ], 
+    "created": "2013-12-12T11:38:04.527515", 
+    "contentTypeTier1": "Test and Assessment", 
+    "timeRequired": "PT20S", 
+    "description": "68830_NE_C19.html", 
+    "title": "68830_NE_C19.html", 
+    "format": [
+      "application/vnd.pearson.sanvan.v1.activity"
+    ], 
+    "guid": "78e4246b-90ce-49f0-b977-772f7846087c"
+  }, 
+  "body": {
+    "containerConfig": [
+      {
+        "brixConfig": [
+          {
+            "bricId": "Q1", 
+            "answerKey": {
+              "answers": {
+                "answer3": {
+                  "score": 0, 
+                  "response": "Although all fossil fuels produce air pollution, natural gas produces considerably less than either coal or oil combustion."
+                }, 
+                "answer2": {
+                  "score": 0, 
+                  "response": "What are pollutants are released during nuclear energy generation?"
+                }, 
+                "answer1": {
+                  "score": 0, 
+                  "response": "Although all fossil fuels produce air pollution, oil is not the worst."
+                }, 
+                "answer4": {
+                  "score": 1, 
+                  "response": "Correct"
+                }
+              }, 
+              "assessmentType": "multiplechoice"
+            }, 
+            "bricType": "MultipleChoiceQuestion", 
+            "config": {
+              "id": "sampleQ1", 
+              "order": "randomized", 
+              "question": "Suppose that in the future world solar energy became extremely inexpensive, and air pollution was the most critical concern. Based on air pollution produced, which fuel would be best to phase out?", 
+              "presenterType": "RadioGroup", 
+              "presenterConfig": {
+                "numberFormat": ""
+              }, 
+              "choices": [
+                {
+                  "content": "oil", 
+                  "answerKey": "answer1"
+                }, 
+                {
+                  "content": "nuclear", 
+                  "answerKey": "answer2"
+                }, 
+                {
+                  "content": "natural gas", 
+                  "answerKey": "answer3"
+                }, 
+                {
+                  "content": "coal", 
+                  "answerKey": "answer4"
+                }
+              ]
+            }, 
+            "configFixup": [
+              {
+                "value": {
+                  "domain": "info", 
+                  "type": "ref", 
+                  "refId": "sequenceNodeKey"
+                }, 
+                "type": "set-property", 
+                "name": "questionId"
+              }
+            ]
+          }
+        ], 
+        "containerId": "target1", 
+        "hookupActions": [
+          {
+            "methodName": "handleRequestsFrom", 
+            "instance": {
+              "type": "submit-manager"
+            }, 
+            "args": [
+              {
+                "domain": "brix", 
+                "type": "ref", 
+                "refId": "Q1"
+              }
+            ], 
+            "type": "method-call", 
+            "description": "Hookup the submit manager to evaluate answers"
+          }, 
+          {
+            "methodName": "draw", 
+            "instance": {
+              "domain": "brix", 
+              "type": "ref", 
+              "refId": "Q1"
+            }, 
+            "args": [
+              {
+                "type": "d3select", 
+                "selector": "#target1"
+              }
+            ], 
+            "type": "method-call", 
+            "description": "Draw the question"
+          }
+        ], 
+        "description": "container for the sample multiple choice question"
+      }
+    ], 
+    "description": "A Sample Activity containing a single multiple choice bric"
+  }, 
+  "@type": "Envelope"
+}

@@ -1,12 +1,59 @@
 {
+  "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope", 
+  "metadata": {
+    "owner": "Brix", 
+    "contentTypeTier2": [
+      "assessment item"
+    ], 
+    "intendedEndUserRole": [
+      "Student"
+    ], 
+    "subject": [
+      "EnvironmentalScience"
+    ], 
+    "created": "2013-12-12T11:38:04.527284", 
+    "contentTypeTier1": "Test and Assessment", 
+    "timeRequired": "PT20S", 
+    "description": "68830_NE_C07.html", 
+    "title": "68830_NE_C07.html", 
+    "format": [
+      "application/vnd.pearson.sanvan.v1.activity"
+    ], 
+    "guid": "2db26c2d-b236-4ae8-8f99-f379bd639031"
+  }, 
   "body": {
     "containerConfig": [
       {
         "brixConfig": [
           {
+            "bricId": "Q1", 
+            "answerKey": {
+              "answers": {
+                "answer3": {
+                  "score": 0, 
+                  "response": "Is it the fuel itself or the process of extraction that makes a fuel source unconventional?"
+                }, 
+                "answer2": {
+                  "score": 1, 
+                  "response": "Correct."
+                }, 
+                "answer1": {
+                  "score": 0, 
+                  "response": "Is it the fuel itself or the process of extraction that makes a fuel source unconventional?"
+                }, 
+                "answer4": {
+                  "score": 0, 
+                  "response": "While the fuel itself may not actually produce any more CO<sub>2</sub>, what do you know about the extraction processes for unconventional fuels?"
+                }
+              }, 
+              "assessmentType": "multiplechoice"
+            }, 
+            "bricType": "MultipleChoiceQuestion", 
             "config": {
-              "presenterType": "RadioGroup", 
+              "id": "sampleQ1", 
+              "order": "randomized", 
               "question": "Why will we likely emit more CO2 per unit of energy consumed as we use more unconventional fuel sources in the future such as tar sands and oil shale?", 
+              "presenterType": "RadioGroup", 
               "presenterConfig": {
                 "numberFormat": ""
               }, 
@@ -27,49 +74,25 @@
                   "content": "The question is moot. The majority of unconventional fuels actually do not produce more CO<sub>2</sub> than traditional fossil fuels on average.", 
                   "answerKey": "answer4"
                 }
-              ], 
-              "order": "randomized", 
-              "id": "sampleQ1"
+              ]
             }, 
-            "answerKey": {
-              "assessmentType": "multiplechoice", 
-              "answers": {
-                "answer4": {
-                  "score": 0, 
-                  "response": "While the fuel itself may not actually produce any more CO<sub>2</sub>, what do you know about the extraction processes for unconventional fuels?"
-                }, 
-                "answer1": {
-                  "score": 0, 
-                  "response": "Is it the fuel itself or the process of extraction that makes a fuel source unconventional?"
-                }, 
-                "answer3": {
-                  "score": 0, 
-                  "response": "Is it the fuel itself or the process of extraction that makes a fuel source unconventional?"
-                }, 
-                "answer2": {
-                  "score": 1, 
-                  "response": "Correct."
-                }
-              }
-            }, 
-            "bricType": "MultipleChoiceQuestion", 
-            "bricId": "Q1", 
             "configFixup": [
               {
-                "type": "set-property", 
-                "name": "questionId", 
                 "value": {
                   "domain": "info", 
                   "type": "ref", 
                   "refId": "sequenceNodeKey"
-                }
+                }, 
+                "type": "set-property", 
+                "name": "questionId"
               }
             ]
           }
         ], 
-        "description": "container for the sample multiple choice question", 
+        "containerId": "target1", 
         "hookupActions": [
           {
+            "methodName": "handleRequestsFrom", 
             "instance": {
               "type": "submit-manager"
             }, 
@@ -81,10 +104,10 @@
               }
             ], 
             "type": "method-call", 
-            "description": "Hookup the submit manager to evaluate answers", 
-            "methodName": "handleRequestsFrom"
+            "description": "Hookup the submit manager to evaluate answers"
           }, 
           {
+            "methodName": "draw", 
             "instance": {
               "domain": "brix", 
               "type": "ref", 
@@ -97,38 +120,13 @@
               }
             ], 
             "type": "method-call", 
-            "description": "Draw the question", 
-            "methodName": "draw"
+            "description": "Draw the question"
           }
         ], 
-        "containerId": "target1"
+        "description": "container for the sample multiple choice question"
       }
     ], 
     "description": "A Sample Activity containing a single multiple choice bric"
   }, 
-  "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope", 
-  "@type": "Envelope", 
-  "metadata": {
-    "intendedEndUserRole": [
-      "Student"
-    ], 
-    "description": "68830_NE_C07.html", 
-    "format": [
-      "application/vnd.pearson.sanvan.v1.activity"
-    ], 
-    "educationalAlignment": [
-      "http://purl.org/pearson/objectives/183725473384362"
-    ], 
-    "guid": "2db26c2d-b236-4ae8-8f99-f379bd639031", 
-    "subject": [
-      "EnvironmentalScience"
-    ], 
-    "timeRequired": "PT20S", 
-    "created": "2013-12-11T14:24:43.645654", 
-    "title": "68830_NE_C07.html", 
-    "contentTypeTier1": "Test and Assessment", 
-    "contentTypeTier2": [
-      "assessment item"
-    ]
-  }
+  "@type": "Envelope"
 }
