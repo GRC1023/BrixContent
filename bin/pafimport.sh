@@ -19,9 +19,11 @@ else
     exit 1
 fi
 
+date
 for jsonfile
 do
     echo importing $jsonfile to PAF...
     $PAFIMPORTER -c -m $METHOD -u $URL -h "$HEADER" -d "$jsonfile"
     echo ...done importing $jsonfile to PAF
+	date
 done
