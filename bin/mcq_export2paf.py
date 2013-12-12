@@ -68,7 +68,7 @@ class PAFActivity(object):
                         "format" : [ "application/vnd.pearson.sanvan.v1.activity" ],
                         "timeRequired" : "PT20S",
                         "created" : datetime.datetime.now().isoformat(), #time.strftime("%Y-%m-%dT%H:%M:%S-04:00"),
-                        "educationalAlignment" : [ "http://purl.org/pearson/objectives/183725473384362" ]
+						"owner": "Brix"
                     },
                 "body" : {}
             }
@@ -160,7 +160,7 @@ class PAFAssignment(object):
                         "subject" : [ self.subject ],
                         "intendedEndUserRole" : [ "Student" ],
                         "timeRequired" : "PT20S",
-                        "educationalAlignment" : [ "http://purl.org/pearson/objectives/183725473384362" ]
+						"owner": "Brix"
                     },
                "body" :
                 {
