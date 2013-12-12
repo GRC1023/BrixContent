@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="Template for Multiple Choice Question Brix" name="description">
+   
+    <!-- widgets.css contains styling for the interactive brix -->
+    <link href="css/widgets.css" rel="stylesheet">
+</head>
+<body>
+    <div id="b07cf72fd876d4d37bd89fe691f8205ca"></div>
+    <script src="js/d3.v3.min.js"></script>
+    
+	<script src="js/brixlib-compiled.js"></script>
+
+    <script type="text/javascript">
+	// Create an object that will contain the objects needed for the activities
+	// on this page.
+	pearson.brix.activity = {};
+	var a = pearson.brix.activity;
+
+	// The activity config that defines the brix and mortar for this page
+	a.config =
+		{
+			"description": "Hybrid car technology",
+			"containerConfig":
+				[
+					{
+						"description": "container for the graph and labels",
+						"containerId": "b07cf72fd876d4d37bd89fe691f8205ca",
+						"brixConfig":
+							[
+								{
+									"bricId": "imageGraph",
+									"bricType": "Image",
+									"config":
+										{
+											"id": "image1",
+                                            "caption": "Hybrid car technology",
+                                            "actualSize": {height: 330, width: 477}
+										},
+                                    "configFixup":
+                                        [
+                                            {
+                                                "type": "set-property",
+                                                "name": "URI",
+                                                "value":
+                                                    {
+                                                        "type": "join",
+                                                        "parts":
+                                                        [
+                                                            { "type": "ref", "domain": "info", "refId": "imgBaseUrl" },
+                                                            { "type": "constant", "value": "img/68830_EU_06_03.png" }
+                                                        ]
+                                                    }
+                                            }
+                                        ]
+								},
+                                {
+                                    "bricId": "labelGroup1",
+                                    "bricType": "LabelGroup",
+                                    "config":
+                                        {
+                                            "id": "dataLabels",
+                                            "type": "numbered",
+                                            "labels": [
+                                                {"content": "1", "xyPos": [0.022, 0.84], "width": 0},
+                                                {"content": "2", "xyPos": [0.035, 0.58], "width": 0},
+                                                {"content": "3", "xyPos": [0.59, 0.39], "width": 0},
+                                                {"content": "4", "xyPos": [0.85, 0.50], "width": 0},
+                                                    ]
+                                        }
+                                },
+								{
+									"bricId": "cntr1",
+									"bricType": "SvgContainer",
+									"config":
+										{
+											"maxSize": {"height": 330, "width": 457},
+										},
+									"configFixup":
+                                        [
+                                            {
+                                                "type": "set-property",
+                                                "name": "node",
+                                                "value":
+                                                    {
+                                                        "type": "d3select",
+                                                        "selector": "#b07cf72fd876d4d37bd89fe691f8205ca"
+                                                    }
+                                            }
+                                        ]
+								}
+							],
+						"hookupActions":
+							[
+								{
+									"description": "Append the image to the svg container",
+									"type": "method-call",
+									"instance": {"type": "ref", "domain": "brix", "refId": "cntr1"},
+									"methodName": "append",
+									"args":
+										[
+											{ "type": "ref", "domain": "brix", "refId": "imageGraph" }
+										]
+								},
+                                {
+                                    "description": "Append the labels to the svg container",
+                                    "type": "method-call",
+                                    "instance": {"type": "ref", "domain": "brix", "refId": "cntr1"},
+                                    "methodName": "append",
+                                    "args":
+                                        [
+                                            { "type": "ref", "domain": "brix", "refId": "labelGroup1" }
+                                        ]
+                                },
+                                {
+                                    "description": "Initial condition: select 1st label",
+                                    "type": "method-call",
+                                    "instance": {"type": "ref", "domain": "brix", "refId": "labelGroup1"},
+                                    "methodName": "lite",
+                                    "args":
+                                        [
+                                            { "type": "constant", "value": "0" }
+                                        ]
+                                }
+							]
+					},
+					{
+                        "description": "The container contains the liteable callouts",
+                        "containerId": "b07cf72fd876d4d37bd89fe691f8205ca",
+                        "brixConfig":
+                            [
+                                {
+                                    "bricId": "lbltbl1",
+                                    "bricType": "Callouts",
+                                    "config":
+                                        {
+                                            "id": "callme",
+                                            "show": "all",
+                                            "type": "numbered",
+                                            "textBits":
+                                                [    
+                                                    {"cols": ["A regular gasoline or diesel engine provides power to the car under most conditions."]},
+                                                    {"cols": ["Energy is captured during braking and used to charge a bank of batteries in the car."]},
+                                                    {"cols": ["The energy in the batteries is used to run an electric motor that provides power when starting or accelerating."]},
+                                                    {"cols": ["Emissions are lower than from a gasoline or diesel engine because less fuel is required."]},
+                                                ]
+                                        }
+                                }
+                            ],
+                       "mortarConfig":
+                            [
+                                {
+                                    "mortarId": "hilite1",
+                                    "mortarType": "Hilite",
+                                    "config":
+                                        {
+                                            "eventDetailsProperty": "selectKey"
+                                        },
+                                    "configFixup":
+                                        [
+                                            {
+                                                "type": "set-property",
+                                                "name": "topic",
+                                                "value":
+                                                    {
+                                                        "type": "brix-topic",
+                                                        "bricType": "LabelGroup",
+                                                        "instanceId": "dataLabels",
+                                                        "eventName": "selected"
+                                                    }
+                                            },
+                                            {
+                                                "type": "set-property",
+                                                "name": "targetBric",
+                                                "value": { "type": "ref", "domain": "brix", "refId": "lbltbl1" }
+                                            }
+                                        ]
+                                }, 
+                                {
+                                    "mortarId": "hilite2",
+                                    "mortarType": "Hilite",
+                                    "config":
+                                        {
+                                            "eventDetailsProperty": "selectKey"
+                                        },
+                                    "configFixup":
+                                        [
+                                            {
+                                                "type": "set-property",
+                                                "name": "topic",
+                                                "value":
+                                                    {
+                                                        "type": "brix-topic",
+                                                        "bricType": "Callouts",
+                                                        "instanceId": "callme",
+                                                        "eventName": "selected"
+                                                    }
+                                            },
+                                            {
+                                                "type": "set-property",
+                                                "name": "targetBric",
+                                                "value": { "type": "ref", "domain": "brix", "refId": "labelGroup1" }
+                                            }
+                                        ]
+                                }
+                            ], 
+                        "hookupActions":
+                            [
+                                {
+                                    "description": "draw the label table",
+                                    "type": "method-call",
+                                    "instance": {"type": "ref", "domain": "brix", "refId": "lbltbl1"},
+                                    "methodName": "draw",
+                                    "args":
+                                        [
+                                            { "type": "d3select", "selector": "#b07cf72fd876d4d37bd89fe691f8205ca" }
+                                        ]
+                                },
+                                {
+                                    "description": "Initial condition: select 1st table row",
+                                    "type": "method-call",
+                                    "instance": {"type": "ref", "domain": "brix", "refId": "lbltbl1"},
+                                    "methodName": "lite",
+                                    "args":
+                                        [
+                                            { "type": "constant", "value": "0" }
+                                        ]
+                                }
+
+                            ]
+                    }
+				]
+		};
+
+	// create the eventmanager to be used by the created brix, and the
+	// bricLayer which will create them, and then tell the bricLayer to build.
+	a.eventManager = new pearson.utils.EventManager();
+	a.answerMan = new pearson.brix.utils.LocalAnswerMan();
+	a.submitManager = new pearson.brix.utils.SubmitManager(a.eventManager, a.answerMan);
+
+	a.bricLayer = new pearson.brix.BricLayer(null, a.eventManager, a.submitManager);
+
+	pearson.utils.logToConsole(true, "FINER");
+
+	a.building = a.bricLayer.build(a.config);
+
+
+    /* 
+    a.answerMan.setMaxAttempts(a.config.maxAttempts);
+	a.answerMan.registerAnswerKey(a.config.sequenceNodeKey,
+								  a.config.containerConfig[0].brixConfig[0].answerKey);
+	*/
+
+    </script>
+</body>
+</html>
