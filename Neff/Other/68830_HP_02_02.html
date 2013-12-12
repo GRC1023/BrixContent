@@ -89,6 +89,36 @@
                                         ]
 								}
 							],
+                        "mortarConfig":
+                            [
+                                {
+                                    "mortarId": "hilite2",
+                                    "mortarType": "Hilite",
+                                    "config":
+                                        {
+                                            "eventDetailsProperty": "selectKey"
+                                        },
+                                    "configFixup":
+                                        [
+                                            {
+                                                "type": "set-property",
+                                                "name": "topic",
+                                                "value":
+                                                    {
+                                                        "type": "brix-topic",
+                                                        "bricType": "Callouts",
+                                                        "instanceId": "callme",
+                                                        "eventName": "selected"
+                                                    }
+                                            },
+                                            {
+                                                "type": "set-property",
+                                                "name": "targetBric",
+                                                "value": { "type": "ref", "domain": "brix", "refId": "labelSelector1" }
+                                            }
+                                        ]
+                                }
+                            ],
 						"hookupActions":
 							[
 								{
