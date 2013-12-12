@@ -1,0 +1,234 @@
+{
+  "@context" : "http://purl.org/pearson/content/v1/ctx/metadata/envelope",
+  "@type" : "Envelope",
+  "metadata" : 
+    {
+        "title" : "A conceptual model for the demographic transition",
+        "guid" : "99F75CF1-59D1-4F4C-9E70-E65233105F4C",
+        "description" : "A conceptual model for the demographic transition",
+        "contentTypeTier1" : "Activity",
+        "contentTypeTier2" : [ "Exercise" ],
+        "subject" : [ "EnvironmentalScience" ],
+        "intendedEndUserRole" : [ "Student" ],
+        "format" : 
+            [
+              "application/vnd.pearson.sanvan.v1.activity"
+            ],
+        "timeRequired" : "PT20S",
+        "created" : "2013-12-09T22:30:00-00:00"
+    }, 
+  "body" :
+    {
+        "containerConfig":
+                [
+                    {
+                        "description": "container for the graph and labels",
+                        "containerId": "b085f865b34f842059afd74cad6bfa4e5",
+                        "brixConfig":
+                            [
+                                {
+                                    "bricId": "imageGraph",
+                                    "bricType": "Image",
+                                    "config":
+                                        {
+                                            "id": "image1",
+                                            "caption": "conceptual graph showing births, deaths and the total population",
+                                            "actualSize": {"height": 381, "width": 477}
+                                        },
+                                    "configFixup":
+                                        [
+                                            {
+                                                "type": "set-property",
+                                                "name": "URI",
+                                                "value":
+                                                    {
+                                                        "type": "join",
+                                                        "parts":
+                                                        [
+                                                            { "type": "ref", "domain": "info", "refId": "imgBaseUrl" },
+                                                            { "type": "constant", "value": "img/68830_HP_02_02.png" }
+                                                        ]
+                                                    }
+                                            }
+                                        ]
+                                },
+                                {
+                                    "bricId": "labelSelector1",
+                                    "bricType": "LabelSelector",
+                                    "config":
+                                        {
+                                            "id": "dataLabels",
+                                            "labels": ["Stage 1", "Stage 2", "Stage 3", "Stage 4", "Stage 5"],
+                                            "layout": "horizontal",
+                                            "itemMargin": {"top": 5, "bottom": 5, "left": 0, "right": 0}
+                                        }
+                                },
+                                {
+                                    "bricId": "cntr1",
+                                    "bricType": "SvgContainer",
+                                    "config":
+                                        {
+                                            "maxSize": {"height": 390, "width": 457}
+                                        },
+                                    "configFixup":
+                                        [
+                                            {
+                                                "type": "set-property",
+                                                "name": "node",
+                                                "value":
+                                                    {
+                                                        "type": "d3select",
+                                                        "selector": "#b085f865b34f842059afd74cad6bfa4e5"
+                                                    }
+                                            }
+                                        ]
+                                }
+                            ],
+                         "mortarConfig":
+                            [
+                                {
+                                    "mortarId": "hilite2",
+                                    "mortarType": "Hilite",
+                                    "config":
+                                        {
+                                            "eventDetailsProperty": "selectKey"
+                                        },
+                                    "configFixup":
+                                        [
+                                            {
+                                                "type": "set-property",
+                                                "name": "topic",
+                                                "value":
+                                                    {
+                                                        "type": "brix-topic",
+                                                        "bricType": "Callouts",
+                                                        "instanceId": "callme",
+                                                        "eventName": "selected"
+                                                    }
+                                            },
+                                            {
+                                                "type": "set-property",
+                                                "name": "targetBric",
+                                                "value": { "type": "ref", "domain": "brix", "refId": "labelSelector1" }
+                                            }
+                                        ]
+                                }
+                            ],
+                        "hookupActions":
+                            [
+                                {
+                                    "description": "Append the image to the svg container",
+                                    "type": "method-call",
+                                    "instance": {"type": "ref", "domain": "brix", "refId": "cntr1"},
+                                    "methodName": "append",
+                                    "args":
+                                        [
+                                            { "type": "ref", "domain": "brix", "refId": "imageGraph" }
+                                        ]
+                                },
+                                {
+                                    "description": "Append the labels to the svg container",
+                                    "type": "method-call",
+                                    "instance": {"type": "ref", "domain": "brix", "refId": "cntr1"},
+                                    "methodName": "append",
+                                    "args":
+                                        [
+                                            { "type": "ref", "domain": "brix", "refId": "labelSelector1" },
+                                            { "type": "constant", 
+                                              "value": {"topPercentOffset": 0.755, "leftPercentOffset": 0, "heightPercent": 0.2, "widthPercent": 1}
+                                            }
+                                        ]
+                                },
+                                {
+                                    "description": "Initial condition: select 1st label",
+                                    "type": "method-call",
+                                    "instance": {"type": "ref", "domain": "brix", "refId": "labelSelector1"},
+                                    "methodName": "lite",
+                                    "args":
+                                        [
+                                            { "type": "constant", "value": "0" }
+                                        ]
+                                }
+                            ]
+                    },
+                    {
+                        "description": "The container contains the liteable callouts",
+                        "containerId": "b085f865b34f842059afd74cad6bfa4e5",
+                        "brixConfig":
+                            [
+                                {
+                                    "bricId": "lbltbl1",
+                                    "bricType": "Callouts",
+                                    "config":
+                                        {
+                                            "id": "callme",
+                                            "show": "all",
+                                            "textBits":
+                                                [    
+                                                    {"cols": ["<strong>Stage 1: Pre-development period.</strong>&#160;High birth and death rates offset each other, so the population grows slowly."]},
+                                                    {"cols": ["<strong>Stage 2: Developing period.</strong>&#160;As a country's economy becomes stronger, medical care, clean water, and food are more available. The death rate declines and the birth rate remains high, so the population grows more rapidly."]},
+                                                    {"cols": ["<strong>Stage 3: Modernizing period.</strong>&#160;Economic, educational, and social changes cause declines in the birth rate. Population growth starts to slow."]},
+                                                    {"cols": ["<strong>Stage 4: Developed period.</strong>&#160;Birth and death rates fall to low levels, slowing population growth."]},
+                                                    {"cols": ["<strong>Stage 5: Post-development period.</strong>&#160;In highly-developed countries, the birth rate is falling while the death rate is relatively constant. The population growth rate is negative and the population declines."]}
+                                                ]
+                                        }
+                                }
+                            ],
+                        "mortarConfig":
+                            [
+                                {
+                                    "mortarId": "hilite1",
+                                    "mortarType": "Hilite",
+                                    "config":
+                                        {
+                                            "eventDetailsProperty": "selectKey"
+                                        },
+                                    "configFixup":
+                                        [
+                                            {
+                                                "type": "set-property",
+                                                "name": "topic",
+                                                "value":
+                                                    {
+                                                        "type": "brix-topic",
+                                                        "bricType": "LabelSelector",
+                                                        "instanceId": "dataLabels",
+                                                        "eventName": "selected"
+                                                    }
+                                            },
+                                            {
+                                                "type": "set-property",
+                                                "name": "targetBric",
+                                                "value": { "type": "ref", "domain": "brix", "refId": "lbltbl1" }
+                                            }
+                                        ]
+                                }
+                            ],
+                        "hookupActions":
+                            [
+                                {
+                                    "description": "draw the label table",
+                                    "type": "method-call",
+                                    "instance": {"type": "ref", "domain": "brix", "refId": "lbltbl1"},
+                                    "methodName": "draw",
+                                    "args":
+                                        [
+                                            { "type": "d3select", "selector": "#b085f865b34f842059afd74cad6bfa4e5" }
+                                        ]
+                                },
+                                {
+                                    "description": "Initial condition: select 1st table row (note that we may want to use the state field to do this later)",
+                                    "type": "method-call",
+                                    "instance": {"type": "ref", "domain": "brix", "refId": "lbltbl1"},
+                                    "methodName": "lite",
+                                    "args":
+                                        [
+                                            { "type": "constant", "value": "0" }
+                                        ]
+                                }
+
+                            ]
+                    }
+                ]
+    }
+}
