@@ -1,10 +1,10 @@
 {
   "metadata": {
-    "guid": "31789a47-178c-4c14-872b-ddb3446778be", 
+    "guid": "4ac52c14-dc36-4627-b919-922c1164330a", 
     "subject": [
       "EnvironmentalScience"
     ], 
-    "description": "A conceptual model for the demographic transition", 
+    "description": "How electricity is typically generated", 
     "timeRequired": "PT20S", 
     "contentTypeTier2": [
       "Exercise"
@@ -16,13 +16,13 @@
     "intendedEndUserRole": [
       "Student"
     ], 
-    "created": "2013-12-12T16:35:14.992309", 
-    "title": "A conceptual model for the demographic transition", 
+    "created": "2013-12-12T16:35:14.990851", 
+    "title": "How electricity is typically generated", 
     "owner": "Brix"
   }, 
   "@type": "Envelope", 
   "body": {
-    "description": "A conceptual model for the demographic transition", 
+    "description": "How electricity is typically generated", 
     "containerConfig": [
       {
         "brixConfig": [
@@ -37,7 +37,7 @@
                       "type": "ref"
                     }, 
                     {
-                      "value": "img/68830_HP_02_02.png", 
+                      "value": "img/68830_EU_04_01.png", 
                       "type": "constant"
                     }
                   ], 
@@ -51,39 +51,68 @@
             "bricId": "imageGraph", 
             "config": {
               "actualSize": {
-                "height": 381, 
-                "width": 477
+                "height": 599, 
+                "width": 359
               }, 
               "id": "image1", 
-              "caption": "conceptual graph showing births, deaths and the total population"
+              "caption": "graph comparing energy use"
             }
           }, 
           {
-            "bricType": "LabelSelector", 
-            "bricId": "labelSelector1", 
+            "bricType": "LabelGroup", 
+            "bricId": "labelGroup1", 
             "config": {
               "labels": [
-                "Stage 1", 
-                "Stage 2", 
-                "Stage 3", 
-                "Stage 4", 
-                "Stage 5"
+                {
+                  "xyPos": [
+                    0.07, 
+                    0.27
+                  ], 
+                  "width": 0, 
+                  "content": "1"
+                }, 
+                {
+                  "xyPos": [
+                    0.45, 
+                    0.9
+                  ], 
+                  "width": 0, 
+                  "content": "2"
+                }, 
+                {
+                  "xyPos": [
+                    0.395, 
+                    0.51
+                  ], 
+                  "width": 0, 
+                  "content": "3"
+                }, 
+                {
+                  "xyPos": [
+                    0.7, 
+                    0.65
+                  ], 
+                  "width": 0, 
+                  "content": "4"
+                }, 
+                {
+                  "xyPos": [
+                    0.85, 
+                    0.98
+                  ], 
+                  "width": 0, 
+                  "content": "5"
+                }
               ], 
               "id": "dataLabels", 
-              "itemMargin": {
-                "bottom": 5, 
-                "top": 5, 
-                "left": 0, 
-                "right": 0
-              }, 
-              "layout": "horizontal"
+              "type": "numbered"
             }
           }, 
           {
             "configFixup": [
               {
                 "value": {
-                  "selector": "#b085f865b34f842059afd74cad6bfa4e5", 
+                  "selector": "#bdc328cbba71b474eb02866361cfb1663", 
                   "type": "d3select"
                 }, 
                 "name": "node", 
@@ -94,44 +123,12 @@
             "bricId": "cntr1", 
             "config": {
               "maxSize": {
-                "height": 390, 
-                "width": 457
+                "height": 360, 
+                "width": 557
               }
             }
           }
         ], 
-        "mortarConfig": [
-          {
-            "configFixup": [
-              {
-                "value": {
-                  "instanceId": "callme", 
-                  "bricType": "Callouts", 
-                  "eventName": "selected", 
-                  "type": "brix-topic"
-                }, 
-                "name": "topic", 
-                "type": "set-property"
-              }, 
-              {
-                "value": {
-                  "domain": "brix", 
-                  "refId": "labelSelector1", 
-                  "type": "ref"
-                }, 
-                "name": "targetBric", 
-                "type": "set-property"
-              }
-            ], 
-            "config": {
-              "eventDetailsProperty": "selectKey"
-            }, 
-            "mortarType": "Hilite", 
-            "mortarId": "hilite2"
-          }
-        ], 
-        "description": "container for the graph and labels", 
-        "containerId": "b085f865b34f842059afd74cad6bfa4e5", 
         "hookupActions": [
           {
             "args": [
@@ -154,17 +151,8 @@
             "args": [
               {
                 "domain": "brix", 
-                "refId": "labelSelector1", 
+                "refId": "labelGroup1", 
                 "type": "ref"
-              }, 
-              {
-                "value": {
-                  "leftPercentOffset": 0, 
-                  "topPercentOffset": 0.755, 
-                  "widthPercent": 1, 
-                  "heightPercent": 0.2
-                }, 
-                "type": "constant"
               }
             ], 
             "description": "Append the labels to the svg container", 
@@ -187,12 +175,14 @@
             "methodName": "lite", 
             "instance": {
               "domain": "brix", 
-              "refId": "labelSelector1", 
+              "refId": "labelGroup1", 
               "type": "ref"
             }, 
             "type": "method-call"
           }
-        ]
+        ], 
+        "description": "container for the graph and labels", 
+        "containerId": "bdc328cbba71b474eb02866361cfb1663"
       }, 
       {
         "brixConfig": [
@@ -205,30 +195,31 @@
               "textBits": [
                 {
                   "cols": [
-                    "<strong>Stage 1: Pre-development period.</strong>&#160;High birth and death rates offset each other, so the population grows slowly."
+                    "Heat is generated in a furnace by burning fuel such as coal, natural gas or nuclear fuel."
                   ]
                 }, 
                 {
                   "cols": [
-                    "<strong>Stage 2: Developing period.</strong>&#160;As a country's economy becomes stronger, medical care, clean water, and food are more available. The death rate declines and the birth rate remains high, so the population grows more rapidly."
+                    "Water flows in pipes through the furnace and is heated to produce steam."
                   ]
                 }, 
                 {
                   "cols": [
-                    "<strong>Stage 3: Modernizing period.</strong>&#160;Economic, educational, and social changes cause declines in the birth rate. Population growth starts to slow."
+                    "The steam turns the turbine, producing mechanical energy. Cool water from an outside source condenses the steam, which is recirculated."
                   ]
                 }, 
                 {
                   "cols": [
-                    "<strong>Stage 4: Developed period.</strong>&#160;Birth and death rates fall to low levels, slowing population growth."
+                    "The generator converts the mechanical energy into high voltage electricity."
                   ]
                 }, 
                 {
                   "cols": [
-                    "<strong>Stage 5: Post-development period.</strong>&#160;In highly-developed countries, the birth rate is falling while the death rate is relatively constant. The population growth rate is negative and the population declines."
+                    "Another transformer reduces the voltage for consumer use."
                   ]
                 }
-              ]
+              ], 
+              "type": "numbered"
             }
           }
         ], 
@@ -238,7 +229,7 @@
               {
                 "value": {
                   "instanceId": "dataLabels", 
-                  "bricType": "LabelSelector", 
+                  "bricType": "LabelGroup", 
                   "eventName": "selected", 
                   "type": "brix-topic"
                 }, 
@@ -260,15 +251,43 @@
             }, 
             "mortarType": "Hilite", 
             "mortarId": "hilite1"
+          }, 
+          {
+            "configFixup": [
+              {
+                "value": {
+                  "instanceId": "callme", 
+                  "bricType": "Callouts", 
+                  "eventName": "selected", 
+                  "type": "brix-topic"
+                }, 
+                "name": "topic", 
+                "type": "set-property"
+              }, 
+              {
+                "value": {
+                  "domain": "brix", 
+                  "refId": "labelGroup1", 
+                  "type": "ref"
+                }, 
+                "name": "targetBric", 
+                "type": "set-property"
+              }
+            ], 
+            "config": {
+              "eventDetailsProperty": "selectKey"
+            }, 
+            "mortarType": "Hilite", 
+            "mortarId": "hilite2"
           }
         ], 
         "description": "The container contains the liteable callouts", 
-        "containerId": "b085f865b34f842059afd74cad6bfa4e5", 
+        "containerId": "bdc328cbba71b474eb02866361cfb1663", 
         "hookupActions": [
           {
             "args": [
               {
-                "selector": "#b085f865b34f842059afd74cad6bfa4e5", 
+                "selector": "#bdc328cbba71b474eb02866361cfb1663", 
                 "type": "d3select"
               }
             ], 
@@ -288,7 +307,7 @@
                 "type": "constant"
               }
             ], 
-            "description": "Initial condition: select 1st table row (note that we may want to use the state field to do this later)", 
+            "description": "Initial condition: select 1st table row", 
             "methodName": "lite", 
             "instance": {
               "domain": "brix", 

@@ -1,10 +1,10 @@
 {
   "metadata": {
-    "guid": "31789a47-178c-4c14-872b-ddb3446778be", 
+    "guid": "a0998a85-f8db-4198-9f68-c834e6864bc1", 
     "subject": [
       "EnvironmentalScience"
     ], 
-    "description": "A conceptual model for the demographic transition", 
+    "description": "Electric car technology", 
     "timeRequired": "PT20S", 
     "contentTypeTier2": [
       "Exercise"
@@ -16,13 +16,13 @@
     "intendedEndUserRole": [
       "Student"
     ], 
-    "created": "2013-12-12T16:35:14.992309", 
-    "title": "A conceptual model for the demographic transition", 
+    "created": "2013-12-12T16:35:14.991599", 
+    "title": "Electric car technology", 
     "owner": "Brix"
   }, 
   "@type": "Envelope", 
   "body": {
-    "description": "A conceptual model for the demographic transition", 
+    "description": "Electric car technology", 
     "containerConfig": [
       {
         "brixConfig": [
@@ -37,7 +37,7 @@
                       "type": "ref"
                     }, 
                     {
-                      "value": "img/68830_HP_02_02.png", 
+                      "value": "img/68830_EU_06_04.png", 
                       "type": "constant"
                     }
                   ], 
@@ -51,39 +51,52 @@
             "bricId": "imageGraph", 
             "config": {
               "actualSize": {
-                "height": 381, 
+                "height": 330, 
                 "width": 477
               }, 
               "id": "image1", 
-              "caption": "conceptual graph showing births, deaths and the total population"
+              "caption": "Hybrid car technology"
             }
           }, 
           {
-            "bricType": "LabelSelector", 
-            "bricId": "labelSelector1", 
+            "bricType": "LabelGroup", 
+            "bricId": "labelGroup1", 
             "config": {
               "labels": [
-                "Stage 1", 
-                "Stage 2", 
-                "Stage 3", 
-                "Stage 4", 
-                "Stage 5"
+                {
+                  "xyPos": [
+                    0.02, 
+                    0.81
+                  ], 
+                  "width": 0, 
+                  "content": "1"
+                }, 
+                {
+                  "xyPos": [
+                    0.5, 
+                    0.39
+                  ], 
+                  "width": 0, 
+                  "content": "2"
+                }, 
+                {
+                  "xyPos": [
+                    0.75, 
+                    0.42
+                  ], 
+                  "width": 0, 
+                  "content": "3"
+                }
               ], 
               "id": "dataLabels", 
-              "itemMargin": {
-                "bottom": 5, 
-                "top": 5, 
-                "left": 0, 
-                "right": 0
-              }, 
-              "layout": "horizontal"
+              "type": "numbered"
             }
           }, 
           {
             "configFixup": [
               {
                 "value": {
-                  "selector": "#b085f865b34f842059afd74cad6bfa4e5", 
+                  "selector": "#b56faab308132408880c09f470b51969c", 
                   "type": "d3select"
                 }, 
                 "name": "node", 
@@ -94,44 +107,12 @@
             "bricId": "cntr1", 
             "config": {
               "maxSize": {
-                "height": 390, 
+                "height": 330, 
                 "width": 457
               }
             }
           }
         ], 
-        "mortarConfig": [
-          {
-            "configFixup": [
-              {
-                "value": {
-                  "instanceId": "callme", 
-                  "bricType": "Callouts", 
-                  "eventName": "selected", 
-                  "type": "brix-topic"
-                }, 
-                "name": "topic", 
-                "type": "set-property"
-              }, 
-              {
-                "value": {
-                  "domain": "brix", 
-                  "refId": "labelSelector1", 
-                  "type": "ref"
-                }, 
-                "name": "targetBric", 
-                "type": "set-property"
-              }
-            ], 
-            "config": {
-              "eventDetailsProperty": "selectKey"
-            }, 
-            "mortarType": "Hilite", 
-            "mortarId": "hilite2"
-          }
-        ], 
-        "description": "container for the graph and labels", 
-        "containerId": "b085f865b34f842059afd74cad6bfa4e5", 
         "hookupActions": [
           {
             "args": [
@@ -154,17 +135,8 @@
             "args": [
               {
                 "domain": "brix", 
-                "refId": "labelSelector1", 
+                "refId": "labelGroup1", 
                 "type": "ref"
-              }, 
-              {
-                "value": {
-                  "leftPercentOffset": 0, 
-                  "topPercentOffset": 0.755, 
-                  "widthPercent": 1, 
-                  "heightPercent": 0.2
-                }, 
-                "type": "constant"
               }
             ], 
             "description": "Append the labels to the svg container", 
@@ -187,12 +159,14 @@
             "methodName": "lite", 
             "instance": {
               "domain": "brix", 
-              "refId": "labelSelector1", 
+              "refId": "labelGroup1", 
               "type": "ref"
             }, 
             "type": "method-call"
           }
-        ]
+        ], 
+        "description": "container for the graph and labels", 
+        "containerId": "b56faab308132408880c09f470b51969c"
       }, 
       {
         "brixConfig": [
@@ -205,30 +179,21 @@
               "textBits": [
                 {
                   "cols": [
-                    "<strong>Stage 1: Pre-development period.</strong>&#160;High birth and death rates offset each other, so the population grows slowly."
+                    "An electric car has only an electric engine that is used to turn the wheels."
                   ]
                 }, 
                 {
                   "cols": [
-                    "<strong>Stage 2: Developing period.</strong>&#160;As a country's economy becomes stronger, medical care, clean water, and food are more available. The death rate declines and the birth rate remains high, so the population grows more rapidly."
+                    "The power for the engine is provided by a large battery bank. The power for the batteries comes from electricity at a charging station."
                   ]
                 }, 
                 {
                   "cols": [
-                    "<strong>Stage 3: Modernizing period.</strong>&#160;Economic, educational, and social changes cause declines in the birth rate. Population growth starts to slow."
-                  ]
-                }, 
-                {
-                  "cols": [
-                    "<strong>Stage 4: Developed period.</strong>&#160;Birth and death rates fall to low levels, slowing population growth."
-                  ]
-                }, 
-                {
-                  "cols": [
-                    "<strong>Stage 5: Post-development period.</strong>&#160;In highly-developed countries, the birth rate is falling while the death rate is relatively constant. The population growth rate is negative and the population declines."
+                    "There are no emissions from the vehicle, but if the electricity is generated by non-renewable sources, then there are emissions at the power plant."
                   ]
                 }
-              ]
+              ], 
+              "type": "numbered"
             }
           }
         ], 
@@ -238,7 +203,7 @@
               {
                 "value": {
                   "instanceId": "dataLabels", 
-                  "bricType": "LabelSelector", 
+                  "bricType": "LabelGroup", 
                   "eventName": "selected", 
                   "type": "brix-topic"
                 }, 
@@ -260,15 +225,43 @@
             }, 
             "mortarType": "Hilite", 
             "mortarId": "hilite1"
+          }, 
+          {
+            "configFixup": [
+              {
+                "value": {
+                  "instanceId": "callme", 
+                  "bricType": "Callouts", 
+                  "eventName": "selected", 
+                  "type": "brix-topic"
+                }, 
+                "name": "topic", 
+                "type": "set-property"
+              }, 
+              {
+                "value": {
+                  "domain": "brix", 
+                  "refId": "labelGroup1", 
+                  "type": "ref"
+                }, 
+                "name": "targetBric", 
+                "type": "set-property"
+              }
+            ], 
+            "config": {
+              "eventDetailsProperty": "selectKey"
+            }, 
+            "mortarType": "Hilite", 
+            "mortarId": "hilite2"
           }
         ], 
         "description": "The container contains the liteable callouts", 
-        "containerId": "b085f865b34f842059afd74cad6bfa4e5", 
+        "containerId": "b56faab308132408880c09f470b51969c", 
         "hookupActions": [
           {
             "args": [
               {
-                "selector": "#b085f865b34f842059afd74cad6bfa4e5", 
+                "selector": "#b56faab308132408880c09f470b51969c", 
                 "type": "d3select"
               }
             ], 
@@ -288,7 +281,7 @@
                 "type": "constant"
               }
             ], 
-            "description": "Initial condition: select 1st table row (note that we may want to use the state field to do this later)", 
+            "description": "Initial condition: select 1st table row", 
             "methodName": "lite", 
             "instance": {
               "domain": "brix", 

@@ -1,133 +1,155 @@
 {
-  "@context" : "http://purl.org/pearson/content/v1/ctx/metadata/envelope",
-  "@type" : "Envelope",
-  "metadata" : 
-    {
-        "title" : "Two approaches to controlling population growth",
-        "guid" : "E6DB5707-B287-4FA0-BCAE-A28CE2050873",
-        "description" : "Two approaches to controlling population growth",
-        "contentTypeTier1" : "Activity",
-        "contentTypeTier2" : [ "Exercise" ],
-        "subject" : [ "EnvironmentalScience" ],
-        "intendedEndUserRole" : [ "Student" ],
-        "format" : 
-            [
-              "application/vnd.pearson.sanvan.v1.activity"
-            ],
-        "timeRequired" : "PT20S",
-        "created" : "2013-12-09T22:30:00-00:00"
-    }, 
-  "body" :
-    {
-       "containerConfig":
-                [
+  "metadata": {
+    "guid": "cf931c85-2cee-4059-874a-ddb3ec733d50", 
+    "subject": [
+      "EnvironmentalScience"
+    ], 
+    "description": "Two approaches to controlling population growth", 
+    "timeRequired": "PT20S", 
+    "contentTypeTier2": [
+      "Exercise"
+    ], 
+    "contentTypeTier1": "Activity", 
+    "format": [
+      "application/vnd.pearson.sanvan.v1.activity"
+    ], 
+    "intendedEndUserRole": [
+      "Student"
+    ], 
+    "created": "2013-12-12T16:35:14.992412", 
+    "title": "Two approaches to controlling population growth", 
+    "owner": "Brix"
+  }, 
+  "@type": "Envelope", 
+  "body": {
+    "description": "Two approaches to controlling population growth", 
+    "containerConfig": [
+      {
+        "brixConfig": [
+          {
+            "configFixup": [
+              {
+                "value": {
+                  "elements": [
                     {
-                        "description": "Container for the LabelCarousel",
-                        "containerId": "b3300c66aa1a047bbb6df4b3b28d68435",
-                        "brixConfig":
-                            [
-                                {
-                                    "bricId": "lblCarousel1",
-                                    "bricType": "LabelCarousel",
-                                    "config":
-                                        {
-                                            "id": "lblCrsl1",
-                                            "imagesActualSize": { "height": 405, "width": 599 }
-                                        },
-                                    "configFixup":
-                                        [
-                                            {
-                                                "type": "set-property",
-                                                "name": "images",
-                                                "value":
-                                                    {
-                                                        "type": "array",
-                                                        "elements":
-                                                            [
-                                                                {
-                                                                    "type": "object",
-                                                                    "properties":
-                                                                        [
-                                                                            {
-                                                                                "name": "URI",
-                                                                                "value":
-                                                                                    {
-                                                                                        "type": "join",
-                                                                                        "parts":
-                                                                                        [
-                                                                                            { "type": "ref", "domain": "info", "refId": "imgBaseUrl" },
-                                                                                            { "type": "constant", "value": "img/68830_HP_03_03_S1.jpg" }
-                                                                                        ]
-                                                                                    }
-                                                                            },
-                                                                            {
-                                                                                "name": "caption",
-                                                                                "value": { "type": "constant", "value": "Women attend a community microfinance meeting in Uganda" }
-                                                                            }
-                                                                        ]
-                                                                },
-                                                                {
-                                                                    "type": "object",
-                                                                    "properties":
-                                                                        [
-                                                                            {
-                                                                                "name": "URI",
-                                                                                "value":
-                                                                                    {
-                                                                                        "type": "join",
-                                                                                        "parts":
-                                                                                        [
-                                                                                            { "type": "ref", "domain": "info", "refId": "imgBaseUrl" },
-                                                                                            { "type": "constant", "value": "img/68830_HP_03_03_S2.png" }
-                                                                                        ]
-                                                                                    }
-                                                                            },
-                                                                            {
-                                                                                "name": "caption",
-                                                                                "value": { "type": "constant", "value": "China's One Child Policy" }
-                                                                            }
-                                                                        ]
-                                                                }
-                                                            ]
-                                                    }
-                                            }
-                                        ]
-                                },
-                                {
-                                    "bricId": "cntr1",
-                                    "bricType": "SvgContainer",
-                                    "config":
-                                        {
-                                            "maxSize": { "height": 425, "width": 457 }
-                                        },
-                                    "configFixup":
-                                        [
-                                            {
-                                                "type": "set-property",
-                                                "name": "node",
-                                                "value":
-                                                    {
-                                                        "type": "d3select",
-                                                        "selector": "#b3300c66aa1a047bbb6df4b3b28d68435"
-                                                    }
-                                            }
-                                        ]
-                                }
-                            ],
-                        "hookupActions":
-                            [
-                                {
-                                    "description": "Append the label image carousel to the svg container",
-                                    "type": "method-call",
-                                    "instance": {"type": "ref", "domain": "brix", "refId": "cntr1"},
-                                    "methodName": "append",
-                                    "args":
-                                        [
-                                            { "type": "ref", "domain": "brix", "refId": "lblCarousel1" }
-                                        ]
-                                }
-                            ]
+                      "properties": [
+                        {
+                          "value": {
+                            "parts": [
+                              {
+                                "domain": "info", 
+                                "refId": "imgBaseUrl", 
+                                "type": "ref"
+                              }, 
+                              {
+                                "value": "img/68830_HP_03_03_S1.jpg", 
+                                "type": "constant"
+                              }
+                            ], 
+                            "type": "join"
+                          }, 
+                          "name": "URI"
+                        }, 
+                        {
+                          "value": {
+                            "value": "Women attend a community microfinance meeting in Uganda", 
+                            "type": "constant"
+                          }, 
+                          "name": "caption"
+                        }
+                      ], 
+                      "type": "object"
+                    }, 
+                    {
+                      "properties": [
+                        {
+                          "value": {
+                            "parts": [
+                              {
+                                "domain": "info", 
+                                "refId": "imgBaseUrl", 
+                                "type": "ref"
+                              }, 
+                              {
+                                "value": "img/68830_HP_03_03_S2.png", 
+                                "type": "constant"
+                              }
+                            ], 
+                            "type": "join"
+                          }, 
+                          "name": "URI"
+                        }, 
+                        {
+                          "value": {
+                            "value": "China's One Child Policy", 
+                            "type": "constant"
+                          }, 
+                          "name": "caption"
+                        }
+                      ], 
+                      "type": "object"
                     }
-            ]
-    }
+                  ], 
+                  "type": "array"
+                }, 
+                "name": "images", 
+                "type": "set-property"
+              }
+            ], 
+            "bricType": "LabelCarousel", 
+            "bricId": "lblCarousel1", 
+            "config": {
+              "id": "lblCrsl1", 
+              "imagesActualSize": {
+                "height": 405, 
+                "width": 599
+              }
+            }
+          }, 
+          {
+            "configFixup": [
+              {
+                "value": {
+                  "selector": "#b3300c66aa1a047bbb6df4b3b28d68435", 
+                  "type": "d3select"
+                }, 
+                "name": "node", 
+                "type": "set-property"
+              }
+            ], 
+            "bricType": "SvgContainer", 
+            "bricId": "cntr1", 
+            "config": {
+              "maxSize": {
+                "height": 425, 
+                "width": 457
+              }
+            }
+          }
+        ], 
+        "hookupActions": [
+          {
+            "args": [
+              {
+                "domain": "brix", 
+                "refId": "lblCarousel1", 
+                "type": "ref"
+              }
+            ], 
+            "description": "Append the label image carousel to the svg container", 
+            "methodName": "append", 
+            "instance": {
+              "domain": "brix", 
+              "refId": "cntr1", 
+              "type": "ref"
+            }, 
+            "type": "method-call"
+          }
+        ], 
+        "description": "Container for the LabelCarousel", 
+        "containerId": "b3300c66aa1a047bbb6df4b3b28d68435"
+      }
+    ]
+  }, 
+  "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope"
 }
