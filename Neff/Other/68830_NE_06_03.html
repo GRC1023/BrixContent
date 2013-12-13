@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="Template for Multiple Choice Question Brix" name="description">
+   
+    <!-- widgets.css contains styling for the interactive brix -->
+    <link href="css/widgets.css" rel="stylesheet">
+</head>
+<body>
+    <div id="bf285e55b9e444c07bcdf4ac79729bb7f"></div>
+    <script src="js/d3.v3.min.js"></script>
+    
+	<script src="js/brixlib-compiled.js"></script>
+
+    <script type="text/javascript">
+	// Create an object that will contain the objects needed for the activities
+	// on this page.
+	pearson.brix.activity = {};
+	var a = pearson.brix.activity;
+
+	// The activity config that defines the brix and mortar for this page
+	a.config =
+		{
+			"description": "How nuclear fuel is made from uranium",
+			"containerConfig":
+				[
+					{
+						"description": "container for the graph and labels",
+						"containerId": "bf285e55b9e444c07bcdf4ac79729bb7f",
+						"brixConfig":
+							[
+								{
+									"bricId": "imageGraph",
+									"bricType": "Image",
+									"config":
+										{
+											"id": "image1",
+                                            "caption": "How nuclear fuel is made from uranium",
+                                            "actualSize": {"height": 455, "width": 457}
+										},
+                                    "configFixup":
+                                        [
+                                            {
+                                                "type": "set-property",
+                                                "name": "URI",
+                                                "value":
+                                                    {
+                                                        "type": "join",
+                                                        "parts":
+                                                        [
+                                                            { "type": "ref", "domain": "info", "refId": "imgBaseUrl" },
+                                                            { "type": "constant", "value": "img/68830_NE_06_03.png" }
+                                                        ]
+                                                    }
+                                            }
+                                        ]
+								},
+                                {
+                                    "bricId": "labelGroup1",
+                                    "bricType": "LabelGroup",
+                                    "config":
+                                        {
+                                            "id": "dataLabels",
+                                            "type": "numbered",
+                                            "labels": [
+                                                        {"content": "1", "xyPos": [0.05, 0.805], "width": 0},
+                                                        {"content": "2", "xyPos": [0.285, 0.545], "width": 0},
+                                                        {"content": "3", "xyPos": [0.52, 0.25], "width": 0},
+                                                    ]
+                                        }
+                                },
+								{
+									"bricId": "cntr1",
+									"bricType": "SvgContainer",
+									"config":
+										{
+											"maxSize": {"height": 455, "width": 457}
+										},
+									"configFixup":
+                                        [
+                                            {
+                                                "type": "set-property",
+                                                "name": "node",
+                                                "value":
+                                                    {
+                                                        "type": "d3select",
+                                                        "selector": "#bf285e55b9e444c07bcdf4ac79729bb7f"
+                                                    }
+                                            }
+                                        ]
+								}
+							],
+						"hookupActions":
+							[
+								{
+									"description": "Append the image to the svg container",
+									"type": "method-call",
+									"instance": {"type": "ref", "domain": "brix", "refId": "cntr1"},
+									"methodName": "append",
+									"args":
+										[
+											{ "type": "ref", "domain": "brix", "refId": "imageGraph" }
+										]
+								},
+                                {
+                                    "description": "Append the labels to the svg container",
+                                    "type": "method-call",
+                                    "instance": {"type": "ref", "domain": "brix", "refId": "cntr1"},
+                                    "methodName": "append",
+                                    "args":
+                                        [
+                                            { "type": "ref", "domain": "brix", "refId": "labelGroup1" }
+                                        ]
+                                },
+                                {
+                                    "description": "Initial condition: select 1st label",
+                                    "type": "method-call",
+                                    "instance": {"type": "ref", "domain": "brix", "refId": "labelGroup1"},
+                                    "methodName": "lite",
+                                    "args":
+                                        [
+                                            { "type": "constant", "value": "0" }
+                                        ]
+                                }
+							]
+					},
+					{
+                        "description": "The container contains the liteable callouts",
+                        "containerId": "bf285e55b9e444c07bcdf4ac79729bb7f",
+                        "brixConfig":
+                            [
+                                {
+                                    "bricId": "lbltbl1",
+                                    "bricType": "Callouts",
+                                    "config":
+                                        {
+                                            "id": "callme",
+                                            "show": "all",
+                                            "type": "numbered",
+                                            "textBits":
+                                                [    
+                                                   {"cols": ["Uranium ore is mined and then converted to a form called UF6 that can be processed into nuclear fuel. UF6, consisting of both <sup>235</sup>U and <sup>238</sup>U, is converted into a gas."]},
+                                                    {"cols": ["The UF6 gas is enriched, increasing the percentage of <sup>235</sup>U. One method is to spin the gas at high speed in centrifuge tubes. The <sup>238</sup>U moves toward the tube wall, while the lighter <sup>235</sup>U moves toward the center. The enriched UF6 gas in the center is removed and placed in another tube to be spun again. The process is repeated until the <sup>235</sup>U concentration reaches about 3% to 5%."]},
+                                                    {"cols": ["The enriched UF6 gas is converted back into a solid material and is packed into pellets. These pellets are placed into tubes called fuel rods. In the United States, the core of a nuclear reactor contains up to 264 fuel rods, each measuring about 12 feet long and 5 to 9 inches in diameter."]},
+                                                ]
+                                        }
+                                }
+                            ],
+                       "mortarConfig":
+                            [
+                                {
+                                    "mortarId": "hilite1",
+                                    "mortarType": "Hilite",
+                                    "config":
+                                        {
+                                            "eventDetailsProperty": "selectKey"
+                                        },
+                                    "configFixup":
+                                        [
+                                            {
+                                                "type": "set-property",
+                                                "name": "topic",
+                                                "value":
+                                                    {
+                                                        "type": "brix-topic",
+                                                        "bricType": "LabelGroup",
+                                                        "instanceId": "dataLabels",
+                                                        "eventName": "selected"
+                                                    }
+                                            },
+                                            {
+                                                "type": "set-property",
+                                                "name": "targetBric",
+                                                "value": { "type": "ref", "domain": "brix", "refId": "lbltbl1" }
+                                            }
+                                        ]
+                                }, 
+                                {
+                                    "mortarId": "hilite2",
+                                    "mortarType": "Hilite",
+                                    "config":
+                                        {
+                                            "eventDetailsProperty": "selectKey"
+                                        },
+                                    "configFixup":
+                                        [
+                                            {
+                                                "type": "set-property",
+                                                "name": "topic",
+                                                "value":
+                                                    {
+                                                        "type": "brix-topic",
+                                                        "bricType": "Callouts",
+                                                        "instanceId": "callme",
+                                                        "eventName": "selected"
+                                                    }
+                                            },
+                                            {
+                                                "type": "set-property",
+                                                "name": "targetBric",
+                                                "value": { "type": "ref", "domain": "brix", "refId": "labelGroup1" }
+                                            }
+                                        ]
+                                }
+                            ], 
+                        "hookupActions":
+                            [
+                                {
+                                    "description": "draw the label table",
+                                    "type": "method-call",
+                                    "instance": {"type": "ref", "domain": "brix", "refId": "lbltbl1"},
+                                    "methodName": "draw",
+                                    "args":
+                                        [
+                                            { "type": "d3select", "selector": "#bf285e55b9e444c07bcdf4ac79729bb7f" }
+                                        ]
+                                },
+                                {
+                                    "description": "Initial condition: select 1st table row",
+                                    "type": "method-call",
+                                    "instance": {"type": "ref", "domain": "brix", "refId": "lbltbl1"},
+                                    "methodName": "lite",
+                                    "args":
+                                        [
+                                            { "type": "constant", "value": "0" }
+                                        ]
+                                }
+
+                            ]
+                    }
+				]
+		};
+
+	// create the eventmanager to be used by the created brix, and the
+	// bricLayer which will create them, and then tell the bricLayer to build.
+	a.eventManager = new pearson.utils.EventManager();
+	a.answerMan = new pearson.brix.utils.LocalAnswerMan();
+	a.submitManager = new pearson.brix.utils.SubmitManager(a.eventManager, a.answerMan);
+
+	a.bricLayer = new pearson.brix.BricLayer(null, a.eventManager, a.submitManager);
+
+	pearson.utils.logToConsole(true, "FINER");
+
+	a.building = a.bricLayer.build(a.config);
+
+
+    /* 
+    a.answerMan.setMaxAttempts(a.config.maxAttempts);
+	a.answerMan.registerAnswerKey(a.config.sequenceNodeKey,
+								  a.config.containerConfig[0].brixConfig[0].answerKey);
+	*/
+
+    </script>
+</body>
+</html>
