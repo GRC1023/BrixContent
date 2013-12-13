@@ -1,63 +1,12 @@
 {
-  "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope", 
-  "metadata": {
-    "owner": "Brix", 
-    "contentTypeTier2": [
-      "assessment item"
-    ], 
-    "intendedEndUserRole": [
-      "Student"
-    ], 
-    "subject": [
-      "EnvironmentalScience"
-    ], 
-    "created": "2013-12-12T11:38:04.525790", 
-    "contentTypeTier1": "Test and Assessment", 
-    "timeRequired": "PT20S", 
-    "description": "68830_HP_C03.html", 
-    "title": "68830_HP_C03.html", 
-    "format": [
-      "application/vnd.pearson.sanvan.v1.activity"
-    ], 
-    "guid": "d88567b2-22d3-4611-87e7-56c55f60a01f"
-  }, 
   "body": {
     "containerConfig": [
       {
         "brixConfig": [
           {
-            "bricId": "Q1", 
-            "answerKey": {
-              "answers": {
-                "answer3": {
-                  "score": 0, 
-                  "response": "If the average per capita income is less than $2,000, is it likely that the country would have this level of development?"
-                }, 
-                "answer2": {
-                  "score": 0, 
-                  "response": "True, but is this the only correct answer?"
-                }, 
-                "answer1": {
-                  "score": 0, 
-                  "response": "True, but is this the only correct answer?"
-                }, 
-                "answer5": {
-                  "score": 0, 
-                  "response": "If the average per capita income is less than $2,000, are all of the answers likely situations, including having extensive basic infrastructure?"
-                }, 
-                "answer4": {
-                  "score": 1, 
-                  "response": "Correct."
-                }
-              }, 
-              "assessmentType": "multiplechoice"
-            }, 
-            "bricType": "MultipleChoiceQuestion", 
             "config": {
-              "id": "sampleQ1", 
-              "order": "ordered", 
-              "question": "Consider a country where the average annual per capita income is less than $2,000 and the total fertility rate is 5. Which of the following statements is most likely true?", 
               "presenterType": "RadioGroup", 
+              "question": "Consider a country where the average annual per capita income is less than $2,000 and the total fertility rate is 5. Which of the following statements is most likely true?", 
               "presenterConfig": {
                 "numberFormat": ""
               }, 
@@ -82,25 +31,53 @@
                   "content": "A, B, and C", 
                   "answerKey": "answer5"
                 }
-              ]
+              ], 
+              "order": "ordered", 
+              "id": "sampleQ1"
             }, 
+            "answerKey": {
+              "assessmentType": "multiplechoice", 
+              "answers": {
+                "answer5": {
+                  "score": 0, 
+                  "response": "If the average per capita income is less than $2,000, are all of the answers likely situations, including having extensive basic infrastructure?"
+                }, 
+                "answer4": {
+                  "score": 1, 
+                  "response": "Correct."
+                }, 
+                "answer1": {
+                  "score": 0, 
+                  "response": "True, but is this the only correct answer?"
+                }, 
+                "answer3": {
+                  "score": 0, 
+                  "response": "If the average per capita income is less than $2,000, is it likely that the country would have this level of development?"
+                }, 
+                "answer2": {
+                  "score": 0, 
+                  "response": "True, but is this the only correct answer?"
+                }
+              }
+            }, 
+            "bricType": "MultipleChoiceQuestion", 
+            "bricId": "Q1", 
             "configFixup": [
               {
+                "type": "set-property", 
+                "name": "questionId", 
                 "value": {
                   "domain": "info", 
                   "type": "ref", 
                   "refId": "sequenceNodeKey"
-                }, 
-                "type": "set-property", 
-                "name": "questionId"
+                }
               }
             ]
           }
         ], 
-        "containerId": "target1", 
+        "description": "container for the sample multiple choice question", 
         "hookupActions": [
           {
-            "methodName": "handleRequestsFrom", 
             "instance": {
               "type": "submit-manager"
             }, 
@@ -112,10 +89,10 @@
               }
             ], 
             "type": "method-call", 
-            "description": "Hookup the submit manager to evaluate answers"
+            "description": "Hookup the submit manager to evaluate answers", 
+            "methodName": "handleRequestsFrom"
           }, 
           {
-            "methodName": "draw", 
             "instance": {
               "domain": "brix", 
               "type": "ref", 
@@ -128,13 +105,36 @@
               }
             ], 
             "type": "method-call", 
-            "description": "Draw the question"
+            "description": "Draw the question", 
+            "methodName": "draw"
           }
         ], 
-        "description": "container for the sample multiple choice question"
+        "containerId": "target1"
       }
     ], 
     "description": "A Sample Activity containing a single multiple choice bric"
   }, 
-  "@type": "Envelope"
+  "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope", 
+  "@type": "Envelope", 
+  "metadata": {
+    "intendedEndUserRole": [
+      "Student"
+    ], 
+    "description": "68830_HP_C03.html", 
+    "format": [
+      "application/vnd.pearson.sanvan.v1.activity"
+    ], 
+    "owner": "Brix", 
+    "guid": "d4364f10-0e8a-4e0a-82c0-9ace4c638f69", 
+    "subject": [
+      "EnvironmentalScience"
+    ], 
+    "timeRequired": "PT20S", 
+    "created": "2013-12-13T11:08:17.666946", 
+    "title": "68830_HP_C03.html", 
+    "contentTypeTier1": "Test and Assessment", 
+    "contentTypeTier2": [
+      "assessment item"
+    ]
+  }
 }

@@ -1,0 +1,132 @@
+{
+  "body": {
+    "containerConfig": [
+      {
+        "brixConfig": [
+          {
+            "config": {
+              "presenterType": "RadioGroup", 
+              "question": "While most of the major rivers in the United States could not support additional hydropower dams, which of the following statements describes a viable decentralized alternative that would still harness hydropower?", 
+              "presenterConfig": {
+                "numberFormat": ""
+              }, 
+              "choices": [
+                {
+                  "content": "Micro-hydropower facilities could be installed that generate a lesser amount of electricity with low environmental impacts.", 
+                  "answerKey": "answer1"
+                }, 
+                {
+                  "content": "Existing dams could be removed and replaced with dams that generate electricity more efficiently.", 
+                  "answerKey": "answer2"
+                }, 
+                {
+                  "content": "The only new decentralized methods of energy generation using water are related to tidal and wave power, and the technology to make these methods usable has not been developed yet.", 
+                  "answerKey": "answer3"
+                }, 
+                {
+                  "content": "Decentralized hydropower is not currently seen as a viable method of producing additional energy in the United States, so we should forget about it.", 
+                  "answerKey": "answer4"
+                }
+              ], 
+              "order": "randomized", 
+              "id": "sampleQ1"
+            }, 
+            "answerKey": {
+              "assessmentType": "multiplechoice", 
+              "answers": {
+                "answer4": {
+                  "score": 0, 
+                  "response": "While additional dams are not likely viable, what other methods of electricity generation using hydropower could be used, even if they generate electricity on a smaller scale?"
+                }, 
+                "answer1": {
+                  "score": 1, 
+                  "response": "Correct."
+                }, 
+                "answer3": {
+                  "score": 0, 
+                  "response": "While wave and tidal technology is still in its early phase of development, is there another decentralized technology that can use hydropower on a small scale?"
+                }, 
+                "answer2": {
+                  "score": 0, 
+                  "response": "Would this likely be cost effective or provide a decentralized alternative?"
+                }
+              }
+            }, 
+            "bricType": "MultipleChoiceQuestion", 
+            "bricId": "Q1", 
+            "configFixup": [
+              {
+                "type": "set-property", 
+                "name": "questionId", 
+                "value": {
+                  "domain": "info", 
+                  "type": "ref", 
+                  "refId": "sequenceNodeKey"
+                }
+              }
+            ]
+          }
+        ], 
+        "description": "container for the sample multiple choice question", 
+        "hookupActions": [
+          {
+            "instance": {
+              "type": "submit-manager"
+            }, 
+            "args": [
+              {
+                "domain": "brix", 
+                "type": "ref", 
+                "refId": "Q1"
+              }
+            ], 
+            "type": "method-call", 
+            "description": "Hookup the submit manager to evaluate answers", 
+            "methodName": "handleRequestsFrom"
+          }, 
+          {
+            "instance": {
+              "domain": "brix", 
+              "type": "ref", 
+              "refId": "Q1"
+            }, 
+            "args": [
+              {
+                "type": "d3select", 
+                "selector": "#target1"
+              }
+            ], 
+            "type": "method-call", 
+            "description": "Draw the question", 
+            "methodName": "draw"
+          }
+        ], 
+        "containerId": "target1"
+      }
+    ], 
+    "description": "A Sample Activity containing a single multiple choice bric"
+  }, 
+  "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope", 
+  "@type": "Envelope", 
+  "metadata": {
+    "intendedEndUserRole": [
+      "Student"
+    ], 
+    "description": "68830_RE_C08.html", 
+    "format": [
+      "application/vnd.pearson.sanvan.v1.activity"
+    ], 
+    "owner": "Brix", 
+    "guid": "49139a49-2f77-4384-b5ae-0a02cbb841c6", 
+    "subject": [
+      "EnvironmentalScience"
+    ], 
+    "timeRequired": "PT20S", 
+    "created": "2013-12-13T11:08:17.676415", 
+    "title": "68830_RE_C08.html", 
+    "contentTypeTier1": "Test and Assessment", 
+    "contentTypeTier2": [
+      "assessment item"
+    ]
+  }
+}

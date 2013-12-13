@@ -1,59 +1,12 @@
 {
-  "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope", 
-  "metadata": {
-    "owner": "Brix", 
-    "contentTypeTier2": [
-      "assessment item"
-    ], 
-    "intendedEndUserRole": [
-      "Student"
-    ], 
-    "subject": [
-      "EnvironmentalScience"
-    ], 
-    "created": "2013-12-12T11:38:04.525866", 
-    "contentTypeTier1": "Test and Assessment", 
-    "timeRequired": "PT20S", 
-    "description": "68830_EU_M02_04.html", 
-    "title": "68830_EU_M02_04.html", 
-    "format": [
-      "application/vnd.pearson.sanvan.v1.activity"
-    ], 
-    "guid": "4477f7cf-9702-4809-9e94-3c0f42822e6d"
-  }, 
   "body": {
     "containerConfig": [
       {
         "brixConfig": [
           {
-            "bricId": "Q1", 
-            "answerKey": {
-              "answers": {
-                "answer3": {
-                  "score": 1, 
-                  "response": ""
-                }, 
-                "answer2": {
-                  "score": 0, 
-                  "response": ""
-                }, 
-                "answer1": {
-                  "score": 0, 
-                  "response": ""
-                }, 
-                "answer4": {
-                  "score": 0, 
-                  "response": ""
-                }
-              }, 
-              "assessmentType": "multiplechoice"
-            }, 
-            "bricType": "MultipleChoiceQuestion", 
             "config": {
-              "id": "sampleQ1", 
-              "order": "randomized", 
-              "question": "What is the difference between primary and secondary energy sources?", 
               "presenterType": "RadioGroup", 
+              "question": "What is the difference between primary and secondary energy sources?", 
               "presenterConfig": {
                 "numberFormat": ""
               }, 
@@ -74,25 +27,49 @@
                   "content": "Primary sources are always fossil fuels and secondary is a broader term that includes renewable or other sources.", 
                   "answerKey": "answer4"
                 }
-              ]
+              ], 
+              "order": "randomized", 
+              "id": "sampleQ1"
             }, 
+            "answerKey": {
+              "assessmentType": "multiplechoice", 
+              "answers": {
+                "answer4": {
+                  "score": 0, 
+                  "response": ""
+                }, 
+                "answer1": {
+                  "score": 0, 
+                  "response": ""
+                }, 
+                "answer3": {
+                  "score": 1, 
+                  "response": ""
+                }, 
+                "answer2": {
+                  "score": 0, 
+                  "response": ""
+                }
+              }
+            }, 
+            "bricType": "MultipleChoiceQuestion", 
+            "bricId": "Q1", 
             "configFixup": [
               {
+                "type": "set-property", 
+                "name": "questionId", 
                 "value": {
                   "domain": "info", 
                   "type": "ref", 
                   "refId": "sequenceNodeKey"
-                }, 
-                "type": "set-property", 
-                "name": "questionId"
+                }
               }
             ]
           }
         ], 
-        "containerId": "target1", 
+        "description": "container for the sample multiple choice question", 
         "hookupActions": [
           {
-            "methodName": "handleRequestsFrom", 
             "instance": {
               "type": "submit-manager"
             }, 
@@ -104,10 +81,10 @@
               }
             ], 
             "type": "method-call", 
-            "description": "Hookup the submit manager to evaluate answers"
+            "description": "Hookup the submit manager to evaluate answers", 
+            "methodName": "handleRequestsFrom"
           }, 
           {
-            "methodName": "draw", 
             "instance": {
               "domain": "brix", 
               "type": "ref", 
@@ -120,13 +97,36 @@
               }
             ], 
             "type": "method-call", 
-            "description": "Draw the question"
+            "description": "Draw the question", 
+            "methodName": "draw"
           }
         ], 
-        "description": "container for the sample multiple choice question"
+        "containerId": "target1"
       }
     ], 
     "description": "A Sample Activity containing a single multiple choice bric"
   }, 
-  "@type": "Envelope"
+  "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope", 
+  "@type": "Envelope", 
+  "metadata": {
+    "intendedEndUserRole": [
+      "Student"
+    ], 
+    "description": "68830_EU_M02_04.html", 
+    "format": [
+      "application/vnd.pearson.sanvan.v1.activity"
+    ], 
+    "owner": "Brix", 
+    "guid": "d1419894-29b7-4f18-acf9-0072352bc0a1", 
+    "subject": [
+      "EnvironmentalScience"
+    ], 
+    "timeRequired": "PT20S", 
+    "created": "2013-12-13T11:08:17.668375", 
+    "title": "68830_EU_M02_04.html", 
+    "contentTypeTier1": "Test and Assessment", 
+    "contentTypeTier2": [
+      "assessment item"
+    ]
+  }
 }

@@ -1,63 +1,12 @@
 {
-  "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope", 
-  "metadata": {
-    "owner": "Brix", 
-    "contentTypeTier2": [
-      "assessment item"
-    ], 
-    "intendedEndUserRole": [
-      "Student"
-    ], 
-    "subject": [
-      "EnvironmentalScience"
-    ], 
-    "created": "2013-12-12T11:38:04.525790", 
-    "contentTypeTier1": "Test and Assessment", 
-    "timeRequired": "PT20S", 
-    "description": "68830_HP_C02.html", 
-    "title": "68830_HP_C02.html", 
-    "format": [
-      "application/vnd.pearson.sanvan.v1.activity"
-    ], 
-    "guid": "42a3c4da-e01e-4292-b4bd-9441e43f1acb"
-  }, 
   "body": {
     "containerConfig": [
       {
         "brixConfig": [
           {
-            "bricId": "Q1", 
-            "answerKey": {
-              "answers": {
-                "answer3": {
-                  "score": 1, 
-                  "response": "Correct; although the total population is growing, it is growing at a slower rate than it has in the past."
-                }, 
-                "answer2": {
-                  "score": 0, 
-                  "response": "Does a growing population necessarily denote an increasing growth rate?"
-                }, 
-                "answer1": {
-                  "score": 0, 
-                  "response": "Does a growing population necessarily denote an increasing growth rate?"
-                }, 
-                "answer5": {
-                  "score": 0, 
-                  "response": "Don\u2019t we already have the statistics needed to calculate this (that is, global population estimates over the past 50 years)?"
-                }, 
-                "answer4": {
-                  "score": 0, 
-                  "response": "Even though the population is growing overall, is there really a larger number of babies born each year, or is that number declining somewhat despite continued overall population growth? "
-                }
-              }, 
-              "assessmentType": "multiplechoice"
-            }, 
-            "bricType": "MultipleChoiceQuestion", 
             "config": {
-              "id": "sampleQ1", 
-              "order": "randomized", 
-              "question": "Overall, how have global average population growth rates changed from 1950 to the present?", 
               "presenterType": "RadioGroup", 
+              "question": "Overall, how have global average population growth rates changed from 1950 to the present?", 
               "presenterConfig": {
                 "numberFormat": ""
               }, 
@@ -82,25 +31,53 @@
                   "content": "We don\u2019t know how global growth rates have changed.", 
                   "answerKey": "answer5"
                 }
-              ]
+              ], 
+              "order": "randomized", 
+              "id": "sampleQ1"
             }, 
+            "answerKey": {
+              "assessmentType": "multiplechoice", 
+              "answers": {
+                "answer5": {
+                  "score": 0, 
+                  "response": "Don\u2019t we already have the statistics needed to calculate this (that is, global population estimates over the past 50 years)?"
+                }, 
+                "answer4": {
+                  "score": 0, 
+                  "response": "Even though the population is growing overall, is there really a larger number of babies born each year, or is that number declining somewhat despite continued overall population growth? "
+                }, 
+                "answer1": {
+                  "score": 0, 
+                  "response": "Does a growing population necessarily denote an increasing growth rate?"
+                }, 
+                "answer3": {
+                  "score": 1, 
+                  "response": "Correct; although the total population is growing, it is growing at a slower rate than it has in the past."
+                }, 
+                "answer2": {
+                  "score": 0, 
+                  "response": "Does a growing population necessarily denote an increasing growth rate?"
+                }
+              }
+            }, 
+            "bricType": "MultipleChoiceQuestion", 
+            "bricId": "Q1", 
             "configFixup": [
               {
+                "type": "set-property", 
+                "name": "questionId", 
                 "value": {
                   "domain": "info", 
                   "type": "ref", 
                   "refId": "sequenceNodeKey"
-                }, 
-                "type": "set-property", 
-                "name": "questionId"
+                }
               }
             ]
           }
         ], 
-        "containerId": "target1", 
+        "description": "container for the sample multiple choice question", 
         "hookupActions": [
           {
-            "methodName": "handleRequestsFrom", 
             "instance": {
               "type": "submit-manager"
             }, 
@@ -112,10 +89,10 @@
               }
             ], 
             "type": "method-call", 
-            "description": "Hookup the submit manager to evaluate answers"
+            "description": "Hookup the submit manager to evaluate answers", 
+            "methodName": "handleRequestsFrom"
           }, 
           {
-            "methodName": "draw", 
             "instance": {
               "domain": "brix", 
               "type": "ref", 
@@ -128,13 +105,36 @@
               }
             ], 
             "type": "method-call", 
-            "description": "Draw the question"
+            "description": "Draw the question", 
+            "methodName": "draw"
           }
         ], 
-        "description": "container for the sample multiple choice question"
+        "containerId": "target1"
       }
     ], 
     "description": "A Sample Activity containing a single multiple choice bric"
   }, 
-  "@type": "Envelope"
+  "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope", 
+  "@type": "Envelope", 
+  "metadata": {
+    "intendedEndUserRole": [
+      "Student"
+    ], 
+    "description": "68830_HP_C02.html", 
+    "format": [
+      "application/vnd.pearson.sanvan.v1.activity"
+    ], 
+    "owner": "Brix", 
+    "guid": "27679ce2-d0c7-4c30-8e77-dedef188d7df", 
+    "subject": [
+      "EnvironmentalScience"
+    ], 
+    "timeRequired": "PT20S", 
+    "created": "2013-12-13T11:08:17.666888", 
+    "title": "68830_HP_C02.html", 
+    "contentTypeTier1": "Test and Assessment", 
+    "contentTypeTier2": [
+      "assessment item"
+    ]
+  }
 }

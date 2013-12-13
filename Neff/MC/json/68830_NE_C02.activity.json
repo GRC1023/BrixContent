@@ -1,59 +1,12 @@
 {
-  "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope", 
-  "metadata": {
-    "owner": "Brix", 
-    "contentTypeTier2": [
-      "assessment item"
-    ], 
-    "intendedEndUserRole": [
-      "Student"
-    ], 
-    "subject": [
-      "EnvironmentalScience"
-    ], 
-    "created": "2013-12-12T11:38:04.527203", 
-    "contentTypeTier1": "Test and Assessment", 
-    "timeRequired": "PT20S", 
-    "description": "68830_NE_C02.html", 
-    "title": "68830_NE_C02.html", 
-    "format": [
-      "application/vnd.pearson.sanvan.v1.activity"
-    ], 
-    "guid": "e62c9a2b-cf68-4648-b3f0-dcfffdf223f8"
-  }, 
   "body": {
     "containerConfig": [
       {
         "brixConfig": [
           {
-            "bricId": "Q1", 
-            "answerKey": {
-              "answers": {
-                "answer3": {
-                  "score": 0, 
-                  "response": "While these companies may hold a lot of power, would the market or the government typically allow for unregulated price increases on fuels?"
-                }, 
-                "answer2": {
-                  "score": 1, 
-                  "response": "Correct."
-                }, 
-                "answer1": {
-                  "score": 0, 
-                  "response": "Is it likely that the market would allow for one fuel to become so expensive without encouraging the development of new reserves or different sources at more competitive prices?"
-                }, 
-                "answer4": {
-                  "score": 0, 
-                  "response": "Which fossil fuel has recently boomed in the United States due to the discovery of new reserves?"
-                }
-              }, 
-              "assessmentType": "multiplechoice"
-            }, 
-            "bricType": "MultipleChoiceQuestion", 
             "config": {
-              "id": "sampleQ1", 
-              "order": "randomized", 
-              "question": "Assuming that there are abundant quantities of fossil fuels in the ground, when the prices of these fuels rise, do reserve estimates increase, decrease, or stay the same? Why?", 
               "presenterType": "RadioGroup", 
+              "question": "Assuming that there are abundant quantities of fossil fuels in the ground, when the prices of these fuels rise, do reserve estimates increase, decrease, or stay the same? Why?", 
               "presenterConfig": {
                 "numberFormat": ""
               }, 
@@ -74,25 +27,49 @@
                   "content": "Reserve estimates stay the same because we have not found any new fossil fuel reserves in a very long time.", 
                   "answerKey": "answer4"
                 }
-              ]
+              ], 
+              "order": "randomized", 
+              "id": "sampleQ1"
             }, 
+            "answerKey": {
+              "assessmentType": "multiplechoice", 
+              "answers": {
+                "answer4": {
+                  "score": 0, 
+                  "response": "Which fossil fuel has recently boomed in the United States due to the discovery of new reserves?"
+                }, 
+                "answer1": {
+                  "score": 0, 
+                  "response": "Is it likely that the market would allow for one fuel to become so expensive without encouraging the development of new reserves or different sources at more competitive prices?"
+                }, 
+                "answer3": {
+                  "score": 0, 
+                  "response": "While these companies may hold a lot of power, would the market or the government typically allow for unregulated price increases on fuels?"
+                }, 
+                "answer2": {
+                  "score": 1, 
+                  "response": "Correct."
+                }
+              }
+            }, 
+            "bricType": "MultipleChoiceQuestion", 
+            "bricId": "Q1", 
             "configFixup": [
               {
+                "type": "set-property", 
+                "name": "questionId", 
                 "value": {
                   "domain": "info", 
                   "type": "ref", 
                   "refId": "sequenceNodeKey"
-                }, 
-                "type": "set-property", 
-                "name": "questionId"
+                }
               }
             ]
           }
         ], 
-        "containerId": "target1", 
+        "description": "container for the sample multiple choice question", 
         "hookupActions": [
           {
-            "methodName": "handleRequestsFrom", 
             "instance": {
               "type": "submit-manager"
             }, 
@@ -104,10 +81,10 @@
               }
             ], 
             "type": "method-call", 
-            "description": "Hookup the submit manager to evaluate answers"
+            "description": "Hookup the submit manager to evaluate answers", 
+            "methodName": "handleRequestsFrom"
           }, 
           {
-            "methodName": "draw", 
             "instance": {
               "domain": "brix", 
               "type": "ref", 
@@ -120,13 +97,36 @@
               }
             ], 
             "type": "method-call", 
-            "description": "Draw the question"
+            "description": "Draw the question", 
+            "methodName": "draw"
           }
         ], 
-        "description": "container for the sample multiple choice question"
+        "containerId": "target1"
       }
     ], 
     "description": "A Sample Activity containing a single multiple choice bric"
   }, 
-  "@type": "Envelope"
+  "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope", 
+  "@type": "Envelope", 
+  "metadata": {
+    "intendedEndUserRole": [
+      "Student"
+    ], 
+    "description": "68830_NE_C02.html", 
+    "format": [
+      "application/vnd.pearson.sanvan.v1.activity"
+    ], 
+    "owner": "Brix", 
+    "guid": "7513a81a-b651-44cd-b452-78d094b5b10e", 
+    "subject": [
+      "EnvironmentalScience"
+    ], 
+    "timeRequired": "PT20S", 
+    "created": "2013-12-13T11:08:17.673366", 
+    "title": "68830_NE_C02.html", 
+    "contentTypeTier1": "Test and Assessment", 
+    "contentTypeTier2": [
+      "assessment item"
+    ]
+  }
 }

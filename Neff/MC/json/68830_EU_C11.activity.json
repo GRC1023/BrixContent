@@ -1,59 +1,12 @@
 {
-  "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope", 
-  "metadata": {
-    "owner": "Brix", 
-    "contentTypeTier2": [
-      "assessment item"
-    ], 
-    "intendedEndUserRole": [
-      "Student"
-    ], 
-    "subject": [
-      "EnvironmentalScience"
-    ], 
-    "created": "2013-12-12T11:38:04.526789", 
-    "contentTypeTier1": "Test and Assessment", 
-    "timeRequired": "PT20S", 
-    "description": "68830_EU_C11.html", 
-    "title": "68830_EU_C11.html", 
-    "format": [
-      "application/vnd.pearson.sanvan.v1.activity"
-    ], 
-    "guid": "2dda9077-5363-48ab-ab74-33e39b1c6eb0"
-  }, 
   "body": {
     "containerConfig": [
       {
         "brixConfig": [
           {
-            "bricId": "Q1", 
-            "answerKey": {
-              "answers": {
-                "answer3": {
-                  "score": 0, 
-                  "response": "Are energy use rates rising in the most developed or developing countries more rapidly?"
-                }, 
-                "answer2": {
-                  "score": 0, 
-                  "response": "While the United States is a major player in energy consumption, would U.S. oil use alone drastically change things?"
-                }, 
-                "answer1": {
-                  "score": 0, 
-                  "response": "While some countries are becoming more efficient, what is happening to the countries that do not use very much energy right now?"
-                }, 
-                "answer4": {
-                  "score": 1, 
-                  "response": "Correct"
-                }
-              }, 
-              "assessmentType": "multiplechoice"
-            }, 
-            "bricType": "MultipleChoiceQuestion", 
             "config": {
-              "id": "sampleQ1", 
-              "order": "randomized", 
-              "question": "How and why will energy use change over the next thirty years?", 
               "presenterType": "RadioGroup", 
+              "question": "How and why will energy use change over the next thirty years?", 
               "presenterConfig": {
                 "numberFormat": ""
               }, 
@@ -74,25 +27,49 @@
                   "content": "It will increase because some countries are industrializing (and growing) quickly.", 
                   "answerKey": "answer4"
                 }
-              ]
+              ], 
+              "order": "randomized", 
+              "id": "sampleQ1"
             }, 
+            "answerKey": {
+              "assessmentType": "multiplechoice", 
+              "answers": {
+                "answer4": {
+                  "score": 1, 
+                  "response": "Correct"
+                }, 
+                "answer1": {
+                  "score": 0, 
+                  "response": "While some countries are becoming more efficient, what is happening to the countries that do not use very much energy right now?"
+                }, 
+                "answer3": {
+                  "score": 0, 
+                  "response": "Are energy use rates rising in the most developed or developing countries more rapidly?"
+                }, 
+                "answer2": {
+                  "score": 0, 
+                  "response": "While the United States is a major player in energy consumption, would U.S. oil use alone drastically change things?"
+                }
+              }
+            }, 
+            "bricType": "MultipleChoiceQuestion", 
+            "bricId": "Q1", 
             "configFixup": [
               {
+                "type": "set-property", 
+                "name": "questionId", 
                 "value": {
                   "domain": "info", 
                   "type": "ref", 
                   "refId": "sequenceNodeKey"
-                }, 
-                "type": "set-property", 
-                "name": "questionId"
+                }
               }
             ]
           }
         ], 
-        "containerId": "target1", 
+        "description": "container for the sample multiple choice question", 
         "hookupActions": [
           {
-            "methodName": "handleRequestsFrom", 
             "instance": {
               "type": "submit-manager"
             }, 
@@ -104,10 +81,10 @@
               }
             ], 
             "type": "method-call", 
-            "description": "Hookup the submit manager to evaluate answers"
+            "description": "Hookup the submit manager to evaluate answers", 
+            "methodName": "handleRequestsFrom"
           }, 
           {
-            "methodName": "draw", 
             "instance": {
               "domain": "brix", 
               "type": "ref", 
@@ -120,13 +97,36 @@
               }
             ], 
             "type": "method-call", 
-            "description": "Draw the question"
+            "description": "Draw the question", 
+            "methodName": "draw"
           }
         ], 
-        "description": "container for the sample multiple choice question"
+        "containerId": "target1"
       }
     ], 
     "description": "A Sample Activity containing a single multiple choice bric"
   }, 
-  "@type": "Envelope"
+  "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope", 
+  "@type": "Envelope", 
+  "metadata": {
+    "intendedEndUserRole": [
+      "Student"
+    ], 
+    "description": "68830_EU_C11.html", 
+    "format": [
+      "application/vnd.pearson.sanvan.v1.activity"
+    ], 
+    "owner": "Brix", 
+    "guid": "5e07b238-276d-4a95-bb9e-2f821a21c4e0", 
+    "subject": [
+      "EnvironmentalScience"
+    ], 
+    "timeRequired": "PT20S", 
+    "created": "2013-12-13T11:08:17.671743", 
+    "title": "68830_EU_C11.html", 
+    "contentTypeTier1": "Test and Assessment", 
+    "contentTypeTier2": [
+      "assessment item"
+    ]
+  }
 }

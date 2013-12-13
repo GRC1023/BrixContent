@@ -1,59 +1,12 @@
 {
-  "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope", 
-  "metadata": {
-    "owner": "Brix", 
-    "contentTypeTier2": [
-      "assessment item"
-    ], 
-    "intendedEndUserRole": [
-      "Student"
-    ], 
-    "subject": [
-      "EnvironmentalScience"
-    ], 
-    "created": "2013-12-12T11:38:04.527252", 
-    "contentTypeTier1": "Test and Assessment", 
-    "timeRequired": "PT20S", 
-    "description": "68830_NE_C05.html", 
-    "title": "68830_NE_C05.html", 
-    "format": [
-      "application/vnd.pearson.sanvan.v1.activity"
-    ], 
-    "guid": "759f414d-3e04-491d-9d77-57404d948f14"
-  }, 
   "body": {
     "containerConfig": [
       {
         "brixConfig": [
           {
-            "bricId": "Q1", 
-            "answerKey": {
-              "answers": {
-                "answer3": {
-                  "score": 0, 
-                  "response": "Think about what you know about the differences between conventional natural gas and unconventional natural gas derived from fracking. Is the fuel itself different?"
-                }, 
-                "answer2": {
-                  "score": 1, 
-                  "response": "Correct."
-                }, 
-                "answer1": {
-                  "score": 0, 
-                  "response": "If a lot of natural gas is available, could companies raise prices very much and still be competitive?"
-                }, 
-                "answer4": {
-                  "score": 0, 
-                  "response": "Has the United States used enough of the new reserves to begin depleting them yet?"
-                }
-              }, 
-              "assessmentType": "multiplechoice"
-            }, 
-            "bricType": "MultipleChoiceQuestion", 
             "config": {
-              "id": "sampleQ1", 
-              "order": "randomized", 
-              "question": "The technology used to carry out hydraulic fracturing of subsurface fossil fuel deposits has only been widely available for a couple of decades. What has happened to natural gas prices and availability as the result of the use of this technology?", 
               "presenterType": "RadioGroup", 
+              "question": "The technology used to carry out hydraulic fracturing of subsurface fossil fuel deposits has only been widely available for a couple of decades. What has happened to natural gas prices and availability as the result of the use of this technology?", 
               "presenterConfig": {
                 "numberFormat": ""
               }, 
@@ -74,25 +27,49 @@
                   "content": "Natural gas has become cheaper and less available because the use of this technology has depleted many of the known natural gas reserves.", 
                   "answerKey": "answer4"
                 }
-              ]
+              ], 
+              "order": "randomized", 
+              "id": "sampleQ1"
             }, 
+            "answerKey": {
+              "assessmentType": "multiplechoice", 
+              "answers": {
+                "answer4": {
+                  "score": 0, 
+                  "response": "Has the United States used enough of the new reserves to begin depleting them yet?"
+                }, 
+                "answer1": {
+                  "score": 0, 
+                  "response": "If a lot of natural gas is available, could companies raise prices very much and still be competitive?"
+                }, 
+                "answer3": {
+                  "score": 0, 
+                  "response": "Think about what you know about the differences between conventional natural gas and unconventional natural gas derived from fracking. Is the fuel itself different?"
+                }, 
+                "answer2": {
+                  "score": 1, 
+                  "response": "Correct."
+                }
+              }
+            }, 
+            "bricType": "MultipleChoiceQuestion", 
+            "bricId": "Q1", 
             "configFixup": [
               {
+                "type": "set-property", 
+                "name": "questionId", 
                 "value": {
                   "domain": "info", 
                   "type": "ref", 
                   "refId": "sequenceNodeKey"
-                }, 
-                "type": "set-property", 
-                "name": "questionId"
+                }
               }
             ]
           }
         ], 
-        "containerId": "target1", 
+        "description": "container for the sample multiple choice question", 
         "hookupActions": [
           {
-            "methodName": "handleRequestsFrom", 
             "instance": {
               "type": "submit-manager"
             }, 
@@ -104,10 +81,10 @@
               }
             ], 
             "type": "method-call", 
-            "description": "Hookup the submit manager to evaluate answers"
+            "description": "Hookup the submit manager to evaluate answers", 
+            "methodName": "handleRequestsFrom"
           }, 
           {
-            "methodName": "draw", 
             "instance": {
               "domain": "brix", 
               "type": "ref", 
@@ -120,13 +97,36 @@
               }
             ], 
             "type": "method-call", 
-            "description": "Draw the question"
+            "description": "Draw the question", 
+            "methodName": "draw"
           }
         ], 
-        "description": "container for the sample multiple choice question"
+        "containerId": "target1"
       }
     ], 
     "description": "A Sample Activity containing a single multiple choice bric"
   }, 
-  "@type": "Envelope"
+  "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope", 
+  "@type": "Envelope", 
+  "metadata": {
+    "intendedEndUserRole": [
+      "Student"
+    ], 
+    "description": "68830_NE_C05.html", 
+    "format": [
+      "application/vnd.pearson.sanvan.v1.activity"
+    ], 
+    "owner": "Brix", 
+    "guid": "959c71b5-fbb2-44bd-84e5-91d357c3b0d0", 
+    "subject": [
+      "EnvironmentalScience"
+    ], 
+    "timeRequired": "PT20S", 
+    "created": "2013-12-13T11:08:17.673528", 
+    "title": "68830_NE_C05.html", 
+    "contentTypeTier1": "Test and Assessment", 
+    "contentTypeTier2": [
+      "assessment item"
+    ]
+  }
 }

@@ -1,0 +1,140 @@
+{
+  "body": {
+    "containerConfig": [
+      {
+        "brixConfig": [
+          {
+            "config": {
+              "presenterType": "RadioGroup", 
+              "question": "One of the major concerns about current first generation biomass fuels is that they take a lot of energy to produce and therefore won\u2019t help to reduce the emissions of greenhouse gases. In the following example, would this be true? A gallon of gasoline releases about 9 Kg CO2 when burned. If it takes about 2 Kg of coal to produce the electricity to make one gallon of biofuel and each Kg of coal results in the emission of 3.75 Kg CO2, how much would CO2 emissions be reduced or increased by using biofuel instead of gasoline? You can assume that a gallon of biofuel and a gallon of gasoline have exactly the same amount of energy in them.", 
+              "presenterConfig": {
+                "numberFormat": ""
+              }, 
+              "choices": [
+                {
+                  "content": "increased emission of 12.75 Kg CO2", 
+                  "answerKey": "answer1"
+                }, 
+                {
+                  "content": "increased emission of 1.5 Kg CO2", 
+                  "answerKey": "answer2"
+                }, 
+                {
+                  "content": "no change in emissions", 
+                  "answerKey": "answer3"
+                }, 
+                {
+                  "content": "decreased emission of 1.5 Kg CO2", 
+                  "answerKey": "answer4"
+                }, 
+                {
+                  "content": "decreased emission of 12.75 Kg CO2", 
+                  "answerKey": "answer5"
+                }
+              ], 
+              "order": "randomized", 
+              "id": "sampleQ1"
+            }, 
+            "answerKey": {
+              "assessmentType": "multiplechoice", 
+              "answers": {
+                "answer5": {
+                  "score": 0, 
+                  "response": "Calculate the CO2 emissions produced for 2 Kg of coal (the amount it takes to make one gallon of biofuel). Are these emissions greater or less than the amount of CO2 released from one gallon of traditional gasoline?"
+                }, 
+                "answer4": {
+                  "score": 1, 
+                  "response": "Correct."
+                }, 
+                "answer1": {
+                  "score": 0, 
+                  "response": "Calculate the CO2 emissions produced for 2 Kg of coal (the amount it takes to make one gallon of biofuel). Are these emissions greater or less than the amount of CO2 released from one gallon of traditional gasoline?"
+                }, 
+                "answer3": {
+                  "score": 0, 
+                  "response": "Calculate the CO2 emissions produced for 2 Kg of coal (the amount it takes to make one gallon of biofuel). Are these emissions greater or less than the amount of CO2 released from one gallon of traditional gasoline?"
+                }, 
+                "answer2": {
+                  "score": 0, 
+                  "response": "Calculate the CO2 emissions produced for 2 Kg of coal (the amount it takes to make one gallon of biofuel). Are these emissions greater or less than the amount of CO2 released from one gallon of traditional gasoline?"
+                }
+              }
+            }, 
+            "bricType": "MultipleChoiceQuestion", 
+            "bricId": "Q1", 
+            "configFixup": [
+              {
+                "type": "set-property", 
+                "name": "questionId", 
+                "value": {
+                  "domain": "info", 
+                  "type": "ref", 
+                  "refId": "sequenceNodeKey"
+                }
+              }
+            ]
+          }
+        ], 
+        "description": "container for the sample multiple choice question", 
+        "hookupActions": [
+          {
+            "instance": {
+              "type": "submit-manager"
+            }, 
+            "args": [
+              {
+                "domain": "brix", 
+                "type": "ref", 
+                "refId": "Q1"
+              }
+            ], 
+            "type": "method-call", 
+            "description": "Hookup the submit manager to evaluate answers", 
+            "methodName": "handleRequestsFrom"
+          }, 
+          {
+            "instance": {
+              "domain": "brix", 
+              "type": "ref", 
+              "refId": "Q1"
+            }, 
+            "args": [
+              {
+                "type": "d3select", 
+                "selector": "#target1"
+              }
+            ], 
+            "type": "method-call", 
+            "description": "Draw the question", 
+            "methodName": "draw"
+          }
+        ], 
+        "containerId": "target1"
+      }
+    ], 
+    "description": "A Sample Activity containing a single multiple choice bric"
+  }, 
+  "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope", 
+  "@type": "Envelope", 
+  "metadata": {
+    "intendedEndUserRole": [
+      "Student"
+    ], 
+    "description": "68830_RE_C09.html", 
+    "format": [
+      "application/vnd.pearson.sanvan.v1.activity"
+    ], 
+    "owner": "Brix", 
+    "guid": "4650e68a-8454-4784-8380-f71aec3c3261", 
+    "subject": [
+      "EnvironmentalScience"
+    ], 
+    "timeRequired": "PT20S", 
+    "created": "2013-12-13T11:08:17.676473", 
+    "title": "68830_RE_C09.html", 
+    "contentTypeTier1": "Test and Assessment", 
+    "contentTypeTier2": [
+      "assessment item"
+    ]
+  }
+}

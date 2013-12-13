@@ -1,59 +1,12 @@
 {
-  "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope", 
-  "metadata": {
-    "owner": "Brix", 
-    "contentTypeTier2": [
-      "assessment item"
-    ], 
-    "intendedEndUserRole": [
-      "Student"
-    ], 
-    "subject": [
-      "EnvironmentalScience"
-    ], 
-    "created": "2013-12-12T11:38:04.527466", 
-    "contentTypeTier1": "Test and Assessment", 
-    "timeRequired": "PT20S", 
-    "description": "68830_NE_C16.html", 
-    "title": "68830_NE_C16.html", 
-    "format": [
-      "application/vnd.pearson.sanvan.v1.activity"
-    ], 
-    "guid": "0d058ff6-8ced-4964-a671-39a638f2efd4"
-  }, 
   "body": {
     "containerConfig": [
       {
         "brixConfig": [
           {
-            "bricId": "Q1", 
-            "answerKey": {
-              "answers": {
-                "answer3": {
-                  "score": 0, 
-                  "response": "What do you know about the amount of greenhouse gasses produced by burning coal?"
-                }, 
-                "answer2": {
-                  "score": 0, 
-                  "response": "What do you know about the amount of greenhouse gasses produced by burning coal?"
-                }, 
-                "answer1": {
-                  "score": 1, 
-                  "response": "Correct."
-                }, 
-                "answer4": {
-                  "score": 0, 
-                  "response": "Is there a source on this list that emits fewer greenhouse gasses than natural gas?"
-                }
-              }, 
-              "assessmentType": "multiplechoice"
-            }, 
-            "bricType": "MultipleChoiceQuestion", 
             "config": {
-              "id": "sampleQ1", 
-              "order": "randomized", 
-              "question": "If you were in charge of air pollution regulations in Colorado and could choose to generate energy from any non-renewable source, which of the following lists best represents the <i>best to worst fuel choices</i> if your goal is to reduce both greenhouse gas and air pollution emissions?", 
               "presenterType": "RadioGroup", 
+              "question": "If you were in charge of air pollution regulations in Colorado and could choose to generate energy from any non-renewable source, which of the following lists best represents the <i>best to worst fuel choices</i> if your goal is to reduce both greenhouse gas and air pollution emissions?", 
               "presenterConfig": {
                 "numberFormat": ""
               }, 
@@ -74,25 +27,49 @@
                   "content": "Natural Gas> Nuclear > Coal", 
                   "answerKey": "answer4"
                 }
-              ]
+              ], 
+              "order": "randomized", 
+              "id": "sampleQ1"
             }, 
+            "answerKey": {
+              "assessmentType": "multiplechoice", 
+              "answers": {
+                "answer4": {
+                  "score": 0, 
+                  "response": "Is there a source on this list that emits fewer greenhouse gasses than natural gas?"
+                }, 
+                "answer1": {
+                  "score": 1, 
+                  "response": "Correct."
+                }, 
+                "answer3": {
+                  "score": 0, 
+                  "response": "What do you know about the amount of greenhouse gasses produced by burning coal?"
+                }, 
+                "answer2": {
+                  "score": 0, 
+                  "response": "What do you know about the amount of greenhouse gasses produced by burning coal?"
+                }
+              }
+            }, 
+            "bricType": "MultipleChoiceQuestion", 
+            "bricId": "Q1", 
             "configFixup": [
               {
+                "type": "set-property", 
+                "name": "questionId", 
                 "value": {
                   "domain": "info", 
                   "type": "ref", 
                   "refId": "sequenceNodeKey"
-                }, 
-                "type": "set-property", 
-                "name": "questionId"
+                }
               }
             ]
           }
         ], 
-        "containerId": "target1", 
+        "description": "container for the sample multiple choice question", 
         "hookupActions": [
           {
-            "methodName": "handleRequestsFrom", 
             "instance": {
               "type": "submit-manager"
             }, 
@@ -104,10 +81,10 @@
               }
             ], 
             "type": "method-call", 
-            "description": "Hookup the submit manager to evaluate answers"
+            "description": "Hookup the submit manager to evaluate answers", 
+            "methodName": "handleRequestsFrom"
           }, 
           {
-            "methodName": "draw", 
             "instance": {
               "domain": "brix", 
               "type": "ref", 
@@ -120,13 +97,36 @@
               }
             ], 
             "type": "method-call", 
-            "description": "Draw the question"
+            "description": "Draw the question", 
+            "methodName": "draw"
           }
         ], 
-        "description": "container for the sample multiple choice question"
+        "containerId": "target1"
       }
     ], 
     "description": "A Sample Activity containing a single multiple choice bric"
   }, 
-  "@type": "Envelope"
+  "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope", 
+  "@type": "Envelope", 
+  "metadata": {
+    "intendedEndUserRole": [
+      "Student"
+    ], 
+    "description": "68830_NE_C16.html", 
+    "format": [
+      "application/vnd.pearson.sanvan.v1.activity"
+    ], 
+    "owner": "Brix", 
+    "guid": "2ac18a01-ae85-447c-ac68-5d8d95493cd5", 
+    "subject": [
+      "EnvironmentalScience"
+    ], 
+    "timeRequired": "PT20S", 
+    "created": "2013-12-13T11:08:17.674168", 
+    "title": "68830_NE_C16.html", 
+    "contentTypeTier1": "Test and Assessment", 
+    "contentTypeTier2": [
+      "assessment item"
+    ]
+  }
 }

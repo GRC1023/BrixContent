@@ -1,0 +1,140 @@
+{
+  "body": {
+    "containerConfig": [
+      {
+        "brixConfig": [
+          {
+            "config": {
+              "presenterType": "RadioGroup", 
+              "question": "Some people argue that replacing gasoline with biofuels is an extremely important step in transitioning from fossil fuels to renewable energy that must be completed right away, especially because we have the technology and products to do it.  While this argument may hold some validity, what drawbacks may these people be overlooking when making this argument?", 
+              "presenterConfig": {
+                "numberFormat": ""
+              }, 
+              "choices": [
+                {
+                  "content": "Mass production of some biofuels could potentially limit food supplies.", 
+                  "answerKey": "answer1"
+                }, 
+                {
+                  "content": "It requires a lot of energy to convert biomass into biofuel.", 
+                  "answerKey": "answer2"
+                }, 
+                {
+                  "content": "Regular gasoline engines cannot use pure biofuels without being converted (and biodiesel can only be used in diesel engines).", 
+                  "answerKey": "answer3"
+                }, 
+                {
+                  "content": "A & C only.", 
+                  "answerKey": "answer4"
+                }, 
+                {
+                  "content": "All of the above.", 
+                  "answerKey": "answer5"
+                }
+              ], 
+              "order": "ordered", 
+              "id": "sampleQ1"
+            }, 
+            "answerKey": {
+              "assessmentType": "multiplechoice", 
+              "answers": {
+                "answer5": {
+                  "score": 1, 
+                  "response": "Correct."
+                }, 
+                "answer4": {
+                  "score": 0, 
+                  "response": "How are current biofuels produced and does this require the use of a large amount of energy?"
+                }, 
+                "answer1": {
+                  "score": 0, 
+                  "response": "While this is true, is it the only correct answer?"
+                }, 
+                "answer3": {
+                  "score": 0, 
+                  "response": "While this is true, is it the only correct answer?"
+                }, 
+                "answer2": {
+                  "score": 0, 
+                  "response": "While this is true, is it the only correct answer?"
+                }
+              }
+            }, 
+            "bricType": "MultipleChoiceQuestion", 
+            "bricId": "Q1", 
+            "configFixup": [
+              {
+                "type": "set-property", 
+                "name": "questionId", 
+                "value": {
+                  "domain": "info", 
+                  "type": "ref", 
+                  "refId": "sequenceNodeKey"
+                }
+              }
+            ]
+          }
+        ], 
+        "description": "container for the sample multiple choice question", 
+        "hookupActions": [
+          {
+            "instance": {
+              "type": "submit-manager"
+            }, 
+            "args": [
+              {
+                "domain": "brix", 
+                "type": "ref", 
+                "refId": "Q1"
+              }
+            ], 
+            "type": "method-call", 
+            "description": "Hookup the submit manager to evaluate answers", 
+            "methodName": "handleRequestsFrom"
+          }, 
+          {
+            "instance": {
+              "domain": "brix", 
+              "type": "ref", 
+              "refId": "Q1"
+            }, 
+            "args": [
+              {
+                "type": "d3select", 
+                "selector": "#target1"
+              }
+            ], 
+            "type": "method-call", 
+            "description": "Draw the question", 
+            "methodName": "draw"
+          }
+        ], 
+        "containerId": "target1"
+      }
+    ], 
+    "description": "A Sample Activity containing a single multiple choice bric"
+  }, 
+  "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope", 
+  "@type": "Envelope", 
+  "metadata": {
+    "intendedEndUserRole": [
+      "Student"
+    ], 
+    "description": "68830_RE_C10.html", 
+    "format": [
+      "application/vnd.pearson.sanvan.v1.activity"
+    ], 
+    "owner": "Brix", 
+    "guid": "0ab8956f-6343-4591-90dc-42ff2be9791c", 
+    "subject": [
+      "EnvironmentalScience"
+    ], 
+    "timeRequired": "PT20S", 
+    "created": "2013-12-13T11:08:17.676525", 
+    "title": "68830_RE_C10.html", 
+    "contentTypeTier1": "Test and Assessment", 
+    "contentTypeTier2": [
+      "assessment item"
+    ]
+  }
+}

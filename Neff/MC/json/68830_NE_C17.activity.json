@@ -1,59 +1,12 @@
 {
-  "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope", 
-  "metadata": {
-    "owner": "Brix", 
-    "contentTypeTier2": [
-      "assessment item"
-    ], 
-    "intendedEndUserRole": [
-      "Student"
-    ], 
-    "subject": [
-      "EnvironmentalScience"
-    ], 
-    "created": "2013-12-12T11:38:04.527481", 
-    "contentTypeTier1": "Test and Assessment", 
-    "timeRequired": "PT20S", 
-    "description": "68830_NE_C17.html", 
-    "title": "68830_NE_C17.html", 
-    "format": [
-      "application/vnd.pearson.sanvan.v1.activity"
-    ], 
-    "guid": "13d0416d-c3d4-4cad-81bb-fafd88a2d5b2"
-  }, 
   "body": {
     "containerConfig": [
       {
         "brixConfig": [
           {
-            "bricId": "Q1", 
-            "answerKey": {
-              "answers": {
-                "answer3": {
-                  "score": 0, 
-                  "response": "What do you know about the impacts of nuclear plant accidents such as Three Mile Island, Chernobyl, and Fukushima?"
-                }, 
-                "answer2": {
-                  "score": 1, 
-                  "response": "Correct. Using nuclear energy produces almost no CO<sub>2</sub>."
-                }, 
-                "answer1": {
-                  "score": 0, 
-                  "response": "Have any countries come up with safe and feasible ways to store their nuclear waste?"
-                }, 
-                "answer4": {
-                  "score": 0, 
-                  "response": "How did Germany change its stance on using nuclear power after Fukushima?"
-                }
-              }, 
-              "assessmentType": "multiplechoice"
-            }, 
-            "bricType": "MultipleChoiceQuestion", 
             "config": {
-              "id": "sampleQ1", 
-              "order": "randomized", 
-              "question": "Which of the following is NOT a concern when deciding whether to increase nuclear power generation on a global scale?", 
               "presenterType": "RadioGroup", 
+              "question": "Which of the following is NOT a concern when deciding whether to increase nuclear power generation on a global scale?", 
               "presenterConfig": {
                 "numberFormat": ""
               }, 
@@ -74,25 +27,49 @@
                   "content": "There is a societal aversion in many places to nuclear power based on previous nuclear accidents.", 
                   "answerKey": "answer4"
                 }
-              ]
+              ], 
+              "order": "randomized", 
+              "id": "sampleQ1"
             }, 
+            "answerKey": {
+              "assessmentType": "multiplechoice", 
+              "answers": {
+                "answer4": {
+                  "score": 0, 
+                  "response": "How did Germany change its stance on using nuclear power after Fukushima?"
+                }, 
+                "answer1": {
+                  "score": 0, 
+                  "response": "Have any countries come up with safe and feasible ways to store their nuclear waste?"
+                }, 
+                "answer3": {
+                  "score": 0, 
+                  "response": "What do you know about the impacts of nuclear plant accidents such as Three Mile Island, Chernobyl, and Fukushima?"
+                }, 
+                "answer2": {
+                  "score": 1, 
+                  "response": "Correct. Using nuclear energy produces almost no CO<sub>2</sub>."
+                }
+              }
+            }, 
+            "bricType": "MultipleChoiceQuestion", 
+            "bricId": "Q1", 
             "configFixup": [
               {
+                "type": "set-property", 
+                "name": "questionId", 
                 "value": {
                   "domain": "info", 
                   "type": "ref", 
                   "refId": "sequenceNodeKey"
-                }, 
-                "type": "set-property", 
-                "name": "questionId"
+                }
               }
             ]
           }
         ], 
-        "containerId": "target1", 
+        "description": "container for the sample multiple choice question", 
         "hookupActions": [
           {
-            "methodName": "handleRequestsFrom", 
             "instance": {
               "type": "submit-manager"
             }, 
@@ -104,10 +81,10 @@
               }
             ], 
             "type": "method-call", 
-            "description": "Hookup the submit manager to evaluate answers"
+            "description": "Hookup the submit manager to evaluate answers", 
+            "methodName": "handleRequestsFrom"
           }, 
           {
-            "methodName": "draw", 
             "instance": {
               "domain": "brix", 
               "type": "ref", 
@@ -120,13 +97,36 @@
               }
             ], 
             "type": "method-call", 
-            "description": "Draw the question"
+            "description": "Draw the question", 
+            "methodName": "draw"
           }
         ], 
-        "description": "container for the sample multiple choice question"
+        "containerId": "target1"
       }
     ], 
     "description": "A Sample Activity containing a single multiple choice bric"
   }, 
-  "@type": "Envelope"
+  "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope", 
+  "@type": "Envelope", 
+  "metadata": {
+    "intendedEndUserRole": [
+      "Student"
+    ], 
+    "description": "68830_NE_C17.html", 
+    "format": [
+      "application/vnd.pearson.sanvan.v1.activity"
+    ], 
+    "owner": "Brix", 
+    "guid": "4675d64d-86eb-47a6-86ca-7279eda8509a", 
+    "subject": [
+      "EnvironmentalScience"
+    ], 
+    "timeRequired": "PT20S", 
+    "created": "2013-12-13T11:08:17.674223", 
+    "title": "68830_NE_C17.html", 
+    "contentTypeTier1": "Test and Assessment", 
+    "contentTypeTier2": [
+      "assessment item"
+    ]
+  }
 }

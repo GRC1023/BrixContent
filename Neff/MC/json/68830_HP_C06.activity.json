@@ -1,63 +1,12 @@
 {
-  "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope", 
-  "metadata": {
-    "owner": "Brix", 
-    "contentTypeTier2": [
-      "assessment item"
-    ], 
-    "intendedEndUserRole": [
-      "Student"
-    ], 
-    "subject": [
-      "EnvironmentalScience"
-    ], 
-    "created": "2013-12-12T11:38:04.525790", 
-    "contentTypeTier1": "Test and Assessment", 
-    "timeRequired": "PT20S", 
-    "description": "68830_HP_C06.html", 
-    "title": "68830_HP_C06.html", 
-    "format": [
-      "application/vnd.pearson.sanvan.v1.activity"
-    ], 
-    "guid": "fe98a5b5-342e-43f3-9499-71861f2d86d2"
-  }, 
   "body": {
     "containerConfig": [
       {
         "brixConfig": [
           {
-            "bricId": "Q1", 
-            "answerKey": {
-              "answers": {
-                "answer3": {
-                  "score": 0, 
-                  "response": "If Japan is an example of a population with a large number of older citizens, is this likely to be true as they continue to age?"
-                }, 
-                "answer2": {
-                  "score": 0, 
-                  "response": "If Kenya is an example of a population with a large number of younger citizens, is this likely to become true as they grow older?"
-                }, 
-                "answer1": {
-                  "score": 1, 
-                  "response": "Correct."
-                }, 
-                "answer5": {
-                  "score": 0, 
-                  "response": "Will both countries continue to have a non-working population for very long?"
-                }, 
-                "answer4": {
-                  "score": 0, 
-                  "response": "If Japan\u2019s trend of having a mostly older population continues, is Japan more likely to invest in things that benefit older or younger people?"
-                }
-              }, 
-              "assessmentType": "multiplechoice"
-            }, 
-            "bricType": "MultipleChoiceQuestion", 
             "config": {
-              "id": "sampleQ1", 
-              "order": "randomized", 
-              "question": "A high dependency ratio can create stresses for a society, but those stresses vary depending on the age of population. Using Japan as an example of a population with a large number of older citizens and Kenya as an example of a population with a large number of younger citizens, which of the following statements is not likely to be true?", 
               "presenterType": "RadioGroup", 
+              "question": "A high dependency ratio can create stresses for a society, but those stresses vary depending on the age of population. Using Japan as an example of a population with a large number of older citizens and Kenya as an example of a population with a large number of younger citizens, which of the following statements is not likely to be true?", 
               "presenterConfig": {
                 "numberFormat": ""
               }, 
@@ -82,25 +31,53 @@
                   "content": "Both countries face the challenge of providing for non-working members of society in economic conditions that are likely to generate less income for investment in society. ", 
                   "answerKey": "answer5"
                 }
-              ]
+              ], 
+              "order": "randomized", 
+              "id": "sampleQ1"
             }, 
+            "answerKey": {
+              "assessmentType": "multiplechoice", 
+              "answers": {
+                "answer5": {
+                  "score": 0, 
+                  "response": "Will both countries continue to have a non-working population for very long?"
+                }, 
+                "answer4": {
+                  "score": 0, 
+                  "response": "If Japan\u2019s trend of having a mostly older population continues, is Japan more likely to invest in things that benefit older or younger people?"
+                }, 
+                "answer1": {
+                  "score": 1, 
+                  "response": "Correct."
+                }, 
+                "answer3": {
+                  "score": 0, 
+                  "response": "If Japan is an example of a population with a large number of older citizens, is this likely to be true as they continue to age?"
+                }, 
+                "answer2": {
+                  "score": 0, 
+                  "response": "If Kenya is an example of a population with a large number of younger citizens, is this likely to become true as they grow older?"
+                }
+              }
+            }, 
+            "bricType": "MultipleChoiceQuestion", 
+            "bricId": "Q1", 
             "configFixup": [
               {
+                "type": "set-property", 
+                "name": "questionId", 
                 "value": {
                   "domain": "info", 
                   "type": "ref", 
                   "refId": "sequenceNodeKey"
-                }, 
-                "type": "set-property", 
-                "name": "questionId"
+                }
               }
             ]
           }
         ], 
-        "containerId": "target1", 
+        "description": "container for the sample multiple choice question", 
         "hookupActions": [
           {
-            "methodName": "handleRequestsFrom", 
             "instance": {
               "type": "submit-manager"
             }, 
@@ -112,10 +89,10 @@
               }
             ], 
             "type": "method-call", 
-            "description": "Hookup the submit manager to evaluate answers"
+            "description": "Hookup the submit manager to evaluate answers", 
+            "methodName": "handleRequestsFrom"
           }, 
           {
-            "methodName": "draw", 
             "instance": {
               "domain": "brix", 
               "type": "ref", 
@@ -128,13 +105,36 @@
               }
             ], 
             "type": "method-call", 
-            "description": "Draw the question"
+            "description": "Draw the question", 
+            "methodName": "draw"
           }
         ], 
-        "description": "container for the sample multiple choice question"
+        "containerId": "target1"
       }
     ], 
     "description": "A Sample Activity containing a single multiple choice bric"
   }, 
-  "@type": "Envelope"
+  "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope", 
+  "@type": "Envelope", 
+  "metadata": {
+    "intendedEndUserRole": [
+      "Student"
+    ], 
+    "description": "68830_HP_C06.html", 
+    "format": [
+      "application/vnd.pearson.sanvan.v1.activity"
+    ], 
+    "owner": "Brix", 
+    "guid": "7e62080e-2172-43ca-8e83-da8af64ae856", 
+    "subject": [
+      "EnvironmentalScience"
+    ], 
+    "timeRequired": "PT20S", 
+    "created": "2013-12-13T11:08:17.667106", 
+    "title": "68830_HP_C06.html", 
+    "contentTypeTier1": "Test and Assessment", 
+    "contentTypeTier2": [
+      "assessment item"
+    ]
+  }
 }

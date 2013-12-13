@@ -1,63 +1,12 @@
 {
-  "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope", 
-  "metadata": {
-    "owner": "Brix", 
-    "contentTypeTier2": [
-      "assessment item"
-    ], 
-    "intendedEndUserRole": [
-      "Student"
-    ], 
-    "subject": [
-      "EnvironmentalScience"
-    ], 
-    "created": "2013-12-12T11:38:04.525791", 
-    "contentTypeTier1": "Test and Assessment", 
-    "timeRequired": "PT20S", 
-    "description": "68830_HP_C10.html", 
-    "title": "68830_HP_C10.html", 
-    "format": [
-      "application/vnd.pearson.sanvan.v1.activity"
-    ], 
-    "guid": "07a0710e-5149-4b4d-adc1-e0573b7a8426"
-  }, 
   "body": {
     "containerConfig": [
       {
         "brixConfig": [
           {
-            "bricId": "Q1", 
-            "answerKey": {
-              "answers": {
-                "answer3": {
-                  "score": 1, 
-                  "response": "Correct."
-                }, 
-                "answer2": {
-                  "score": 0, 
-                  "response": "As countries move through the demographic transition, do their growth rates typically increase or decrease?"
-                }, 
-                "answer1": {
-                  "score": 0, 
-                  "response": "How have growth rates changed over the past 50 years, despite a growing total population?"
-                }, 
-                "answer5": {
-                  "score": 0, 
-                  "response": "As more countries move through the demographic transition, is it likely that their growth rates will stay constant?"
-                }, 
-                "answer4": {
-                  "score": 0, 
-                  "response": "Does access to oil drive growth rates? Think of the countries that currently have the highest growth rates and their relative access to oil."
-                }
-              }, 
-              "assessmentType": "multiplechoice"
-            }, 
-            "bricType": "MultipleChoiceQuestion", 
             "config": {
-              "id": "sampleQ1", 
-              "order": "randomized", 
-              "question": "How will population growth rates most likely change over the next 100 years (according to projections from the United Nations)?", 
               "presenterType": "RadioGroup", 
+              "question": "How will population growth rates most likely change over the next 100 years (according to projections from the United Nations)?", 
               "presenterConfig": {
                 "numberFormat": ""
               }, 
@@ -82,25 +31,53 @@
                   "content": "Growth rates will remain the same.", 
                   "answerKey": "answer5"
                 }
-              ]
+              ], 
+              "order": "randomized", 
+              "id": "sampleQ1"
             }, 
+            "answerKey": {
+              "assessmentType": "multiplechoice", 
+              "answers": {
+                "answer5": {
+                  "score": 0, 
+                  "response": "As more countries move through the demographic transition, is it likely that their growth rates will stay constant?"
+                }, 
+                "answer4": {
+                  "score": 0, 
+                  "response": "Does access to oil drive growth rates? Think of the countries that currently have the highest growth rates and their relative access to oil."
+                }, 
+                "answer1": {
+                  "score": 0, 
+                  "response": "How have growth rates changed over the past 50 years, despite a growing total population?"
+                }, 
+                "answer3": {
+                  "score": 1, 
+                  "response": "Correct."
+                }, 
+                "answer2": {
+                  "score": 0, 
+                  "response": "As countries move through the demographic transition, do their growth rates typically increase or decrease?"
+                }
+              }
+            }, 
+            "bricType": "MultipleChoiceQuestion", 
+            "bricId": "Q1", 
             "configFixup": [
               {
+                "type": "set-property", 
+                "name": "questionId", 
                 "value": {
                   "domain": "info", 
                   "type": "ref", 
                   "refId": "sequenceNodeKey"
-                }, 
-                "type": "set-property", 
-                "name": "questionId"
+                }
               }
             ]
           }
         ], 
-        "containerId": "target1", 
+        "description": "container for the sample multiple choice question", 
         "hookupActions": [
           {
-            "methodName": "handleRequestsFrom", 
             "instance": {
               "type": "submit-manager"
             }, 
@@ -112,10 +89,10 @@
               }
             ], 
             "type": "method-call", 
-            "description": "Hookup the submit manager to evaluate answers"
+            "description": "Hookup the submit manager to evaluate answers", 
+            "methodName": "handleRequestsFrom"
           }, 
           {
-            "methodName": "draw", 
             "instance": {
               "domain": "brix", 
               "type": "ref", 
@@ -128,13 +105,36 @@
               }
             ], 
             "type": "method-call", 
-            "description": "Draw the question"
+            "description": "Draw the question", 
+            "methodName": "draw"
           }
         ], 
-        "description": "container for the sample multiple choice question"
+        "containerId": "target1"
       }
     ], 
     "description": "A Sample Activity containing a single multiple choice bric"
   }, 
-  "@type": "Envelope"
+  "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope", 
+  "@type": "Envelope", 
+  "metadata": {
+    "intendedEndUserRole": [
+      "Student"
+    ], 
+    "description": "68830_HP_C10.html", 
+    "format": [
+      "application/vnd.pearson.sanvan.v1.activity"
+    ], 
+    "owner": "Brix", 
+    "guid": "31cd60e7-b6b4-4213-896f-1cbd9b6cdf29", 
+    "subject": [
+      "EnvironmentalScience"
+    ], 
+    "timeRequired": "PT20S", 
+    "created": "2013-12-13T11:08:17.667342", 
+    "title": "68830_HP_C10.html", 
+    "contentTypeTier1": "Test and Assessment", 
+    "contentTypeTier2": [
+      "assessment item"
+    ]
+  }
 }
