@@ -1,0 +1,298 @@
+{
+  "metadata": {
+    "intendedEndUserRole": [
+      "Student"
+    ], 
+    "format": [
+      "application/vnd.pearson.sanvan.v1.activity"
+    ], 
+    "created": "2013-12-13T22:14:44.162382", 
+    "title": "How nuclear fuel is made from uranium", 
+    "owner": "Brix", 
+    "subject": [
+      "EnvironmentalScience"
+    ], 
+    "guid": "f479b646-b474-482f-b8ca-a316c1855522", 
+    "timeRequired": "PT20S", 
+    "description": "How nuclear fuel is made from uranium", 
+    "contentTypeTier2": [
+      "Exercise"
+    ], 
+    "contentTypeTier1": "Activity"
+  }, 
+  "body": {
+    "containerConfig": [
+      {
+        "hookupActions": [
+          {
+            "args": [
+              {
+                "domain": "brix", 
+                "refId": "imageGraph", 
+                "type": "ref"
+              }
+            ], 
+            "instance": {
+              "domain": "brix", 
+              "refId": "cntr1", 
+              "type": "ref"
+            }, 
+            "description": "Append the image to the svg container", 
+            "methodName": "append", 
+            "type": "method-call"
+          }, 
+          {
+            "args": [
+              {
+                "domain": "brix", 
+                "refId": "labelGroup1", 
+                "type": "ref"
+              }
+            ], 
+            "instance": {
+              "domain": "brix", 
+              "refId": "cntr1", 
+              "type": "ref"
+            }, 
+            "description": "Append the labels to the svg container", 
+            "methodName": "append", 
+            "type": "method-call"
+          }, 
+          {
+            "args": [
+              {
+                "value": "0", 
+                "type": "constant"
+              }
+            ], 
+            "instance": {
+              "domain": "brix", 
+              "refId": "labelGroup1", 
+              "type": "ref"
+            }, 
+            "description": "Initial condition: select 1st label", 
+            "methodName": "lite", 
+            "type": "method-call"
+          }
+        ], 
+        "containerId": "bf285e55b9e444c07bcdf4ac79729bb7f", 
+        "description": "container for the graph and labels", 
+        "brixConfig": [
+          {
+            "configFixup": [
+              {
+                "value": {
+                  "parts": [
+                    {
+                      "domain": "info", 
+                      "refId": "imgBaseUrl", 
+                      "type": "ref"
+                    }, 
+                    {
+                      "value": "img/68830_NE_06_03.png", 
+                      "type": "constant"
+                    }
+                  ], 
+                  "type": "join"
+                }, 
+                "name": "URI", 
+                "type": "set-property"
+              }
+            ], 
+            "bricType": "Image", 
+            "config": {
+              "actualSize": {
+                "height": 455, 
+                "width": 457
+              }, 
+              "id": "image1", 
+              "caption": "How nuclear fuel is made from uranium"
+            }, 
+            "bricId": "imageGraph"
+          }, 
+          {
+            "bricType": "LabelGroup", 
+            "config": {
+              "labels": [
+                {
+                  "content": "1", 
+                  "width": 0, 
+                  "xyPos": [
+                    0.05, 
+                    0.805
+                  ]
+                }, 
+                {
+                  "content": "2", 
+                  "width": 0, 
+                  "xyPos": [
+                    0.285, 
+                    0.545
+                  ]
+                }, 
+                {
+                  "content": "3", 
+                  "width": 0, 
+                  "xyPos": [
+                    0.52, 
+                    0.25
+                  ]
+                }
+              ], 
+              "id": "dataLabels", 
+              "type": "numbered"
+            }, 
+            "bricId": "labelGroup1"
+          }, 
+          {
+            "configFixup": [
+              {
+                "value": {
+                  "selector": "#bf285e55b9e444c07bcdf4ac79729bb7f", 
+                  "type": "d3select"
+                }, 
+                "name": "node", 
+                "type": "set-property"
+              }
+            ], 
+            "bricType": "SvgContainer", 
+            "config": {
+              "maxSize": {
+                "height": 455, 
+                "width": 457
+              }
+            }, 
+            "bricId": "cntr1"
+          }
+        ]
+      }, 
+      {
+        "hookupActions": [
+          {
+            "args": [
+              {
+                "selector": "#bf285e55b9e444c07bcdf4ac79729bb7f", 
+                "type": "d3select"
+              }
+            ], 
+            "instance": {
+              "domain": "brix", 
+              "refId": "lbltbl1", 
+              "type": "ref"
+            }, 
+            "description": "draw the label table", 
+            "methodName": "draw", 
+            "type": "method-call"
+          }, 
+          {
+            "args": [
+              {
+                "value": "0", 
+                "type": "constant"
+              }
+            ], 
+            "instance": {
+              "domain": "brix", 
+              "refId": "lbltbl1", 
+              "type": "ref"
+            }, 
+            "description": "Initial condition: select 1st table row", 
+            "methodName": "lite", 
+            "type": "method-call"
+          }
+        ], 
+        "containerId": "bf285e55b9e444c07bcdf4ac79729bb7f", 
+        "mortarConfig": [
+          {
+            "configFixup": [
+              {
+                "value": {
+                  "bricType": "LabelGroup", 
+                  "eventName": "selected", 
+                  "instanceId": "dataLabels", 
+                  "type": "brix-topic"
+                }, 
+                "name": "topic", 
+                "type": "set-property"
+              }, 
+              {
+                "value": {
+                  "domain": "brix", 
+                  "refId": "lbltbl1", 
+                  "type": "ref"
+                }, 
+                "name": "targetBric", 
+                "type": "set-property"
+              }
+            ], 
+            "config": {
+              "eventDetailsProperty": "selectKey"
+            }, 
+            "mortarId": "hilite1", 
+            "mortarType": "Hilite"
+          }, 
+          {
+            "configFixup": [
+              {
+                "value": {
+                  "bricType": "Callouts", 
+                  "eventName": "selected", 
+                  "instanceId": "callme", 
+                  "type": "brix-topic"
+                }, 
+                "name": "topic", 
+                "type": "set-property"
+              }, 
+              {
+                "value": {
+                  "domain": "brix", 
+                  "refId": "labelGroup1", 
+                  "type": "ref"
+                }, 
+                "name": "targetBric", 
+                "type": "set-property"
+              }
+            ], 
+            "config": {
+              "eventDetailsProperty": "selectKey"
+            }, 
+            "mortarId": "hilite2", 
+            "mortarType": "Hilite"
+          }
+        ], 
+        "description": "The container contains the liteable callouts", 
+        "brixConfig": [
+          {
+            "bricType": "Callouts", 
+            "config": {
+              "textBits": [
+                {
+                  "cols": [
+                    "Uranium ore is mined and then converted to a form called UF6 that can be processed into nuclear fuel. UF6, consisting of both <sup>235</sup>U and <sup>238</sup>U, is converted into a gas."
+                  ]
+                }, 
+                {
+                  "cols": [
+                    "The UF6 gas is enriched, increasing the percentage of <sup>235</sup>U. One method is to spin the gas at high speed in centrifuge tubes. The <sup>238</sup>U moves toward the tube wall, while the lighter <sup>235</sup>U moves toward the center. The enriched UF6 gas in the center is removed and placed in another tube to be spun again. The process is repeated until the <sup>235</sup>U concentration reaches about 3% to 5%."
+                  ]
+                }, 
+                {
+                  "cols": [
+                    "The enriched UF6 gas is converted back into a solid material and is packed into pellets. These pellets are placed into tubes called fuel rods. In the United States, the core of a nuclear reactor contains up to 264 fuel rods, each measuring about 12 feet long and 5 to 9 inches in diameter."
+                  ]
+                }
+              ], 
+              "id": "callme", 
+              "show": "all", 
+              "type": "numbered"
+            }, 
+            "bricId": "lbltbl1"
+          }
+        ]
+      }
+    ], 
+    "description": "How nuclear fuel is made from uranium"
+  }, 
+  "@type": "Envelope", 
+  "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope"
+}

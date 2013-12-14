@@ -1,0 +1,185 @@
+{
+  "metadata": {
+    "intendedEndUserRole": [
+      "Student"
+    ], 
+    "format": [
+      "application/vnd.pearson.sanvan.v1.activity"
+    ], 
+    "created": "2013-12-13T22:14:44.162630", 
+    "title": "Some impacts of NUCLEAR ENERGY PRODUCTION", 
+    "owner": "Brix", 
+    "subject": [
+      "EnvironmentalScience"
+    ], 
+    "guid": "61b1b4d4-f26f-4bae-a7bf-ac303424c629", 
+    "timeRequired": "PT20S", 
+    "description": "Some impacts of NUCLEAR ENERGY PRODUCTION", 
+    "contentTypeTier2": [
+      "Exercise"
+    ], 
+    "contentTypeTier1": "Activity"
+  }, 
+  "body": {
+    "containerConfig": [
+      {
+        "hookupActions": [
+          {
+            "args": [
+              {
+                "domain": "brix", 
+                "refId": "lblCarousel1", 
+                "type": "ref"
+              }
+            ], 
+            "instance": {
+              "domain": "brix", 
+              "refId": "cntr1", 
+              "type": "ref"
+            }, 
+            "description": "Append the label image carousel to the svg container", 
+            "methodName": "append", 
+            "type": "method-call"
+          }
+        ], 
+        "containerId": "b5dbc93dc44074b47b6f549c99c5c7be3", 
+        "description": "Container for the LabelCarousel", 
+        "brixConfig": [
+          {
+            "configFixup": [
+              {
+                "value": {
+                  "elements": [
+                    {
+                      "properties": [
+                        {
+                          "value": {
+                            "parts": [
+                              {
+                                "domain": "info", 
+                                "refId": "imgBaseUrl", 
+                                "type": "ref"
+                              }, 
+                              {
+                                "value": "img/68830_NE_06_05_S1.jpg", 
+                                "type": "constant"
+                              }
+                            ], 
+                            "type": "join"
+                          }, 
+                          "name": "URI"
+                        }, 
+                        {
+                          "value": {
+                            "value": "Contamination and ecological damage from uranium mining", 
+                            "type": "constant"
+                          }, 
+                          "name": "caption"
+                        }
+                      ], 
+                      "type": "object"
+                    }, 
+                    {
+                      "properties": [
+                        {
+                          "value": {
+                            "parts": [
+                              {
+                                "domain": "info", 
+                                "refId": "imgBaseUrl", 
+                                "type": "ref"
+                              }, 
+                              {
+                                "value": "img/68830_NE_06_05_S2.jpg", 
+                                "type": "constant"
+                              }
+                            ], 
+                            "type": "join"
+                          }, 
+                          "name": "URI"
+                        }, 
+                        {
+                          "value": {
+                            "value": "Release of radiation from a damaged nuclear reactor such as this one in Fukushima, Japan", 
+                            "type": "constant"
+                          }, 
+                          "name": "caption"
+                        }
+                      ], 
+                      "type": "object"
+                    }, 
+                    {
+                      "properties": [
+                        {
+                          "value": {
+                            "parts": [
+                              {
+                                "domain": "info", 
+                                "refId": "imgBaseUrl", 
+                                "type": "ref"
+                              }, 
+                              {
+                                "value": "img/68830_NE_06_05_S3.jpg", 
+                                "type": "constant"
+                              }
+                            ], 
+                            "type": "join"
+                          }, 
+                          "name": "URI"
+                        }, 
+                        {
+                          "value": {
+                            "value": "Generation of highly radioactive nuclear waste", 
+                            "type": "constant"
+                          }, 
+                          "name": "caption"
+                        }
+                      ], 
+                      "type": "object"
+                    }
+                  ], 
+                  "type": "array"
+                }, 
+                "name": "images", 
+                "type": "set-property"
+              }
+            ], 
+            "bricType": "LabelCarousel", 
+            "config": {
+              "id": "lblCrsl1", 
+              "displayWidth": 335, 
+              "imagesActualSize": {
+                "height": 335, 
+                "width": 335
+              }
+            }, 
+            "bricId": "lblCarousel1"
+          }, 
+          {
+            "configFixup": [
+              {
+                "value": {
+                  "selector": "#b5dbc93dc44074b47b6f549c99c5c7be3", 
+                  "type": "d3select"
+                }, 
+                "name": "node", 
+                "type": "set-property"
+              }
+            ], 
+            "bricType": "SvgContainer", 
+            "config": {
+              "maxSize": {
+                "height": 450, 
+                "width": 335
+              }
+            }, 
+            "bricId": "cntr1"
+          }
+        ]
+      }
+    ], 
+    "description": "Some impacts of NUCLEAR ENERGY PRODUCTION"
+  }, 
+  "@type": "Envelope", 
+  "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope"
+}

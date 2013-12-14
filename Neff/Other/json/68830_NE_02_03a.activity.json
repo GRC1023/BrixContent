@@ -1,0 +1,185 @@
+{
+  "metadata": {
+    "intendedEndUserRole": [
+      "Student"
+    ], 
+    "format": [
+      "application/vnd.pearson.sanvan.v1.activity"
+    ], 
+    "created": "2013-12-13T22:14:44.161532", 
+    "title": "Some impacts of OIL PRODUCTION", 
+    "owner": "Brix", 
+    "subject": [
+      "EnvironmentalScience"
+    ], 
+    "guid": "e54cb848-df77-424e-9cfd-03d151a84bdf", 
+    "timeRequired": "PT20S", 
+    "description": "Some impacts of OIL PRODUCTION", 
+    "contentTypeTier2": [
+      "Exercise"
+    ], 
+    "contentTypeTier1": "Activity"
+  }, 
+  "body": {
+    "containerConfig": [
+      {
+        "hookupActions": [
+          {
+            "args": [
+              {
+                "domain": "brix", 
+                "refId": "lblCarousel1", 
+                "type": "ref"
+              }
+            ], 
+            "instance": {
+              "domain": "brix", 
+              "refId": "cntr1", 
+              "type": "ref"
+            }, 
+            "description": "Append the label image carousel to the svg container", 
+            "methodName": "append", 
+            "type": "method-call"
+          }
+        ], 
+        "containerId": "b56a9d63b98134f34802faf136e894f37", 
+        "description": "Container for the LabelCarousel", 
+        "brixConfig": [
+          {
+            "configFixup": [
+              {
+                "value": {
+                  "elements": [
+                    {
+                      "properties": [
+                        {
+                          "value": {
+                            "parts": [
+                              {
+                                "domain": "info", 
+                                "refId": "imgBaseUrl", 
+                                "type": "ref"
+                              }, 
+                              {
+                                "value": "img/68830_NE_02_03a_S1.jpg", 
+                                "type": "constant"
+                              }
+                            ], 
+                            "type": "join"
+                          }, 
+                          "name": "URI"
+                        }, 
+                        {
+                          "value": {
+                            "value": "Air pollution from refineries", 
+                            "type": "constant"
+                          }, 
+                          "name": "caption"
+                        }
+                      ], 
+                      "type": "object"
+                    }, 
+                    {
+                      "properties": [
+                        {
+                          "value": {
+                            "parts": [
+                              {
+                                "domain": "info", 
+                                "refId": "imgBaseUrl", 
+                                "type": "ref"
+                              }, 
+                              {
+                                "value": "img/68830_NE_02_03a_S2.jpg", 
+                                "type": "constant"
+                              }
+                            ], 
+                            "type": "join"
+                          }, 
+                          "name": "URI"
+                        }, 
+                        {
+                          "value": {
+                            "value": "Damage to marine ecosystems from oil spills", 
+                            "type": "constant"
+                          }, 
+                          "name": "caption"
+                        }
+                      ], 
+                      "type": "object"
+                    }, 
+                    {
+                      "properties": [
+                        {
+                          "value": {
+                            "parts": [
+                              {
+                                "domain": "info", 
+                                "refId": "imgBaseUrl", 
+                                "type": "ref"
+                              }, 
+                              {
+                                "value": "img/68830_NE_02_03a_S3.jpg", 
+                                "type": "constant"
+                              }
+                            ], 
+                            "type": "join"
+                          }, 
+                          "name": "URI"
+                        }, 
+                        {
+                          "value": {
+                            "value": "Ecological disturbance from tar sand mining", 
+                            "type": "constant"
+                          }, 
+                          "name": "caption"
+                        }
+                      ], 
+                      "type": "object"
+                    }
+                  ], 
+                  "type": "array"
+                }, 
+                "name": "images", 
+                "type": "set-property"
+              }
+            ], 
+            "bricType": "LabelCarousel", 
+            "config": {
+              "id": "lblCrsl1", 
+              "displayWidth": 335, 
+              "imagesActualSize": {
+                "height": 335, 
+                "width": 335
+              }
+            }, 
+            "bricId": "lblCarousel1"
+          }, 
+          {
+            "configFixup": [
+              {
+                "value": {
+                  "selector": "#b56a9d63b98134f34802faf136e894f37", 
+                  "type": "d3select"
+                }, 
+                "name": "node", 
+                "type": "set-property"
+              }
+            ], 
+            "bricType": "SvgContainer", 
+            "config": {
+              "maxSize": {
+                "height": 430, 
+                "width": 335
+              }
+            }, 
+            "bricId": "cntr1"
+          }
+        ]
+      }
+    ], 
+    "description": "Some impacts of OIL PRODUCTION"
+  }, 
+  "@type": "Envelope", 
+  "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope"
+}

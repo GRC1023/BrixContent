@@ -1,0 +1,311 @@
+{
+  "metadata": {
+    "intendedEndUserRole": [
+      "Student"
+    ], 
+    "format": [
+      "application/vnd.pearson.sanvan.v1.activity"
+    ], 
+    "created": "2013-12-13T22:14:44.162263", 
+    "title": "A nuclear fission reaction", 
+    "owner": "Brix", 
+    "subject": [
+      "EnvironmentalScience"
+    ], 
+    "guid": "40997503-7c3a-430e-8e04-aba070e0bc60", 
+    "timeRequired": "PT20S", 
+    "description": "A nuclear fission reaction", 
+    "contentTypeTier2": [
+      "Exercise"
+    ], 
+    "contentTypeTier1": "Activity"
+  }, 
+  "body": {
+    "containerConfig": [
+      {
+        "hookupActions": [
+          {
+            "args": [
+              {
+                "domain": "brix", 
+                "refId": "imageGraph", 
+                "type": "ref"
+              }
+            ], 
+            "instance": {
+              "domain": "brix", 
+              "refId": "cntr1", 
+              "type": "ref"
+            }, 
+            "description": "Append the image to the svg container", 
+            "methodName": "append", 
+            "type": "method-call"
+          }, 
+          {
+            "args": [
+              {
+                "domain": "brix", 
+                "refId": "labelGroup1", 
+                "type": "ref"
+              }
+            ], 
+            "instance": {
+              "domain": "brix", 
+              "refId": "cntr1", 
+              "type": "ref"
+            }, 
+            "description": "Append the labels to the svg container", 
+            "methodName": "append", 
+            "type": "method-call"
+          }, 
+          {
+            "args": [
+              {
+                "value": "0", 
+                "type": "constant"
+              }
+            ], 
+            "instance": {
+              "domain": "brix", 
+              "refId": "labelGroup1", 
+              "type": "ref"
+            }, 
+            "description": "Initial condition: select 1st label", 
+            "methodName": "lite", 
+            "type": "method-call"
+          }
+        ], 
+        "containerId": "bc9021b5ced0e4bd885033c83d593a570", 
+        "description": "container for the graph and labels", 
+        "brixConfig": [
+          {
+            "configFixup": [
+              {
+                "value": {
+                  "parts": [
+                    {
+                      "domain": "info", 
+                      "refId": "imgBaseUrl", 
+                      "type": "ref"
+                    }, 
+                    {
+                      "value": "img/68830_NE_06_01.png", 
+                      "type": "constant"
+                    }
+                  ], 
+                  "type": "join"
+                }, 
+                "name": "URI", 
+                "type": "set-property"
+              }
+            ], 
+            "bricType": "Image", 
+            "config": {
+              "actualSize": {
+                "height": 226, 
+                "width": 457
+              }, 
+              "id": "image1", 
+              "caption": "schematic of nuclear fission"
+            }, 
+            "bricId": "imageGraph"
+          }, 
+          {
+            "bricType": "LabelGroup", 
+            "config": {
+              "labels": [
+                {
+                  "content": "1", 
+                  "width": 0, 
+                  "xyPos": [
+                    0.05, 
+                    0.5
+                  ]
+                }, 
+                {
+                  "content": "2", 
+                  "width": 0, 
+                  "xyPos": [
+                    0.38, 
+                    0.36
+                  ]
+                }, 
+                {
+                  "content": "3", 
+                  "width": 0, 
+                  "xyPos": [
+                    0.5, 
+                    0.62
+                  ]
+                }, 
+                {
+                  "content": "4", 
+                  "width": 0, 
+                  "xyPos": [
+                    0.75, 
+                    0.62
+                  ]
+                }
+              ], 
+              "id": "dataLabels", 
+              "type": "numbered"
+            }, 
+            "bricId": "labelGroup1"
+          }, 
+          {
+            "configFixup": [
+              {
+                "value": {
+                  "selector": "#bc9021b5ced0e4bd885033c83d593a570", 
+                  "type": "d3select"
+                }, 
+                "name": "node", 
+                "type": "set-property"
+              }
+            ], 
+            "bricType": "SvgContainer", 
+            "config": {
+              "maxSize": {
+                "height": 226, 
+                "width": 457
+              }
+            }, 
+            "bricId": "cntr1"
+          }
+        ]
+      }, 
+      {
+        "hookupActions": [
+          {
+            "args": [
+              {
+                "selector": "#bc9021b5ced0e4bd885033c83d593a570", 
+                "type": "d3select"
+              }
+            ], 
+            "instance": {
+              "domain": "brix", 
+              "refId": "lbltbl1", 
+              "type": "ref"
+            }, 
+            "description": "draw the label table", 
+            "methodName": "draw", 
+            "type": "method-call"
+          }, 
+          {
+            "args": [
+              {
+                "value": "0", 
+                "type": "constant"
+              }
+            ], 
+            "instance": {
+              "domain": "brix", 
+              "refId": "lbltbl1", 
+              "type": "ref"
+            }, 
+            "description": "Initial condition: select 1st table row", 
+            "methodName": "lite", 
+            "type": "method-call"
+          }
+        ], 
+        "containerId": "bc9021b5ced0e4bd885033c83d593a570", 
+        "mortarConfig": [
+          {
+            "configFixup": [
+              {
+                "value": {
+                  "bricType": "LabelGroup", 
+                  "eventName": "selected", 
+                  "instanceId": "dataLabels", 
+                  "type": "brix-topic"
+                }, 
+                "name": "topic", 
+                "type": "set-property"
+              }, 
+              {
+                "value": {
+                  "domain": "brix", 
+                  "refId": "lbltbl1", 
+                  "type": "ref"
+                }, 
+                "name": "targetBric", 
+                "type": "set-property"
+              }
+            ], 
+            "config": {
+              "eventDetailsProperty": "selectKey"
+            }, 
+            "mortarId": "hilite1", 
+            "mortarType": "Hilite"
+          }, 
+          {
+            "configFixup": [
+              {
+                "value": {
+                  "bricType": "Callouts", 
+                  "eventName": "selected", 
+                  "instanceId": "callme", 
+                  "type": "brix-topic"
+                }, 
+                "name": "topic", 
+                "type": "set-property"
+              }, 
+              {
+                "value": {
+                  "domain": "brix", 
+                  "refId": "labelGroup1", 
+                  "type": "ref"
+                }, 
+                "name": "targetBric", 
+                "type": "set-property"
+              }
+            ], 
+            "config": {
+              "eventDetailsProperty": "selectKey"
+            }, 
+            "mortarId": "hilite2", 
+            "mortarType": "Hilite"
+          }
+        ], 
+        "description": "The container contains the liteable callouts", 
+        "brixConfig": [
+          {
+            "bricType": "Callouts", 
+            "config": {
+              "textBits": [
+                {
+                  "cols": [
+                    "A nucleus is hit with a neutron."
+                  ]
+                }, 
+                {
+                  "cols": [
+                    "The neutron is added to the nucleus, making the nucleus unstable."
+                  ]
+                }, 
+                {
+                  "cols": [
+                    "The nucleus splits into two smaller nuclei through nuclear fission, releasing energy (as heat) and neutrons."
+                  ]
+                }, 
+                {
+                  "cols": [
+                    "Released neutrons cause other nuclei to split, releasing more neutrons that cause more nuclei to split."
+                  ]
+                }
+              ], 
+              "id": "callme", 
+              "show": "all", 
+              "type": "numbered"
+            }, 
+            "bricId": "lbltbl1"
+          }
+        ]
+      }
+    ], 
+    "description": "A nuclear fission reaction"
+  }, 
+  "@type": "Envelope", 
+  "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope"
+}
