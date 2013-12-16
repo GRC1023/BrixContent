@@ -290,9 +290,11 @@ def buildPAFAssignments(spreadsheetRows):
 
 # opens the csv file
 csvfn = sys.argv[1]
+headerRow = []
 spreadsheetRows = []
 with open(csvfn, 'rt') as f:
     reader = csv.reader(f)  # creates the reader object
+    headerRow = next(reader)
     for row in reader:   # iterates the rows of the file in order
         spreadsheetRows.append(MCQSpreadsheetInfoRow(row))
         #print(spreadsheetRows[len(spreadsheetRows)-1])
@@ -304,6 +306,7 @@ for assignment in assignments:
 
 with open(csvfn + ".updated", "wt") as f:
     writer = csv.writer(f)
+    writer.writerow(headerRow)
     for info in spreadsheetRows:
         writer.writerow(info.getRowTuple())
 
