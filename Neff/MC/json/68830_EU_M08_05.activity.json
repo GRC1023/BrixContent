@@ -1,40 +1,79 @@
 {
   "body": {
+    "description": "A Sample Activity containing a single multiple choice bric", 
     "containerConfig": [
       {
+        "hookupActions": [
+          {
+            "type": "method-call", 
+            "methodName": "handleRequestsFrom", 
+            "args": [
+              {
+                "type": "ref", 
+                "refId": "Q1", 
+                "domain": "brix"
+              }
+            ], 
+            "description": "Hookup the submit manager to evaluate answers", 
+            "instance": {
+              "type": "submit-manager"
+            }
+          }, 
+          {
+            "type": "method-call", 
+            "methodName": "draw", 
+            "args": [
+              {
+                "type": "d3select", 
+                "selector": "#target1"
+              }
+            ], 
+            "description": "Draw the question", 
+            "instance": {
+              "type": "ref", 
+              "refId": "Q1", 
+              "domain": "brix"
+            }
+          }
+        ], 
+        "description": "container for the sample multiple choice question", 
         "brixConfig": [
           {
             "config": {
-              "presenterType": "RadioGroup", 
+              "choices": [
+                {
+                  "answerKey": "answer1", 
+                  "content": "Climate change has created new temperature extremes causing people to have to use more energy to control indoor temperatures."
+                }, 
+                {
+                  "answerKey": "answer2", 
+                  "content": "More people living in the suburbs require more heating and cooling."
+                }, 
+                {
+                  "answerKey": "answer3", 
+                  "content": "Homes are now larger than ever before, and there is an increasing standard of living in developing countries."
+                }, 
+                {
+                  "answerKey": "answer4", 
+                  "content": "There are new government subsidies for home heating and cooling."
+                }
+              ], 
+              "order": "randomized", 
               "question": "Why has energy use for home heating and cooling increased?", 
               "presenterConfig": {
                 "numberFormat": ""
               }, 
-              "choices": [
-                {
-                  "content": "Climate change has created new temperature extremes causing people to have to use more energy to control indoor temperatures.", 
-                  "answerKey": "answer1"
-                }, 
-                {
-                  "content": "More people living in the suburbs require more heating and cooling.", 
-                  "answerKey": "answer2"
-                }, 
-                {
-                  "content": "Homes are now larger than ever before, and there is an increasing standard of living in developing countries.", 
-                  "answerKey": "answer3"
-                }, 
-                {
-                  "content": "There are new government subsidies for home heating and cooling.", 
-                  "answerKey": "answer4"
-                }
-              ], 
-              "order": "randomized", 
-              "id": "sampleQ1"
+              "id": "sampleQ1", 
+              "presenterType": "RadioGroup"
             }, 
             "answerKey": {
               "assessmentType": "multiplechoice", 
               "answers": {
-                "answer4": {
+                "answer3": {
+                  "score": 1, 
+                  "response": ""
+                }, 
+                "answer2": {
                   "score": 0, 
                   "response": ""
                 }, 
@@ -42,11 +81,7 @@
                   "score": 0, 
                   "response": ""
                 }, 
-                "answer3": {
-                  "score": 1, 
-                  "response": ""
-                }, 
-                "answer2": {
+                "answer4": {
                   "score": 0, 
                   "response": ""
                 }
@@ -57,76 +92,50 @@
             "configFixup": [
               {
                 "type": "set-property", 
-                "name": "questionId", 
                 "value": {
-                  "domain": "info", 
                   "type": "ref", 
-                  "refId": "sequenceNodeKey"
-                }
+                  "refId": "sequenceNodeKey", 
+                  "domain": "info"
+                }, 
+                "name": "questionId"
+              }, 
+              {
+                "type": "set-property", 
+                "value": {
+                  "type": "ref", 
+                  "refId": "maxAttempts", 
+                  "domain": "info"
+                }, 
+                "name": "maxAttempts"
               }
             ]
           }
         ], 
-        "description": "container for the sample multiple choice question", 
-        "hookupActions": [
-          {
-            "instance": {
-              "type": "submit-manager"
-            }, 
-            "args": [
-              {
-                "domain": "brix", 
-                "type": "ref", 
-                "refId": "Q1"
-              }
-            ], 
-            "type": "method-call", 
-            "description": "Hookup the submit manager to evaluate answers", 
-            "methodName": "handleRequestsFrom"
-          }, 
-          {
-            "instance": {
-              "domain": "brix", 
-              "type": "ref", 
-              "refId": "Q1"
-            }, 
-            "args": [
-              {
-                "type": "d3select", 
-                "selector": "#target1"
-              }
-            ], 
-            "type": "method-call", 
-            "description": "Draw the question", 
-            "methodName": "draw"
-          }
-        ], 
         "containerId": "target1"
       }
-    ], 
-    "description": "A Sample Activity containing a single multiple choice bric"
+    ]
   }, 
   "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope", 
   "@type": "Envelope", 
   "metadata": {
-    "intendedEndUserRole": [
-      "Student"
-    ], 
-    "description": "68830_EU_M08_05.html", 
-    "format": [
-      "application/vnd.pearson.sanvan.v1.activity"
-    ], 
-    "owner": "Brix", 
-    "guid": "a5cceac0-7292-499f-a302-0669d90a7df2", 
-    "subject": [
-      "EnvironmentalScience"
-    ], 
-    "timeRequired": "PT20S", 
-    "created": "2013-12-13T11:08:17.670737", 
-    "title": "68830_EU_M08_05.html", 
     "contentTypeTier1": "Test and Assessment", 
     "contentTypeTier2": [
       "assessment item"
+    ], 
+    "description": "68830_EU_M08_05.html", 
+    "owner": "Brix", 
+    "created": "2013-12-17T18:04:41.886631", 
+    "timeRequired": "PT20S", 
+    "subject": [
+      "EnvironmentalScience"
+    ], 
+    "guid": "a5cceac0-7292-499f-a302-0669d90a7df2", 
+    "intendedEndUserRole": [
+      "Student"
+    ], 
+    "title": "68830_EU_M08_05.html", 
+    "format": [
+      "application/vnd.pearson.sanvan.v1.activity"
     ]
   }
 }

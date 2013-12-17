@@ -1,55 +1,78 @@
 {
   "body": {
+    "description": "A Sample Activity containing a single multiple choice bric", 
     "containerConfig": [
       {
+        "hookupActions": [
+          {
+            "type": "method-call", 
+            "methodName": "handleRequestsFrom", 
+            "args": [
+              {
+                "type": "ref", 
+                "refId": "Q1", 
+                "domain": "brix"
+              }
+            ], 
+            "description": "Hookup the submit manager to evaluate answers", 
+            "instance": {
+              "type": "submit-manager"
+            }
+          }, 
+          {
+            "type": "method-call", 
+            "methodName": "draw", 
+            "args": [
+              {
+                "type": "d3select", 
+                "selector": "#target1"
+              }
+            ], 
+            "description": "Draw the question", 
+            "instance": {
+              "type": "ref", 
+              "refId": "Q1", 
+              "domain": "brix"
+            }
+          }
+        ], 
+        "description": "container for the sample multiple choice question", 
         "brixConfig": [
           {
             "config": {
-              "presenterType": "RadioGroup", 
+              "choices": [
+                {
+                  "answerKey": "answer1", 
+                  "content": "Vehicles with high fuel efficiency"
+                }, 
+                {
+                  "answerKey": "answer2", 
+                  "content": "Discovery and use of sustainable alternatives to fossil fuels"
+                }, 
+                {
+                  "answerKey": "answer3", 
+                  "content": "Strict policies regarding fuel efficiency"
+                }, 
+                {
+                  "answerKey": "answer4", 
+                  "content": "Increased ability to extract hard-to-reach fossil fuels using new drilling technologies"
+                }, 
+                {
+                  "answerKey": "answer5", 
+                  "content": "New investments in mass transit and high occupancy vehicle lanes."
+                }
+              ], 
+              "order": "randomized", 
               "question": "Which of the following would NOT decrease energy demand from transportation?", 
               "presenterConfig": {
                 "numberFormat": ""
               }, 
-              "choices": [
-                {
-                  "content": "Vehicles with high fuel efficiency", 
-                  "answerKey": "answer1"
-                }, 
-                {
-                  "content": "Discovery and use of sustainable alternatives to fossil fuels", 
-                  "answerKey": "answer2"
-                }, 
-                {
-                  "content": "Strict policies regarding fuel efficiency", 
-                  "answerKey": "answer3"
-                }, 
-                {
-                  "content": "Increased ability to extract hard-to-reach fossil fuels using new drilling technologies", 
-                  "answerKey": "answer4"
-                }, 
-                {
-                  "content": "New investments in mass transit and high occupancy vehicle lanes.", 
-                  "answerKey": "answer5"
-                }
-              ], 
-              "order": "randomized", 
-              "id": "sampleQ1"
+              "id": "sampleQ1", 
+              "presenterType": "RadioGroup"
             }, 
             "answerKey": {
               "assessmentType": "multiplechoice", 
               "answers": {
-                "answer5": {
-                  "score": 0, 
-                  "response": "Would investments in infrastructure that reduces the number of single passenger vehicles on the road reduce energy use?"
-                }, 
-                "answer4": {
-                  "score": 1, 
-                  "response": "Correct."
-                }, 
-                "answer1": {
-                  "score": 0, 
-                  "response": "If cars use fuel more efficiently, does this increase or decrease energy demand?"
-                }, 
                 "answer3": {
                   "score": 0, 
                   "response": "If cars use fuel more efficiently, does this increase or decrease energy demand?"
@@ -57,6 +80,18 @@
                 "answer2": {
                   "score": 0, 
                   "response": "If new alternative fuels are used to power transportation, does this increase or decrease energy demand?"
+                }, 
+                "answer1": {
+                  "score": 0, 
+                  "response": "If cars use fuel more efficiently, does this increase or decrease energy demand?"
+                }, 
+                "answer5": {
+                  "score": 0, 
+                  "response": "Would investments in infrastructure that reduces the number of single passenger vehicles on the road reduce energy use?"
+                }, 
+                "answer4": {
+                  "score": 1, 
+                  "response": "Correct."
                 }
               }
             }, 
@@ -65,76 +100,50 @@
             "configFixup": [
               {
                 "type": "set-property", 
-                "name": "questionId", 
                 "value": {
-                  "domain": "info", 
                   "type": "ref", 
-                  "refId": "sequenceNodeKey"
-                }
+                  "refId": "sequenceNodeKey", 
+                  "domain": "info"
+                }, 
+                "name": "questionId"
+              }, 
+              {
+                "type": "set-property", 
+                "value": {
+                  "type": "ref", 
+                  "refId": "maxAttempts", 
+                  "domain": "info"
+                }, 
+                "name": "maxAttempts"
               }
             ]
           }
         ], 
-        "description": "container for the sample multiple choice question", 
-        "hookupActions": [
-          {
-            "instance": {
-              "type": "submit-manager"
-            }, 
-            "args": [
-              {
-                "domain": "brix", 
-                "type": "ref", 
-                "refId": "Q1"
-              }
-            ], 
-            "type": "method-call", 
-            "description": "Hookup the submit manager to evaluate answers", 
-            "methodName": "handleRequestsFrom"
-          }, 
-          {
-            "instance": {
-              "domain": "brix", 
-              "type": "ref", 
-              "refId": "Q1"
-            }, 
-            "args": [
-              {
-                "type": "d3select", 
-                "selector": "#target1"
-              }
-            ], 
-            "type": "method-call", 
-            "description": "Draw the question", 
-            "methodName": "draw"
-          }
-        ], 
         "containerId": "target1"
       }
-    ], 
-    "description": "A Sample Activity containing a single multiple choice bric"
+    ]
   }, 
   "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope", 
   "@type": "Envelope", 
   "metadata": {
-    "intendedEndUserRole": [
-      "Student"
-    ], 
-    "description": "68830_EU_C08.html", 
-    "format": [
-      "application/vnd.pearson.sanvan.v1.activity"
-    ], 
-    "owner": "Brix", 
-    "guid": "5c4e077d-da2e-44da-8db0-4580b2347a53", 
-    "subject": [
-      "EnvironmentalScience"
-    ], 
-    "timeRequired": "PT20S", 
-    "created": "2013-12-13T11:08:17.671438", 
-    "title": "68830_EU_C08.html", 
     "contentTypeTier1": "Test and Assessment", 
     "contentTypeTier2": [
       "assessment item"
+    ], 
+    "description": "68830_EU_C08.html", 
+    "owner": "Brix", 
+    "created": "2013-12-17T18:04:41.886826", 
+    "timeRequired": "PT20S", 
+    "subject": [
+      "EnvironmentalScience"
+    ], 
+    "guid": "5c4e077d-da2e-44da-8db0-4580b2347a53", 
+    "intendedEndUserRole": [
+      "Student"
+    ], 
+    "title": "68830_EU_C08.html", 
+    "format": [
+      "application/vnd.pearson.sanvan.v1.activity"
     ]
   }
 }

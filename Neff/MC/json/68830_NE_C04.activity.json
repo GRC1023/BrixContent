@@ -1,47 +1,74 @@
 {
   "body": {
+    "description": "A Sample Activity containing a single multiple choice bric", 
     "containerConfig": [
       {
+        "hookupActions": [
+          {
+            "type": "method-call", 
+            "methodName": "handleRequestsFrom", 
+            "args": [
+              {
+                "type": "ref", 
+                "refId": "Q1", 
+                "domain": "brix"
+              }
+            ], 
+            "description": "Hookup the submit manager to evaluate answers", 
+            "instance": {
+              "type": "submit-manager"
+            }
+          }, 
+          {
+            "type": "method-call", 
+            "methodName": "draw", 
+            "args": [
+              {
+                "type": "d3select", 
+                "selector": "#target1"
+              }
+            ], 
+            "description": "Draw the question", 
+            "instance": {
+              "type": "ref", 
+              "refId": "Q1", 
+              "domain": "brix"
+            }
+          }
+        ], 
+        "description": "container for the sample multiple choice question", 
         "brixConfig": [
           {
             "config": {
-              "presenterType": "RadioGroup", 
+              "choices": [
+                {
+                  "answerKey": "answer1", 
+                  "content": "Natural gas is more expensive to use than coal."
+                }, 
+                {
+                  "answerKey": "answer2", 
+                  "content": "The natural gas found in the United States burns cleaner than coal."
+                }, 
+                {
+                  "answerKey": "answer3", 
+                  "content": "There are larger reserves of natural gas in the ground than coal."
+                }, 
+                {
+                  "answerKey": "answer4", 
+                  "content": "The United States was suddenly able to access a lot of natural gas at once."
+                }
+              ], 
+              "order": "randomized", 
               "question": "Which of the following is NOT true about the United States' switch over to natural gas as a major source for electricity generation rather than coal?", 
               "presenterConfig": {
                 "numberFormat": ""
               }, 
-              "choices": [
-                {
-                  "content": "Natural gas is more expensive to use than coal.", 
-                  "answerKey": "answer1"
-                }, 
-                {
-                  "content": "The natural gas found in the United States burns cleaner than coal.", 
-                  "answerKey": "answer2"
-                }, 
-                {
-                  "content": "There are larger reserves of natural gas in the ground than coal.", 
-                  "answerKey": "answer3"
-                }, 
-                {
-                  "content": "The United States was suddenly able to access a lot of natural gas at once.", 
-                  "answerKey": "answer4"
-                }
-              ], 
-              "order": "randomized", 
-              "id": "sampleQ1"
+              "id": "sampleQ1", 
+              "presenterType": "RadioGroup"
             }, 
             "answerKey": {
               "assessmentType": "multiplechoice", 
               "answers": {
-                "answer4": {
-                  "score": 0, 
-                  "response": "This IS true. Unconventional methods allowed the United States to access many new reserves at once."
-                }, 
-                "answer1": {
-                  "score": 0, 
-                  "response": "This IS true. The United States chose to develop natural gas despite this."
-                }, 
                 "answer3": {
                   "score": 1, 
                   "response": "Correct; There are actually more known reserves of coal than of natural gas at the current time, but the United States developed natural gas for many other reasons."
@@ -49,6 +76,14 @@
                 "answer2": {
                   "score": 0, 
                   "response": "This IS true. What do you know about the amount of CO2 and pollution that natural gas emits in relation to coal?"
+                }, 
+                "answer1": {
+                  "score": 0, 
+                  "response": "This IS true. The United States chose to develop natural gas despite this."
+                }, 
+                "answer4": {
+                  "score": 0, 
+                  "response": "This IS true. Unconventional methods allowed the United States to access many new reserves at once."
                 }
               }
             }, 
@@ -57,76 +92,50 @@
             "configFixup": [
               {
                 "type": "set-property", 
-                "name": "questionId", 
                 "value": {
-                  "domain": "info", 
                   "type": "ref", 
-                  "refId": "sequenceNodeKey"
-                }
+                  "refId": "sequenceNodeKey", 
+                  "domain": "info"
+                }, 
+                "name": "questionId"
+              }, 
+              {
+                "type": "set-property", 
+                "value": {
+                  "type": "ref", 
+                  "refId": "maxAttempts", 
+                  "domain": "info"
+                }, 
+                "name": "maxAttempts"
               }
             ]
           }
         ], 
-        "description": "container for the sample multiple choice question", 
-        "hookupActions": [
-          {
-            "instance": {
-              "type": "submit-manager"
-            }, 
-            "args": [
-              {
-                "domain": "brix", 
-                "type": "ref", 
-                "refId": "Q1"
-              }
-            ], 
-            "type": "method-call", 
-            "description": "Hookup the submit manager to evaluate answers", 
-            "methodName": "handleRequestsFrom"
-          }, 
-          {
-            "instance": {
-              "domain": "brix", 
-              "type": "ref", 
-              "refId": "Q1"
-            }, 
-            "args": [
-              {
-                "type": "d3select", 
-                "selector": "#target1"
-              }
-            ], 
-            "type": "method-call", 
-            "description": "Draw the question", 
-            "methodName": "draw"
-          }
-        ], 
         "containerId": "target1"
       }
-    ], 
-    "description": "A Sample Activity containing a single multiple choice bric"
+    ]
   }, 
   "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope", 
   "@type": "Envelope", 
   "metadata": {
-    "intendedEndUserRole": [
-      "Student"
-    ], 
-    "description": "68830_NE_C04.html", 
-    "format": [
-      "application/vnd.pearson.sanvan.v1.activity"
-    ], 
-    "owner": "Brix", 
-    "guid": "3339ea22-0d07-4832-89fa-7cf942a6d280", 
-    "subject": [
-      "EnvironmentalScience"
-    ], 
-    "timeRequired": "PT20S", 
-    "created": "2013-12-13T11:08:17.673475", 
-    "title": "68830_NE_C04.html", 
     "contentTypeTier1": "Test and Assessment", 
     "contentTypeTier2": [
       "assessment item"
+    ], 
+    "description": "68830_NE_C04.html", 
+    "owner": "Brix", 
+    "created": "2013-12-17T18:04:41.887372", 
+    "timeRequired": "PT20S", 
+    "subject": [
+      "EnvironmentalScience"
+    ], 
+    "guid": "3339ea22-0d07-4832-89fa-7cf942a6d280", 
+    "intendedEndUserRole": [
+      "Student"
+    ], 
+    "title": "68830_NE_C04.html", 
+    "format": [
+      "application/vnd.pearson.sanvan.v1.activity"
     ]
   }
 }

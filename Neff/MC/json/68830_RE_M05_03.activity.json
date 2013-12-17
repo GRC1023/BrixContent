@@ -1,40 +1,79 @@
 {
   "body": {
+    "description": "A Sample Activity containing a single multiple choice bric", 
     "containerConfig": [
       {
+        "hookupActions": [
+          {
+            "type": "method-call", 
+            "methodName": "handleRequestsFrom", 
+            "args": [
+              {
+                "type": "ref", 
+                "refId": "Q1", 
+                "domain": "brix"
+              }
+            ], 
+            "description": "Hookup the submit manager to evaluate answers", 
+            "instance": {
+              "type": "submit-manager"
+            }
+          }, 
+          {
+            "type": "method-call", 
+            "methodName": "draw", 
+            "args": [
+              {
+                "type": "d3select", 
+                "selector": "#target1"
+              }
+            ], 
+            "description": "Draw the question", 
+            "instance": {
+              "type": "ref", 
+              "refId": "Q1", 
+              "domain": "brix"
+            }
+          }
+        ], 
+        "description": "container for the sample multiple choice question", 
         "brixConfig": [
           {
             "config": {
-              "presenterType": "RadioGroup", 
+              "choices": [
+                {
+                  "answerKey": "answer1", 
+                  "content": "The technology to harness geothermal energy has yet to be developed, and we don't know how much is available."
+                }, 
+                {
+                  "answerKey": "answer2", 
+                  "content": "There is great potential for geothermal energy in the eastern United States."
+                }, 
+                {
+                  "answerKey": "answer3", 
+                  "content": "There is great resource potential in the country but relatively little new development."
+                }, 
+                {
+                  "answerKey": "answer4", 
+                  "content": "There is no potential for this in the United States."
+                }
+              ], 
+              "order": "randomized", 
               "question": "Which of the following sentences best characterizes the size and current status of geothermal resources in the United States?", 
               "presenterConfig": {
                 "numberFormat": ""
               }, 
-              "choices": [
-                {
-                  "content": "The technology to harness geothermal energy has yet to be developed, and we don't know how much is available.", 
-                  "answerKey": "answer1"
-                }, 
-                {
-                  "content": "There is great potential for geothermal energy in the eastern United States.", 
-                  "answerKey": "answer2"
-                }, 
-                {
-                  "content": "There is great resource potential in the country but relatively little new development.", 
-                  "answerKey": "answer3"
-                }, 
-                {
-                  "content": "There is no potential for this in the United States.", 
-                  "answerKey": "answer4"
-                }
-              ], 
-              "order": "randomized", 
-              "id": "sampleQ1"
+              "id": "sampleQ1", 
+              "presenterType": "RadioGroup"
             }, 
             "answerKey": {
               "assessmentType": "multiplechoice", 
               "answers": {
-                "answer4": {
+                "answer3": {
+                  "score": 1, 
+                  "response": ""
+                }, 
+                "answer2": {
                   "score": 0, 
                   "response": ""
                 }, 
@@ -42,11 +81,7 @@
                   "score": 0, 
                   "response": ""
                 }, 
-                "answer3": {
-                  "score": 1, 
-                  "response": ""
-                }, 
-                "answer2": {
+                "answer4": {
                   "score": 0, 
                   "response": ""
                 }
@@ -57,76 +92,50 @@
             "configFixup": [
               {
                 "type": "set-property", 
-                "name": "questionId", 
                 "value": {
-                  "domain": "info", 
                   "type": "ref", 
-                  "refId": "sequenceNodeKey"
-                }
+                  "refId": "sequenceNodeKey", 
+                  "domain": "info"
+                }, 
+                "name": "questionId"
+              }, 
+              {
+                "type": "set-property", 
+                "value": {
+                  "type": "ref", 
+                  "refId": "maxAttempts", 
+                  "domain": "info"
+                }, 
+                "name": "maxAttempts"
               }
             ]
           }
         ], 
-        "description": "container for the sample multiple choice question", 
-        "hookupActions": [
-          {
-            "instance": {
-              "type": "submit-manager"
-            }, 
-            "args": [
-              {
-                "domain": "brix", 
-                "type": "ref", 
-                "refId": "Q1"
-              }
-            ], 
-            "type": "method-call", 
-            "description": "Hookup the submit manager to evaluate answers", 
-            "methodName": "handleRequestsFrom"
-          }, 
-          {
-            "instance": {
-              "domain": "brix", 
-              "type": "ref", 
-              "refId": "Q1"
-            }, 
-            "args": [
-              {
-                "type": "d3select", 
-                "selector": "#target1"
-              }
-            ], 
-            "type": "method-call", 
-            "description": "Draw the question", 
-            "methodName": "draw"
-          }
-        ], 
         "containerId": "target1"
       }
-    ], 
-    "description": "A Sample Activity containing a single multiple choice bric"
+    ]
   }, 
   "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope", 
   "@type": "Envelope", 
   "metadata": {
-    "intendedEndUserRole": [
-      "Student"
-    ], 
-    "description": "68830_RE_M05_03.html", 
-    "format": [
-      "application/vnd.pearson.sanvan.v1.activity"
-    ], 
-    "owner": "Brix", 
-    "guid": "46a09896-4b83-42a1-a105-c6e4f673ffdc", 
-    "subject": [
-      "EnvironmentalScience"
-    ], 
-    "timeRequired": "PT20S", 
-    "created": "2013-12-13T11:08:17.675415", 
-    "title": "68830_RE_M05_03.html", 
     "contentTypeTier1": "Test and Assessment", 
     "contentTypeTier2": [
       "assessment item"
+    ], 
+    "description": "68830_RE_M05_03.html", 
+    "owner": "Brix", 
+    "created": "2013-12-17T18:04:41.888096", 
+    "timeRequired": "PT20S", 
+    "subject": [
+      "EnvironmentalScience"
+    ], 
+    "guid": "46a09896-4b83-42a1-a105-c6e4f673ffdc", 
+    "intendedEndUserRole": [
+      "Student"
+    ], 
+    "title": "68830_RE_M05_03.html", 
+    "format": [
+      "application/vnd.pearson.sanvan.v1.activity"
     ]
   }
 }

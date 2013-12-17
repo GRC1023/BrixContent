@@ -1,48 +1,83 @@
 {
   "body": {
+    "description": "A Sample Activity containing a single multiple choice bric", 
     "containerConfig": [
       {
+        "hookupActions": [
+          {
+            "type": "method-call", 
+            "methodName": "handleRequestsFrom", 
+            "args": [
+              {
+                "type": "ref", 
+                "refId": "Q1", 
+                "domain": "brix"
+              }
+            ], 
+            "description": "Hookup the submit manager to evaluate answers", 
+            "instance": {
+              "type": "submit-manager"
+            }
+          }, 
+          {
+            "type": "method-call", 
+            "methodName": "draw", 
+            "args": [
+              {
+                "type": "d3select", 
+                "selector": "#target1"
+              }
+            ], 
+            "description": "Draw the question", 
+            "instance": {
+              "type": "ref", 
+              "refId": "Q1", 
+              "domain": "brix"
+            }
+          }
+        ], 
+        "description": "container for the sample multiple choice question", 
         "brixConfig": [
           {
             "config": {
-              "presenterType": "RadioGroup", 
+              "choices": [
+                {
+                  "answerKey": "answer1", 
+                  "content": "Furthering the development of clean coal"
+                }, 
+                {
+                  "answerKey": "answer2", 
+                  "content": "Creating incentives for solar panels on houses"
+                }, 
+                {
+                  "answerKey": "answer3", 
+                  "content": "Developing much more efficient cars"
+                }, 
+                {
+                  "answerKey": "answer4", 
+                  "content": "Making economically viable wind farms"
+                }, 
+                {
+                  "answerKey": "answer5", 
+                  "content": "Investing heavily in nuclear power plants"
+                }
+              ], 
+              "order": "randomized", 
               "question": "If you were put in charge of reducing U.S. dependence on foreign fossil fuels, which of the following innovations would most quickly achieve this goal?", 
               "presenterConfig": {
                 "numberFormat": ""
               }, 
-              "choices": [
-                {
-                  "content": "Furthering the development of clean coal", 
-                  "answerKey": "answer1"
-                }, 
-                {
-                  "content": "Creating incentives for solar panels on houses", 
-                  "answerKey": "answer2"
-                }, 
-                {
-                  "content": "Developing much more efficient cars", 
-                  "answerKey": "answer3"
-                }, 
-                {
-                  "content": "Making economically viable wind farms", 
-                  "answerKey": "answer4"
-                }, 
-                {
-                  "content": "Investing heavily in nuclear power plants", 
-                  "answerKey": "answer5"
-                }
-              ], 
-              "order": "randomized", 
-              "id": "sampleQ1"
+              "id": "sampleQ1", 
+              "presenterType": "RadioGroup"
             }, 
             "answerKey": {
               "assessmentType": "multiplechoice", 
               "answers": {
-                "answer5": {
-                  "score": 0, 
-                  "response": "What fuel source is most easily replaced by nuclear energy? Is this a fuel source we import from other countries?"
+                "answer3": {
+                  "score": 1, 
+                  "response": "Correct."
                 }, 
-                "answer4": {
+                "answer2": {
                   "score": 0, 
                   "response": "What fuel source is most easily replaced by renewable energy? Is this a fuel source we import from other countries?"
                 }, 
@@ -50,11 +85,11 @@
                   "score": 0, 
                   "response": "Does the United States import coal from foreign countries?"
                 }, 
-                "answer3": {
-                  "score": 1, 
-                  "response": "Correct."
+                "answer5": {
+                  "score": 0, 
+                  "response": "What fuel source is most easily replaced by nuclear energy? Is this a fuel source we import from other countries?"
                 }, 
-                "answer2": {
+                "answer4": {
                   "score": 0, 
                   "response": "What fuel source is most easily replaced by renewable energy? Is this a fuel source we import from other countries?"
                 }
@@ -65,76 +100,50 @@
             "configFixup": [
               {
                 "type": "set-property", 
-                "name": "questionId", 
                 "value": {
-                  "domain": "info", 
                   "type": "ref", 
-                  "refId": "sequenceNodeKey"
-                }
+                  "refId": "sequenceNodeKey", 
+                  "domain": "info"
+                }, 
+                "name": "questionId"
+              }, 
+              {
+                "type": "set-property", 
+                "value": {
+                  "type": "ref", 
+                  "refId": "maxAttempts", 
+                  "domain": "info"
+                }, 
+                "name": "maxAttempts"
               }
             ]
           }
         ], 
-        "description": "container for the sample multiple choice question", 
-        "hookupActions": [
-          {
-            "instance": {
-              "type": "submit-manager"
-            }, 
-            "args": [
-              {
-                "domain": "brix", 
-                "type": "ref", 
-                "refId": "Q1"
-              }
-            ], 
-            "type": "method-call", 
-            "description": "Hookup the submit manager to evaluate answers", 
-            "methodName": "handleRequestsFrom"
-          }, 
-          {
-            "instance": {
-              "domain": "brix", 
-              "type": "ref", 
-              "refId": "Q1"
-            }, 
-            "args": [
-              {
-                "type": "d3select", 
-                "selector": "#target1"
-              }
-            ], 
-            "type": "method-call", 
-            "description": "Draw the question", 
-            "methodName": "draw"
-          }
-        ], 
         "containerId": "target1"
       }
-    ], 
-    "description": "A Sample Activity containing a single multiple choice bric"
+    ]
   }, 
   "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope", 
   "@type": "Envelope", 
   "metadata": {
-    "intendedEndUserRole": [
-      "Student"
-    ], 
-    "description": "68830_EU_C06.html", 
-    "format": [
-      "application/vnd.pearson.sanvan.v1.activity"
-    ], 
-    "owner": "Brix", 
-    "guid": "2f2e79c4-2e8e-4479-a06f-8c1616a4a53f", 
-    "subject": [
-      "EnvironmentalScience"
-    ], 
-    "timeRequired": "PT20S", 
-    "created": "2013-12-13T11:08:17.671325", 
-    "title": "68830_EU_C06.html", 
     "contentTypeTier1": "Test and Assessment", 
     "contentTypeTier2": [
       "assessment item"
+    ], 
+    "description": "68830_EU_C06.html", 
+    "owner": "Brix", 
+    "created": "2013-12-17T18:04:41.886792", 
+    "timeRequired": "PT20S", 
+    "subject": [
+      "EnvironmentalScience"
+    ], 
+    "guid": "2f2e79c4-2e8e-4479-a06f-8c1616a4a53f", 
+    "intendedEndUserRole": [
+      "Student"
+    ], 
+    "title": "68830_EU_C06.html", 
+    "format": [
+      "application/vnd.pearson.sanvan.v1.activity"
     ]
   }
 }

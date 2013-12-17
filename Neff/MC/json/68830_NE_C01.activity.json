@@ -1,47 +1,74 @@
 {
   "body": {
+    "description": "A Sample Activity containing a single multiple choice bric", 
     "containerConfig": [
       {
+        "hookupActions": [
+          {
+            "type": "method-call", 
+            "methodName": "handleRequestsFrom", 
+            "args": [
+              {
+                "type": "ref", 
+                "refId": "Q1", 
+                "domain": "brix"
+              }
+            ], 
+            "description": "Hookup the submit manager to evaluate answers", 
+            "instance": {
+              "type": "submit-manager"
+            }
+          }, 
+          {
+            "type": "method-call", 
+            "methodName": "draw", 
+            "args": [
+              {
+                "type": "d3select", 
+                "selector": "#target1"
+              }
+            ], 
+            "description": "Draw the question", 
+            "instance": {
+              "type": "ref", 
+              "refId": "Q1", 
+              "domain": "brix"
+            }
+          }
+        ], 
+        "description": "container for the sample multiple choice question", 
         "brixConfig": [
           {
             "config": {
-              "presenterType": "RadioGroup", 
+              "choices": [
+                {
+                  "answerKey": "answer1", 
+                  "content": "Traditional fossil fuels emit a lot of CO<sub>2</sub> when they are burned, whereas unconventional fossil fuels do not emit any CO<sub>2</sub>."
+                }, 
+                {
+                  "answerKey": "answer2", 
+                  "content": "Traditional fossil fuels typically result in more air pollution when they are burned, whereas unconventional fossil fuels are typically cleaner burning."
+                }, 
+                {
+                  "answerKey": "answer3", 
+                  "content": "Traditional fossil fuels all come from the Middle East, whereas unconventional fossil fuels are fossil fuel sources that have been found elsewhere."
+                }, 
+                {
+                  "answerKey": "answer4", 
+                  "content": "Traditional fossil fuels are located in large pockets relatively near to the earth's surface, whereas unconventional fuels are present in deeper or smaller pockets and require new technology or greater expense to extract."
+                }
+              ], 
+              "order": "randomized", 
               "question": "Which of the following statements about the relationship between traditional fossil fuels and unconventional fossil fuels is true?", 
               "presenterConfig": {
                 "numberFormat": ""
               }, 
-              "choices": [
-                {
-                  "content": "Traditional fossil fuels emit a lot of CO<sub>2</sub> when they are burned, whereas unconventional fossil fuels do not emit any CO<sub>2</sub>.", 
-                  "answerKey": "answer1"
-                }, 
-                {
-                  "content": "Traditional fossil fuels typically result in more air pollution when they are burned, whereas unconventional fossil fuels are typically cleaner burning.", 
-                  "answerKey": "answer2"
-                }, 
-                {
-                  "content": "Traditional fossil fuels all come from the Middle East, whereas unconventional fossil fuels are fossil fuel sources that have been found elsewhere.", 
-                  "answerKey": "answer3"
-                }, 
-                {
-                  "content": "Traditional fossil fuels are located in large pockets relatively near to the earth's surface, whereas unconventional fuels are present in deeper or smaller pockets and require new technology or greater expense to extract.", 
-                  "answerKey": "answer4"
-                }
-              ], 
-              "order": "randomized", 
-              "id": "sampleQ1"
+              "id": "sampleQ1", 
+              "presenterType": "RadioGroup"
             }, 
             "answerKey": {
               "assessmentType": "multiplechoice", 
               "answers": {
-                "answer4": {
-                  "score": 1, 
-                  "response": "Correct."
-                }, 
-                "answer1": {
-                  "score": 0, 
-                  "response": "Think about what you know about unconventional fuels like tar sands-does this fuel emit CO<sub>2</sub> when burned?"
-                }, 
                 "answer3": {
                   "score": 0, 
                   "response": "Does the United States produce oil, coal, or natural gas, which are typically considered traditional fossil fuels?"
@@ -49,6 +76,14 @@
                 "answer2": {
                   "score": 0, 
                   "response": "While some unconventional fuels may emit less pollution, is this true for unconventional fuels across the board?"
+                }, 
+                "answer1": {
+                  "score": 0, 
+                  "response": "Think about what you know about unconventional fuels like tar sands-does this fuel emit CO<sub>2</sub> when burned?"
+                }, 
+                "answer4": {
+                  "score": 1, 
+                  "response": "Correct."
                 }
               }
             }, 
@@ -57,76 +92,50 @@
             "configFixup": [
               {
                 "type": "set-property", 
-                "name": "questionId", 
                 "value": {
-                  "domain": "info", 
                   "type": "ref", 
-                  "refId": "sequenceNodeKey"
-                }
+                  "refId": "sequenceNodeKey", 
+                  "domain": "info"
+                }, 
+                "name": "questionId"
+              }, 
+              {
+                "type": "set-property", 
+                "value": {
+                  "type": "ref", 
+                  "refId": "maxAttempts", 
+                  "domain": "info"
+                }, 
+                "name": "maxAttempts"
               }
             ]
           }
         ], 
-        "description": "container for the sample multiple choice question", 
-        "hookupActions": [
-          {
-            "instance": {
-              "type": "submit-manager"
-            }, 
-            "args": [
-              {
-                "domain": "brix", 
-                "type": "ref", 
-                "refId": "Q1"
-              }
-            ], 
-            "type": "method-call", 
-            "description": "Hookup the submit manager to evaluate answers", 
-            "methodName": "handleRequestsFrom"
-          }, 
-          {
-            "instance": {
-              "domain": "brix", 
-              "type": "ref", 
-              "refId": "Q1"
-            }, 
-            "args": [
-              {
-                "type": "d3select", 
-                "selector": "#target1"
-              }
-            ], 
-            "type": "method-call", 
-            "description": "Draw the question", 
-            "methodName": "draw"
-          }
-        ], 
         "containerId": "target1"
       }
-    ], 
-    "description": "A Sample Activity containing a single multiple choice bric"
+    ]
   }, 
   "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope", 
   "@type": "Envelope", 
   "metadata": {
-    "intendedEndUserRole": [
-      "Student"
-    ], 
-    "description": "68830_NE_C01.html", 
-    "format": [
-      "application/vnd.pearson.sanvan.v1.activity"
-    ], 
-    "owner": "Brix", 
-    "guid": "f24f8f36-36a4-437a-9e72-7c0163d0976f", 
-    "subject": [
-      "EnvironmentalScience"
-    ], 
-    "timeRequired": "PT20S", 
-    "created": "2013-12-13T11:08:17.673298", 
-    "title": "68830_NE_C01.html", 
     "contentTypeTier1": "Test and Assessment", 
     "contentTypeTier2": [
       "assessment item"
+    ], 
+    "description": "68830_NE_C01.html", 
+    "owner": "Brix", 
+    "created": "2013-12-17T18:04:41.887323", 
+    "timeRequired": "PT20S", 
+    "subject": [
+      "EnvironmentalScience"
+    ], 
+    "guid": "f24f8f36-36a4-437a-9e72-7c0163d0976f", 
+    "intendedEndUserRole": [
+      "Student"
+    ], 
+    "title": "68830_NE_C01.html", 
+    "format": [
+      "application/vnd.pearson.sanvan.v1.activity"
     ]
   }
 }

@@ -1,47 +1,74 @@
 {
   "body": {
+    "description": "A Sample Activity containing a single multiple choice bric", 
     "containerConfig": [
       {
+        "hookupActions": [
+          {
+            "type": "method-call", 
+            "methodName": "handleRequestsFrom", 
+            "args": [
+              {
+                "type": "ref", 
+                "refId": "Q1", 
+                "domain": "brix"
+              }
+            ], 
+            "description": "Hookup the submit manager to evaluate answers", 
+            "instance": {
+              "type": "submit-manager"
+            }
+          }, 
+          {
+            "type": "method-call", 
+            "methodName": "draw", 
+            "args": [
+              {
+                "type": "d3select", 
+                "selector": "#target1"
+              }
+            ], 
+            "description": "Draw the question", 
+            "instance": {
+              "type": "ref", 
+              "refId": "Q1", 
+              "domain": "brix"
+            }
+          }
+        ], 
+        "description": "container for the sample multiple choice question", 
         "brixConfig": [
           {
             "config": {
-              "presenterType": "RadioGroup", 
+              "choices": [
+                {
+                  "answerKey": "answer1", 
+                  "content": "Second generation biomass fuels do not release CO2 when they are combusted."
+                }, 
+                {
+                  "answerKey": "answer2", 
+                  "content": "Second generation biomass fuels would not require the use of food crops like corn and sugar cane."
+                }, 
+                {
+                  "answerKey": "answer3", 
+                  "content": "The production of current biomass fuels does not require any fossil fuel energy use for chemical processing or fermentation processes."
+                }, 
+                {
+                  "answerKey": "answer4", 
+                  "content": "Biomass fuels do not require the use of any fertilizer, pesticides, or herbicides for their production."
+                }
+              ], 
+              "order": "randomized", 
               "question": "Which of the following statements is an accurate characterization of a potential benefit of second generation biomass fuels as an energy source?", 
               "presenterConfig": {
                 "numberFormat": ""
               }, 
-              "choices": [
-                {
-                  "content": "Second generation biomass fuels do not release CO2 when they are combusted.", 
-                  "answerKey": "answer1"
-                }, 
-                {
-                  "content": "Second generation biomass fuels would not require the use of food crops like corn and sugar cane.", 
-                  "answerKey": "answer2"
-                }, 
-                {
-                  "content": "The production of current biomass fuels does not require any fossil fuel energy use for chemical processing or fermentation processes.", 
-                  "answerKey": "answer3"
-                }, 
-                {
-                  "content": "Biomass fuels do not require the use of any fertilizer, pesticides, or herbicides for their production.", 
-                  "answerKey": "answer4"
-                }
-              ], 
-              "order": "randomized", 
-              "id": "sampleQ1"
+              "id": "sampleQ1", 
+              "presenterType": "RadioGroup"
             }, 
             "answerKey": {
               "assessmentType": "multiplechoice", 
               "answers": {
-                "answer4": {
-                  "score": 0, 
-                  "response": "Making biomass fuels requires the input of a lot of biomass.  Based on what you know about the products mentioned above, is it likely that growers would use these products to produce more biomass?"
-                }, 
-                "answer1": {
-                  "score": 0, 
-                  "response": "Plants take up CO2 from the atmosphere. Where does this CO2 go when the plants (or other biomass) are burned?"
-                }, 
                 "answer3": {
                   "score": 0, 
                   "response": "Energy must be spent converting the biomass into fuel. Is it feasible for this to be done without the use of fossil fuels at the current time?"
@@ -49,6 +76,14 @@
                 "answer2": {
                   "score": 1, 
                   "response": "Correct."
+                }, 
+                "answer1": {
+                  "score": 0, 
+                  "response": "Plants take up CO2 from the atmosphere. Where does this CO2 go when the plants (or other biomass) are burned?"
+                }, 
+                "answer4": {
+                  "score": 0, 
+                  "response": "Making biomass fuels requires the input of a lot of biomass.  Based on what you know about the products mentioned above, is it likely that growers would use these products to produce more biomass?"
                 }
               }
             }, 
@@ -57,76 +92,50 @@
             "configFixup": [
               {
                 "type": "set-property", 
-                "name": "questionId", 
                 "value": {
-                  "domain": "info", 
                   "type": "ref", 
-                  "refId": "sequenceNodeKey"
-                }
+                  "refId": "sequenceNodeKey", 
+                  "domain": "info"
+                }, 
+                "name": "questionId"
+              }, 
+              {
+                "type": "set-property", 
+                "value": {
+                  "type": "ref", 
+                  "refId": "maxAttempts", 
+                  "domain": "info"
+                }, 
+                "name": "maxAttempts"
               }
             ]
           }
         ], 
-        "description": "container for the sample multiple choice question", 
-        "hookupActions": [
-          {
-            "instance": {
-              "type": "submit-manager"
-            }, 
-            "args": [
-              {
-                "domain": "brix", 
-                "type": "ref", 
-                "refId": "Q1"
-              }
-            ], 
-            "type": "method-call", 
-            "description": "Hookup the submit manager to evaluate answers", 
-            "methodName": "handleRequestsFrom"
-          }, 
-          {
-            "instance": {
-              "domain": "brix", 
-              "type": "ref", 
-              "refId": "Q1"
-            }, 
-            "args": [
-              {
-                "type": "d3select", 
-                "selector": "#target1"
-              }
-            ], 
-            "type": "method-call", 
-            "description": "Draw the question", 
-            "methodName": "draw"
-          }
-        ], 
         "containerId": "target1"
       }
-    ], 
-    "description": "A Sample Activity containing a single multiple choice bric"
+    ]
   }, 
   "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope", 
   "@type": "Envelope", 
   "metadata": {
-    "intendedEndUserRole": [
-      "Student"
-    ], 
-    "description": "68830_RE_C06.html", 
-    "format": [
-      "application/vnd.pearson.sanvan.v1.activity"
-    ], 
-    "owner": "Brix", 
-    "guid": "d98f5667-09e8-4cf8-907b-cb42f2817832", 
-    "subject": [
-      "EnvironmentalScience"
-    ], 
-    "timeRequired": "PT20S", 
-    "created": "2013-12-13T11:08:17.676312", 
-    "title": "68830_RE_C06.html", 
     "contentTypeTier1": "Test and Assessment", 
     "contentTypeTier2": [
       "assessment item"
+    ], 
+    "description": "68830_RE_C06.html", 
+    "owner": "Brix", 
+    "created": "2013-12-17T18:04:41.888363", 
+    "timeRequired": "PT20S", 
+    "subject": [
+      "EnvironmentalScience"
+    ], 
+    "guid": "d98f5667-09e8-4cf8-907b-cb42f2817832", 
+    "intendedEndUserRole": [
+      "Student"
+    ], 
+    "title": "68830_RE_C06.html", 
+    "format": [
+      "application/vnd.pearson.sanvan.v1.activity"
     ]
   }
 }

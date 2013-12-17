@@ -1,55 +1,78 @@
 {
   "body": {
+    "description": "A Sample Activity containing a single multiple choice bric", 
     "containerConfig": [
       {
+        "hookupActions": [
+          {
+            "type": "method-call", 
+            "methodName": "handleRequestsFrom", 
+            "args": [
+              {
+                "type": "ref", 
+                "refId": "Q1", 
+                "domain": "brix"
+              }
+            ], 
+            "description": "Hookup the submit manager to evaluate answers", 
+            "instance": {
+              "type": "submit-manager"
+            }
+          }, 
+          {
+            "type": "method-call", 
+            "methodName": "draw", 
+            "args": [
+              {
+                "type": "d3select", 
+                "selector": "#target1"
+              }
+            ], 
+            "description": "Draw the question", 
+            "instance": {
+              "type": "ref", 
+              "refId": "Q1", 
+              "domain": "brix"
+            }
+          }
+        ], 
+        "description": "container for the sample multiple choice question", 
         "brixConfig": [
           {
             "config": {
-              "presenterType": "RadioGroup", 
+              "choices": [
+                {
+                  "answerKey": "answer1", 
+                  "content": "It brings warmth from the ground into the house in the winter and cools the house using the temperature of the ground in the summer."
+                }, 
+                {
+                  "answerKey": "answer2", 
+                  "content": "It captures the heat of rocks deep in the Earth and transports it into homes for heating."
+                }, 
+                {
+                  "answerKey": "answer3", 
+                  "content": "It pumps warm ground water out of the surface of the earth and runs it through pipes in the floor to warm the house in the winter."
+                }, 
+                {
+                  "answerKey": "answer4", 
+                  "content": "It takes advantage of the relatively constant temperature of the surface earth to cool the house in the summer and warm it in the winter."
+                }, 
+                {
+                  "answerKey": "answer5", 
+                  "content": "A little green Earth-shaped pump is installed to help move hot air out of a warm house in the summer."
+                }
+              ], 
+              "order": "randomized", 
               "question": "How does geothermal heat pump (residential) technology work?", 
               "presenterConfig": {
                 "numberFormat": ""
               }, 
-              "choices": [
-                {
-                  "content": "It brings warmth from the ground into the house in the winter and cools the house using the temperature of the ground in the summer.", 
-                  "answerKey": "answer1"
-                }, 
-                {
-                  "content": "It captures the heat of rocks deep in the Earth and transports it into homes for heating.", 
-                  "answerKey": "answer2"
-                }, 
-                {
-                  "content": "It pumps warm ground water out of the surface of the earth and runs it through pipes in the floor to warm the house in the winter.", 
-                  "answerKey": "answer3"
-                }, 
-                {
-                  "content": "It takes advantage of the relatively constant temperature of the surface earth to cool the house in the summer and warm it in the winter.", 
-                  "answerKey": "answer4"
-                }, 
-                {
-                  "content": "A little green Earth-shaped pump is installed to help move hot air out of a warm house in the summer.", 
-                  "answerKey": "answer5"
-                }
-              ], 
-              "order": "randomized", 
-              "id": "sampleQ1"
+              "id": "sampleQ1", 
+              "presenterType": "RadioGroup"
             }, 
             "answerKey": {
               "assessmentType": "multiplechoice", 
               "answers": {
-                "answer5": {
-                  "score": 0, 
-                  "response": "If this were true, would people also use this type of technology for heating their homes in the winter?"
-                }, 
-                "answer4": {
-                  "score": 1, 
-                  "response": "Correct."
-                }, 
-                "answer1": {
-                  "score": 0, 
-                  "response": "Does the temperature of the earth change very much throughout the year?"
-                }, 
                 "answer3": {
                   "score": 0, 
                   "response": "Does a geothermal heat pump rely on water at all?"
@@ -57,6 +80,18 @@
                 "answer2": {
                   "score": 0, 
                   "response": "If this were true, would people also use this type of technology for cooling their homes?"
+                }, 
+                "answer1": {
+                  "score": 0, 
+                  "response": "Does the temperature of the earth change very much throughout the year?"
+                }, 
+                "answer5": {
+                  "score": 0, 
+                  "response": "If this were true, would people also use this type of technology for heating their homes in the winter?"
+                }, 
+                "answer4": {
+                  "score": 1, 
+                  "response": "Correct."
                 }
               }
             }, 
@@ -65,76 +100,50 @@
             "configFixup": [
               {
                 "type": "set-property", 
-                "name": "questionId", 
                 "value": {
-                  "domain": "info", 
                   "type": "ref", 
-                  "refId": "sequenceNodeKey"
-                }
+                  "refId": "sequenceNodeKey", 
+                  "domain": "info"
+                }, 
+                "name": "questionId"
+              }, 
+              {
+                "type": "set-property", 
+                "value": {
+                  "type": "ref", 
+                  "refId": "maxAttempts", 
+                  "domain": "info"
+                }, 
+                "name": "maxAttempts"
               }
             ]
           }
         ], 
-        "description": "container for the sample multiple choice question", 
-        "hookupActions": [
-          {
-            "instance": {
-              "type": "submit-manager"
-            }, 
-            "args": [
-              {
-                "domain": "brix", 
-                "type": "ref", 
-                "refId": "Q1"
-              }
-            ], 
-            "type": "method-call", 
-            "description": "Hookup the submit manager to evaluate answers", 
-            "methodName": "handleRequestsFrom"
-          }, 
-          {
-            "instance": {
-              "domain": "brix", 
-              "type": "ref", 
-              "refId": "Q1"
-            }, 
-            "args": [
-              {
-                "type": "d3select", 
-                "selector": "#target1"
-              }
-            ], 
-            "type": "method-call", 
-            "description": "Draw the question", 
-            "methodName": "draw"
-          }
-        ], 
         "containerId": "target1"
       }
-    ], 
-    "description": "A Sample Activity containing a single multiple choice bric"
+    ]
   }, 
   "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope", 
   "@type": "Envelope", 
   "metadata": {
-    "intendedEndUserRole": [
-      "Student"
-    ], 
-    "description": "68830_RE_C07.html", 
-    "format": [
-      "application/vnd.pearson.sanvan.v1.activity"
-    ], 
-    "owner": "Brix", 
-    "guid": "ccb9f4cb-539b-42d3-b128-dbbca0428d34", 
-    "subject": [
-      "EnvironmentalScience"
-    ], 
-    "timeRequired": "PT20S", 
-    "created": "2013-12-13T11:08:17.676367", 
-    "title": "68830_RE_C07.html", 
     "contentTypeTier1": "Test and Assessment", 
     "contentTypeTier2": [
       "assessment item"
+    ], 
+    "description": "68830_RE_C07.html", 
+    "owner": "Brix", 
+    "created": "2013-12-17T18:04:41.888380", 
+    "timeRequired": "PT20S", 
+    "subject": [
+      "EnvironmentalScience"
+    ], 
+    "guid": "ccb9f4cb-539b-42d3-b128-dbbca0428d34", 
+    "intendedEndUserRole": [
+      "Student"
+    ], 
+    "title": "68830_RE_C07.html", 
+    "format": [
+      "application/vnd.pearson.sanvan.v1.activity"
     ]
   }
 }

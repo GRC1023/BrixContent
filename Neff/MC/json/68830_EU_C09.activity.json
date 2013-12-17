@@ -1,55 +1,78 @@
 {
   "body": {
+    "description": "A Sample Activity containing a single multiple choice bric", 
     "containerConfig": [
       {
+        "hookupActions": [
+          {
+            "type": "method-call", 
+            "methodName": "handleRequestsFrom", 
+            "args": [
+              {
+                "type": "ref", 
+                "refId": "Q1", 
+                "domain": "brix"
+              }
+            ], 
+            "description": "Hookup the submit manager to evaluate answers", 
+            "instance": {
+              "type": "submit-manager"
+            }
+          }, 
+          {
+            "type": "method-call", 
+            "methodName": "draw", 
+            "args": [
+              {
+                "type": "d3select", 
+                "selector": "#target1"
+              }
+            ], 
+            "description": "Draw the question", 
+            "instance": {
+              "type": "ref", 
+              "refId": "Q1", 
+              "domain": "brix"
+            }
+          }
+        ], 
+        "description": "container for the sample multiple choice question", 
         "brixConfig": [
           {
             "config": {
-              "presenterType": "RadioGroup", 
+              "choices": [
+                {
+                  "answerKey": "answer1", 
+                  "content": "Germany has better solar resources (for example. more sunny days)."
+                }, 
+                {
+                  "answerKey": "answer2", 
+                  "content": "Germany is closer to the locations in Asia where solar panels are manufactured."
+                }, 
+                {
+                  "answerKey": "answer3", 
+                  "content": "Germany is required to use solar energy as a condition of the Treaty of Versailles."
+                }, 
+                {
+                  "answerKey": "answer4", 
+                  "content": "Germany has a political and social culture that is more favorable to solar than that of the United States."
+                }, 
+                {
+                  "answerKey": "answer5", 
+                  "content": "Most solar panels are made by VW and BMW so they are more heavily used in Germany."
+                }
+              ], 
+              "order": "randomized", 
               "question": "What is the best explanation for why Germany has more solar energy production than the United States?", 
               "presenterConfig": {
                 "numberFormat": ""
               }, 
-              "choices": [
-                {
-                  "content": "Germany has better solar resources (for example. more sunny days).", 
-                  "answerKey": "answer1"
-                }, 
-                {
-                  "content": "Germany is closer to the locations in Asia where solar panels are manufactured.", 
-                  "answerKey": "answer2"
-                }, 
-                {
-                  "content": "Germany is required to use solar energy as a condition of the Treaty of Versailles.", 
-                  "answerKey": "answer3"
-                }, 
-                {
-                  "content": "Germany has a political and social culture that is more favorable to solar than that of the United States.", 
-                  "answerKey": "answer4"
-                }, 
-                {
-                  "content": "Most solar panels are made by VW and BMW so they are more heavily used in Germany.", 
-                  "answerKey": "answer5"
-                }
-              ], 
-              "order": "randomized", 
-              "id": "sampleQ1"
+              "id": "sampleQ1", 
+              "presenterType": "RadioGroup"
             }, 
             "answerKey": {
               "assessmentType": "multiplechoice", 
               "answers": {
-                "answer5": {
-                  "score": 0, 
-                  "response": "What do VW and BMW actually manufacture, and does this relate to solar panels?"
-                }, 
-                "answer4": {
-                  "score": 1, 
-                  "response": "Correct."
-                }, 
-                "answer1": {
-                  "score": 0, 
-                  "response": "Based on what you know about Germany's geographic location, is this likely to be true?"
-                }, 
                 "answer3": {
                   "score": 0, 
                   "response": "This was a peace treaty signed at the end of WWI. Was anyone thinking about solar panels back then?"
@@ -57,6 +80,18 @@
                 "answer2": {
                   "score": 0, 
                   "response": "Does the shipping distance for materials typically highly influence the energy source a country chooses to develop?"
+                }, 
+                "answer1": {
+                  "score": 0, 
+                  "response": "Based on what you know about Germany's geographic location, is this likely to be true?"
+                }, 
+                "answer5": {
+                  "score": 0, 
+                  "response": "What do VW and BMW actually manufacture, and does this relate to solar panels?"
+                }, 
+                "answer4": {
+                  "score": 1, 
+                  "response": "Correct."
                 }
               }
             }, 
@@ -65,76 +100,50 @@
             "configFixup": [
               {
                 "type": "set-property", 
-                "name": "questionId", 
                 "value": {
-                  "domain": "info", 
                   "type": "ref", 
-                  "refId": "sequenceNodeKey"
-                }
+                  "refId": "sequenceNodeKey", 
+                  "domain": "info"
+                }, 
+                "name": "questionId"
+              }, 
+              {
+                "type": "set-property", 
+                "value": {
+                  "type": "ref", 
+                  "refId": "maxAttempts", 
+                  "domain": "info"
+                }, 
+                "name": "maxAttempts"
               }
             ]
           }
         ], 
-        "description": "container for the sample multiple choice question", 
-        "hookupActions": [
-          {
-            "instance": {
-              "type": "submit-manager"
-            }, 
-            "args": [
-              {
-                "domain": "brix", 
-                "type": "ref", 
-                "refId": "Q1"
-              }
-            ], 
-            "type": "method-call", 
-            "description": "Hookup the submit manager to evaluate answers", 
-            "methodName": "handleRequestsFrom"
-          }, 
-          {
-            "instance": {
-              "domain": "brix", 
-              "type": "ref", 
-              "refId": "Q1"
-            }, 
-            "args": [
-              {
-                "type": "d3select", 
-                "selector": "#target1"
-              }
-            ], 
-            "type": "method-call", 
-            "description": "Draw the question", 
-            "methodName": "draw"
-          }
-        ], 
         "containerId": "target1"
       }
-    ], 
-    "description": "A Sample Activity containing a single multiple choice bric"
+    ]
   }, 
   "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope", 
   "@type": "Envelope", 
   "metadata": {
-    "intendedEndUserRole": [
-      "Student"
-    ], 
-    "description": "68830_EU_C09.html", 
-    "format": [
-      "application/vnd.pearson.sanvan.v1.activity"
-    ], 
-    "owner": "Brix", 
-    "guid": "ad845c1d-cce3-4adc-bdb7-5b10703d2ae9", 
-    "subject": [
-      "EnvironmentalScience"
-    ], 
-    "timeRequired": "PT20S", 
-    "created": "2013-12-13T11:08:17.671492", 
-    "title": "68830_EU_C09.html", 
     "contentTypeTier1": "Test and Assessment", 
     "contentTypeTier2": [
       "assessment item"
+    ], 
+    "description": "68830_EU_C09.html", 
+    "owner": "Brix", 
+    "created": "2013-12-17T18:04:41.886844", 
+    "timeRequired": "PT20S", 
+    "subject": [
+      "EnvironmentalScience"
+    ], 
+    "guid": "ad845c1d-cce3-4adc-bdb7-5b10703d2ae9", 
+    "intendedEndUserRole": [
+      "Student"
+    ], 
+    "title": "68830_EU_C09.html", 
+    "format": [
+      "application/vnd.pearson.sanvan.v1.activity"
     ]
   }
 }

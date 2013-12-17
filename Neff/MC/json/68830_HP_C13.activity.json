@@ -1,55 +1,78 @@
 {
   "body": {
+    "description": "A Sample Activity containing a single multiple choice bric", 
     "containerConfig": [
       {
+        "hookupActions": [
+          {
+            "type": "method-call", 
+            "methodName": "handleRequestsFrom", 
+            "args": [
+              {
+                "type": "ref", 
+                "refId": "Q1", 
+                "domain": "brix"
+              }
+            ], 
+            "description": "Hookup the submit manager to evaluate answers", 
+            "instance": {
+              "type": "submit-manager"
+            }
+          }, 
+          {
+            "type": "method-call", 
+            "methodName": "draw", 
+            "args": [
+              {
+                "type": "d3select", 
+                "selector": "#target1"
+              }
+            ], 
+            "description": "Draw the question", 
+            "instance": {
+              "type": "ref", 
+              "refId": "Q1", 
+              "domain": "brix"
+            }
+          }
+        ], 
+        "description": "container for the sample multiple choice question", 
         "brixConfig": [
           {
             "config": {
-              "presenterType": "RadioGroup", 
+              "choices": [
+                {
+                  "answerKey": "answer1", 
+                  "content": "Rising affluence leads to rising consumption of goods and services, and this increases the impacts of population growth on the environment."
+                }, 
+                {
+                  "answerKey": "answer2", 
+                  "content": "Wealth doesn\u2019t matter much for the environment\u2014it\u2019s really the overall population that is most important."
+                }, 
+                {
+                  "answerKey": "answer3", 
+                  "content": "There are no examples of how rising affluence can have a negative impact on environmental problems."
+                }, 
+                {
+                  "answerKey": "answer4", 
+                  "content": "Wealth can be used to invest in technologies that reduce the impact of consumption on the environment."
+                }, 
+                {
+                  "answerKey": "answer5", 
+                  "content": "The accumulation of wealth/rise in affluence is uniformly good for the environment because richer people care more about wildlife preservation and similar things."
+                }
+              ], 
+              "order": "randomized", 
               "question": "In what way can wealth (affluence) increase the impacts of population growth on the environment?", 
               "presenterConfig": {
                 "numberFormat": ""
               }, 
-              "choices": [
-                {
-                  "content": "Rising affluence leads to rising consumption of goods and services, and this increases the impacts of population growth on the environment.", 
-                  "answerKey": "answer1"
-                }, 
-                {
-                  "content": "Wealth doesn\u2019t matter much for the environment\u2014it\u2019s really the overall population that is most important.", 
-                  "answerKey": "answer2"
-                }, 
-                {
-                  "content": "There are no examples of how rising affluence can have a negative impact on environmental problems.", 
-                  "answerKey": "answer3"
-                }, 
-                {
-                  "content": "Wealth can be used to invest in technologies that reduce the impact of consumption on the environment.", 
-                  "answerKey": "answer4"
-                }, 
-                {
-                  "content": "The accumulation of wealth/rise in affluence is uniformly good for the environment because richer people care more about wildlife preservation and similar things.", 
-                  "answerKey": "answer5"
-                }
-              ], 
-              "order": "randomized", 
-              "id": "sampleQ1"
+              "id": "sampleQ1", 
+              "presenterType": "RadioGroup"
             }, 
             "answerKey": {
               "assessmentType": "multiplechoice", 
               "answers": {
-                "answer5": {
-                  "score": 0, 
-                  "response": "Is this true for all affluent people?"
-                }, 
-                "answer4": {
-                  "score": 0, 
-                  "response": "Does this increase or decrease the impacts of population growth on the environment?"
-                }, 
-                "answer1": {
-                  "score": 1, 
-                  "response": "Correct."
-                }, 
                 "answer3": {
                   "score": 0, 
                   "response": "How may affluent people behave (i.e., spend their money) differently than less affluent people, and what affect could this have?"
@@ -57,6 +80,18 @@
                 "answer2": {
                   "score": 0, 
                   "response": "If the overall population behaves (i.e., spends their wealth) differently, could wealth have no impact on the environment?"
+                }, 
+                "answer1": {
+                  "score": 1, 
+                  "response": "Correct."
+                }, 
+                "answer5": {
+                  "score": 0, 
+                  "response": "Is this true for all affluent people?"
+                }, 
+                "answer4": {
+                  "score": 0, 
+                  "response": "Does this increase or decrease the impacts of population growth on the environment?"
                 }
               }
             }, 
@@ -65,76 +100,50 @@
             "configFixup": [
               {
                 "type": "set-property", 
-                "name": "questionId", 
                 "value": {
-                  "domain": "info", 
                   "type": "ref", 
-                  "refId": "sequenceNodeKey"
-                }
+                  "refId": "sequenceNodeKey", 
+                  "domain": "info"
+                }, 
+                "name": "questionId"
+              }, 
+              {
+                "type": "set-property", 
+                "value": {
+                  "type": "ref", 
+                  "refId": "maxAttempts", 
+                  "domain": "info"
+                }, 
+                "name": "maxAttempts"
               }
             ]
           }
         ], 
-        "description": "container for the sample multiple choice question", 
-        "hookupActions": [
-          {
-            "instance": {
-              "type": "submit-manager"
-            }, 
-            "args": [
-              {
-                "domain": "brix", 
-                "type": "ref", 
-                "refId": "Q1"
-              }
-            ], 
-            "type": "method-call", 
-            "description": "Hookup the submit manager to evaluate answers", 
-            "methodName": "handleRequestsFrom"
-          }, 
-          {
-            "instance": {
-              "domain": "brix", 
-              "type": "ref", 
-              "refId": "Q1"
-            }, 
-            "args": [
-              {
-                "type": "d3select", 
-                "selector": "#target1"
-              }
-            ], 
-            "type": "method-call", 
-            "description": "Draw the question", 
-            "methodName": "draw"
-          }
-        ], 
         "containerId": "target1"
       }
-    ], 
-    "description": "A Sample Activity containing a single multiple choice bric"
+    ]
   }, 
   "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope", 
   "@type": "Envelope", 
   "metadata": {
-    "intendedEndUserRole": [
-      "Student"
-    ], 
-    "description": "68830_HP_C13.html", 
-    "format": [
-      "application/vnd.pearson.sanvan.v1.activity"
-    ], 
-    "owner": "Brix", 
-    "guid": "8a5ef656-25e2-444a-a713-dc02571d697d", 
-    "subject": [
-      "EnvironmentalScience"
-    ], 
-    "timeRequired": "PT20S", 
-    "created": "2013-12-13T11:08:17.667508", 
-    "title": "68830_HP_C13.html", 
     "contentTypeTier1": "Test and Assessment", 
     "contentTypeTier2": [
       "assessment item"
+    ], 
+    "description": "68830_HP_C13.html", 
+    "owner": "Brix", 
+    "created": "2013-12-17T18:04:41.885715", 
+    "timeRequired": "PT20S", 
+    "subject": [
+      "EnvironmentalScience"
+    ], 
+    "guid": "8a5ef656-25e2-444a-a713-dc02571d697d", 
+    "intendedEndUserRole": [
+      "Student"
+    ], 
+    "title": "68830_HP_C13.html", 
+    "format": [
+      "application/vnd.pearson.sanvan.v1.activity"
     ]
   }
 }

@@ -1,55 +1,78 @@
 {
   "body": {
+    "description": "A Sample Activity containing a single multiple choice bric", 
     "containerConfig": [
       {
+        "hookupActions": [
+          {
+            "type": "method-call", 
+            "methodName": "handleRequestsFrom", 
+            "args": [
+              {
+                "type": "ref", 
+                "refId": "Q1", 
+                "domain": "brix"
+              }
+            ], 
+            "description": "Hookup the submit manager to evaluate answers", 
+            "instance": {
+              "type": "submit-manager"
+            }
+          }, 
+          {
+            "type": "method-call", 
+            "methodName": "draw", 
+            "args": [
+              {
+                "type": "d3select", 
+                "selector": "#target1"
+              }
+            ], 
+            "description": "Draw the question", 
+            "instance": {
+              "type": "ref", 
+              "refId": "Q1", 
+              "domain": "brix"
+            }
+          }
+        ], 
+        "description": "container for the sample multiple choice question", 
         "brixConfig": [
           {
             "config": {
-              "presenterType": "RadioGroup", 
+              "choices": [
+                {
+                  "answerKey": "answer1", 
+                  "content": "Because death rates are largely controlled by advances in the treatment of heart disease and strokes."
+                }, 
+                {
+                  "answerKey": "answer2", 
+                  "content": "Because birth rates are largely controlled by technical factors such as access to birth control or family planning."
+                }, 
+                {
+                  "answerKey": "answer3", 
+                  "content": "Because technology and investment play a large role in birth rates but social factors and cultural norms such as religion play a role in death rates."
+                }, 
+                {
+                  "answerKey": "answer4", 
+                  "content": "Because technology and investment play a large role in death rates but social factors and cultural norms such as religion play a large role in birth rates."
+                }, 
+                {
+                  "answerKey": "answer5", 
+                  "content": "Because most investments in health are usually first targeted to the elderly and then to children."
+                }
+              ], 
+              "order": "randomized", 
               "question": "In the demographic transition model, why do birth rates changes lag changes in death rates?", 
               "presenterConfig": {
                 "numberFormat": ""
               }, 
-              "choices": [
-                {
-                  "content": "Because death rates are largely controlled by advances in the treatment of heart disease and strokes.", 
-                  "answerKey": "answer1"
-                }, 
-                {
-                  "content": "Because birth rates are largely controlled by technical factors such as access to birth control or family planning.", 
-                  "answerKey": "answer2"
-                }, 
-                {
-                  "content": "Because technology and investment play a large role in birth rates but social factors and cultural norms such as religion play a role in death rates.", 
-                  "answerKey": "answer3"
-                }, 
-                {
-                  "content": "Because technology and investment play a large role in death rates but social factors and cultural norms such as religion play a large role in birth rates.", 
-                  "answerKey": "answer4"
-                }, 
-                {
-                  "content": "Because most investments in health are usually first targeted to the elderly and then to children.", 
-                  "answerKey": "answer5"
-                }
-              ], 
-              "order": "randomized", 
-              "id": "sampleQ1"
+              "id": "sampleQ1", 
+              "presenterType": "RadioGroup"
             }, 
             "answerKey": {
               "assessmentType": "multiplechoice", 
               "answers": {
-                "answer5": {
-                  "score": 0, 
-                  "response": "Would this actually change birth rates or just affect other statistics such as childhood mortality?"
-                }, 
-                "answer4": {
-                  "score": 1, 
-                  "response": "Correct."
-                }, 
-                "answer1": {
-                  "score": 0, 
-                  "response": "While this may be true, does this provide a reason for why birth rate changes lag death rate changes?"
-                }, 
                 "answer3": {
                   "score": 0, 
                   "response": "Do cultural factors such as religion typically determine when someone dies?"
@@ -57,6 +80,18 @@
                 "answer2": {
                   "score": 0, 
                   "response": "While this may be true, does this provide a reason for why death rates change more quickly than birth rates?"
+                }, 
+                "answer1": {
+                  "score": 0, 
+                  "response": "While this may be true, does this provide a reason for why birth rate changes lag death rate changes?"
+                }, 
+                "answer5": {
+                  "score": 0, 
+                  "response": "Would this actually change birth rates or just affect other statistics such as childhood mortality?"
+                }, 
+                "answer4": {
+                  "score": 1, 
+                  "response": "Correct."
                 }
               }
             }, 
@@ -65,76 +100,50 @@
             "configFixup": [
               {
                 "type": "set-property", 
-                "name": "questionId", 
                 "value": {
-                  "domain": "info", 
                   "type": "ref", 
-                  "refId": "sequenceNodeKey"
-                }
+                  "refId": "sequenceNodeKey", 
+                  "domain": "info"
+                }, 
+                "name": "questionId"
+              }, 
+              {
+                "type": "set-property", 
+                "value": {
+                  "type": "ref", 
+                  "refId": "maxAttempts", 
+                  "domain": "info"
+                }, 
+                "name": "maxAttempts"
               }
             ]
           }
         ], 
-        "description": "container for the sample multiple choice question", 
-        "hookupActions": [
-          {
-            "instance": {
-              "type": "submit-manager"
-            }, 
-            "args": [
-              {
-                "domain": "brix", 
-                "type": "ref", 
-                "refId": "Q1"
-              }
-            ], 
-            "type": "method-call", 
-            "description": "Hookup the submit manager to evaluate answers", 
-            "methodName": "handleRequestsFrom"
-          }, 
-          {
-            "instance": {
-              "domain": "brix", 
-              "type": "ref", 
-              "refId": "Q1"
-            }, 
-            "args": [
-              {
-                "type": "d3select", 
-                "selector": "#target1"
-              }
-            ], 
-            "type": "method-call", 
-            "description": "Draw the question", 
-            "methodName": "draw"
-          }
-        ], 
         "containerId": "target1"
       }
-    ], 
-    "description": "A Sample Activity containing a single multiple choice bric"
+    ]
   }, 
   "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope", 
   "@type": "Envelope", 
   "metadata": {
-    "intendedEndUserRole": [
-      "Student"
-    ], 
-    "description": "68830_HP_C08.html", 
-    "format": [
-      "application/vnd.pearson.sanvan.v1.activity"
-    ], 
-    "owner": "Brix", 
-    "guid": "75a815eb-e976-4b43-bc97-bf38ba3876a9", 
-    "subject": [
-      "EnvironmentalScience"
-    ], 
-    "timeRequired": "PT20S", 
-    "created": "2013-12-13T11:08:17.667215", 
-    "title": "68830_HP_C08.html", 
     "contentTypeTier1": "Test and Assessment", 
     "contentTypeTier2": [
       "assessment item"
+    ], 
+    "description": "68830_HP_C08.html", 
+    "owner": "Brix", 
+    "created": "2013-12-17T18:04:41.885637", 
+    "timeRequired": "PT20S", 
+    "subject": [
+      "EnvironmentalScience"
+    ], 
+    "guid": "75a815eb-e976-4b43-bc97-bf38ba3876a9", 
+    "intendedEndUserRole": [
+      "Student"
+    ], 
+    "title": "68830_HP_C08.html", 
+    "format": [
+      "application/vnd.pearson.sanvan.v1.activity"
     ]
   }
 }

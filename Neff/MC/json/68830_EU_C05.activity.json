@@ -1,55 +1,78 @@
 {
   "body": {
+    "description": "A Sample Activity containing a single multiple choice bric", 
     "containerConfig": [
       {
+        "hookupActions": [
+          {
+            "type": "method-call", 
+            "methodName": "handleRequestsFrom", 
+            "args": [
+              {
+                "type": "ref", 
+                "refId": "Q1", 
+                "domain": "brix"
+              }
+            ], 
+            "description": "Hookup the submit manager to evaluate answers", 
+            "instance": {
+              "type": "submit-manager"
+            }
+          }, 
+          {
+            "type": "method-call", 
+            "methodName": "draw", 
+            "args": [
+              {
+                "type": "d3select", 
+                "selector": "#target1"
+              }
+            ], 
+            "description": "Draw the question", 
+            "instance": {
+              "type": "ref", 
+              "refId": "Q1", 
+              "domain": "brix"
+            }
+          }
+        ], 
+        "description": "container for the sample multiple choice question", 
         "brixConfig": [
           {
             "config": {
-              "presenterType": "RadioGroup", 
+              "choices": [
+                {
+                  "answerKey": "answer1", 
+                  "content": "These cars require new specialized battery technology"
+                }, 
+                {
+                  "answerKey": "answer2", 
+                  "content": "These cars take advantage of the existing electricity grid infrastructure."
+                }, 
+                {
+                  "answerKey": "answer3", 
+                  "content": "These cars take advantage of the existing transportation infrastructure."
+                }, 
+                {
+                  "answerKey": "answer4", 
+                  "content": "These cars are more efficient and therefore more desirable."
+                }, 
+                {
+                  "answerKey": "answer5", 
+                  "content": "The Prius is so nice looking that getting dates becomes really easy."
+                }
+              ], 
+              "order": "randomized", 
               "question": "Applying the concept of path dependency, which of following best explains the success of <i>hybrid</i> cars?", 
               "presenterConfig": {
                 "numberFormat": ""
               }, 
-              "choices": [
-                {
-                  "content": "These cars require new specialized battery technology", 
-                  "answerKey": "answer1"
-                }, 
-                {
-                  "content": "These cars take advantage of the existing electricity grid infrastructure.", 
-                  "answerKey": "answer2"
-                }, 
-                {
-                  "content": "These cars take advantage of the existing transportation infrastructure.", 
-                  "answerKey": "answer3"
-                }, 
-                {
-                  "content": "These cars are more efficient and therefore more desirable.", 
-                  "answerKey": "answer4"
-                }, 
-                {
-                  "content": "The Prius is so nice looking that getting dates becomes really easy.", 
-                  "answerKey": "answer5"
-                }
-              ], 
-              "order": "randomized", 
-              "id": "sampleQ1"
+              "id": "sampleQ1", 
+              "presenterType": "RadioGroup"
             }, 
             "answerKey": {
               "assessmentType": "multiplechoice", 
               "answers": {
-                "answer5": {
-                  "score": 0, 
-                  "response": "Think about the concept of path dependency. Do these characteristics apply when talking about this concept?"
-                }, 
-                "answer4": {
-                  "score": 0, 
-                  "response": "Think about the concept of path dependency. Do these characteristics apply when talking about this concept?"
-                }, 
-                "answer1": {
-                  "score": 0, 
-                  "response": "If they required new technology, would they fit into a model of path dependency?"
-                }, 
                 "answer3": {
                   "score": 1, 
                   "response": "Correct."
@@ -57,6 +80,18 @@
                 "answer2": {
                   "score": 0, 
                   "response": "Think about how hybrid cars work. Do they need to be plugged in to the electric power grid?"
+                }, 
+                "answer1": {
+                  "score": 0, 
+                  "response": "If they required new technology, would they fit into a model of path dependency?"
+                }, 
+                "answer5": {
+                  "score": 0, 
+                  "response": "Think about the concept of path dependency. Do these characteristics apply when talking about this concept?"
+                }, 
+                "answer4": {
+                  "score": 0, 
+                  "response": "Think about the concept of path dependency. Do these characteristics apply when talking about this concept?"
                 }
               }
             }, 
@@ -65,76 +100,50 @@
             "configFixup": [
               {
                 "type": "set-property", 
-                "name": "questionId", 
                 "value": {
-                  "domain": "info", 
                   "type": "ref", 
-                  "refId": "sequenceNodeKey"
-                }
+                  "refId": "sequenceNodeKey", 
+                  "domain": "info"
+                }, 
+                "name": "questionId"
+              }, 
+              {
+                "type": "set-property", 
+                "value": {
+                  "type": "ref", 
+                  "refId": "maxAttempts", 
+                  "domain": "info"
+                }, 
+                "name": "maxAttempts"
               }
             ]
           }
         ], 
-        "description": "container for the sample multiple choice question", 
-        "hookupActions": [
-          {
-            "instance": {
-              "type": "submit-manager"
-            }, 
-            "args": [
-              {
-                "domain": "brix", 
-                "type": "ref", 
-                "refId": "Q1"
-              }
-            ], 
-            "type": "method-call", 
-            "description": "Hookup the submit manager to evaluate answers", 
-            "methodName": "handleRequestsFrom"
-          }, 
-          {
-            "instance": {
-              "domain": "brix", 
-              "type": "ref", 
-              "refId": "Q1"
-            }, 
-            "args": [
-              {
-                "type": "d3select", 
-                "selector": "#target1"
-              }
-            ], 
-            "type": "method-call", 
-            "description": "Draw the question", 
-            "methodName": "draw"
-          }
-        ], 
         "containerId": "target1"
       }
-    ], 
-    "description": "A Sample Activity containing a single multiple choice bric"
+    ]
   }, 
   "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope", 
   "@type": "Envelope", 
   "metadata": {
-    "intendedEndUserRole": [
-      "Student"
-    ], 
-    "description": "68830_EU_C05.html", 
-    "format": [
-      "application/vnd.pearson.sanvan.v1.activity"
-    ], 
-    "owner": "Brix", 
-    "guid": "1443f965-666f-42a2-92ae-1f0e62a86b63", 
-    "subject": [
-      "EnvironmentalScience"
-    ], 
-    "timeRequired": "PT20S", 
-    "created": "2013-12-13T11:08:17.671238", 
-    "title": "68830_EU_C05.html", 
     "contentTypeTier1": "Test and Assessment", 
     "contentTypeTier2": [
       "assessment item"
+    ], 
+    "description": "68830_EU_C05.html", 
+    "owner": "Brix", 
+    "created": "2013-12-17T18:04:41.886776", 
+    "timeRequired": "PT20S", 
+    "subject": [
+      "EnvironmentalScience"
+    ], 
+    "guid": "1443f965-666f-42a2-92ae-1f0e62a86b63", 
+    "intendedEndUserRole": [
+      "Student"
+    ], 
+    "title": "68830_EU_C05.html", 
+    "format": [
+      "application/vnd.pearson.sanvan.v1.activity"
     ]
   }
 }

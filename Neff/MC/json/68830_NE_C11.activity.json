@@ -1,55 +1,78 @@
 {
   "body": {
+    "description": "A Sample Activity containing a single multiple choice bric", 
     "containerConfig": [
       {
+        "hookupActions": [
+          {
+            "type": "method-call", 
+            "methodName": "handleRequestsFrom", 
+            "args": [
+              {
+                "type": "ref", 
+                "refId": "Q1", 
+                "domain": "brix"
+              }
+            ], 
+            "description": "Hookup the submit manager to evaluate answers", 
+            "instance": {
+              "type": "submit-manager"
+            }
+          }, 
+          {
+            "type": "method-call", 
+            "methodName": "draw", 
+            "args": [
+              {
+                "type": "d3select", 
+                "selector": "#target1"
+              }
+            ], 
+            "description": "Draw the question", 
+            "instance": {
+              "type": "ref", 
+              "refId": "Q1", 
+              "domain": "brix"
+            }
+          }
+        ], 
+        "description": "container for the sample multiple choice question", 
         "brixConfig": [
           {
             "config": {
-              "presenterType": "RadioGroup", 
+              "choices": [
+                {
+                  "answerKey": "answer1", 
+                  "content": "Turn off power to the reactor."
+                }, 
+                {
+                  "answerKey": "answer2", 
+                  "content": "Stop the flow of coolant and pull the neutron absorbing rods out of the reactor."
+                }, 
+                {
+                  "answerKey": "answer3", 
+                  "content": "Increase the flow of coolant and add more neutron absorbing rods into the reactor"
+                }, 
+                {
+                  "answerKey": "answer4", 
+                  "content": "Put on a suit and go into the reactor and pull out the neutron absorbers."
+                }, 
+                {
+                  "answerKey": "answer5", 
+                  "content": "Reduce the flow of coolant while increasing electricity output."
+                }
+              ], 
+              "order": "randomized", 
               "question": "During a catastrophic nuclear meltdown, certain changes occur in the reactor that can lead to the loss of containment of the materials in the reactor core. Which of the following might be a reasonable response to this worse case scenario?", 
               "presenterConfig": {
                 "numberFormat": ""
               }, 
-              "choices": [
-                {
-                  "content": "Turn off power to the reactor.", 
-                  "answerKey": "answer1"
-                }, 
-                {
-                  "content": "Stop the flow of coolant and pull the neutron absorbing rods out of the reactor.", 
-                  "answerKey": "answer2"
-                }, 
-                {
-                  "content": "Increase the flow of coolant and add more neutron absorbing rods into the reactor", 
-                  "answerKey": "answer3"
-                }, 
-                {
-                  "content": "Put on a suit and go into the reactor and pull out the neutron absorbers.", 
-                  "answerKey": "answer4"
-                }, 
-                {
-                  "content": "Reduce the flow of coolant while increasing electricity output.", 
-                  "answerKey": "answer5"
-                }
-              ], 
-              "order": "randomized", 
-              "id": "sampleQ1"
+              "id": "sampleQ1", 
+              "presenterType": "RadioGroup"
             }, 
             "answerKey": {
               "assessmentType": "multiplechoice", 
               "answers": {
-                "answer5": {
-                  "score": 0, 
-                  "response": "Does coolant typically speed up or slow down a nuclear reaction?"
-                }, 
-                "answer4": {
-                  "score": 0, 
-                  "response": "Do neutron absorbers typically speed up or slow down a nuclear reaction?"
-                }, 
-                "answer1": {
-                  "score": 0, 
-                  "response": "What is the only way a nuclear reaction actually stops?"
-                }, 
                 "answer3": {
                   "score": 1, 
                   "response": "Correct. These actions will slow down the reaction"
@@ -57,6 +80,18 @@
                 "answer2": {
                   "score": 0, 
                   "response": "Does coolant typically speed up or slow down a nuclear reaction?"
+                }, 
+                "answer1": {
+                  "score": 0, 
+                  "response": "What is the only way a nuclear reaction actually stops?"
+                }, 
+                "answer5": {
+                  "score": 0, 
+                  "response": "Does coolant typically speed up or slow down a nuclear reaction?"
+                }, 
+                "answer4": {
+                  "score": 0, 
+                  "response": "Do neutron absorbers typically speed up or slow down a nuclear reaction?"
                 }
               }
             }, 
@@ -65,76 +100,50 @@
             "configFixup": [
               {
                 "type": "set-property", 
-                "name": "questionId", 
                 "value": {
-                  "domain": "info", 
                   "type": "ref", 
-                  "refId": "sequenceNodeKey"
-                }
+                  "refId": "sequenceNodeKey", 
+                  "domain": "info"
+                }, 
+                "name": "questionId"
+              }, 
+              {
+                "type": "set-property", 
+                "value": {
+                  "type": "ref", 
+                  "refId": "maxAttempts", 
+                  "domain": "info"
+                }, 
+                "name": "maxAttempts"
               }
             ]
           }
         ], 
-        "description": "container for the sample multiple choice question", 
-        "hookupActions": [
-          {
-            "instance": {
-              "type": "submit-manager"
-            }, 
-            "args": [
-              {
-                "domain": "brix", 
-                "type": "ref", 
-                "refId": "Q1"
-              }
-            ], 
-            "type": "method-call", 
-            "description": "Hookup the submit manager to evaluate answers", 
-            "methodName": "handleRequestsFrom"
-          }, 
-          {
-            "instance": {
-              "domain": "brix", 
-              "type": "ref", 
-              "refId": "Q1"
-            }, 
-            "args": [
-              {
-                "type": "d3select", 
-                "selector": "#target1"
-              }
-            ], 
-            "type": "method-call", 
-            "description": "Draw the question", 
-            "methodName": "draw"
-          }
-        ], 
         "containerId": "target1"
       }
-    ], 
-    "description": "A Sample Activity containing a single multiple choice bric"
+    ]
   }, 
   "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope", 
   "@type": "Envelope", 
   "metadata": {
-    "intendedEndUserRole": [
-      "Student"
-    ], 
-    "description": "68830_NE_C11.html", 
-    "format": [
-      "application/vnd.pearson.sanvan.v1.activity"
-    ], 
-    "owner": "Brix", 
-    "guid": "1ef58eae-834e-4773-9597-e97af1c0a39a", 
-    "subject": [
-      "EnvironmentalScience"
-    ], 
-    "timeRequired": "PT20S", 
-    "created": "2013-12-13T11:08:17.673876", 
-    "title": "68830_NE_C11.html", 
     "contentTypeTier1": "Test and Assessment", 
     "contentTypeTier2": [
       "assessment item"
+    ], 
+    "description": "68830_NE_C11.html", 
+    "owner": "Brix", 
+    "created": "2013-12-17T18:04:41.887493", 
+    "timeRequired": "PT20S", 
+    "subject": [
+      "EnvironmentalScience"
+    ], 
+    "guid": "1ef58eae-834e-4773-9597-e97af1c0a39a", 
+    "intendedEndUserRole": [
+      "Student"
+    ], 
+    "title": "68830_NE_C11.html", 
+    "format": [
+      "application/vnd.pearson.sanvan.v1.activity"
     ]
   }
 }
