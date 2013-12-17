@@ -41,6 +41,16 @@ class PAFActivity(object):
     """
     A PAF activity
     """
+
+    # config fixup that needs to be added to multiple choice brix because the 0.9 template
+    # given to the production editors didn't have it defined.
+    maxAttemptsFixup = \
+        {
+            "type": "set-property",
+            "name": "maxAttempts",
+            "value": { "type": "ref", "domain": "info", "refId": "maxAttempts" }
+        }
+
     def __init__(self, info):
         """Initializes the PAFActivity"""
         self.uuid = info.pafActivityGuid or uuid.uuid4()
@@ -68,7 +78,7 @@ class PAFActivity(object):
                         "format" : [ "application/vnd.pearson.sanvan.v1.activity" ],
                         "timeRequired" : "PT20S",
                         "created" : datetime.datetime.now().isoformat(), #time.strftime("%Y-%m-%dT%H:%M:%S-04:00"),
-						"owner": "Brix"
+                        "owner": "Brix"
                     },
                 "body" : {}
             }
@@ -116,6 +126,9 @@ class PAFActivity(object):
             for key in ['sequenceNodeKey','maxAttempts','imgBaseUrl']:
                 if key in self.PAFjson['body']: del self.PAFjson['body'][key]
 
+            # add the missing mc config maxAttempts fixup
+            self.PAFjson['body']['containerConfig'][0]['brixConfig'][0]['configFixup'].append(PAFActivity.maxAttemptsFixup)
+
         except UnicodeError as e:
             problemlog.append("Problem w/ activity file: " + self.fileName + " UnicodeDecodeException: " + str(e) + "\n" + str(e.object[e.start -10:e.end + 10]))
             print(e, "\nreason: ", e.reason, "\nobject: ", e.object, "\nstart, end", e.start, e.end)
@@ -160,7 +173,7 @@ class PAFAssignment(object):
                         "subject" : [ self.subject ],
                         "intendedEndUserRole" : [ "Student" ],
                         "timeRequired" : "PT20S",
-						"owner": "Brix"
+                        "owner": "Brix"
                     },
                "body" :
                 {
