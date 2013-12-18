@@ -1,6 +1,6 @@
 #! /bin/bash
 
-PAFIMPORTER='java -jar brix-tool-pafclient-0.2-jar-with-dependencies.jar'
+PAFIMPORTER='java -jar brix-tool-pafclient-0.3-jar-with-dependencies.jar'
 METHOD=POST
 CERT_URL='http://repo.paf.cert.pearsoncmg.com/paf-repo/resources/activities'
 PROD_URL='http://repo.paf.pearsoncmg.com/paf-repo/resources/activities'
@@ -27,6 +27,12 @@ for jsonfile
 do
     echo importing $jsonfile to PAF...
     $PAFIMPORTER -c -m $METHOD -u $URL -h "$HEADER" -d "$jsonfile"
-    echo ...done importing $jsonfile to PAF
+    status=$?
+    if [ $status -ne 0 ]
+    then
+        echo "...importing $jsonfile to PAF returned error status $1"
+    else
+        echo ...importing $jsonfile to PAF was successful
+    fi
 	date
 done
