@@ -1,79 +1,40 @@
 {
   "body": {
-    "description": "A Sample Activity containing a single multiple choice bric", 
     "containerConfig": [
       {
-        "hookupActions": [
-          {
-            "type": "method-call", 
-            "methodName": "handleRequestsFrom", 
-            "args": [
-              {
-                "type": "ref", 
-                "refId": "Q1", 
-                "domain": "brix"
-              }
-            ], 
-            "description": "Hookup the submit manager to evaluate answers", 
-            "instance": {
-              "type": "submit-manager"
-            }
-          }, 
-          {
-            "type": "method-call", 
-            "methodName": "draw", 
-            "args": [
-              {
-                "type": "d3select", 
-                "selector": "#target1"
-              }
-            ], 
-            "description": "Draw the question", 
-            "instance": {
-              "type": "ref", 
-              "refId": "Q1", 
-              "domain": "brix"
-            }
-          }
-        ], 
-        "description": "container for the sample multiple choice question", 
         "brixConfig": [
           {
             "config": {
-              "choices": [
-                {
-                  "answerKey": "answer1", 
-                  "content": "Because the growth rate increases as the population rises"
-                }, 
-                {
-                  "answerKey": "answer2", 
-                  "content": "Because the total fertility rate increases with population"
-                }, 
-                {
-                  "answerKey": "answer3", 
-                  "content": "Because as the population increases, the total number of births increases even though the growth rate stays constant"
-                }, 
-                {
-                  "answerKey": "answer4", 
-                  "content": "Because social behaviors change and people decide to have more children"
-                }
-              ], 
-              "order": "randomized", 
+              "presenterType": "RadioGroup", 
               "question": "Why does it take less and less time to add each additional billion people to the planet?", 
               "presenterConfig": {
                 "numberFormat": ""
               }, 
-              "id": "sampleQ1", 
-              "presenterType": "RadioGroup"
+              "choices": [
+                {
+                  "content": "Because the growth rate increases as the population rises", 
+                  "answerKey": "answer1"
+                }, 
+                {
+                  "content": "Because the total fertility rate increases with population", 
+                  "answerKey": "answer2"
+                }, 
+                {
+                  "content": "Because as the population increases, the total number of births increases even though the growth rate stays constant", 
+                  "answerKey": "answer3"
+                }, 
+                {
+                  "content": "Because social behaviors change and people decide to have more children", 
+                  "answerKey": "answer4"
+                }
+              ], 
+              "order": "randomized", 
+              "id": "sampleQ1"
             }, 
             "answerKey": {
               "assessmentType": "multiplechoice", 
               "answers": {
-                "answer3": {
-                  "score": 1, 
-                  "response": ""
-                }, 
-                "answer2": {
+                "answer4": {
                   "score": 0, 
                   "response": ""
                 }, 
@@ -81,7 +42,11 @@
                   "score": 0, 
                   "response": ""
                 }, 
-                "answer4": {
+                "answer3": {
+                  "score": 1, 
+                  "response": ""
+                }, 
+                "answer2": {
                   "score": 0, 
                   "response": ""
                 }
@@ -92,50 +57,85 @@
             "configFixup": [
               {
                 "type": "set-property", 
+                "name": "questionId", 
                 "value": {
+                  "domain": "info", 
                   "type": "ref", 
-                  "refId": "sequenceNodeKey", 
-                  "domain": "info"
-                }, 
-                "name": "questionId"
+                  "refId": "sequenceNodeKey"
+                }
               }, 
               {
                 "type": "set-property", 
+                "name": "maxAttempts", 
                 "value": {
+                  "domain": "info", 
                   "type": "ref", 
-                  "refId": "maxAttempts", 
-                  "domain": "info"
-                }, 
-                "name": "maxAttempts"
+                  "refId": "maxAttempts"
+                }
               }
             ]
           }
         ], 
+        "description": "container for the sample multiple choice question", 
+        "hookupActions": [
+          {
+            "instance": {
+              "type": "submit-manager"
+            }, 
+            "args": [
+              {
+                "domain": "brix", 
+                "type": "ref", 
+                "refId": "Q1"
+              }
+            ], 
+            "type": "method-call", 
+            "description": "Hookup the submit manager to evaluate answers", 
+            "methodName": "handleRequestsFrom"
+          }, 
+          {
+            "instance": {
+              "domain": "brix", 
+              "type": "ref", 
+              "refId": "Q1"
+            }, 
+            "args": [
+              {
+                "type": "d3select", 
+                "selector": "#target1"
+              }
+            ], 
+            "type": "method-call", 
+            "description": "Draw the question", 
+            "methodName": "draw"
+          }
+        ], 
         "containerId": "target1"
       }
-    ]
+    ], 
+    "description": "A Sample Activity containing a single multiple choice bric"
   }, 
   "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope", 
   "@type": "Envelope", 
   "metadata": {
-    "contentTypeTier1": "Test and Assessment", 
-    "contentTypeTier2": [
-      "assessment item"
-    ], 
-    "description": "68830_HP_M01_01.html", 
-    "owner": "Brix", 
-    "created": "2013-12-17T18:04:41.884923", 
-    "timeRequired": "PT20S", 
-    "subject": [
-      "EnvironmentalScience"
-    ], 
-    "guid": "db668e8c-bd81-412c-84b1-06416a29724b", 
     "intendedEndUserRole": [
       "Student"
     ], 
-    "title": "68830_HP_M01_01.html", 
+    "description": "68830_HP_M01_01.html", 
     "format": [
       "application/vnd.pearson.sanvan.v1.activity"
+    ], 
+    "owner": "Brix", 
+    "guid": "63455f05-1229-4f33-a833-ca27852317cf", 
+    "subject": [
+      "EnvironmentalScience"
+    ], 
+    "timeRequired": "PT20S", 
+    "created": "2013-12-18T14:00:05.285047", 
+    "title": "68830_HP_M01_01.html", 
+    "contentTypeTier1": "Test and Assessment", 
+    "contentTypeTier2": [
+      "assessment item"
     ]
   }
 }

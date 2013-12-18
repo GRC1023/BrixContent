@@ -1,74 +1,47 @@
 {
   "body": {
-    "description": "A Sample Activity containing a single multiple choice bric", 
     "containerConfig": [
       {
-        "hookupActions": [
-          {
-            "type": "method-call", 
-            "methodName": "handleRequestsFrom", 
-            "args": [
-              {
-                "type": "ref", 
-                "refId": "Q1", 
-                "domain": "brix"
-              }
-            ], 
-            "description": "Hookup the submit manager to evaluate answers", 
-            "instance": {
-              "type": "submit-manager"
-            }
-          }, 
-          {
-            "type": "method-call", 
-            "methodName": "draw", 
-            "args": [
-              {
-                "type": "d3select", 
-                "selector": "#target1"
-              }
-            ], 
-            "description": "Draw the question", 
-            "instance": {
-              "type": "ref", 
-              "refId": "Q1", 
-              "domain": "brix"
-            }
-          }
-        ], 
-        "description": "container for the sample multiple choice question", 
         "brixConfig": [
           {
             "config": {
-              "choices": [
-                {
-                  "answerKey": "answer1", 
-                  "content": "Your friend is completely right\u2014these large-scale renewable technologies do not provide any environmental benefits, so you don\u2019t argue back.."
-                }, 
-                {
-                  "answerKey": "answer2", 
-                  "content": "Energy generated from these renewable sources will be significantly cheaper than energy currently generated from fossil fuels, and the left over profits that energy companies make will be invested directly in conservation funds; in the end, this will help more organisms than the use of renewable energy hurts."
-                }, 
-                {
-                  "answerKey": "answer3", 
-                  "content": "The integration of renewable energy on a large scale could drastically reduce CO2 and other pollutants in the air, which are currently damaging the environment for humans, plants, and animals alike at an alarming rate by causing climate change and widespread contamination."
-                }, 
-                {
-                  "answerKey": "answer4", 
-                  "content": "The arguments that your friend made are all rumors, and it is important to embrace renewable energy without investigation into potential negative impacts that may come along with the positive impacts."
-                }
-              ], 
-              "order": "randomized", 
+              "presenterType": "RadioGroup", 
               "question": "One day you are chatting with a friend about the environmental benefits of integrating large-scale renewable energy into the current power generation system.  Your friend is skeptical; he argues that wind farms kill birds, solar facilities interrupt animal migrations and habitats, and hydropower ruins river habitats\u2014how could all of that possibly be environmentally friendly?  Which of the following arguments could you respond with that demonstrates some of the positive benefits you were thinking of and that might balance the points that your friend mentioned.", 
               "presenterConfig": {
                 "numberFormat": ""
               }, 
-              "id": "sampleQ1", 
-              "presenterType": "RadioGroup"
+              "choices": [
+                {
+                  "content": "Your friend is completely right\u2014these large-scale renewable technologies do not provide any environmental benefits, so you don\u2019t argue back..", 
+                  "answerKey": "answer1"
+                }, 
+                {
+                  "content": "Energy generated from these renewable sources will be significantly cheaper than energy currently generated from fossil fuels, and the left over profits that energy companies make will be invested directly in conservation funds; in the end, this will help more organisms than the use of renewable energy hurts.", 
+                  "answerKey": "answer2"
+                }, 
+                {
+                  "content": "The integration of renewable energy on a large scale could drastically reduce CO2 and other pollutants in the air, which are currently damaging the environment for humans, plants, and animals alike at an alarming rate by causing climate change and widespread contamination.", 
+                  "answerKey": "answer3"
+                }, 
+                {
+                  "content": "The arguments that your friend made are all rumors, and it is important to embrace renewable energy without investigation into potential negative impacts that may come along with the positive impacts.", 
+                  "answerKey": "answer4"
+                }
+              ], 
+              "order": "randomized", 
+              "id": "sampleQ1"
             }, 
             "answerKey": {
               "assessmentType": "multiplechoice", 
               "answers": {
+                "answer4": {
+                  "score": 0, 
+                  "response": "Would it be smart for renewable companies to ignore potential environmental consequences of the technologies (such as habitat destruction) when trying to convince countries to use these technologies on a large scale?"
+                }, 
+                "answer1": {
+                  "score": 0, 
+                  "response": "Think about some of the major issues with the use of fossil fuels and how renewable technologies can help to reduce these issues.  What kind of argument could you form based on this?"
+                }, 
                 "answer3": {
                   "score": 1, 
                   "response": "Correct."
@@ -76,14 +49,6 @@
                 "answer2": {
                   "score": 0, 
                   "response": "Even if renewable energy does become cheaper than fossil fuels at some point, is it likely that energy companies would run their businesses like this (by collecting more money than the energy costs in order to subsidized conservation)?"
-                }, 
-                "answer1": {
-                  "score": 0, 
-                  "response": "Think about some of the major issues with the use of fossil fuels and how renewable technologies can help to reduce these issues.  What kind of argument could you form based on this?"
-                }, 
-                "answer4": {
-                  "score": 0, 
-                  "response": "Would it be smart for renewable companies to ignore potential environmental consequences of the technologies (such as habitat destruction) when trying to convince countries to use these technologies on a large scale?"
                 }
               }
             }, 
@@ -92,50 +57,85 @@
             "configFixup": [
               {
                 "type": "set-property", 
+                "name": "questionId", 
                 "value": {
+                  "domain": "info", 
                   "type": "ref", 
-                  "refId": "sequenceNodeKey", 
-                  "domain": "info"
-                }, 
-                "name": "questionId"
+                  "refId": "sequenceNodeKey"
+                }
               }, 
               {
                 "type": "set-property", 
+                "name": "maxAttempts", 
                 "value": {
+                  "domain": "info", 
                   "type": "ref", 
-                  "refId": "maxAttempts", 
-                  "domain": "info"
-                }, 
-                "name": "maxAttempts"
+                  "refId": "maxAttempts"
+                }
               }
             ]
           }
         ], 
+        "description": "container for the sample multiple choice question", 
+        "hookupActions": [
+          {
+            "instance": {
+              "type": "submit-manager"
+            }, 
+            "args": [
+              {
+                "domain": "brix", 
+                "type": "ref", 
+                "refId": "Q1"
+              }
+            ], 
+            "type": "method-call", 
+            "description": "Hookup the submit manager to evaluate answers", 
+            "methodName": "handleRequestsFrom"
+          }, 
+          {
+            "instance": {
+              "domain": "brix", 
+              "type": "ref", 
+              "refId": "Q1"
+            }, 
+            "args": [
+              {
+                "type": "d3select", 
+                "selector": "#target1"
+              }
+            ], 
+            "type": "method-call", 
+            "description": "Draw the question", 
+            "methodName": "draw"
+          }
+        ], 
         "containerId": "target1"
       }
-    ]
+    ], 
+    "description": "A Sample Activity containing a single multiple choice bric"
   }, 
   "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope", 
   "@type": "Envelope", 
   "metadata": {
-    "contentTypeTier1": "Test and Assessment", 
-    "contentTypeTier2": [
-      "assessment item"
-    ], 
-    "description": "68830_RE_C02.html", 
-    "owner": "Brix", 
-    "created": "2013-12-17T18:04:41.888297", 
-    "timeRequired": "PT20S", 
-    "subject": [
-      "EnvironmentalScience"
-    ], 
-    "guid": "af1911f8-b2fb-45b5-9a74-d5a6bc132d63", 
     "intendedEndUserRole": [
       "Student"
     ], 
-    "title": "68830_RE_C02.html", 
+    "description": "68830_RE_C02.html", 
     "format": [
       "application/vnd.pearson.sanvan.v1.activity"
+    ], 
+    "owner": "Brix", 
+    "guid": "9d7460f0-ba41-47ce-8195-54d580ac4336", 
+    "subject": [
+      "EnvironmentalScience"
+    ], 
+    "timeRequired": "PT20S", 
+    "created": "2013-12-18T14:00:05.290367", 
+    "title": "68830_RE_C02.html", 
+    "contentTypeTier1": "Test and Assessment", 
+    "contentTypeTier2": [
+      "assessment item"
     ]
   }
 }

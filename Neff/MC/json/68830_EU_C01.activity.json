@@ -1,74 +1,47 @@
 {
   "body": {
-    "description": "A Sample Activity containing a single multiple choice bric", 
     "containerConfig": [
       {
-        "hookupActions": [
-          {
-            "type": "method-call", 
-            "methodName": "handleRequestsFrom", 
-            "args": [
-              {
-                "type": "ref", 
-                "refId": "Q1", 
-                "domain": "brix"
-              }
-            ], 
-            "description": "Hookup the submit manager to evaluate answers", 
-            "instance": {
-              "type": "submit-manager"
-            }
-          }, 
-          {
-            "type": "method-call", 
-            "methodName": "draw", 
-            "args": [
-              {
-                "type": "d3select", 
-                "selector": "#target1"
-              }
-            ], 
-            "description": "Draw the question", 
-            "instance": {
-              "type": "ref", 
-              "refId": "Q1", 
-              "domain": "brix"
-            }
-          }
-        ], 
-        "description": "container for the sample multiple choice question", 
         "brixConfig": [
           {
             "config": {
-              "choices": [
-                {
-                  "answerKey": "answer1", 
-                  "content": "16 days"
-                }, 
-                {
-                  "answerKey": "answer2", 
-                  "content": "167 days"
-                }, 
-                {
-                  "answerKey": "answer3", 
-                  "content": "600 days"
-                }, 
-                {
-                  "answerKey": "answer4", 
-                  "content": "5,400 days"
-                }
-              ], 
-              "order": "randomized", 
+              "presenterType": "RadioGroup", 
               "question": "If the bedrock under the Arctic National Wildlife Refuge contains an estimated 3 billion barrels of oil and the United States consumes about EU million barrels of oil per day, how many days of U.S. consumption could these oil deposits support?", 
               "presenterConfig": {
                 "numberFormat": ""
               }, 
-              "id": "sampleQ1", 
-              "presenterType": "RadioGroup"
+              "choices": [
+                {
+                  "content": "16 days", 
+                  "answerKey": "answer1"
+                }, 
+                {
+                  "content": "167 days", 
+                  "answerKey": "answer2"
+                }, 
+                {
+                  "content": "600 days", 
+                  "answerKey": "answer3"
+                }, 
+                {
+                  "content": "5,400 days", 
+                  "answerKey": "answer4"
+                }
+              ], 
+              "order": "randomized", 
+              "id": "sampleQ1"
             }, 
             "answerKey": {
               "assessmentType": "multiplechoice", 
               "answers": {
+                "answer4": {
+                  "score": 0, 
+                  "response": "When you multiply EU million barrels by 5,400 days, is your result greater or less than 3 billion?"
+                }, 
+                "answer1": {
+                  "score": 0, 
+                  "response": "When you multiply EU million barrels by 16 days, is your result greater or less than 3 billion?"
+                }, 
                 "answer3": {
                   "score": 0, 
                   "response": "When you multiply EU million barrels by 600 days, is your result greater or less than 3 billion?"
@@ -76,14 +49,6 @@
                 "answer2": {
                   "score": 1, 
                   "response": "Correct."
-                }, 
-                "answer1": {
-                  "score": 0, 
-                  "response": "When you multiply EU million barrels by 16 days, is your result greater or less than 3 billion?"
-                }, 
-                "answer4": {
-                  "score": 0, 
-                  "response": "When you multiply EU million barrels by 5,400 days, is your result greater or less than 3 billion?"
                 }
               }
             }, 
@@ -92,50 +57,85 @@
             "configFixup": [
               {
                 "type": "set-property", 
+                "name": "questionId", 
                 "value": {
+                  "domain": "info", 
                   "type": "ref", 
-                  "refId": "sequenceNodeKey", 
-                  "domain": "info"
-                }, 
-                "name": "questionId"
+                  "refId": "sequenceNodeKey"
+                }
               }, 
               {
                 "type": "set-property", 
+                "name": "maxAttempts", 
                 "value": {
+                  "domain": "info", 
                   "type": "ref", 
-                  "refId": "maxAttempts", 
-                  "domain": "info"
-                }, 
-                "name": "maxAttempts"
+                  "refId": "maxAttempts"
+                }
               }
             ]
           }
         ], 
+        "description": "container for the sample multiple choice question", 
+        "hookupActions": [
+          {
+            "instance": {
+              "type": "submit-manager"
+            }, 
+            "args": [
+              {
+                "domain": "brix", 
+                "type": "ref", 
+                "refId": "Q1"
+              }
+            ], 
+            "type": "method-call", 
+            "description": "Hookup the submit manager to evaluate answers", 
+            "methodName": "handleRequestsFrom"
+          }, 
+          {
+            "instance": {
+              "domain": "brix", 
+              "type": "ref", 
+              "refId": "Q1"
+            }, 
+            "args": [
+              {
+                "type": "d3select", 
+                "selector": "#target1"
+              }
+            ], 
+            "type": "method-call", 
+            "description": "Draw the question", 
+            "methodName": "draw"
+          }
+        ], 
         "containerId": "target1"
       }
-    ]
+    ], 
+    "description": "A Sample Activity containing a single multiple choice bric"
   }, 
   "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope", 
   "@type": "Envelope", 
   "metadata": {
-    "contentTypeTier1": "Test and Assessment", 
-    "contentTypeTier2": [
-      "assessment item"
-    ], 
-    "description": "68830_EU_C01.html", 
-    "owner": "Brix", 
-    "created": "2013-12-17T18:04:41.886712", 
-    "timeRequired": "PT20S", 
-    "subject": [
-      "EnvironmentalScience"
-    ], 
-    "guid": "f557f7cf-fa86-4571-9a30-a42c2bcca717", 
     "intendedEndUserRole": [
       "Student"
     ], 
-    "title": "68830_EU_C01.html", 
+    "description": "68830_EU_C01.html", 
     "format": [
       "application/vnd.pearson.sanvan.v1.activity"
+    ], 
+    "owner": "Brix", 
+    "guid": "fb44c0b9-3013-41ca-8b3f-bcda70b77b2a", 
+    "subject": [
+      "EnvironmentalScience"
+    ], 
+    "timeRequired": "PT20S", 
+    "created": "2013-12-18T14:00:05.287596", 
+    "title": "68830_EU_C01.html", 
+    "contentTypeTier1": "Test and Assessment", 
+    "contentTypeTier2": [
+      "assessment item"
     ]
   }
 }

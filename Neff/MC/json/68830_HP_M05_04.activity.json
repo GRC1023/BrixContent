@@ -1,79 +1,40 @@
 {
   "body": {
-    "description": "A Sample Activity containing a single multiple choice bric", 
     "containerConfig": [
       {
-        "hookupActions": [
-          {
-            "type": "method-call", 
-            "methodName": "handleRequestsFrom", 
-            "args": [
-              {
-                "type": "ref", 
-                "refId": "Q1", 
-                "domain": "brix"
-              }
-            ], 
-            "description": "Hookup the submit manager to evaluate answers", 
-            "instance": {
-              "type": "submit-manager"
-            }
-          }, 
-          {
-            "type": "method-call", 
-            "methodName": "draw", 
-            "args": [
-              {
-                "type": "d3select", 
-                "selector": "#target1"
-              }
-            ], 
-            "description": "Draw the question", 
-            "instance": {
-              "type": "ref", 
-              "refId": "Q1", 
-              "domain": "brix"
-            }
-          }
-        ], 
-        "description": "container for the sample multiple choice question", 
         "brixConfig": [
           {
             "config": {
-              "choices": [
-                {
-                  "answerKey": "answer1", 
-                  "content": "When money is invested in technologies that reduce pollution, affluence can help reduce environmental impacts."
-                }, 
-                {
-                  "answerKey": "answer2", 
-                  "content": "Affluence always leads to larger environmental impacts."
-                }, 
-                {
-                  "answerKey": "answer3", 
-                  "content": "This has little to do with affluence and is simply because wealthy countries use fewer resources."
-                }, 
-                {
-                  "answerKey": "answer4", 
-                  "content": "Affluence always leads to reduced environmental impacts."
-                }
-              ], 
-              "order": "randomized", 
+              "presenterType": "RadioGroup", 
               "question": "Wealthy countries often have less air pollution than poorer countries.  Which of the following statements best captures the role of affluence in environmental impacts?", 
               "presenterConfig": {
                 "numberFormat": ""
               }, 
-              "id": "sampleQ1", 
-              "presenterType": "RadioGroup"
+              "choices": [
+                {
+                  "content": "When money is invested in technologies that reduce pollution, affluence can help reduce environmental impacts.", 
+                  "answerKey": "answer1"
+                }, 
+                {
+                  "content": "Affluence always leads to larger environmental impacts.", 
+                  "answerKey": "answer2"
+                }, 
+                {
+                  "content": "This has little to do with affluence and is simply because wealthy countries use fewer resources.", 
+                  "answerKey": "answer3"
+                }, 
+                {
+                  "content": "Affluence always leads to reduced environmental impacts.", 
+                  "answerKey": "answer4"
+                }
+              ], 
+              "order": "randomized", 
+              "id": "sampleQ1"
             }, 
             "answerKey": {
               "assessmentType": "multiplechoice", 
               "answers": {
-                "answer3": {
-                  "score": 0, 
-                  "response": ""
-                }, 
-                "answer2": {
+                "answer4": {
                   "score": 0, 
                   "response": ""
                 }, 
@@ -81,7 +42,11 @@
                   "score": 1, 
                   "response": ""
                 }, 
-                "answer4": {
+                "answer3": {
+                  "score": 0, 
+                  "response": ""
+                }, 
+                "answer2": {
                   "score": 0, 
                   "response": ""
                 }
@@ -92,50 +57,85 @@
             "configFixup": [
               {
                 "type": "set-property", 
+                "name": "questionId", 
                 "value": {
+                  "domain": "info", 
                   "type": "ref", 
-                  "refId": "sequenceNodeKey", 
-                  "domain": "info"
-                }, 
-                "name": "questionId"
+                  "refId": "sequenceNodeKey"
+                }
               }, 
               {
                 "type": "set-property", 
+                "name": "maxAttempts", 
                 "value": {
+                  "domain": "info", 
                   "type": "ref", 
-                  "refId": "maxAttempts", 
-                  "domain": "info"
-                }, 
-                "name": "maxAttempts"
+                  "refId": "maxAttempts"
+                }
               }
             ]
           }
         ], 
+        "description": "container for the sample multiple choice question", 
+        "hookupActions": [
+          {
+            "instance": {
+              "type": "submit-manager"
+            }, 
+            "args": [
+              {
+                "domain": "brix", 
+                "type": "ref", 
+                "refId": "Q1"
+              }
+            ], 
+            "type": "method-call", 
+            "description": "Hookup the submit manager to evaluate answers", 
+            "methodName": "handleRequestsFrom"
+          }, 
+          {
+            "instance": {
+              "domain": "brix", 
+              "type": "ref", 
+              "refId": "Q1"
+            }, 
+            "args": [
+              {
+                "type": "d3select", 
+                "selector": "#target1"
+              }
+            ], 
+            "type": "method-call", 
+            "description": "Draw the question", 
+            "methodName": "draw"
+          }
+        ], 
         "containerId": "target1"
       }
-    ]
+    ], 
+    "description": "A Sample Activity containing a single multiple choice bric"
   }, 
   "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope", 
   "@type": "Envelope", 
   "metadata": {
-    "contentTypeTier1": "Test and Assessment", 
-    "contentTypeTier2": [
-      "assessment item"
-    ], 
-    "description": "68830_HP_M05_04.html", 
-    "owner": "Brix", 
-    "created": "2013-12-17T18:04:41.885253", 
-    "timeRequired": "PT20S", 
-    "subject": [
-      "EnvironmentalScience"
-    ], 
-    "guid": "8809ae82-74ce-4516-bfe3-39ed6729220b", 
     "intendedEndUserRole": [
       "Student"
     ], 
-    "title": "68830_HP_M05_04.html", 
+    "description": "68830_HP_M05_04.html", 
     "format": [
       "application/vnd.pearson.sanvan.v1.activity"
+    ], 
+    "owner": "Brix", 
+    "guid": "a6afc7d6-a336-4dec-937f-e0f91fd60616", 
+    "subject": [
+      "EnvironmentalScience"
+    ], 
+    "timeRequired": "PT20S", 
+    "created": "2013-12-18T14:00:05.285532", 
+    "title": "68830_HP_M05_04.html", 
+    "contentTypeTier1": "Test and Assessment", 
+    "contentTypeTier2": [
+      "assessment item"
     ]
   }
 }

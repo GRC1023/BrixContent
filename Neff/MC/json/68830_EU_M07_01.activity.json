@@ -1,79 +1,40 @@
 {
   "body": {
-    "description": "A Sample Activity containing a single multiple choice bric", 
     "containerConfig": [
       {
-        "hookupActions": [
-          {
-            "type": "method-call", 
-            "methodName": "handleRequestsFrom", 
-            "args": [
-              {
-                "type": "ref", 
-                "refId": "Q1", 
-                "domain": "brix"
-              }
-            ], 
-            "description": "Hookup the submit manager to evaluate answers", 
-            "instance": {
-              "type": "submit-manager"
-            }
-          }, 
-          {
-            "type": "method-call", 
-            "methodName": "draw", 
-            "args": [
-              {
-                "type": "d3select", 
-                "selector": "#target1"
-              }
-            ], 
-            "description": "Draw the question", 
-            "instance": {
-              "type": "ref", 
-              "refId": "Q1", 
-              "domain": "brix"
-            }
-          }
-        ], 
-        "description": "container for the sample multiple choice question", 
         "brixConfig": [
           {
             "config": {
-              "choices": [
-                {
-                  "answerKey": "answer1", 
-                  "content": "Energy conservation is the goal of \"The Left.\" Energy efficiency is the goal of \"The Right.\""
-                }, 
-                {
-                  "answerKey": "answer2", 
-                  "content": "Energy conservation is regulated by the United Nations. Energy efficiency is regulated by national governments."
-                }, 
-                {
-                  "answerKey": "answer3", 
-                  "content": "Energy conservation is the practice of using an energy-consuming device less often. Energy efficiency is replacing an energy-consuming device with one that uses less energy to perform the same service."
-                }, 
-                {
-                  "answerKey": "answer4", 
-                  "content": "Energy conservation is the act of saving fuel for the future. Energy efficiency is the act of using less energy to do the same amount of work."
-                }
-              ], 
-              "order": "randomized", 
+              "presenterType": "RadioGroup", 
               "question": "What is the basic difference between energy conservation and energy efficiency?", 
               "presenterConfig": {
                 "numberFormat": ""
               }, 
-              "id": "sampleQ1", 
-              "presenterType": "RadioGroup"
+              "choices": [
+                {
+                  "content": "Energy conservation is the goal of \"The Left.\" Energy efficiency is the goal of \"The Right.\"", 
+                  "answerKey": "answer1"
+                }, 
+                {
+                  "content": "Energy conservation is regulated by the United Nations. Energy efficiency is regulated by national governments.", 
+                  "answerKey": "answer2"
+                }, 
+                {
+                  "content": "Energy conservation is the practice of using an energy-consuming device less often. Energy efficiency is replacing an energy-consuming device with one that uses less energy to perform the same service.", 
+                  "answerKey": "answer3"
+                }, 
+                {
+                  "content": "Energy conservation is the act of saving fuel for the future. Energy efficiency is the act of using less energy to do the same amount of work.", 
+                  "answerKey": "answer4"
+                }
+              ], 
+              "order": "randomized", 
+              "id": "sampleQ1"
             }, 
             "answerKey": {
               "assessmentType": "multiplechoice", 
               "answers": {
-                "answer3": {
-                  "score": 1, 
-                  "response": ""
-                }, 
-                "answer2": {
+                "answer4": {
                   "score": 0, 
                   "response": ""
                 }, 
@@ -81,7 +42,11 @@
                   "score": 0, 
                   "response": ""
                 }, 
-                "answer4": {
+                "answer3": {
+                  "score": 1, 
+                  "response": ""
+                }, 
+                "answer2": {
                   "score": 0, 
                   "response": ""
                 }
@@ -92,50 +57,85 @@
             "configFixup": [
               {
                 "type": "set-property", 
+                "name": "questionId", 
                 "value": {
+                  "domain": "info", 
                   "type": "ref", 
-                  "refId": "sequenceNodeKey", 
-                  "domain": "info"
-                }, 
-                "name": "questionId"
+                  "refId": "sequenceNodeKey"
+                }
               }, 
               {
                 "type": "set-property", 
+                "name": "maxAttempts", 
                 "value": {
+                  "domain": "info", 
                   "type": "ref", 
-                  "refId": "maxAttempts", 
-                  "domain": "info"
-                }, 
-                "name": "maxAttempts"
+                  "refId": "maxAttempts"
+                }
               }
             ]
           }
         ], 
+        "description": "container for the sample multiple choice question", 
+        "hookupActions": [
+          {
+            "instance": {
+              "type": "submit-manager"
+            }, 
+            "args": [
+              {
+                "domain": "brix", 
+                "type": "ref", 
+                "refId": "Q1"
+              }
+            ], 
+            "type": "method-call", 
+            "description": "Hookup the submit manager to evaluate answers", 
+            "methodName": "handleRequestsFrom"
+          }, 
+          {
+            "instance": {
+              "domain": "brix", 
+              "type": "ref", 
+              "refId": "Q1"
+            }, 
+            "args": [
+              {
+                "type": "d3select", 
+                "selector": "#target1"
+              }
+            ], 
+            "type": "method-call", 
+            "description": "Draw the question", 
+            "methodName": "draw"
+          }
+        ], 
         "containerId": "target1"
       }
-    ]
+    ], 
+    "description": "A Sample Activity containing a single multiple choice bric"
   }, 
   "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope", 
   "@type": "Envelope", 
   "metadata": {
-    "contentTypeTier1": "Test and Assessment", 
-    "contentTypeTier2": [
-      "assessment item"
-    ], 
-    "description": "68830_EU_M07_01.html", 
-    "owner": "Brix", 
-    "created": "2013-12-17T18:04:41.886452", 
-    "timeRequired": "PT20S", 
-    "subject": [
-      "EnvironmentalScience"
-    ], 
-    "guid": "cc51f2d1-eb63-4e95-bb8a-0b8b55e574ea", 
     "intendedEndUserRole": [
       "Student"
     ], 
-    "title": "68830_EU_M07_01.html", 
+    "description": "68830_EU_M07_01.html", 
     "format": [
       "application/vnd.pearson.sanvan.v1.activity"
+    ], 
+    "owner": "Brix", 
+    "guid": "da3ce037-98ef-4923-bf26-714bf6d2b93f", 
+    "subject": [
+      "EnvironmentalScience"
+    ], 
+    "timeRequired": "PT20S", 
+    "created": "2013-12-18T14:00:05.287250", 
+    "title": "68830_EU_M07_01.html", 
+    "contentTypeTier1": "Test and Assessment", 
+    "contentTypeTier2": [
+      "assessment item"
     ]
   }
 }

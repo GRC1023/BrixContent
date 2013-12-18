@@ -1,74 +1,47 @@
 {
   "body": {
-    "description": "A Sample Activity containing a single multiple choice bric", 
     "containerConfig": [
       {
-        "hookupActions": [
-          {
-            "type": "method-call", 
-            "methodName": "handleRequestsFrom", 
-            "args": [
-              {
-                "type": "ref", 
-                "refId": "Q1", 
-                "domain": "brix"
-              }
-            ], 
-            "description": "Hookup the submit manager to evaluate answers", 
-            "instance": {
-              "type": "submit-manager"
-            }
-          }, 
-          {
-            "type": "method-call", 
-            "methodName": "draw", 
-            "args": [
-              {
-                "type": "d3select", 
-                "selector": "#target1"
-              }
-            ], 
-            "description": "Draw the question", 
-            "instance": {
-              "type": "ref", 
-              "refId": "Q1", 
-              "domain": "brix"
-            }
-          }
-        ], 
-        "description": "container for the sample multiple choice question", 
         "brixConfig": [
           {
             "config": {
-              "choices": [
-                {
-                  "answerKey": "answer1", 
-                  "content": "Natural gas"
-                }, 
-                {
-                  "answerKey": "answer2", 
-                  "content": "Oil"
-                }, 
-                {
-                  "answerKey": "answer3", 
-                  "content": "Coal"
-                }, 
-                {
-                  "answerKey": "answer4", 
-                  "content": "Petroleum"
-                }
-              ], 
-              "order": "randomized", 
+              "presenterType": "RadioGroup", 
               "question": "Which fossil energy source is the most plentiful on Earth?", 
               "presenterConfig": {
                 "numberFormat": ""
               }, 
-              "id": "sampleQ1", 
-              "presenterType": "RadioGroup"
+              "choices": [
+                {
+                  "content": "Natural gas", 
+                  "answerKey": "answer1"
+                }, 
+                {
+                  "content": "Oil", 
+                  "answerKey": "answer2"
+                }, 
+                {
+                  "content": "Coal", 
+                  "answerKey": "answer3"
+                }, 
+                {
+                  "content": "Petroleum", 
+                  "answerKey": "answer4"
+                }
+              ], 
+              "order": "randomized", 
+              "id": "sampleQ1"
             }, 
             "answerKey": {
               "assessmentType": "multiplechoice", 
               "answers": {
+                "answer4": {
+                  "score": 0, 
+                  "response": "What broader fossil fuel category does petroleum fit under?"
+                }, 
+                "answer1": {
+                  "score": 0, 
+                  "response": "Although unconventional methods may eventually allow for the extraction of more of this fossil fuel, is it the most plentiful according to current estimates?"
+                }, 
                 "answer3": {
                   "score": 1, 
                   "response": "Correct, there are over 200 years worth of known coal reserves in the ground."
@@ -76,14 +49,6 @@
                 "answer2": {
                   "score": 0, 
                   "response": "Think about the distribution and recent price changes in oil.  Are these consistent with an abundant type of fuel?"
-                }, 
-                "answer1": {
-                  "score": 0, 
-                  "response": "Although unconventional methods may eventually allow for the extraction of more of this fossil fuel, is it the most plentiful according to current estimates?"
-                }, 
-                "answer4": {
-                  "score": 0, 
-                  "response": "What broader fossil fuel category does petroleum fit under?"
                 }
               }
             }, 
@@ -92,50 +57,85 @@
             "configFixup": [
               {
                 "type": "set-property", 
+                "name": "questionId", 
                 "value": {
+                  "domain": "info", 
                   "type": "ref", 
-                  "refId": "sequenceNodeKey", 
-                  "domain": "info"
-                }, 
-                "name": "questionId"
+                  "refId": "sequenceNodeKey"
+                }
               }, 
               {
                 "type": "set-property", 
+                "name": "maxAttempts", 
                 "value": {
+                  "domain": "info", 
                   "type": "ref", 
-                  "refId": "maxAttempts", 
-                  "domain": "info"
-                }, 
-                "name": "maxAttempts"
+                  "refId": "maxAttempts"
+                }
               }
             ]
           }
         ], 
+        "description": "container for the sample multiple choice question", 
+        "hookupActions": [
+          {
+            "instance": {
+              "type": "submit-manager"
+            }, 
+            "args": [
+              {
+                "domain": "brix", 
+                "type": "ref", 
+                "refId": "Q1"
+              }
+            ], 
+            "type": "method-call", 
+            "description": "Hookup the submit manager to evaluate answers", 
+            "methodName": "handleRequestsFrom"
+          }, 
+          {
+            "instance": {
+              "domain": "brix", 
+              "type": "ref", 
+              "refId": "Q1"
+            }, 
+            "args": [
+              {
+                "type": "d3select", 
+                "selector": "#target1"
+              }
+            ], 
+            "type": "method-call", 
+            "description": "Draw the question", 
+            "methodName": "draw"
+          }
+        ], 
         "containerId": "target1"
       }
-    ]
+    ], 
+    "description": "A Sample Activity containing a single multiple choice bric"
   }, 
   "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope", 
   "@type": "Envelope", 
   "metadata": {
-    "contentTypeTier1": "Test and Assessment", 
-    "contentTypeTier2": [
-      "assessment item"
-    ], 
-    "description": "68830_NE_C06.html", 
-    "owner": "Brix", 
-    "created": "2013-12-17T18:04:41.887404", 
-    "timeRequired": "PT20S", 
-    "subject": [
-      "EnvironmentalScience"
-    ], 
-    "guid": "c12b335c-b716-4626-9ec6-42504bbf5f88", 
     "intendedEndUserRole": [
       "Student"
     ], 
-    "title": "68830_NE_C06.html", 
+    "description": "68830_NE_C06.html", 
     "format": [
       "application/vnd.pearson.sanvan.v1.activity"
+    ], 
+    "owner": "Brix", 
+    "guid": "07129dba-a2eb-4bfc-8346-3bd8808978d8", 
+    "subject": [
+      "EnvironmentalScience"
+    ], 
+    "timeRequired": "PT20S", 
+    "created": "2013-12-18T14:00:05.289141", 
+    "title": "68830_NE_C06.html", 
+    "contentTypeTier1": "Test and Assessment", 
+    "contentTypeTier2": [
+      "assessment item"
     ]
   }
 }

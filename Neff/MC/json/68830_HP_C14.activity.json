@@ -1,90 +1,43 @@
 {
   "body": {
-    "description": "A Sample Activity containing a single multiple choice bric", 
     "containerConfig": [
       {
-        "hookupActions": [
-          {
-            "type": "method-call", 
-            "methodName": "handleRequestsFrom", 
-            "args": [
-              {
-                "type": "ref", 
-                "refId": "Q1", 
-                "domain": "brix"
-              }
-            ], 
-            "description": "Hookup the submit manager to evaluate answers", 
-            "instance": {
-              "type": "submit-manager"
-            }
-          }, 
-          {
-            "type": "method-call", 
-            "methodName": "draw", 
-            "args": [
-              {
-                "type": "d3select", 
-                "selector": "#target1"
-              }
-            ], 
-            "description": "Draw the question", 
-            "instance": {
-              "type": "ref", 
-              "refId": "Q1", 
-              "domain": "brix"
-            }
-          }
-        ], 
-        "description": "container for the sample multiple choice question", 
         "brixConfig": [
           {
             "config": {
-              "choices": [
-                {
-                  "answerKey": "answer1", 
-                  "content": "new deep ocean oil extraction; wind energy capture technologies"
-                }, 
-                {
-                  "answerKey": "answer2", 
-                  "content": "faster cars; bigger airplanes"
-                }, 
-                {
-                  "answerKey": "answer3", 
-                  "content": "air pollution-control equipment; more powerful car engines"
-                }, 
-                {
-                  "answerKey": "answer4", 
-                  "content": "solar energy collectors; air pollution-control equipment"
-                }, 
-                {
-                  "answerKey": "answer5", 
-                  "content": "faster jet airplanes; bigger cars"
-                }
-              ], 
-              "order": "randomized", 
+              "presenterType": "RadioGroup", 
               "question": "14. The role of technology in reducing or increasing the impacts of population is complicated. For example, _________________ is an example of a technology that could benefit the environment, whereas ______________ is an example of a technology that negatively impacts the environment.", 
               "presenterConfig": {
                 "numberFormat": ""
               }, 
-              "id": "sampleQ1", 
-              "presenterType": "RadioGroup"
+              "choices": [
+                {
+                  "content": "new deep ocean oil extraction; wind energy capture technologies", 
+                  "answerKey": "answer1"
+                }, 
+                {
+                  "content": "faster cars; bigger airplanes", 
+                  "answerKey": "answer2"
+                }, 
+                {
+                  "content": "air pollution-control equipment; more powerful car engines", 
+                  "answerKey": "answer3"
+                }, 
+                {
+                  "content": "solar energy collectors; air pollution-control equipment", 
+                  "answerKey": "answer4"
+                }, 
+                {
+                  "content": "faster jet airplanes; bigger cars", 
+                  "answerKey": "answer5"
+                }
+              ], 
+              "order": "randomized", 
+              "id": "sampleQ1"
             }, 
             "answerKey": {
               "assessmentType": "multiplechoice", 
               "answers": {
-                "answer3": {
-                  "score": 1, 
-                  "response": "Correct."
-                }, 
-                "answer2": {
-                  "score": 0, 
-                  "response": "Will either of these necessarily benefit the environment?"
-                }, 
-                "answer1": {
-                  "score": 0, 
-                  "response": "Does the first technology benefit the environment while the second harms it? "
-                }, 
                 "answer5": {
                   "score": 0, 
                   "response": "Will either of these necessarily benefit the environment?"
@@ -92,6 +45,18 @@
                 "answer4": {
                   "score": 0, 
                   "response": "Will either of these necessarily create negative impacts for the environment?"
+                }, 
+                "answer1": {
+                  "score": 0, 
+                  "response": "Does the first technology benefit the environment while the second harms it? "
+                }, 
+                "answer3": {
+                  "score": 1, 
+                  "response": "Correct."
+                }, 
+                "answer2": {
+                  "score": 0, 
+                  "response": "Will either of these necessarily benefit the environment?"
                 }
               }
             }, 
@@ -100,50 +65,85 @@
             "configFixup": [
               {
                 "type": "set-property", 
+                "name": "questionId", 
                 "value": {
+                  "domain": "info", 
                   "type": "ref", 
-                  "refId": "sequenceNodeKey", 
-                  "domain": "info"
-                }, 
-                "name": "questionId"
+                  "refId": "sequenceNodeKey"
+                }
               }, 
               {
                 "type": "set-property", 
+                "name": "maxAttempts", 
                 "value": {
+                  "domain": "info", 
                   "type": "ref", 
-                  "refId": "maxAttempts", 
-                  "domain": "info"
-                }, 
-                "name": "maxAttempts"
+                  "refId": "maxAttempts"
+                }
               }
             ]
           }
         ], 
+        "description": "container for the sample multiple choice question", 
+        "hookupActions": [
+          {
+            "instance": {
+              "type": "submit-manager"
+            }, 
+            "args": [
+              {
+                "domain": "brix", 
+                "type": "ref", 
+                "refId": "Q1"
+              }
+            ], 
+            "type": "method-call", 
+            "description": "Hookup the submit manager to evaluate answers", 
+            "methodName": "handleRequestsFrom"
+          }, 
+          {
+            "instance": {
+              "domain": "brix", 
+              "type": "ref", 
+              "refId": "Q1"
+            }, 
+            "args": [
+              {
+                "type": "d3select", 
+                "selector": "#target1"
+              }
+            ], 
+            "type": "method-call", 
+            "description": "Draw the question", 
+            "methodName": "draw"
+          }
+        ], 
         "containerId": "target1"
       }
-    ]
+    ], 
+    "description": "A Sample Activity containing a single multiple choice bric"
   }, 
   "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope", 
   "@type": "Envelope", 
   "metadata": {
-    "contentTypeTier1": "Test and Assessment", 
-    "contentTypeTier2": [
-      "assessment item"
-    ], 
-    "description": "68830_HP_C14.html", 
-    "owner": "Brix", 
-    "created": "2013-12-17T18:04:41.885730", 
-    "timeRequired": "PT20S", 
-    "subject": [
-      "EnvironmentalScience"
-    ], 
-    "guid": "0201c053-c561-47bc-af16-4d5e65e96285", 
     "intendedEndUserRole": [
       "Student"
     ], 
-    "title": "68830_HP_C14.html", 
+    "description": "68830_HP_C14.html", 
     "format": [
       "application/vnd.pearson.sanvan.v1.activity"
+    ], 
+    "owner": "Brix", 
+    "guid": "43d0c809-cc52-434e-83d7-f1d26c6f2f81", 
+    "subject": [
+      "EnvironmentalScience"
+    ], 
+    "timeRequired": "PT20S", 
+    "created": "2013-12-18T14:00:05.286183", 
+    "title": "68830_HP_C14.html", 
+    "contentTypeTier1": "Test and Assessment", 
+    "contentTypeTier2": [
+      "assessment item"
     ]
   }
 }

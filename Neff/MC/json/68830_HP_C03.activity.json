@@ -1,90 +1,43 @@
 {
   "body": {
-    "description": "A Sample Activity containing a single multiple choice bric", 
     "containerConfig": [
       {
-        "hookupActions": [
-          {
-            "type": "method-call", 
-            "methodName": "handleRequestsFrom", 
-            "args": [
-              {
-                "type": "ref", 
-                "refId": "Q1", 
-                "domain": "brix"
-              }
-            ], 
-            "description": "Hookup the submit manager to evaluate answers", 
-            "instance": {
-              "type": "submit-manager"
-            }
-          }, 
-          {
-            "type": "method-call", 
-            "methodName": "draw", 
-            "args": [
-              {
-                "type": "d3select", 
-                "selector": "#target1"
-              }
-            ], 
-            "description": "Draw the question", 
-            "instance": {
-              "type": "ref", 
-              "refId": "Q1", 
-              "domain": "brix"
-            }
-          }
-        ], 
-        "description": "container for the sample multiple choice question", 
         "brixConfig": [
           {
             "config": {
-              "choices": [
-                {
-                  "answerKey": "answer1", 
-                  "content": "The birth rate is high compared to the global average."
-                }, 
-                {
-                  "answerKey": "answer2", 
-                  "content": "Children, particularly girls, don\u2019t have widespread access of education."
-                }, 
-                {
-                  "answerKey": "answer3", 
-                  "content": "The country has extensive basic infrastructure such as sewers and clean water supplies for its population."
-                }, 
-                {
-                  "answerKey": "answer4", 
-                  "content": "A and B"
-                }, 
-                {
-                  "answerKey": "answer5", 
-                  "content": "A, B, and C"
-                }
-              ], 
-              "order": "ordered", 
+              "presenterType": "RadioGroup", 
               "question": "Consider a country where the average annual per capita income is less than $2,000 and the total fertility rate is 5. Which of the following statements is most likely true?", 
               "presenterConfig": {
                 "numberFormat": ""
               }, 
-              "id": "sampleQ1", 
-              "presenterType": "RadioGroup"
+              "choices": [
+                {
+                  "content": "The birth rate is high compared to the global average.", 
+                  "answerKey": "answer1"
+                }, 
+                {
+                  "content": "Children, particularly girls, don\u2019t have widespread access of education.", 
+                  "answerKey": "answer2"
+                }, 
+                {
+                  "content": "The country has extensive basic infrastructure such as sewers and clean water supplies for its population.", 
+                  "answerKey": "answer3"
+                }, 
+                {
+                  "content": "A and B", 
+                  "answerKey": "answer4"
+                }, 
+                {
+                  "content": "A, B, and C", 
+                  "answerKey": "answer5"
+                }
+              ], 
+              "order": "ordered", 
+              "id": "sampleQ1"
             }, 
             "answerKey": {
               "assessmentType": "multiplechoice", 
               "answers": {
-                "answer3": {
-                  "score": 0, 
-                  "response": "If the average per capita income is less than $2,000, is it likely that the country would have this level of development?"
-                }, 
-                "answer2": {
-                  "score": 0, 
-                  "response": "True, but is this the only correct answer?"
-                }, 
-                "answer1": {
-                  "score": 0, 
-                  "response": "True, but is this the only correct answer?"
-                }, 
                 "answer5": {
                   "score": 0, 
                   "response": "If the average per capita income is less than $2,000, are all of the answers likely situations, including having extensive basic infrastructure?"
@@ -92,6 +45,18 @@
                 "answer4": {
                   "score": 1, 
                   "response": "Correct."
+                }, 
+                "answer1": {
+                  "score": 0, 
+                  "response": "True, but is this the only correct answer?"
+                }, 
+                "answer3": {
+                  "score": 0, 
+                  "response": "If the average per capita income is less than $2,000, is it likely that the country would have this level of development?"
+                }, 
+                "answer2": {
+                  "score": 0, 
+                  "response": "True, but is this the only correct answer?"
                 }
               }
             }, 
@@ -100,50 +65,85 @@
             "configFixup": [
               {
                 "type": "set-property", 
+                "name": "questionId", 
                 "value": {
+                  "domain": "info", 
                   "type": "ref", 
-                  "refId": "sequenceNodeKey", 
-                  "domain": "info"
-                }, 
-                "name": "questionId"
+                  "refId": "sequenceNodeKey"
+                }
               }, 
               {
                 "type": "set-property", 
+                "name": "maxAttempts", 
                 "value": {
+                  "domain": "info", 
                   "type": "ref", 
-                  "refId": "maxAttempts", 
-                  "domain": "info"
-                }, 
-                "name": "maxAttempts"
+                  "refId": "maxAttempts"
+                }
               }
             ]
           }
         ], 
+        "description": "container for the sample multiple choice question", 
+        "hookupActions": [
+          {
+            "instance": {
+              "type": "submit-manager"
+            }, 
+            "args": [
+              {
+                "domain": "brix", 
+                "type": "ref", 
+                "refId": "Q1"
+              }
+            ], 
+            "type": "method-call", 
+            "description": "Hookup the submit manager to evaluate answers", 
+            "methodName": "handleRequestsFrom"
+          }, 
+          {
+            "instance": {
+              "domain": "brix", 
+              "type": "ref", 
+              "refId": "Q1"
+            }, 
+            "args": [
+              {
+                "type": "d3select", 
+                "selector": "#target1"
+              }
+            ], 
+            "type": "method-call", 
+            "description": "Draw the question", 
+            "methodName": "draw"
+          }
+        ], 
         "containerId": "target1"
       }
-    ]
+    ], 
+    "description": "A Sample Activity containing a single multiple choice bric"
   }, 
   "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope", 
   "@type": "Envelope", 
   "metadata": {
-    "contentTypeTier1": "Test and Assessment", 
-    "contentTypeTier2": [
-      "assessment item"
-    ], 
-    "description": "68830_HP_C03.html", 
-    "owner": "Brix", 
-    "created": "2013-12-17T18:04:41.885549", 
-    "timeRequired": "PT20S", 
-    "subject": [
-      "EnvironmentalScience"
-    ], 
-    "guid": "d4364f10-0e8a-4e0a-82c0-9ace4c638f69", 
     "intendedEndUserRole": [
       "Student"
     ], 
-    "title": "68830_HP_C03.html", 
+    "description": "68830_HP_C03.html", 
     "format": [
       "application/vnd.pearson.sanvan.v1.activity"
+    ], 
+    "owner": "Brix", 
+    "guid": "3cba3099-c120-4c33-b7b2-0f03a52ceaaa", 
+    "subject": [
+      "EnvironmentalScience"
+    ], 
+    "timeRequired": "PT20S", 
+    "created": "2013-12-18T14:00:05.285945", 
+    "title": "68830_HP_C03.html", 
+    "contentTypeTier1": "Test and Assessment", 
+    "contentTypeTier2": [
+      "assessment item"
     ]
   }
 }

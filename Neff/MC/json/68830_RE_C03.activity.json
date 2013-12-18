@@ -1,90 +1,43 @@
 {
   "body": {
-    "description": "A Sample Activity containing a single multiple choice bric", 
     "containerConfig": [
       {
-        "hookupActions": [
-          {
-            "type": "method-call", 
-            "methodName": "handleRequestsFrom", 
-            "args": [
-              {
-                "type": "ref", 
-                "refId": "Q1", 
-                "domain": "brix"
-              }
-            ], 
-            "description": "Hookup the submit manager to evaluate answers", 
-            "instance": {
-              "type": "submit-manager"
-            }
-          }, 
-          {
-            "type": "method-call", 
-            "methodName": "draw", 
-            "args": [
-              {
-                "type": "d3select", 
-                "selector": "#target1"
-              }
-            ], 
-            "description": "Draw the question", 
-            "instance": {
-              "type": "ref", 
-              "refId": "Q1", 
-              "domain": "brix"
-            }
-          }
-        ], 
-        "description": "container for the sample multiple choice question", 
         "brixConfig": [
           {
             "config": {
-              "choices": [
-                {
-                  "answerKey": "answer1", 
-                  "content": "Solar PV doesn\u2019t work in most locations."
-                }, 
-                {
-                  "answerKey": "answer2", 
-                  "content": "There are large up-front costs to solar PV installation."
-                }, 
-                {
-                  "answerKey": "answer3", 
-                  "content": "Solar PV cells generate 220 volt electricity, which is incompatible with many U.S. appliances."
-                }, 
-                {
-                  "answerKey": "answer4", 
-                  "content": "A & B"
-                }, 
-                {
-                  "answerKey": "answer5", 
-                  "content": "B & C"
-                }
-              ], 
-              "order": "ordered", 
+              "presenterType": "RadioGroup", 
               "question": "Which of the following is a major barrier to the increased use of solar photovoltaic (PV) energy in homes?", 
               "presenterConfig": {
                 "numberFormat": ""
               }, 
-              "id": "sampleQ1", 
-              "presenterType": "RadioGroup"
+              "choices": [
+                {
+                  "content": "Solar PV doesn\u2019t work in most locations.", 
+                  "answerKey": "answer1"
+                }, 
+                {
+                  "content": "There are large up-front costs to solar PV installation.", 
+                  "answerKey": "answer2"
+                }, 
+                {
+                  "content": "Solar PV cells generate 220 volt electricity, which is incompatible with many U.S. appliances.", 
+                  "answerKey": "answer3"
+                }, 
+                {
+                  "content": "A & B", 
+                  "answerKey": "answer4"
+                }, 
+                {
+                  "content": "B & C", 
+                  "answerKey": "answer5"
+                }
+              ], 
+              "order": "ordered", 
+              "id": "sampleQ1"
             }, 
             "answerKey": {
               "assessmentType": "multiplechoice", 
               "answers": {
-                "answer3": {
-                  "score": 0, 
-                  "response": "Even if this were true, think about the complex system of voltage conversion that occurs as electricity is transported. Could this issue be easily addressed?"
-                }, 
-                "answer2": {
-                  "score": 1, 
-                  "response": "Correct."
-                }, 
-                "answer1": {
-                  "score": 0, 
-                  "response": "Do most locations get at least some sunlight?"
-                }, 
                 "answer5": {
                   "score": 0, 
                   "response": "Even if PV panels did produce 220 volt electricity, think about the complex system of voltage conversion that occurs as electricity is transported? Could this issue be easily addressed?"
@@ -92,6 +45,18 @@
                 "answer4": {
                   "score": 0, 
                   "response": "Do most locations get at least some sunlight?"
+                }, 
+                "answer1": {
+                  "score": 0, 
+                  "response": "Do most locations get at least some sunlight?"
+                }, 
+                "answer3": {
+                  "score": 0, 
+                  "response": "Even if this were true, think about the complex system of voltage conversion that occurs as electricity is transported. Could this issue be easily addressed?"
+                }, 
+                "answer2": {
+                  "score": 1, 
+                  "response": "Correct."
                 }
               }
             }, 
@@ -100,50 +65,85 @@
             "configFixup": [
               {
                 "type": "set-property", 
+                "name": "questionId", 
                 "value": {
+                  "domain": "info", 
                   "type": "ref", 
-                  "refId": "sequenceNodeKey", 
-                  "domain": "info"
-                }, 
-                "name": "questionId"
+                  "refId": "sequenceNodeKey"
+                }
               }, 
               {
                 "type": "set-property", 
+                "name": "maxAttempts", 
                 "value": {
+                  "domain": "info", 
                   "type": "ref", 
-                  "refId": "maxAttempts", 
-                  "domain": "info"
-                }, 
-                "name": "maxAttempts"
+                  "refId": "maxAttempts"
+                }
               }
             ]
           }
         ], 
+        "description": "container for the sample multiple choice question", 
+        "hookupActions": [
+          {
+            "instance": {
+              "type": "submit-manager"
+            }, 
+            "args": [
+              {
+                "domain": "brix", 
+                "type": "ref", 
+                "refId": "Q1"
+              }
+            ], 
+            "type": "method-call", 
+            "description": "Hookup the submit manager to evaluate answers", 
+            "methodName": "handleRequestsFrom"
+          }, 
+          {
+            "instance": {
+              "domain": "brix", 
+              "type": "ref", 
+              "refId": "Q1"
+            }, 
+            "args": [
+              {
+                "type": "d3select", 
+                "selector": "#target1"
+              }
+            ], 
+            "type": "method-call", 
+            "description": "Draw the question", 
+            "methodName": "draw"
+          }
+        ], 
         "containerId": "target1"
       }
-    ]
+    ], 
+    "description": "A Sample Activity containing a single multiple choice bric"
   }, 
   "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope", 
   "@type": "Envelope", 
   "metadata": {
-    "contentTypeTier1": "Test and Assessment", 
-    "contentTypeTier2": [
-      "assessment item"
-    ], 
-    "description": "68830_RE_C03.html", 
-    "owner": "Brix", 
-    "created": "2013-12-17T18:04:41.888313", 
-    "timeRequired": "PT20S", 
-    "subject": [
-      "EnvironmentalScience"
-    ], 
-    "guid": "b43a17e1-fc3b-4092-8017-063e13c688a7", 
     "intendedEndUserRole": [
       "Student"
     ], 
-    "title": "68830_RE_C03.html", 
+    "description": "68830_RE_C03.html", 
     "format": [
       "application/vnd.pearson.sanvan.v1.activity"
+    ], 
+    "owner": "Brix", 
+    "guid": "4c3fb163-cc6f-4045-bbda-2ac86cbb2286", 
+    "subject": [
+      "EnvironmentalScience"
+    ], 
+    "timeRequired": "PT20S", 
+    "created": "2013-12-18T14:00:05.290367", 
+    "title": "68830_RE_C03.html", 
+    "contentTypeTier1": "Test and Assessment", 
+    "contentTypeTier2": [
+      "assessment item"
     ]
   }
 }

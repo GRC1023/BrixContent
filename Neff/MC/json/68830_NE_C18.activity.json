@@ -1,74 +1,47 @@
 {
   "body": {
-    "description": "A Sample Activity containing a single multiple choice bric", 
     "containerConfig": [
       {
-        "hookupActions": [
-          {
-            "type": "method-call", 
-            "methodName": "handleRequestsFrom", 
-            "args": [
-              {
-                "type": "ref", 
-                "refId": "Q1", 
-                "domain": "brix"
-              }
-            ], 
-            "description": "Hookup the submit manager to evaluate answers", 
-            "instance": {
-              "type": "submit-manager"
-            }
-          }, 
-          {
-            "type": "method-call", 
-            "methodName": "draw", 
-            "args": [
-              {
-                "type": "d3select", 
-                "selector": "#target1"
-              }
-            ], 
-            "description": "Draw the question", 
-            "instance": {
-              "type": "ref", 
-              "refId": "Q1", 
-              "domain": "brix"
-            }
-          }
-        ], 
-        "description": "container for the sample multiple choice question", 
         "brixConfig": [
           {
             "config": {
-              "choices": [
-                {
-                  "answerKey": "answer1", 
-                  "content": "installation of devices to remove sulfur from waste gases when burning natural gas"
-                }, 
-                {
-                  "answerKey": "answer2", 
-                  "content": "mining of lignite as opposed to harder forms of coal"
-                }, 
-                {
-                  "answerKey": "answer3", 
-                  "content": "applying carbon sequestration techniques during the burning of coal"
-                }, 
-                {
-                  "answerKey": "answer4", 
-                  "content": "the use of hydraulic fracturing to reduce water use during natural gas production"
-                }
-              ], 
-              "order": "randomized", 
+              "presenterType": "RadioGroup", 
               "question": "Which of these use/extraction techniques is correctly matched with the fossil fuel for which it would perform the most environmental benefit?", 
               "presenterConfig": {
                 "numberFormat": ""
               }, 
-              "id": "sampleQ1", 
-              "presenterType": "RadioGroup"
+              "choices": [
+                {
+                  "content": "installation of devices to remove sulfur from waste gases when burning natural gas", 
+                  "answerKey": "answer1"
+                }, 
+                {
+                  "content": "mining of lignite as opposed to harder forms of coal", 
+                  "answerKey": "answer2"
+                }, 
+                {
+                  "content": "applying carbon sequestration techniques during the burning of coal", 
+                  "answerKey": "answer3"
+                }, 
+                {
+                  "content": "the use of hydraulic fracturing to reduce water use during natural gas production", 
+                  "answerKey": "answer4"
+                }
+              ], 
+              "order": "randomized", 
+              "id": "sampleQ1"
             }, 
             "answerKey": {
               "assessmentType": "multiplechoice", 
               "answers": {
+                "answer4": {
+                  "score": 0, 
+                  "response": "Is the purpose of hydraulic fracturing to help reduce water use during natural gas extraction?"
+                }, 
+                "answer1": {
+                  "score": 0, 
+                  "response": "Does natural gas produce this type of pollution?"
+                }, 
                 "answer3": {
                   "score": 1, 
                   "response": "Correct"
@@ -76,14 +49,6 @@
                 "answer2": {
                   "score": 0, 
                   "response": "Would softer form of coal like lignite help reduce pollutants?"
-                }, 
-                "answer1": {
-                  "score": 0, 
-                  "response": "Does natural gas produce this type of pollution?"
-                }, 
-                "answer4": {
-                  "score": 0, 
-                  "response": "Is the purpose of hydraulic fracturing to help reduce water use during natural gas extraction?"
                 }
               }
             }, 
@@ -92,50 +57,85 @@
             "configFixup": [
               {
                 "type": "set-property", 
+                "name": "questionId", 
                 "value": {
+                  "domain": "info", 
                   "type": "ref", 
-                  "refId": "sequenceNodeKey", 
-                  "domain": "info"
-                }, 
-                "name": "questionId"
+                  "refId": "sequenceNodeKey"
+                }
               }, 
               {
                 "type": "set-property", 
+                "name": "maxAttempts", 
                 "value": {
+                  "domain": "info", 
                   "type": "ref", 
-                  "refId": "maxAttempts", 
-                  "domain": "info"
-                }, 
-                "name": "maxAttempts"
+                  "refId": "maxAttempts"
+                }
               }
             ]
           }
         ], 
+        "description": "container for the sample multiple choice question", 
+        "hookupActions": [
+          {
+            "instance": {
+              "type": "submit-manager"
+            }, 
+            "args": [
+              {
+                "domain": "brix", 
+                "type": "ref", 
+                "refId": "Q1"
+              }
+            ], 
+            "type": "method-call", 
+            "description": "Hookup the submit manager to evaluate answers", 
+            "methodName": "handleRequestsFrom"
+          }, 
+          {
+            "instance": {
+              "domain": "brix", 
+              "type": "ref", 
+              "refId": "Q1"
+            }, 
+            "args": [
+              {
+                "type": "d3select", 
+                "selector": "#target1"
+              }
+            ], 
+            "type": "method-call", 
+            "description": "Draw the question", 
+            "methodName": "draw"
+          }
+        ], 
         "containerId": "target1"
       }
-    ]
+    ], 
+    "description": "A Sample Activity containing a single multiple choice bric"
   }, 
   "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope", 
   "@type": "Envelope", 
   "metadata": {
-    "contentTypeTier1": "Test and Assessment", 
-    "contentTypeTier2": [
-      "assessment item"
-    ], 
-    "description": "68830_NE_C18.html", 
-    "owner": "Brix", 
-    "created": "2013-12-17T18:04:41.887800", 
-    "timeRequired": "PT20S", 
-    "subject": [
-      "EnvironmentalScience"
-    ], 
-    "guid": "48af4f92-5896-4906-be5c-4a9ca8babb90", 
     "intendedEndUserRole": [
       "Student"
     ], 
-    "title": "68830_NE_C18.html", 
+    "description": "68830_NE_C18.html", 
     "format": [
       "application/vnd.pearson.sanvan.v1.activity"
+    ], 
+    "owner": "Brix", 
+    "guid": "bda21d4d-12ed-4906-adc8-6b5252089ad9", 
+    "subject": [
+      "EnvironmentalScience"
+    ], 
+    "timeRequired": "PT20S", 
+    "created": "2013-12-18T14:00:05.289598", 
+    "title": "68830_NE_C18.html", 
+    "contentTypeTier1": "Test and Assessment", 
+    "contentTypeTier2": [
+      "assessment item"
     ]
   }
 }

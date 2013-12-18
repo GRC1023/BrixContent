@@ -1,90 +1,43 @@
 {
   "body": {
-    "description": "A Sample Activity containing a single multiple choice bric", 
     "containerConfig": [
       {
-        "hookupActions": [
-          {
-            "type": "method-call", 
-            "methodName": "handleRequestsFrom", 
-            "args": [
-              {
-                "type": "ref", 
-                "refId": "Q1", 
-                "domain": "brix"
-              }
-            ], 
-            "description": "Hookup the submit manager to evaluate answers", 
-            "instance": {
-              "type": "submit-manager"
-            }
-          }, 
-          {
-            "type": "method-call", 
-            "methodName": "draw", 
-            "args": [
-              {
-                "type": "d3select", 
-                "selector": "#target1"
-              }
-            ], 
-            "description": "Draw the question", 
-            "instance": {
-              "type": "ref", 
-              "refId": "Q1", 
-              "domain": "brix"
-            }
-          }
-        ], 
-        "description": "container for the sample multiple choice question", 
         "brixConfig": [
           {
             "config": {
-              "choices": [
-                {
-                  "answerKey": "answer1", 
-                  "content": "German laws apply to electricity but not to transportation."
-                }, 
-                {
-                  "answerKey": "answer2", 
-                  "content": "Currently, there are more options for bringing renewable energy onto an electric power grid than into cars."
-                }, 
-                {
-                  "answerKey": "answer3", 
-                  "content": "Renewable sources of energy for cars are currently banned in both countries"
-                }, 
-                {
-                  "answerKey": "answer4", 
-                  "content": "People in both countries refuse to use alternative energy cars even though there are widely available alternatives to internal combustion engines that are as cheap as regular cars."
-                }, 
-                {
-                  "answerKey": "answer5", 
-                  "content": "The Organization of Economic Cooperation and Development (OECD) requires that all member nations use petroleum as a transportation fuel."
-                }
-              ], 
-              "order": "randomized", 
+              "presenterType": "RadioGroup", 
               "question": "Although Germany has a higher national use of renewable energy for electricity generation, both Germany and the United States are reliant on cars that mostly consume oil rather than renewable fuels.  Why?", 
               "presenterConfig": {
                 "numberFormat": ""
               }, 
-              "id": "sampleQ1", 
-              "presenterType": "RadioGroup"
+              "choices": [
+                {
+                  "content": "German laws apply to electricity but not to transportation.", 
+                  "answerKey": "answer1"
+                }, 
+                {
+                  "content": "Currently, there are more options for bringing renewable energy onto an electric power grid than into cars.", 
+                  "answerKey": "answer2"
+                }, 
+                {
+                  "content": "Renewable sources of energy for cars are currently banned in both countries", 
+                  "answerKey": "answer3"
+                }, 
+                {
+                  "content": "People in both countries refuse to use alternative energy cars even though there are widely available alternatives to internal combustion engines that are as cheap as regular cars.", 
+                  "answerKey": "answer4"
+                }, 
+                {
+                  "content": "The Organization of Economic Cooperation and Development (OECD) requires that all member nations use petroleum as a transportation fuel.", 
+                  "answerKey": "answer5"
+                }
+              ], 
+              "order": "randomized", 
+              "id": "sampleQ1"
             }, 
             "answerKey": {
               "assessmentType": "multiplechoice", 
               "answers": {
-                "answer3": {
-                  "score": 0, 
-                  "response": "Aren't there already some alternative fuel vehicles in use?"
-                }, 
-                "answer2": {
-                  "score": 1, 
-                  "response": "Correct."
-                }, 
-                "answer1": {
-                  "score": 0, 
-                  "response": "What do you know about types of fuels used for electricity generation versus those used to power cars?"
-                }, 
                 "answer5": {
                   "score": 0, 
                   "response": "Aren't there already some alternative fuel vehicles in use?"
@@ -92,6 +45,18 @@
                 "answer4": {
                   "score": 0, 
                   "response": "Does this seem correct when you consider what you already know about Germany's attitude toward renewable energy sources in general?"
+                }, 
+                "answer1": {
+                  "score": 0, 
+                  "response": "What do you know about types of fuels used for electricity generation versus those used to power cars?"
+                }, 
+                "answer3": {
+                  "score": 0, 
+                  "response": "Aren't there already some alternative fuel vehicles in use?"
+                }, 
+                "answer2": {
+                  "score": 1, 
+                  "response": "Correct."
                 }
               }
             }, 
@@ -100,50 +65,85 @@
             "configFixup": [
               {
                 "type": "set-property", 
+                "name": "questionId", 
                 "value": {
+                  "domain": "info", 
                   "type": "ref", 
-                  "refId": "sequenceNodeKey", 
-                  "domain": "info"
-                }, 
-                "name": "questionId"
+                  "refId": "sequenceNodeKey"
+                }
               }, 
               {
                 "type": "set-property", 
+                "name": "maxAttempts", 
                 "value": {
+                  "domain": "info", 
                   "type": "ref", 
-                  "refId": "maxAttempts", 
-                  "domain": "info"
-                }, 
-                "name": "maxAttempts"
+                  "refId": "maxAttempts"
+                }
               }
             ]
           }
         ], 
+        "description": "container for the sample multiple choice question", 
+        "hookupActions": [
+          {
+            "instance": {
+              "type": "submit-manager"
+            }, 
+            "args": [
+              {
+                "domain": "brix", 
+                "type": "ref", 
+                "refId": "Q1"
+              }
+            ], 
+            "type": "method-call", 
+            "description": "Hookup the submit manager to evaluate answers", 
+            "methodName": "handleRequestsFrom"
+          }, 
+          {
+            "instance": {
+              "domain": "brix", 
+              "type": "ref", 
+              "refId": "Q1"
+            }, 
+            "args": [
+              {
+                "type": "d3select", 
+                "selector": "#target1"
+              }
+            ], 
+            "type": "method-call", 
+            "description": "Draw the question", 
+            "methodName": "draw"
+          }
+        ], 
         "containerId": "target1"
       }
-    ]
+    ], 
+    "description": "A Sample Activity containing a single multiple choice bric"
   }, 
   "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope", 
   "@type": "Envelope", 
   "metadata": {
-    "contentTypeTier1": "Test and Assessment", 
-    "contentTypeTier2": [
-      "assessment item"
-    ], 
-    "description": "68830_EU_C02.html", 
-    "owner": "Brix", 
-    "created": "2013-12-17T18:04:41.886729", 
-    "timeRequired": "PT20S", 
-    "subject": [
-      "EnvironmentalScience"
-    ], 
-    "guid": "9a426b03-8ba1-4ebc-aaaa-1e0d4e307d2e", 
     "intendedEndUserRole": [
       "Student"
     ], 
-    "title": "68830_EU_C02.html", 
+    "description": "68830_EU_C02.html", 
     "format": [
       "application/vnd.pearson.sanvan.v1.activity"
+    ], 
+    "owner": "Brix", 
+    "guid": "16f4ee85-7efb-4f41-b7a5-b4ebfc773b88", 
+    "subject": [
+      "EnvironmentalScience"
+    ], 
+    "timeRequired": "PT20S", 
+    "created": "2013-12-18T14:00:05.287619", 
+    "title": "68830_EU_C02.html", 
+    "contentTypeTier1": "Test and Assessment", 
+    "contentTypeTier2": [
+      "assessment item"
     ]
   }
 }

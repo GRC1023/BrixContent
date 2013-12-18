@@ -1,79 +1,40 @@
 {
   "body": {
-    "description": "A Sample Activity containing a single multiple choice bric", 
     "containerConfig": [
       {
-        "hookupActions": [
-          {
-            "type": "method-call", 
-            "methodName": "handleRequestsFrom", 
-            "args": [
-              {
-                "type": "ref", 
-                "refId": "Q1", 
-                "domain": "brix"
-              }
-            ], 
-            "description": "Hookup the submit manager to evaluate answers", 
-            "instance": {
-              "type": "submit-manager"
-            }
-          }, 
-          {
-            "type": "method-call", 
-            "methodName": "draw", 
-            "args": [
-              {
-                "type": "d3select", 
-                "selector": "#target1"
-              }
-            ], 
-            "description": "Draw the question", 
-            "instance": {
-              "type": "ref", 
-              "refId": "Q1", 
-              "domain": "brix"
-            }
-          }
-        ], 
-        "description": "container for the sample multiple choice question", 
         "brixConfig": [
           {
             "config": {
-              "choices": [
-                {
-                  "answerKey": "answer1", 
-                  "content": "These are regional terms; there really isn't much of a difference."
-                }, 
-                {
-                  "answerKey": "answer2", 
-                  "content": "Concentrated solar thermal requires many solar photovoltaic cells in one place."
-                }, 
-                {
-                  "answerKey": "answer3", 
-                  "content": "Solar photovoltaic power converts solar energy directly into electricity. Concentrated solar thermal power uses heat to turn a turbine."
-                }, 
-                {
-                  "answerKey": "answer4", 
-                  "content": "Solar photovoltaic power uses heat to turn a turbine. Concentrated solar thermal power converts solar energy directly into electricity."
-                }
-              ], 
-              "order": "randomized", 
+              "presenterType": "RadioGroup", 
               "question": "How does concentrated solar thermal power differ from solar photovoltaic systems?", 
               "presenterConfig": {
                 "numberFormat": ""
               }, 
-              "id": "sampleQ1", 
-              "presenterType": "RadioGroup"
+              "choices": [
+                {
+                  "content": "These are regional terms; there really isn't much of a difference.", 
+                  "answerKey": "answer1"
+                }, 
+                {
+                  "content": "Concentrated solar thermal requires many solar photovoltaic cells in one place.", 
+                  "answerKey": "answer2"
+                }, 
+                {
+                  "content": "Solar photovoltaic power converts solar energy directly into electricity. Concentrated solar thermal power uses heat to turn a turbine.", 
+                  "answerKey": "answer3"
+                }, 
+                {
+                  "content": "Solar photovoltaic power uses heat to turn a turbine. Concentrated solar thermal power converts solar energy directly into electricity.", 
+                  "answerKey": "answer4"
+                }
+              ], 
+              "order": "randomized", 
+              "id": "sampleQ1"
             }, 
             "answerKey": {
               "assessmentType": "multiplechoice", 
               "answers": {
-                "answer3": {
-                  "score": 1, 
-                  "response": ""
-                }, 
-                "answer2": {
+                "answer4": {
                   "score": 0, 
                   "response": ""
                 }, 
@@ -81,7 +42,11 @@
                   "score": 0, 
                   "response": ""
                 }, 
-                "answer4": {
+                "answer3": {
+                  "score": 1, 
+                  "response": ""
+                }, 
+                "answer2": {
                   "score": 0, 
                   "response": ""
                 }
@@ -92,50 +57,85 @@
             "configFixup": [
               {
                 "type": "set-property", 
+                "name": "questionId", 
                 "value": {
+                  "domain": "info", 
                   "type": "ref", 
-                  "refId": "sequenceNodeKey", 
-                  "domain": "info"
-                }, 
-                "name": "questionId"
+                  "refId": "sequenceNodeKey"
+                }
               }, 
               {
                 "type": "set-property", 
+                "name": "maxAttempts", 
                 "value": {
+                  "domain": "info", 
                   "type": "ref", 
-                  "refId": "maxAttempts", 
-                  "domain": "info"
-                }, 
-                "name": "maxAttempts"
+                  "refId": "maxAttempts"
+                }
               }
             ]
           }
         ], 
+        "description": "container for the sample multiple choice question", 
+        "hookupActions": [
+          {
+            "instance": {
+              "type": "submit-manager"
+            }, 
+            "args": [
+              {
+                "domain": "brix", 
+                "type": "ref", 
+                "refId": "Q1"
+              }
+            ], 
+            "type": "method-call", 
+            "description": "Hookup the submit manager to evaluate answers", 
+            "methodName": "handleRequestsFrom"
+          }, 
+          {
+            "instance": {
+              "domain": "brix", 
+              "type": "ref", 
+              "refId": "Q1"
+            }, 
+            "args": [
+              {
+                "type": "d3select", 
+                "selector": "#target1"
+              }
+            ], 
+            "type": "method-call", 
+            "description": "Draw the question", 
+            "methodName": "draw"
+          }
+        ], 
         "containerId": "target1"
       }
-    ]
+    ], 
+    "description": "A Sample Activity containing a single multiple choice bric"
   }, 
   "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope", 
   "@type": "Envelope", 
   "metadata": {
-    "contentTypeTier1": "Test and Assessment", 
-    "contentTypeTier2": [
-      "assessment item"
-    ], 
-    "description": "68830_RE_M02_01.html", 
-    "owner": "Brix", 
-    "created": "2013-12-17T18:04:41.887908", 
-    "timeRequired": "PT20S", 
-    "subject": [
-      "EnvironmentalScience"
-    ], 
-    "guid": "ab374f14-bf95-4214-9b6b-d7f69e9bd015", 
     "intendedEndUserRole": [
       "Student"
     ], 
-    "title": "68830_RE_M02_01.html", 
+    "description": "68830_RE_M02_01.html", 
     "format": [
       "application/vnd.pearson.sanvan.v1.activity"
+    ], 
+    "owner": "Brix", 
+    "guid": "054d2574-2ff9-408b-9b79-7adf9dd2bfaf", 
+    "subject": [
+      "EnvironmentalScience"
+    ], 
+    "timeRequired": "PT20S", 
+    "created": "2013-12-18T14:00:05.289908", 
+    "title": "68830_RE_M02_01.html", 
+    "contentTypeTier1": "Test and Assessment", 
+    "contentTypeTier2": [
+      "assessment item"
     ]
   }
 }

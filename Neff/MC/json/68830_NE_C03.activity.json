@@ -1,74 +1,47 @@
 {
   "body": {
-    "description": "A Sample Activity containing a single multiple choice bric", 
     "containerConfig": [
       {
-        "hookupActions": [
-          {
-            "type": "method-call", 
-            "methodName": "handleRequestsFrom", 
-            "args": [
-              {
-                "type": "ref", 
-                "refId": "Q1", 
-                "domain": "brix"
-              }
-            ], 
-            "description": "Hookup the submit manager to evaluate answers", 
-            "instance": {
-              "type": "submit-manager"
-            }
-          }, 
-          {
-            "type": "method-call", 
-            "methodName": "draw", 
-            "args": [
-              {
-                "type": "d3select", 
-                "selector": "#target1"
-              }
-            ], 
-            "description": "Draw the question", 
-            "instance": {
-              "type": "ref", 
-              "refId": "Q1", 
-              "domain": "brix"
-            }
-          }
-        ], 
-        "description": "container for the sample multiple choice question", 
         "brixConfig": [
           {
             "config": {
-              "choices": [
-                {
-                  "answerKey": "answer1", 
-                  "content": "Oil; The sands are heated, and crude oil separates from the sand."
-                }, 
-                {
-                  "answerKey": "answer2", 
-                  "content": "Natural gas; The sands are broken apart in a controlled setting, and natural gas is released from within them."
-                }, 
-                {
-                  "answerKey": "answer3", 
-                  "content": "Coal; The sands are mined in chunks and can then be used to create electricity in existing coal-fired power plants."
-                }, 
-                {
-                  "answerKey": "answer4", 
-                  "content": "Nuclear; The tar sands are radioactive much like uranium and can be mined for use in existing nuclear power plants."
-                }
-              ], 
-              "order": "randomized", 
+              "presenterType": "RadioGroup", 
               "question": "Tar sands are currently an economically viable and widely used unconventional fuel source. What non-renewable fuel source do tar sands replace? Why?", 
               "presenterConfig": {
                 "numberFormat": ""
               }, 
-              "id": "sampleQ1", 
-              "presenterType": "RadioGroup"
+              "choices": [
+                {
+                  "content": "Oil; The sands are heated, and crude oil separates from the sand.", 
+                  "answerKey": "answer1"
+                }, 
+                {
+                  "content": "Natural gas; The sands are broken apart in a controlled setting, and natural gas is released from within them.", 
+                  "answerKey": "answer2"
+                }, 
+                {
+                  "content": "Coal; The sands are mined in chunks and can then be used to create electricity in existing coal-fired power plants.", 
+                  "answerKey": "answer3"
+                }, 
+                {
+                  "content": "Nuclear; The tar sands are radioactive much like uranium and can be mined for use in existing nuclear power plants.", 
+                  "answerKey": "answer4"
+                }
+              ], 
+              "order": "randomized", 
+              "id": "sampleQ1"
             }, 
             "answerKey": {
               "assessmentType": "multiplechoice", 
               "answers": {
+                "answer4": {
+                  "score": 0, 
+                  "response": "Compared to other available energy sources, is nuclear widely used?"
+                }, 
+                "answer1": {
+                  "score": 1, 
+                  "response": "Correct."
+                }, 
                 "answer3": {
                   "score": 0, 
                   "response": "Why would we replace coal with an unconventional source when we still have relatively easy and cheap access to so much of it?"
@@ -76,14 +49,6 @@
                 "answer2": {
                   "score": 0, 
                   "response": "Is gas likely to stay trapped inside of sand?"
-                }, 
-                "answer1": {
-                  "score": 1, 
-                  "response": "Correct."
-                }, 
-                "answer4": {
-                  "score": 0, 
-                  "response": "Compared to other available energy sources, is nuclear widely used?"
                 }
               }
             }, 
@@ -92,50 +57,85 @@
             "configFixup": [
               {
                 "type": "set-property", 
+                "name": "questionId", 
                 "value": {
+                  "domain": "info", 
                   "type": "ref", 
-                  "refId": "sequenceNodeKey", 
-                  "domain": "info"
-                }, 
-                "name": "questionId"
+                  "refId": "sequenceNodeKey"
+                }
               }, 
               {
                 "type": "set-property", 
+                "name": "maxAttempts", 
                 "value": {
+                  "domain": "info", 
                   "type": "ref", 
-                  "refId": "maxAttempts", 
-                  "domain": "info"
-                }, 
-                "name": "maxAttempts"
+                  "refId": "maxAttempts"
+                }
               }
             ]
           }
         ], 
+        "description": "container for the sample multiple choice question", 
+        "hookupActions": [
+          {
+            "instance": {
+              "type": "submit-manager"
+            }, 
+            "args": [
+              {
+                "domain": "brix", 
+                "type": "ref", 
+                "refId": "Q1"
+              }
+            ], 
+            "type": "method-call", 
+            "description": "Hookup the submit manager to evaluate answers", 
+            "methodName": "handleRequestsFrom"
+          }, 
+          {
+            "instance": {
+              "domain": "brix", 
+              "type": "ref", 
+              "refId": "Q1"
+            }, 
+            "args": [
+              {
+                "type": "d3select", 
+                "selector": "#target1"
+              }
+            ], 
+            "type": "method-call", 
+            "description": "Draw the question", 
+            "methodName": "draw"
+          }
+        ], 
         "containerId": "target1"
       }
-    ]
+    ], 
+    "description": "A Sample Activity containing a single multiple choice bric"
   }, 
   "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope", 
   "@type": "Envelope", 
   "metadata": {
-    "contentTypeTier1": "Test and Assessment", 
-    "contentTypeTier2": [
-      "assessment item"
-    ], 
-    "description": "68830_NE_C03.html", 
-    "owner": "Brix", 
-    "created": "2013-12-17T18:04:41.887356", 
-    "timeRequired": "PT20S", 
-    "subject": [
-      "EnvironmentalScience"
-    ], 
-    "guid": "407dead0-9553-410c-bae5-39501cd2e37b", 
     "intendedEndUserRole": [
       "Student"
     ], 
-    "title": "68830_NE_C03.html", 
+    "description": "68830_NE_C03.html", 
     "format": [
       "application/vnd.pearson.sanvan.v1.activity"
+    ], 
+    "owner": "Brix", 
+    "guid": "c1989c89-51f9-4f76-9bcc-7170630128ea", 
+    "subject": [
+      "EnvironmentalScience"
+    ], 
+    "timeRequired": "PT20S", 
+    "created": "2013-12-18T14:00:05.289016", 
+    "title": "68830_NE_C03.html", 
+    "contentTypeTier1": "Test and Assessment", 
+    "contentTypeTier2": [
+      "assessment item"
     ]
   }
 }

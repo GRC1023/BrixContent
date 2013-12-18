@@ -1,74 +1,47 @@
 {
   "body": {
-    "description": "A Sample Activity containing a single multiple choice bric", 
     "containerConfig": [
       {
-        "hookupActions": [
-          {
-            "type": "method-call", 
-            "methodName": "handleRequestsFrom", 
-            "args": [
-              {
-                "type": "ref", 
-                "refId": "Q1", 
-                "domain": "brix"
-              }
-            ], 
-            "description": "Hookup the submit manager to evaluate answers", 
-            "instance": {
-              "type": "submit-manager"
-            }
-          }, 
-          {
-            "type": "method-call", 
-            "methodName": "draw", 
-            "args": [
-              {
-                "type": "d3select", 
-                "selector": "#target1"
-              }
-            ], 
-            "description": "Draw the question", 
-            "instance": {
-              "type": "ref", 
-              "refId": "Q1", 
-              "domain": "brix"
-            }
-          }
-        ], 
-        "description": "container for the sample multiple choice question", 
         "brixConfig": [
           {
             "config": {
-              "choices": [
-                {
-                  "answerKey": "answer1", 
-                  "content": "oil"
-                }, 
-                {
-                  "answerKey": "answer2", 
-                  "content": "nuclear"
-                }, 
-                {
-                  "answerKey": "answer3", 
-                  "content": "natural gas"
-                }, 
-                {
-                  "answerKey": "answer4", 
-                  "content": "coal"
-                }
-              ], 
-              "order": "randomized", 
+              "presenterType": "RadioGroup", 
               "question": "Suppose that in the future world solar energy became extremely inexpensive, and air pollution was the most critical concern. Based on air pollution produced, which fuel would be best to phase out?", 
               "presenterConfig": {
                 "numberFormat": ""
               }, 
-              "id": "sampleQ1", 
-              "presenterType": "RadioGroup"
+              "choices": [
+                {
+                  "content": "oil", 
+                  "answerKey": "answer1"
+                }, 
+                {
+                  "content": "nuclear", 
+                  "answerKey": "answer2"
+                }, 
+                {
+                  "content": "natural gas", 
+                  "answerKey": "answer3"
+                }, 
+                {
+                  "content": "coal", 
+                  "answerKey": "answer4"
+                }
+              ], 
+              "order": "randomized", 
+              "id": "sampleQ1"
             }, 
             "answerKey": {
               "assessmentType": "multiplechoice", 
               "answers": {
+                "answer4": {
+                  "score": 1, 
+                  "response": "Correct"
+                }, 
+                "answer1": {
+                  "score": 0, 
+                  "response": "Although all fossil fuels produce air pollution, oil is not the worst."
+                }, 
                 "answer3": {
                   "score": 0, 
                   "response": "Although all fossil fuels produce air pollution, natural gas produces considerably less than either coal or oil combustion."
@@ -76,14 +49,6 @@
                 "answer2": {
                   "score": 0, 
                   "response": "What are pollutants are released during nuclear energy generation?"
-                }, 
-                "answer1": {
-                  "score": 0, 
-                  "response": "Although all fossil fuels produce air pollution, oil is not the worst."
-                }, 
-                "answer4": {
-                  "score": 1, 
-                  "response": "Correct"
                 }
               }
             }, 
@@ -92,50 +57,85 @@
             "configFixup": [
               {
                 "type": "set-property", 
+                "name": "questionId", 
                 "value": {
+                  "domain": "info", 
                   "type": "ref", 
-                  "refId": "sequenceNodeKey", 
-                  "domain": "info"
-                }, 
-                "name": "questionId"
+                  "refId": "sequenceNodeKey"
+                }
               }, 
               {
                 "type": "set-property", 
+                "name": "maxAttempts", 
                 "value": {
+                  "domain": "info", 
                   "type": "ref", 
-                  "refId": "maxAttempts", 
-                  "domain": "info"
-                }, 
-                "name": "maxAttempts"
+                  "refId": "maxAttempts"
+                }
               }
             ]
           }
         ], 
+        "description": "container for the sample multiple choice question", 
+        "hookupActions": [
+          {
+            "instance": {
+              "type": "submit-manager"
+            }, 
+            "args": [
+              {
+                "domain": "brix", 
+                "type": "ref", 
+                "refId": "Q1"
+              }
+            ], 
+            "type": "method-call", 
+            "description": "Hookup the submit manager to evaluate answers", 
+            "methodName": "handleRequestsFrom"
+          }, 
+          {
+            "instance": {
+              "domain": "brix", 
+              "type": "ref", 
+              "refId": "Q1"
+            }, 
+            "args": [
+              {
+                "type": "d3select", 
+                "selector": "#target1"
+              }
+            ], 
+            "type": "method-call", 
+            "description": "Draw the question", 
+            "methodName": "draw"
+          }
+        ], 
         "containerId": "target1"
       }
-    ]
+    ], 
+    "description": "A Sample Activity containing a single multiple choice bric"
   }, 
   "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope", 
   "@type": "Envelope", 
   "metadata": {
-    "contentTypeTier1": "Test and Assessment", 
-    "contentTypeTier2": [
-      "assessment item"
-    ], 
-    "description": "68830_NE_C19.html", 
-    "owner": "Brix", 
-    "created": "2013-12-17T18:04:41.887821", 
-    "timeRequired": "PT20S", 
-    "subject": [
-      "EnvironmentalScience"
-    ], 
-    "guid": "9043f7e7-5821-48f0-8d0e-a857590089ab", 
     "intendedEndUserRole": [
       "Student"
     ], 
-    "title": "68830_NE_C19.html", 
+    "description": "68830_NE_C19.html", 
     "format": [
       "application/vnd.pearson.sanvan.v1.activity"
+    ], 
+    "owner": "Brix", 
+    "guid": "fd7443ce-6f59-4022-a611-1ed138c7973a", 
+    "subject": [
+      "EnvironmentalScience"
+    ], 
+    "timeRequired": "PT20S", 
+    "created": "2013-12-18T14:00:05.289633", 
+    "title": "68830_NE_C19.html", 
+    "contentTypeTier1": "Test and Assessment", 
+    "contentTypeTier2": [
+      "assessment item"
     ]
   }
 }

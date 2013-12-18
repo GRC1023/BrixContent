@@ -1,74 +1,47 @@
 {
   "body": {
-    "description": "A Sample Activity containing a single multiple choice bric", 
     "containerConfig": [
       {
-        "hookupActions": [
-          {
-            "type": "method-call", 
-            "methodName": "handleRequestsFrom", 
-            "args": [
-              {
-                "type": "ref", 
-                "refId": "Q1", 
-                "domain": "brix"
-              }
-            ], 
-            "description": "Hookup the submit manager to evaluate answers", 
-            "instance": {
-              "type": "submit-manager"
-            }
-          }, 
-          {
-            "type": "method-call", 
-            "methodName": "draw", 
-            "args": [
-              {
-                "type": "d3select", 
-                "selector": "#target1"
-              }
-            ], 
-            "description": "Draw the question", 
-            "instance": {
-              "type": "ref", 
-              "refId": "Q1", 
-              "domain": "brix"
-            }
-          }
-        ], 
-        "description": "container for the sample multiple choice question", 
         "brixConfig": [
           {
             "config": {
-              "choices": [
-                {
-                  "answerKey": "answer1", 
-                  "content": "The technology is not yet proven, and therefore nuclear energy is not permitted in the United States."
-                }, 
-                {
-                  "answerKey": "answer2", 
-                  "content": "Nuclear meltdowns occur frequently and cause many deaths."
-                }, 
-                {
-                  "answerKey": "answer3", 
-                  "content": "It is difficult to dispose of the radioactive waste."
-                }, 
-                {
-                  "answerKey": "answer4", 
-                  "content": "Nuclear power does not produce a lot of electricity."
-                }
-              ], 
-              "order": "randomized", 
+              "presenterType": "RadioGroup", 
               "question": "Of the reasons below, which best describes the reason why nuclear energy is not more widely used, even though it is an energy technology that is relatively clean?", 
               "presenterConfig": {
                 "numberFormat": ""
               }, 
-              "id": "sampleQ1", 
-              "presenterType": "RadioGroup"
+              "choices": [
+                {
+                  "content": "The technology is not yet proven, and therefore nuclear energy is not permitted in the United States.", 
+                  "answerKey": "answer1"
+                }, 
+                {
+                  "content": "Nuclear meltdowns occur frequently and cause many deaths.", 
+                  "answerKey": "answer2"
+                }, 
+                {
+                  "content": "It is difficult to dispose of the radioactive waste.", 
+                  "answerKey": "answer3"
+                }, 
+                {
+                  "content": "Nuclear power does not produce a lot of electricity.", 
+                  "answerKey": "answer4"
+                }
+              ], 
+              "order": "randomized", 
+              "id": "sampleQ1"
             }, 
             "answerKey": {
               "assessmentType": "multiplechoice", 
               "answers": {
+                "answer4": {
+                  "score": 0, 
+                  "response": "Are there any countries that primarily rely on nuclear today?"
+                }, 
+                "answer1": {
+                  "score": 0, 
+                  "response": "Think about nuclear accidents you have heard of. Have any of these happened in the United States?"
+                }, 
                 "answer3": {
                   "score": 1, 
                   "response": "Correct."
@@ -76,14 +49,6 @@
                 "answer2": {
                   "score": 0, 
                   "response": "What do you know about the number of deaths caused by nuclear meltdowns versus the number of deaths caused by pollution and other effects of fossil fuel use?"
-                }, 
-                "answer1": {
-                  "score": 0, 
-                  "response": "Think about nuclear accidents you have heard of. Have any of these happened in the United States?"
-                }, 
-                "answer4": {
-                  "score": 0, 
-                  "response": "Are there any countries that primarily rely on nuclear today?"
                 }
               }
             }, 
@@ -92,50 +57,85 @@
             "configFixup": [
               {
                 "type": "set-property", 
+                "name": "questionId", 
                 "value": {
+                  "domain": "info", 
                   "type": "ref", 
-                  "refId": "sequenceNodeKey", 
-                  "domain": "info"
-                }, 
-                "name": "questionId"
+                  "refId": "sequenceNodeKey"
+                }
               }, 
               {
                 "type": "set-property", 
+                "name": "maxAttempts", 
                 "value": {
+                  "domain": "info", 
                   "type": "ref", 
-                  "refId": "maxAttempts", 
-                  "domain": "info"
-                }, 
-                "name": "maxAttempts"
+                  "refId": "maxAttempts"
+                }
               }
             ]
           }
         ], 
+        "description": "container for the sample multiple choice question", 
+        "hookupActions": [
+          {
+            "instance": {
+              "type": "submit-manager"
+            }, 
+            "args": [
+              {
+                "domain": "brix", 
+                "type": "ref", 
+                "refId": "Q1"
+              }
+            ], 
+            "type": "method-call", 
+            "description": "Hookup the submit manager to evaluate answers", 
+            "methodName": "handleRequestsFrom"
+          }, 
+          {
+            "instance": {
+              "domain": "brix", 
+              "type": "ref", 
+              "refId": "Q1"
+            }, 
+            "args": [
+              {
+                "type": "d3select", 
+                "selector": "#target1"
+              }
+            ], 
+            "type": "method-call", 
+            "description": "Draw the question", 
+            "methodName": "draw"
+          }
+        ], 
         "containerId": "target1"
       }
-    ]
+    ], 
+    "description": "A Sample Activity containing a single multiple choice bric"
   }, 
   "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope", 
   "@type": "Envelope", 
   "metadata": {
-    "contentTypeTier1": "Test and Assessment", 
-    "contentTypeTier2": [
-      "assessment item"
-    ], 
-    "description": "68830_EU_C03.html", 
-    "owner": "Brix", 
-    "created": "2013-12-17T18:04:41.886745", 
-    "timeRequired": "PT20S", 
-    "subject": [
-      "EnvironmentalScience"
-    ], 
-    "guid": "1180a17d-5a9f-498e-843c-35b165bf30ee", 
     "intendedEndUserRole": [
       "Student"
     ], 
-    "title": "68830_EU_C03.html", 
+    "description": "68830_EU_C03.html", 
     "format": [
       "application/vnd.pearson.sanvan.v1.activity"
+    ], 
+    "owner": "Brix", 
+    "guid": "099390bf-570a-4d11-af80-9d0015f94a85", 
+    "subject": [
+      "EnvironmentalScience"
+    ], 
+    "timeRequired": "PT20S", 
+    "created": "2013-12-18T14:00:05.287643", 
+    "title": "68830_EU_C03.html", 
+    "contentTypeTier1": "Test and Assessment", 
+    "contentTypeTier2": [
+      "assessment item"
     ]
   }
 }

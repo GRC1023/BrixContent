@@ -1,90 +1,43 @@
 {
   "body": {
-    "description": "A Sample Activity containing a single multiple choice bric", 
     "containerConfig": [
       {
-        "hookupActions": [
-          {
-            "type": "method-call", 
-            "methodName": "handleRequestsFrom", 
-            "args": [
-              {
-                "type": "ref", 
-                "refId": "Q1", 
-                "domain": "brix"
-              }
-            ], 
-            "description": "Hookup the submit manager to evaluate answers", 
-            "instance": {
-              "type": "submit-manager"
-            }
-          }, 
-          {
-            "type": "method-call", 
-            "methodName": "draw", 
-            "args": [
-              {
-                "type": "d3select", 
-                "selector": "#target1"
-              }
-            ], 
-            "description": "Draw the question", 
-            "instance": {
-              "type": "ref", 
-              "refId": "Q1", 
-              "domain": "brix"
-            }
-          }
-        ], 
-        "description": "container for the sample multiple choice question", 
         "brixConfig": [
           {
             "config": {
-              "choices": [
-                {
-                  "answerKey": "answer1", 
-                  "content": "Wealth can be used to buy more goods, and this is generally good for the environment."
-                }, 
-                {
-                  "answerKey": "answer2", 
-                  "content": "Wealth can be invested in infrastructure that helps people lead more happy and productive lives."
-                }, 
-                {
-                  "answerKey": "answer3", 
-                  "content": "Wealth can be used to invest in technologies that reduce the impact of consumption on the environment."
-                }, 
-                {
-                  "answerKey": "answer4", 
-                  "content": "Wealth doesn\u2019t matter much for the environment\u2014it\u2019s really the overall population that is most important."
-                }, 
-                {
-                  "answerKey": "answer5", 
-                  "content": "There are no examples of how rising affluence can have a positive impact on environmental problems."
-                }
-              ], 
-              "order": "randomized", 
+              "presenterType": "RadioGroup", 
               "question": "In what way can wealth (affluence) help reduce the impacts of population growth on the environment?", 
               "presenterConfig": {
                 "numberFormat": ""
               }, 
-              "id": "sampleQ1", 
-              "presenterType": "RadioGroup"
+              "choices": [
+                {
+                  "content": "Wealth can be used to buy more goods, and this is generally good for the environment.", 
+                  "answerKey": "answer1"
+                }, 
+                {
+                  "content": "Wealth can be invested in infrastructure that helps people lead more happy and productive lives.", 
+                  "answerKey": "answer2"
+                }, 
+                {
+                  "content": "Wealth can be used to invest in technologies that reduce the impact of consumption on the environment.", 
+                  "answerKey": "answer3"
+                }, 
+                {
+                  "content": "Wealth doesn\u2019t matter much for the environment\u2014it\u2019s really the overall population that is most important.", 
+                  "answerKey": "answer4"
+                }, 
+                {
+                  "content": "There are no examples of how rising affluence can have a positive impact on environmental problems.", 
+                  "answerKey": "answer5"
+                }
+              ], 
+              "order": "randomized", 
+              "id": "sampleQ1"
             }, 
             "answerKey": {
               "assessmentType": "multiplechoice", 
               "answers": {
-                "answer3": {
-                  "score": 1, 
-                  "response": "Correct."
-                }, 
-                "answer2": {
-                  "score": 0, 
-                  "response": "While this is potentially true, are there clear ways in which this reduces environmental impacts?"
-                }, 
-                "answer1": {
-                  "score": 0, 
-                  "response": "Does the production and consumption of more and more goods typically hurt or harm the environment?"
-                }, 
                 "answer5": {
                   "score": 0, 
                   "response": "How are new environmentally-friendly technologies that help improve the environment or reduce negative impacts funded?"
@@ -92,6 +45,18 @@
                 "answer4": {
                   "score": 0, 
                   "response": "If the overall population behaves (i.e. spends their wealth) differently, could wealth have no impact on the environment?"
+                }, 
+                "answer1": {
+                  "score": 0, 
+                  "response": "Does the production and consumption of more and more goods typically hurt or harm the environment?"
+                }, 
+                "answer3": {
+                  "score": 1, 
+                  "response": "Correct."
+                }, 
+                "answer2": {
+                  "score": 0, 
+                  "response": "While this is potentially true, are there clear ways in which this reduces environmental impacts?"
                 }
               }
             }, 
@@ -100,50 +65,85 @@
             "configFixup": [
               {
                 "type": "set-property", 
+                "name": "questionId", 
                 "value": {
+                  "domain": "info", 
                   "type": "ref", 
-                  "refId": "sequenceNodeKey", 
-                  "domain": "info"
-                }, 
-                "name": "questionId"
+                  "refId": "sequenceNodeKey"
+                }
               }, 
               {
                 "type": "set-property", 
+                "name": "maxAttempts", 
                 "value": {
+                  "domain": "info", 
                   "type": "ref", 
-                  "refId": "maxAttempts", 
-                  "domain": "info"
-                }, 
-                "name": "maxAttempts"
+                  "refId": "maxAttempts"
+                }
               }
             ]
           }
         ], 
+        "description": "container for the sample multiple choice question", 
+        "hookupActions": [
+          {
+            "instance": {
+              "type": "submit-manager"
+            }, 
+            "args": [
+              {
+                "domain": "brix", 
+                "type": "ref", 
+                "refId": "Q1"
+              }
+            ], 
+            "type": "method-call", 
+            "description": "Hookup the submit manager to evaluate answers", 
+            "methodName": "handleRequestsFrom"
+          }, 
+          {
+            "instance": {
+              "domain": "brix", 
+              "type": "ref", 
+              "refId": "Q1"
+            }, 
+            "args": [
+              {
+                "type": "d3select", 
+                "selector": "#target1"
+              }
+            ], 
+            "type": "method-call", 
+            "description": "Draw the question", 
+            "methodName": "draw"
+          }
+        ], 
         "containerId": "target1"
       }
-    ]
+    ], 
+    "description": "A Sample Activity containing a single multiple choice bric"
   }, 
   "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope", 
   "@type": "Envelope", 
   "metadata": {
-    "contentTypeTier1": "Test and Assessment", 
-    "contentTypeTier2": [
-      "assessment item"
-    ], 
-    "description": "68830_HP_C12.html", 
-    "owner": "Brix", 
-    "created": "2013-12-17T18:04:41.885699", 
-    "timeRequired": "PT20S", 
-    "subject": [
-      "EnvironmentalScience"
-    ], 
-    "guid": "409a5d2b-85c0-4cc6-97ed-56273e96dd1a", 
     "intendedEndUserRole": [
       "Student"
     ], 
-    "title": "68830_HP_C12.html", 
+    "description": "68830_HP_C12.html", 
     "format": [
       "application/vnd.pearson.sanvan.v1.activity"
+    ], 
+    "owner": "Brix", 
+    "guid": "5fe8b53d-9b07-4b18-b5c9-139d73fcc45b", 
+    "subject": [
+      "EnvironmentalScience"
+    ], 
+    "timeRequired": "PT20S", 
+    "created": "2013-12-18T14:00:05.286142", 
+    "title": "68830_HP_C12.html", 
+    "contentTypeTier1": "Test and Assessment", 
+    "contentTypeTier2": [
+      "assessment item"
     ]
   }
 }

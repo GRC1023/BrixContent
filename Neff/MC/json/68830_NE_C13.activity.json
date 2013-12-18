@@ -1,90 +1,43 @@
 {
   "body": {
-    "description": "A Sample Activity containing a single multiple choice bric", 
     "containerConfig": [
       {
-        "hookupActions": [
-          {
-            "type": "method-call", 
-            "methodName": "handleRequestsFrom", 
-            "args": [
-              {
-                "type": "ref", 
-                "refId": "Q1", 
-                "domain": "brix"
-              }
-            ], 
-            "description": "Hookup the submit manager to evaluate answers", 
-            "instance": {
-              "type": "submit-manager"
-            }
-          }, 
-          {
-            "type": "method-call", 
-            "methodName": "draw", 
-            "args": [
-              {
-                "type": "d3select", 
-                "selector": "#target1"
-              }
-            ], 
-            "description": "Draw the question", 
-            "instance": {
-              "type": "ref", 
-              "refId": "Q1", 
-              "domain": "brix"
-            }
-          }
-        ], 
-        "description": "container for the sample multiple choice question", 
         "brixConfig": [
           {
             "config": {
-              "choices": [
-                {
-                  "answerKey": "answer1", 
-                  "content": "Store it underground at Yucca Mountain in Nevada"
-                }, 
-                {
-                  "answerKey": "answer2", 
-                  "content": "Store it underground in the WIPP facility in New Mexico."
-                }, 
-                {
-                  "answerKey": "answer3", 
-                  "content": "Bury it at sea."
-                }, 
-                {
-                  "answerKey": "answer4", 
-                  "content": "Launch it into space."
-                }, 
-                {
-                  "answerKey": "answer5", 
-                  "content": "Store it above ground in temporary facilities."
-                }
-              ], 
-              "order": "randomized", 
+              "presenterType": "RadioGroup", 
               "question": "What does the United States currently do with its high level nuclear waste?", 
               "presenterConfig": {
                 "numberFormat": ""
               }, 
-              "id": "sampleQ1", 
-              "presenterType": "RadioGroup"
+              "choices": [
+                {
+                  "content": "Store it underground at Yucca Mountain in Nevada", 
+                  "answerKey": "answer1"
+                }, 
+                {
+                  "content": "Store it underground in the WIPP facility in New Mexico.", 
+                  "answerKey": "answer2"
+                }, 
+                {
+                  "content": "Bury it at sea.", 
+                  "answerKey": "answer3"
+                }, 
+                {
+                  "content": "Launch it into space.", 
+                  "answerKey": "answer4"
+                }, 
+                {
+                  "content": "Store it above ground in temporary facilities.", 
+                  "answerKey": "answer5"
+                }
+              ], 
+              "order": "randomized", 
+              "id": "sampleQ1"
             }, 
             "answerKey": {
               "assessmentType": "multiplechoice", 
               "answers": {
-                "answer3": {
-                  "score": 0, 
-                  "response": "What environmental impacts could arise as a result of this?"
-                }, 
-                "answer2": {
-                  "score": 0, 
-                  "response": "This facility is used to store waste such as contaminated gloves and clothing-is this high level nuclear waste?"
-                }, 
-                "answer1": {
-                  "score": 0, 
-                  "response": "Was this solution acceptable to Nevada government officials?"
-                }, 
                 "answer5": {
                   "score": 1, 
                   "response": "Correct. The United States (and many other countries) are doing this while trying to figure out how to best store it in safer ways that are also acceptable to U.S. citizens and the government."
@@ -92,6 +45,18 @@
                 "answer4": {
                   "score": 0, 
                   "response": "Are all flights into space successful? What could happen if the waste is unsuccessfully launched into space?"
+                }, 
+                "answer1": {
+                  "score": 0, 
+                  "response": "Was this solution acceptable to Nevada government officials?"
+                }, 
+                "answer3": {
+                  "score": 0, 
+                  "response": "What environmental impacts could arise as a result of this?"
+                }, 
+                "answer2": {
+                  "score": 0, 
+                  "response": "This facility is used to store waste such as contaminated gloves and clothing-is this high level nuclear waste?"
                 }
               }
             }, 
@@ -100,50 +65,85 @@
             "configFixup": [
               {
                 "type": "set-property", 
+                "name": "questionId", 
                 "value": {
+                  "domain": "info", 
                   "type": "ref", 
-                  "refId": "sequenceNodeKey", 
-                  "domain": "info"
-                }, 
-                "name": "questionId"
+                  "refId": "sequenceNodeKey"
+                }
               }, 
               {
                 "type": "set-property", 
+                "name": "maxAttempts", 
                 "value": {
+                  "domain": "info", 
                   "type": "ref", 
-                  "refId": "maxAttempts", 
-                  "domain": "info"
-                }, 
-                "name": "maxAttempts"
+                  "refId": "maxAttempts"
+                }
               }
             ]
           }
         ], 
+        "description": "container for the sample multiple choice question", 
+        "hookupActions": [
+          {
+            "instance": {
+              "type": "submit-manager"
+            }, 
+            "args": [
+              {
+                "domain": "brix", 
+                "type": "ref", 
+                "refId": "Q1"
+              }
+            ], 
+            "type": "method-call", 
+            "description": "Hookup the submit manager to evaluate answers", 
+            "methodName": "handleRequestsFrom"
+          }, 
+          {
+            "instance": {
+              "domain": "brix", 
+              "type": "ref", 
+              "refId": "Q1"
+            }, 
+            "args": [
+              {
+                "type": "d3select", 
+                "selector": "#target1"
+              }
+            ], 
+            "type": "method-call", 
+            "description": "Draw the question", 
+            "methodName": "draw"
+          }
+        ], 
         "containerId": "target1"
       }
-    ]
+    ], 
+    "description": "A Sample Activity containing a single multiple choice bric"
   }, 
   "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope", 
   "@type": "Envelope", 
   "metadata": {
-    "contentTypeTier1": "Test and Assessment", 
-    "contentTypeTier2": [
-      "assessment item"
-    ], 
-    "description": "68830_NE_C13.html", 
-    "owner": "Brix", 
-    "created": "2013-12-17T18:04:41.887528", 
-    "timeRequired": "PT20S", 
-    "subject": [
-      "EnvironmentalScience"
-    ], 
-    "guid": "e13e2432-f9d8-49a9-9c01-bd2db73eb36a", 
     "intendedEndUserRole": [
       "Student"
     ], 
-    "title": "68830_NE_C13.html", 
+    "description": "68830_NE_C13.html", 
     "format": [
       "application/vnd.pearson.sanvan.v1.activity"
+    ], 
+    "owner": "Brix", 
+    "guid": "71dada88-467f-4fc8-8140-7e4f583ad7a4", 
+    "subject": [
+      "EnvironmentalScience"
+    ], 
+    "timeRequired": "PT20S", 
+    "created": "2013-12-18T14:00:05.289430", 
+    "title": "68830_NE_C13.html", 
+    "contentTypeTier1": "Test and Assessment", 
+    "contentTypeTier2": [
+      "assessment item"
     ]
   }
 }

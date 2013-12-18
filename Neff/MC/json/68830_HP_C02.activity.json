@@ -1,90 +1,43 @@
 {
   "body": {
-    "description": "A Sample Activity containing a single multiple choice bric", 
     "containerConfig": [
       {
-        "hookupActions": [
-          {
-            "type": "method-call", 
-            "methodName": "handleRequestsFrom", 
-            "args": [
-              {
-                "type": "ref", 
-                "refId": "Q1", 
-                "domain": "brix"
-              }
-            ], 
-            "description": "Hookup the submit manager to evaluate answers", 
-            "instance": {
-              "type": "submit-manager"
-            }
-          }, 
-          {
-            "type": "method-call", 
-            "methodName": "draw", 
-            "args": [
-              {
-                "type": "d3select", 
-                "selector": "#target1"
-              }
-            ], 
-            "description": "Draw the question", 
-            "instance": {
-              "type": "ref", 
-              "refId": "Q1", 
-              "domain": "brix"
-            }
-          }
-        ], 
-        "description": "container for the sample multiple choice question", 
         "brixConfig": [
           {
             "config": {
-              "choices": [
-                {
-                  "answerKey": "answer1", 
-                  "content": "Growth rates have increased dramatically."
-                }, 
-                {
-                  "answerKey": "answer2", 
-                  "content": "Growth rates have increased a little."
-                }, 
-                {
-                  "answerKey": "answer3", 
-                  "content": "Growth rates have declined."
-                }, 
-                {
-                  "answerKey": "answer4", 
-                  "content": "Growth rates have been stable."
-                }, 
-                {
-                  "answerKey": "answer5", 
-                  "content": "We don\u2019t know how global growth rates have changed."
-                }
-              ], 
-              "order": "randomized", 
+              "presenterType": "RadioGroup", 
               "question": "Overall, how have global average population growth rates changed from 1950 to the present?", 
               "presenterConfig": {
                 "numberFormat": ""
               }, 
-              "id": "sampleQ1", 
-              "presenterType": "RadioGroup"
+              "choices": [
+                {
+                  "content": "Growth rates have increased dramatically.", 
+                  "answerKey": "answer1"
+                }, 
+                {
+                  "content": "Growth rates have increased a little.", 
+                  "answerKey": "answer2"
+                }, 
+                {
+                  "content": "Growth rates have declined.", 
+                  "answerKey": "answer3"
+                }, 
+                {
+                  "content": "Growth rates have been stable.", 
+                  "answerKey": "answer4"
+                }, 
+                {
+                  "content": "We don\u2019t know how global growth rates have changed.", 
+                  "answerKey": "answer5"
+                }
+              ], 
+              "order": "randomized", 
+              "id": "sampleQ1"
             }, 
             "answerKey": {
               "assessmentType": "multiplechoice", 
               "answers": {
-                "answer3": {
-                  "score": 1, 
-                  "response": "Correct; although the total population is growing, it is growing at a slower rate than it has in the past."
-                }, 
-                "answer2": {
-                  "score": 0, 
-                  "response": "Does a growing population necessarily denote an increasing growth rate?"
-                }, 
-                "answer1": {
-                  "score": 0, 
-                  "response": "Does a growing population necessarily denote an increasing growth rate?"
-                }, 
                 "answer5": {
                   "score": 0, 
                   "response": "Don\u2019t we already have the statistics needed to calculate this (that is, global population estimates over the past 50 years)?"
@@ -92,6 +45,18 @@
                 "answer4": {
                   "score": 0, 
                   "response": "Even though the population is growing overall, is there really a larger number of babies born each year, or is that number declining somewhat despite continued overall population growth? "
+                }, 
+                "answer1": {
+                  "score": 0, 
+                  "response": "Does a growing population necessarily denote an increasing growth rate?"
+                }, 
+                "answer3": {
+                  "score": 1, 
+                  "response": "Correct; although the total population is growing, it is growing at a slower rate than it has in the past."
+                }, 
+                "answer2": {
+                  "score": 0, 
+                  "response": "Does a growing population necessarily denote an increasing growth rate?"
                 }
               }
             }, 
@@ -100,50 +65,85 @@
             "configFixup": [
               {
                 "type": "set-property", 
+                "name": "questionId", 
                 "value": {
+                  "domain": "info", 
                   "type": "ref", 
-                  "refId": "sequenceNodeKey", 
-                  "domain": "info"
-                }, 
-                "name": "questionId"
+                  "refId": "sequenceNodeKey"
+                }
               }, 
               {
                 "type": "set-property", 
+                "name": "maxAttempts", 
                 "value": {
+                  "domain": "info", 
                   "type": "ref", 
-                  "refId": "maxAttempts", 
-                  "domain": "info"
-                }, 
-                "name": "maxAttempts"
+                  "refId": "maxAttempts"
+                }
               }
             ]
           }
         ], 
+        "description": "container for the sample multiple choice question", 
+        "hookupActions": [
+          {
+            "instance": {
+              "type": "submit-manager"
+            }, 
+            "args": [
+              {
+                "domain": "brix", 
+                "type": "ref", 
+                "refId": "Q1"
+              }
+            ], 
+            "type": "method-call", 
+            "description": "Hookup the submit manager to evaluate answers", 
+            "methodName": "handleRequestsFrom"
+          }, 
+          {
+            "instance": {
+              "domain": "brix", 
+              "type": "ref", 
+              "refId": "Q1"
+            }, 
+            "args": [
+              {
+                "type": "d3select", 
+                "selector": "#target1"
+              }
+            ], 
+            "type": "method-call", 
+            "description": "Draw the question", 
+            "methodName": "draw"
+          }
+        ], 
         "containerId": "target1"
       }
-    ]
+    ], 
+    "description": "A Sample Activity containing a single multiple choice bric"
   }, 
   "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope", 
   "@type": "Envelope", 
   "metadata": {
-    "contentTypeTier1": "Test and Assessment", 
-    "contentTypeTier2": [
-      "assessment item"
-    ], 
-    "description": "68830_HP_C02.html", 
-    "owner": "Brix", 
-    "created": "2013-12-17T18:04:41.885523", 
-    "timeRequired": "PT20S", 
-    "subject": [
-      "EnvironmentalScience"
-    ], 
-    "guid": "27679ce2-d0c7-4c30-8e77-dedef188d7df", 
     "intendedEndUserRole": [
       "Student"
     ], 
-    "title": "68830_HP_C02.html", 
+    "description": "68830_HP_C02.html", 
     "format": [
       "application/vnd.pearson.sanvan.v1.activity"
+    ], 
+    "owner": "Brix", 
+    "guid": "befd1d68-5aff-44eb-9067-36bc3ce1ddc2", 
+    "subject": [
+      "EnvironmentalScience"
+    ], 
+    "timeRequired": "PT20S", 
+    "created": "2013-12-18T14:00:05.285920", 
+    "title": "68830_HP_C02.html", 
+    "contentTypeTier1": "Test and Assessment", 
+    "contentTypeTier2": [
+      "assessment item"
     ]
   }
 }

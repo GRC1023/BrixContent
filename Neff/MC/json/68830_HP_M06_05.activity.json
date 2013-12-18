@@ -1,88 +1,53 @@
 {
   "body": {
-    "description": "A Sample Activity containing a single multiple choice bric", 
     "containerConfig": [
       {
-        "hookupActions": [
-          {
-            "type": "method-call", 
-            "methodName": "handleRequestsFrom", 
-            "args": [
-              {
-                "type": "ref", 
-                "refId": "Q1", 
-                "domain": "brix"
-              }
-            ], 
-            "description": "Hookup the submit manager to evaluate answers", 
-            "instance": {
-              "type": "submit-manager"
-            }
-          }, 
-          {
-            "type": "method-call", 
-            "methodName": "draw", 
-            "args": [
-              {
-                "type": "d3select", 
-                "selector": "#target1"
-              }
-            ], 
-            "description": "Draw the question", 
-            "instance": {
-              "type": "ref", 
-              "refId": "Q1", 
-              "domain": "brix"
-            }
-          }
-        ], 
-        "description": "container for the sample multiple choice question", 
         "brixConfig": [
           {
             "config": {
-              "choices": [
-                {
-                  "answerKey": "answer1", 
-                  "content": "Death rates would have to rise considerably"
-                }, 
-                {
-                  "answerKey": "answer2", 
-                  "content": "Widespread famine would have to slow population growth"
-                }, 
-                {
-                  "answerKey": "answer3", 
-                  "content": "The most developed countries in the world would have to drastically reduce their fertility rates"
-                }, 
-                {
-                  "answerKey": "answer4", 
-                  "content": "The least developed countries in the world would have to drastically reduce their fertility rates"
-                }
-              ], 
-              "order": "randomized", 
+              "presenterType": "RadioGroup", 
               "question": "What major changes would need to occur for the population to stabilize around 10 billion by 2050?", 
               "presenterConfig": {
                 "numberFormat": ""
               }, 
-              "id": "sampleQ1", 
-              "presenterType": "RadioGroup"
+              "choices": [
+                {
+                  "content": "Death rates would have to rise considerably", 
+                  "answerKey": "answer1"
+                }, 
+                {
+                  "content": "Widespread famine would have to slow population growth", 
+                  "answerKey": "answer2"
+                }, 
+                {
+                  "content": "The most developed countries in the world would have to drastically reduce their fertility rates", 
+                  "answerKey": "answer3"
+                }, 
+                {
+                  "content": "The least developed countries in the world would have to drastically reduce their fertility rates", 
+                  "answerKey": "answer4"
+                }
+              ], 
+              "order": "randomized", 
+              "id": "sampleQ1"
             }, 
             "answerKey": {
               "assessmentType": "multiplechoice", 
               "answers": {
-                "answer3": {
-                  "score": 0, 
-                  "response": ""
-                }, 
-                "answer2": {
-                  "score": 0, 
+                "answer4": {
+                  "score": 1, 
                   "response": ""
                 }, 
                 "answer1": {
                   "score": 0, 
                   "response": ""
                 }, 
-                "answer4": {
-                  "score": 1, 
+                "answer3": {
+                  "score": 0, 
+                  "response": ""
+                }, 
+                "answer2": {
+                  "score": 0, 
                   "response": ""
                 }
               }
@@ -92,50 +57,85 @@
             "configFixup": [
               {
                 "type": "set-property", 
+                "name": "questionId", 
                 "value": {
+                  "domain": "info", 
                   "type": "ref", 
-                  "refId": "sequenceNodeKey", 
-                  "domain": "info"
-                }, 
-                "name": "questionId"
+                  "refId": "sequenceNodeKey"
+                }
               }, 
               {
                 "type": "set-property", 
+                "name": "maxAttempts", 
                 "value": {
+                  "domain": "info", 
                   "type": "ref", 
-                  "refId": "maxAttempts", 
-                  "domain": "info"
-                }, 
-                "name": "maxAttempts"
+                  "refId": "maxAttempts"
+                }
               }
             ]
           }
         ], 
+        "description": "container for the sample multiple choice question", 
+        "hookupActions": [
+          {
+            "instance": {
+              "type": "submit-manager"
+            }, 
+            "args": [
+              {
+                "domain": "brix", 
+                "type": "ref", 
+                "refId": "Q1"
+              }
+            ], 
+            "type": "method-call", 
+            "description": "Hookup the submit manager to evaluate answers", 
+            "methodName": "handleRequestsFrom"
+          }, 
+          {
+            "instance": {
+              "domain": "brix", 
+              "type": "ref", 
+              "refId": "Q1"
+            }, 
+            "args": [
+              {
+                "type": "d3select", 
+                "selector": "#target1"
+              }
+            ], 
+            "type": "method-call", 
+            "description": "Draw the question", 
+            "methodName": "draw"
+          }
+        ], 
         "containerId": "target1"
       }
-    ]
+    ], 
+    "description": "A Sample Activity containing a single multiple choice bric"
   }, 
   "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope", 
   "@type": "Envelope", 
   "metadata": {
-    "contentTypeTier1": "Test and Assessment", 
-    "contentTypeTier2": [
-      "assessment item"
-    ], 
-    "description": "68830_HP_M06_05.html", 
-    "owner": "Brix", 
-    "created": "2013-12-17T18:04:41.885374", 
-    "timeRequired": "PT20S", 
-    "subject": [
-      "EnvironmentalScience"
-    ], 
-    "guid": "b9c7c25c-5f60-4ca4-9aaa-896989ade519", 
     "intendedEndUserRole": [
       "Student"
     ], 
-    "title": "68830_HP_M06_05.html", 
+    "description": "68830_HP_M06_05.html", 
     "format": [
       "application/vnd.pearson.sanvan.v1.activity"
+    ], 
+    "owner": "Brix", 
+    "guid": "ab685466-9355-46b9-ae85-d0547f227772", 
+    "subject": [
+      "EnvironmentalScience"
+    ], 
+    "timeRequired": "PT20S", 
+    "created": "2013-12-18T14:00:05.285695", 
+    "title": "68830_HP_M06_05.html", 
+    "contentTypeTier1": "Test and Assessment", 
+    "contentTypeTier2": [
+      "assessment item"
     ]
   }
 }

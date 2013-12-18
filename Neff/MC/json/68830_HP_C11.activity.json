@@ -1,90 +1,43 @@
 {
   "body": {
-    "description": "A Sample Activity containing a single multiple choice bric", 
     "containerConfig": [
       {
-        "hookupActions": [
-          {
-            "type": "method-call", 
-            "methodName": "handleRequestsFrom", 
-            "args": [
-              {
-                "type": "ref", 
-                "refId": "Q1", 
-                "domain": "brix"
-              }
-            ], 
-            "description": "Hookup the submit manager to evaluate answers", 
-            "instance": {
-              "type": "submit-manager"
-            }
-          }, 
-          {
-            "type": "method-call", 
-            "methodName": "draw", 
-            "args": [
-              {
-                "type": "d3select", 
-                "selector": "#target1"
-              }
-            ], 
-            "description": "Draw the question", 
-            "instance": {
-              "type": "ref", 
-              "refId": "Q1", 
-              "domain": "brix"
-            }
-          }
-        ], 
-        "description": "container for the sample multiple choice question", 
         "brixConfig": [
           {
             "config": {
-              "choices": [
-                {
-                  "answerKey": "answer1", 
-                  "content": "At a constant growth rate, the same number of people will be added to the population each year."
-                }, 
-                {
-                  "answerKey": "answer2", 
-                  "content": "At a constant growth rate, an increasingly smaller number of people will be added to the population each year."
-                }, 
-                {
-                  "answerKey": "answer3", 
-                  "content": "At a constant growth rate, an increasingly larger number of people will be added to the population each year."
-                }, 
-                {
-                  "answerKey": "answer4", 
-                  "content": "At a constant growth rate, a random number of people will be added to the population each year."
-                }, 
-                {
-                  "answerKey": "answer5", 
-                  "content": "The number of people added to a population is independent of growth rate and depends completely on the population size."
-                }
-              ], 
-              "order": "randomized", 
+              "presenterType": "RadioGroup", 
               "question": "If the human population is growing at a constant rate of 1.1% per year, how will the number of people added to the global population change each year in the future?", 
               "presenterConfig": {
                 "numberFormat": ""
               }, 
-              "id": "sampleQ1", 
-              "presenterType": "RadioGroup"
+              "choices": [
+                {
+                  "content": "At a constant growth rate, the same number of people will be added to the population each year.", 
+                  "answerKey": "answer1"
+                }, 
+                {
+                  "content": "At a constant growth rate, an increasingly smaller number of people will be added to the population each year.", 
+                  "answerKey": "answer2"
+                }, 
+                {
+                  "content": "At a constant growth rate, an increasingly larger number of people will be added to the population each year.", 
+                  "answerKey": "answer3"
+                }, 
+                {
+                  "content": "At a constant growth rate, a random number of people will be added to the population each year.", 
+                  "answerKey": "answer4"
+                }, 
+                {
+                  "content": "The number of people added to a population is independent of growth rate and depends completely on the population size.", 
+                  "answerKey": "answer5"
+                }
+              ], 
+              "order": "randomized", 
+              "id": "sampleQ1"
             }, 
             "answerKey": {
               "assessmentType": "multiplechoice", 
               "answers": {
-                "answer3": {
-                  "score": 1, 
-                  "response": "Correct."
-                }, 
-                "answer2": {
-                  "score": 0, 
-                  "response": "If the population growth rate is a percentage of the total population that is added to the Earth each year, would the number of new people on the Earth each year decrease?"
-                }, 
-                "answer1": {
-                  "score": 0, 
-                  "response": "If the population growth rate is a percentage of the total population that is added to the Earth each year, could the number remain constant if the population itself is increasing?"
-                }, 
                 "answer5": {
                   "score": 0, 
                   "response": "If this were true and you had a population of 1 million people, would more people be added each year with a growth rate of 1% or 5%"
@@ -92,6 +45,18 @@
                 "answer4": {
                   "score": 0, 
                   "response": "If we know the growth rate and approximate population size, will this number actually be random?"
+                }, 
+                "answer1": {
+                  "score": 0, 
+                  "response": "If the population growth rate is a percentage of the total population that is added to the Earth each year, could the number remain constant if the population itself is increasing?"
+                }, 
+                "answer3": {
+                  "score": 1, 
+                  "response": "Correct."
+                }, 
+                "answer2": {
+                  "score": 0, 
+                  "response": "If the population growth rate is a percentage of the total population that is added to the Earth each year, would the number of new people on the Earth each year decrease?"
                 }
               }
             }, 
@@ -100,50 +65,85 @@
             "configFixup": [
               {
                 "type": "set-property", 
+                "name": "questionId", 
                 "value": {
+                  "domain": "info", 
                   "type": "ref", 
-                  "refId": "sequenceNodeKey", 
-                  "domain": "info"
-                }, 
-                "name": "questionId"
+                  "refId": "sequenceNodeKey"
+                }
               }, 
               {
                 "type": "set-property", 
+                "name": "maxAttempts", 
                 "value": {
+                  "domain": "info", 
                   "type": "ref", 
-                  "refId": "maxAttempts", 
-                  "domain": "info"
-                }, 
-                "name": "maxAttempts"
+                  "refId": "maxAttempts"
+                }
               }
             ]
           }
         ], 
+        "description": "container for the sample multiple choice question", 
+        "hookupActions": [
+          {
+            "instance": {
+              "type": "submit-manager"
+            }, 
+            "args": [
+              {
+                "domain": "brix", 
+                "type": "ref", 
+                "refId": "Q1"
+              }
+            ], 
+            "type": "method-call", 
+            "description": "Hookup the submit manager to evaluate answers", 
+            "methodName": "handleRequestsFrom"
+          }, 
+          {
+            "instance": {
+              "domain": "brix", 
+              "type": "ref", 
+              "refId": "Q1"
+            }, 
+            "args": [
+              {
+                "type": "d3select", 
+                "selector": "#target1"
+              }
+            ], 
+            "type": "method-call", 
+            "description": "Draw the question", 
+            "methodName": "draw"
+          }
+        ], 
         "containerId": "target1"
       }
-    ]
+    ], 
+    "description": "A Sample Activity containing a single multiple choice bric"
   }, 
   "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope", 
   "@type": "Envelope", 
   "metadata": {
-    "contentTypeTier1": "Test and Assessment", 
-    "contentTypeTier2": [
-      "assessment item"
-    ], 
-    "description": "68830_HP_C11.html", 
-    "owner": "Brix", 
-    "created": "2013-12-17T18:04:41.885683", 
-    "timeRequired": "PT20S", 
-    "subject": [
-      "EnvironmentalScience"
-    ], 
-    "guid": "1eb09e7b-488b-4f59-a1dc-b01008059107", 
     "intendedEndUserRole": [
       "Student"
     ], 
-    "title": "68830_HP_C11.html", 
+    "description": "68830_HP_C11.html", 
     "format": [
       "application/vnd.pearson.sanvan.v1.activity"
+    ], 
+    "owner": "Brix", 
+    "guid": "357486c0-5990-4f13-ac57-c35969fd5fa0", 
+    "subject": [
+      "EnvironmentalScience"
+    ], 
+    "timeRequired": "PT20S", 
+    "created": "2013-12-18T14:00:05.286120", 
+    "title": "68830_HP_C11.html", 
+    "contentTypeTier1": "Test and Assessment", 
+    "contentTypeTier2": [
+      "assessment item"
     ]
   }
 }

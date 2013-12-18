@@ -1,74 +1,47 @@
 {
   "body": {
-    "description": "A Sample Activity containing a single multiple choice bric", 
     "containerConfig": [
       {
-        "hookupActions": [
-          {
-            "type": "method-call", 
-            "methodName": "handleRequestsFrom", 
-            "args": [
-              {
-                "type": "ref", 
-                "refId": "Q1", 
-                "domain": "brix"
-              }
-            ], 
-            "description": "Hookup the submit manager to evaluate answers", 
-            "instance": {
-              "type": "submit-manager"
-            }
-          }, 
-          {
-            "type": "method-call", 
-            "methodName": "draw", 
-            "args": [
-              {
-                "type": "d3select", 
-                "selector": "#target1"
-              }
-            ], 
-            "description": "Draw the question", 
-            "instance": {
-              "type": "ref", 
-              "refId": "Q1", 
-              "domain": "brix"
-            }
-          }
-        ], 
-        "description": "container for the sample multiple choice question", 
         "brixConfig": [
           {
             "config": {
-              "choices": [
-                {
-                  "answerKey": "answer1", 
-                  "content": "Atmospheric CO<sub>2</sub> would rise, but this would not need to be addressed because atmospheric CO<sub>2</sub> is not harmful."
-                }, 
-                {
-                  "answerKey": "answer2", 
-                  "content": "Atmospheric CO<sub>2</sub> would decrease because these unconventional sources produce less CO<sub>2</sub> than traditional sources. Thus, the problem of having too much CO<sub>2</sub> is being addressed already by using these sources."
-                }, 
-                {
-                  "answerKey": "answer3", 
-                  "content": "Atmospheric CO<sub>2</sub> would rise and the only way to address this would be to restrict more and more people from using energy."
-                }, 
-                {
-                  "answerKey": "answer4", 
-                  "content": "Atmospheric CO<sub>2</sub> would rise and could potentially be addressed using techniques that pull CO<sub>2</sub> out of the atmosphere and store it somewhere for a long period of time."
-                }
-              ], 
-              "order": "randomized", 
+              "presenterType": "RadioGroup", 
               "question": "One possible future for energy use focuses on the development of the very large deposits of oil shales, methane hydrates, and other forms of unconventional fossil energy. If we were to pursue this particular energy future, how would atmospheric CO<sub>2</sub> be affected, and how might this be best addressed in an equitable way?", 
               "presenterConfig": {
                 "numberFormat": ""
               }, 
-              "id": "sampleQ1", 
-              "presenterType": "RadioGroup"
+              "choices": [
+                {
+                  "content": "Atmospheric CO<sub>2</sub> would rise, but this would not need to be addressed because atmospheric CO<sub>2</sub> is not harmful.", 
+                  "answerKey": "answer1"
+                }, 
+                {
+                  "content": "Atmospheric CO<sub>2</sub> would decrease because these unconventional sources produce less CO<sub>2</sub> than traditional sources. Thus, the problem of having too much CO<sub>2</sub> is being addressed already by using these sources.", 
+                  "answerKey": "answer2"
+                }, 
+                {
+                  "content": "Atmospheric CO<sub>2</sub> would rise and the only way to address this would be to restrict more and more people from using energy.", 
+                  "answerKey": "answer3"
+                }, 
+                {
+                  "content": "Atmospheric CO<sub>2</sub> would rise and could potentially be addressed using techniques that pull CO<sub>2</sub> out of the atmosphere and store it somewhere for a long period of time.", 
+                  "answerKey": "answer4"
+                }
+              ], 
+              "order": "randomized", 
+              "id": "sampleQ1"
             }, 
             "answerKey": {
               "assessmentType": "multiplechoice", 
               "answers": {
+                "answer4": {
+                  "score": 1, 
+                  "response": "Correct. This is often referred to as carbon capture and sequestration."
+                }, 
+                "answer1": {
+                  "score": 0, 
+                  "response": "Atmospheric CO<sub>2</sub> traps heat near the Earth. What major issue is this causing?"
+                }, 
                 "answer3": {
                   "score": 0, 
                   "response": "While reducing overall energy use would likely lead to a reduction of atmospheric CO<sub>2</sub>, would this be the best (and most ethical) solution if we chose this energy future?"
@@ -76,14 +49,6 @@
                 "answer2": {
                   "score": 0, 
                   "response": "Does the process of obtaining and burning unconventional fossil fuel sources actually produce more or less CO<sub>2</sub> than traditional sources?"
-                }, 
-                "answer1": {
-                  "score": 0, 
-                  "response": "Atmospheric CO<sub>2</sub> traps heat near the Earth. What major issue is this causing?"
-                }, 
-                "answer4": {
-                  "score": 1, 
-                  "response": "Correct. This is often referred to as carbon capture and sequestration."
                 }
               }
             }, 
@@ -92,50 +57,85 @@
             "configFixup": [
               {
                 "type": "set-property", 
+                "name": "questionId", 
                 "value": {
+                  "domain": "info", 
                   "type": "ref", 
-                  "refId": "sequenceNodeKey", 
-                  "domain": "info"
-                }, 
-                "name": "questionId"
+                  "refId": "sequenceNodeKey"
+                }
               }, 
               {
                 "type": "set-property", 
+                "name": "maxAttempts", 
                 "value": {
+                  "domain": "info", 
                   "type": "ref", 
-                  "refId": "maxAttempts", 
-                  "domain": "info"
-                }, 
-                "name": "maxAttempts"
+                  "refId": "maxAttempts"
+                }
               }
             ]
           }
         ], 
+        "description": "container for the sample multiple choice question", 
+        "hookupActions": [
+          {
+            "instance": {
+              "type": "submit-manager"
+            }, 
+            "args": [
+              {
+                "domain": "brix", 
+                "type": "ref", 
+                "refId": "Q1"
+              }
+            ], 
+            "type": "method-call", 
+            "description": "Hookup the submit manager to evaluate answers", 
+            "methodName": "handleRequestsFrom"
+          }, 
+          {
+            "instance": {
+              "domain": "brix", 
+              "type": "ref", 
+              "refId": "Q1"
+            }, 
+            "args": [
+              {
+                "type": "d3select", 
+                "selector": "#target1"
+              }
+            ], 
+            "type": "method-call", 
+            "description": "Draw the question", 
+            "methodName": "draw"
+          }
+        ], 
         "containerId": "target1"
       }
-    ]
+    ], 
+    "description": "A Sample Activity containing a single multiple choice bric"
   }, 
   "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope", 
   "@type": "Envelope", 
   "metadata": {
-    "contentTypeTier1": "Test and Assessment", 
-    "contentTypeTier2": [
-      "assessment item"
-    ], 
-    "description": "68830_NE_C10.html", 
-    "owner": "Brix", 
-    "created": "2013-12-17T18:04:41.887475", 
-    "timeRequired": "PT20S", 
-    "subject": [
-      "EnvironmentalScience"
-    ], 
-    "guid": "3a6e53b7-bf67-4dcd-9f7b-406872fbae8e", 
     "intendedEndUserRole": [
       "Student"
     ], 
-    "title": "68830_NE_C10.html", 
+    "description": "68830_NE_C10.html", 
     "format": [
       "application/vnd.pearson.sanvan.v1.activity"
+    ], 
+    "owner": "Brix", 
+    "guid": "bbc8ba05-a46f-4634-89b6-0ba9397a7bab", 
+    "subject": [
+      "EnvironmentalScience"
+    ], 
+    "timeRequired": "PT20S", 
+    "created": "2013-12-18T14:00:05.289291", 
+    "title": "68830_NE_C10.html", 
+    "contentTypeTier1": "Test and Assessment", 
+    "contentTypeTier2": [
+      "assessment item"
     ]
   }
 }

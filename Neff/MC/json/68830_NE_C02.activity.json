@@ -1,74 +1,47 @@
 {
   "body": {
-    "description": "A Sample Activity containing a single multiple choice bric", 
     "containerConfig": [
       {
-        "hookupActions": [
-          {
-            "type": "method-call", 
-            "methodName": "handleRequestsFrom", 
-            "args": [
-              {
-                "type": "ref", 
-                "refId": "Q1", 
-                "domain": "brix"
-              }
-            ], 
-            "description": "Hookup the submit manager to evaluate answers", 
-            "instance": {
-              "type": "submit-manager"
-            }
-          }, 
-          {
-            "type": "method-call", 
-            "methodName": "draw", 
-            "args": [
-              {
-                "type": "d3select", 
-                "selector": "#target1"
-              }
-            ], 
-            "description": "Draw the question", 
-            "instance": {
-              "type": "ref", 
-              "refId": "Q1", 
-              "domain": "brix"
-            }
-          }
-        ], 
-        "description": "container for the sample multiple choice question", 
         "brixConfig": [
           {
             "config": {
-              "choices": [
-                {
-                  "answerKey": "answer1", 
-                  "content": "Reserve estimates decrease because of the principles of supply and demand:  The price of something usually rises as its supply dwindles."
-                }, 
-                {
-                  "answerKey": "answer2", 
-                  "content": "Reserve estimates increase because when we pay more for fossil fuels, we are able to extract from reserves that were simply too expensive to access before."
-                }, 
-                {
-                  "answerKey": "answer3", 
-                  "content": "Reserve estimates stay the same because companies control the prices of fossil fuels for other reasons besides geologic availability."
-                }, 
-                {
-                  "answerKey": "answer4", 
-                  "content": "Reserve estimates stay the same because we have not found any new fossil fuel reserves in a very long time."
-                }
-              ], 
-              "order": "randomized", 
+              "presenterType": "RadioGroup", 
               "question": "Assuming that there are abundant quantities of fossil fuels in the ground, when the prices of these fuels rise, do reserve estimates increase, decrease, or stay the same? Why?", 
               "presenterConfig": {
                 "numberFormat": ""
               }, 
-              "id": "sampleQ1", 
-              "presenterType": "RadioGroup"
+              "choices": [
+                {
+                  "content": "Reserve estimates decrease because of the principles of supply and demand:  The price of something usually rises as its supply dwindles.", 
+                  "answerKey": "answer1"
+                }, 
+                {
+                  "content": "Reserve estimates increase because when we pay more for fossil fuels, we are able to extract from reserves that were simply too expensive to access before.", 
+                  "answerKey": "answer2"
+                }, 
+                {
+                  "content": "Reserve estimates stay the same because companies control the prices of fossil fuels for other reasons besides geologic availability.", 
+                  "answerKey": "answer3"
+                }, 
+                {
+                  "content": "Reserve estimates stay the same because we have not found any new fossil fuel reserves in a very long time.", 
+                  "answerKey": "answer4"
+                }
+              ], 
+              "order": "randomized", 
+              "id": "sampleQ1"
             }, 
             "answerKey": {
               "assessmentType": "multiplechoice", 
               "answers": {
+                "answer4": {
+                  "score": 0, 
+                  "response": "Which fossil fuel has recently boomed in the United States due to the discovery of new reserves?"
+                }, 
+                "answer1": {
+                  "score": 0, 
+                  "response": "Is it likely that the market would allow for one fuel to become so expensive without encouraging the development of new reserves or different sources at more competitive prices?"
+                }, 
                 "answer3": {
                   "score": 0, 
                   "response": "While these companies may hold a lot of power, would the market or the government typically allow for unregulated price increases on fuels?"
@@ -76,14 +49,6 @@
                 "answer2": {
                   "score": 1, 
                   "response": "Correct."
-                }, 
-                "answer1": {
-                  "score": 0, 
-                  "response": "Is it likely that the market would allow for one fuel to become so expensive without encouraging the development of new reserves or different sources at more competitive prices?"
-                }, 
-                "answer4": {
-                  "score": 0, 
-                  "response": "Which fossil fuel has recently boomed in the United States due to the discovery of new reserves?"
                 }
               }
             }, 
@@ -92,50 +57,85 @@
             "configFixup": [
               {
                 "type": "set-property", 
+                "name": "questionId", 
                 "value": {
+                  "domain": "info", 
                   "type": "ref", 
-                  "refId": "sequenceNodeKey", 
-                  "domain": "info"
-                }, 
-                "name": "questionId"
+                  "refId": "sequenceNodeKey"
+                }
               }, 
               {
                 "type": "set-property", 
+                "name": "maxAttempts", 
                 "value": {
+                  "domain": "info", 
                   "type": "ref", 
-                  "refId": "maxAttempts", 
-                  "domain": "info"
-                }, 
-                "name": "maxAttempts"
+                  "refId": "maxAttempts"
+                }
               }
             ]
           }
         ], 
+        "description": "container for the sample multiple choice question", 
+        "hookupActions": [
+          {
+            "instance": {
+              "type": "submit-manager"
+            }, 
+            "args": [
+              {
+                "domain": "brix", 
+                "type": "ref", 
+                "refId": "Q1"
+              }
+            ], 
+            "type": "method-call", 
+            "description": "Hookup the submit manager to evaluate answers", 
+            "methodName": "handleRequestsFrom"
+          }, 
+          {
+            "instance": {
+              "domain": "brix", 
+              "type": "ref", 
+              "refId": "Q1"
+            }, 
+            "args": [
+              {
+                "type": "d3select", 
+                "selector": "#target1"
+              }
+            ], 
+            "type": "method-call", 
+            "description": "Draw the question", 
+            "methodName": "draw"
+          }
+        ], 
         "containerId": "target1"
       }
-    ]
+    ], 
+    "description": "A Sample Activity containing a single multiple choice bric"
   }, 
   "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope", 
   "@type": "Envelope", 
   "metadata": {
-    "contentTypeTier1": "Test and Assessment", 
-    "contentTypeTier2": [
-      "assessment item"
-    ], 
-    "description": "68830_NE_C02.html", 
-    "owner": "Brix", 
-    "created": "2013-12-17T18:04:41.887340", 
-    "timeRequired": "PT20S", 
-    "subject": [
-      "EnvironmentalScience"
-    ], 
-    "guid": "7513a81a-b651-44cd-b452-78d094b5b10e", 
     "intendedEndUserRole": [
       "Student"
     ], 
-    "title": "68830_NE_C02.html", 
+    "description": "68830_NE_C02.html", 
     "format": [
       "application/vnd.pearson.sanvan.v1.activity"
+    ], 
+    "owner": "Brix", 
+    "guid": "f945f6e2-aab9-4c82-971e-f2e49031e041", 
+    "subject": [
+      "EnvironmentalScience"
+    ], 
+    "timeRequired": "PT20S", 
+    "created": "2013-12-18T14:00:05.288975", 
+    "title": "68830_NE_C02.html", 
+    "contentTypeTier1": "Test and Assessment", 
+    "contentTypeTier2": [
+      "assessment item"
     ]
   }
 }

@@ -1,90 +1,43 @@
 {
   "body": {
-    "description": "A Sample Activity containing a single multiple choice bric", 
     "containerConfig": [
       {
-        "hookupActions": [
-          {
-            "type": "method-call", 
-            "methodName": "handleRequestsFrom", 
-            "args": [
-              {
-                "type": "ref", 
-                "refId": "Q1", 
-                "domain": "brix"
-              }
-            ], 
-            "description": "Hookup the submit manager to evaluate answers", 
-            "instance": {
-              "type": "submit-manager"
-            }
-          }, 
-          {
-            "type": "method-call", 
-            "methodName": "draw", 
-            "args": [
-              {
-                "type": "d3select", 
-                "selector": "#target1"
-              }
-            ], 
-            "description": "Draw the question", 
-            "instance": {
-              "type": "ref", 
-              "refId": "Q1", 
-              "domain": "brix"
-            }
-          }
-        ], 
-        "description": "container for the sample multiple choice question", 
         "brixConfig": [
           {
             "config": {
-              "choices": [
-                {
-                  "answerKey": "answer1", 
-                  "content": "Kenya will have high health care costs and the problem of declining population growth."
-                }, 
-                {
-                  "answerKey": "answer2", 
-                  "content": "Kenya will have high infrastructure costs such as those associated with education and will require rapid economic growth to provide jobs to a growing population."
-                }, 
-                {
-                  "answerKey": "answer3", 
-                  "content": "Japan will have high health care costs and a shrinking amount of government revenue (taxes)."
-                }, 
-                {
-                  "answerKey": "answer4", 
-                  "content": "Japan may have difficulty finding people to work in some types of jobs and will have to change societal investments from education to health care."
-                }, 
-                {
-                  "answerKey": "answer5", 
-                  "content": "Both countries face the challenge of providing for non-working members of society in economic conditions that are likely to generate less income for investment in society. "
-                }
-              ], 
-              "order": "randomized", 
+              "presenterType": "RadioGroup", 
               "question": "A high dependency ratio can create stresses for a society, but those stresses vary depending on the age of population. Using Japan as an example of a population with a large number of older citizens and Kenya as an example of a population with a large number of younger citizens, which of the following statements is not likely to be true?", 
               "presenterConfig": {
                 "numberFormat": ""
               }, 
-              "id": "sampleQ1", 
-              "presenterType": "RadioGroup"
+              "choices": [
+                {
+                  "content": "Kenya will have high health care costs and the problem of declining population growth.", 
+                  "answerKey": "answer1"
+                }, 
+                {
+                  "content": "Kenya will have high infrastructure costs such as those associated with education and will require rapid economic growth to provide jobs to a growing population.", 
+                  "answerKey": "answer2"
+                }, 
+                {
+                  "content": "Japan will have high health care costs and a shrinking amount of government revenue (taxes).", 
+                  "answerKey": "answer3"
+                }, 
+                {
+                  "content": "Japan may have difficulty finding people to work in some types of jobs and will have to change societal investments from education to health care.", 
+                  "answerKey": "answer4"
+                }, 
+                {
+                  "content": "Both countries face the challenge of providing for non-working members of society in economic conditions that are likely to generate less income for investment in society. ", 
+                  "answerKey": "answer5"
+                }
+              ], 
+              "order": "randomized", 
+              "id": "sampleQ1"
             }, 
             "answerKey": {
               "assessmentType": "multiplechoice", 
               "answers": {
-                "answer3": {
-                  "score": 0, 
-                  "response": "If Japan is an example of a population with a large number of older citizens, is this likely to be true as they continue to age?"
-                }, 
-                "answer2": {
-                  "score": 0, 
-                  "response": "If Kenya is an example of a population with a large number of younger citizens, is this likely to become true as they grow older?"
-                }, 
-                "answer1": {
-                  "score": 1, 
-                  "response": "Correct."
-                }, 
                 "answer5": {
                   "score": 0, 
                   "response": "Will both countries continue to have a non-working population for very long?"
@@ -92,6 +45,18 @@
                 "answer4": {
                   "score": 0, 
                   "response": "If Japan\u2019s trend of having a mostly older population continues, is Japan more likely to invest in things that benefit older or younger people?"
+                }, 
+                "answer1": {
+                  "score": 1, 
+                  "response": "Correct."
+                }, 
+                "answer3": {
+                  "score": 0, 
+                  "response": "If Japan is an example of a population with a large number of older citizens, is this likely to be true as they continue to age?"
+                }, 
+                "answer2": {
+                  "score": 0, 
+                  "response": "If Kenya is an example of a population with a large number of younger citizens, is this likely to become true as they grow older?"
                 }
               }
             }, 
@@ -100,50 +65,85 @@
             "configFixup": [
               {
                 "type": "set-property", 
+                "name": "questionId", 
                 "value": {
+                  "domain": "info", 
                   "type": "ref", 
-                  "refId": "sequenceNodeKey", 
-                  "domain": "info"
-                }, 
-                "name": "questionId"
+                  "refId": "sequenceNodeKey"
+                }
               }, 
               {
                 "type": "set-property", 
+                "name": "maxAttempts", 
                 "value": {
+                  "domain": "info", 
                   "type": "ref", 
-                  "refId": "maxAttempts", 
-                  "domain": "info"
-                }, 
-                "name": "maxAttempts"
+                  "refId": "maxAttempts"
+                }
               }
             ]
           }
         ], 
+        "description": "container for the sample multiple choice question", 
+        "hookupActions": [
+          {
+            "instance": {
+              "type": "submit-manager"
+            }, 
+            "args": [
+              {
+                "domain": "brix", 
+                "type": "ref", 
+                "refId": "Q1"
+              }
+            ], 
+            "type": "method-call", 
+            "description": "Hookup the submit manager to evaluate answers", 
+            "methodName": "handleRequestsFrom"
+          }, 
+          {
+            "instance": {
+              "domain": "brix", 
+              "type": "ref", 
+              "refId": "Q1"
+            }, 
+            "args": [
+              {
+                "type": "d3select", 
+                "selector": "#target1"
+              }
+            ], 
+            "type": "method-call", 
+            "description": "Draw the question", 
+            "methodName": "draw"
+          }
+        ], 
         "containerId": "target1"
       }
-    ]
+    ], 
+    "description": "A Sample Activity containing a single multiple choice bric"
   }, 
   "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope", 
   "@type": "Envelope", 
   "metadata": {
-    "contentTypeTier1": "Test and Assessment", 
-    "contentTypeTier2": [
-      "assessment item"
-    ], 
-    "description": "68830_HP_C06.html", 
-    "owner": "Brix", 
-    "created": "2013-12-17T18:04:41.885606", 
-    "timeRequired": "PT20S", 
-    "subject": [
-      "EnvironmentalScience"
-    ], 
-    "guid": "7e62080e-2172-43ca-8e83-da8af64ae856", 
     "intendedEndUserRole": [
       "Student"
     ], 
-    "title": "68830_HP_C06.html", 
+    "description": "68830_HP_C06.html", 
     "format": [
       "application/vnd.pearson.sanvan.v1.activity"
+    ], 
+    "owner": "Brix", 
+    "guid": "4e670c09-da73-4407-a136-fc90c75e2fc7", 
+    "subject": [
+      "EnvironmentalScience"
+    ], 
+    "timeRequired": "PT20S", 
+    "created": "2013-12-18T14:00:05.286010", 
+    "title": "68830_HP_C06.html", 
+    "contentTypeTier1": "Test and Assessment", 
+    "contentTypeTier2": [
+      "assessment item"
     ]
   }
 }

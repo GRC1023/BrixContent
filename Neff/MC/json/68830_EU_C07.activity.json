@@ -1,90 +1,43 @@
 {
   "body": {
-    "description": "A Sample Activity containing a single multiple choice bric", 
     "containerConfig": [
       {
-        "hookupActions": [
-          {
-            "type": "method-call", 
-            "methodName": "handleRequestsFrom", 
-            "args": [
-              {
-                "type": "ref", 
-                "refId": "Q1", 
-                "domain": "brix"
-              }
-            ], 
-            "description": "Hookup the submit manager to evaluate answers", 
-            "instance": {
-              "type": "submit-manager"
-            }
-          }, 
-          {
-            "type": "method-call", 
-            "methodName": "draw", 
-            "args": [
-              {
-                "type": "d3select", 
-                "selector": "#target1"
-              }
-            ], 
-            "description": "Draw the question", 
-            "instance": {
-              "type": "ref", 
-              "refId": "Q1", 
-              "domain": "brix"
-            }
-          }
-        ], 
-        "description": "container for the sample multiple choice question", 
         "brixConfig": [
           {
             "config": {
-              "choices": [
-                {
-                  "answerKey": "answer1", 
-                  "content": "Sulfur oxide (SO<sub>x</sub>) emissions"
-                }, 
-                {
-                  "answerKey": "answer2", 
-                  "content": "Nitrogen oxide (NO<sub>x</sub>) emissions"
-                }, 
-                {
-                  "answerKey": "answer3", 
-                  "content": "CFC emissions"
-                }, 
-                {
-                  "answerKey": "answer4", 
-                  "content": "Ammonia (NH<sub>4</sub><sup>+</sup>) emissions"
-                }, 
-                {
-                  "answerKey": "answer5", 
-                  "content": "Nitrous oxide (N<sub>2</sub>O) emissions"
-                }
-              ], 
-              "order": "randomized", 
+              "presenterType": "RadioGroup", 
               "question": "When you add wind power to the electric power grid, which pollution issue are you most likely to help address in the United States? (Think about where energy comes from and the downsides of each fuel source.)", 
               "presenterConfig": {
                 "numberFormat": ""
               }, 
-              "id": "sampleQ1", 
-              "presenterType": "RadioGroup"
+              "choices": [
+                {
+                  "content": "Sulfur oxide (SO<sub>x</sub>) emissions", 
+                  "answerKey": "answer1"
+                }, 
+                {
+                  "content": "Nitrogen oxide (NO<sub>x</sub>) emissions", 
+                  "answerKey": "answer2"
+                }, 
+                {
+                  "content": "CFC emissions", 
+                  "answerKey": "answer3"
+                }, 
+                {
+                  "content": "Ammonia (NH<sub>4</sub><sup>+</sup>) emissions", 
+                  "answerKey": "answer4"
+                }, 
+                {
+                  "content": "Nitrous oxide (N<sub>2</sub>O) emissions", 
+                  "answerKey": "answer5"
+                }
+              ], 
+              "order": "randomized", 
+              "id": "sampleQ1"
             }, 
             "answerKey": {
               "assessmentType": "multiplechoice", 
               "answers": {
-                "answer3": {
-                  "score": 0, 
-                  "response": "Are CFCs used to generate electricity, which could be replaced by wind?"
-                }, 
-                "answer2": {
-                  "score": 0, 
-                  "response": "Where do NO<sub>x</sub> emissions come from and could this fuel source be easily replaced by wind energy?"
-                }, 
-                "answer1": {
-                  "score": 1, 
-                  "response": "Correct"
-                }, 
                 "answer5": {
                   "score": 0, 
                   "response": "Where do these emissions come from and do they relate to electricity generation?"
@@ -92,6 +45,18 @@
                 "answer4": {
                   "score": 0, 
                   "response": "Where do these emissions come from and do they relate to electricity generation?"
+                }, 
+                "answer1": {
+                  "score": 1, 
+                  "response": "Correct"
+                }, 
+                "answer3": {
+                  "score": 0, 
+                  "response": "Are CFCs used to generate electricity, which could be replaced by wind?"
+                }, 
+                "answer2": {
+                  "score": 0, 
+                  "response": "Where do NO<sub>x</sub> emissions come from and could this fuel source be easily replaced by wind energy?"
                 }
               }
             }, 
@@ -100,50 +65,85 @@
             "configFixup": [
               {
                 "type": "set-property", 
+                "name": "questionId", 
                 "value": {
+                  "domain": "info", 
                   "type": "ref", 
-                  "refId": "sequenceNodeKey", 
-                  "domain": "info"
-                }, 
-                "name": "questionId"
+                  "refId": "sequenceNodeKey"
+                }
               }, 
               {
                 "type": "set-property", 
+                "name": "maxAttempts", 
                 "value": {
+                  "domain": "info", 
                   "type": "ref", 
-                  "refId": "maxAttempts", 
-                  "domain": "info"
-                }, 
-                "name": "maxAttempts"
+                  "refId": "maxAttempts"
+                }
               }
             ]
           }
         ], 
+        "description": "container for the sample multiple choice question", 
+        "hookupActions": [
+          {
+            "instance": {
+              "type": "submit-manager"
+            }, 
+            "args": [
+              {
+                "domain": "brix", 
+                "type": "ref", 
+                "refId": "Q1"
+              }
+            ], 
+            "type": "method-call", 
+            "description": "Hookup the submit manager to evaluate answers", 
+            "methodName": "handleRequestsFrom"
+          }, 
+          {
+            "instance": {
+              "domain": "brix", 
+              "type": "ref", 
+              "refId": "Q1"
+            }, 
+            "args": [
+              {
+                "type": "d3select", 
+                "selector": "#target1"
+              }
+            ], 
+            "type": "method-call", 
+            "description": "Draw the question", 
+            "methodName": "draw"
+          }
+        ], 
         "containerId": "target1"
       }
-    ]
+    ], 
+    "description": "A Sample Activity containing a single multiple choice bric"
   }, 
   "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope", 
   "@type": "Envelope", 
   "metadata": {
-    "contentTypeTier1": "Test and Assessment", 
-    "contentTypeTier2": [
-      "assessment item"
-    ], 
-    "description": "68830_EU_C07.html", 
-    "owner": "Brix", 
-    "created": "2013-12-17T18:04:41.886808", 
-    "timeRequired": "PT20S", 
-    "subject": [
-      "EnvironmentalScience"
-    ], 
-    "guid": "18b078dc-0baa-4939-b031-63e05dbdf607", 
     "intendedEndUserRole": [
       "Student"
     ], 
-    "title": "68830_EU_C07.html", 
+    "description": "68830_EU_C07.html", 
     "format": [
       "application/vnd.pearson.sanvan.v1.activity"
+    ], 
+    "owner": "Brix", 
+    "guid": "a4985860-d187-40a3-a9d4-1908b5a577c8", 
+    "subject": [
+      "EnvironmentalScience"
+    ], 
+    "timeRequired": "PT20S", 
+    "created": "2013-12-18T14:00:05.287729", 
+    "title": "68830_EU_C07.html", 
+    "contentTypeTier1": "Test and Assessment", 
+    "contentTypeTier2": [
+      "assessment item"
     ]
   }
 }

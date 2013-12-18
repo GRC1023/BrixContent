@@ -1,90 +1,43 @@
 {
   "body": {
-    "description": "A Sample Activity containing a single multiple choice bric", 
     "containerConfig": [
       {
-        "hookupActions": [
-          {
-            "type": "method-call", 
-            "methodName": "handleRequestsFrom", 
-            "args": [
-              {
-                "type": "ref", 
-                "refId": "Q1", 
-                "domain": "brix"
-              }
-            ], 
-            "description": "Hookup the submit manager to evaluate answers", 
-            "instance": {
-              "type": "submit-manager"
-            }
-          }, 
-          {
-            "type": "method-call", 
-            "methodName": "draw", 
-            "args": [
-              {
-                "type": "d3select", 
-                "selector": "#target1"
-              }
-            ], 
-            "description": "Draw the question", 
-            "instance": {
-              "type": "ref", 
-              "refId": "Q1", 
-              "domain": "brix"
-            }
-          }
-        ], 
-        "description": "container for the sample multiple choice question", 
         "brixConfig": [
           {
             "config": {
-              "choices": [
-                {
-                  "answerKey": "answer1", 
-                  "content": "Growth rates increase a little"
-                }, 
-                {
-                  "answerKey": "answer2", 
-                  "content": "Growth rates increase a lot"
-                }, 
-                {
-                  "answerKey": "answer3", 
-                  "content": "Growth rates are unaffected by this statistic"
-                }, 
-                {
-                  "answerKey": "answer4", 
-                  "content": "Growth rates decline"
-                }, 
-                {
-                  "answerKey": "answer5", 
-                  "content": "The important statistic is actually the average age of the father at first childbirth, so this statistic is meaningless"
-                }
-              ], 
-              "order": "randomized", 
+              "presenterType": "RadioGroup", 
               "question": "What happens to population growth rates when (on average) women have their first child later in life?", 
               "presenterConfig": {
                 "numberFormat": ""
               }, 
-              "id": "sampleQ1", 
-              "presenterType": "RadioGroup"
+              "choices": [
+                {
+                  "content": "Growth rates increase a little", 
+                  "answerKey": "answer1"
+                }, 
+                {
+                  "content": "Growth rates increase a lot", 
+                  "answerKey": "answer2"
+                }, 
+                {
+                  "content": "Growth rates are unaffected by this statistic", 
+                  "answerKey": "answer3"
+                }, 
+                {
+                  "content": "Growth rates decline", 
+                  "answerKey": "answer4"
+                }, 
+                {
+                  "content": "The important statistic is actually the average age of the father at first childbirth, so this statistic is meaningless", 
+                  "answerKey": "answer5"
+                }
+              ], 
+              "order": "randomized", 
+              "id": "sampleQ1"
             }, 
             "answerKey": {
               "assessmentType": "multiplechoice", 
               "answers": {
-                "answer3": {
-                  "score": 0, 
-                  "response": "If women start having children later, are they as likely to have as many children as they would if they had started having children earlier?"
-                }, 
-                "answer2": {
-                  "score": 0, 
-                  "response": "If women start having children later, are they likely to have more children or fewer children over their lifetime?"
-                }, 
-                "answer1": {
-                  "score": 0, 
-                  "response": "If women start having children later, are they likely to have more children or fewer children over their lifetime?"
-                }, 
                 "answer5": {
                   "score": 0, 
                   "response": "Is the period during which men are able to have children as restrictive as that of women?"
@@ -92,6 +45,18 @@
                 "answer4": {
                   "score": 1, 
                   "response": "Correct."
+                }, 
+                "answer1": {
+                  "score": 0, 
+                  "response": "If women start having children later, are they likely to have more children or fewer children over their lifetime?"
+                }, 
+                "answer3": {
+                  "score": 0, 
+                  "response": "If women start having children later, are they as likely to have as many children as they would if they had started having children earlier?"
+                }, 
+                "answer2": {
+                  "score": 0, 
+                  "response": "If women start having children later, are they likely to have more children or fewer children over their lifetime?"
                 }
               }
             }, 
@@ -100,50 +65,85 @@
             "configFixup": [
               {
                 "type": "set-property", 
+                "name": "questionId", 
                 "value": {
+                  "domain": "info", 
                   "type": "ref", 
-                  "refId": "sequenceNodeKey", 
-                  "domain": "info"
-                }, 
-                "name": "questionId"
+                  "refId": "sequenceNodeKey"
+                }
               }, 
               {
                 "type": "set-property", 
+                "name": "maxAttempts", 
                 "value": {
+                  "domain": "info", 
                   "type": "ref", 
-                  "refId": "maxAttempts", 
-                  "domain": "info"
-                }, 
-                "name": "maxAttempts"
+                  "refId": "maxAttempts"
+                }
               }
             ]
           }
         ], 
+        "description": "container for the sample multiple choice question", 
+        "hookupActions": [
+          {
+            "instance": {
+              "type": "submit-manager"
+            }, 
+            "args": [
+              {
+                "domain": "brix", 
+                "type": "ref", 
+                "refId": "Q1"
+              }
+            ], 
+            "type": "method-call", 
+            "description": "Hookup the submit manager to evaluate answers", 
+            "methodName": "handleRequestsFrom"
+          }, 
+          {
+            "instance": {
+              "domain": "brix", 
+              "type": "ref", 
+              "refId": "Q1"
+            }, 
+            "args": [
+              {
+                "type": "d3select", 
+                "selector": "#target1"
+              }
+            ], 
+            "type": "method-call", 
+            "description": "Draw the question", 
+            "methodName": "draw"
+          }
+        ], 
         "containerId": "target1"
       }
-    ]
+    ], 
+    "description": "A Sample Activity containing a single multiple choice bric"
   }, 
   "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope", 
   "@type": "Envelope", 
   "metadata": {
-    "contentTypeTier1": "Test and Assessment", 
-    "contentTypeTier2": [
-      "assessment item"
-    ], 
-    "description": "68830_HP_C01.html", 
-    "owner": "Brix", 
-    "created": "2013-12-17T18:04:41.885504", 
-    "timeRequired": "PT20S", 
-    "subject": [
-      "EnvironmentalScience"
-    ], 
-    "guid": "d1bb38f1-8fc4-4bbf-9721-08eff2b9a2d5", 
     "intendedEndUserRole": [
       "Student"
     ], 
-    "title": "68830_HP_C01.html", 
+    "description": "68830_HP_C01.html", 
     "format": [
       "application/vnd.pearson.sanvan.v1.activity"
+    ], 
+    "owner": "Brix", 
+    "guid": "94df3b18-31cb-4220-a62c-2c938213f041", 
+    "subject": [
+      "EnvironmentalScience"
+    ], 
+    "timeRequired": "PT20S", 
+    "created": "2013-12-18T14:00:05.285888", 
+    "title": "68830_HP_C01.html", 
+    "contentTypeTier1": "Test and Assessment", 
+    "contentTypeTier2": [
+      "assessment item"
     ]
   }
 }
