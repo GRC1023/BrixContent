@@ -9,7 +9,7 @@
     <link href="css/widgets.css" rel="stylesheet">
 </head>
 <body>
-    <div id="target1"></div>
+    <div id="b1414d633f78446ddaa597a2fd737e70d"></div>
     <script src="js/d3.v3.min.js"></script>
     
 	<script src="js/brixlib-compiled.js"></script>
@@ -23,12 +23,12 @@
 	// The activity config that defines the brix and mortar for this page
 	a.config =
 		{
-			"description": "A Sample Activity containing a swappable graph",
+			"description": "Swappable graph carousel demonstrating Racial Attitudes on Inequality Due to Group Characteristics",
 			"containerConfig":
 				[
 					{
 						"description": "container for the graph and labels",
-						"containerId": "target1",
+						"containerId": "b1414d633f78446ddaa597a2fd737e70d",
 						"brixConfig":
 							[
 								{
@@ -108,7 +108,7 @@
                                                 "value":
                                                     {
                                                         "type": "d3select",
-                                                        "selector": "#target1"
+                                                        "selector": "#b1414d633f78446ddaa597a2fd737e70d"
                                                     }
                                             }
                                         ]
@@ -200,7 +200,6 @@
                                             }
                                         ]
                                 },
-                                // And mortar to highlight the graph lines with the legend
                                 {
                                     "mortarId": "hilite3",
                                     "mortarType": "Hilite",
@@ -213,7 +212,6 @@
                                             {
                                                 "type": "set-property",
                                                 "name": "topic",
-                                                // This value type will have to change to lookup a bric type's particular event id
                                                 "value":
                                                     {
                                                         "type": "brix-topic",
@@ -229,7 +227,6 @@
                                             }
                                         ]
                                 },
-                                // and mortar to highlight the legend with clicks on the graph lines
                                 {
                                     "mortarId": "hilite2",
                                     "mortarType": "Hilite",
@@ -242,8 +239,6 @@
                                             {
                                                 "type": "set-property",
                                                 "name": "topic",
-                                                // This value type will have to change to lookup a bric type's particular event id
-                                                // this is the labels1's selectedEventId
                                                 "value":
                                                     {
                                                         "type": "brix-topic",
@@ -317,12 +312,22 @@
                                         [
                                             { "type": "constant", "value": "0" }
                                         ]
+                                },
+                                 {
+                                    "description": "Initial condition: select 1st graph trace",
+                                    "type": "method-call",
+                                    "instance": {"type": "ref", "domain": "brix", "refId": "swapGraph"},
+                                    "methodName": "lite",
+                                    "args":
+                                        [
+                                            { "type": "constant", "value": "0" }
+                                        ]
                                 }
 							]
 					},
 					{
-                        "description": "The 'target1' container contains the swappable callouts",
-                        "containerId": "target1",
+                        "description": "The 'b1414d633f78446ddaa597a2fd737e70d' container contains the swappable callouts",
+                        "containerId": "b1414d633f78446ddaa597a2fd737e70d",
                         "brixConfig":
                             [
                                 {
@@ -331,21 +336,17 @@
                                     "config":
                                         {
                                             "id": "callme",
-                                            //"show": "all",
-                                            //"type": "numbered",
-                                            //"headers": ["Nuclear Reactor function"],
                                             "textBits":
                                                 [
-                                                    {cols: ["<b>Survey Question Asked:</b><br> On the average, (Negroes/blacks/African Americans) have worse jobs, income, and housing than white people. Do you think these differences are...because most (Negroes/blacks/African Americans) just don't have the motivation or will power to pull themselves out of poverty?"]},
-                    {cols:["<b>Survey Question Asked:</b><br>Do you agree or disagree with the statement: It's really a matter of some people not trying hard enough; if blacks would only try harder they could be just as well off as white."]},
-                    {cols: ["<b>Survey Question Asked:</b><br>Do you agree or disagree with the statement: Irish, Italians, Jewish and many other minorities overcame prejudice and worked their way up. Blacks should do the same without any special favors."]}
+                                                    {"cols": ["<b>Survey Question Asked:</b><br> On the average, (Negroes/blacks/African Americans) have worse jobs, income, and housing than white people. Do you think these differences are...because most (Negroes/blacks/African Americans) just don't have the motivation or will power to pull themselves out of poverty?"]},
+                                                    {"cols": ["<b>Survey Question Asked:</b><br>Do you agree or disagree with the statement: It's really a matter of some people not trying hard enough; if blacks would only try harder they could be just as well off as white."]},
+                                                    {"cols": ["<b>Survey Question Asked:</b><br>Do you agree or disagree with the statement: Irish, Italians, Jewish and many other minorities overcame prejudice and worked their way up. Blacks should do the same without any special favors."]}
                                                 ]
                                         }
                                 }
                             ],
                         "mortarConfig":
                             [
-                              // and mortar to update the callouts on button clicks
                                 {
                                     "mortarId": "hilite1",
                                     "mortarType": "Hilite",
@@ -358,8 +359,6 @@
                                             {
                                                 "type": "set-property",
                                                 "name": "topic",
-                                                // This value type will have to change to lookup a bric type's particular event id
-                                                // this is the labels1's selectedEventId
                                                 "value":
                                                     {
                                                         "type": "brix-topic",
@@ -385,7 +384,7 @@
                                     "methodName": "draw",
                                     "args":
                                         [
-                                            { "type": "d3select", "selector": "#target1" }
+                                            { "type": "d3select", "selector": "#b1414d633f78446ddaa597a2fd737e70d" }
                                         ]
                                 },
                                 {
@@ -427,9 +426,9 @@
                         ],
                     "motivationLegend":
                         [
-                            {content: "Agree"},
-                            {content: "Neutral"}, 
-                            {content:"Disagree"}, 
+                            {"content": "Agree"},
+                            {"content": "Neutral"}, 
+                            {"content": "Disagree"}, 
                         ],
 					"motivation":
                         [
@@ -454,15 +453,15 @@
                         ],
                      "favorsLegend":
                         [
-                            {content: "Agree"},
-                            {content: "Neutral"},
-                            {content:"Disagree"}
+                            {"content": "Agree"},
+                            {"content": "Neutral"},
+                            {"content":"Disagree"}
                         ],
 					"favors":
                         [
     						[
-                                {"x": 1986, "y": 67},
-                                {"x": 1992, "y": 11 },
+                                {"x": 1986, "y": 67 },
+                                {"x": 1992, "y": 77 },
                                 {"x": 2000, "y": 73 },
                                 {"x": 2010, "y": 75 }
                             ],

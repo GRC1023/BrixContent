@@ -9,7 +9,7 @@
     <link href="css/widgets.css" rel="stylesheet">
 </head>
 <body>
-    <div id="target1"></div>
+    <div id="ba32da54f454548448a665159d090a2d9"></div>
     <script src="js/d3.v3.min.js"></script>
     
 	<script src="js/brixlib-compiled.js"></script>
@@ -23,7 +23,7 @@
 	// The activity config that defines the brix and mortar for this page
 	a.config =
 		{
-			"description": "A Sample Activity containing a swappable graph",
+			"description": "Swappable Graph Carousel comparing racial attitudes on marriage, schools, and residential choice",
 			"containerConfig":
 				[
 					{
@@ -72,11 +72,6 @@
 											"type": "line",
 											"xPos": "right",
 											"yPos": "top",
-											//"labels":
-											//[
-												//{"content": "Separate"}, 
-											//	{"content": "Same"}
-											//],
 										},
 									 "configFixup":
                                         [
@@ -103,7 +98,6 @@
 									"bricType": "SvgContainer",
 									"config":
 										{
-											//"node": d3.select("#target1"),
 											"maxSize": {"height": 400, "width": 600},
 										},
 									"configFixup":
@@ -114,7 +108,7 @@
                                                 "value":
                                                     {
                                                         "type": "d3select",
-                                                        "selector": "#target1"
+                                                        "selector": "#ba32da54f454548448a665159d090a2d9"
                                                     }
                                             }
                                         ]
@@ -122,16 +116,12 @@
 							],
                             "mortarConfig":
                             [
-                                // We will need mortar to update the linegraph data on button clicks
                                 {
                                     "mortarId": "dataswap1",
                                     "mortarType": "Dataswap",
                                     "config":
                                         {
-                                            //"topic": pearson.brix.LabelSelector.getEventTopic('selected', 'dataLabels'),
                                             "eventDetailsProperty": "index",
-                                            //"sourceDataArray": array built of data below,
-                                            //"targetBric": swapGraph,
                                             "dataPropertySetter": "setData",
                                         },
                                     "configFixup":
@@ -168,16 +158,12 @@
                                             }
                                         ]
                                 },
-                                // We will need mortar to update the legend data on button clicks
                                 {
                                     "mortarId": "dataswap2",
                                     "mortarType": "Dataswap",
                                     "config":
                                         {
-                                            //"topic": pearson.brix.LabelSelector.getEventTopic('selected', 'dataLabels'),
                                             "eventDetailsProperty": "index",
-                                            //"sourceDataArray": array built of data below,
-                                            //"targetBric": swapGraph,
                                             "dataPropertySetter": "setLabels",
                                         },
                                     "configFixup":
@@ -214,7 +200,6 @@
                                             }
                                         ]
                                 },
-                                // And mortar to highlight the graph lines with the legend
                                 {
                                     "mortarId": "hilite3",
                                     "mortarType": "Hilite",
@@ -227,7 +212,6 @@
                                             {
                                                 "type": "set-property",
                                                 "name": "topic",
-                                                // This value type will have to change to lookup a bric type's particular event id
                                                 "value":
                                                     {
                                                         "type": "brix-topic",
@@ -243,7 +227,6 @@
                                             }
                                         ]
                                 },
-                                // and mortar to highlight the legend with clicks on the graph lines
                                 {
                                     "mortarId": "hilite2",
                                     "mortarType": "Hilite",
@@ -256,8 +239,6 @@
                                             {
                                                 "type": "set-property",
                                                 "name": "topic",
-                                                // This value type will have to change to lookup a bric type's particular event id
-                                                // this is the labels1's selectedEventId
                                                 "value":
                                                     {
                                                         "type": "brix-topic",
@@ -331,6 +312,16 @@
                                         [
                                             { "type": "constant", "value": "0" }
                                         ]
+                                },
+                                {
+                                    "description": "Initial condition: select 1st graph trace",
+                                    "type": "method-call",
+                                    "instance": {"type": "ref", "domain": "brix", "refId": "swapGraph"},
+                                    "methodName": "lite",
+                                    "args":
+                                        [
+                                            { "type": "constant", "value": "0" }
+                                        ]
                                 }
 							]
 					},
@@ -345,9 +336,6 @@
                                     "config":
                                         {
                                             "id": "callme",
-                                            //"show": "all",
-                                            //"type": "numbered",
-                                            //"headers": ["Nuclear Reactor function"],
                                             "textBits":
                                                 [
                                                     {"cols": ["<b>Survey Question Asked:</b><br>Do you approve or disapprove of racial intermarriage?"]},
@@ -359,7 +347,6 @@
                             ],
                         "mortarConfig":
                             [
-                              // and mortar to update the callouts on button clicks
                                 {
                                     "mortarId": "hilite1",
                                     "mortarType": "Hilite",
@@ -372,8 +359,6 @@
                                             {
                                                 "type": "set-property",
                                                 "name": "topic",
-                                                // This value type will have to change to lookup a bric type's particular event id
-                                                // this is the labels1's selectedEventId
                                                 "value":
                                                     {
                                                         "type": "brix-topic",
@@ -399,7 +384,7 @@
                                     "methodName": "draw",
                                     "args":
                                         [
-                                            { "type": "d3select", "selector": "#target1" }
+                                            { "type": "d3select", "selector": "#ba32da54f454548448a665159d090a2d9" }
                                         ]
                                 },
                                 {
