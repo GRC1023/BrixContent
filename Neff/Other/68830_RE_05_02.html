@@ -1,15 +1,15 @@
-<!DOCTYPE xhtml>
+<!DOCTYPE html>
 <html>
 <head>
     <meta charset="UTF-8">
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
-    <meta content="Template for Label Selector Image Carousel Brix" name="description">
+    <meta content="Tabbed Image Carousel Brix" name="description">
     
     <!-- widgets.css contains styling for the interactive brix -->
     <link href="css/widgets.css" rel="stylesheet">
 </head>
 <body>
-    <div id="b42d4bbc879d64c9caf9c59fef150856b"></div>
+    <div id="b80e72ca87645491f90ceb0140d0e4b22"></div>
     <script src="js/d3.v3.min.js"></script>
     
     <script src="js/brixlib-compiled.js"></script>
@@ -28,14 +28,14 @@
 
     a.config =
         {
-			"description": "Environmental impacts and practical limitations of solar energy production",
+			"description": "Geothermal Energy",
             //"imgBaseUrl": "http://localhost:8088/images/",
             "imgBaseUrl": "",
             "containerConfig":
                 [
                     {
                         "description": "Container for the LabelCarousel",
-                        "containerId": "b42d4bbc879d64c9caf9c59fef150856b",
+                        "containerId": "b80e72ca87645491f90ceb0140d0e4b22",
                         "brixConfig":
                             [
                                 {
@@ -44,7 +44,8 @@
                                     "config":
                                         {
                                             "id": "lblCrsl1",
-                                            "imagesActualSize": { "height": 325, "width": 478 },
+                                            "imagesActualSize": { "height": 600, "width": 478 },
+                                            "type": "textLabels",
                                             "displayWidth": 457
                                         },
                                     "configFixup":
@@ -69,13 +70,17 @@
                                                                                         "parts":
                                                                                         [
                                                                                             { "type": "ref", "domain": "info", "refId": "imgBaseUrl" },
-                                                                                            { "type": "constant", "value": "img/68830_RE_02_03_S1.jpg" }
+                                                                                            { "type": "constant", "value": "img/68830_RE_05_02_S1.png" }
                                                                                         ]
                                                                                     }
                                                                             },
                                                                             {
                                                                                 "name": "caption",
-                                                                                "value": { "type": "constant", "value": "Solar energy production limited by cloudy skies and darkness<br/>            " }
+                                                                                "value": { "type": "constant", "value": "Direct use" }
+                                                                            },
+                                                                            { 
+                                                                                "name": "selectorLabel", 
+                                                                                "value": { "type": "constant", "value": "Direct use"}
                                                                             }
                                                                         ]
                                                                 },
@@ -91,36 +96,19 @@
                                                                                         "parts":
                                                                                         [
                                                                                             { "type": "ref", "domain": "info", "refId": "imgBaseUrl" },
-                                                                                            { "type": "constant", "value": "img/68830_RE_02_03_S2.jpg" }
+                                                                                            { "type": "constant", "value": "img/68830_RE_05_02_S2.png" }
                                                                                         ]
                                                                                     }
                                                                             },
                                                                             {
                                                                                 "name": "caption",
-                                                                                "value": { "type": "constant", "value": "Expense of panels and precious metals used in production" }
-                                                                            }
-                                                                        ]
-                                                                },
-                                                                {
-                                                                    "type": "object",
-                                                                    "properties":
-                                                                        [
-                                                                            {
-                                                                                "name": "URI",
-                                                                                "value":
-                                                                                    {
-                                                                                        "type": "join",
-                                                                                        "parts":
-                                                                                        [
-                                                                                            { "type": "ref", "domain": "info", "refId": "imgBaseUrl" },
-                                                                                            { "type": "constant", "value": "img/68830_RE_02_03_S3.jpg" }
-                                                                                        ]
-                                                                                    }
+                                                                                "value": { "type": "constant", "value": "Electricity production" }
                                                                             },
-                                                                            {
-                                                                                "name": "caption",
-                                                                                "value": { "type": "constant", "value": "Land disturbance associated with the creation of large fields of solar panels" }
+                                                                            { 
+                                                                                "name": "selectorLabel", 
+                                                                                 "value": { "type": "constant", "value": "Electricity production" }
                                                                             }
+                                                                            
                                                                         ]
                                                                 }
                                                             ]
@@ -133,7 +121,7 @@
                                     "bricType": "SvgContainer",
                                     "config":
                                         {
-                                            "maxSize": { "height": 420, "width": 457}
+                                            "maxSize": { "height": 620, "width": 457 }
                                         },
                                     "configFixup":
                                         [
@@ -143,7 +131,7 @@
                                                 "value":
                                                     {
                                                         "type": "d3select",
-                                                        "selector": "#b42d4bbc879d64c9caf9c59fef150856b"
+                                                        "selector": "#b80e72ca87645491f90ceb0140d0e4b22"
                                                     }
                                             }
                                         ]
