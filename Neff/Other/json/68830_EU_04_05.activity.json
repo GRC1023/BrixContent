@@ -1,207 +1,185 @@
 {
-  "metadata": {
-    "guid": "53d76de1-af14-4e7c-88c2-d0eed7357d68", 
-    "subject": [
-      "EnvironmentalScience"
-    ], 
-    "description": "Examples of how electricity generation affects the environment", 
-    "timeRequired": "PT20S", 
-    "contentTypeTier2": [
-      "Exercise"
-    ], 
-    "contentTypeTier1": "Activity", 
-    "format": [
-      "application/vnd.pearson.sanvan.v1.activity"
-    ], 
-    "intendedEndUserRole": [
-      "Student"
-    ], 
-    "created": "2013-12-12T16:35:14.991066", 
-    "title": "Examples of how electricity generation affects the environment", 
-    "owner": "Brix"
-  }, 
-  "@type": "Envelope", 
   "body": {
     "description": "Examples of how electricity generation affects the environment", 
     "containerConfig": [
       {
         "brixConfig": [
           {
-            "configFixup": [
-              {
-                "value": {
-                  "elements": [
-                    {
-                      "properties": [
-                        {
-                          "value": {
-                            "parts": [
-                              {
-                                "domain": "info", 
-                                "refId": "imgBaseUrl", 
-                                "type": "ref"
-                              }, 
-                              {
-                                "value": "img/68830_EU_04_05_S1.jpg", 
-                                "type": "constant"
-                              }
-                            ], 
-                            "type": "join"
-                          }, 
-                          "name": "URI"
-                        }, 
-                        {
-                          "value": {
-                            "value": "Coal or fossil fuels are extracted from underground.", 
-                            "type": "constant"
-                          }, 
-                          "name": "caption"
-                        }
-                      ], 
-                      "type": "object"
-                    }, 
-                    {
-                      "properties": [
-                        {
-                          "value": {
-                            "parts": [
-                              {
-                                "domain": "info", 
-                                "refId": "imgBaseUrl", 
-                                "type": "ref"
-                              }, 
-                              {
-                                "value": "img/68830_EU_04_05_S2.jpg", 
-                                "type": "constant"
-                              }
-                            ], 
-                            "type": "join"
-                          }, 
-                          "name": "URI"
-                        }, 
-                        {
-                          "value": {
-                            "value": "Fuels are transported across long distances using trains, trucks, and boats.", 
-                            "type": "constant"
-                          }, 
-                          "name": "caption"
-                        }
-                      ], 
-                      "type": "object"
-                    }, 
-                    {
-                      "properties": [
-                        {
-                          "value": {
-                            "parts": [
-                              {
-                                "domain": "info", 
-                                "refId": "imgBaseUrl", 
-                                "type": "ref"
-                              }, 
-                              {
-                                "value": "img/68830_EU_04_05_S3.jpg", 
-                                "type": "constant"
-                              }
-                            ], 
-                            "type": "join"
-                          }, 
-                          "name": "URI"
-                        }, 
-                        {
-                          "value": {
-                            "value": "Fuels are combusted at power plants.", 
-                            "type": "constant"
-                          }, 
-                          "name": "caption"
-                        }
-                      ], 
-                      "type": "object"
-                    }, 
-                    {
-                      "properties": [
-                        {
-                          "value": {
-                            "parts": [
-                              {
-                                "domain": "info", 
-                                "refId": "imgBaseUrl", 
-                                "type": "ref"
-                              }, 
-                              {
-                                "value": "img/68830_EU_04_05_S4.jpg", 
-                                "type": "constant"
-                              }
-                            ], 
-                            "type": "join"
-                          }, 
-                          "name": "URI"
-                        }, 
-                        {
-                          "value": {
-                            "value": "Electricity is transmitted across large networks of power lines.", 
-                            "type": "constant"
-                          }, 
-                          "name": "caption"
-                        }
-                      ], 
-                      "type": "object"
-                    }
-                  ], 
-                  "type": "array"
-                }, 
-                "name": "images", 
-                "type": "set-property"
-              }
-            ], 
-            "bricType": "LabelCarousel", 
-            "bricId": "lblCarousel1", 
             "config": {
               "id": "lblCrsl1", 
               "imagesActualSize": {
                 "height": 457, 
                 "width": 457
               }
-            }
-          }, 
-          {
+            }, 
+            "bricType": "LabelCarousel", 
+            "bricId": "lblCarousel1", 
             "configFixup": [
               {
+                "type": "set-property", 
                 "value": {
-                  "selector": "#bf82847bffdfe4bb98500e715e079f741", 
-                  "type": "d3select"
+                  "type": "array", 
+                  "elements": [
+                    {
+                      "type": "object", 
+                      "properties": [
+                        {
+                          "value": {
+                            "type": "join", 
+                            "parts": [
+                              {
+                                "type": "ref", 
+                                "refId": "imgBaseUrl", 
+                                "domain": "info"
+                              }, 
+                              {
+                                "type": "constant", 
+                                "value": "img/68830_EU_04_05_S1.jpg"
+                              }
+                            ]
+                          }, 
+                          "name": "URI"
+                        }, 
+                        {
+                          "value": {
+                            "type": "constant", 
+                            "value": "Coal or fossil fuels are extracted from underground."
+                          }, 
+                          "name": "caption"
+                        }
+                      ]
+                    }, 
+                    {
+                      "type": "object", 
+                      "properties": [
+                        {
+                          "value": {
+                            "type": "join", 
+                            "parts": [
+                              {
+                                "type": "ref", 
+                                "refId": "imgBaseUrl", 
+                                "domain": "info"
+                              }, 
+                              {
+                                "type": "constant", 
+                                "value": "img/68830_EU_04_05_S2.jpg"
+                              }
+                            ]
+                          }, 
+                          "name": "URI"
+                        }, 
+                        {
+                          "value": {
+                            "type": "constant", 
+                            "value": "Fuels are transported across long distances using trains, trucks, and boats."
+                          }, 
+                          "name": "caption"
+                        }
+                      ]
+                    }, 
+                    {
+                      "type": "object", 
+                      "properties": [
+                        {
+                          "value": {
+                            "type": "join", 
+                            "parts": [
+                              {
+                                "type": "ref", 
+                                "refId": "imgBaseUrl", 
+                                "domain": "info"
+                              }, 
+                              {
+                                "type": "constant", 
+                                "value": "img/68830_EU_04_05_S3.jpg"
+                              }
+                            ]
+                          }, 
+                          "name": "URI"
+                        }, 
+                        {
+                          "value": {
+                            "type": "constant", 
+                            "value": "Fuels are combusted at power plants."
+                          }, 
+                          "name": "caption"
+                        }
+                      ]
+                    }, 
+                    {
+                      "type": "object", 
+                      "properties": [
+                        {
+                          "value": {
+                            "type": "join", 
+                            "parts": [
+                              {
+                                "type": "ref", 
+                                "refId": "imgBaseUrl", 
+                                "domain": "info"
+                              }, 
+                              {
+                                "type": "constant", 
+                                "value": "img/68830_EU_04_05_S4.jpg"
+                              }
+                            ]
+                          }, 
+                          "name": "URI"
+                        }, 
+                        {
+                          "value": {
+                            "type": "constant", 
+                            "value": "Electricity is transmitted across large networks of power lines."
+                          }, 
+                          "name": "caption"
+                        }
+                      ]
+                    }
+                  ]
                 }, 
-                "name": "node", 
-                "type": "set-property"
+                "name": "images"
               }
-            ], 
-            "bricType": "SvgContainer", 
-            "bricId": "cntr1", 
+            ]
+          }, 
+          {
             "config": {
               "maxSize": {
-                "height": 580, 
+                "height": 560, 
                 "width": 457
               }
-            }
+            }, 
+            "bricType": "SvgContainer", 
+            "bricId": "cntr1", 
+            "configFixup": [
+              {
+                "type": "set-property", 
+                "value": {
+                  "type": "d3select", 
+                  "selector": "#bf82847bffdfe4bb98500e715e079f741"
+                }, 
+                "name": "node"
+              }
+            ]
           }
         ], 
         "hookupActions": [
           {
+            "type": "method-call", 
+            "methodName": "append", 
+            "description": "Append the label image carousel to the svg container", 
+            "instance": {
+              "type": "ref", 
+              "refId": "cntr1", 
+              "domain": "brix"
+            }, 
             "args": [
               {
-                "domain": "brix", 
+                "type": "ref", 
                 "refId": "lblCarousel1", 
-                "type": "ref"
+                "domain": "brix"
               }
-            ], 
-            "description": "Append the label image carousel to the svg container", 
-            "methodName": "append", 
-            "instance": {
-              "domain": "brix", 
-              "refId": "cntr1", 
-              "type": "ref"
-            }, 
-            "type": "method-call"
+            ]
           }
         ], 
         "description": "Container for the LabelCarousel", 
@@ -209,5 +187,27 @@
       }
     ]
   }, 
-  "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope"
+  "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope", 
+  "@type": "Envelope", 
+  "metadata": {
+    "timeRequired": "PT20S", 
+    "subject": [
+      "EnvironmentalScience"
+    ], 
+    "format": [
+      "application/vnd.pearson.sanvan.v1.activity"
+    ], 
+    "guid": "c830a442-b115-4c58-b1b3-503123ea9c87", 
+    "intendedEndUserRole": [
+      "Student"
+    ], 
+    "title": "Examples of how electricity generation affects the environment", 
+    "contentTypeTier1": "Activity", 
+    "owner": "Brix", 
+    "description": "Examples of how electricity generation affects the environment", 
+    "created": "2013-12-18T22:21:30.797272", 
+    "contentTypeTier2": [
+      "Exercise"
+    ]
+  }
 }

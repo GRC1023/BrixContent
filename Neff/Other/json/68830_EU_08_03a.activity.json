@@ -1,46 +1,25 @@
 {
-  "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope", 
-  "metadata": {
-    "contentTypeTier2": [
-      "Exercise"
-    ], 
-    "contentTypeTier1": "Activity", 
-    "guid": "800245f8-4836-4c38-9688-c72fb1e206eb", 
-    "description": "Technology and choices that may INCREASE future impacts of heating cooling and cooking", 
-    "timeRequired": "PT20S", 
-    "title": "Technology and choices that may INCREASE future impacts of heating cooling and cooking", 
-    "subject": [
-      "EnvironmentalScience"
-    ], 
-    "owner": "Brix", 
-    "format": [
-      "application/vnd.pearson.sanvan.v1.activity"
-    ], 
-    "intendedEndUserRole": [
-      "Student"
-    ], 
-    "created": "2013-12-16T14:02:46.185881"
-  }, 
-  "@type": "Envelope", 
   "body": {
     "description": "Technology and choices that may INCREASE future impacts of heating cooling and cooking", 
     "containerConfig": [
       {
         "brixConfig": [
           {
-            "bricId": "lblCarousel1", 
             "config": {
+              "id": "lblCrsl1", 
+              "displayWidth": 335, 
               "imagesActualSize": {
                 "height": 335, 
                 "width": 335
-              }, 
-              "displayWidth": 335, 
-              "id": "lblCrsl1"
+              }
             }, 
+            "bricType": "LabelCarousel", 
+            "bricId": "lblCarousel1", 
             "configFixup": [
               {
                 "type": "set-property", 
                 "value": {
+                  "type": "array", 
                   "elements": [
                     {
                       "type": "object", 
@@ -51,8 +30,8 @@
                             "parts": [
                               {
                                 "type": "ref", 
-                                "domain": "info", 
-                                "refId": "imgBaseUrl"
+                                "refId": "imgBaseUrl", 
+                                "domain": "info"
                               }, 
                               {
                                 "type": "constant", 
@@ -65,7 +44,7 @@
                         {
                           "value": {
                             "type": "constant", 
-                            "value": "Increasing home size<br><br>"
+                            "value": "Increasing home size<br/><br/>"
                           }, 
                           "name": "caption"
                         }
@@ -80,8 +59,8 @@
                             "parts": [
                               {
                                 "type": "ref", 
-                                "domain": "info", 
-                                "refId": "imgBaseUrl"
+                                "refId": "imgBaseUrl", 
+                                "domain": "info"
                               }, 
                               {
                                 "type": "constant", 
@@ -109,8 +88,8 @@
                             "parts": [
                               {
                                 "type": "ref", 
-                                "domain": "info", 
-                                "refId": "imgBaseUrl"
+                                "refId": "imgBaseUrl", 
+                                "domain": "info"
                               }, 
                               {
                                 "type": "constant", 
@@ -138,8 +117,8 @@
                             "parts": [
                               {
                                 "type": "ref", 
-                                "domain": "info", 
-                                "refId": "imgBaseUrl"
+                                "refId": "imgBaseUrl", 
+                                "domain": "info"
                               }, 
                               {
                                 "type": "constant", 
@@ -158,22 +137,21 @@
                         }
                       ]
                     }
-                  ], 
-                  "type": "array"
+                  ]
                 }, 
                 "name": "images"
               }
-            ], 
-            "bricType": "LabelCarousel"
+            ]
           }, 
           {
-            "bricId": "cntr1", 
             "config": {
               "maxSize": {
                 "height": 450, 
                 "width": 335
               }
             }, 
+            "bricType": "SvgContainer", 
+            "bricId": "cntr1", 
             "configFixup": [
               {
                 "type": "set-property", 
@@ -183,32 +161,54 @@
                 }, 
                 "name": "node"
               }
-            ], 
-            "bricType": "SvgContainer"
+            ]
           }
         ], 
-        "containerId": "b36f44bf63e2e4f808c91cdc6bebc6be0", 
-        "description": "Container for the LabelCarousel", 
         "hookupActions": [
           {
             "type": "method-call", 
+            "methodName": "append", 
+            "description": "Append the label image carousel to the svg container", 
+            "instance": {
+              "type": "ref", 
+              "refId": "cntr1", 
+              "domain": "brix"
+            }, 
             "args": [
               {
                 "type": "ref", 
-                "domain": "brix", 
-                "refId": "lblCarousel1"
+                "refId": "lblCarousel1", 
+                "domain": "brix"
               }
-            ], 
-            "instance": {
-              "type": "ref", 
-              "domain": "brix", 
-              "refId": "cntr1"
-            }, 
-            "description": "Append the label image carousel to the svg container", 
-            "methodName": "append"
+            ]
           }
-        ]
+        ], 
+        "description": "Container for the LabelCarousel", 
+        "containerId": "b36f44bf63e2e4f808c91cdc6bebc6be0"
       }
+    ]
+  }, 
+  "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope", 
+  "@type": "Envelope", 
+  "metadata": {
+    "timeRequired": "PT20S", 
+    "subject": [
+      "EnvironmentalScience"
+    ], 
+    "format": [
+      "application/vnd.pearson.sanvan.v1.activity"
+    ], 
+    "guid": "65741b86-eaf5-442b-8c6f-24838f139b44", 
+    "intendedEndUserRole": [
+      "Student"
+    ], 
+    "title": "Technology and choices that may INCREASE future impacts of heating cooling and cooking", 
+    "contentTypeTier1": "Activity", 
+    "owner": "Brix", 
+    "description": "Technology and choices that may INCREASE future impacts of heating cooling and cooking", 
+    "created": "2013-12-18T22:21:30.796463", 
+    "contentTypeTier2": [
+      "Exercise"
     ]
   }
 }

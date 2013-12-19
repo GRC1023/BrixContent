@@ -1,45 +1,24 @@
 {
-  "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope", 
-  "metadata": {
-    "contentTypeTier2": [
-      "Exercise"
-    ], 
-    "contentTypeTier1": "Activity", 
-    "guid": "06ea908a-b824-497f-8a3d-7abc5b9d7229", 
-    "description": "Examples of decentralized power generation", 
-    "timeRequired": "PT20S", 
-    "title": "Examples of decentralized power generation", 
-    "subject": [
-      "EnvironmentalScience"
-    ], 
-    "owner": "Brix", 
-    "format": [
-      "application/vnd.pearson.sanvan.v1.activity"
-    ], 
-    "intendedEndUserRole": [
-      "Student"
-    ], 
-    "created": "2013-12-16T14:02:46.185102"
-  }, 
-  "@type": "Envelope", 
   "body": {
     "description": "Examples of decentralized power generation", 
     "containerConfig": [
       {
         "brixConfig": [
           {
-            "bricId": "lblCarousel1", 
             "config": {
+              "id": "lblCrsl1", 
               "imagesActualSize": {
                 "height": 457, 
                 "width": 457
-              }, 
-              "id": "lblCrsl1"
+              }
             }, 
+            "bricType": "LabelCarousel", 
+            "bricId": "lblCarousel1", 
             "configFixup": [
               {
                 "type": "set-property", 
                 "value": {
+                  "type": "array", 
                   "elements": [
                     {
                       "type": "object", 
@@ -50,8 +29,8 @@
                             "parts": [
                               {
                                 "type": "ref", 
-                                "domain": "info", 
-                                "refId": "imgBaseUrl"
+                                "refId": "imgBaseUrl", 
+                                "domain": "info"
                               }, 
                               {
                                 "type": "constant", 
@@ -64,7 +43,7 @@
                         {
                           "value": {
                             "type": "constant", 
-                            "value": "Solar panels on a house generate electricity from the sun.<br><br>"
+                            "value": "Solar panels on a house generate electricity from the sun.<br/><br/>"
                           }, 
                           "name": "caption"
                         }
@@ -79,8 +58,8 @@
                             "parts": [
                               {
                                 "type": "ref", 
-                                "domain": "info", 
-                                "refId": "imgBaseUrl"
+                                "refId": "imgBaseUrl", 
+                                "domain": "info"
                               }, 
                               {
                                 "type": "constant", 
@@ -108,8 +87,8 @@
                             "parts": [
                               {
                                 "type": "ref", 
-                                "domain": "info", 
-                                "refId": "imgBaseUrl"
+                                "refId": "imgBaseUrl", 
+                                "domain": "info"
                               }, 
                               {
                                 "type": "constant", 
@@ -137,8 +116,8 @@
                             "parts": [
                               {
                                 "type": "ref", 
-                                "domain": "info", 
-                                "refId": "imgBaseUrl"
+                                "refId": "imgBaseUrl", 
+                                "domain": "info"
                               }, 
                               {
                                 "type": "constant", 
@@ -157,22 +136,21 @@
                         }
                       ]
                     }
-                  ], 
-                  "type": "array"
+                  ]
                 }, 
                 "name": "images"
               }
-            ], 
-            "bricType": "LabelCarousel"
+            ]
           }, 
           {
-            "bricId": "cntr1", 
             "config": {
               "maxSize": {
                 "height": 580, 
                 "width": 457
               }
             }, 
+            "bricType": "SvgContainer", 
+            "bricId": "cntr1", 
             "configFixup": [
               {
                 "type": "set-property", 
@@ -182,32 +160,54 @@
                 }, 
                 "name": "node"
               }
-            ], 
-            "bricType": "SvgContainer"
+            ]
           }
         ], 
-        "containerId": "bb492b562748e4edeb728c3112b31bde4", 
-        "description": "Container for the LabelCarousel", 
         "hookupActions": [
           {
             "type": "method-call", 
+            "methodName": "append", 
+            "description": "Append the label image carousel to the svg container", 
+            "instance": {
+              "type": "ref", 
+              "refId": "cntr1", 
+              "domain": "brix"
+            }, 
             "args": [
               {
                 "type": "ref", 
-                "domain": "brix", 
-                "refId": "lblCarousel1"
+                "refId": "lblCarousel1", 
+                "domain": "brix"
               }
-            ], 
-            "instance": {
-              "type": "ref", 
-              "domain": "brix", 
-              "refId": "cntr1"
-            }, 
-            "description": "Append the label image carousel to the svg container", 
-            "methodName": "append"
+            ]
           }
-        ]
+        ], 
+        "description": "Container for the LabelCarousel", 
+        "containerId": "bb492b562748e4edeb728c3112b31bde4"
       }
+    ]
+  }, 
+  "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope", 
+  "@type": "Envelope", 
+  "metadata": {
+    "timeRequired": "PT20S", 
+    "subject": [
+      "EnvironmentalScience"
+    ], 
+    "format": [
+      "application/vnd.pearson.sanvan.v1.activity"
+    ], 
+    "guid": "1893cba9-48d5-421e-a157-d5bc4232e474", 
+    "intendedEndUserRole": [
+      "Student"
+    ], 
+    "title": "Examples of decentralized power generation", 
+    "contentTypeTier1": "Activity", 
+    "owner": "Brix", 
+    "description": "Examples of decentralized power generation", 
+    "created": "2013-12-18T22:21:30.795676", 
+    "contentTypeTier2": [
+      "Exercise"
     ]
   }
 }

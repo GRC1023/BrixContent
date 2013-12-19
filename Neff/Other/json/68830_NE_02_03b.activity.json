@@ -1,185 +1,185 @@
 {
-  "metadata": {
-    "intendedEndUserRole": [
-      "Student"
-    ], 
-    "format": [
-      "application/vnd.pearson.sanvan.v1.activity"
-    ], 
-    "created": "2013-12-13T22:14:44.161656", 
-    "title": "Some impacts of OIL CONSUMPTION", 
-    "owner": "Brix", 
-    "subject": [
-      "EnvironmentalScience"
-    ], 
-    "guid": "ed31cb40-2280-442c-a342-e771ac2a022b", 
-    "timeRequired": "PT20S", 
-    "description": "Some impacts of OIL CONSUMPTION", 
-    "contentTypeTier2": [
-      "Exercise"
-    ], 
-    "contentTypeTier1": "Activity"
-  }, 
   "body": {
+    "description": "Some impacts of OIL CONSUMPTION", 
     "containerConfig": [
       {
-        "hookupActions": [
-          {
-            "args": [
-              {
-                "domain": "brix", 
-                "refId": "lblCarousel1", 
-                "type": "ref"
-              }
-            ], 
-            "instance": {
-              "domain": "brix", 
-              "refId": "cntr1", 
-              "type": "ref"
-            }, 
-            "description": "Append the label image carousel to the svg container", 
-            "methodName": "append", 
-            "type": "method-call"
-          }
-        ], 
-        "containerId": "b69c6d2644c36461a99b1cea9b9a8ce86", 
-        "description": "Container for the LabelCarousel", 
         "brixConfig": [
           {
-            "configFixup": [
-              {
-                "value": {
-                  "elements": [
-                    {
-                      "properties": [
-                        {
-                          "value": {
-                            "parts": [
-                              {
-                                "domain": "info", 
-                                "refId": "imgBaseUrl", 
-                                "type": "ref"
-                              }, 
-                              {
-                                "value": "img/68830_NE_02_03b_S1.jpg", 
-                                "type": "constant"
-                              }
-                            ], 
-                            "type": "join"
-                          }, 
-                          "name": "URI"
-                        }, 
-                        {
-                          "value": {
-                            "value": "Greenhouse gas emissions from vehicles", 
-                            "type": "constant"
-                          }, 
-                          "name": "caption"
-                        }
-                      ], 
-                      "type": "object"
-                    }, 
-                    {
-                      "properties": [
-                        {
-                          "value": {
-                            "parts": [
-                              {
-                                "domain": "info", 
-                                "refId": "imgBaseUrl", 
-                                "type": "ref"
-                              }, 
-                              {
-                                "value": "img/68830_NE_02_03b_S2.jpg", 
-                                "type": "constant"
-                              }
-                            ], 
-                            "type": "join"
-                          }, 
-                          "name": "URI"
-                        }, 
-                        {
-                          "value": {
-                            "value": "Urban air pollution from vehicles", 
-                            "type": "constant"
-                          }, 
-                          "name": "caption"
-                        }
-                      ], 
-                      "type": "object"
-                    }, 
-                    {
-                      "properties": [
-                        {
-                          "value": {
-                            "parts": [
-                              {
-                                "domain": "info", 
-                                "refId": "imgBaseUrl", 
-                                "type": "ref"
-                              }, 
-                              {
-                                "value": "img/68830_NE_02_03b_S3.jpg", 
-                                "type": "constant"
-                              }
-                            ], 
-                            "type": "join"
-                          }, 
-                          "name": "URI"
-                        }, 
-                        {
-                          "value": {
-                            "value": "Damage to ecosystems from acid rain", 
-                            "type": "constant"
-                          }, 
-                          "name": "caption"
-                        }
-                      ], 
-                      "type": "object"
-                    }
-                  ], 
-                  "type": "array"
-                }, 
-                "name": "images", 
-                "type": "set-property"
-              }
-            ], 
-            "bricType": "LabelCarousel", 
             "config": {
-              "id": "lblCrsl1", 
+              "id": "lblCrsl2", 
               "displayWidth": 335, 
               "imagesActualSize": {
                 "height": 335, 
                 "width": 335
               }
             }, 
-            "bricId": "lblCarousel1"
-          }, 
-          {
+            "bricType": "LabelCarousel", 
+            "bricId": "lblCarousel1", 
             "configFixup": [
               {
+                "type": "set-property", 
                 "value": {
-                  "selector": "#b69c6d2644c36461a99b1cea9b9a8ce86", 
-                  "type": "d3select"
+                  "type": "array", 
+                  "elements": [
+                    {
+                      "type": "object", 
+                      "properties": [
+                        {
+                          "value": {
+                            "type": "join", 
+                            "parts": [
+                              {
+                                "type": "ref", 
+                                "refId": "imgBaseUrl", 
+                                "domain": "info"
+                              }, 
+                              {
+                                "type": "constant", 
+                                "value": "img/68830_NE_02_03b_S1.jpg"
+                              }
+                            ]
+                          }, 
+                          "name": "URI"
+                        }, 
+                        {
+                          "value": {
+                            "type": "constant", 
+                            "value": "Greenhouse gas emissions from vehicles"
+                          }, 
+                          "name": "caption"
+                        }
+                      ]
+                    }, 
+                    {
+                      "type": "object", 
+                      "properties": [
+                        {
+                          "value": {
+                            "type": "join", 
+                            "parts": [
+                              {
+                                "type": "ref", 
+                                "refId": "imgBaseUrl", 
+                                "domain": "info"
+                              }, 
+                              {
+                                "type": "constant", 
+                                "value": "img/68830_NE_02_03b_S2.jpg"
+                              }
+                            ]
+                          }, 
+                          "name": "URI"
+                        }, 
+                        {
+                          "value": {
+                            "type": "constant", 
+                            "value": "Urban air pollution from vehicles"
+                          }, 
+                          "name": "caption"
+                        }
+                      ]
+                    }, 
+                    {
+                      "type": "object", 
+                      "properties": [
+                        {
+                          "value": {
+                            "type": "join", 
+                            "parts": [
+                              {
+                                "type": "ref", 
+                                "refId": "imgBaseUrl", 
+                                "domain": "info"
+                              }, 
+                              {
+                                "type": "constant", 
+                                "value": "img/68830_NE_02_03b_S3.jpg"
+                              }
+                            ]
+                          }, 
+                          "name": "URI"
+                        }, 
+                        {
+                          "value": {
+                            "type": "constant", 
+                            "value": "Damage to ecosystems from acid rain"
+                          }, 
+                          "name": "caption"
+                        }
+                      ]
+                    }
+                  ]
                 }, 
-                "name": "node", 
-                "type": "set-property"
+                "name": "images"
               }
-            ], 
-            "bricType": "SvgContainer", 
+            ]
+          }, 
+          {
             "config": {
               "maxSize": {
                 "height": 430, 
                 "width": 335
               }
             }, 
-            "bricId": "cntr1"
+            "bricType": "SvgContainer", 
+            "bricId": "cntr1", 
+            "configFixup": [
+              {
+                "type": "set-property", 
+                "value": {
+                  "type": "d3select", 
+                  "selector": "#b69c6d2644c36461a99b1cea9b9a8ce86"
+                }, 
+                "name": "node"
+              }
+            ]
           }
-        ]
+        ], 
+        "hookupActions": [
+          {
+            "type": "method-call", 
+            "methodName": "append", 
+            "description": "Append the label image carousel to the svg container", 
+            "instance": {
+              "type": "ref", 
+              "refId": "cntr1", 
+              "domain": "brix"
+            }, 
+            "args": [
+              {
+                "type": "ref", 
+                "refId": "lblCarousel1", 
+                "domain": "brix"
+              }
+            ]
+          }
+        ], 
+        "description": "Container for the LabelCarousel", 
+        "containerId": "b69c6d2644c36461a99b1cea9b9a8ce86"
       }
-    ], 
-    "description": "Some impacts of OIL CONSUMPTION"
+    ]
   }, 
+  "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope", 
   "@type": "Envelope", 
-  "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope"
+  "metadata": {
+    "timeRequired": "PT20S", 
+    "subject": [
+      "EnvironmentalScience"
+    ], 
+    "format": [
+      "application/vnd.pearson.sanvan.v1.activity"
+    ], 
+    "guid": "e0fb6e1b-7270-4ded-8385-946f034cf6a1", 
+    "intendedEndUserRole": [
+      "Student"
+    ], 
+    "title": "Some impacts of OIL CONSUMPTION", 
+    "contentTypeTier1": "Activity", 
+    "owner": "Brix", 
+    "description": "Some impacts of OIL CONSUMPTION", 
+    "created": "2013-12-18T22:21:30.797521", 
+    "contentTypeTier2": [
+      "Exercise"
+    ]
+  }
 }

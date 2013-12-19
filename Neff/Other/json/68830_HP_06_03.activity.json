@@ -1,178 +1,156 @@
 {
-  "metadata": {
-    "guid": "a7815e9e-eeb1-44d6-9406-5457c66138c9", 
-    "subject": [
-      "EnvironmentalScience"
-    ], 
-    "description": "What would be required to feed 9 billion people by 2050?", 
-    "timeRequired": "PT20S", 
-    "contentTypeTier2": [
-      "Exercise"
-    ], 
-    "contentTypeTier1": "Activity", 
-    "format": [
-      "application/vnd.pearson.sanvan.v1.activity"
-    ], 
-    "intendedEndUserRole": [
-      "Student"
-    ], 
-    "created": "2013-12-12T16:35:14.992620", 
-    "title": "What would be required to feed 9 billion people by 2050?", 
-    "owner": "Brix"
-  }, 
-  "@type": "Envelope", 
   "body": {
     "description": "What would be required to feed 9 billion people by 2050?", 
     "containerConfig": [
       {
         "brixConfig": [
           {
-            "configFixup": [
-              {
-                "value": {
-                  "elements": [
-                    {
-                      "properties": [
-                        {
-                          "value": {
-                            "parts": [
-                              {
-                                "domain": "info", 
-                                "refId": "imgBaseUrl", 
-                                "type": "ref"
-                              }, 
-                              {
-                                "value": "img/68830_HP_06_03_S1.png", 
-                                "type": "constant"
-                              }
-                            ], 
-                            "type": "join"
-                          }, 
-                          "name": "URI"
-                        }, 
-                        {
-                          "value": {
-                            "value": "70% more food", 
-                            "type": "constant"
-                          }, 
-                          "name": "caption"
-                        }
-                      ], 
-                      "type": "object"
-                    }, 
-                    {
-                      "properties": [
-                        {
-                          "value": {
-                            "parts": [
-                              {
-                                "domain": "info", 
-                                "refId": "imgBaseUrl", 
-                                "type": "ref"
-                              }, 
-                              {
-                                "value": "img/68830_HP_06_03_S2.png", 
-                                "type": "constant"
-                              }
-                            ], 
-                            "type": "join"
-                          }, 
-                          "name": "URI"
-                        }, 
-                        {
-                          "value": {
-                            "value": "200% more energy", 
-                            "type": "constant"
-                          }, 
-                          "name": "caption"
-                        }
-                      ], 
-                      "type": "object"
-                    }, 
-                    {
-                      "properties": [
-                        {
-                          "value": {
-                            "parts": [
-                              {
-                                "domain": "info", 
-                                "refId": "imgBaseUrl", 
-                                "type": "ref"
-                              }, 
-                              {
-                                "value": "img/68830_HP_06_03_S3.png", 
-                                "type": "constant"
-                              }
-                            ], 
-                            "type": "join"
-                          }, 
-                          "name": "URI"
-                        }, 
-                        {
-                          "value": {
-                            "value": "80% more water for agriculture", 
-                            "type": "constant"
-                          }, 
-                          "name": "caption"
-                        }
-                      ], 
-                      "type": "object"
-                    }
-                  ], 
-                  "type": "array"
-                }, 
-                "name": "images", 
-                "type": "set-property"
-              }
-            ], 
-            "bricType": "LabelCarousel", 
-            "bricId": "lblCarousel1", 
             "config": {
               "id": "lblCrsl1", 
               "imagesActualSize": {
                 "height": 379, 
                 "width": 570
               }
-            }
-          }, 
-          {
+            }, 
+            "bricType": "LabelCarousel", 
+            "bricId": "lblCarousel1", 
             "configFixup": [
               {
+                "type": "set-property", 
                 "value": {
-                  "selector": "#b6f8740919ba145c9bc44c4e8c31015e8", 
-                  "type": "d3select"
+                  "type": "array", 
+                  "elements": [
+                    {
+                      "type": "object", 
+                      "properties": [
+                        {
+                          "value": {
+                            "type": "join", 
+                            "parts": [
+                              {
+                                "type": "ref", 
+                                "refId": "imgBaseUrl", 
+                                "domain": "info"
+                              }, 
+                              {
+                                "type": "constant", 
+                                "value": "img/68830_HP_06_03_S1.png"
+                              }
+                            ]
+                          }, 
+                          "name": "URI"
+                        }, 
+                        {
+                          "value": {
+                            "type": "constant", 
+                            "value": "70% more food"
+                          }, 
+                          "name": "caption"
+                        }
+                      ]
+                    }, 
+                    {
+                      "type": "object", 
+                      "properties": [
+                        {
+                          "value": {
+                            "type": "join", 
+                            "parts": [
+                              {
+                                "type": "ref", 
+                                "refId": "imgBaseUrl", 
+                                "domain": "info"
+                              }, 
+                              {
+                                "type": "constant", 
+                                "value": "img/68830_HP_06_03_S2.png"
+                              }
+                            ]
+                          }, 
+                          "name": "URI"
+                        }, 
+                        {
+                          "value": {
+                            "type": "constant", 
+                            "value": "200% more energy"
+                          }, 
+                          "name": "caption"
+                        }
+                      ]
+                    }, 
+                    {
+                      "type": "object", 
+                      "properties": [
+                        {
+                          "value": {
+                            "type": "join", 
+                            "parts": [
+                              {
+                                "type": "ref", 
+                                "refId": "imgBaseUrl", 
+                                "domain": "info"
+                              }, 
+                              {
+                                "type": "constant", 
+                                "value": "img/68830_HP_06_03_S3.png"
+                              }
+                            ]
+                          }, 
+                          "name": "URI"
+                        }, 
+                        {
+                          "value": {
+                            "type": "constant", 
+                            "value": "80% more water for agriculture"
+                          }, 
+                          "name": "caption"
+                        }
+                      ]
+                    }
+                  ]
                 }, 
-                "name": "node", 
-                "type": "set-property"
+                "name": "images"
               }
-            ], 
-            "bricType": "SvgContainer", 
-            "bricId": "cntr1", 
+            ]
+          }, 
+          {
             "config": {
               "maxSize": {
-                "height": 425, 
+                "height": 410, 
                 "width": 477
               }
-            }
+            }, 
+            "bricType": "SvgContainer", 
+            "bricId": "cntr1", 
+            "configFixup": [
+              {
+                "type": "set-property", 
+                "value": {
+                  "type": "d3select", 
+                  "selector": "#b6f8740919ba145c9bc44c4e8c31015e8"
+                }, 
+                "name": "node"
+              }
+            ]
           }
         ], 
         "hookupActions": [
           {
+            "type": "method-call", 
+            "methodName": "append", 
+            "description": "Append the label image carousel to the svg container", 
+            "instance": {
+              "type": "ref", 
+              "refId": "cntr1", 
+              "domain": "brix"
+            }, 
             "args": [
               {
-                "domain": "brix", 
+                "type": "ref", 
                 "refId": "lblCarousel1", 
-                "type": "ref"
+                "domain": "brix"
               }
-            ], 
-            "description": "Append the label image carousel to the svg container", 
-            "methodName": "append", 
-            "instance": {
-              "domain": "brix", 
-              "refId": "cntr1", 
-              "type": "ref"
-            }, 
-            "type": "method-call"
+            ]
           }
         ], 
         "description": "Container for the LabelCarousel", 
@@ -180,5 +158,27 @@
       }
     ]
   }, 
-  "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope"
+  "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope", 
+  "@type": "Envelope", 
+  "metadata": {
+    "timeRequired": "PT20S", 
+    "subject": [
+      "EnvironmentalScience"
+    ], 
+    "format": [
+      "application/vnd.pearson.sanvan.v1.activity"
+    ], 
+    "guid": "a4f5ee22-06e0-4e86-bc0e-1126b0087649", 
+    "intendedEndUserRole": [
+      "Student"
+    ], 
+    "title": "What would be required to feed 9 billion people by 2050?", 
+    "contentTypeTier1": "Activity", 
+    "owner": "Brix", 
+    "description": "What would be required to feed 9 billion people by 2050?", 
+    "created": "2013-12-18T22:21:30.797159", 
+    "contentTypeTier2": [
+      "Exercise"
+    ]
+  }
 }

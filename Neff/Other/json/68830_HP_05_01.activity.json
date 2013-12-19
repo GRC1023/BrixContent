@@ -1,45 +1,24 @@
 {
-  "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope", 
-  "metadata": {
-    "contentTypeTier2": [
-      "Exercise"
-    ], 
-    "contentTypeTier1": "Activity", 
-    "guid": "1b4a912f-e916-40dc-a3f6-9cb4d0a28dc2", 
-    "description": "The I=PAT model", 
-    "timeRequired": "PT20S", 
-    "title": "The I=PAT model", 
-    "subject": [
-      "EnvironmentalScience"
-    ], 
-    "owner": "Brix", 
-    "format": [
-      "application/vnd.pearson.sanvan.v1.activity"
-    ], 
-    "intendedEndUserRole": [
-      "Student"
-    ], 
-    "created": "2013-12-16T14:02:46.186272"
-  }, 
-  "@type": "Envelope", 
   "body": {
     "description": "The I=PAT model", 
     "containerConfig": [
       {
         "brixConfig": [
           {
-            "bricId": "lblCarousel1", 
             "config": {
+              "id": "lblCrsl1", 
               "imagesActualSize": {
                 "height": 467, 
                 "width": 477
-              }, 
-              "id": "lblCrsl1"
+              }
             }, 
+            "bricType": "LabelCarousel", 
+            "bricId": "lblCarousel1", 
             "configFixup": [
               {
                 "type": "set-property", 
                 "value": {
+                  "type": "array", 
                   "elements": [
                     {
                       "type": "object", 
@@ -50,8 +29,8 @@
                             "parts": [
                               {
                                 "type": "ref", 
-                                "domain": "info", 
-                                "refId": "imgBaseUrl"
+                                "refId": "imgBaseUrl", 
+                                "domain": "info"
                               }, 
                               {
                                 "type": "constant", 
@@ -64,7 +43,7 @@
                         {
                           "value": {
                             "type": "constant", 
-                            "value": "Impact increases with the size of the population.<br><br><br><br>"
+                            "value": "Impact increases with the size of the population.<br/><br/><br/><br/>"
                           }, 
                           "name": "caption"
                         }
@@ -79,8 +58,8 @@
                             "parts": [
                               {
                                 "type": "ref", 
-                                "domain": "info", 
-                                "refId": "imgBaseUrl"
+                                "refId": "imgBaseUrl", 
+                                "domain": "info"
                               }, 
                               {
                                 "type": "constant", 
@@ -108,8 +87,8 @@
                             "parts": [
                               {
                                 "type": "ref", 
-                                "domain": "info", 
-                                "refId": "imgBaseUrl"
+                                "refId": "imgBaseUrl", 
+                                "domain": "info"
                               }, 
                               {
                                 "type": "constant", 
@@ -128,22 +107,21 @@
                         }
                       ]
                     }
-                  ], 
-                  "type": "array"
+                  ]
                 }, 
                 "name": "images"
               }
-            ], 
-            "bricType": "LabelCarousel"
+            ]
           }, 
           {
-            "bricId": "cntr1", 
             "config": {
               "maxSize": {
                 "height": 620, 
                 "width": 457
               }
             }, 
+            "bricType": "SvgContainer", 
+            "bricId": "cntr1", 
             "configFixup": [
               {
                 "type": "set-property", 
@@ -153,32 +131,54 @@
                 }, 
                 "name": "node"
               }
-            ], 
-            "bricType": "SvgContainer"
+            ]
           }
         ], 
-        "containerId": "bb46c3a9f598843e0b2990ec683d27d51", 
-        "description": "Container for the LabelCarousel", 
         "hookupActions": [
           {
             "type": "method-call", 
+            "methodName": "append", 
+            "description": "Append the label image carousel to the svg container", 
+            "instance": {
+              "type": "ref", 
+              "refId": "cntr1", 
+              "domain": "brix"
+            }, 
             "args": [
               {
                 "type": "ref", 
-                "domain": "brix", 
-                "refId": "lblCarousel1"
+                "refId": "lblCarousel1", 
+                "domain": "brix"
               }
-            ], 
-            "instance": {
-              "type": "ref", 
-              "domain": "brix", 
-              "refId": "cntr1"
-            }, 
-            "description": "Append the label image carousel to the svg container", 
-            "methodName": "append"
+            ]
           }
-        ]
+        ], 
+        "description": "Container for the LabelCarousel", 
+        "containerId": "bb46c3a9f598843e0b2990ec683d27d51"
       }
+    ]
+  }, 
+  "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope", 
+  "@type": "Envelope", 
+  "metadata": {
+    "timeRequired": "PT20S", 
+    "subject": [
+      "EnvironmentalScience"
+    ], 
+    "format": [
+      "application/vnd.pearson.sanvan.v1.activity"
+    ], 
+    "guid": "fa24cae5-0b53-4951-90a3-a9b28018a76a", 
+    "intendedEndUserRole": [
+      "Student"
+    ], 
+    "title": "The I=PAT model", 
+    "contentTypeTier1": "Activity", 
+    "owner": "Brix", 
+    "description": "The I=PAT model", 
+    "created": "2013-12-18T22:21:30.796775", 
+    "contentTypeTier2": [
+      "Exercise"
     ]
   }
 }
