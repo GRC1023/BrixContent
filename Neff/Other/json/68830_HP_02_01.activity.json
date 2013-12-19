@@ -1,6 +1,5 @@
 {
   "body": {
-    "description": "Examples of simplified population age structures", 
     "containerConfig": [
       {
         "brixConfig": [
@@ -8,8 +7,8 @@
             "config": {
               "id": "lblCrsl1", 
               "imagesActualSize": {
-                "height": 401, 
-                "width": 476
+                "width": 476, 
+                "height": 401
               }
             }, 
             "bricType": "LabelCarousel", 
@@ -17,35 +16,35 @@
             "configFixup": [
               {
                 "type": "set-property", 
+                "name": "images", 
                 "value": {
-                  "type": "array", 
                   "elements": [
                     {
                       "type": "object", 
                       "properties": [
                         {
+                          "name": "URI", 
                           "value": {
-                            "type": "join", 
                             "parts": [
                               {
+                                "domain": "info", 
                                 "type": "ref", 
-                                "refId": "imgBaseUrl", 
-                                "domain": "info"
+                                "refId": "imgBaseUrl"
                               }, 
                               {
                                 "type": "constant", 
                                 "value": "img/68830_HP_02_01_S1.png"
                               }
-                            ]
-                          }, 
-                          "name": "URI"
+                            ], 
+                            "type": "join"
+                          }
                         }, 
                         {
+                          "name": "caption", 
                           "value": {
                             "type": "constant", 
-                            "value": "Fast growth rate\u2013increasing population"
-                          }, 
-                          "name": "caption"
+                            "value": "Fast growth rate&#x2013;increasing population"
+                          }
                         }
                       ]
                     }, 
@@ -53,28 +52,28 @@
                       "type": "object", 
                       "properties": [
                         {
+                          "name": "URI", 
                           "value": {
-                            "type": "join", 
                             "parts": [
                               {
+                                "domain": "info", 
                                 "type": "ref", 
-                                "refId": "imgBaseUrl", 
-                                "domain": "info"
+                                "refId": "imgBaseUrl"
                               }, 
                               {
                                 "type": "constant", 
                                 "value": "img/68830_HP_02_01_S2.png"
                               }
-                            ]
-                          }, 
-                          "name": "URI"
+                            ], 
+                            "type": "join"
+                          }
                         }, 
                         {
+                          "name": "caption", 
                           "value": {
                             "type": "constant", 
-                            "value": "Negative growth rate-decreasing population"
-                          }, 
-                          "name": "caption"
+                            "value": "Negative growth rate&#x2013;decreasing population"
+                          }
                         }
                       ]
                     }, 
@@ -82,42 +81,42 @@
                       "type": "object", 
                       "properties": [
                         {
+                          "name": "URI", 
                           "value": {
-                            "type": "join", 
                             "parts": [
                               {
+                                "domain": "info", 
                                 "type": "ref", 
-                                "refId": "imgBaseUrl", 
-                                "domain": "info"
+                                "refId": "imgBaseUrl"
                               }, 
                               {
                                 "type": "constant", 
                                 "value": "img/68830_HP_02_01_S3.png"
                               }
-                            ]
-                          }, 
-                          "name": "URI"
+                            ], 
+                            "type": "join"
+                          }
                         }, 
                         {
+                          "name": "caption", 
                           "value": {
                             "type": "constant", 
-                            "value": "Steady growth rate\u2013stable population"
-                          }, 
-                          "name": "caption"
+                            "value": "Steady growth rate&#x2013;stable population"
+                          }
                         }
                       ]
                     }
-                  ]
-                }, 
-                "name": "images"
+                  ], 
+                  "type": "array"
+                }
               }
             ]
           }, 
           {
             "config": {
               "maxSize": {
-                "height": 480, 
-                "width": 477
+                "width": 477, 
+                "height": 480
               }
             }, 
             "bricType": "SvgContainer", 
@@ -125,58 +124,59 @@
             "configFixup": [
               {
                 "type": "set-property", 
+                "name": "node", 
                 "value": {
                   "type": "d3select", 
                   "selector": "#b8c42f914a2614384b276f7ce9bc11586"
-                }, 
-                "name": "node"
-              }
-            ]
-          }
-        ], 
-        "hookupActions": [
-          {
-            "type": "method-call", 
-            "methodName": "append", 
-            "description": "Append the label image carousel to the svg container", 
-            "instance": {
-              "type": "ref", 
-              "refId": "cntr1", 
-              "domain": "brix"
-            }, 
-            "args": [
-              {
-                "type": "ref", 
-                "refId": "lblCarousel1", 
-                "domain": "brix"
+                }
               }
             ]
           }
         ], 
         "description": "Container for the LabelCarousel", 
+        "hookupActions": [
+          {
+            "instance": {
+              "domain": "brix", 
+              "type": "ref", 
+              "refId": "cntr1"
+            }, 
+            "args": [
+              {
+                "domain": "brix", 
+                "type": "ref", 
+                "refId": "lblCarousel1"
+              }
+            ], 
+            "type": "method-call", 
+            "description": "Append the label image carousel to the svg container", 
+            "methodName": "append"
+          }
+        ], 
         "containerId": "b8c42f914a2614384b276f7ce9bc11586"
       }
-    ]
+    ], 
+    "description": "Examples of simplified population age structures"
   }, 
   "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope", 
   "@type": "Envelope", 
   "metadata": {
-    "timeRequired": "PT20S", 
-    "subject": [
-      "EnvironmentalScience"
-    ], 
-    "format": [
-      "application/vnd.pearson.sanvan.v1.activity"
-    ], 
-    "guid": "42bc29ec-c431-4ad7-93d7-2823162b385b", 
     "intendedEndUserRole": [
       "Student"
     ], 
+    "description": "Examples of simplified population age structures", 
+    "format": [
+      "application/vnd.pearson.sanvan.v1.activity"
+    ], 
+    "owner": "Brix", 
+    "guid": "209a8510-829f-479f-8ee4-18a2df858be4", 
+    "subject": [
+      "EnvironmentalScience"
+    ], 
+    "timeRequired": "PT20S", 
+    "created": "2013-12-19T15:38:10.766909", 
     "title": "Examples of simplified population age structures", 
     "contentTypeTier1": "Activity", 
-    "owner": "Brix", 
-    "description": "Examples of simplified population age structures", 
-    "created": "2013-12-18T22:21:30.796891", 
     "contentTypeTier2": [
       "Exercise"
     ]
