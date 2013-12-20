@@ -1,170 +1,170 @@
 {
   "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope", 
   "metadata": {
-    "contentTypeTier2": [
-      "Exercise"
-    ], 
-    "contentTypeTier1": "Activity", 
-    "guid": "1aed7fba-3f5f-4edb-95d4-14a263757129", 
-    "description": "Fossil fuels were formed over millions of years", 
-    "timeRequired": "PT20S", 
-    "title": "Fossil fuels were formed over millions of years", 
     "subject": [
       "EnvironmentalScience"
     ], 
+    "description": "Fossil fuels were formed over millions of years ", 
+    "timeRequired": "PT20S", 
+    "created": "2013-12-19T21:28:42.603396", 
+    "contentTypeTier1": "Activity", 
+    "contentTypeTier2": [
+      "Exercise"
+    ], 
     "owner": "Brix", 
+    "title": "Fossil fuels were formed over millions of years ", 
     "format": [
       "application/vnd.pearson.sanvan.v1.activity"
     ], 
+    "guid": "8ab96b9c-59e4-4854-8418-2b5c85b2ba32", 
     "intendedEndUserRole": [
       "Student"
-    ], 
-    "created": "2013-12-16T14:02:46.186394"
+    ]
   }, 
-  "@type": "Envelope", 
   "body": {
     "description": "Fossil fuels were formed over millions of years", 
     "containerConfig": [
       {
+        "containerId": "b0ebb75eb0f784ad68d4b5d5c84d23823", 
         "brixConfig": [
           {
             "bricId": "lblCarousel1", 
-            "config": {
-              "imagesActualSize": {
-                "height": 504, 
-                "width": 457
-              }, 
-              "type": "textLabels", 
-              "id": "lblCrsl1"
-            }, 
             "configFixup": [
               {
+                "name": "images", 
                 "type": "set-property", 
                 "value": {
+                  "type": "array", 
                   "elements": [
                     {
-                      "type": "object", 
                       "properties": [
                         {
+                          "name": "URI", 
                           "value": {
-                            "type": "join", 
                             "parts": [
                               {
-                                "type": "ref", 
                                 "domain": "info", 
+                                "type": "ref", 
                                 "refId": "imgBaseUrl"
                               }, 
                               {
                                 "type": "constant", 
                                 "value": "img/68830_NE_01_01_S1.png"
                               }
-                            ]
-                          }, 
-                          "name": "URI"
+                            ], 
+                            "type": "join"
+                          }
                         }, 
                         {
+                          "name": "caption", 
                           "value": {
                             "type": "constant", 
-                            "value": "359-299 million years ago: Ferns, trees, and other plants in ancient swamps fell and accumulated in deep layers of sediment.</br></br>Present day: These organic tissues were heated, compressed, and transformed, along with minerals, into a solid, dense material that is now mined as coal."
-                          }, 
-                          "name": "caption"
+                            "value": "359-299 million years ago: Ferns, trees, and other plants in ancient swamps fell and accumulated in deep layers of sediment.<br /><br />Present day: These organic tissues were heated, compressed, and transformed, along with minerals, into a solid, dense material that is now mined as coal."
+                          }
                         }, 
                         {
+                          "name": "selectorLabel", 
                           "value": {
                             "type": "constant", 
                             "value": "Coal"
-                          }, 
-                          "name": "selectorLabel"
+                          }
                         }
-                      ]
+                      ], 
+                      "type": "object"
                     }, 
                     {
-                      "type": "object", 
                       "properties": [
                         {
+                          "name": "URI", 
                           "value": {
-                            "type": "join", 
                             "parts": [
                               {
-                                "type": "ref", 
                                 "domain": "info", 
+                                "type": "ref", 
                                 "refId": "imgBaseUrl"
                               }, 
                               {
                                 "type": "constant", 
                                 "value": "img/68830_NE_01_01_S2.png"
                               }
-                            ]
-                          }, 
-                          "name": "URI"
+                            ], 
+                            "type": "join"
+                          }
                         }, 
                         {
+                          "name": "caption", 
                           "value": {
                             "type": "constant", 
-                            "value": "359-299 million years ago: In ancient rivers and oceans, plankton and algae died and were buried in deep layers of sediments.</br></br>Present day: After being heated and compressed under sediments, plankton and algae have been transformed into oil or natural gas."
-                          }, 
-                          "name": "caption"
+                            "value": "359-299 million years ago: In ancient rivers and oceans, plankton and algae died and were buried in deep layers of sediments.<br /><br />Present day: After being heated and compressed under sediments, plankton and algae have been transformed into oil or natural gas."
+                          }
                         }, 
                         {
+                          "name": "selectorLabel", 
                           "value": {
                             "type": "constant", 
                             "value": "Oil and Natural Gas"
-                          }, 
-                          "name": "selectorLabel"
+                          }
                         }
-                      ]
+                      ], 
+                      "type": "object"
                     }
-                  ], 
-                  "type": "array"
-                }, 
-                "name": "images"
+                  ]
+                }
               }
             ], 
-            "bricType": "LabelCarousel"
+            "bricType": "LabelCarousel", 
+            "config": {
+              "id": "lblCrsl1", 
+              "type": "textLabels", 
+              "imagesActualSize": {
+                "height": 504, 
+                "width": 457
+              }
+            }
           }, 
           {
             "bricId": "cntr1", 
+            "configFixup": [
+              {
+                "name": "node", 
+                "type": "set-property", 
+                "value": {
+                  "type": "d3select", 
+                  "selector": "#b0ebb75eb0f784ad68d4b5d5c84d23823"
+                }
+              }
+            ], 
+            "bricType": "SvgContainer", 
             "config": {
               "maxSize": {
                 "height": 720, 
                 "width": 457
               }
-            }, 
-            "configFixup": [
-              {
-                "type": "set-property", 
-                "value": {
-                  "type": "d3select", 
-                  "selector": "#b0ebb75eb0f784ad68d4b5d5c84d23823"
-                }, 
-                "name": "node"
-              }
-            ], 
-            "bricType": "SvgContainer"
+            }
           }
         ], 
-        "containerId": "b0ebb75eb0f784ad68d4b5d5c84d23823", 
         "description": "Container for the LabelCarousel", 
         "hookupActions": [
           {
-            "type": "method-call", 
+            "instance": {
+              "domain": "brix", 
+              "type": "ref", 
+              "refId": "cntr1"
+            }, 
+            "methodName": "append", 
             "args": [
               {
-                "type": "ref", 
                 "domain": "brix", 
+                "type": "ref", 
                 "refId": "lblCarousel1"
               }
             ], 
-            "instance": {
-              "type": "ref", 
-              "domain": "brix", 
-              "refId": "cntr1"
-            }, 
-            "description": "Append the label image carousel to the svg container", 
-            "methodName": "append"
+            "type": "method-call", 
+            "description": "Append the label image carousel to the svg container"
           }
         ]
       }
     ]
-  }
+  }, 
+  "@type": "Envelope"
 }
