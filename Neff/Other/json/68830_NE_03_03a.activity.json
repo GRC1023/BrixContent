@@ -1,63 +1,45 @@
 {
-  "metadata": {
-    "intendedEndUserRole": [
-      "Student"
-    ], 
-    "format": [
-      "application/vnd.pearson.sanvan.v1.activity"
-    ], 
-    "created": "2013-12-13T22:14:44.161878", 
-    "title": "Some impacts of COAL PRODUCTION", 
-    "owner": "Brix", 
-    "subject": [
-      "EnvironmentalScience"
-    ], 
-    "guid": "68952e34-3c1a-460c-b95b-ca5ecf3c085d", 
-    "timeRequired": "PT20S", 
-    "description": "Some impacts of COAL PRODUCTION", 
-    "contentTypeTier2": [
-      "Exercise"
-    ], 
-    "contentTypeTier1": "Activity"
-  }, 
   "body": {
     "containerConfig": [
       {
+        "description": "Container for the LabelCarousel", 
         "hookupActions": [
           {
+            "methodName": "append", 
+            "description": "Append the label image carousel to the svg container", 
             "args": [
               {
-                "domain": "brix", 
                 "refId": "lblCarousel1", 
+                "domain": "brix", 
                 "type": "ref"
               }
             ], 
+            "type": "method-call", 
             "instance": {
-              "domain": "brix", 
               "refId": "cntr1", 
+              "domain": "brix", 
               "type": "ref"
-            }, 
-            "description": "Append the label image carousel to the svg container", 
-            "methodName": "append", 
-            "type": "method-call"
+            }
           }
         ], 
-        "containerId": "bce9b815e3ea144c490c9bb356c00b200", 
-        "description": "Container for the LabelCarousel", 
         "brixConfig": [
           {
+            "bricType": "LabelCarousel", 
             "configFixup": [
               {
+                "name": "images", 
                 "value": {
+                  "type": "array", 
                   "elements": [
                     {
                       "properties": [
                         {
+                          "name": "URI", 
                           "value": {
                             "parts": [
                               {
-                                "domain": "info", 
                                 "refId": "imgBaseUrl", 
+                                "domain": "info", 
                                 "type": "ref"
                               }, 
                               {
@@ -66,15 +48,14 @@
                               }
                             ], 
                             "type": "join"
-                          }, 
-                          "name": "URI"
+                          }
                         }, 
                         {
+                          "name": "caption", 
                           "value": {
                             "value": "Ecological disturbance from mountaintop removal", 
                             "type": "constant"
-                          }, 
-                          "name": "caption"
+                          }
                         }
                       ], 
                       "type": "object"
@@ -82,11 +63,12 @@
                     {
                       "properties": [
                         {
+                          "name": "URI", 
                           "value": {
                             "parts": [
                               {
-                                "domain": "info", 
                                 "refId": "imgBaseUrl", 
+                                "domain": "info", 
                                 "type": "ref"
                               }, 
                               {
@@ -95,15 +77,14 @@
                               }
                             ], 
                             "type": "join"
-                          }, 
-                          "name": "URI"
+                          }
                         }, 
                         {
+                          "name": "caption", 
                           "value": {
                             "value": "Contamination from acid drainage from coal mines", 
                             "type": "constant"
-                          }, 
-                          "name": "caption"
+                          }
                         }
                       ], 
                       "type": "object"
@@ -111,11 +92,12 @@
                     {
                       "properties": [
                         {
+                          "name": "URI", 
                           "value": {
                             "parts": [
                               {
-                                "domain": "info", 
                                 "refId": "imgBaseUrl", 
+                                "domain": "info", 
                                 "type": "ref"
                               }, 
                               {
@@ -124,62 +106,80 @@
                               }
                             ], 
                             "type": "join"
-                          }, 
-                          "name": "URI"
+                          }
                         }, 
                         {
+                          "name": "caption", 
                           "value": {
                             "value": "Contamination from coal-mining dam failures", 
                             "type": "constant"
-                          }, 
-                          "name": "caption"
+                          }
                         }
                       ], 
                       "type": "object"
                     }
-                  ], 
-                  "type": "array"
+                  ]
                 }, 
-                "name": "images", 
                 "type": "set-property"
               }
             ], 
-            "bricType": "LabelCarousel", 
             "config": {
               "id": "lblCrsl1", 
               "displayWidth": 335, 
               "imagesActualSize": {
-                "height": 335, 
-                "width": 335
+                "width": 335, 
+                "height": 335
               }
             }, 
             "bricId": "lblCarousel1"
           }, 
           {
+            "bricType": "SvgContainer", 
             "configFixup": [
               {
+                "name": "node", 
                 "value": {
                   "selector": "#bce9b815e3ea144c490c9bb356c00b200", 
                   "type": "d3select"
                 }, 
-                "name": "node", 
                 "type": "set-property"
               }
             ], 
-            "bricType": "SvgContainer", 
             "config": {
               "maxSize": {
-                "height": 450, 
-                "width": 335
+                "width": 335, 
+                "height": 450
               }
             }, 
             "bricId": "cntr1"
           }
-        ]
+        ], 
+        "containerId": "bce9b815e3ea144c490c9bb356c00b200"
       }
     ], 
     "description": "Some impacts of COAL PRODUCTION"
   }, 
   "@type": "Envelope", 
+  "metadata": {
+    "format": [
+      "application/vnd.pearson.sanvan.v1.activity"
+    ], 
+    "intendedEndUserRole": [
+      "Student"
+    ], 
+    "subject": [
+      "EnvironmentalScience"
+    ], 
+    "owner": "Brix", 
+    "created": "2013-12-20T13:45:56.091524", 
+    "title": "Some impacts of COAL PRODUCTION", 
+    "timeRequired": "PT20S", 
+    "description": "Some impacts of COAL PRODUCTION", 
+    "guid": "68952e34-3c1a-460c-b95b-ca5ecf3c085d", 
+    "contentTypeTier1": "Activity", 
+    "contentTypeTier2": [
+      "Exercise"
+    ]
+  }, 
   "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope"
 }

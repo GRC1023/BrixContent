@@ -1,39 +1,71 @@
 {
-  "metadata": {
-    "guid": "c7680821-900f-4a72-a8a8-16422ec16ce9", 
-    "subject": [
-      "EnvironmentalScience"
-    ], 
-    "description": "Global energy use, 1800\u20132000", 
-    "timeRequired": "PT20S", 
-    "contentTypeTier2": [
-      "Exercise"
-    ], 
-    "contentTypeTier1": "Activity", 
-    "format": [
-      "application/vnd.pearson.sanvan.v1.activity"
-    ], 
-    "intendedEndUserRole": [
-      "Student"
-    ], 
-    "created": "2013-12-12T16:35:14.990726", 
-    "title": "Global energy use, 1800\u20132000", 
-    "owner": "Brix"
-  }, 
-  "@type": "Envelope", 
   "body": {
-    "description": "Global energy use, 1800\u20132000", 
     "containerConfig": [
       {
+        "description": "container for the graph and labels", 
+        "hookupActions": [
+          {
+            "methodName": "append", 
+            "description": "Append the image to the svg container", 
+            "args": [
+              {
+                "refId": "imageGraph", 
+                "domain": "brix", 
+                "type": "ref"
+              }
+            ], 
+            "type": "method-call", 
+            "instance": {
+              "refId": "cntr1", 
+              "domain": "brix", 
+              "type": "ref"
+            }
+          }, 
+          {
+            "methodName": "append", 
+            "description": "Append the labels to the svg container", 
+            "args": [
+              {
+                "refId": "labelGroup1", 
+                "domain": "brix", 
+                "type": "ref"
+              }
+            ], 
+            "type": "method-call", 
+            "instance": {
+              "refId": "cntr1", 
+              "domain": "brix", 
+              "type": "ref"
+            }
+          }, 
+          {
+            "methodName": "lite", 
+            "description": "Initial condition: select 1st label", 
+            "args": [
+              {
+                "value": "0", 
+                "type": "constant"
+              }
+            ], 
+            "type": "method-call", 
+            "instance": {
+              "refId": "labelGroup1", 
+              "domain": "brix", 
+              "type": "ref"
+            }
+          }
+        ], 
         "brixConfig": [
           {
+            "bricType": "Image", 
             "configFixup": [
               {
+                "name": "URI", 
                 "value": {
                   "parts": [
                     {
-                      "domain": "info", 
                       "refId": "imgBaseUrl", 
+                      "domain": "info", 
                       "type": "ref"
                     }, 
                     {
@@ -43,139 +75,117 @@
                   ], 
                   "type": "join"
                 }, 
-                "name": "URI", 
                 "type": "set-property"
               }
             ], 
-            "bricType": "Image", 
-            "bricId": "imageGraph", 
             "config": {
-              "actualSize": {
-                "height": 599, 
-                "width": 425
-              }, 
               "id": "image1", 
+              "actualSize": {
+                "width": 425, 
+                "height": 599
+              }, 
               "caption": "Global energy use, 1800\u20132000"
-            }
+            }, 
+            "bricId": "imageGraph"
           }, 
           {
             "bricType": "LabelGroup", 
-            "bricId": "labelGroup1", 
             "config": {
+              "id": "dataLabels", 
               "labels": [
                 {
+                  "content": "1", 
                   "xyPos": [
                     0.235, 
                     0.13
                   ], 
-                  "width": 0, 
-                  "content": "1"
+                  "width": 0
                 }, 
                 {
+                  "content": "2", 
                   "xyPos": [
                     0.43, 
                     0.13
                   ], 
-                  "width": 0, 
-                  "content": "2"
+                  "width": 0
                 }, 
                 {
+                  "content": "3", 
                   "xyPos": [
                     0.61, 
                     0.13
                   ], 
-                  "width": 0, 
-                  "content": "3"
+                  "width": 0
                 }
               ], 
-              "id": "dataLabels", 
               "type": "numbered"
-            }
+            }, 
+            "bricId": "labelGroup1"
           }, 
           {
+            "bricType": "SvgContainer", 
             "configFixup": [
               {
+                "name": "node", 
                 "value": {
                   "selector": "#bb689ee6c8a4143feab39daa527951ae5", 
                   "type": "d3select"
                 }, 
-                "name": "node", 
                 "type": "set-property"
               }
             ], 
-            "bricType": "SvgContainer", 
-            "bricId": "cntr1", 
             "config": {
               "maxSize": {
-                "height": 445, 
-                "width": 557
+                "width": 557, 
+                "height": 445
               }
-            }
+            }, 
+            "bricId": "cntr1"
           }
         ], 
+        "containerId": "bb689ee6c8a4143feab39daa527951ae5"
+      }, 
+      {
+        "description": "The container contains the liteable callouts", 
         "hookupActions": [
           {
+            "methodName": "draw", 
+            "description": "draw the label table", 
             "args": [
               {
-                "domain": "brix", 
-                "refId": "imageGraph", 
-                "type": "ref"
+                "selector": "#bb689ee6c8a4143feab39daa527951ae5", 
+                "type": "d3select"
               }
             ], 
-            "description": "Append the image to the svg container", 
-            "methodName": "append", 
+            "type": "method-call", 
             "instance": {
+              "refId": "lbltbl1", 
               "domain": "brix", 
-              "refId": "cntr1", 
               "type": "ref"
-            }, 
-            "type": "method-call"
+            }
           }, 
           {
-            "args": [
-              {
-                "domain": "brix", 
-                "refId": "labelGroup1", 
-                "type": "ref"
-              }
-            ], 
-            "description": "Append the labels to the svg container", 
-            "methodName": "append", 
-            "instance": {
-              "domain": "brix", 
-              "refId": "cntr1", 
-              "type": "ref"
-            }, 
-            "type": "method-call"
-          }, 
-          {
+            "methodName": "lite", 
+            "description": "Initial condition: select 1st table row", 
             "args": [
               {
                 "value": "0", 
                 "type": "constant"
               }
             ], 
-            "description": "Initial condition: select 1st label", 
-            "methodName": "lite", 
+            "type": "method-call", 
             "instance": {
+              "refId": "lbltbl1", 
               "domain": "brix", 
-              "refId": "labelGroup1", 
               "type": "ref"
-            }, 
-            "type": "method-call"
+            }
           }
         ], 
-        "description": "container for the graph and labels", 
-        "containerId": "bb689ee6c8a4143feab39daa527951ae5"
-      }, 
-      {
         "brixConfig": [
           {
             "bricType": "Callouts", 
-            "bricId": "lbltbl1", 
             "config": {
               "id": "callme", 
-              "show": "all", 
               "textBits": [
                 {
                   "cols": [
@@ -192,105 +202,95 @@
                     "Phase 3 (after 1950): A new series of power plants fueled by coal, natural gas, and nuclear energy generate electricity that is distributed to homes and businesses through the electric power grid."
                   ]
                 }
-              ]
-            }
+              ], 
+              "show": "all"
+            }, 
+            "bricId": "lbltbl1"
           }
         ], 
         "mortarConfig": [
           {
-            "configFixup": [
-              {
-                "value": {
-                  "instanceId": "dataLabels", 
-                  "bricType": "LabelGroup", 
-                  "eventName": "selected", 
-                  "type": "brix-topic"
-                }, 
-                "name": "topic", 
-                "type": "set-property"
-              }, 
-              {
-                "value": {
-                  "domain": "brix", 
-                  "refId": "lbltbl1", 
-                  "type": "ref"
-                }, 
-                "name": "targetBric", 
-                "type": "set-property"
-              }
-            ], 
             "config": {
               "eventDetailsProperty": "selectKey"
             }, 
-            "mortarType": "Hilite", 
-            "mortarId": "hilite1"
+            "configFixup": [
+              {
+                "name": "topic", 
+                "value": {
+                  "bricType": "LabelGroup", 
+                  "instanceId": "dataLabels", 
+                  "type": "brix-topic", 
+                  "eventName": "selected"
+                }, 
+                "type": "set-property"
+              }, 
+              {
+                "name": "targetBric", 
+                "value": {
+                  "refId": "lbltbl1", 
+                  "domain": "brix", 
+                  "type": "ref"
+                }, 
+                "type": "set-property"
+              }
+            ], 
+            "mortarId": "hilite1", 
+            "mortarType": "Hilite"
           }, 
           {
-            "configFixup": [
-              {
-                "value": {
-                  "instanceId": "callme", 
-                  "bricType": "Callouts", 
-                  "eventName": "selected", 
-                  "type": "brix-topic"
-                }, 
-                "name": "topic", 
-                "type": "set-property"
-              }, 
-              {
-                "value": {
-                  "domain": "brix", 
-                  "refId": "labelGroup1", 
-                  "type": "ref"
-                }, 
-                "name": "targetBric", 
-                "type": "set-property"
-              }
-            ], 
             "config": {
               "eventDetailsProperty": "selectKey"
             }, 
-            "mortarType": "Hilite", 
-            "mortarId": "hilite2"
+            "configFixup": [
+              {
+                "name": "topic", 
+                "value": {
+                  "bricType": "Callouts", 
+                  "instanceId": "callme", 
+                  "type": "brix-topic", 
+                  "eventName": "selected"
+                }, 
+                "type": "set-property"
+              }, 
+              {
+                "name": "targetBric", 
+                "value": {
+                  "refId": "labelGroup1", 
+                  "domain": "brix", 
+                  "type": "ref"
+                }, 
+                "type": "set-property"
+              }
+            ], 
+            "mortarId": "hilite2", 
+            "mortarType": "Hilite"
           }
         ], 
-        "description": "The container contains the liteable callouts", 
-        "containerId": "bb689ee6c8a4143feab39daa527951ae5", 
-        "hookupActions": [
-          {
-            "args": [
-              {
-                "selector": "#bb689ee6c8a4143feab39daa527951ae5", 
-                "type": "d3select"
-              }
-            ], 
-            "description": "draw the label table", 
-            "methodName": "draw", 
-            "instance": {
-              "domain": "brix", 
-              "refId": "lbltbl1", 
-              "type": "ref"
-            }, 
-            "type": "method-call"
-          }, 
-          {
-            "args": [
-              {
-                "value": "0", 
-                "type": "constant"
-              }
-            ], 
-            "description": "Initial condition: select 1st table row", 
-            "methodName": "lite", 
-            "instance": {
-              "domain": "brix", 
-              "refId": "lbltbl1", 
-              "type": "ref"
-            }, 
-            "type": "method-call"
-          }
-        ]
+        "containerId": "bb689ee6c8a4143feab39daa527951ae5"
       }
+    ], 
+    "description": "Global energy use, 1800\u20132000"
+  }, 
+  "@type": "Envelope", 
+  "metadata": {
+    "format": [
+      "application/vnd.pearson.sanvan.v1.activity"
+    ], 
+    "intendedEndUserRole": [
+      "Student"
+    ], 
+    "subject": [
+      "EnvironmentalScience"
+    ], 
+    "owner": "Brix", 
+    "created": "2013-12-20T13:45:56.090744", 
+    "title": "Global energy use, 1800\u20132000", 
+    "timeRequired": "PT20S", 
+    "description": "Global energy use, 1800\u20132000", 
+    "guid": "c7680821-900f-4a72-a8a8-16422ec16ce9", 
+    "contentTypeTier1": "Activity", 
+    "contentTypeTier2": [
+      "Exercise"
     ]
   }, 
   "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope"

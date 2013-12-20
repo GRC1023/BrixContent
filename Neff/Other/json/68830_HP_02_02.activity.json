@@ -1,39 +1,80 @@
 {
-  "metadata": {
-    "guid": "31789a47-178c-4c14-872b-ddb3446778be", 
-    "subject": [
-      "EnvironmentalScience"
-    ], 
-    "description": "A conceptual model for the demographic transition", 
-    "timeRequired": "PT20S", 
-    "contentTypeTier2": [
-      "Exercise"
-    ], 
-    "contentTypeTier1": "Activity", 
-    "format": [
-      "application/vnd.pearson.sanvan.v1.activity"
-    ], 
-    "intendedEndUserRole": [
-      "Student"
-    ], 
-    "created": "2013-12-12T16:35:14.992309", 
-    "title": "A conceptual model for the demographic transition", 
-    "owner": "Brix"
-  }, 
-  "@type": "Envelope", 
   "body": {
-    "description": "A conceptual model for the demographic transition", 
     "containerConfig": [
       {
+        "description": "container for the graph and labels", 
+        "hookupActions": [
+          {
+            "methodName": "append", 
+            "description": "Append the image to the svg container", 
+            "args": [
+              {
+                "refId": "imageGraph", 
+                "domain": "brix", 
+                "type": "ref"
+              }
+            ], 
+            "type": "method-call", 
+            "instance": {
+              "refId": "cntr1", 
+              "domain": "brix", 
+              "type": "ref"
+            }
+          }, 
+          {
+            "methodName": "append", 
+            "description": "Append the labels to the svg container", 
+            "args": [
+              {
+                "refId": "labelSelector1", 
+                "domain": "brix", 
+                "type": "ref"
+              }, 
+              {
+                "value": {
+                  "topPercentOffset": 0.755, 
+                  "leftPercentOffset": 0, 
+                  "widthPercent": 1, 
+                  "heightPercent": 0.2
+                }, 
+                "type": "constant"
+              }
+            ], 
+            "type": "method-call", 
+            "instance": {
+              "refId": "cntr1", 
+              "domain": "brix", 
+              "type": "ref"
+            }
+          }, 
+          {
+            "methodName": "lite", 
+            "description": "Initial condition: select 1st label", 
+            "args": [
+              {
+                "value": "0", 
+                "type": "constant"
+              }
+            ], 
+            "type": "method-call", 
+            "instance": {
+              "refId": "labelSelector1", 
+              "domain": "brix", 
+              "type": "ref"
+            }
+          }
+        ], 
         "brixConfig": [
           {
+            "bricType": "Image", 
             "configFixup": [
               {
+                "name": "URI", 
                 "value": {
                   "parts": [
                     {
-                      "domain": "info", 
                       "refId": "imgBaseUrl", 
+                      "domain": "info", 
                       "type": "ref"
                     }, 
                     {
@@ -43,25 +84,23 @@
                   ], 
                   "type": "join"
                 }, 
-                "name": "URI", 
                 "type": "set-property"
               }
             ], 
-            "bricType": "Image", 
-            "bricId": "imageGraph", 
             "config": {
-              "actualSize": {
-                "height": 381, 
-                "width": 477
-              }, 
               "id": "image1", 
+              "actualSize": {
+                "width": 477, 
+                "height": 381
+              }, 
               "caption": "conceptual graph showing births, deaths and the total population"
-            }
+            }, 
+            "bricId": "imageGraph"
           }, 
           {
             "bricType": "LabelSelector", 
-            "bricId": "labelSelector1", 
             "config": {
+              "id": "dataLabels", 
               "labels": [
                 "Stage 1", 
                 "Stage 2", 
@@ -69,139 +108,110 @@
                 "Stage 4", 
                 "Stage 5"
               ], 
-              "id": "dataLabels", 
+              "layout": "horizontal", 
               "itemMargin": {
-                "bottom": 5, 
+                "right": 0, 
                 "top": 5, 
-                "left": 0, 
-                "right": 0
-              }, 
-              "layout": "horizontal"
-            }
+                "bottom": 5, 
+                "left": 0
+              }
+            }, 
+            "bricId": "labelSelector1"
           }, 
           {
+            "bricType": "SvgContainer", 
             "configFixup": [
               {
+                "name": "node", 
                 "value": {
                   "selector": "#b085f865b34f842059afd74cad6bfa4e5", 
                   "type": "d3select"
                 }, 
-                "name": "node", 
                 "type": "set-property"
               }
             ], 
-            "bricType": "SvgContainer", 
-            "bricId": "cntr1", 
             "config": {
               "maxSize": {
-                "height": 390, 
-                "width": 457
+                "width": 457, 
+                "height": 390
               }
-            }
+            }, 
+            "bricId": "cntr1"
           }
         ], 
         "mortarConfig": [
           {
-            "configFixup": [
-              {
-                "value": {
-                  "instanceId": "callme", 
-                  "bricType": "Callouts", 
-                  "eventName": "selected", 
-                  "type": "brix-topic"
-                }, 
-                "name": "topic", 
-                "type": "set-property"
-              }, 
-              {
-                "value": {
-                  "domain": "brix", 
-                  "refId": "labelSelector1", 
-                  "type": "ref"
-                }, 
-                "name": "targetBric", 
-                "type": "set-property"
-              }
-            ], 
             "config": {
               "eventDetailsProperty": "selectKey"
             }, 
-            "mortarType": "Hilite", 
-            "mortarId": "hilite2"
-          }
-        ], 
-        "description": "container for the graph and labels", 
-        "containerId": "b085f865b34f842059afd74cad6bfa4e5", 
-        "hookupActions": [
-          {
-            "args": [
+            "configFixup": [
               {
-                "domain": "brix", 
-                "refId": "imageGraph", 
-                "type": "ref"
-              }
-            ], 
-            "description": "Append the image to the svg container", 
-            "methodName": "append", 
-            "instance": {
-              "domain": "brix", 
-              "refId": "cntr1", 
-              "type": "ref"
-            }, 
-            "type": "method-call"
-          }, 
-          {
-            "args": [
-              {
-                "domain": "brix", 
-                "refId": "labelSelector1", 
-                "type": "ref"
+                "name": "topic", 
+                "value": {
+                  "bricType": "Callouts", 
+                  "instanceId": "callme", 
+                  "type": "brix-topic", 
+                  "eventName": "selected"
+                }, 
+                "type": "set-property"
               }, 
               {
+                "name": "targetBric", 
                 "value": {
-                  "leftPercentOffset": 0, 
-                  "topPercentOffset": 0.755, 
-                  "widthPercent": 1, 
-                  "heightPercent": 0.2
+                  "refId": "labelSelector1", 
+                  "domain": "brix", 
+                  "type": "ref"
                 }, 
-                "type": "constant"
+                "type": "set-property"
               }
             ], 
-            "description": "Append the labels to the svg container", 
-            "methodName": "append", 
+            "mortarId": "hilite2", 
+            "mortarType": "Hilite"
+          }
+        ], 
+        "containerId": "b085f865b34f842059afd74cad6bfa4e5"
+      }, 
+      {
+        "description": "The container contains the liteable callouts", 
+        "hookupActions": [
+          {
+            "methodName": "draw", 
+            "description": "draw the label table", 
+            "args": [
+              {
+                "selector": "#b085f865b34f842059afd74cad6bfa4e5", 
+                "type": "d3select"
+              }
+            ], 
+            "type": "method-call", 
             "instance": {
+              "refId": "lbltbl1", 
               "domain": "brix", 
-              "refId": "cntr1", 
               "type": "ref"
-            }, 
-            "type": "method-call"
+            }
           }, 
           {
+            "methodName": "lite", 
+            "description": "Initial condition: select 1st table row (note that we may want to use the state field to do this later)", 
             "args": [
               {
                 "value": "0", 
                 "type": "constant"
               }
             ], 
-            "description": "Initial condition: select 1st label", 
-            "methodName": "lite", 
+            "type": "method-call", 
             "instance": {
+              "refId": "lbltbl1", 
               "domain": "brix", 
-              "refId": "labelSelector1", 
               "type": "ref"
-            }, 
-            "type": "method-call"
+            }
           }
-        ]
-      }, 
-      {
+        ], 
         "brixConfig": [
           {
             "bricType": "Callouts", 
-            "bricId": "lbltbl1", 
             "config": {
               "id": "callme", 
-              "show": "all", 
               "textBits": [
                 {
                   "cols": [
@@ -228,77 +238,67 @@
                     "<strong>Stage 5: Post-development period.</strong>&#160;In highly-developed countries, the birth rate is falling while the death rate is relatively constant. The population growth rate is negative and the population declines."
                   ]
                 }
-              ]
-            }
+              ], 
+              "show": "all"
+            }, 
+            "bricId": "lbltbl1"
           }
         ], 
         "mortarConfig": [
           {
-            "configFixup": [
-              {
-                "value": {
-                  "instanceId": "dataLabels", 
-                  "bricType": "LabelSelector", 
-                  "eventName": "selected", 
-                  "type": "brix-topic"
-                }, 
-                "name": "topic", 
-                "type": "set-property"
-              }, 
-              {
-                "value": {
-                  "domain": "brix", 
-                  "refId": "lbltbl1", 
-                  "type": "ref"
-                }, 
-                "name": "targetBric", 
-                "type": "set-property"
-              }
-            ], 
             "config": {
               "eventDetailsProperty": "selectKey"
             }, 
-            "mortarType": "Hilite", 
-            "mortarId": "hilite1"
+            "configFixup": [
+              {
+                "name": "topic", 
+                "value": {
+                  "bricType": "LabelSelector", 
+                  "instanceId": "dataLabels", 
+                  "type": "brix-topic", 
+                  "eventName": "selected"
+                }, 
+                "type": "set-property"
+              }, 
+              {
+                "name": "targetBric", 
+                "value": {
+                  "refId": "lbltbl1", 
+                  "domain": "brix", 
+                  "type": "ref"
+                }, 
+                "type": "set-property"
+              }
+            ], 
+            "mortarId": "hilite1", 
+            "mortarType": "Hilite"
           }
         ], 
-        "description": "The container contains the liteable callouts", 
-        "containerId": "b085f865b34f842059afd74cad6bfa4e5", 
-        "hookupActions": [
-          {
-            "args": [
-              {
-                "selector": "#b085f865b34f842059afd74cad6bfa4e5", 
-                "type": "d3select"
-              }
-            ], 
-            "description": "draw the label table", 
-            "methodName": "draw", 
-            "instance": {
-              "domain": "brix", 
-              "refId": "lbltbl1", 
-              "type": "ref"
-            }, 
-            "type": "method-call"
-          }, 
-          {
-            "args": [
-              {
-                "value": "0", 
-                "type": "constant"
-              }
-            ], 
-            "description": "Initial condition: select 1st table row (note that we may want to use the state field to do this later)", 
-            "methodName": "lite", 
-            "instance": {
-              "domain": "brix", 
-              "refId": "lbltbl1", 
-              "type": "ref"
-            }, 
-            "type": "method-call"
-          }
-        ]
+        "containerId": "b085f865b34f842059afd74cad6bfa4e5"
       }
+    ], 
+    "description": "A conceptual model for the demographic transition"
+  }, 
+  "@type": "Envelope", 
+  "metadata": {
+    "format": [
+      "application/vnd.pearson.sanvan.v1.activity"
+    ], 
+    "intendedEndUserRole": [
+      "Student"
+    ], 
+    "subject": [
+      "EnvironmentalScience"
+    ], 
+    "owner": "Brix", 
+    "created": "2013-12-20T13:45:56.090568", 
+    "title": "A conceptual model for the demographic transition", 
+    "timeRequired": "PT20S", 
+    "description": "A conceptual model for the demographic transition", 
+    "guid": "31789a47-178c-4c14-872b-ddb3446778be", 
+    "contentTypeTier1": "Activity", 
+    "contentTypeTier2": [
+      "Exercise"
     ]
   }, 
   "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope"

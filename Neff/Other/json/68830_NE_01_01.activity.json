@@ -1,38 +1,33 @@
 {
-  "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope", 
-  "metadata": {
-    "subject": [
-      "EnvironmentalScience"
-    ], 
-    "description": "Fossil fuels were formed over millions of years ", 
-    "timeRequired": "PT20S", 
-    "created": "2013-12-19T21:28:42.603396", 
-    "contentTypeTier1": "Activity", 
-    "contentTypeTier2": [
-      "Exercise"
-    ], 
-    "owner": "Brix", 
-    "title": "Fossil fuels were formed over millions of years ", 
-    "format": [
-      "application/vnd.pearson.sanvan.v1.activity"
-    ], 
-    "guid": "8ab96b9c-59e4-4854-8418-2b5c85b2ba32", 
-    "intendedEndUserRole": [
-      "Student"
-    ]
-  }, 
   "body": {
-    "description": "Fossil fuels were formed over millions of years", 
     "containerConfig": [
       {
-        "containerId": "b0ebb75eb0f784ad68d4b5d5c84d23823", 
+        "description": "Container for the LabelCarousel", 
+        "hookupActions": [
+          {
+            "methodName": "append", 
+            "description": "Append the label image carousel to the svg container", 
+            "args": [
+              {
+                "refId": "lblCarousel1", 
+                "domain": "brix", 
+                "type": "ref"
+              }
+            ], 
+            "type": "method-call", 
+            "instance": {
+              "refId": "cntr1", 
+              "domain": "brix", 
+              "type": "ref"
+            }
+          }
+        ], 
         "brixConfig": [
           {
-            "bricId": "lblCarousel1", 
+            "bricType": "LabelCarousel", 
             "configFixup": [
               {
                 "name": "images", 
-                "type": "set-property", 
                 "value": {
                   "type": "array", 
                   "elements": [
@@ -43,13 +38,13 @@
                           "value": {
                             "parts": [
                               {
+                                "refId": "imgBaseUrl", 
                                 "domain": "info", 
-                                "type": "ref", 
-                                "refId": "imgBaseUrl"
+                                "type": "ref"
                               }, 
                               {
-                                "type": "constant", 
-                                "value": "img/68830_NE_01_01_S1.png"
+                                "value": "img/68830_NE_01_01_S1.png", 
+                                "type": "constant"
                               }
                             ], 
                             "type": "join"
@@ -58,15 +53,15 @@
                         {
                           "name": "caption", 
                           "value": {
-                            "type": "constant", 
-                            "value": "359-299 million years ago: Ferns, trees, and other plants in ancient swamps fell and accumulated in deep layers of sediment.<br /><br />Present day: These organic tissues were heated, compressed, and transformed, along with minerals, into a solid, dense material that is now mined as coal."
+                            "value": "359-299 million years ago: Ferns, trees, and other plants in ancient swamps fell and accumulated in deep layers of sediment.<br /><br />Present day: These organic tissues were heated, compressed, and transformed, along with minerals, into a solid, dense material that is now mined as coal.", 
+                            "type": "constant"
                           }
                         }, 
                         {
                           "name": "selectorLabel", 
                           "value": {
-                            "type": "constant", 
-                            "value": "Coal"
+                            "value": "Coal", 
+                            "type": "constant"
                           }
                         }
                       ], 
@@ -79,13 +74,13 @@
                           "value": {
                             "parts": [
                               {
+                                "refId": "imgBaseUrl", 
                                 "domain": "info", 
-                                "type": "ref", 
-                                "refId": "imgBaseUrl"
+                                "type": "ref"
                               }, 
                               {
-                                "type": "constant", 
-                                "value": "img/68830_NE_01_01_S2.png"
+                                "value": "img/68830_NE_01_01_S2.png", 
+                                "type": "constant"
                               }
                             ], 
                             "type": "join"
@@ -94,77 +89,82 @@
                         {
                           "name": "caption", 
                           "value": {
-                            "type": "constant", 
-                            "value": "359-299 million years ago: In ancient rivers and oceans, plankton and algae died and were buried in deep layers of sediments.<br /><br />Present day: After being heated and compressed under sediments, plankton and algae have been transformed into oil or natural gas."
+                            "value": "359-299 million years ago: In ancient rivers and oceans, plankton and algae died and were buried in deep layers of sediments.<br /><br />Present day: After being heated and compressed under sediments, plankton and algae have been transformed into oil or natural gas.", 
+                            "type": "constant"
                           }
                         }, 
                         {
                           "name": "selectorLabel", 
                           "value": {
-                            "type": "constant", 
-                            "value": "Oil and Natural Gas"
+                            "value": "Oil and Natural Gas", 
+                            "type": "constant"
                           }
                         }
                       ], 
                       "type": "object"
                     }
                   ]
-                }
+                }, 
+                "type": "set-property"
               }
             ], 
-            "bricType": "LabelCarousel", 
             "config": {
               "id": "lblCrsl1", 
               "type": "textLabels", 
               "imagesActualSize": {
-                "height": 504, 
-                "width": 457
+                "width": 457, 
+                "height": 504
               }
-            }
+            }, 
+            "bricId": "lblCarousel1"
           }, 
           {
-            "bricId": "cntr1", 
+            "bricType": "SvgContainer", 
             "configFixup": [
               {
                 "name": "node", 
-                "type": "set-property", 
                 "value": {
-                  "type": "d3select", 
-                  "selector": "#b0ebb75eb0f784ad68d4b5d5c84d23823"
-                }
+                  "selector": "#b0ebb75eb0f784ad68d4b5d5c84d23823", 
+                  "type": "d3select"
+                }, 
+                "type": "set-property"
               }
             ], 
-            "bricType": "SvgContainer", 
             "config": {
               "maxSize": {
-                "height": 720, 
-                "width": 457
+                "width": 457, 
+                "height": 720
               }
-            }
+            }, 
+            "bricId": "cntr1"
           }
         ], 
-        "description": "Container for the LabelCarousel", 
-        "hookupActions": [
-          {
-            "instance": {
-              "domain": "brix", 
-              "type": "ref", 
-              "refId": "cntr1"
-            }, 
-            "methodName": "append", 
-            "args": [
-              {
-                "domain": "brix", 
-                "type": "ref", 
-                "refId": "lblCarousel1"
-              }
-            ], 
-            "type": "method-call", 
-            "description": "Append the label image carousel to the svg container"
-          }
-        ]
+        "containerId": "b0ebb75eb0f784ad68d4b5d5c84d23823"
       }
+    ], 
+    "description": "Fossil fuels were formed over millions of years"
+  }, 
+  "@type": "Envelope", 
+  "metadata": {
+    "format": [
+      "application/vnd.pearson.sanvan.v1.activity"
+    ], 
+    "intendedEndUserRole": [
+      "Student"
+    ], 
+    "subject": [
+      "EnvironmentalScience"
+    ], 
+    "owner": "Brix", 
+    "created": "2013-12-20T13:45:56.091412", 
+    "title": "Fossil fuels were formed over millions of years ", 
+    "timeRequired": "PT20S", 
+    "description": "Fossil fuels were formed over millions of years ", 
+    "guid": "8ab96b9c-59e4-4854-8418-2b5c85b2ba32", 
+    "contentTypeTier1": "Activity", 
+    "contentTypeTier2": [
+      "Exercise"
     ]
   }, 
-  "@type": "Envelope"
+  "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope"
 }

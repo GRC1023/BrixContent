@@ -1,0 +1,185 @@
+{
+  "body": {
+    "containerConfig": [
+      {
+        "description": "Container for the LabelCarousel", 
+        "hookupActions": [
+          {
+            "methodName": "append", 
+            "description": "Append the label image carousel to the svg container", 
+            "args": [
+              {
+                "refId": "lblCarousel1", 
+                "domain": "brix", 
+                "type": "ref"
+              }
+            ], 
+            "type": "method-call", 
+            "instance": {
+              "refId": "cntr1", 
+              "domain": "brix", 
+              "type": "ref"
+            }
+          }
+        ], 
+        "brixConfig": [
+          {
+            "bricType": "LabelCarousel", 
+            "configFixup": [
+              {
+                "name": "images", 
+                "value": {
+                  "type": "array", 
+                  "elements": [
+                    {
+                      "properties": [
+                        {
+                          "name": "URI", 
+                          "value": {
+                            "parts": [
+                              {
+                                "refId": "imgBaseUrl", 
+                                "domain": "info", 
+                                "type": "ref"
+                              }, 
+                              {
+                                "value": "img/68830_RE_06_04_S1.jpg", 
+                                "type": "constant"
+                              }
+                            ], 
+                            "type": "join"
+                          }
+                        }, 
+                        {
+                          "name": "caption", 
+                          "value": {
+                            "value": "A hydrogen filling station", 
+                            "type": "constant"
+                          }
+                        }
+                      ], 
+                      "type": "object"
+                    }, 
+                    {
+                      "properties": [
+                        {
+                          "name": "URI", 
+                          "value": {
+                            "parts": [
+                              {
+                                "refId": "imgBaseUrl", 
+                                "domain": "info", 
+                                "type": "ref"
+                              }, 
+                              {
+                                "value": "img/68830_RE_06_04_S2.jpg", 
+                                "type": "constant"
+                              }
+                            ], 
+                            "type": "join"
+                          }
+                        }, 
+                        {
+                          "name": "caption", 
+                          "value": {
+                            "value": "An experimental fuel cell bus", 
+                            "type": "constant"
+                          }
+                        }
+                      ], 
+                      "type": "object"
+                    }, 
+                    {
+                      "properties": [
+                        {
+                          "name": "URI", 
+                          "value": {
+                            "parts": [
+                              {
+                                "refId": "imgBaseUrl", 
+                                "domain": "info", 
+                                "type": "ref"
+                              }, 
+                              {
+                                "value": "img/68830_RE_06_04_S3.jpg", 
+                                "type": "constant"
+                              }
+                            ], 
+                            "type": "join"
+                          }
+                        }, 
+                        {
+                          "name": "caption", 
+                          "value": {
+                            "value": "An experimental fuel cell tricycle", 
+                            "type": "constant"
+                          }
+                        }
+                      ], 
+                      "type": "object"
+                    }
+                  ]
+                }, 
+                "type": "set-property"
+              }
+            ], 
+            "config": {
+              "id": "lblCrsl1", 
+              "displayWidth": 457, 
+              "imagesActualSize": {
+                "width": 477, 
+                "height": 409
+              }
+            }, 
+            "bricId": "lblCarousel1"
+          }, 
+          {
+            "bricType": "SvgContainer", 
+            "configFixup": [
+              {
+                "name": "node", 
+                "value": {
+                  "selector": "#b612844c463ab4bccb7a9a2e704f618b4", 
+                  "type": "d3select"
+                }, 
+                "type": "set-property"
+              }
+            ], 
+            "config": {
+              "maxSize": {
+                "width": 457, 
+                "height": 570
+              }
+            }, 
+            "bricId": "cntr1"
+          }
+        ], 
+        "containerId": "b612844c463ab4bccb7a9a2e704f618b4"
+      }
+    ], 
+    "description": "New developments in fuel cell technology"
+  }, 
+  "@type": "Envelope", 
+  "metadata": {
+    "format": [
+      "application/vnd.pearson.sanvan.v1.activity"
+    ], 
+    "intendedEndUserRole": [
+      "Student"
+    ], 
+    "subject": [
+      "EnvironmentalScience"
+    ], 
+    "owner": "Brix", 
+    "created": "2013-12-20T13:45:56.093476", 
+    "title": "New developments in fuel cell technology", 
+    "timeRequired": "PT20S", 
+    "description": "New developments in fuel cell technology", 
+    "guid": "dbc24a02-b66f-40a4-94d9-3dd15e569d12", 
+    "contentTypeTier1": "Activity", 
+    "contentTypeTier2": [
+      "Exercise"
+    ]
+  }, 
+  "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope"
+}

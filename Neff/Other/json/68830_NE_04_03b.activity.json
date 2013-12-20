@@ -1,156 +1,156 @@
 {
   "body": {
-    "description": "Some impacts of NATURAL GAS CONSUMPTION", 
     "containerConfig": [
       {
+        "description": "Container for the LabelCarousel", 
+        "hookupActions": [
+          {
+            "methodName": "append", 
+            "description": "Append the label image carousel to the svg container", 
+            "args": [
+              {
+                "refId": "lblCarousel1", 
+                "domain": "brix", 
+                "type": "ref"
+              }
+            ], 
+            "type": "method-call", 
+            "instance": {
+              "refId": "cntr1", 
+              "domain": "brix", 
+              "type": "ref"
+            }
+          }
+        ], 
         "brixConfig": [
           {
-            "config": {
-              "id": "lblCrsl2", 
-              "displayWidth": 335, 
-              "imagesActualSize": {
-                "height": 335, 
-                "width": 335
-              }
-            }, 
             "bricType": "LabelCarousel", 
-            "bricId": "lblCarousel1", 
             "configFixup": [
               {
-                "type": "set-property", 
+                "name": "images", 
                 "value": {
                   "type": "array", 
                   "elements": [
                     {
-                      "type": "object", 
                       "properties": [
                         {
+                          "name": "URI", 
                           "value": {
-                            "type": "join", 
                             "parts": [
                               {
-                                "type": "ref", 
                                 "refId": "imgBaseUrl", 
-                                "domain": "info"
+                                "domain": "info", 
+                                "type": "ref"
                               }, 
                               {
-                                "type": "constant", 
-                                "value": "img/68830_NE_04_03b_S1.jpg"
+                                "value": "img/68830_NE_04_03b_S1.jpg", 
+                                "type": "constant"
                               }
-                            ]
-                          }, 
-                          "name": "URI"
+                            ], 
+                            "type": "join"
+                          }
                         }, 
                         {
+                          "name": "caption", 
                           "value": {
-                            "type": "constant", 
-                            "value": "Greenhouse gas emissions from gas power stations"
-                          }, 
-                          "name": "caption"
+                            "value": "Greenhouse gas emissions from gas power stations", 
+                            "type": "constant"
+                          }
                         }
-                      ]
+                      ], 
+                      "type": "object"
                     }, 
                     {
-                      "type": "object", 
                       "properties": [
                         {
+                          "name": "URI", 
                           "value": {
-                            "type": "join", 
                             "parts": [
                               {
-                                "type": "ref", 
                                 "refId": "imgBaseUrl", 
-                                "domain": "info"
+                                "domain": "info", 
+                                "type": "ref"
                               }, 
                               {
-                                "type": "constant", 
-                                "value": "img/68830_NE_04_03b_S2.jpg"
+                                "value": "img/68830_NE_04_03b_S2.jpg", 
+                                "type": "constant"
                               }
-                            ]
-                          }, 
-                          "name": "URI"
+                            ], 
+                            "type": "join"
+                          }
                         }, 
                         {
+                          "name": "caption", 
                           "value": {
-                            "type": "constant", 
-                            "value": "Air pollution from natural gas combustion"
-                          }, 
-                          "name": "caption"
+                            "value": "Air pollution from natural gas combustion", 
+                            "type": "constant"
+                          }
                         }
-                      ]
+                      ], 
+                      "type": "object"
                     }
                   ]
                 }, 
-                "name": "images"
+                "type": "set-property"
               }
-            ]
+            ], 
+            "config": {
+              "id": "lblCrsl2", 
+              "displayWidth": 335, 
+              "imagesActualSize": {
+                "width": 335, 
+                "height": 335
+              }
+            }, 
+            "bricId": "lblCarousel1"
           }, 
           {
-            "config": {
-              "maxSize": {
-                "height": 450, 
-                "width": 335
-              }
-            }, 
             "bricType": "SvgContainer", 
-            "bricId": "cntr1", 
             "configFixup": [
               {
-                "type": "set-property", 
+                "name": "node", 
                 "value": {
-                  "type": "d3select", 
-                  "selector": "#b563c037d02f04dce91f706630ec5807b"
+                  "selector": "#b563c037d02f04dce91f706630ec5807b", 
+                  "type": "d3select"
                 }, 
-                "name": "node"
+                "type": "set-property"
               }
-            ]
-          }
-        ], 
-        "hookupActions": [
-          {
-            "type": "method-call", 
-            "methodName": "append", 
-            "description": "Append the label image carousel to the svg container", 
-            "instance": {
-              "type": "ref", 
-              "refId": "cntr1", 
-              "domain": "brix"
+            ], 
+            "config": {
+              "maxSize": {
+                "width": 335, 
+                "height": 450
+              }
             }, 
-            "args": [
-              {
-                "type": "ref", 
-                "refId": "lblCarousel1", 
-                "domain": "brix"
-              }
-            ]
+            "bricId": "cntr1"
           }
         ], 
-        "description": "Container for the LabelCarousel", 
         "containerId": "b563c037d02f04dce91f706630ec5807b"
       }
-    ]
+    ], 
+    "description": "Some impacts of NATURAL GAS CONSUMPTION"
   }, 
-  "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope", 
   "@type": "Envelope", 
   "metadata": {
-    "timeRequired": "PT20S", 
-    "subject": [
-      "EnvironmentalScience"
-    ], 
     "format": [
       "application/vnd.pearson.sanvan.v1.activity"
     ], 
-    "guid": "d7a8b975-e5d9-4ec0-ae6d-b1ff2d72a424", 
     "intendedEndUserRole": [
       "Student"
     ], 
-    "title": "Some impacts of NATURAL GAS CONSUMPTION", 
-    "contentTypeTier1": "Activity", 
+    "subject": [
+      "EnvironmentalScience"
+    ], 
     "owner": "Brix", 
+    "created": "2013-12-20T13:45:56.091619", 
+    "title": "Some impacts of NATURAL GAS CONSUMPTION", 
+    "timeRequired": "PT20S", 
     "description": "Some impacts of NATURAL GAS CONSUMPTION", 
-    "created": "2013-12-18T22:21:30.797441", 
+    "guid": "d7a8b975-e5d9-4ec0-ae6d-b1ff2d72a424", 
+    "contentTypeTier1": "Activity", 
     "contentTypeTier2": [
       "Exercise"
     ]
-  }
+  }, 
+  "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope"
 }

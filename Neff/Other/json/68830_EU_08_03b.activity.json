@@ -1,214 +1,214 @@
 {
   "body": {
-    "description": "Technology and choices that may DECREASE future impacts of heating, cooling, and cooking", 
     "containerConfig": [
       {
+        "description": "Container for the LabelCarousel", 
+        "hookupActions": [
+          {
+            "methodName": "append", 
+            "description": "Append the label image carousel to the svg container", 
+            "args": [
+              {
+                "refId": "lblCarousel1", 
+                "domain": "brix", 
+                "type": "ref"
+              }
+            ], 
+            "type": "method-call", 
+            "instance": {
+              "refId": "cntr1", 
+              "domain": "brix", 
+              "type": "ref"
+            }
+          }
+        ], 
         "brixConfig": [
           {
-            "config": {
-              "id": "lblCrsl2", 
-              "displayWidth": 335, 
-              "imagesActualSize": {
-                "height": 335, 
-                "width": 335
-              }
-            }, 
             "bricType": "LabelCarousel", 
-            "bricId": "lblCarousel1", 
             "configFixup": [
               {
-                "type": "set-property", 
+                "name": "images", 
                 "value": {
                   "type": "array", 
                   "elements": [
                     {
-                      "type": "object", 
                       "properties": [
                         {
+                          "name": "URI", 
                           "value": {
-                            "type": "join", 
                             "parts": [
                               {
-                                "type": "ref", 
                                 "refId": "imgBaseUrl", 
-                                "domain": "info"
+                                "domain": "info", 
+                                "type": "ref"
                               }, 
                               {
-                                "type": "constant", 
-                                "value": "img/68830_EU_08_03b_S1.jpg"
+                                "value": "img/68830_EU_08_03b_S1.jpg", 
+                                "type": "constant"
                               }
-                            ]
-                          }, 
-                          "name": "URI"
+                            ], 
+                            "type": "join"
+                          }
                         }, 
                         {
+                          "name": "caption", 
                           "value": {
-                            "type": "constant", 
-                            "value": "Improved use of insulation in conventional homes<br/><br/>"
-                          }, 
-                          "name": "caption"
+                            "value": "Improved use of insulation in conventional homes<br/><br/>", 
+                            "type": "constant"
+                          }
                         }
-                      ]
+                      ], 
+                      "type": "object"
                     }, 
                     {
-                      "type": "object", 
                       "properties": [
                         {
+                          "name": "URI", 
                           "value": {
-                            "type": "join", 
                             "parts": [
                               {
-                                "type": "ref", 
                                 "refId": "imgBaseUrl", 
-                                "domain": "info"
+                                "domain": "info", 
+                                "type": "ref"
                               }, 
                               {
-                                "type": "constant", 
-                                "value": "img/68830_EU_08_03b_S2.jpg"
+                                "value": "img/68830_EU_08_03b_S2.jpg", 
+                                "type": "constant"
                               }
-                            ]
-                          }, 
-                          "name": "URI"
+                            ], 
+                            "type": "join"
+                          }
                         }, 
                         {
+                          "name": "caption", 
                           "value": {
-                            "type": "constant", 
-                            "value": "Alternative energy-efficient home designs"
-                          }, 
-                          "name": "caption"
+                            "value": "Alternative energy-efficient home designs", 
+                            "type": "constant"
+                          }
                         }
-                      ]
+                      ], 
+                      "type": "object"
                     }, 
                     {
-                      "type": "object", 
                       "properties": [
                         {
+                          "name": "URI", 
                           "value": {
-                            "type": "join", 
                             "parts": [
                               {
-                                "type": "ref", 
                                 "refId": "imgBaseUrl", 
-                                "domain": "info"
+                                "domain": "info", 
+                                "type": "ref"
                               }, 
                               {
-                                "type": "constant", 
-                                "value": "img/68830_EU_08_03b_S3.jpg"
+                                "value": "img/68830_EU_08_03b_S3.jpg", 
+                                "type": "constant"
                               }
-                            ]
-                          }, 
-                          "name": "URI"
+                            ], 
+                            "type": "join"
+                          }
                         }, 
                         {
+                          "name": "caption", 
                           "value": {
-                            "type": "constant", 
-                            "value": "Energy conservation"
-                          }, 
-                          "name": "caption"
+                            "value": "Energy conservation", 
+                            "type": "constant"
+                          }
                         }
-                      ]
+                      ], 
+                      "type": "object"
                     }, 
                     {
-                      "type": "object", 
                       "properties": [
                         {
+                          "name": "URI", 
                           "value": {
-                            "type": "join", 
                             "parts": [
                               {
-                                "type": "ref", 
                                 "refId": "imgBaseUrl", 
-                                "domain": "info"
+                                "domain": "info", 
+                                "type": "ref"
                               }, 
                               {
-                                "type": "constant", 
-                                "value": "img/68830_EU_08_03b_S4.png"
+                                "value": "img/68830_EU_08_03b_S4.png", 
+                                "type": "constant"
                               }
-                            ]
-                          }, 
-                          "name": "URI"
+                            ], 
+                            "type": "join"
+                          }
                         }, 
                         {
+                          "name": "caption", 
                           "value": {
-                            "type": "constant", 
-                            "value": "Policies that require or encourage energy efficiency"
-                          }, 
-                          "name": "caption"
+                            "value": "Policies that require or encourage energy efficiency", 
+                            "type": "constant"
+                          }
                         }
-                      ]
+                      ], 
+                      "type": "object"
                     }
                   ]
                 }, 
-                "name": "images"
+                "type": "set-property"
               }
-            ]
+            ], 
+            "config": {
+              "id": "lblCrsl2", 
+              "displayWidth": 335, 
+              "imagesActualSize": {
+                "width": 335, 
+                "height": 335
+              }
+            }, 
+            "bricId": "lblCarousel1"
           }, 
           {
-            "config": {
-              "maxSize": {
-                "height": 450, 
-                "width": 335
-              }
-            }, 
             "bricType": "SvgContainer", 
-            "bricId": "cntr1", 
             "configFixup": [
               {
-                "type": "set-property", 
+                "name": "node", 
                 "value": {
-                  "type": "d3select", 
-                  "selector": "#bfad77c77be1a4c95bf63f5110d48553c"
+                  "selector": "#bfad77c77be1a4c95bf63f5110d48553c", 
+                  "type": "d3select"
                 }, 
-                "name": "node"
+                "type": "set-property"
               }
-            ]
-          }
-        ], 
-        "hookupActions": [
-          {
-            "type": "method-call", 
-            "methodName": "append", 
-            "description": "Append the label image carousel to the svg container", 
-            "instance": {
-              "type": "ref", 
-              "refId": "cntr1", 
-              "domain": "brix"
+            ], 
+            "config": {
+              "maxSize": {
+                "width": 335, 
+                "height": 450
+              }
             }, 
-            "args": [
-              {
-                "type": "ref", 
-                "refId": "lblCarousel1", 
-                "domain": "brix"
-              }
-            ]
+            "bricId": "cntr1"
           }
         ], 
-        "description": "Container for the LabelCarousel", 
         "containerId": "bfad77c77be1a4c95bf63f5110d48553c"
       }
-    ]
+    ], 
+    "description": "Technology and choices that may DECREASE future impacts of heating, cooling, and cooking"
   }, 
-  "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope", 
   "@type": "Envelope", 
   "metadata": {
-    "timeRequired": "PT20S", 
-    "subject": [
-      "EnvironmentalScience"
-    ], 
     "format": [
       "application/vnd.pearson.sanvan.v1.activity"
     ], 
-    "guid": "edecf39f-0570-4647-aa98-8b53a5b06a7b", 
     "intendedEndUserRole": [
       "Student"
     ], 
-    "title": "Technology and choices that may DECREASE future impacts of heating, cooling, and cooking", 
-    "contentTypeTier1": "Activity", 
+    "subject": [
+      "EnvironmentalScience"
+    ], 
     "owner": "Brix", 
+    "created": "2013-12-20T13:45:56.091296", 
+    "title": "Technology and choices that may DECREASE future impacts of heating, cooling, and cooking", 
+    "timeRequired": "PT20S", 
     "description": "Technology and choices that may DECREASE future impacts of heating, cooling, and cooking", 
-    "created": "2013-12-18T22:21:30.796539", 
+    "guid": "edecf39f-0570-4647-aa98-8b53a5b06a7b", 
+    "contentTypeTier1": "Activity", 
     "contentTypeTier2": [
       "Exercise"
     ]
-  }
+  }, 
+  "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope"
 }

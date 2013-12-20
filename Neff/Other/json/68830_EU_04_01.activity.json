@@ -1,39 +1,71 @@
 {
-  "metadata": {
-    "guid": "4ac52c14-dc36-4627-b919-922c1164330a", 
-    "subject": [
-      "EnvironmentalScience"
-    ], 
-    "description": "How electricity is typically generated", 
-    "timeRequired": "PT20S", 
-    "contentTypeTier2": [
-      "Exercise"
-    ], 
-    "contentTypeTier1": "Activity", 
-    "format": [
-      "application/vnd.pearson.sanvan.v1.activity"
-    ], 
-    "intendedEndUserRole": [
-      "Student"
-    ], 
-    "created": "2013-12-12T16:35:14.990851", 
-    "title": "How electricity is typically generated", 
-    "owner": "Brix"
-  }, 
-  "@type": "Envelope", 
   "body": {
-    "description": "How electricity is typically generated", 
     "containerConfig": [
       {
+        "description": "container for the graph and labels", 
+        "hookupActions": [
+          {
+            "methodName": "append", 
+            "description": "Append the image to the svg container", 
+            "args": [
+              {
+                "refId": "imageGraph", 
+                "domain": "brix", 
+                "type": "ref"
+              }
+            ], 
+            "type": "method-call", 
+            "instance": {
+              "refId": "cntr1", 
+              "domain": "brix", 
+              "type": "ref"
+            }
+          }, 
+          {
+            "methodName": "append", 
+            "description": "Append the labels to the svg container", 
+            "args": [
+              {
+                "refId": "labelGroup1", 
+                "domain": "brix", 
+                "type": "ref"
+              }
+            ], 
+            "type": "method-call", 
+            "instance": {
+              "refId": "cntr1", 
+              "domain": "brix", 
+              "type": "ref"
+            }
+          }, 
+          {
+            "methodName": "lite", 
+            "description": "Initial condition: select 1st label", 
+            "args": [
+              {
+                "value": "0", 
+                "type": "constant"
+              }
+            ], 
+            "type": "method-call", 
+            "instance": {
+              "refId": "labelGroup1", 
+              "domain": "brix", 
+              "type": "ref"
+            }
+          }
+        ], 
         "brixConfig": [
           {
+            "bricType": "Image", 
             "configFixup": [
               {
+                "name": "URI", 
                 "value": {
                   "parts": [
                     {
-                      "domain": "info", 
                       "refId": "imgBaseUrl", 
+                      "domain": "info", 
                       "type": "ref"
                     }, 
                     {
@@ -43,155 +75,133 @@
                   ], 
                   "type": "join"
                 }, 
-                "name": "URI", 
                 "type": "set-property"
               }
             ], 
-            "bricType": "Image", 
-            "bricId": "imageGraph", 
             "config": {
-              "actualSize": {
-                "height": 599, 
-                "width": 359
-              }, 
               "id": "image1", 
+              "actualSize": {
+                "width": 359, 
+                "height": 599
+              }, 
               "caption": "graph comparing energy use"
-            }
+            }, 
+            "bricId": "imageGraph"
           }, 
           {
             "bricType": "LabelGroup", 
-            "bricId": "labelGroup1", 
             "config": {
+              "id": "dataLabels", 
               "labels": [
                 {
+                  "content": "1", 
                   "xyPos": [
                     0.07, 
                     0.27
                   ], 
-                  "width": 0, 
-                  "content": "1"
+                  "width": 0
                 }, 
                 {
+                  "content": "2", 
                   "xyPos": [
                     0.45, 
                     0.9
                   ], 
-                  "width": 0, 
-                  "content": "2"
+                  "width": 0
                 }, 
                 {
+                  "content": "3", 
                   "xyPos": [
                     0.395, 
                     0.51
                   ], 
-                  "width": 0, 
-                  "content": "3"
+                  "width": 0
                 }, 
                 {
+                  "content": "4", 
                   "xyPos": [
                     0.7, 
                     0.65
                   ], 
-                  "width": 0, 
-                  "content": "4"
+                  "width": 0
                 }, 
                 {
+                  "content": "5", 
                   "xyPos": [
                     0.85, 
                     0.98
                   ], 
-                  "width": 0, 
-                  "content": "5"
+                  "width": 0
                 }
               ], 
-              "id": "dataLabels", 
               "type": "numbered"
-            }
+            }, 
+            "bricId": "labelGroup1"
           }, 
           {
+            "bricType": "SvgContainer", 
             "configFixup": [
               {
+                "name": "node", 
                 "value": {
                   "selector": "#bdc328cbba71b474eb02866361cfb1663", 
                   "type": "d3select"
                 }, 
-                "name": "node", 
                 "type": "set-property"
               }
             ], 
-            "bricType": "SvgContainer", 
-            "bricId": "cntr1", 
             "config": {
               "maxSize": {
-                "height": 360, 
-                "width": 557
+                "width": 557, 
+                "height": 360
               }
-            }
+            }, 
+            "bricId": "cntr1"
           }
         ], 
+        "containerId": "bdc328cbba71b474eb02866361cfb1663"
+      }, 
+      {
+        "description": "The container contains the liteable callouts", 
         "hookupActions": [
           {
+            "methodName": "draw", 
+            "description": "draw the label table", 
             "args": [
               {
-                "domain": "brix", 
-                "refId": "imageGraph", 
-                "type": "ref"
+                "selector": "#bdc328cbba71b474eb02866361cfb1663", 
+                "type": "d3select"
               }
             ], 
-            "description": "Append the image to the svg container", 
-            "methodName": "append", 
+            "type": "method-call", 
             "instance": {
+              "refId": "lbltbl1", 
               "domain": "brix", 
-              "refId": "cntr1", 
               "type": "ref"
-            }, 
-            "type": "method-call"
+            }
           }, 
           {
-            "args": [
-              {
-                "domain": "brix", 
-                "refId": "labelGroup1", 
-                "type": "ref"
-              }
-            ], 
-            "description": "Append the labels to the svg container", 
-            "methodName": "append", 
-            "instance": {
-              "domain": "brix", 
-              "refId": "cntr1", 
-              "type": "ref"
-            }, 
-            "type": "method-call"
-          }, 
-          {
+            "methodName": "lite", 
+            "description": "Initial condition: select 1st table row", 
             "args": [
               {
                 "value": "0", 
                 "type": "constant"
               }
             ], 
-            "description": "Initial condition: select 1st label", 
-            "methodName": "lite", 
+            "type": "method-call", 
             "instance": {
+              "refId": "lbltbl1", 
               "domain": "brix", 
-              "refId": "labelGroup1", 
               "type": "ref"
-            }, 
-            "type": "method-call"
+            }
           }
         ], 
-        "description": "container for the graph and labels", 
-        "containerId": "bdc328cbba71b474eb02866361cfb1663"
-      }, 
-      {
         "brixConfig": [
           {
             "bricType": "Callouts", 
-            "bricId": "lbltbl1", 
             "config": {
               "id": "callme", 
-              "show": "all", 
               "textBits": [
                 {
                   "cols": [
@@ -219,105 +229,95 @@
                   ]
                 }
               ], 
-              "type": "numbered"
-            }
+              "type": "numbered", 
+              "show": "all"
+            }, 
+            "bricId": "lbltbl1"
           }
         ], 
         "mortarConfig": [
           {
-            "configFixup": [
-              {
-                "value": {
-                  "instanceId": "dataLabels", 
-                  "bricType": "LabelGroup", 
-                  "eventName": "selected", 
-                  "type": "brix-topic"
-                }, 
-                "name": "topic", 
-                "type": "set-property"
-              }, 
-              {
-                "value": {
-                  "domain": "brix", 
-                  "refId": "lbltbl1", 
-                  "type": "ref"
-                }, 
-                "name": "targetBric", 
-                "type": "set-property"
-              }
-            ], 
             "config": {
               "eventDetailsProperty": "selectKey"
             }, 
-            "mortarType": "Hilite", 
-            "mortarId": "hilite1"
+            "configFixup": [
+              {
+                "name": "topic", 
+                "value": {
+                  "bricType": "LabelGroup", 
+                  "instanceId": "dataLabels", 
+                  "type": "brix-topic", 
+                  "eventName": "selected"
+                }, 
+                "type": "set-property"
+              }, 
+              {
+                "name": "targetBric", 
+                "value": {
+                  "refId": "lbltbl1", 
+                  "domain": "brix", 
+                  "type": "ref"
+                }, 
+                "type": "set-property"
+              }
+            ], 
+            "mortarId": "hilite1", 
+            "mortarType": "Hilite"
           }, 
           {
-            "configFixup": [
-              {
-                "value": {
-                  "instanceId": "callme", 
-                  "bricType": "Callouts", 
-                  "eventName": "selected", 
-                  "type": "brix-topic"
-                }, 
-                "name": "topic", 
-                "type": "set-property"
-              }, 
-              {
-                "value": {
-                  "domain": "brix", 
-                  "refId": "labelGroup1", 
-                  "type": "ref"
-                }, 
-                "name": "targetBric", 
-                "type": "set-property"
-              }
-            ], 
             "config": {
               "eventDetailsProperty": "selectKey"
             }, 
-            "mortarType": "Hilite", 
-            "mortarId": "hilite2"
+            "configFixup": [
+              {
+                "name": "topic", 
+                "value": {
+                  "bricType": "Callouts", 
+                  "instanceId": "callme", 
+                  "type": "brix-topic", 
+                  "eventName": "selected"
+                }, 
+                "type": "set-property"
+              }, 
+              {
+                "name": "targetBric", 
+                "value": {
+                  "refId": "labelGroup1", 
+                  "domain": "brix", 
+                  "type": "ref"
+                }, 
+                "type": "set-property"
+              }
+            ], 
+            "mortarId": "hilite2", 
+            "mortarType": "Hilite"
           }
         ], 
-        "description": "The container contains the liteable callouts", 
-        "containerId": "bdc328cbba71b474eb02866361cfb1663", 
-        "hookupActions": [
-          {
-            "args": [
-              {
-                "selector": "#bdc328cbba71b474eb02866361cfb1663", 
-                "type": "d3select"
-              }
-            ], 
-            "description": "draw the label table", 
-            "methodName": "draw", 
-            "instance": {
-              "domain": "brix", 
-              "refId": "lbltbl1", 
-              "type": "ref"
-            }, 
-            "type": "method-call"
-          }, 
-          {
-            "args": [
-              {
-                "value": "0", 
-                "type": "constant"
-              }
-            ], 
-            "description": "Initial condition: select 1st table row", 
-            "methodName": "lite", 
-            "instance": {
-              "domain": "brix", 
-              "refId": "lbltbl1", 
-              "type": "ref"
-            }, 
-            "type": "method-call"
-          }
-        ]
+        "containerId": "bdc328cbba71b474eb02866361cfb1663"
       }
+    ], 
+    "description": "How electricity is typically generated"
+  }, 
+  "@type": "Envelope", 
+  "metadata": {
+    "format": [
+      "application/vnd.pearson.sanvan.v1.activity"
+    ], 
+    "intendedEndUserRole": [
+      "Student"
+    ], 
+    "subject": [
+      "EnvironmentalScience"
+    ], 
+    "owner": "Brix", 
+    "created": "2013-12-20T13:45:56.090790", 
+    "title": "How electricity is typically generated", 
+    "timeRequired": "PT20S", 
+    "description": "How electricity is typically generated", 
+    "guid": "4ac52c14-dc36-4627-b919-922c1164330a", 
+    "contentTypeTier1": "Activity", 
+    "contentTypeTier2": [
+      "Exercise"
     ]
   }, 
   "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope"

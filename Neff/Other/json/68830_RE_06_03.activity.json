@@ -1,0 +1,325 @@
+{
+  "body": {
+    "containerConfig": [
+      {
+        "description": "container for the graph and labels", 
+        "hookupActions": [
+          {
+            "methodName": "append", 
+            "description": "Append the image to the svg container", 
+            "args": [
+              {
+                "refId": "imagetoLabel", 
+                "domain": "brix", 
+                "type": "ref"
+              }
+            ], 
+            "type": "method-call", 
+            "instance": {
+              "refId": "cntr1", 
+              "domain": "brix", 
+              "type": "ref"
+            }
+          }, 
+          {
+            "methodName": "append", 
+            "description": "Append the labels to the svg container", 
+            "args": [
+              {
+                "refId": "labelGroup1", 
+                "domain": "brix", 
+                "type": "ref"
+              }
+            ], 
+            "type": "method-call", 
+            "instance": {
+              "refId": "cntr1", 
+              "domain": "brix", 
+              "type": "ref"
+            }
+          }, 
+          {
+            "methodName": "lite", 
+            "description": "Initial condition: select 1st label", 
+            "args": [
+              {
+                "value": "0", 
+                "type": "constant"
+              }
+            ], 
+            "type": "method-call", 
+            "instance": {
+              "refId": "labelGroup1", 
+              "domain": "brix", 
+              "type": "ref"
+            }
+          }
+        ], 
+        "brixConfig": [
+          {
+            "bricType": "Image", 
+            "configFixup": [
+              {
+                "name": "URI", 
+                "value": {
+                  "parts": [
+                    {
+                      "refId": "imgBaseUrl", 
+                      "domain": "info", 
+                      "type": "ref"
+                    }, 
+                    {
+                      "value": "img/68830_RE_06_03.png", 
+                      "type": "constant"
+                    }
+                  ], 
+                  "type": "join"
+                }, 
+                "type": "set-property"
+              }
+            ], 
+            "config": {
+              "id": "image1", 
+              "actualSize": {
+                "width": 477, 
+                "height": 518
+              }, 
+              "caption": "Hydrogen fuel cell schematic", 
+              "displayWidth": 457
+            }, 
+            "bricId": "imagetoLabel"
+          }, 
+          {
+            "bricType": "LabelGroup", 
+            "config": {
+              "id": "dataLabels", 
+              "labels": [
+                {
+                  "content": "1", 
+                  "xyPos": [
+                    0.38, 
+                    0.97
+                  ], 
+                  "width": 0
+                }, 
+                {
+                  "content": "2", 
+                  "xyPos": [
+                    0.61, 
+                    0.74
+                  ], 
+                  "width": 0
+                }, 
+                {
+                  "content": "3", 
+                  "xyPos": [
+                    0.43, 
+                    0.35
+                  ], 
+                  "width": 0
+                }, 
+                {
+                  "content": "4", 
+                  "xyPos": [
+                    0.68, 
+                    0.38
+                  ], 
+                  "width": 0
+                }, 
+                {
+                  "content": "5", 
+                  "xyPos": [
+                    0.25, 
+                    0.3
+                  ], 
+                  "width": 0
+                }
+              ], 
+              "type": "numbered"
+            }, 
+            "bricId": "labelGroup1"
+          }, 
+          {
+            "bricType": "SvgContainer", 
+            "configFixup": [
+              {
+                "name": "node", 
+                "value": {
+                  "selector": "#b6feedd3398554a4b9835119457d787f6", 
+                  "type": "d3select"
+                }, 
+                "type": "set-property"
+              }
+            ], 
+            "config": {
+              "maxSize": {
+                "width": 457, 
+                "height": 500
+              }
+            }, 
+            "bricId": "cntr1"
+          }
+        ], 
+        "containerId": "b6feedd3398554a4b9835119457d787f6"
+      }, 
+      {
+        "description": "The container contains the liteable callouts", 
+        "hookupActions": [
+          {
+            "methodName": "draw", 
+            "description": "draw the label table", 
+            "args": [
+              {
+                "selector": "#b6feedd3398554a4b9835119457d787f6", 
+                "type": "d3select"
+              }
+            ], 
+            "type": "method-call", 
+            "instance": {
+              "refId": "lbltbl1", 
+              "domain": "brix", 
+              "type": "ref"
+            }
+          }, 
+          {
+            "methodName": "lite", 
+            "description": "Initial condition: select 1st table row", 
+            "args": [
+              {
+                "value": "0", 
+                "type": "constant"
+              }
+            ], 
+            "type": "method-call", 
+            "instance": {
+              "refId": "lbltbl1", 
+              "domain": "brix", 
+              "type": "ref"
+            }
+          }
+        ], 
+        "brixConfig": [
+          {
+            "bricType": "Callouts", 
+            "config": {
+              "id": "callme", 
+              "textBits": [
+                {
+                  "cols": [
+                    "Hydrogen fuel (H<sub>2</sub>) is added to one side of the fuel cell while oxygen (O<sub>2</sub>) is sent to the other."
+                  ]
+                }, 
+                {
+                  "cols": [
+                    "At the anode, the hydrogen splits into a H+ ion and an electron. "
+                  ]
+                }, 
+                {
+                  "cols": [
+                    "The H+ ions move through a membrane in the center of the fuel cell toward the cathode on the other side. "
+                  ]
+                }, 
+                {
+                  "cols": [
+                    "The electrons flow through an electrical circuit toward the cathode and the H+ ions, creating an electric current that can be used to do work. "
+                  ]
+                }, 
+                {
+                  "cols": [
+                    "At the cathode, the H+ ions, electrons, and oxygen (O<sub>2</sub>) react to form water, which then flows out of the fuel cell. "
+                  ]
+                }
+              ], 
+              "type": "numbered", 
+              "show": "all"
+            }, 
+            "bricId": "lbltbl1"
+          }
+        ], 
+        "mortarConfig": [
+          {
+            "config": {
+              "eventDetailsProperty": "selectKey"
+            }, 
+            "configFixup": [
+              {
+                "name": "topic", 
+                "value": {
+                  "bricType": "LabelGroup", 
+                  "instanceId": "dataLabels", 
+                  "type": "brix-topic", 
+                  "eventName": "selected"
+                }, 
+                "type": "set-property"
+              }, 
+              {
+                "name": "targetBric", 
+                "value": {
+                  "refId": "lbltbl1", 
+                  "domain": "brix", 
+                  "type": "ref"
+                }, 
+                "type": "set-property"
+              }
+            ], 
+            "mortarId": "hilite1", 
+            "mortarType": "Hilite"
+          }, 
+          {
+            "config": {
+              "eventDetailsProperty": "selectKey"
+            }, 
+            "configFixup": [
+              {
+                "name": "topic", 
+                "value": {
+                  "bricType": "Callouts", 
+                  "instanceId": "callme", 
+                  "type": "brix-topic", 
+                  "eventName": "selected"
+                }, 
+                "type": "set-property"
+              }, 
+              {
+                "name": "targetBric", 
+                "value": {
+                  "refId": "labelGroup1", 
+                  "domain": "brix", 
+                  "type": "ref"
+                }, 
+                "type": "set-property"
+              }
+            ], 
+            "mortarId": "hilite2", 
+            "mortarType": "Hilite"
+          }
+        ], 
+        "containerId": "b6feedd3398554a4b9835119457d787f6"
+      }
+    ], 
+    "description": "How a hydrogen fuel cell works"
+  }, 
+  "@type": "Envelope", 
+  "metadata": {
+    "format": [
+      "application/vnd.pearson.sanvan.v1.activity"
+    ], 
+    "intendedEndUserRole": [
+      "Student"
+    ], 
+    "subject": [
+      "EnvironmentalScience"
+    ], 
+    "owner": "Brix", 
+    "created": "2013-12-20T13:45:56.093344", 
+    "title": "How a hydrogen fuel cell works", 
+    "timeRequired": "PT20S", 
+    "description": "How a hydrogen fuel cell works", 
+    "guid": "07b24561-70c5-4cbd-a007-c544c7895d61", 
+    "contentTypeTier1": "Activity", 
+    "contentTypeTier2": [
+      "Exercise"
+    ]
+  }, 
+  "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope"
+}

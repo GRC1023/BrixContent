@@ -1,39 +1,71 @@
 {
-  "metadata": {
-    "guid": "51809b27-ec1e-4364-b622-f502cb9138c2", 
-    "subject": [
-      "EnvironmentalScience"
-    ], 
-    "description": "How an automobile internal combustion engine works", 
-    "timeRequired": "PT20S", 
-    "contentTypeTier2": [
-      "Exercise"
-    ], 
-    "contentTypeTier1": "Activity", 
-    "format": [
-      "application/vnd.pearson.sanvan.v1.activity"
-    ], 
-    "intendedEndUserRole": [
-      "Student"
-    ], 
-    "created": "2013-12-12T16:35:14.991387", 
-    "title": "How an automobile internal combustion engine works", 
-    "owner": "Brix"
-  }, 
-  "@type": "Envelope", 
   "body": {
-    "description": "How an automobile internal combustion engine works", 
     "containerConfig": [
       {
+        "description": "container for the graph and labels", 
+        "hookupActions": [
+          {
+            "methodName": "append", 
+            "description": "Append the image to the svg container", 
+            "args": [
+              {
+                "refId": "imageGraph", 
+                "domain": "brix", 
+                "type": "ref"
+              }
+            ], 
+            "type": "method-call", 
+            "instance": {
+              "refId": "cntr1", 
+              "domain": "brix", 
+              "type": "ref"
+            }
+          }, 
+          {
+            "methodName": "append", 
+            "description": "Append the labels to the svg container", 
+            "args": [
+              {
+                "refId": "labelGroup1", 
+                "domain": "brix", 
+                "type": "ref"
+              }
+            ], 
+            "type": "method-call", 
+            "instance": {
+              "refId": "cntr1", 
+              "domain": "brix", 
+              "type": "ref"
+            }
+          }, 
+          {
+            "methodName": "lite", 
+            "description": "Initial condition: select 1st label", 
+            "args": [
+              {
+                "value": "0", 
+                "type": "constant"
+              }
+            ], 
+            "type": "method-call", 
+            "instance": {
+              "refId": "labelGroup1", 
+              "domain": "brix", 
+              "type": "ref"
+            }
+          }
+        ], 
         "brixConfig": [
           {
+            "bricType": "Image", 
             "configFixup": [
               {
+                "name": "URI", 
                 "value": {
                   "parts": [
                     {
-                      "domain": "info", 
                       "refId": "imgBaseUrl", 
+                      "domain": "info", 
                       "type": "ref"
                     }, 
                     {
@@ -43,139 +75,117 @@
                   ], 
                   "type": "join"
                 }, 
-                "name": "URI", 
                 "type": "set-property"
               }
             ], 
-            "bricType": "Image", 
-            "bricId": "imageGraph", 
             "config": {
-              "actualSize": {
-                "height": 330, 
-                "width": 477
-              }, 
               "id": "image1", 
+              "actualSize": {
+                "width": 477, 
+                "height": 330
+              }, 
               "caption": "How an automobile internal combustion engine works"
-            }
+            }, 
+            "bricId": "imageGraph"
           }, 
           {
             "bricType": "LabelGroup", 
-            "bricId": "labelGroup1", 
             "config": {
+              "id": "dataLabels", 
               "labels": [
                 {
+                  "content": "1", 
                   "xyPos": [
                     0.018, 
                     0.87
                   ], 
-                  "width": 0, 
-                  "content": "1"
+                  "width": 0
                 }, 
                 {
+                  "content": "2", 
                   "xyPos": [
                     0.35, 
                     0.7
                   ], 
-                  "width": 0, 
-                  "content": "2"
+                  "width": 0
                 }, 
                 {
+                  "content": "3", 
                   "xyPos": [
                     0.85, 
                     0.58
                   ], 
-                  "width": 0, 
-                  "content": "3"
+                  "width": 0
                 }
               ], 
-              "id": "dataLabels", 
               "type": "numbered"
-            }
+            }, 
+            "bricId": "labelGroup1"
           }, 
           {
+            "bricType": "SvgContainer", 
             "configFixup": [
               {
+                "name": "node", 
                 "value": {
                   "selector": "#bfb86bc5f0171485792ccf98432f8b6d5", 
                   "type": "d3select"
                 }, 
-                "name": "node", 
                 "type": "set-property"
               }
             ], 
-            "bricType": "SvgContainer", 
-            "bricId": "cntr1", 
             "config": {
               "maxSize": {
-                "height": 330, 
-                "width": 457
+                "width": 457, 
+                "height": 330
               }
-            }
+            }, 
+            "bricId": "cntr1"
           }
         ], 
+        "containerId": "bfb86bc5f0171485792ccf98432f8b6d5"
+      }, 
+      {
+        "description": "The container contains the liteable callouts", 
         "hookupActions": [
           {
+            "methodName": "draw", 
+            "description": "draw the label table", 
             "args": [
               {
-                "domain": "brix", 
-                "refId": "imageGraph", 
-                "type": "ref"
+                "selector": "#bfb86bc5f0171485792ccf98432f8b6d5", 
+                "type": "d3select"
               }
             ], 
-            "description": "Append the image to the svg container", 
-            "methodName": "append", 
+            "type": "method-call", 
             "instance": {
+              "refId": "lbltbl1", 
               "domain": "brix", 
-              "refId": "cntr1", 
               "type": "ref"
-            }, 
-            "type": "method-call"
+            }
           }, 
           {
-            "args": [
-              {
-                "domain": "brix", 
-                "refId": "labelGroup1", 
-                "type": "ref"
-              }
-            ], 
-            "description": "Append the labels to the svg container", 
-            "methodName": "append", 
-            "instance": {
-              "domain": "brix", 
-              "refId": "cntr1", 
-              "type": "ref"
-            }, 
-            "type": "method-call"
-          }, 
-          {
+            "methodName": "lite", 
+            "description": "Initial condition: select 1st table row", 
             "args": [
               {
                 "value": "0", 
                 "type": "constant"
               }
             ], 
-            "description": "Initial condition: select 1st label", 
-            "methodName": "lite", 
+            "type": "method-call", 
             "instance": {
+              "refId": "lbltbl1", 
               "domain": "brix", 
-              "refId": "labelGroup1", 
               "type": "ref"
-            }, 
-            "type": "method-call"
+            }
           }
         ], 
-        "description": "container for the graph and labels", 
-        "containerId": "bfb86bc5f0171485792ccf98432f8b6d5"
-      }, 
-      {
         "brixConfig": [
           {
             "bricType": "Callouts", 
-            "bricId": "lbltbl1", 
             "config": {
               "id": "callme", 
-              "show": "all", 
               "textBits": [
                 {
                   "cols": [
@@ -193,105 +203,95 @@
                   ]
                 }
               ], 
-              "type": "numbered"
-            }
+              "type": "numbered", 
+              "show": "all"
+            }, 
+            "bricId": "lbltbl1"
           }
         ], 
         "mortarConfig": [
           {
-            "configFixup": [
-              {
-                "value": {
-                  "instanceId": "dataLabels", 
-                  "bricType": "LabelGroup", 
-                  "eventName": "selected", 
-                  "type": "brix-topic"
-                }, 
-                "name": "topic", 
-                "type": "set-property"
-              }, 
-              {
-                "value": {
-                  "domain": "brix", 
-                  "refId": "lbltbl1", 
-                  "type": "ref"
-                }, 
-                "name": "targetBric", 
-                "type": "set-property"
-              }
-            ], 
             "config": {
               "eventDetailsProperty": "selectKey"
             }, 
-            "mortarType": "Hilite", 
-            "mortarId": "hilite1"
+            "configFixup": [
+              {
+                "name": "topic", 
+                "value": {
+                  "bricType": "LabelGroup", 
+                  "instanceId": "dataLabels", 
+                  "type": "brix-topic", 
+                  "eventName": "selected"
+                }, 
+                "type": "set-property"
+              }, 
+              {
+                "name": "targetBric", 
+                "value": {
+                  "refId": "lbltbl1", 
+                  "domain": "brix", 
+                  "type": "ref"
+                }, 
+                "type": "set-property"
+              }
+            ], 
+            "mortarId": "hilite1", 
+            "mortarType": "Hilite"
           }, 
           {
-            "configFixup": [
-              {
-                "value": {
-                  "instanceId": "callme", 
-                  "bricType": "Callouts", 
-                  "eventName": "selected", 
-                  "type": "brix-topic"
-                }, 
-                "name": "topic", 
-                "type": "set-property"
-              }, 
-              {
-                "value": {
-                  "domain": "brix", 
-                  "refId": "labelGroup1", 
-                  "type": "ref"
-                }, 
-                "name": "targetBric", 
-                "type": "set-property"
-              }
-            ], 
             "config": {
               "eventDetailsProperty": "selectKey"
             }, 
-            "mortarType": "Hilite", 
-            "mortarId": "hilite2"
+            "configFixup": [
+              {
+                "name": "topic", 
+                "value": {
+                  "bricType": "Callouts", 
+                  "instanceId": "callme", 
+                  "type": "brix-topic", 
+                  "eventName": "selected"
+                }, 
+                "type": "set-property"
+              }, 
+              {
+                "name": "targetBric", 
+                "value": {
+                  "refId": "labelGroup1", 
+                  "domain": "brix", 
+                  "type": "ref"
+                }, 
+                "type": "set-property"
+              }
+            ], 
+            "mortarId": "hilite2", 
+            "mortarType": "Hilite"
           }
         ], 
-        "description": "The container contains the liteable callouts", 
-        "containerId": "bfb86bc5f0171485792ccf98432f8b6d5", 
-        "hookupActions": [
-          {
-            "args": [
-              {
-                "selector": "#bfb86bc5f0171485792ccf98432f8b6d5", 
-                "type": "d3select"
-              }
-            ], 
-            "description": "draw the label table", 
-            "methodName": "draw", 
-            "instance": {
-              "domain": "brix", 
-              "refId": "lbltbl1", 
-              "type": "ref"
-            }, 
-            "type": "method-call"
-          }, 
-          {
-            "args": [
-              {
-                "value": "0", 
-                "type": "constant"
-              }
-            ], 
-            "description": "Initial condition: select 1st table row", 
-            "methodName": "lite", 
-            "instance": {
-              "domain": "brix", 
-              "refId": "lbltbl1", 
-              "type": "ref"
-            }, 
-            "type": "method-call"
-          }
-        ]
+        "containerId": "bfb86bc5f0171485792ccf98432f8b6d5"
       }
+    ], 
+    "description": "How an automobile internal combustion engine works"
+  }, 
+  "@type": "Envelope", 
+  "metadata": {
+    "format": [
+      "application/vnd.pearson.sanvan.v1.activity"
+    ], 
+    "intendedEndUserRole": [
+      "Student"
+    ], 
+    "subject": [
+      "EnvironmentalScience"
+    ], 
+    "owner": "Brix", 
+    "created": "2013-12-20T13:45:56.091006", 
+    "title": "How an automobile internal combustion engine works", 
+    "timeRequired": "PT20S", 
+    "description": "How an automobile internal combustion engine works", 
+    "guid": "51809b27-ec1e-4364-b622-f502cb9138c2", 
+    "contentTypeTier1": "Activity", 
+    "contentTypeTier2": [
+      "Exercise"
     ]
   }, 
   "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope"

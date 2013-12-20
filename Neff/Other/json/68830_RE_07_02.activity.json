@@ -1,0 +1,185 @@
+{
+  "body": {
+    "containerConfig": [
+      {
+        "description": "Container for the LabelCarousel", 
+        "hookupActions": [
+          {
+            "methodName": "append", 
+            "description": "Append the label image carousel to the svg container", 
+            "args": [
+              {
+                "refId": "lblCarousel1", 
+                "domain": "brix", 
+                "type": "ref"
+              }
+            ], 
+            "type": "method-call", 
+            "instance": {
+              "refId": "cntr1", 
+              "domain": "brix", 
+              "type": "ref"
+            }
+          }
+        ], 
+        "brixConfig": [
+          {
+            "bricType": "LabelCarousel", 
+            "configFixup": [
+              {
+                "name": "images", 
+                "value": {
+                  "type": "array", 
+                  "elements": [
+                    {
+                      "properties": [
+                        {
+                          "name": "URI", 
+                          "value": {
+                            "parts": [
+                              {
+                                "refId": "imgBaseUrl", 
+                                "domain": "info", 
+                                "type": "ref"
+                              }, 
+                              {
+                                "value": "img/68830_RE_07_02_S1.jpg", 
+                                "type": "constant"
+                              }
+                            ], 
+                            "type": "join"
+                          }
+                        }, 
+                        {
+                          "name": "caption", 
+                          "value": {
+                            "value": "The cost of renewable energy technology as a whole is falling, but the cost of the technology associated with certain renewable sources, such as solar, still remains higher than the cost of fossil fuels.", 
+                            "type": "constant"
+                          }
+                        }
+                      ], 
+                      "type": "object"
+                    }, 
+                    {
+                      "properties": [
+                        {
+                          "name": "URI", 
+                          "value": {
+                            "parts": [
+                              {
+                                "refId": "imgBaseUrl", 
+                                "domain": "info", 
+                                "type": "ref"
+                              }, 
+                              {
+                                "value": "img/68830_RE_07_02_S2.jpg", 
+                                "type": "constant"
+                              }
+                            ], 
+                            "type": "join"
+                          }
+                        }, 
+                        {
+                          "name": "caption", 
+                          "value": {
+                            "value": "This gas station is part of an extensive and costly infrastructure that supports fossil fuel use. New facilities to support renewable energy will take time and resources to create.", 
+                            "type": "constant"
+                          }
+                        }
+                      ], 
+                      "type": "object"
+                    }, 
+                    {
+                      "properties": [
+                        {
+                          "name": "URI", 
+                          "value": {
+                            "parts": [
+                              {
+                                "refId": "imgBaseUrl", 
+                                "domain": "info", 
+                                "type": "ref"
+                              }, 
+                              {
+                                "value": "img/68830_RE_07_02_S3.jpg", 
+                                "type": "constant"
+                              }
+                            ], 
+                            "type": "join"
+                          }
+                        }, 
+                        {
+                          "name": "caption", 
+                          "value": {
+                            "value": "Government policies, including laws and taxation, play a major role in energy use and currently favor fossil energy sources over renewable energy.", 
+                            "type": "constant"
+                          }
+                        }
+                      ], 
+                      "type": "object"
+                    }
+                  ]
+                }, 
+                "type": "set-property"
+              }
+            ], 
+            "config": {
+              "id": "lblCrsl1", 
+              "displayWidth": 457, 
+              "imagesActualSize": {
+                "width": 476, 
+                "height": 326
+              }
+            }, 
+            "bricId": "lblCarousel1"
+          }, 
+          {
+            "bricType": "SvgContainer", 
+            "configFixup": [
+              {
+                "name": "node", 
+                "value": {
+                  "selector": "#baf139a084654428e8b882f663becc92b", 
+                  "type": "d3select"
+                }, 
+                "type": "set-property"
+              }
+            ], 
+            "config": {
+              "maxSize": {
+                "width": 457, 
+                "height": 470
+              }
+            }, 
+            "bricId": "cntr1"
+          }
+        ], 
+        "containerId": "baf139a084654428e8b882f663becc92b"
+      }
+    ], 
+    "description": "Barriers to changing energy production and use"
+  }, 
+  "@type": "Envelope", 
+  "metadata": {
+    "format": [
+      "application/vnd.pearson.sanvan.v1.activity"
+    ], 
+    "intendedEndUserRole": [
+      "Student"
+    ], 
+    "subject": [
+      "EnvironmentalScience"
+    ], 
+    "owner": "Brix", 
+    "created": "2013-12-20T13:45:56.093585", 
+    "title": "Barriers to changing energy production and use", 
+    "timeRequired": "PT20S", 
+    "description": "Barriers to changing energy production and use", 
+    "guid": "f1804333-0625-453d-a7e3-ebb4c42a04a5", 
+    "contentTypeTier1": "Activity", 
+    "contentTypeTier2": [
+      "Exercise"
+    ]
+  }, 
+  "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope"
+}

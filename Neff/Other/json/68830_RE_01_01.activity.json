@@ -1,0 +1,312 @@
+{
+  "body": {
+    "containerConfig": [
+      {
+        "description": "container for the graph and labels", 
+        "hookupActions": [
+          {
+            "methodName": "append", 
+            "description": "Append the image to the svg container", 
+            "args": [
+              {
+                "refId": "imagetoLabel", 
+                "domain": "brix", 
+                "type": "ref"
+              }
+            ], 
+            "type": "method-call", 
+            "instance": {
+              "refId": "cntr1", 
+              "domain": "brix", 
+              "type": "ref"
+            }
+          }, 
+          {
+            "methodName": "append", 
+            "description": "Append the labels to the svg container", 
+            "args": [
+              {
+                "refId": "labelGroup1", 
+                "domain": "brix", 
+                "type": "ref"
+              }
+            ], 
+            "type": "method-call", 
+            "instance": {
+              "refId": "cntr1", 
+              "domain": "brix", 
+              "type": "ref"
+            }
+          }, 
+          {
+            "methodName": "lite", 
+            "description": "Initial condition: select 1st label", 
+            "args": [
+              {
+                "value": "0", 
+                "type": "constant"
+              }
+            ], 
+            "type": "method-call", 
+            "instance": {
+              "refId": "labelGroup1", 
+              "domain": "brix", 
+              "type": "ref"
+            }
+          }
+        ], 
+        "brixConfig": [
+          {
+            "bricType": "Image", 
+            "configFixup": [
+              {
+                "name": "URI", 
+                "value": {
+                  "parts": [
+                    {
+                      "refId": "imgBaseUrl", 
+                      "domain": "info", 
+                      "type": "ref"
+                    }, 
+                    {
+                      "value": "img/68830_RE_01_01.png", 
+                      "type": "constant"
+                    }
+                  ], 
+                  "type": "join"
+                }, 
+                "type": "set-property"
+              }
+            ], 
+            "config": {
+              "id": "image1", 
+              "actualSize": {
+                "width": 457, 
+                "height": 390
+              }, 
+              "caption": "Hydropower dam schematic", 
+              "displayWidth": 457
+            }, 
+            "bricId": "imagetoLabel"
+          }, 
+          {
+            "bricType": "LabelGroup", 
+            "config": {
+              "id": "dataLabels", 
+              "labels": [
+                {
+                  "content": "1", 
+                  "xyPos": [
+                    0.035, 
+                    0.65
+                  ], 
+                  "width": 0
+                }, 
+                {
+                  "content": "2", 
+                  "xyPos": [
+                    0.47, 
+                    0.27
+                  ], 
+                  "width": 0
+                }, 
+                {
+                  "content": "3", 
+                  "xyPos": [
+                    0.42, 
+                    0.58
+                  ], 
+                  "width": 0
+                }, 
+                {
+                  "content": "4", 
+                  "xyPos": [
+                    0.67, 
+                    0.66
+                  ], 
+                  "width": 0
+                }
+              ], 
+              "type": "numbered"
+            }, 
+            "bricId": "labelGroup1"
+          }, 
+          {
+            "bricType": "SvgContainer", 
+            "configFixup": [
+              {
+                "name": "node", 
+                "value": {
+                  "selector": "#bdb25361c090a46c382a06ab5248940a3", 
+                  "type": "d3select"
+                }, 
+                "type": "set-property"
+              }
+            ], 
+            "config": {
+              "maxSize": {
+                "width": 457, 
+                "height": 385
+              }
+            }, 
+            "bricId": "cntr1"
+          }
+        ], 
+        "containerId": "bdb25361c090a46c382a06ab5248940a3"
+      }, 
+      {
+        "description": "The container contains the liteable callouts", 
+        "hookupActions": [
+          {
+            "methodName": "draw", 
+            "description": "draw the label table", 
+            "args": [
+              {
+                "selector": "#bdb25361c090a46c382a06ab5248940a3", 
+                "type": "d3select"
+              }
+            ], 
+            "type": "method-call", 
+            "instance": {
+              "refId": "lbltbl1", 
+              "domain": "brix", 
+              "type": "ref"
+            }
+          }, 
+          {
+            "methodName": "lite", 
+            "description": "Initial condition: select 1st table row", 
+            "args": [
+              {
+                "value": "0", 
+                "type": "constant"
+              }
+            ], 
+            "type": "method-call", 
+            "instance": {
+              "refId": "lbltbl1", 
+              "domain": "brix", 
+              "type": "ref"
+            }
+          }
+        ], 
+        "brixConfig": [
+          {
+            "bricType": "Callouts", 
+            "config": {
+              "id": "callme", 
+              "textBits": [
+                {
+                  "cols": [
+                    "When the sluice gate is opened, dammed water in the reservoir (with high potential energy) falls downhill."
+                  ]
+                }, 
+                {
+                  "cols": [
+                    "The kinetic energy of the falling water turns the turbine."
+                  ]
+                }, 
+                {
+                  "cols": [
+                    "The generator converts the mechanical energy of the spinning turbine into electricity."
+                  ]
+                }, 
+                {
+                  "cols": [
+                    "The transformer boosts the electricity to a high voltage for transmission to homes and businesses."
+                  ]
+                }
+              ], 
+              "type": "numbered", 
+              "show": "all"
+            }, 
+            "bricId": "lbltbl1"
+          }
+        ], 
+        "mortarConfig": [
+          {
+            "config": {
+              "eventDetailsProperty": "selectKey"
+            }, 
+            "configFixup": [
+              {
+                "name": "topic", 
+                "value": {
+                  "bricType": "LabelGroup", 
+                  "instanceId": "dataLabels", 
+                  "type": "brix-topic", 
+                  "eventName": "selected"
+                }, 
+                "type": "set-property"
+              }, 
+              {
+                "name": "targetBric", 
+                "value": {
+                  "refId": "lbltbl1", 
+                  "domain": "brix", 
+                  "type": "ref"
+                }, 
+                "type": "set-property"
+              }
+            ], 
+            "mortarId": "hilite1", 
+            "mortarType": "Hilite"
+          }, 
+          {
+            "config": {
+              "eventDetailsProperty": "selectKey"
+            }, 
+            "configFixup": [
+              {
+                "name": "topic", 
+                "value": {
+                  "bricType": "Callouts", 
+                  "instanceId": "callme", 
+                  "type": "brix-topic", 
+                  "eventName": "selected"
+                }, 
+                "type": "set-property"
+              }, 
+              {
+                "name": "targetBric", 
+                "value": {
+                  "refId": "labelGroup1", 
+                  "domain": "brix", 
+                  "type": "ref"
+                }, 
+                "type": "set-property"
+              }
+            ], 
+            "mortarId": "hilite2", 
+            "mortarType": "Hilite"
+          }
+        ], 
+        "containerId": "bdb25361c090a46c382a06ab5248940a3"
+      }
+    ], 
+    "description": "Hydropower dam"
+  }, 
+  "@type": "Envelope", 
+  "metadata": {
+    "format": [
+      "application/vnd.pearson.sanvan.v1.activity"
+    ], 
+    "intendedEndUserRole": [
+      "Student"
+    ], 
+    "subject": [
+      "EnvironmentalScience"
+    ], 
+    "owner": "Brix", 
+    "created": "2013-12-20T13:45:56.091924", 
+    "title": "Hydropower dam", 
+    "timeRequired": "PT20S", 
+    "description": "Hydropower dam", 
+    "guid": "303cb8df-6d18-4c96-8dfb-3631da047b58", 
+    "contentTypeTier1": "Activity", 
+    "contentTypeTier2": [
+      "Exercise"
+    ]
+  }, 
+  "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope"
+}

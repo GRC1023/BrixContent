@@ -1,0 +1,298 @@
+{
+  "body": {
+    "containerConfig": [
+      {
+        "description": "container for the graph and labels", 
+        "hookupActions": [
+          {
+            "methodName": "append", 
+            "description": "Append the image to the svg container", 
+            "args": [
+              {
+                "refId": "imagetoLabel", 
+                "domain": "brix", 
+                "type": "ref"
+              }
+            ], 
+            "type": "method-call", 
+            "instance": {
+              "refId": "cntr1", 
+              "domain": "brix", 
+              "type": "ref"
+            }
+          }, 
+          {
+            "methodName": "append", 
+            "description": "Append the labels to the svg container", 
+            "args": [
+              {
+                "refId": "labelGroup1", 
+                "domain": "brix", 
+                "type": "ref"
+              }
+            ], 
+            "type": "method-call", 
+            "instance": {
+              "refId": "cntr1", 
+              "domain": "brix", 
+              "type": "ref"
+            }
+          }, 
+          {
+            "methodName": "lite", 
+            "description": "Initial condition: select 1st label", 
+            "args": [
+              {
+                "value": "0", 
+                "type": "constant"
+              }
+            ], 
+            "type": "method-call", 
+            "instance": {
+              "refId": "labelGroup1", 
+              "domain": "brix", 
+              "type": "ref"
+            }
+          }
+        ], 
+        "brixConfig": [
+          {
+            "bricType": "Image", 
+            "configFixup": [
+              {
+                "name": "URI", 
+                "value": {
+                  "parts": [
+                    {
+                      "refId": "imgBaseUrl", 
+                      "domain": "info", 
+                      "type": "ref"
+                    }, 
+                    {
+                      "value": "img/68830_RE_01_03b.png", 
+                      "type": "constant"
+                    }
+                  ], 
+                  "type": "join"
+                }, 
+                "type": "set-property"
+              }
+            ], 
+            "config": {
+              "id": "imagea", 
+              "actualSize": {
+                "width": 457, 
+                "height": 390
+              }, 
+              "caption": "Tidal energy generation facility (one design)", 
+              "displayWidth": 457
+            }, 
+            "bricId": "imagetoLabel"
+          }, 
+          {
+            "bricType": "LabelGroup", 
+            "config": {
+              "id": "dataLabels", 
+              "labels": [
+                {
+                  "content": "1", 
+                  "xyPos": [
+                    0.375, 
+                    0.425
+                  ], 
+                  "width": 0
+                }, 
+                {
+                  "content": "2", 
+                  "xyPos": [
+                    0.58, 
+                    0.575
+                  ], 
+                  "width": 0
+                }, 
+                {
+                  "content": "3", 
+                  "xyPos": [
+                    0.58, 
+                    0.718
+                  ], 
+                  "width": 0
+                }
+              ], 
+              "type": "numbered"
+            }, 
+            "bricId": "labelGroup1"
+          }, 
+          {
+            "bricType": "SvgContainer", 
+            "configFixup": [
+              {
+                "name": "node", 
+                "value": {
+                  "selector": "#b07983a77a6264c39a4d792477ba4b477", 
+                  "type": "d3select"
+                }, 
+                "type": "set-property"
+              }
+            ], 
+            "config": {
+              "maxSize": {
+                "width": 457, 
+                "height": 385
+              }
+            }, 
+            "bricId": "cntr1"
+          }
+        ], 
+        "containerId": "b07983a77a6264c39a4d792477ba4b477"
+      }, 
+      {
+        "description": "The container contains the liteable callouts", 
+        "hookupActions": [
+          {
+            "methodName": "draw", 
+            "description": "draw the label table", 
+            "args": [
+              {
+                "selector": "#b07983a77a6264c39a4d792477ba4b477", 
+                "type": "d3select"
+              }
+            ], 
+            "type": "method-call", 
+            "instance": {
+              "refId": "lbltbl1", 
+              "domain": "brix", 
+              "type": "ref"
+            }
+          }, 
+          {
+            "methodName": "lite", 
+            "description": "Initial condition: select 1st table row", 
+            "args": [
+              {
+                "value": "0", 
+                "type": "constant"
+              }
+            ], 
+            "type": "method-call", 
+            "instance": {
+              "refId": "lbltbl1", 
+              "domain": "brix", 
+              "type": "ref"
+            }
+          }
+        ], 
+        "brixConfig": [
+          {
+            "bricType": "Callouts", 
+            "config": {
+              "id": "callme", 
+              "textBits": [
+                {
+                  "cols": [
+                    "The incoming tide (blue arrows) spins the turbine. When the tide goes out (white arrows), the turbine position rotates to face the flow of water."
+                  ]
+                }, 
+                {
+                  "cols": [
+                    "The generator converts the mechanical energy of the spinning turbine into electricity."
+                  ]
+                }, 
+                {
+                  "cols": [
+                    "The transformer boosts the electricity to a high voltage for transmission."
+                  ]
+                }
+              ], 
+              "show": "all"
+            }, 
+            "bricId": "lbltbl1"
+          }
+        ], 
+        "mortarConfig": [
+          {
+            "config": {
+              "eventDetailsProperty": "selectKey"
+            }, 
+            "configFixup": [
+              {
+                "name": "topic", 
+                "value": {
+                  "bricType": "LabelGroup", 
+                  "instanceId": "dataLabels", 
+                  "type": "brix-topic", 
+                  "eventName": "selected"
+                }, 
+                "type": "set-property"
+              }, 
+              {
+                "name": "targetBric", 
+                "value": {
+                  "refId": "lbltbl1", 
+                  "domain": "brix", 
+                  "type": "ref"
+                }, 
+                "type": "set-property"
+              }
+            ], 
+            "mortarId": "hilite1", 
+            "mortarType": "Hilite"
+          }, 
+          {
+            "config": {
+              "eventDetailsProperty": "selectKey"
+            }, 
+            "configFixup": [
+              {
+                "name": "topic", 
+                "value": {
+                  "bricType": "Callouts", 
+                  "instanceId": "callme", 
+                  "type": "brix-topic", 
+                  "eventName": "selected"
+                }, 
+                "type": "set-property"
+              }, 
+              {
+                "name": "targetBric", 
+                "value": {
+                  "refId": "labelGroup1", 
+                  "domain": "brix", 
+                  "type": "ref"
+                }, 
+                "type": "set-property"
+              }
+            ], 
+            "mortarId": "hilite2", 
+            "mortarType": "Hilite"
+          }
+        ], 
+        "containerId": "b07983a77a6264c39a4d792477ba4b477"
+      }
+    ], 
+    "description": "Tidal energy generation facility (one design)"
+  }, 
+  "@type": "Envelope", 
+  "metadata": {
+    "format": [
+      "application/vnd.pearson.sanvan.v1.activity"
+    ], 
+    "intendedEndUserRole": [
+      "Student"
+    ], 
+    "subject": [
+      "EnvironmentalScience"
+    ], 
+    "owner": "Brix", 
+    "created": "2013-12-20T13:45:56.092155", 
+    "title": "Tidal energy generation facility (one design)", 
+    "timeRequired": "PT20S", 
+    "description": "Tidal energy generation facility (one design)", 
+    "guid": "2f7edf1a-c16a-4f39-9e8c-2c63dc9c9271", 
+    "contentTypeTier1": "Activity", 
+    "contentTypeTier2": [
+      "Exercise"
+    ]
+  }, 
+  "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope"
+}

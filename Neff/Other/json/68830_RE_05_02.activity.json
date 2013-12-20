@@ -1,0 +1,171 @@
+{
+  "body": {
+    "containerConfig": [
+      {
+        "description": "Container for the LabelCarousel", 
+        "hookupActions": [
+          {
+            "methodName": "append", 
+            "description": "Append the label image carousel to the svg container", 
+            "args": [
+              {
+                "refId": "lblCarousel1", 
+                "domain": "brix", 
+                "type": "ref"
+              }
+            ], 
+            "type": "method-call", 
+            "instance": {
+              "refId": "cntr1", 
+              "domain": "brix", 
+              "type": "ref"
+            }
+          }
+        ], 
+        "brixConfig": [
+          {
+            "bricType": "LabelCarousel", 
+            "configFixup": [
+              {
+                "name": "images", 
+                "value": {
+                  "type": "array", 
+                  "elements": [
+                    {
+                      "properties": [
+                        {
+                          "name": "URI", 
+                          "value": {
+                            "parts": [
+                              {
+                                "refId": "imgBaseUrl", 
+                                "domain": "info", 
+                                "type": "ref"
+                              }, 
+                              {
+                                "value": "img/68830_RE_05_02_S1.png", 
+                                "type": "constant"
+                              }
+                            ], 
+                            "type": "join"
+                          }
+                        }, 
+                        {
+                          "name": "caption", 
+                          "value": {
+                            "value": "Direct use", 
+                            "type": "constant"
+                          }
+                        }, 
+                        {
+                          "name": "selectorLabel", 
+                          "value": {
+                            "value": "Direct use", 
+                            "type": "constant"
+                          }
+                        }
+                      ], 
+                      "type": "object"
+                    }, 
+                    {
+                      "properties": [
+                        {
+                          "name": "URI", 
+                          "value": {
+                            "parts": [
+                              {
+                                "refId": "imgBaseUrl", 
+                                "domain": "info", 
+                                "type": "ref"
+                              }, 
+                              {
+                                "value": "img/68830_RE_05_02_S2.png", 
+                                "type": "constant"
+                              }
+                            ], 
+                            "type": "join"
+                          }
+                        }, 
+                        {
+                          "name": "caption", 
+                          "value": {
+                            "value": "Electricity production", 
+                            "type": "constant"
+                          }
+                        }, 
+                        {
+                          "name": "selectorLabel", 
+                          "value": {
+                            "value": "Electricity production", 
+                            "type": "constant"
+                          }
+                        }
+                      ], 
+                      "type": "object"
+                    }
+                  ]
+                }, 
+                "type": "set-property"
+              }
+            ], 
+            "config": {
+              "id": "lblCrsl1", 
+              "type": "textLabels", 
+              "displayWidth": 457, 
+              "imagesActualSize": {
+                "width": 478, 
+                "height": 600
+              }
+            }, 
+            "bricId": "lblCarousel1"
+          }, 
+          {
+            "bricType": "SvgContainer", 
+            "configFixup": [
+              {
+                "name": "node", 
+                "value": {
+                  "selector": "#b80e72ca87645491f90ceb0140d0e4b22", 
+                  "type": "d3select"
+                }, 
+                "type": "set-property"
+              }
+            ], 
+            "config": {
+              "maxSize": {
+                "width": 457, 
+                "height": 620
+              }
+            }, 
+            "bricId": "cntr1"
+          }
+        ], 
+        "containerId": "b80e72ca87645491f90ceb0140d0e4b22"
+      }
+    ], 
+    "description": "Geothermal Energy"
+  }, 
+  "@type": "Envelope", 
+  "metadata": {
+    "format": [
+      "application/vnd.pearson.sanvan.v1.activity"
+    ], 
+    "intendedEndUserRole": [
+      "Student"
+    ], 
+    "subject": [
+      "EnvironmentalScience"
+    ], 
+    "owner": "Brix", 
+    "created": "2013-12-20T13:45:56.093162", 
+    "title": "Geothermal energy", 
+    "timeRequired": "PT20S", 
+    "description": "Geothermal energy", 
+    "guid": "442caf5b-a7ac-4b4c-b491-215e7797ee0d", 
+    "contentTypeTier1": "Activity", 
+    "contentTypeTier2": [
+      "Exercise"
+    ]
+  }, 
+  "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope"
+}

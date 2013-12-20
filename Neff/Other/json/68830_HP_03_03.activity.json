@@ -1,155 +1,155 @@
 {
   "body": {
-    "description": "Two approaches to controlling population growth", 
     "containerConfig": [
       {
+        "description": "Container for the LabelCarousel", 
+        "hookupActions": [
+          {
+            "methodName": "append", 
+            "description": "Append the label image carousel to the svg container", 
+            "args": [
+              {
+                "refId": "lblCarousel1", 
+                "domain": "brix", 
+                "type": "ref"
+              }
+            ], 
+            "type": "method-call", 
+            "instance": {
+              "refId": "cntr1", 
+              "domain": "brix", 
+              "type": "ref"
+            }
+          }
+        ], 
         "brixConfig": [
           {
-            "config": {
-              "id": "lblCrsl1", 
-              "imagesActualSize": {
-                "height": 405, 
-                "width": 599
-              }
-            }, 
             "bricType": "LabelCarousel", 
-            "bricId": "lblCarousel1", 
             "configFixup": [
               {
-                "type": "set-property", 
+                "name": "images", 
                 "value": {
                   "type": "array", 
                   "elements": [
                     {
-                      "type": "object", 
                       "properties": [
                         {
+                          "name": "URI", 
                           "value": {
-                            "type": "join", 
                             "parts": [
                               {
-                                "type": "ref", 
                                 "refId": "imgBaseUrl", 
-                                "domain": "info"
+                                "domain": "info", 
+                                "type": "ref"
                               }, 
                               {
-                                "type": "constant", 
-                                "value": "img/68830_HP_03_03_S1.jpg"
+                                "value": "img/68830_HP_03_03_S1.jpg", 
+                                "type": "constant"
                               }
-                            ]
-                          }, 
-                          "name": "URI"
+                            ], 
+                            "type": "join"
+                          }
                         }, 
                         {
+                          "name": "caption", 
                           "value": {
-                            "type": "constant", 
-                            "value": "Women attend a community microfinance meeting in Uganda"
-                          }, 
-                          "name": "caption"
+                            "value": "Women attend a community microfinance meeting in Uganda", 
+                            "type": "constant"
+                          }
                         }
-                      ]
+                      ], 
+                      "type": "object"
                     }, 
                     {
-                      "type": "object", 
                       "properties": [
                         {
+                          "name": "URI", 
                           "value": {
-                            "type": "join", 
                             "parts": [
                               {
-                                "type": "ref", 
                                 "refId": "imgBaseUrl", 
-                                "domain": "info"
+                                "domain": "info", 
+                                "type": "ref"
                               }, 
                               {
-                                "type": "constant", 
-                                "value": "img/68830_HP_03_03_S2.png"
+                                "value": "img/68830_HP_03_03_S2.png", 
+                                "type": "constant"
                               }
-                            ]
-                          }, 
-                          "name": "URI"
+                            ], 
+                            "type": "join"
+                          }
                         }, 
                         {
+                          "name": "caption", 
                           "value": {
-                            "type": "constant", 
-                            "value": "China's One Child Policy"
-                          }, 
-                          "name": "caption"
+                            "value": "China's One Child Policy", 
+                            "type": "constant"
+                          }
                         }
-                      ]
+                      ], 
+                      "type": "object"
                     }
                   ]
                 }, 
-                "name": "images"
+                "type": "set-property"
               }
-            ]
+            ], 
+            "config": {
+              "id": "lblCrsl1", 
+              "imagesActualSize": {
+                "width": 599, 
+                "height": 405
+              }
+            }, 
+            "bricId": "lblCarousel1"
           }, 
           {
-            "config": {
-              "maxSize": {
-                "height": 410, 
-                "width": 457
-              }
-            }, 
             "bricType": "SvgContainer", 
-            "bricId": "cntr1", 
             "configFixup": [
               {
-                "type": "set-property", 
+                "name": "node", 
                 "value": {
-                  "type": "d3select", 
-                  "selector": "#b3300c66aa1a047bbb6df4b3b28d68435"
+                  "selector": "#b3300c66aa1a047bbb6df4b3b28d68435", 
+                  "type": "d3select"
                 }, 
-                "name": "node"
+                "type": "set-property"
               }
-            ]
-          }
-        ], 
-        "hookupActions": [
-          {
-            "type": "method-call", 
-            "methodName": "append", 
-            "description": "Append the label image carousel to the svg container", 
-            "instance": {
-              "type": "ref", 
-              "refId": "cntr1", 
-              "domain": "brix"
+            ], 
+            "config": {
+              "maxSize": {
+                "width": 457, 
+                "height": 410
+              }
             }, 
-            "args": [
-              {
-                "type": "ref", 
-                "refId": "lblCarousel1", 
-                "domain": "brix"
-              }
-            ]
+            "bricId": "cntr1"
           }
         ], 
-        "description": "Container for the LabelCarousel", 
         "containerId": "b3300c66aa1a047bbb6df4b3b28d68435"
       }
-    ]
+    ], 
+    "description": "Two approaches to controlling population growth"
   }, 
-  "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope", 
   "@type": "Envelope", 
   "metadata": {
-    "timeRequired": "PT20S", 
-    "subject": [
-      "EnvironmentalScience"
-    ], 
     "format": [
       "application/vnd.pearson.sanvan.v1.activity"
     ], 
-    "guid": "03259cf9-e7a8-418f-b327-7428cb9e8628", 
     "intendedEndUserRole": [
       "Student"
     ], 
-    "title": "Two approaches to controlling population growth", 
-    "contentTypeTier1": "Activity", 
+    "subject": [
+      "EnvironmentalScience"
+    ], 
     "owner": "Brix", 
+    "created": "2013-12-20T13:45:56.090615", 
+    "title": "Two approaches to controlling population growth", 
+    "timeRequired": "PT20S", 
     "description": "Two approaches to controlling population growth", 
-    "created": "2013-12-18T22:21:30.797039", 
+    "guid": "03259cf9-e7a8-418f-b327-7428cb9e8628", 
+    "contentTypeTier1": "Activity", 
     "contentTypeTier2": [
       "Exercise"
     ]
-  }
+  }, 
+  "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope"
 }

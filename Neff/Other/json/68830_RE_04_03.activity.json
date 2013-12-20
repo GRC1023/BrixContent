@@ -1,0 +1,156 @@
+{
+  "body": {
+    "containerConfig": [
+      {
+        "description": "Container for the LabelCarousel", 
+        "hookupActions": [
+          {
+            "methodName": "append", 
+            "description": "Append the label image carousel to the svg container", 
+            "args": [
+              {
+                "refId": "lblCarousel1", 
+                "domain": "brix", 
+                "type": "ref"
+              }
+            ], 
+            "type": "method-call", 
+            "instance": {
+              "refId": "cntr1", 
+              "domain": "brix", 
+              "type": "ref"
+            }
+          }
+        ], 
+        "brixConfig": [
+          {
+            "bricType": "LabelCarousel", 
+            "configFixup": [
+              {
+                "name": "images", 
+                "value": {
+                  "type": "array", 
+                  "elements": [
+                    {
+                      "properties": [
+                        {
+                          "name": "URI", 
+                          "value": {
+                            "parts": [
+                              {
+                                "refId": "imgBaseUrl", 
+                                "domain": "info", 
+                                "type": "ref"
+                              }, 
+                              {
+                                "value": "img/68830_RE_04_03_S1.jpg", 
+                                "type": "constant"
+                              }
+                            ], 
+                            "type": "join"
+                          }
+                        }, 
+                        {
+                          "name": "caption", 
+                          "value": {
+                            "value": "A switchgrass field  ", 
+                            "type": "constant"
+                          }
+                        }
+                      ], 
+                      "type": "object"
+                    }, 
+                    {
+                      "properties": [
+                        {
+                          "name": "URI", 
+                          "value": {
+                            "parts": [
+                              {
+                                "refId": "imgBaseUrl", 
+                                "domain": "info", 
+                                "type": "ref"
+                              }, 
+                              {
+                                "value": "img/68830_RE_04_03_S2.jpg", 
+                                "type": "constant"
+                              }
+                            ], 
+                            "type": "join"
+                          }
+                        }, 
+                        {
+                          "name": "caption", 
+                          "value": {
+                            "value": "Algae used in studies of biofuels", 
+                            "type": "constant"
+                          }
+                        }
+                      ], 
+                      "type": "object"
+                    }
+                  ]
+                }, 
+                "type": "set-property"
+              }
+            ], 
+            "config": {
+              "id": "lblCrsl1", 
+              "displayWidth": 457, 
+              "imagesActualSize": {
+                "width": 477, 
+                "height": 477
+              }
+            }, 
+            "bricId": "lblCarousel1"
+          }, 
+          {
+            "bricType": "SvgContainer", 
+            "configFixup": [
+              {
+                "name": "node", 
+                "value": {
+                  "selector": "#bc48a0159a5a5487e8a54fc1409bc3d7e", 
+                  "type": "d3select"
+                }, 
+                "type": "set-property"
+              }
+            ], 
+            "config": {
+              "maxSize": {
+                "width": 477, 
+                "height": 570
+              }
+            }, 
+            "bricId": "cntr1"
+          }
+        ], 
+        "containerId": "bc48a0159a5a5487e8a54fc1409bc3d7e"
+      }
+    ], 
+    "description": "Second-generation biomass fuels"
+  }, 
+  "@type": "Envelope", 
+  "metadata": {
+    "format": [
+      "application/vnd.pearson.sanvan.v1.activity"
+    ], 
+    "intendedEndUserRole": [
+      "Student"
+    ], 
+    "subject": [
+      "EnvironmentalScience"
+    ], 
+    "owner": "Brix", 
+    "created": "2013-12-20T13:45:56.092906", 
+    "title": "Second-generation biomass fuels", 
+    "timeRequired": "PT20S", 
+    "description": "Second-generation biomass fuels", 
+    "guid": "c1f4f702-277b-4e4a-87a7-dcc5eb657ff8", 
+    "contentTypeTier1": "Activity", 
+    "contentTypeTier2": [
+      "Exercise"
+    ]
+  }, 
+  "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope"
+}

@@ -1,91 +1,71 @@
 {
-  "metadata": {
-    "intendedEndUserRole": [
-      "Student"
-    ], 
-    "format": [
-      "application/vnd.pearson.sanvan.v1.activity"
-    ], 
-    "created": "2013-12-13T22:14:44.162263", 
-    "title": "A nuclear fission reaction", 
-    "owner": "Brix", 
-    "subject": [
-      "EnvironmentalScience"
-    ], 
-    "guid": "40997503-7c3a-430e-8e04-aba070e0bc60", 
-    "timeRequired": "PT20S", 
-    "description": "A nuclear fission reaction", 
-    "contentTypeTier2": [
-      "Exercise"
-    ], 
-    "contentTypeTier1": "Activity"
-  }, 
   "body": {
     "containerConfig": [
       {
+        "description": "container for the graph and labels", 
         "hookupActions": [
           {
-            "args": [
-              {
-                "domain": "brix", 
-                "refId": "imageGraph", 
-                "type": "ref"
-              }
-            ], 
-            "instance": {
-              "domain": "brix", 
-              "refId": "cntr1", 
-              "type": "ref"
-            }, 
+            "methodName": "append", 
             "description": "Append the image to the svg container", 
-            "methodName": "append", 
-            "type": "method-call"
-          }, 
-          {
             "args": [
               {
+                "refId": "imageGraph", 
                 "domain": "brix", 
-                "refId": "labelGroup1", 
                 "type": "ref"
               }
             ], 
+            "type": "method-call", 
             "instance": {
-              "domain": "brix", 
               "refId": "cntr1", 
+              "domain": "brix", 
               "type": "ref"
-            }, 
-            "description": "Append the labels to the svg container", 
-            "methodName": "append", 
-            "type": "method-call"
+            }
           }, 
           {
+            "methodName": "append", 
+            "description": "Append the labels to the svg container", 
+            "args": [
+              {
+                "refId": "labelGroup1", 
+                "domain": "brix", 
+                "type": "ref"
+              }
+            ], 
+            "type": "method-call", 
+            "instance": {
+              "refId": "cntr1", 
+              "domain": "brix", 
+              "type": "ref"
+            }
+          }, 
+          {
+            "methodName": "lite", 
+            "description": "Initial condition: select 1st label", 
             "args": [
               {
                 "value": "0", 
                 "type": "constant"
               }
             ], 
+            "type": "method-call", 
             "instance": {
-              "domain": "brix", 
               "refId": "labelGroup1", 
+              "domain": "brix", 
               "type": "ref"
-            }, 
-            "description": "Initial condition: select 1st label", 
-            "methodName": "lite", 
-            "type": "method-call"
+            }
           }
         ], 
-        "containerId": "bc9021b5ced0e4bd885033c83d593a570", 
-        "description": "container for the graph and labels", 
         "brixConfig": [
           {
+            "bricType": "Image", 
             "configFixup": [
               {
+                "name": "URI", 
                 "value": {
                   "parts": [
                     {
-                      "domain": "info", 
                       "refId": "imgBaseUrl", 
+                      "domain": "info", 
                       "type": "ref"
                     }, 
                     {
@@ -95,17 +75,15 @@
                   ], 
                   "type": "join"
                 }, 
-                "name": "URI", 
                 "type": "set-property"
               }
             ], 
-            "bricType": "Image", 
             "config": {
-              "actualSize": {
-                "height": 226, 
-                "width": 457
-              }, 
               "id": "image1", 
+              "actualSize": {
+                "width": 457, 
+                "height": 226
+              }, 
               "caption": "schematic of nuclear fission"
             }, 
             "bricId": "imageGraph"
@@ -113,166 +91,109 @@
           {
             "bricType": "LabelGroup", 
             "config": {
+              "id": "dataLabels", 
               "labels": [
                 {
                   "content": "1", 
-                  "width": 0, 
                   "xyPos": [
                     0.05, 
                     0.5
-                  ]
+                  ], 
+                  "width": 0
                 }, 
                 {
                   "content": "2", 
-                  "width": 0, 
                   "xyPos": [
                     0.38, 
                     0.36
-                  ]
+                  ], 
+                  "width": 0
                 }, 
                 {
                   "content": "3", 
-                  "width": 0, 
                   "xyPos": [
                     0.5, 
                     0.62
-                  ]
+                  ], 
+                  "width": 0
                 }, 
                 {
                   "content": "4", 
-                  "width": 0, 
                   "xyPos": [
                     0.75, 
                     0.62
-                  ]
+                  ], 
+                  "width": 0
                 }
               ], 
-              "id": "dataLabels", 
               "type": "numbered"
             }, 
             "bricId": "labelGroup1"
           }, 
           {
+            "bricType": "SvgContainer", 
             "configFixup": [
               {
+                "name": "node", 
                 "value": {
                   "selector": "#bc9021b5ced0e4bd885033c83d593a570", 
                   "type": "d3select"
                 }, 
-                "name": "node", 
                 "type": "set-property"
               }
             ], 
-            "bricType": "SvgContainer", 
             "config": {
               "maxSize": {
-                "height": 226, 
-                "width": 457
+                "width": 457, 
+                "height": 226
               }
             }, 
             "bricId": "cntr1"
           }
-        ]
+        ], 
+        "containerId": "bc9021b5ced0e4bd885033c83d593a570"
       }, 
       {
+        "description": "The container contains the liteable callouts", 
         "hookupActions": [
           {
+            "methodName": "draw", 
+            "description": "draw the label table", 
             "args": [
               {
                 "selector": "#bc9021b5ced0e4bd885033c83d593a570", 
                 "type": "d3select"
               }
             ], 
+            "type": "method-call", 
             "instance": {
-              "domain": "brix", 
               "refId": "lbltbl1", 
+              "domain": "brix", 
               "type": "ref"
-            }, 
-            "description": "draw the label table", 
-            "methodName": "draw", 
-            "type": "method-call"
+            }
           }, 
           {
+            "methodName": "lite", 
+            "description": "Initial condition: select 1st table row", 
             "args": [
               {
                 "value": "0", 
                 "type": "constant"
               }
             ], 
+            "type": "method-call", 
             "instance": {
-              "domain": "brix", 
               "refId": "lbltbl1", 
+              "domain": "brix", 
               "type": "ref"
-            }, 
-            "description": "Initial condition: select 1st table row", 
-            "methodName": "lite", 
-            "type": "method-call"
+            }
           }
         ], 
-        "containerId": "bc9021b5ced0e4bd885033c83d593a570", 
-        "mortarConfig": [
-          {
-            "configFixup": [
-              {
-                "value": {
-                  "bricType": "LabelGroup", 
-                  "eventName": "selected", 
-                  "instanceId": "dataLabels", 
-                  "type": "brix-topic"
-                }, 
-                "name": "topic", 
-                "type": "set-property"
-              }, 
-              {
-                "value": {
-                  "domain": "brix", 
-                  "refId": "lbltbl1", 
-                  "type": "ref"
-                }, 
-                "name": "targetBric", 
-                "type": "set-property"
-              }
-            ], 
-            "config": {
-              "eventDetailsProperty": "selectKey"
-            }, 
-            "mortarId": "hilite1", 
-            "mortarType": "Hilite"
-          }, 
-          {
-            "configFixup": [
-              {
-                "value": {
-                  "bricType": "Callouts", 
-                  "eventName": "selected", 
-                  "instanceId": "callme", 
-                  "type": "brix-topic"
-                }, 
-                "name": "topic", 
-                "type": "set-property"
-              }, 
-              {
-                "value": {
-                  "domain": "brix", 
-                  "refId": "labelGroup1", 
-                  "type": "ref"
-                }, 
-                "name": "targetBric", 
-                "type": "set-property"
-              }
-            ], 
-            "config": {
-              "eventDetailsProperty": "selectKey"
-            }, 
-            "mortarId": "hilite2", 
-            "mortarType": "Hilite"
-          }
-        ], 
-        "description": "The container contains the liteable callouts", 
         "brixConfig": [
           {
             "bricType": "Callouts", 
             "config": {
+              "id": "callme", 
               "textBits": [
                 {
                   "cols": [
@@ -295,17 +216,96 @@
                   ]
                 }
               ], 
-              "id": "callme", 
-              "show": "all", 
-              "type": "numbered"
+              "type": "numbered", 
+              "show": "all"
             }, 
             "bricId": "lbltbl1"
           }
-        ]
+        ], 
+        "mortarConfig": [
+          {
+            "config": {
+              "eventDetailsProperty": "selectKey"
+            }, 
+            "configFixup": [
+              {
+                "name": "topic", 
+                "value": {
+                  "bricType": "LabelGroup", 
+                  "instanceId": "dataLabels", 
+                  "type": "brix-topic", 
+                  "eventName": "selected"
+                }, 
+                "type": "set-property"
+              }, 
+              {
+                "name": "targetBric", 
+                "value": {
+                  "refId": "lbltbl1", 
+                  "domain": "brix", 
+                  "type": "ref"
+                }, 
+                "type": "set-property"
+              }
+            ], 
+            "mortarId": "hilite1", 
+            "mortarType": "Hilite"
+          }, 
+          {
+            "config": {
+              "eventDetailsProperty": "selectKey"
+            }, 
+            "configFixup": [
+              {
+                "name": "topic", 
+                "value": {
+                  "bricType": "Callouts", 
+                  "instanceId": "callme", 
+                  "type": "brix-topic", 
+                  "eventName": "selected"
+                }, 
+                "type": "set-property"
+              }, 
+              {
+                "name": "targetBric", 
+                "value": {
+                  "refId": "labelGroup1", 
+                  "domain": "brix", 
+                  "type": "ref"
+                }, 
+                "type": "set-property"
+              }
+            ], 
+            "mortarId": "hilite2", 
+            "mortarType": "Hilite"
+          }
+        ], 
+        "containerId": "bc9021b5ced0e4bd885033c83d593a570"
       }
     ], 
     "description": "A nuclear fission reaction"
   }, 
   "@type": "Envelope", 
+  "metadata": {
+    "format": [
+      "application/vnd.pearson.sanvan.v1.activity"
+    ], 
+    "intendedEndUserRole": [
+      "Student"
+    ], 
+    "subject": [
+      "EnvironmentalScience"
+    ], 
+    "owner": "Brix", 
+    "created": "2013-12-20T13:45:56.091658", 
+    "title": "A nuclear fission reaction", 
+    "timeRequired": "PT20S", 
+    "description": "A nuclear fission reaction", 
+    "guid": "40997503-7c3a-430e-8e04-aba070e0bc60", 
+    "contentTypeTier1": "Activity", 
+    "contentTypeTier2": [
+      "Exercise"
+    ]
+  }, 
   "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope"
 }
