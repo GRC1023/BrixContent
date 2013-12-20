@@ -1,0 +1,184 @@
+{
+  "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope", 
+  "metadata": {
+    "subject": [
+      "EnvironmentalScience"
+    ], 
+    "description": "Examples of the use of biomass fuels ", 
+    "timeRequired": "PT20S", 
+    "created": "2013-12-19T21:28:42.603003", 
+    "contentTypeTier1": "Activity", 
+    "contentTypeTier2": [
+      "Exercise"
+    ], 
+    "owner": "Brix", 
+    "title": "Examples of the use of biomass fuels ", 
+    "format": [
+      "application/vnd.pearson.sanvan.v1.activity"
+    ], 
+    "guid": "4ecc1d1c-8545-470b-934b-4336620663bd", 
+    "intendedEndUserRole": [
+      "Student"
+    ]
+  }, 
+  "body": {
+    "description": "Examples of the use of biomass fuels", 
+    "containerConfig": [
+      {
+        "containerId": "b0a5c4ba2c12d465ab303da49d2effdea", 
+        "brixConfig": [
+          {
+            "bricId": "lblCarousel1", 
+            "configFixup": [
+              {
+                "name": "images", 
+                "type": "set-property", 
+                "value": {
+                  "type": "array", 
+                  "elements": [
+                    {
+                      "properties": [
+                        {
+                          "name": "URI", 
+                          "value": {
+                            "parts": [
+                              {
+                                "domain": "info", 
+                                "type": "ref", 
+                                "refId": "imgBaseUrl"
+                              }, 
+                              {
+                                "type": "constant", 
+                                "value": "img/68830_EU_05_01_S1.jpg"
+                              }
+                            ], 
+                            "type": "join"
+                          }
+                        }, 
+                        {
+                          "name": "caption", 
+                          "value": {
+                            "type": "constant", 
+                            "value": "Collecting wood for fuel."
+                          }
+                        }
+                      ], 
+                      "type": "object"
+                    }, 
+                    {
+                      "properties": [
+                        {
+                          "name": "URI", 
+                          "value": {
+                            "parts": [
+                              {
+                                "domain": "info", 
+                                "type": "ref", 
+                                "refId": "imgBaseUrl"
+                              }, 
+                              {
+                                "type": "constant", 
+                                "value": "img/68830_EU_05_01_S2.jpg"
+                              }
+                            ], 
+                            "type": "join"
+                          }
+                        }, 
+                        {
+                          "name": "caption", 
+                          "value": {
+                            "type": "constant", 
+                            "value": "Cooking on an open flame."
+                          }
+                        }
+                      ], 
+                      "type": "object"
+                    }, 
+                    {
+                      "properties": [
+                        {
+                          "name": "URI", 
+                          "value": {
+                            "parts": [
+                              {
+                                "domain": "info", 
+                                "type": "ref", 
+                                "refId": "imgBaseUrl"
+                              }, 
+                              {
+                                "type": "constant", 
+                                "value": "img/68830_EU_05_01_S3.jpg"
+                              }
+                            ], 
+                            "type": "join"
+                          }
+                        }, 
+                        {
+                          "name": "caption", 
+                          "value": {
+                            "type": "constant", 
+                            "value": "Cooking with a high-efficiency cookstove."
+                          }
+                        }
+                      ], 
+                      "type": "object"
+                    }
+                  ]
+                }
+              }
+            ], 
+            "bricType": "LabelCarousel", 
+            "config": {
+              "id": "lblCrsl1", 
+              "imagesActualSize": {
+                "height": 457, 
+                "width": 457
+              }
+            }
+          }, 
+          {
+            "bricId": "cntr1", 
+            "configFixup": [
+              {
+                "name": "node", 
+                "type": "set-property", 
+                "value": {
+                  "type": "d3select", 
+                  "selector": "#b0a5c4ba2c12d465ab303da49d2effdea"
+                }
+              }
+            ], 
+            "bricType": "SvgContainer", 
+            "config": {
+              "maxSize": {
+                "height": 580, 
+                "width": 457
+              }
+            }
+          }
+        ], 
+        "description": "Container for the LabelCarousel", 
+        "hookupActions": [
+          {
+            "instance": {
+              "domain": "brix", 
+              "type": "ref", 
+              "refId": "cntr1"
+            }, 
+            "methodName": "append", 
+            "args": [
+              {
+                "domain": "brix", 
+                "type": "ref", 
+                "refId": "lblCarousel1"
+              }
+            ], 
+            "type": "method-call", 
+            "description": "Append the label image carousel to the svg container"
+          }
+        ]
+      }
+    ]
+  }, 
+  "@type": "Envelope"
+}

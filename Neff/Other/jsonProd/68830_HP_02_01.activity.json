@@ -1,0 +1,184 @@
+{
+  "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope", 
+  "metadata": {
+    "subject": [
+      "EnvironmentalScience"
+    ], 
+    "description": "Examples of simplified population age structures", 
+    "timeRequired": "PT20S", 
+    "created": "2013-12-19T21:28:42.602016", 
+    "contentTypeTier1": "Activity", 
+    "contentTypeTier2": [
+      "Exercise"
+    ], 
+    "owner": "Brix", 
+    "title": "Examples of simplified population age structures", 
+    "format": [
+      "application/vnd.pearson.sanvan.v1.activity"
+    ], 
+    "guid": "209a8510-829f-479f-8ee4-18a2df858be4", 
+    "intendedEndUserRole": [
+      "Student"
+    ]
+  }, 
+  "body": {
+    "description": "Examples of simplified population age structures", 
+    "containerConfig": [
+      {
+        "containerId": "b8c42f914a2614384b276f7ce9bc11586", 
+        "brixConfig": [
+          {
+            "bricId": "lblCarousel1", 
+            "configFixup": [
+              {
+                "name": "images", 
+                "type": "set-property", 
+                "value": {
+                  "type": "array", 
+                  "elements": [
+                    {
+                      "properties": [
+                        {
+                          "name": "URI", 
+                          "value": {
+                            "parts": [
+                              {
+                                "domain": "info", 
+                                "type": "ref", 
+                                "refId": "imgBaseUrl"
+                              }, 
+                              {
+                                "type": "constant", 
+                                "value": "img/68830_HP_02_01_S1.png"
+                              }
+                            ], 
+                            "type": "join"
+                          }
+                        }, 
+                        {
+                          "name": "caption", 
+                          "value": {
+                            "type": "constant", 
+                            "value": "Fast growth rate&#x2013;increasing population"
+                          }
+                        }
+                      ], 
+                      "type": "object"
+                    }, 
+                    {
+                      "properties": [
+                        {
+                          "name": "URI", 
+                          "value": {
+                            "parts": [
+                              {
+                                "domain": "info", 
+                                "type": "ref", 
+                                "refId": "imgBaseUrl"
+                              }, 
+                              {
+                                "type": "constant", 
+                                "value": "img/68830_HP_02_01_S2.png"
+                              }
+                            ], 
+                            "type": "join"
+                          }
+                        }, 
+                        {
+                          "name": "caption", 
+                          "value": {
+                            "type": "constant", 
+                            "value": "Negative growth rate&#x2013;decreasing population"
+                          }
+                        }
+                      ], 
+                      "type": "object"
+                    }, 
+                    {
+                      "properties": [
+                        {
+                          "name": "URI", 
+                          "value": {
+                            "parts": [
+                              {
+                                "domain": "info", 
+                                "type": "ref", 
+                                "refId": "imgBaseUrl"
+                              }, 
+                              {
+                                "type": "constant", 
+                                "value": "img/68830_HP_02_01_S3.png"
+                              }
+                            ], 
+                            "type": "join"
+                          }
+                        }, 
+                        {
+                          "name": "caption", 
+                          "value": {
+                            "type": "constant", 
+                            "value": "Steady growth rate&#x2013;stable population"
+                          }
+                        }
+                      ], 
+                      "type": "object"
+                    }
+                  ]
+                }
+              }
+            ], 
+            "bricType": "LabelCarousel", 
+            "config": {
+              "id": "lblCrsl1", 
+              "imagesActualSize": {
+                "height": 401, 
+                "width": 476
+              }
+            }
+          }, 
+          {
+            "bricId": "cntr1", 
+            "configFixup": [
+              {
+                "name": "node", 
+                "type": "set-property", 
+                "value": {
+                  "type": "d3select", 
+                  "selector": "#b8c42f914a2614384b276f7ce9bc11586"
+                }
+              }
+            ], 
+            "bricType": "SvgContainer", 
+            "config": {
+              "maxSize": {
+                "height": 480, 
+                "width": 477
+              }
+            }
+          }
+        ], 
+        "description": "Container for the LabelCarousel", 
+        "hookupActions": [
+          {
+            "instance": {
+              "domain": "brix", 
+              "type": "ref", 
+              "refId": "cntr1"
+            }, 
+            "methodName": "append", 
+            "args": [
+              {
+                "domain": "brix", 
+                "type": "ref", 
+                "refId": "lblCarousel1"
+              }
+            ], 
+            "type": "method-call", 
+            "description": "Append the label image carousel to the svg container"
+          }
+        ]
+      }
+    ]
+  }, 
+  "@type": "Envelope"
+}

@@ -1,0 +1,325 @@
+{
+  "@context" : "http://purl.org/pearson/content/v1/ctx/metadata/envelope",
+  "@type" : "Envelope",
+  "metadata" : 
+    {
+        "title" : "Interactive Lab: The Effect of Age of First Birth on Population Growth",
+        "guid" : "7BD919BB-1578-423C-9F1E-6EA3D4C76203",
+        "description" : "Interactive Lab: The Effect of Age of First Childbirth on Population Growth",
+        "contentTypeTier1" : "Activity",
+        "contentTypeTier2" : [ "Exercise" ],
+        "subject" : [ "EnvironmentalScience" ],
+        "intendedEndUserRole" : [ "Student" ],
+        "format" : 
+            [
+              "application/vnd.pearson.sanvan.v1.activity"
+            ],
+        "timeRequired" : "PT20S",
+        "created" : "2013-13-09T22:30:00-00:00"
+    }, 
+  "body" :
+    {
+        "containerConfig":
+               [
+                    
+                    
+                    {
+                        "description": "Age first birth",
+                        "containerId": "b15e0c5f0a2634580bcf30828629163e6",
+                        "brixConfig":
+                            [
+                                {
+                                    "bricId": "dropdown3",
+                                    "bricType": "SelectGroup",
+                                    "config":
+                                        {
+                                            "id": "ageBirth-selgrp",
+                                            "choices": 
+                                                [
+                                                    { "content": "A<sub>c</sub> = 15" },
+                                                    { "content": "A<sub>c</sub> = 20" },
+                                                    { "content": "A<sub>c</sub> = 25" },
+                                                    { "content": "A<sub>c</sub> = 30" },
+                                                    { "content": "A<sub>c</sub> = 35" },
+                                                    { "content": "A<sub>c</sub> = 40" }
+                                                ]
+                                        }
+                                }
+                            ],
+                        "hookupActions":
+                            [
+                                {
+                                    "description": "draw the dropdown",
+                                    "type": "method-call",
+                                    "instance": {"type": "ref", "domain": "brix", "refId": "dropdown3"},
+                                    "methodName": "draw",
+                                    "args":
+                                        [
+                                            { "type": "d3select", "selector": "#b15e0c5f0a2634580bcf30828629163e6" }
+                                        ]
+                                }
+                            ]
+                    },
+                    {
+                        "description": "container for year slider",
+                        "containerId": "b265ccc70104940c085db245d11a04fd8",
+                        "brixConfig":
+                            [
+                                {
+                                    "bricId": "slider1",
+                                    "bricType": "Slider",
+                                    "config":
+                                        {
+                                            "id": "sldr-yr",
+                                            "startVal": 0,
+                                            "minVal": 0,
+                                            "maxVal": 100,
+                                            "stepVal": 1,
+                                            "width": "60%",
+                                            "label": "Years",
+                                            "format": "0.0f"
+                                        }
+                                }
+                            ],
+                        "hookupActions":
+                            [
+                                {
+                                    "description": "draw the slider",
+                                    "type": "method-call",
+                                    "instance": {"type": "ref", "domain": "brix", "refId": "slider1"},
+                                    "methodName": "draw",
+                                    "args":
+                                        [
+                                            { "type": "d3select", "selector": "#b265ccc70104940c085db245d11a04fd8" }
+                                        ]
+                                }
+                            ]
+                    },
+                    {
+                        "description": "container for year readout",
+                        "containerId": "bb1c1e22751b24148b998f6030ff7a776",
+                        "brixConfig":
+                            [
+                                {
+                                    "bricId": "readout2",
+                                    "bricType": "Readout",
+                                    "config":
+                                        {
+                                            "id": "yr-rdout",
+                                            "size": 5,
+                                            "label": "Total population after ",
+                                            "unit": "years: "
+                                        },
+                                    "configFixup":
+                                        [
+                                            {
+                                                "type": "set-property",
+                                                "name": "node",
+                                                "value":
+                                                    {
+                                                        "type": "d3select",
+                                                        "selector": "#bb1c1e22751b24148b998f6030ff7a776"
+                                                    }
+                                            }
+
+                                        ]
+                                }
+                            ]
+                    },
+                    {
+                        "description": "container for population readout",
+                        "containerId": "bb1c1e22751b24148b998f6030ff7a776",
+                        "brixConfig":
+                            [
+                                {
+                                    "bricId": "readout1",
+                                    "bricType": "Readout",
+                                    "config":
+                                        {
+                                            "id": "pop-rdout",
+                                            "size": 5,
+                                            "label": "",
+                                            "unit": ""
+                                        },
+                                    "configFixup":
+                                        [
+                                            {
+                                                "type": "set-property",
+                                                "name": "node",
+                                                "value":
+                                                    {
+                                                        "type": "d3select",
+                                                        "selector": "#bb1c1e22751b24148b998f6030ff7a776"
+                                                    }
+                                            }
+
+                                        ]
+                                }
+                            ]
+                    },
+                    {
+                        "description": "container for interactive graph based on slider value",
+                        "containerId": "b80d4cb5294d8411894be965d7984e0c4",
+                        "brixConfig":
+                            [
+                                {
+                                    "bricId": "graph1",
+                                    "bricType": "BarChart",
+                                    "config":
+                                        {
+                                            "id": "bar-left",
+                                            "Data": [[]],
+                                            "xAxisFormat":
+                                                { 
+                                                    "type": "linear", 
+                                                    "mode": "reverse",
+                                                    "ticks": [0,150,300],
+                                                    "orientation": "bottom",
+                                                    "label": "Male population"
+                                                },
+                                            "yAxisFormat":
+                                                {
+                                                    "type": "ordinal",
+                                                    "orientation": "right",
+                                                    "ticks": 10,
+                                                    "label": ""
+                                                }
+                                        }
+                                },
+                                {
+                                    "bricId": "graph2",
+                                    "bricType": "BarChart",
+                                    "config":
+                                        {
+                                            "id": "bar-right",
+                                            "Data": [[],[]],
+                                            "xAxisFormat":
+                                                { 
+                                                    "type": "linear", 
+                                                    "ticks": [0,150,300],
+                                                    "orientation": "bottom",
+                                                    "label": "Female population"
+                                                },
+                                            "yAxisFormat":
+                                                {
+                                                    "type": "ordinal",
+                                                    "orientation": "left",
+                                                    "ticks": 10,
+                                                    "label": "Age"
+                                                }
+                                        }
+                                },
+                                {
+                                    "bricId": "cntr2",
+                                    "bricType": "SvgContainer",
+                                    "config":
+                                        {
+                                            "maxSize": {"height": 450, "width": 577}
+                                        },
+                                    "configFixup":
+                                        [
+                                            {
+                                                "type": "set-property",
+                                                "name": "node",
+                                                "value":
+                                                    {
+                                                        "type": "d3select",
+                                                        "selector": "#b80d4cb5294d8411894be965d7984e0c4"
+                                                    }
+                                            }
+                                        ]
+                                }
+                            ],
+                        "mortarConfig":
+                            [
+                                {
+                                    "mortarId": "agesim",
+                                    "mortarType": "AgeStructure",
+                                    "config":
+                                        {
+                                            "mortTopic": 0,
+                                            "fertilityTopic": 1
+
+                                        },
+                                    "configFixup":
+                                        [
+                                            {
+                                                "type": "set-property",
+                                                "name": "yearSlider",
+                                                "value": { "type": "ref", "domain": "brix", "refId": "slider1" }
+                                            },
+                                            {
+                                                "type": "set-property",
+                                                "name": "yearTopic",
+                                                "value":
+                                                    {
+                                                        "type": "brix-topic",
+                                                        "bricType": "Slider",
+                                                        "instanceId": "sldr-yr",
+                                                        "eventName": "value-changed"
+                                                    }
+                                            },
+                                            {
+                                                "type": "set-property",
+                                                "name": "ageFirstBirthTopic",
+                                                "value":
+                                                    {
+                                                        "type": "brix-topic",
+                                                        "bricType": "SelectGroup",
+                                                        "instanceId": "ageBirth-selgrp",
+                                                        "eventName": "selected"
+                                                    }
+                                            },
+                                            {
+                                                "type": "set-property",
+                                                "name": "targetBricLeft",
+                                                "value": { "type": "ref", "domain": "brix", "refId": "graph1" }
+                                            },
+                                             {
+                                                "type": "set-property",
+                                                "name": "targetBricRight",
+                                                "value": { "type": "ref", "domain": "brix", "refId": "graph2" }
+                                            },
+                                            {
+                                                "type": "set-property",
+                                                "name": "targetPopReadout",
+                                                "value": { "type": "ref", "domain": "brix", "refId": "readout1" }
+                                            },
+                                            {
+                                                "type": "set-property",
+                                                "name": "targetYearReadout",
+                                                "value": { "type": "ref", "domain": "brix", "refId": "readout2" }
+                                            }
+                                        ]
+                                }
+                            ],
+                        "hookupActions":
+                            [
+                                {
+                                    "description": "Append the graph to the svg container",
+                                    "type": "method-call",
+                                    "instance": {"type": "ref", "domain": "brix", "refId": "cntr2"},
+                                    "methodName": "append",
+                                    "args":
+                                        [
+                                            { "type": "ref", "domain": "brix", "refId": "graph1" },
+                                            { "type": "constant", "value": {"topPercentOffset": 0, "leftPercentOffset": 0.05, "heightPercent": 1, "widthPercent": 0.45} }
+                                        ]
+                                },
+                                {
+                                    "description": "Append the graph to the svg container",
+                                    "type": "method-call",
+                                    "instance": {"type": "ref", "domain": "brix", "refId": "cntr2"},
+                                    "methodName": "append",
+                                    "args":
+                                        [
+                                            { "type": "ref", "domain": "brix", "refId": "graph2" },
+                                            { "type": "constant", "value": {"topPercentOffset": 0, "leftPercentOffset": 0.45, "heightPercent": 1, "widthPercent": 0.55} }
+                                        ]
+                                }
+                            ]
+                    }
+                ]
+
+    }
+}

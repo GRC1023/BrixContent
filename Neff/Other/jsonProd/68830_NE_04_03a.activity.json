@@ -1,0 +1,185 @@
+{
+  "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope", 
+  "metadata": {
+    "subject": [
+      "EnvironmentalScience"
+    ], 
+    "description": "Some impacts of NATURAL GAS PRODUCTION", 
+    "timeRequired": "PT20S", 
+    "created": "2013-12-19T21:28:42.603558", 
+    "contentTypeTier1": "Activity", 
+    "contentTypeTier2": [
+      "Exercise"
+    ], 
+    "owner": "Brix", 
+    "title": "Some impacts of NATURAL GAS PRODUCTION", 
+    "format": [
+      "application/vnd.pearson.sanvan.v1.activity"
+    ], 
+    "guid": "842d238f-d18e-41a3-9b71-87f5f86a2af4", 
+    "intendedEndUserRole": [
+      "Student"
+    ]
+  }, 
+  "body": {
+    "description": "Some impacts of NATURAL GAS PRODUCTION", 
+    "containerConfig": [
+      {
+        "containerId": "b5cadd3cae73f45fab8e87d6781fef92b", 
+        "brixConfig": [
+          {
+            "bricId": "lblCarousel1", 
+            "configFixup": [
+              {
+                "name": "images", 
+                "type": "set-property", 
+                "value": {
+                  "type": "array", 
+                  "elements": [
+                    {
+                      "properties": [
+                        {
+                          "name": "URI", 
+                          "value": {
+                            "parts": [
+                              {
+                                "domain": "info", 
+                                "type": "ref", 
+                                "refId": "imgBaseUrl"
+                              }, 
+                              {
+                                "type": "constant", 
+                                "value": "img/68830_NE_04_03a_S1.jpg"
+                              }
+                            ], 
+                            "type": "join"
+                          }
+                        }, 
+                        {
+                          "name": "caption", 
+                          "value": {
+                            "type": "constant", 
+                            "value": "Contamination of streams and groundwater by wastewater ponds"
+                          }
+                        }
+                      ], 
+                      "type": "object"
+                    }, 
+                    {
+                      "properties": [
+                        {
+                          "name": "URI", 
+                          "value": {
+                            "parts": [
+                              {
+                                "domain": "info", 
+                                "type": "ref", 
+                                "refId": "imgBaseUrl"
+                              }, 
+                              {
+                                "type": "constant", 
+                                "value": "img/68830_NE_04_03a_S2.jpg"
+                              }
+                            ], 
+                            "type": "join"
+                          }
+                        }, 
+                        {
+                          "name": "caption", 
+                          "value": {
+                            "type": "constant", 
+                            "value": "Ecological disturbance from road construction at drilling sites"
+                          }
+                        }
+                      ], 
+                      "type": "object"
+                    }, 
+                    {
+                      "properties": [
+                        {
+                          "name": "URI", 
+                          "value": {
+                            "parts": [
+                              {
+                                "domain": "info", 
+                                "type": "ref", 
+                                "refId": "imgBaseUrl"
+                              }, 
+                              {
+                                "type": "constant", 
+                                "value": "img/68830_NE_04_03a_S3.jpg"
+                              }
+                            ], 
+                            "type": "join"
+                          }
+                        }, 
+                        {
+                          "name": "caption", 
+                          "value": {
+                            "type": "constant", 
+                            "value": "Rural air pollution at drilling sites"
+                          }
+                        }
+                      ], 
+                      "type": "object"
+                    }
+                  ]
+                }
+              }
+            ], 
+            "bricType": "LabelCarousel", 
+            "config": {
+              "id": "lblCrsl1", 
+              "displayWidth": 335, 
+              "imagesActualSize": {
+                "height": 335, 
+                "width": 335
+              }
+            }
+          }, 
+          {
+            "bricId": "cntr1", 
+            "configFixup": [
+              {
+                "name": "node", 
+                "type": "set-property", 
+                "value": {
+                  "type": "d3select", 
+                  "selector": "#b5cadd3cae73f45fab8e87d6781fef92b"
+                }
+              }
+            ], 
+            "bricType": "SvgContainer", 
+            "config": {
+              "maxSize": {
+                "height": 450, 
+                "width": 335
+              }
+            }
+          }
+        ], 
+        "description": "Container for the LabelCarousel", 
+        "hookupActions": [
+          {
+            "instance": {
+              "domain": "brix", 
+              "type": "ref", 
+              "refId": "cntr1"
+            }, 
+            "methodName": "append", 
+            "args": [
+              {
+                "domain": "brix", 
+                "type": "ref", 
+                "refId": "lblCarousel1"
+              }
+            ], 
+            "type": "method-call", 
+            "description": "Append the label image carousel to the svg container"
+          }
+        ]
+      }
+    ]
+  }, 
+  "@type": "Envelope"
+}

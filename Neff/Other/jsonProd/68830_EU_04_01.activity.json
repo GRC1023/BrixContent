@@ -1,0 +1,324 @@
+{
+  "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope", 
+  "metadata": {
+    "subject": [
+      "EnvironmentalScience"
+    ], 
+    "description": "How electricity is typically generated", 
+    "timeRequired": "PT20S", 
+    "created": "2013-12-19T21:28:42.602886", 
+    "contentTypeTier1": "Activity", 
+    "contentTypeTier2": [
+      "Exercise"
+    ], 
+    "owner": "Brix", 
+    "title": "How electricity is typically generated", 
+    "format": [
+      "application/vnd.pearson.sanvan.v1.activity"
+    ], 
+    "guid": "4ac52c14-dc36-4627-b919-922c1164330a", 
+    "intendedEndUserRole": [
+      "Student"
+    ]
+  }, 
+  "body": {
+    "description": "How electricity is typically generated", 
+    "containerConfig": [
+      {
+        "containerId": "bdc328cbba71b474eb02866361cfb1663", 
+        "brixConfig": [
+          {
+            "bricId": "imageGraph", 
+            "configFixup": [
+              {
+                "name": "URI", 
+                "type": "set-property", 
+                "value": {
+                  "parts": [
+                    {
+                      "domain": "info", 
+                      "type": "ref", 
+                      "refId": "imgBaseUrl"
+                    }, 
+                    {
+                      "type": "constant", 
+                      "value": "img/68830_EU_04_01.png"
+                    }
+                  ], 
+                  "type": "join"
+                }
+              }
+            ], 
+            "bricType": "Image", 
+            "config": {
+              "id": "image1", 
+              "actualSize": {
+                "height": 599, 
+                "width": 359
+              }, 
+              "caption": "graph comparing energy use"
+            }
+          }, 
+          {
+            "bricId": "labelGroup1", 
+            "bricType": "LabelGroup", 
+            "config": {
+              "id": "dataLabels", 
+              "type": "numbered", 
+              "labels": [
+                {
+                  "xyPos": [
+                    0.07, 
+                    0.27
+                  ], 
+                  "content": "1", 
+                  "width": 0
+                }, 
+                {
+                  "xyPos": [
+                    0.45, 
+                    0.9
+                  ], 
+                  "content": "2", 
+                  "width": 0
+                }, 
+                {
+                  "xyPos": [
+                    0.395, 
+                    0.51
+                  ], 
+                  "content": "3", 
+                  "width": 0
+                }, 
+                {
+                  "xyPos": [
+                    0.7, 
+                    0.65
+                  ], 
+                  "content": "4", 
+                  "width": 0
+                }, 
+                {
+                  "xyPos": [
+                    0.85, 
+                    0.98
+                  ], 
+                  "content": "5", 
+                  "width": 0
+                }
+              ]
+            }
+          }, 
+          {
+            "bricId": "cntr1", 
+            "configFixup": [
+              {
+                "name": "node", 
+                "type": "set-property", 
+                "value": {
+                  "type": "d3select", 
+                  "selector": "#bdc328cbba71b474eb02866361cfb1663"
+                }
+              }
+            ], 
+            "bricType": "SvgContainer", 
+            "config": {
+              "maxSize": {
+                "height": 360, 
+                "width": 557
+              }
+            }
+          }
+        ], 
+        "description": "container for the graph and labels", 
+        "hookupActions": [
+          {
+            "instance": {
+              "domain": "brix", 
+              "type": "ref", 
+              "refId": "cntr1"
+            }, 
+            "methodName": "append", 
+            "args": [
+              {
+                "domain": "brix", 
+                "type": "ref", 
+                "refId": "imageGraph"
+              }
+            ], 
+            "type": "method-call", 
+            "description": "Append the image to the svg container"
+          }, 
+          {
+            "instance": {
+              "domain": "brix", 
+              "type": "ref", 
+              "refId": "cntr1"
+            }, 
+            "methodName": "append", 
+            "args": [
+              {
+                "domain": "brix", 
+                "type": "ref", 
+                "refId": "labelGroup1"
+              }
+            ], 
+            "type": "method-call", 
+            "description": "Append the labels to the svg container"
+          }, 
+          {
+            "instance": {
+              "domain": "brix", 
+              "type": "ref", 
+              "refId": "labelGroup1"
+            }, 
+            "methodName": "lite", 
+            "args": [
+              {
+                "type": "constant", 
+                "value": "0"
+              }
+            ], 
+            "type": "method-call", 
+            "description": "Initial condition: select 1st label"
+          }
+        ]
+      }, 
+      {
+        "containerId": "bdc328cbba71b474eb02866361cfb1663", 
+        "mortarConfig": [
+          {
+            "mortarType": "Hilite", 
+            "mortarId": "hilite1", 
+            "config": {
+              "eventDetailsProperty": "selectKey"
+            }, 
+            "configFixup": [
+              {
+                "name": "topic", 
+                "type": "set-property", 
+                "value": {
+                  "instanceId": "dataLabels", 
+                  "eventName": "selected", 
+                  "type": "brix-topic", 
+                  "bricType": "LabelGroup"
+                }
+              }, 
+              {
+                "name": "targetBric", 
+                "type": "set-property", 
+                "value": {
+                  "domain": "brix", 
+                  "type": "ref", 
+                  "refId": "lbltbl1"
+                }
+              }
+            ]
+          }, 
+          {
+            "mortarType": "Hilite", 
+            "mortarId": "hilite2", 
+            "config": {
+              "eventDetailsProperty": "selectKey"
+            }, 
+            "configFixup": [
+              {
+                "name": "topic", 
+                "type": "set-property", 
+                "value": {
+                  "instanceId": "callme", 
+                  "eventName": "selected", 
+                  "type": "brix-topic", 
+                  "bricType": "Callouts"
+                }
+              }, 
+              {
+                "name": "targetBric", 
+                "type": "set-property", 
+                "value": {
+                  "domain": "brix", 
+                  "type": "ref", 
+                  "refId": "labelGroup1"
+                }
+              }
+            ]
+          }
+        ], 
+        "brixConfig": [
+          {
+            "bricId": "lbltbl1", 
+            "bricType": "Callouts", 
+            "config": {
+              "id": "callme", 
+              "textBits": [
+                {
+                  "cols": [
+                    "Heat is generated in a furnace by burning fuel such as coal, natural gas or nuclear fuel."
+                  ]
+                }, 
+                {
+                  "cols": [
+                    "Water flows in pipes through the furnace and is heated to produce steam."
+                  ]
+                }, 
+                {
+                  "cols": [
+                    "The steam turns the turbine, producing mechanical energy. Cool water from an outside source condenses the steam, which is recirculated."
+                  ]
+                }, 
+                {
+                  "cols": [
+                    "The generator converts the mechanical energy into high voltage electricity."
+                  ]
+                }, 
+                {
+                  "cols": [
+                    "Another transformer reduces the voltage for consumer use."
+                  ]
+                }
+              ], 
+              "type": "numbered", 
+              "show": "all"
+            }
+          }
+        ], 
+        "description": "The container contains the liteable callouts", 
+        "hookupActions": [
+          {
+            "instance": {
+              "domain": "brix", 
+              "type": "ref", 
+              "refId": "lbltbl1"
+            }, 
+            "methodName": "draw", 
+            "args": [
+              {
+                "type": "d3select", 
+                "selector": "#bdc328cbba71b474eb02866361cfb1663"
+              }
+            ], 
+            "type": "method-call", 
+            "description": "draw the label table"
+          }, 
+          {
+            "instance": {
+              "domain": "brix", 
+              "type": "ref", 
+              "refId": "lbltbl1"
+            }, 
+            "methodName": "lite", 
+            "args": [
+              {
+                "type": "constant", 
+                "value": "0"
+              }
+            ], 
+            "type": "method-call", 
+            "description": "Initial condition: select 1st table row"
+          }
+        ]
+      }
+    ]
+  }, 
+  "@type": "Envelope"
+}

@@ -7,7 +7,7 @@ PROD_URL='http://repo.paf.pearsoncmg.com/paf-repo/resources/activities'
 ACTIVITY_HDR='Content-Type: application/vnd.pearson.paf.v1.envelope+json;body="application/vnd.pearson.sanvan.v1.activity""'
 ASSIGNMENT_HDR='Content-Type: application/vnd.pearson.paf.v1.envelope+json;body="application/vnd.pearson.paf.v1.assignment+json""'
 
-URL=$CERT_URL
+URL=$PROD_URL
 
 if [[ $1 == 'activity' ]]
 then
