@@ -146,9 +146,13 @@ class PAFAssignment(object):
 
         self.title = info.title
         self.cardName = info.cardName
+        self.fileName = info.fileName
         self.subject = info.subject
         self.activities = []
-        self.jsonFilename = "Card_" + str(self.__class__.instanceCount) + ".assignment.json"
+
+        b, t = os.path.splitext(self.fileName)
+        self.jsonFilename = b + ".assignment.json"
+        
         self.PAFjson = \
             {
                 "@context" : "http://purl.org/pearson/content/v1/ctx/metadata/envelope",
