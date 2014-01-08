@@ -1,0 +1,131 @@
+{
+  "@context" : "http://purl.org/pearson/content/v1/ctx/metadata/envelope",
+  "@type" : "Envelope",
+  "metadata" : {
+    "title" : "MCP Demo",
+    "guid" : "ACTIVITYGUID",
+    "description" : "",
+    "contentTypeTier1" : "Assessment",
+    "contentTypeTier2" : [ "AssessmentItem" ],
+    "subject" : [ "EnvironmentalScience" ],
+    "intendedEndUserRole" : [ "Student" ],
+    "format" : [ 
+      "application/vnd.pearson.sanvan.v1.activity"
+    ],
+    "timeRequired" : "PT20S",
+    "created" : "2013-11-26T12:50:00-00:00",
+    "educationalAlignment" : [ "http://purl.org/pearson/objectives/183725473384362" ]
+  },
+  "body" : {
+        "description": "A Sample Activity containing a single multiple choice bric",
+        "containerConfig": [
+            {
+                "description": "container for the sample multiple choice question",
+                "containerId": "target1",
+                "brixConfig": [
+                    {
+                        "bricId": "Q1",
+                        "bricType": "MultipleChoiceQuestion",
+                        "config": {
+                            "id": "sampleQ1",
+                            "order": "randomized",
+                            "presenterType": "RadioGroup",
+                            "presenterConfig": {
+                                "numberFormat": "latin-upper"
+                            },
+                            "question": "Which of the following statements about resource demands is incorrect?",
+                            "choices": [
+                                {
+                                    "content": "We will need 300% more food by 2050 - correct, with feedback",
+                                    "answerKey": "answer1"
+                                },
+                                {
+                                    "content": "We will need 70% more food by 2050",
+                                    "answerKey": "answer2"
+                                },
+                                {
+                                    "content": "We will need 80% more water by 2050",
+                                    "answerKey": "answer3"
+                                },
+                                {
+                                    "content": "We will need 200% more energy by 2050 - has feedback",
+                                    "answerKey": "answer4"
+                                }
+                            ]
+                        },
+                        "configFixup": [
+                            {
+                                "type": "set-property",
+                                "name": "questionId",
+                                "value": {
+                                    "type": "ref",
+                                    "domain": "info",
+                                    "refId": "sequenceNodeKey"
+                                }
+                            },
+                            {
+                                "type": "set-property",
+                                "name": "maxAttempts",
+                                "value": { "type": "ref", "domain": "info", "refId": "maxAttempts" }
+                            }
+                        ],
+                        "answerKey": {
+                            "assessmentType": "multiplechoice",
+                            "answers": {
+                                "answer1": {
+                                    "score": 1,
+                                    "response": "You are awesome."
+                                },
+                                "answer2": {
+                                    "score": 0,
+                                    "response": ""
+                                },
+                                "answer3": {
+                                    "score": 0,
+                                    "response": ""
+                                },
+                                "answer4": {
+                                    "score": 0,
+                                    "response": "The energy used per person is increasing at the same time the population is increasing so we're going to need three times as much energy."
+                                }
+                            }
+                        }
+                    }
+                ],
+                "hookupActions": [
+                    {
+                        "description": "Hookup the submit manager to evaluate answers",
+                        "type": "method-call",
+                        "instance": {
+                            "type": "submit-manager"
+                        },
+                        "methodName": "handleRequestsFrom",
+                        "args": [
+                            {
+                                "type": "ref",
+                                "domain": "brix",
+                                "refId": "Q1"
+                            }
+                        ]
+                    },
+                    {
+                        "description": "Draw the question",
+                        "type": "method-call",
+                        "instance": {
+                            "type": "ref",
+                            "domain": "brix",
+                            "refId": "Q1"
+                        },
+                        "methodName": "draw",
+                        "args": [
+                            {
+                                "type": "d3select",
+                                "selector": "#target1"
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    }
+}
