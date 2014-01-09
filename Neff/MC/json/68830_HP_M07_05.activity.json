@@ -1,54 +1,55 @@
 {
   "body": {
+    "description": "A Sample Activity containing a single multiple choice bric", 
     "containerConfig": [
       {
         "brixConfig": [
           {
             "config": {
+              "id": "sampleQ1", 
               "presenterType": "RadioGroup", 
-              "question": "Question 5 of the series. This is a placeholder until the question arrives.", 
-              "presenterConfig": {
-                "numberFormat": ""
-              }, 
               "choices": [
                 {
-                  "content": "Answer 1", 
-                  "answerKey": "answer1"
+                  "answerKey": "answer1", 
+                  "content": "The age of first childbirth is declining quickly in the United States."
                 }, 
                 {
-                  "content": "Answer 2", 
-                  "answerKey": "answer2"
+                  "answerKey": "answer2", 
+                  "content": "The total fertility rate in the United States is rising quickly"
                 }, 
                 {
-                  "content": "Answer 3", 
-                  "answerKey": "answer3"
+                  "answerKey": "answer3", 
+                  "content": "Immigration into the United States keeps the population growing."
                 }, 
                 {
-                  "content": "Answer 4", 
-                  "answerKey": "answer4"
+                  "answerKey": "answer4", 
+                  "content": "The baby boom generation is still having children, and so the country is still growing."
                 }
               ], 
               "order": "randomized", 
-              "id": "sampleQ1"
+              "question": "In the prior question, the simulation suggests that the U.S. population should be declining, but in fact the U.S. population is still increasing. What could explain this?", 
+              "presenterConfig": {
+                "numberFormat": ""
+              }
             }, 
             "answerKey": {
               "assessmentType": "multiplechoice", 
               "answers": {
-                "answer4": {
-                  "score": 0, 
-                  "response": ""
-                }, 
-                "answer1": {
-                  "score": 1, 
-                  "response": ""
-                }, 
                 "answer3": {
-                  "score": 0, 
-                  "response": ""
+                  "score": 1, 
+                  "response": "Correct"
                 }, 
                 "answer2": {
                   "score": 0, 
-                  "response": ""
+                  "response": "Does this pattern fit with what you know about changes in the U.S.?"
+                }, 
+                "answer1": {
+                  "score": 0, 
+                  "response": "Does this fit with what you know about changes in the U.S.?"
+                }, 
+                "answer4": {
+                  "score": 0, 
+                  "response": "The baby boomers are now starting to retire and are past reproductive age."
                 }
               }
             }, 
@@ -57,85 +58,84 @@
             "configFixup": [
               {
                 "type": "set-property", 
-                "name": "questionId", 
                 "value": {
-                  "domain": "info", 
                   "type": "ref", 
-                  "refId": "sequenceNodeKey"
-                }
+                  "refId": "sequenceNodeKey", 
+                  "domain": "info"
+                }, 
+                "name": "questionId"
               }, 
               {
                 "type": "set-property", 
-                "name": "maxAttempts", 
                 "value": {
-                  "domain": "info", 
                   "type": "ref", 
-                  "refId": "maxAttempts"
-                }
+                  "refId": "maxAttempts", 
+                  "domain": "info"
+                }, 
+                "name": "maxAttempts"
               }
             ]
           }
         ], 
-        "description": "container for the sample multiple choice question", 
         "hookupActions": [
           {
-            "instance": {
-              "type": "submit-manager"
-            }, 
+            "type": "method-call", 
+            "methodName": "handleRequestsFrom", 
+            "description": "Hookup the submit manager to evaluate answers", 
             "args": [
               {
-                "domain": "brix", 
                 "type": "ref", 
-                "refId": "Q1"
+                "refId": "Q1", 
+                "domain": "brix"
               }
             ], 
-            "type": "method-call", 
-            "description": "Hookup the submit manager to evaluate answers", 
-            "methodName": "handleRequestsFrom"
+            "instance": {
+              "type": "submit-manager"
+            }
           }, 
           {
-            "instance": {
-              "domain": "brix", 
-              "type": "ref", 
-              "refId": "Q1"
-            }, 
+            "type": "method-call", 
+            "methodName": "draw", 
+            "description": "Draw the question", 
             "args": [
               {
                 "type": "d3select", 
                 "selector": "#target1"
               }
             ], 
-            "type": "method-call", 
-            "description": "Draw the question", 
-            "methodName": "draw"
+            "instance": {
+              "type": "ref", 
+              "refId": "Q1", 
+              "domain": "brix"
+            }
           }
         ], 
+        "description": "container for the sample multiple choice question", 
         "containerId": "target1"
       }
-    ], 
-    "description": "A Sample Activity containing a single multiple choice bric"
+    ]
   }, 
   "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope", 
   "@type": "Envelope", 
   "metadata": {
-    "intendedEndUserRole": [
-      "Student"
-    ], 
-    "description": "68830_HP_M07_05.html", 
     "format": [
       "application/vnd.pearson.sanvan.v1.activity"
     ], 
-    "owner": "Brix", 
-    "guid": "9dbe4bab-326d-4c68-889a-9a5e105a0116", 
     "subject": [
       "EnvironmentalScience"
     ], 
-    "timeRequired": "PT20S", 
-    "created": "2013-12-18T14:00:05.285836", 
+    "guid": "afb8a841-c342-4e9c-acd1-dda7d14c5969", 
+    "intendedEndUserRole": [
+      "Student"
+    ], 
     "title": "68830_HP_M07_05.html", 
-    "contentTypeTier1": "Test and Assessment", 
     "contentTypeTier2": [
       "assessment item"
-    ]
+    ], 
+    "contentTypeTier1": "Test and Assessment", 
+    "timeRequired": "PT20S", 
+    "owner": "Brix", 
+    "description": "68830_HP_M07_05.html", 
+    "created": "2014-01-09T13:40:38.448518"
   }
 }
