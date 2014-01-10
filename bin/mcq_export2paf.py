@@ -98,7 +98,7 @@ class PAFActivity(object):
         with open(self.jsonFilename, "w") as ofile:
             print("writing ", self.jsonFilename)
             self.readActivityConfig()
-            json.dump(self.PAFjson, ofile, indent=2)
+            json.dump(self.PAFjson, ofile, indent=2, sort_keys=True)
 
     def readActivityConfig(self):
         """Write the envelope info and any lines that should be before the activity config"""
@@ -224,7 +224,7 @@ class PAFAssignment(object):
         """Write the PAF JSON for this assignment and all of its activities"""
         with open(self.jsonFilename, "w") as ofile:
             print("writing ", self.jsonFilename)
-            json.dump(self.PAFjson, ofile, indent=2)
+            json.dump(self.PAFjson, ofile, indent=2, sort_keys=True)
 
         for activity in self.activities:
             activity.writeJSON()
@@ -330,5 +330,3 @@ for assignment in assignments:
 
 with open("mcq_export2paf.log", "wt") as f:
     f.write("\n".join(problemlog) + "\n")
-
-
