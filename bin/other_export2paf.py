@@ -72,7 +72,7 @@ class PAFActivity(object):
                         "format" : [ "application/vnd.pearson.sanvan.v1.activity" ],
                         "timeRequired" : "PT20S",
                         "created" : datetime.datetime.now().isoformat(), #time.strftime("%Y-%m-%dT%H:%M:%S-04:00"),
-						"owner": "Brix"
+                        "owner": "Brix"
                     },
                 "body" : {}
             }
@@ -92,7 +92,7 @@ class PAFActivity(object):
         with open(self.jsonFilename, "w") as ofile:
             print("writing ", self.jsonFilename)
             self.readActivityConfig()
-            json.dump(self.PAFjson, ofile, indent=2)
+            json.dump(self.PAFjson, ofile, indent=2, sort_keys=True)
 
     def readActivityConfig(self):
         """Write the envelope info and any lines that should be before the activity config"""
@@ -152,7 +152,7 @@ class PAFAssignment(object):
 
         b, t = os.path.splitext(self.fileName)
         self.jsonFilename = b + ".assignment.json"
-        
+
         self.PAFjson = \
             {
                 "@context" : "http://purl.org/pearson/content/v1/ctx/metadata/envelope",
@@ -167,7 +167,7 @@ class PAFAssignment(object):
                         "subject" : [ self.subject ],
                         "intendedEndUserRole" : [ "Student" ],
                         "timeRequired" : "PT20S",
-						"owner": "Brix"
+                        "owner": "Brix"
                     },
                "body" :
                 {
@@ -217,7 +217,7 @@ class PAFAssignment(object):
         """Write the PAF JSON for this assignment and all of its activities"""
         with open(self.jsonFilename, "w") as ofile:
             print("writing ", self.jsonFilename)
-            json.dump(self.PAFjson, ofile, indent=2)
+            json.dump(self.PAFjson, ofile, indent=2, sort_keys=True)
 
         for activity in self.activities:
             activity.writeJSON()
@@ -287,9 +287,11 @@ def buildPAFAssignments(spreadsheetRows):
 
 # opens the csv file
 csvfn = sys.argv[1]
+headerRow = []
 spreadsheetRows = []
 with open(csvfn, 'rt') as f:
     reader = csv.reader(f)  # creates the reader object
+    headerRow = next(reader)
     for row in reader:   # iterates the rows of the file in order
         spreadsheetRows.append(MCQSpreadsheetInfoRow(row))
         #print(spreadsheetRows[len(spreadsheetRows)-1])
@@ -301,6 +303,7 @@ for assignment in assignments:
 
 with open(csvfn + ".updated", "wt") as f:
     writer = csv.writer(f)
+    writer.writerow(headerRow)
     for info in spreadsheetRows:
         writer.writerow(info.getRowTuple())
 
@@ -311,5 +314,3 @@ for assignment in assignments:
 
 with open("other_export2paf.log", "wt") as f:
     f.write("\n".join(problemlog) + "\n")
-
-
