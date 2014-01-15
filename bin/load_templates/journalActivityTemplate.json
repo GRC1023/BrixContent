@@ -1,0 +1,77 @@
+{
+  "@context" : "http://purl.org/pearson/content/v1/ctx/metadata/envelope",
+  "@type" : "Envelope",
+  "metadata" : {
+    "title" : "Journal Demo",
+    "guid" : "ACTIVITYGUID",
+    "description" : "",
+    "contentTypeTier1" : "Assessment",
+    "contentTypeTier2" : [ "AssessmentItem" ],
+    "subject" : [ "EnvironmentalScience" ],
+    "intendedEndUserRole" : [ "Student" ],
+    "format" : [ 
+      "application/vnd.pearson.sanvan.v1.activity"
+    ],
+    "timeRequired" : "PT20S",
+    "created" : "2013-11-26T12:50:00-00:00",
+    "educationalAlignment" : [ "http://purl.org/pearson/objectives/183725473384362" ]
+  },
+  "body" : {
+        "description": "A Sample Activity containing a single journal bric",
+        "containerConfig":
+            [
+                {
+                    "description": "container for the sample journal",
+                    "containerId": "target1",
+                    "brixConfig":
+                        [
+                            {
+                                "bricId": "J1",
+                                "bricType": "Journal",
+                                "config":
+                                    {
+                                        "id": "sampleJ1",
+                                        "title": "What are your <i>opinions</i> on this bad chapter?"
+                                    },
+                                "configFixup":
+                                    [
+                                        {
+                                            "type": "set-property",
+                                            "name": "journalId",
+                                            "value": { "type": "ref", "domain": "info", "refId": "sequenceNodeKey" }
+                                        }
+                                    ],
+                                "answerKey":
+                                    {
+                                        "assessmentType": "alwayscorrect"
+                                    }
+                            }
+                        ],
+                    "hookupActions":
+                        [
+                            {
+                                "description": "Hookup the submit manager to evaluate answers",
+                                "type": "method-call",
+                                "instance": { "type": "submit-manager" },
+                                "methodName": "handleRequestsFrom",
+                                "args":
+                                    [
+                                        { "type": "ref", "domain": "brix", "refId": "J1" }
+                                    ]
+                            },
+                            {
+                                "description": "Draw the journal",
+                                "type": "method-call",
+                                "instance": {"type": "ref", "domain": "brix", "refId": "J1"},
+                                "methodName": "draw",
+                                "args":
+                                    [
+                                        { "type": "d3select", "selector": "#target1" }
+                                    ]
+                            }
+                        ]
+                }
+            ]
+
+    }
+}
