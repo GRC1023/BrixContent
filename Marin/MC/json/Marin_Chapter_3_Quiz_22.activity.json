@@ -1,0 +1,141 @@
+{
+  "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope", 
+  "@type": "Envelope", 
+  "body": {
+    "containerConfig": [
+      {
+        "brixConfig": [
+          {
+            "answerKey": {
+              "answers": {
+                "answer1": {
+                  "response": "See LO3.4b Identify types of optical illusions, how they work, and how they impact daily living.", 
+                  "score": 1
+                }, 
+                "answer2": {
+                  "response": "See LO3.4b Identify types of optical illusions, how they work, and how they impact daily living.", 
+                  "score": 0
+                }, 
+                "answer3": {
+                  "response": "See LO3.4b Identify types of optical illusions, how they work, and how they impact daily living.", 
+                  "score": 0
+                }, 
+                "answer4": {
+                  "response": "See LO3.4b Identify types of optical illusions, how they work, and how they impact daily living.", 
+                  "score": 0
+                }
+              }, 
+              "assessmentType": "multiplechoice"
+            }, 
+            "bricId": "Q1", 
+            "bricType": "MultipleChoiceQuestion", 
+            "config": {
+              "choices": [
+                {
+                  "answerKey": "answer1", 
+                  "content": "can be violated, leading to perceptual errors."
+                }, 
+                {
+                  "answerKey": "answer2", 
+                  "content": "are not consistent."
+                }, 
+                {
+                  "answerKey": "answer3", 
+                  "content": "vary from culture to culture."
+                }, 
+                {
+                  "answerKey": "answer4", 
+                  "content": "vary between individuals."
+                }
+              ], 
+              "id": "sampleQ1", 
+              "order": "randomized", 
+              "presenterConfig": {
+                "numberFormat": "latin-upper"
+              }, 
+              "presenterType": "RadioGroup", 
+              "question": "Optical illusions can sometimes trick us because the \"rules\" used by the brain to help make sense of the world."
+            }, 
+            "configFixup": [
+              {
+                "name": "questionId", 
+                "type": "set-property", 
+                "value": {
+                  "domain": "info", 
+                  "refId": "sequenceNodeKey", 
+                  "type": "ref"
+                }
+              }, 
+              {
+                "name": "maxAttempts", 
+                "type": "set-property", 
+                "value": {
+                  "domain": "info", 
+                  "refId": "maxAttempts", 
+                  "type": "ref"
+                }
+              }
+            ]
+          }
+        ], 
+        "containerId": "target1", 
+        "description": "container for the sample multiple choice question", 
+        "hookupActions": [
+          {
+            "args": [
+              {
+                "domain": "brix", 
+                "refId": "Q1", 
+                "type": "ref"
+              }
+            ], 
+            "description": "Hookup the submit manager to evaluate answers", 
+            "instance": {
+              "type": "submit-manager"
+            }, 
+            "methodName": "handleRequestsFrom", 
+            "type": "method-call"
+          }, 
+          {
+            "args": [
+              {
+                "selector": "#target1", 
+                "type": "d3select"
+              }
+            ], 
+            "description": "Draw the question", 
+            "instance": {
+              "domain": "brix", 
+              "refId": "Q1", 
+              "type": "ref"
+            }, 
+            "methodName": "draw", 
+            "type": "method-call"
+          }
+        ]
+      }
+    ], 
+    "description": "A Sample Activity containing a single multiple choice bric"
+  }, 
+  "metadata": {
+    "contentTypeTier1": "Test and Assessment", 
+    "contentTypeTier2": [
+      "assessment item"
+    ], 
+    "created": "2014-01-15T16:45:00.933387", 
+    "description": "Marin_Chapter_3_Quiz_22.html", 
+    "format": [
+      "application/vnd.pearson.sanvan.v1.activity"
+    ], 
+    "guid": "9b0e2b94-0a52-4ddd-b9c9-a5863298899e", 
+    "intendedEndUserRole": [
+      "Student"
+    ], 
+    "owner": "Brix", 
+    "subject": [
+      "Psychology"
+    ], 
+    "timeRequired": "PT20S", 
+    "title": "Marin_Chapter_3_Quiz_22.html"
+  }
+}

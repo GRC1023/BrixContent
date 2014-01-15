@@ -1,0 +1,141 @@
+{
+  "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope", 
+  "@type": "Envelope", 
+  "body": {
+    "containerConfig": [
+      {
+        "brixConfig": [
+          {
+            "answerKey": {
+              "answers": {
+                "answer1": {
+                  "response": "See LO3.2d Describe the skin and body senses, including our sense of pain and the methods used to control pain.", 
+                  "score": 0
+                }, 
+                "answer2": {
+                  "response": "See LO3.2d Describe the skin and body senses, including our sense of pain and the methods used to control pain.", 
+                  "score": 1
+                }, 
+                "answer3": {
+                  "response": "See LO3.2d Describe the skin and body senses, including our sense of pain and the methods used to control pain.", 
+                  "score": 0
+                }, 
+                "answer4": {
+                  "response": "See LO3.2d Describe the skin and body senses, including our sense of pain and the methods used to control pain.", 
+                  "score": 0
+                }
+              }, 
+              "assessmentType": "multiplechoice"
+            }, 
+            "bricId": "Q1", 
+            "bricType": "MultipleChoiceQuestion", 
+            "config": {
+              "choices": [
+                {
+                  "answerKey": "answer1", 
+                  "content": "Kinescopic"
+                }, 
+                {
+                  "answerKey": "answer2", 
+                  "content": "Kinesthetic"
+                }, 
+                {
+                  "answerKey": "answer3", 
+                  "content": "Balance"
+                }, 
+                {
+                  "answerKey": "answer4", 
+                  "content": "Proprioception"
+                }
+              ], 
+              "id": "sampleQ1", 
+              "order": "randomized", 
+              "presenterConfig": {
+                "numberFormat": "latin-upper"
+              }, 
+              "presenterType": "RadioGroup", 
+              "question": "This sense tracks the position and orientation of your body parts?"
+            }, 
+            "configFixup": [
+              {
+                "name": "questionId", 
+                "type": "set-property", 
+                "value": {
+                  "domain": "info", 
+                  "refId": "sequenceNodeKey", 
+                  "type": "ref"
+                }
+              }, 
+              {
+                "name": "maxAttempts", 
+                "type": "set-property", 
+                "value": {
+                  "domain": "info", 
+                  "refId": "maxAttempts", 
+                  "type": "ref"
+                }
+              }
+            ]
+          }
+        ], 
+        "containerId": "target1", 
+        "description": "container for the sample multiple choice question", 
+        "hookupActions": [
+          {
+            "args": [
+              {
+                "domain": "brix", 
+                "refId": "Q1", 
+                "type": "ref"
+              }
+            ], 
+            "description": "Hookup the submit manager to evaluate answers", 
+            "instance": {
+              "type": "submit-manager"
+            }, 
+            "methodName": "handleRequestsFrom", 
+            "type": "method-call"
+          }, 
+          {
+            "args": [
+              {
+                "selector": "#target1", 
+                "type": "d3select"
+              }
+            ], 
+            "description": "Draw the question", 
+            "instance": {
+              "domain": "brix", 
+              "refId": "Q1", 
+              "type": "ref"
+            }, 
+            "methodName": "draw", 
+            "type": "method-call"
+          }
+        ]
+      }
+    ], 
+    "description": "A Sample Activity containing a single multiple choice bric"
+  }, 
+  "metadata": {
+    "contentTypeTier1": "Test and Assessment", 
+    "contentTypeTier2": [
+      "assessment item"
+    ], 
+    "created": "2014-01-15T16:45:00.931054", 
+    "description": "Marin_Module_3-2_Quiz_5.html", 
+    "format": [
+      "application/vnd.pearson.sanvan.v1.activity"
+    ], 
+    "guid": "4fbe745e-79f9-45b1-b61c-6918deac7286", 
+    "intendedEndUserRole": [
+      "Student"
+    ], 
+    "owner": "Brix", 
+    "subject": [
+      "Psychology"
+    ], 
+    "timeRequired": "PT20S", 
+    "title": "Marin_Module_3-2_Quiz_5.html"
+  }
+}

@@ -1,0 +1,141 @@
+{
+  "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope", 
+  "@type": "Envelope", 
+  "body": {
+    "containerConfig": [
+      {
+        "brixConfig": [
+          {
+            "answerKey": {
+              "answers": {
+                "answer1": {
+                  "response": "See LO3.4c Describe how culture influences perception.", 
+                  "score": 0
+                }, 
+                "answer2": {
+                  "response": "See LO3.4c Describe how culture influences perception .", 
+                  "score": 0
+                }, 
+                "answer3": {
+                  "response": "See LO3.4c Describe how culture influences perception.", 
+                  "score": 0
+                }, 
+                "answer4": {
+                  "response": "See LO3.4c Describe how culture influences perception.", 
+                  "score": 1
+                }
+              }, 
+              "assessmentType": "multiplechoice"
+            }, 
+            "bricId": "Q1", 
+            "bricType": "MultipleChoiceQuestion", 
+            "config": {
+              "choices": [
+                {
+                  "answerKey": "answer1", 
+                  "content": "theoretical discord"
+                }, 
+                {
+                  "answerKey": "answer2", 
+                  "content": "room for interpretation"
+                }, 
+                {
+                  "answerKey": "answer3", 
+                  "content": "similarity"
+                }, 
+                {
+                  "answerKey": "answer4", 
+                  "content": "variation"
+                }
+              ], 
+              "id": "sampleQ1", 
+              "order": "randomized", 
+              "presenterConfig": {
+                "numberFormat": "latin-upper"
+              }, 
+              "presenterType": "RadioGroup", 
+              "question": "Studies of optical illusions from the mid-20th century suggest there is a great deal of ______in how susceptible people are to illusions?"
+            }, 
+            "configFixup": [
+              {
+                "name": "questionId", 
+                "type": "set-property", 
+                "value": {
+                  "domain": "info", 
+                  "refId": "sequenceNodeKey", 
+                  "type": "ref"
+                }
+              }, 
+              {
+                "name": "maxAttempts", 
+                "type": "set-property", 
+                "value": {
+                  "domain": "info", 
+                  "refId": "maxAttempts", 
+                  "type": "ref"
+                }
+              }
+            ]
+          }
+        ], 
+        "containerId": "target1", 
+        "description": "container for the sample multiple choice question", 
+        "hookupActions": [
+          {
+            "args": [
+              {
+                "domain": "brix", 
+                "refId": "Q1", 
+                "type": "ref"
+              }
+            ], 
+            "description": "Hookup the submit manager to evaluate answers", 
+            "instance": {
+              "type": "submit-manager"
+            }, 
+            "methodName": "handleRequestsFrom", 
+            "type": "method-call"
+          }, 
+          {
+            "args": [
+              {
+                "selector": "#target1", 
+                "type": "d3select"
+              }
+            ], 
+            "description": "Draw the question", 
+            "instance": {
+              "domain": "brix", 
+              "refId": "Q1", 
+              "type": "ref"
+            }, 
+            "methodName": "draw", 
+            "type": "method-call"
+          }
+        ]
+      }
+    ], 
+    "description": "A Sample Activity containing a single multiple choice bric"
+  }, 
+  "metadata": {
+    "contentTypeTier1": "Test and Assessment", 
+    "contentTypeTier2": [
+      "assessment item"
+    ], 
+    "created": "2014-01-15T16:45:00.931811", 
+    "description": "Marin_Module_3-4_Quiz_3.html", 
+    "format": [
+      "application/vnd.pearson.sanvan.v1.activity"
+    ], 
+    "guid": "fe7d01ed-824e-4937-9519-6b58c68a4ae0", 
+    "intendedEndUserRole": [
+      "Student"
+    ], 
+    "owner": "Brix", 
+    "subject": [
+      "Psychology"
+    ], 
+    "timeRequired": "PT20S", 
+    "title": "Marin_Module_3-4_Quiz_3.html"
+  }
+}

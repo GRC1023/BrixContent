@@ -1,0 +1,141 @@
+{
+  "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope", 
+  "@type": "Envelope", 
+  "body": {
+    "containerConfig": [
+      {
+        "brixConfig": [
+          {
+            "answerKey": {
+              "answers": {
+                "answer1": {
+                  "response": "See LO3.3b Describe the Gestalt principles for organizing perception.", 
+                  "score": 1
+                }, 
+                "answer2": {
+                  "response": "See LO3.3b Describe the Gestalt principles for organizing perception.", 
+                  "score": 0
+                }, 
+                "answer3": {
+                  "response": "See LO3.3b Describe the Gestalt principles for organizing perception.", 
+                  "score": 0
+                }, 
+                "answer4": {
+                  "response": "See LO3.3b Describe the Gestalt principles for organizing perception.", 
+                  "score": 0
+                }
+              }, 
+              "assessmentType": "multiplechoice"
+            }, 
+            "bricId": "Q1", 
+            "bricType": "MultipleChoiceQuestion", 
+            "config": {
+              "choices": [
+                {
+                  "answerKey": "answer1", 
+                  "content": "Will close in the gaps of an object, enabling someone to see it as a whole."
+                }, 
+                {
+                  "answerKey": "answer2", 
+                  "content": "Prefers to see one continuous, flowing movement, rather than broken-up parts."
+                }, 
+                {
+                  "answerKey": "answer3", 
+                  "content": "Groups together objects that are close to each other in space or time."
+                }, 
+                {
+                  "answerKey": "answer4", 
+                  "content": "Groups together objects that are like each other."
+                }
+              ], 
+              "id": "sampleQ1", 
+              "order": "randomized", 
+              "presenterConfig": {
+                "numberFormat": "latin-upper"
+              }, 
+              "presenterType": "RadioGroup", 
+              "question": "The Gestalt principle of closure means that the brain?"
+            }, 
+            "configFixup": [
+              {
+                "name": "questionId", 
+                "type": "set-property", 
+                "value": {
+                  "domain": "info", 
+                  "refId": "sequenceNodeKey", 
+                  "type": "ref"
+                }
+              }, 
+              {
+                "name": "maxAttempts", 
+                "type": "set-property", 
+                "value": {
+                  "domain": "info", 
+                  "refId": "maxAttempts", 
+                  "type": "ref"
+                }
+              }
+            ]
+          }
+        ], 
+        "containerId": "target1", 
+        "description": "container for the sample multiple choice question", 
+        "hookupActions": [
+          {
+            "args": [
+              {
+                "domain": "brix", 
+                "refId": "Q1", 
+                "type": "ref"
+              }
+            ], 
+            "description": "Hookup the submit manager to evaluate answers", 
+            "instance": {
+              "type": "submit-manager"
+            }, 
+            "methodName": "handleRequestsFrom", 
+            "type": "method-call"
+          }, 
+          {
+            "args": [
+              {
+                "selector": "#target1", 
+                "type": "d3select"
+              }
+            ], 
+            "description": "Draw the question", 
+            "instance": {
+              "domain": "brix", 
+              "refId": "Q1", 
+              "type": "ref"
+            }, 
+            "methodName": "draw", 
+            "type": "method-call"
+          }
+        ]
+      }
+    ], 
+    "description": "A Sample Activity containing a single multiple choice bric"
+  }, 
+  "metadata": {
+    "contentTypeTier1": "Test and Assessment", 
+    "contentTypeTier2": [
+      "assessment item"
+    ], 
+    "created": "2014-01-15T16:45:00.933023", 
+    "description": "Marin_Chapter_3_Quiz_16.html", 
+    "format": [
+      "application/vnd.pearson.sanvan.v1.activity"
+    ], 
+    "guid": "6053b520-2b3f-443f-b44c-83ebf09694a1", 
+    "intendedEndUserRole": [
+      "Student"
+    ], 
+    "owner": "Brix", 
+    "subject": [
+      "Psychology"
+    ], 
+    "timeRequired": "PT20S", 
+    "title": "Marin_Chapter_3_Quiz_16.html"
+  }
+}

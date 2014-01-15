@@ -1,0 +1,141 @@
+{
+  "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope", 
+  "@type": "Envelope", 
+  "body": {
+    "containerConfig": [
+      {
+        "brixConfig": [
+          {
+            "answerKey": {
+              "answers": {
+                "answer1": {
+                  "response": "See LO3.3c Discuss depth perception and the monocular and binocular cues for determining depth.", 
+                  "score": 0
+                }, 
+                "answer2": {
+                  "response": "See LO3.3c Discuss depth perception and the monocular and binocular cues for determining depth.", 
+                  "score": 0
+                }, 
+                "answer3": {
+                  "response": "See LO3.3c Discuss depth perception and the monocular and binocular cues for determining depth.", 
+                  "score": 0
+                }, 
+                "answer4": {
+                  "response": "See LO3.3c Discuss depth perception and the monocular and binocular cues for determining depth.", 
+                  "score": 1
+                }
+              }, 
+              "assessmentType": "multiplechoice"
+            }, 
+            "bricId": "Q1", 
+            "bricType": "MultipleChoiceQuestion", 
+            "config": {
+              "choices": [
+                {
+                  "answerKey": "answer1", 
+                  "content": "overlap"
+                }, 
+                {
+                  "answerKey": "answer2", 
+                  "content": "linear perspective"
+                }, 
+                {
+                  "answerKey": "answer3", 
+                  "content": "aerial perspective"
+                }, 
+                {
+                  "answerKey": "answer4", 
+                  "content": "relative size"
+                }
+              ], 
+              "id": "sampleQ1", 
+              "order": "randomized", 
+              "presenterConfig": {
+                "numberFormat": "latin-upper"
+              }, 
+              "presenterType": "RadioGroup", 
+              "question": "When you look at a group of trees, you expect the closer trees to look larger and the more distant trees to look smaller. This concept is called?"
+            }, 
+            "configFixup": [
+              {
+                "name": "questionId", 
+                "type": "set-property", 
+                "value": {
+                  "domain": "info", 
+                  "refId": "sequenceNodeKey", 
+                  "type": "ref"
+                }
+              }, 
+              {
+                "name": "maxAttempts", 
+                "type": "set-property", 
+                "value": {
+                  "domain": "info", 
+                  "refId": "maxAttempts", 
+                  "type": "ref"
+                }
+              }
+            ]
+          }
+        ], 
+        "containerId": "target1", 
+        "description": "container for the sample multiple choice question", 
+        "hookupActions": [
+          {
+            "args": [
+              {
+                "domain": "brix", 
+                "refId": "Q1", 
+                "type": "ref"
+              }
+            ], 
+            "description": "Hookup the submit manager to evaluate answers", 
+            "instance": {
+              "type": "submit-manager"
+            }, 
+            "methodName": "handleRequestsFrom", 
+            "type": "method-call"
+          }, 
+          {
+            "args": [
+              {
+                "selector": "#target1", 
+                "type": "d3select"
+              }
+            ], 
+            "description": "Draw the question", 
+            "instance": {
+              "domain": "brix", 
+              "refId": "Q1", 
+              "type": "ref"
+            }, 
+            "methodName": "draw", 
+            "type": "method-call"
+          }
+        ]
+      }
+    ], 
+    "description": "A Sample Activity containing a single multiple choice bric"
+  }, 
+  "metadata": {
+    "contentTypeTier1": "Test and Assessment", 
+    "contentTypeTier2": [
+      "assessment item"
+    ], 
+    "created": "2014-01-15T16:45:00.933192", 
+    "description": "Marin_Chapter_3_Quiz_19.html", 
+    "format": [
+      "application/vnd.pearson.sanvan.v1.activity"
+    ], 
+    "guid": "837dc7bd-90fb-493c-971a-b1caf7415791", 
+    "intendedEndUserRole": [
+      "Student"
+    ], 
+    "owner": "Brix", 
+    "subject": [
+      "Psychology"
+    ], 
+    "timeRequired": "PT20S", 
+    "title": "Marin_Chapter_3_Quiz_19.html"
+  }
+}

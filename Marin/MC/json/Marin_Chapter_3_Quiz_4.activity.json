@@ -1,0 +1,141 @@
+{
+  "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope", 
+  "@type": "Envelope", 
+  "body": {
+    "containerConfig": [
+      {
+        "brixConfig": [
+          {
+            "answerKey": {
+              "answers": {
+                "answer1": {
+                  "response": "See LO3.1c Describe the relationships between our sensory systems, including top-down and bottom-up processing, sensory compensation, and synesthesia.", 
+                  "score": 0
+                }, 
+                "answer2": {
+                  "response": "See LO3.1c Describe the relationships between our sensory systems, including top-down and bottom-up processing, sensory compensation, and synesthesia.", 
+                  "score": 0
+                }, 
+                "answer3": {
+                  "response": "See LO3.1c Describe the relationships between our sensory systems, including top-down and bottom-up processing, sensory compensation, and synesthesia.", 
+                  "score": 1
+                }, 
+                "answer4": {
+                  "response": "See LO3.1c Describe the relationships between our sensory systems, including top-down and bottom-up processing, sensory compensation, and synesthesia. ", 
+                  "score": 0
+                }
+              }, 
+              "assessmentType": "multiplechoice"
+            }, 
+            "bricId": "Q1", 
+            "bricType": "MultipleChoiceQuestion", 
+            "config": {
+              "choices": [
+                {
+                  "answerKey": "answer1", 
+                  "content": "All of the sensory areas of the brain receive information from all the senses."
+                }, 
+                {
+                  "answerKey": "answer2", 
+                  "content": "All of the sensory areas in the brain are unique to a particular sense."
+                }, 
+                {
+                  "answerKey": "answer3", 
+                  "content": "Some of the sensory areas of the brain are unique to a particular sense."
+                }, 
+                {
+                  "answerKey": "answer4", 
+                  "content": "General sensory areas of the brain are unique to a particular sense."
+                }
+              ], 
+              "id": "sampleQ1", 
+              "order": "randomized", 
+              "presenterConfig": {
+                "numberFormat": "latin-upper"
+              }, 
+              "presenterType": "RadioGroup", 
+              "question": "Which of the following statements is true about how you experience the senses??"
+            }, 
+            "configFixup": [
+              {
+                "name": "questionId", 
+                "type": "set-property", 
+                "value": {
+                  "domain": "info", 
+                  "refId": "sequenceNodeKey", 
+                  "type": "ref"
+                }
+              }, 
+              {
+                "name": "maxAttempts", 
+                "type": "set-property", 
+                "value": {
+                  "domain": "info", 
+                  "refId": "maxAttempts", 
+                  "type": "ref"
+                }
+              }
+            ]
+          }
+        ], 
+        "containerId": "target1", 
+        "description": "container for the sample multiple choice question", 
+        "hookupActions": [
+          {
+            "args": [
+              {
+                "domain": "brix", 
+                "refId": "Q1", 
+                "type": "ref"
+              }
+            ], 
+            "description": "Hookup the submit manager to evaluate answers", 
+            "instance": {
+              "type": "submit-manager"
+            }, 
+            "methodName": "handleRequestsFrom", 
+            "type": "method-call"
+          }, 
+          {
+            "args": [
+              {
+                "selector": "#target1", 
+                "type": "d3select"
+              }
+            ], 
+            "description": "Draw the question", 
+            "instance": {
+              "domain": "brix", 
+              "refId": "Q1", 
+              "type": "ref"
+            }, 
+            "methodName": "draw", 
+            "type": "method-call"
+          }
+        ]
+      }
+    ], 
+    "description": "A Sample Activity containing a single multiple choice bric"
+  }, 
+  "metadata": {
+    "contentTypeTier1": "Test and Assessment", 
+    "contentTypeTier2": [
+      "assessment item"
+    ], 
+    "created": "2014-01-15T16:45:00.932224", 
+    "description": "Marin_Chapter_3_Quiz_4.html", 
+    "format": [
+      "application/vnd.pearson.sanvan.v1.activity"
+    ], 
+    "guid": "571d2ba8-9f09-440d-bac8-a413267f8194", 
+    "intendedEndUserRole": [
+      "Student"
+    ], 
+    "owner": "Brix", 
+    "subject": [
+      "Psychology"
+    ], 
+    "timeRequired": "PT20S", 
+    "title": "Marin_Chapter_3_Quiz_4.html"
+  }
+}
