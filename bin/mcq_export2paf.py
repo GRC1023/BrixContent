@@ -328,5 +328,5 @@ with open(csvfn + ".updated", "wt") as f:
 for assignment in assignments:
     assignment.writeJSON()
 
-with open("mcq_export2paf.log", "wt") as f:
+with open("mcq_export2paf_error.log", "wt") as f:
     f.write("\n".join(problemlog) + "\n")
