@@ -107,6 +107,7 @@ class PAFActivity(object):
         activityStrs = []
         activityStr = ""
         started = False
+        hasMaxAttemptsFixup = False
         try:
             with open(self.fileName, "rt", encoding="utf-8") as f:
                 for line in f:
@@ -126,8 +127,13 @@ class PAFActivity(object):
             for key in ['sequenceNodeKey','maxAttempts','imgBaseUrl']:
                 if key in self.PAFjson['body']: del self.PAFjson['body'][key]
 
-            # add the missing mc config maxAttempts fixup
-            self.PAFjson['body']['containerConfig'][0]['brixConfig'][0]['configFixup'].append(PAFActivity.maxAttemptsFixup)
+            # add the missing mc config maxAttempts fixup, if not already there somewhere in configFixup
+            for fixup in self.PAFjson['body']['containerConfig'][0]['brixConfig'][0]['configFixup']:
+                if fixup['name'] == 'maxAttempts':
+                    hasMaxAttemptsFixup = True
+
+            if not hasMaxAttemptsFixup:
+                self.PAFjson['body']['containerConfig'][0]['brixConfig'][0]['configFixup'].append(PAFActivity.maxAttemptsFixup)
 
         except UnicodeError as e:
             problemlog.append("Problem w/ activity file: " + self.fileName + " UnicodeDecodeException: " + str(e) + "\n" + str(e.object[e.start -10:e.end + 10]))
