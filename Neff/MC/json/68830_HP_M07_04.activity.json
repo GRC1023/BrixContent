@@ -1,13 +1,39 @@
 {
+  "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope", 
+  "@type": "Envelope", 
   "body": {
-    "description": "A Sample Activity containing a single multiple choice bric", 
     "containerConfig": [
       {
         "brixConfig": [
           {
+            "answerKey": {
+              "answers": {
+                "answer1": {
+                  "response": "Check your assumptions about the U.S. and try again.", 
+                  "score": 0
+                }, 
+                "answer2": {
+                  "response": "Check your assumptions about the U.S. and try again.", 
+                  "score": 0
+                }, 
+                "answer3": {
+                  "response": "The TFR of the U.S. is 2.1 so use a TFR of 2.0 and try again.", 
+                  "score": 0
+                }, 
+                "answer4": {
+                  "response": "Correct", 
+                  "score": 1
+                }, 
+                "answer5": {
+                  "response": "Check your assumptions about the U.S. and try again.", 
+                  "score": 0
+                }
+              }, 
+              "assessmentType": "multiplechoice"
+            }, 
+            "bricId": "Q1", 
+            "bricType": "MultipleChoiceQuestion", 
             "config": {
-              "id": "sampleQ1", 
-              "presenterType": "RadioGroup", 
               "choices": [
                 {
                   "answerKey": "answer1", 
@@ -30,120 +56,94 @@
                   "content": "The population would decline dramatically."
                 }
               ], 
+              "id": "sampleQ1", 
               "order": "randomized", 
-              "question": "Enter conditions that you would expect for the United States. You can find these conditions in the chapter. With these assumptions, how would you expect the U.S. population to change (based on the results of the simulation)?", 
               "presenterConfig": {
                 "numberFormat": ""
-              }
+              }, 
+              "presenterType": "RadioGroup", 
+              "question": "With these assumptions, how would you expect the U.S. population to change (based on the results of the simulation)?"
             }, 
-            "answerKey": {
-              "assessmentType": "multiplechoice", 
-              "answers": {
-                "answer3": {
-                  "score": 0, 
-                  "response": "The TFR of the U.S. is 2.1 so use a TFR of 2.0 and try again."
-                }, 
-                "answer2": {
-                  "score": 0, 
-                  "response": "Check your assumptions about the U.S. and try again."
-                }, 
-                "answer1": {
-                  "score": 0, 
-                  "response": "Check your assumptions about the U.S. and try again."
-                }, 
-                "answer5": {
-                  "score": 0, 
-                  "response": "Check your assumptions about the U.S. and try again."
-                }, 
-                "answer4": {
-                  "score": 1, 
-                  "response": "Correct"
-                }
-              }
-            }, 
-            "bricType": "MultipleChoiceQuestion", 
-            "bricId": "Q1", 
             "configFixup": [
               {
+                "name": "questionId", 
                 "type": "set-property", 
                 "value": {
-                  "type": "ref", 
+                  "domain": "info", 
                   "refId": "sequenceNodeKey", 
-                  "domain": "info"
-                }, 
-                "name": "questionId"
+                  "type": "ref"
+                }
               }, 
               {
+                "name": "maxAttempts", 
                 "type": "set-property", 
                 "value": {
-                  "type": "ref", 
+                  "domain": "info", 
                   "refId": "maxAttempts", 
-                  "domain": "info"
-                }, 
-                "name": "maxAttempts"
+                  "type": "ref"
+                }
               }
             ]
           }
         ], 
+        "containerId": "target1", 
+        "description": "container for the sample multiple choice question", 
         "hookupActions": [
           {
-            "type": "method-call", 
-            "methodName": "handleRequestsFrom", 
-            "description": "Hookup the submit manager to evaluate answers", 
             "args": [
               {
-                "type": "ref", 
+                "domain": "brix", 
                 "refId": "Q1", 
-                "domain": "brix"
+                "type": "ref"
               }
             ], 
+            "description": "Hookup the submit manager to evaluate answers", 
             "instance": {
               "type": "submit-manager"
-            }
+            }, 
+            "methodName": "handleRequestsFrom", 
+            "type": "method-call"
           }, 
           {
-            "type": "method-call", 
-            "methodName": "draw", 
-            "description": "Draw the question", 
             "args": [
               {
-                "type": "d3select", 
-                "selector": "#target1"
+                "selector": "#target1", 
+                "type": "d3select"
               }
             ], 
+            "description": "Draw the question", 
             "instance": {
-              "type": "ref", 
+              "domain": "brix", 
               "refId": "Q1", 
-              "domain": "brix"
-            }
+              "type": "ref"
+            }, 
+            "methodName": "draw", 
+            "type": "method-call"
           }
-        ], 
-        "description": "container for the sample multiple choice question", 
-        "containerId": "target1"
+        ]
       }
-    ]
+    ], 
+    "description": "A Sample Activity containing a single multiple choice bric"
   }, 
-  "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope", 
-  "@type": "Envelope", 
   "metadata": {
+    "contentTypeTier1": "Test and Assessment", 
+    "contentTypeTier2": [
+      "assessment item"
+    ], 
+    "created": "2014-01-17T12:06:51.635738", 
+    "description": "68830_HP_M07_04.html", 
     "format": [
       "application/vnd.pearson.sanvan.v1.activity"
-    ], 
-    "subject": [
-      "EnvironmentalScience"
     ], 
     "guid": "708de386-86ab-4d45-a8be-84a83e6ba56c", 
     "intendedEndUserRole": [
       "Student"
     ], 
-    "title": "68830_HP_M07_04.html", 
-    "contentTypeTier2": [
-      "assessment item"
-    ], 
-    "contentTypeTier1": "Test and Assessment", 
-    "timeRequired": "PT20S", 
     "owner": "Brix", 
-    "description": "68830_HP_M07_04.html", 
-    "created": "2014-01-09T13:40:38.448463"
+    "subject": [
+      "EnvironmentalScience"
+    ], 
+    "timeRequired": "PT20S", 
+    "title": "68830_HP_M07_04.html"
   }
 }

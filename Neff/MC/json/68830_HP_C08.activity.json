@@ -1,149 +1,149 @@
 {
+  "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope", 
+  "@type": "Envelope", 
   "body": {
     "containerConfig": [
       {
         "brixConfig": [
           {
+            "answerKey": {
+              "answers": {
+                "answer1": {
+                  "response": "While this may be true, does this provide a reason for why birth rate changes lag death rate changes?", 
+                  "score": 0
+                }, 
+                "answer2": {
+                  "response": "While this may be true, does this provide a reason for why death rates change more quickly than birth rates?", 
+                  "score": 0
+                }, 
+                "answer3": {
+                  "response": "Do cultural factors such as religion typically determine when someone dies?", 
+                  "score": 0
+                }, 
+                "answer4": {
+                  "response": "Correct.", 
+                  "score": 1
+                }, 
+                "answer5": {
+                  "response": "Would this actually change birth rates or just affect other statistics such as childhood mortality?", 
+                  "score": 0
+                }
+              }, 
+              "assessmentType": "multiplechoice"
+            }, 
+            "bricId": "Q1", 
+            "bricType": "MultipleChoiceQuestion", 
             "config": {
-              "presenterType": "RadioGroup", 
-              "question": "In the demographic transition model, why do birth rates changes lag changes in death rates?", 
+              "choices": [
+                {
+                  "answerKey": "answer1", 
+                  "content": "Because death rates are largely controlled by advances in the treatment of heart disease and strokes."
+                }, 
+                {
+                  "answerKey": "answer2", 
+                  "content": "Because birth rates are largely controlled by technical factors such as access to birth control or family planning."
+                }, 
+                {
+                  "answerKey": "answer3", 
+                  "content": "Because technology and investment play a large role in birth rates but social factors and cultural norms such as religion play a role in death rates."
+                }, 
+                {
+                  "answerKey": "answer4", 
+                  "content": "Because technology and investment play a large role in death rates but social factors and cultural norms such as religion play a large role in birth rates."
+                }, 
+                {
+                  "answerKey": "answer5", 
+                  "content": "Because most investments in health are usually first targeted to the elderly and then to children."
+                }
+              ], 
+              "id": "sampleQ1", 
+              "order": "randomized", 
               "presenterConfig": {
                 "numberFormat": ""
               }, 
-              "choices": [
-                {
-                  "content": "Because death rates are largely controlled by advances in the treatment of heart disease and strokes.", 
-                  "answerKey": "answer1"
-                }, 
-                {
-                  "content": "Because birth rates are largely controlled by technical factors such as access to birth control or family planning.", 
-                  "answerKey": "answer2"
-                }, 
-                {
-                  "content": "Because technology and investment play a large role in birth rates but social factors and cultural norms such as religion play a role in death rates.", 
-                  "answerKey": "answer3"
-                }, 
-                {
-                  "content": "Because technology and investment play a large role in death rates but social factors and cultural norms such as religion play a large role in birth rates.", 
-                  "answerKey": "answer4"
-                }, 
-                {
-                  "content": "Because most investments in health are usually first targeted to the elderly and then to children.", 
-                  "answerKey": "answer5"
-                }
-              ], 
-              "order": "randomized", 
-              "id": "sampleQ1"
+              "presenterType": "RadioGroup", 
+              "question": "In the demographic transition model, why do birth rate changes lag changes in death rates?"
             }, 
-            "answerKey": {
-              "assessmentType": "multiplechoice", 
-              "answers": {
-                "answer5": {
-                  "score": 0, 
-                  "response": "Would this actually change birth rates or just affect other statistics such as childhood mortality?"
-                }, 
-                "answer4": {
-                  "score": 1, 
-                  "response": "Correct."
-                }, 
-                "answer1": {
-                  "score": 0, 
-                  "response": "While this may be true, does this provide a reason for why birth rate changes lag death rate changes?"
-                }, 
-                "answer3": {
-                  "score": 0, 
-                  "response": "Do cultural factors such as religion typically determine when someone dies?"
-                }, 
-                "answer2": {
-                  "score": 0, 
-                  "response": "While this may be true, does this provide a reason for why death rates change more quickly than birth rates?"
-                }
-              }
-            }, 
-            "bricType": "MultipleChoiceQuestion", 
-            "bricId": "Q1", 
             "configFixup": [
               {
-                "type": "set-property", 
                 "name": "questionId", 
+                "type": "set-property", 
                 "value": {
                   "domain": "info", 
-                  "type": "ref", 
-                  "refId": "sequenceNodeKey"
+                  "refId": "sequenceNodeKey", 
+                  "type": "ref"
                 }
               }, 
               {
-                "type": "set-property", 
                 "name": "maxAttempts", 
+                "type": "set-property", 
                 "value": {
                   "domain": "info", 
-                  "type": "ref", 
-                  "refId": "maxAttempts"
+                  "refId": "maxAttempts", 
+                  "type": "ref"
                 }
               }
             ]
           }
         ], 
+        "containerId": "target1", 
         "description": "container for the sample multiple choice question", 
         "hookupActions": [
           {
-            "instance": {
-              "type": "submit-manager"
-            }, 
             "args": [
               {
                 "domain": "brix", 
-                "type": "ref", 
-                "refId": "Q1"
+                "refId": "Q1", 
+                "type": "ref"
               }
             ], 
-            "type": "method-call", 
             "description": "Hookup the submit manager to evaluate answers", 
-            "methodName": "handleRequestsFrom"
+            "instance": {
+              "type": "submit-manager"
+            }, 
+            "methodName": "handleRequestsFrom", 
+            "type": "method-call"
           }, 
           {
-            "instance": {
-              "domain": "brix", 
-              "type": "ref", 
-              "refId": "Q1"
-            }, 
             "args": [
               {
-                "type": "d3select", 
-                "selector": "#target1"
+                "selector": "#target1", 
+                "type": "d3select"
               }
             ], 
-            "type": "method-call", 
             "description": "Draw the question", 
-            "methodName": "draw"
+            "instance": {
+              "domain": "brix", 
+              "refId": "Q1", 
+              "type": "ref"
+            }, 
+            "methodName": "draw", 
+            "type": "method-call"
           }
-        ], 
-        "containerId": "target1"
+        ]
       }
     ], 
     "description": "A Sample Activity containing a single multiple choice bric"
   }, 
-  "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope", 
-  "@type": "Envelope", 
   "metadata": {
-    "intendedEndUserRole": [
-      "Student"
+    "contentTypeTier1": "Test and Assessment", 
+    "contentTypeTier2": [
+      "assessment item"
     ], 
+    "created": "2014-01-17T12:06:51.636173", 
     "description": "68830_HP_C08.html", 
     "format": [
       "application/vnd.pearson.sanvan.v1.activity"
     ], 
-    "owner": "Brix", 
     "guid": "7da1e595-b017-42e7-a803-c13537050d14", 
+    "intendedEndUserRole": [
+      "Student"
+    ], 
+    "owner": "Brix", 
     "subject": [
       "EnvironmentalScience"
     ], 
     "timeRequired": "PT20S", 
-    "created": "2013-12-18T14:00:05.286055", 
-    "title": "68830_HP_C08.html", 
-    "contentTypeTier1": "Test and Assessment", 
-    "contentTypeTier2": [
-      "assessment item"
-    ]
+    "title": "68830_HP_C08.html"
   }
 }

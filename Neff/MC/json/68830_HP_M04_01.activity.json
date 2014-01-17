@@ -1,141 +1,141 @@
 {
+  "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope", 
+  "@type": "Envelope", 
   "body": {
     "containerConfig": [
       {
         "brixConfig": [
           {
+            "answerKey": {
+              "answers": {
+                "answer1": {
+                  "response": "", 
+                  "score": 1
+                }, 
+                "answer2": {
+                  "response": "", 
+                  "score": 0
+                }, 
+                "answer3": {
+                  "response": "", 
+                  "score": 0
+                }, 
+                "answer4": {
+                  "response": "", 
+                  "score": 0
+                }
+              }, 
+              "assessmentType": "multiplechoice"
+            }, 
+            "bricId": "Q1", 
+            "bricType": "MultipleChoiceQuestion", 
             "config": {
-              "presenterType": "RadioGroup", 
-              "question": "What are the major causes of death in the world's poorest countries?", 
+              "choices": [
+                {
+                  "answerKey": "answer1", 
+                  "content": "Most people die of preventable and treatable diseases such as infectious and parasitic diseases."
+                }, 
+                {
+                  "answerKey": "answer2", 
+                  "content": "Most people die of diseases related to genetics and lifestyle such as cancer and heart disease."
+                }, 
+                {
+                  "answerKey": "answer3", 
+                  "content": "Most people die of HIV/AIDS."
+                }, 
+                {
+                  "answerKey": "answer4", 
+                  "content": "Most people die from traffic accidents."
+                }
+              ], 
+              "id": "sampleQ1", 
+              "order": "randomized", 
               "presenterConfig": {
                 "numberFormat": ""
               }, 
-              "choices": [
-                {
-                  "content": "Most people die of diseases related to preventable and treatable diseases such as respiratory tract infections.", 
-                  "answerKey": "answer1"
-                }, 
-                {
-                  "content": "Most people die of diseases related to genetics and lifestyle such as cancer and heart disease.", 
-                  "answerKey": "answer2"
-                }, 
-                {
-                  "content": "Most people die of HIV/AIDS.", 
-                  "answerKey": "answer3"
-                }, 
-                {
-                  "content": "Most people die from traffic accidents.", 
-                  "answerKey": "answer4"
-                }
-              ], 
-              "order": "randomized", 
-              "id": "sampleQ1"
+              "presenterType": "RadioGroup", 
+              "question": "What are the major causes of death in the world's poorest countries?"
             }, 
-            "answerKey": {
-              "assessmentType": "multiplechoice", 
-              "answers": {
-                "answer4": {
-                  "score": 0, 
-                  "response": ""
-                }, 
-                "answer1": {
-                  "score": 1, 
-                  "response": ""
-                }, 
-                "answer3": {
-                  "score": 0, 
-                  "response": ""
-                }, 
-                "answer2": {
-                  "score": 0, 
-                  "response": ""
-                }
-              }
-            }, 
-            "bricType": "MultipleChoiceQuestion", 
-            "bricId": "Q1", 
             "configFixup": [
               {
-                "type": "set-property", 
                 "name": "questionId", 
+                "type": "set-property", 
                 "value": {
                   "domain": "info", 
-                  "type": "ref", 
-                  "refId": "sequenceNodeKey"
+                  "refId": "sequenceNodeKey", 
+                  "type": "ref"
                 }
               }, 
               {
-                "type": "set-property", 
                 "name": "maxAttempts", 
+                "type": "set-property", 
                 "value": {
                   "domain": "info", 
-                  "type": "ref", 
-                  "refId": "maxAttempts"
+                  "refId": "maxAttempts", 
+                  "type": "ref"
                 }
               }
             ]
           }
         ], 
+        "containerId": "target1", 
         "description": "container for the sample multiple choice question", 
         "hookupActions": [
           {
-            "instance": {
-              "type": "submit-manager"
-            }, 
             "args": [
               {
                 "domain": "brix", 
-                "type": "ref", 
-                "refId": "Q1"
+                "refId": "Q1", 
+                "type": "ref"
               }
             ], 
-            "type": "method-call", 
             "description": "Hookup the submit manager to evaluate answers", 
-            "methodName": "handleRequestsFrom"
+            "instance": {
+              "type": "submit-manager"
+            }, 
+            "methodName": "handleRequestsFrom", 
+            "type": "method-call"
           }, 
           {
-            "instance": {
-              "domain": "brix", 
-              "type": "ref", 
-              "refId": "Q1"
-            }, 
             "args": [
               {
-                "type": "d3select", 
-                "selector": "#target1"
+                "selector": "#target1", 
+                "type": "d3select"
               }
             ], 
-            "type": "method-call", 
             "description": "Draw the question", 
-            "methodName": "draw"
+            "instance": {
+              "domain": "brix", 
+              "refId": "Q1", 
+              "type": "ref"
+            }, 
+            "methodName": "draw", 
+            "type": "method-call"
           }
-        ], 
-        "containerId": "target1"
+        ]
       }
     ], 
     "description": "A Sample Activity containing a single multiple choice bric"
   }, 
-  "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope", 
-  "@type": "Envelope", 
   "metadata": {
-    "intendedEndUserRole": [
-      "Student"
+    "contentTypeTier1": "Test and Assessment", 
+    "contentTypeTier2": [
+      "assessment item"
     ], 
+    "created": "2014-01-17T12:06:51.634715", 
     "description": "68830_HP_M04_01.html", 
     "format": [
       "application/vnd.pearson.sanvan.v1.activity"
     ], 
-    "owner": "Brix", 
     "guid": "641da1be-c8c5-48da-8630-8a56e49a2cda", 
+    "intendedEndUserRole": [
+      "Student"
+    ], 
+    "owner": "Brix", 
     "subject": [
       "EnvironmentalScience"
     ], 
     "timeRequired": "PT20S", 
-    "created": "2013-12-18T14:00:05.285353", 
-    "title": "68830_HP_M04_01.html", 
-    "contentTypeTier1": "Test and Assessment", 
-    "contentTypeTier2": [
-      "assessment item"
-    ]
+    "title": "68830_HP_M04_01.html"
   }
 }

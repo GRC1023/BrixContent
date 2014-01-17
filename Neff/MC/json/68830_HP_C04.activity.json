@@ -1,149 +1,149 @@
 {
+  "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope", 
+  "@type": "Envelope", 
   "body": {
     "containerConfig": [
       {
         "brixConfig": [
           {
+            "answerKey": {
+              "answers": {
+                "answer1": {
+                  "response": "Is the population of Country A actually significantly younger than it is middle-aged or older?", 
+                  "score": 0
+                }, 
+                "answer2": {
+                  "response": "Is the bottom level of the age pyramid&#x2014;which shows people between the ages of 0 and 5&#x2014;very large?", 
+                  "score": 0
+                }, 
+                "answer3": {
+                  "response": "Correct.", 
+                  "score": 1
+                }, 
+                "answer4": {
+                  "response": "From the graph, does it appear that many children die before they reach older ages (where there are many other causes of death possible)?", 
+                  "score": 0
+                }, 
+                "answer5": {
+                  "response": "Do these attributes more closely describe Country A or B?", 
+                  "score": 0
+                }
+              }, 
+              "assessmentType": "multiplechoice"
+            }, 
+            "bricId": "Q1", 
+            "bricType": "MultipleChoiceQuestion", 
             "config": {
-              "presenterType": "RadioGroup", 
-              "question": "Which of the following attributes describes Country A", 
+              "choices": [
+                {
+                  "answerKey": "answer1", 
+                  "content": "A very high dependency ratio due to a young population"
+                }, 
+                {
+                  "answerKey": "answer2", 
+                  "content": "Rapidly growing population rates"
+                }, 
+                {
+                  "answerKey": "answer3", 
+                  "content": "A relatively low total fertility rate and a highly industrialized economy"
+                }, 
+                {
+                  "answerKey": "answer4", 
+                  "content": "High instance of deaths from preventable disease"
+                }, 
+                {
+                  "answerKey": "answer5", 
+                  "content": "A very high dependency ratio due to a young population AND high instance of deaths from preventable disease"
+                }
+              ], 
+              "id": "sampleQ1", 
+              "order": "ordered", 
               "presenterConfig": {
                 "numberFormat": ""
               }, 
-              "choices": [
-                {
-                  "content": "A very high dependency ratio due to a young population", 
-                  "answerKey": "answer1"
-                }, 
-                {
-                  "content": "Rapidly growing population rates", 
-                  "answerKey": "answer2"
-                }, 
-                {
-                  "content": "A relatively low total fertility rate and a highly industrialized economy", 
-                  "answerKey": "answer3"
-                }, 
-                {
-                  "content": "High instance of deaths from preventable disease", 
-                  "answerKey": "answer4"
-                }, 
-                {
-                  "content": "A and D", 
-                  "answerKey": "answer5"
-                }
-              ], 
-              "order": "ordered", 
-              "id": "sampleQ1"
+              "presenterType": "RadioGroup", 
+              "question": "Which of the following attributes describes Country A?"
             }, 
-            "answerKey": {
-              "assessmentType": "multiplechoice", 
-              "answers": {
-                "answer5": {
-                  "score": 0, 
-                  "response": "Do these attributes more closely describe Country A or B?"
-                }, 
-                "answer4": {
-                  "score": 0, 
-                  "response": "From the graph, does it appear that many children die before they reach older ages (where there are many other causes of death possible)?"
-                }, 
-                "answer1": {
-                  "score": 0, 
-                  "response": "Is the population of Country A actually significantly younger than it is middle-aged or older?"
-                }, 
-                "answer3": {
-                  "score": 1, 
-                  "response": "Correct."
-                }, 
-                "answer2": {
-                  "score": 0, 
-                  "response": "Is the bottom level of the age pyramid\u2014which shows people between the ages of 0 and 5\u2014very large?"
-                }
-              }
-            }, 
-            "bricType": "MultipleChoiceQuestion", 
-            "bricId": "Q1", 
             "configFixup": [
               {
-                "type": "set-property", 
                 "name": "questionId", 
+                "type": "set-property", 
                 "value": {
                   "domain": "info", 
-                  "type": "ref", 
-                  "refId": "sequenceNodeKey"
+                  "refId": "sequenceNodeKey", 
+                  "type": "ref"
                 }
               }, 
               {
-                "type": "set-property", 
                 "name": "maxAttempts", 
+                "type": "set-property", 
                 "value": {
                   "domain": "info", 
-                  "type": "ref", 
-                  "refId": "maxAttempts"
+                  "refId": "maxAttempts", 
+                  "type": "ref"
                 }
               }
             ]
           }
         ], 
+        "containerId": "target1", 
         "description": "container for the sample multiple choice question", 
         "hookupActions": [
           {
-            "instance": {
-              "type": "submit-manager"
-            }, 
             "args": [
               {
                 "domain": "brix", 
-                "type": "ref", 
-                "refId": "Q1"
+                "refId": "Q1", 
+                "type": "ref"
               }
             ], 
-            "type": "method-call", 
             "description": "Hookup the submit manager to evaluate answers", 
-            "methodName": "handleRequestsFrom"
+            "instance": {
+              "type": "submit-manager"
+            }, 
+            "methodName": "handleRequestsFrom", 
+            "type": "method-call"
           }, 
           {
-            "instance": {
-              "domain": "brix", 
-              "type": "ref", 
-              "refId": "Q1"
-            }, 
             "args": [
               {
-                "type": "d3select", 
-                "selector": "#target1"
+                "selector": "#target1", 
+                "type": "d3select"
               }
             ], 
-            "type": "method-call", 
             "description": "Draw the question", 
-            "methodName": "draw"
+            "instance": {
+              "domain": "brix", 
+              "refId": "Q1", 
+              "type": "ref"
+            }, 
+            "methodName": "draw", 
+            "type": "method-call"
           }
-        ], 
-        "containerId": "target1"
+        ]
       }
     ], 
     "description": "A Sample Activity containing a single multiple choice bric"
   }, 
-  "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope", 
-  "@type": "Envelope", 
   "metadata": {
-    "intendedEndUserRole": [
-      "Student"
+    "contentTypeTier1": "Test and Assessment", 
+    "contentTypeTier2": [
+      "assessment item"
     ], 
+    "created": "2014-01-17T12:06:51.635991", 
     "description": "68830_HP_C04.html", 
     "format": [
       "application/vnd.pearson.sanvan.v1.activity"
     ], 
-    "owner": "Brix", 
     "guid": "48c061f9-d3ef-4c96-8375-ac6286b50d22", 
+    "intendedEndUserRole": [
+      "Student"
+    ], 
+    "owner": "Brix", 
     "subject": [
       "EnvironmentalScience"
     ], 
     "timeRequired": "PT20S", 
-    "created": "2013-12-18T14:00:05.285967", 
-    "title": "68830_HP_C04.html", 
-    "contentTypeTier1": "Test and Assessment", 
-    "contentTypeTier2": [
-      "assessment item"
-    ]
+    "title": "68830_HP_C04.html"
   }
 }
