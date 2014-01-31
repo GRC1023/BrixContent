@@ -1,0 +1,91 @@
+{
+  "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope", 
+  "@type": "Envelope", 
+  "body": {
+    "containerConfig": [
+      {
+        "brixConfig": [
+          {
+            "answerKey": {
+              "assessmentType": "alwayscorrect"
+            }, 
+            "bricId": "J1", 
+            "bricType": "Journal", 
+            "config": {
+              "id": "sampleJ1", 
+              "title": "Psychologists argue that sensory experiences are organized according to basic laws or principles. What do they mean by this? Give at least three examples of these principles."
+            }, 
+            "configFixup": [
+              {
+                "name": "journalId", 
+                "type": "set-property", 
+                "value": {
+                  "domain": "info", 
+                  "refId": "sequenceNodeKey", 
+                  "type": "ref"
+                }
+              }
+            ]
+          }
+        ], 
+        "containerId": "b022ce3d349f94a59b4c90b10afa9118d", 
+        "description": "Psychologists argue that sensory experiences are organized according to basic laws or principles. What do they mean by this? Give at least three examples of these principles.", 
+        "hookupActions": [
+          {
+            "args": [
+              {
+                "domain": "brix", 
+                "refId": "J1", 
+                "type": "ref"
+              }
+            ], 
+            "description": "Hookup the submit manager to evaluate answers", 
+            "instance": {
+              "type": "submit-manager"
+            }, 
+            "methodName": "handleRequestsFrom", 
+            "type": "method-call"
+          }, 
+          {
+            "args": [
+              {
+                "selector": "#b022ce3d349f94a59b4c90b10afa9118d", 
+                "type": "d3select"
+              }
+            ], 
+            "description": "Draw the journal", 
+            "instance": {
+              "domain": "brix", 
+              "refId": "J1", 
+              "type": "ref"
+            }, 
+            "methodName": "draw", 
+            "type": "method-call"
+          }
+        ]
+      }
+    ], 
+    "description": "Gestalt Principles"
+  }, 
+  "metadata": {
+    "contentTypeTier1": "Activity", 
+    "contentTypeTier2": [
+      "Exercise"
+    ], 
+    "created": "2014-01-31T13:51:34.742090", 
+    "description": "Psychologists argue that sensory experiences are organized according to basic laws or principles. What do they mean by this? Give at least three examples of these principles.", 
+    "format": [
+      "application/vnd.pearson.sanvan.v1.activity"
+    ], 
+    "guid": "d0eaea45-29e9-405a-a98e-d6fc9dbe2b05", 
+    "intendedEndUserRole": [
+      "Student"
+    ], 
+    "owner": "Brix", 
+    "subject": [
+      "Psychology"
+    ], 
+    "timeRequired": "PT20S", 
+    "title": "Psychologists argue that sensory experiences are organized according to basic laws or principles. What do they mean by this? Give at least three examples of these principles."
+  }
+}

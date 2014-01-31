@@ -1,0 +1,91 @@
+{
+  "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope", 
+  "@type": "Envelope", 
+  "body": {
+    "containerConfig": [
+      {
+        "brixConfig": [
+          {
+            "answerKey": {
+              "assessmentType": "alwayscorrect"
+            }, 
+            "bricId": "J1", 
+            "bricType": "Journal", 
+            "config": {
+              "id": "sampleJ1", 
+              "title": "Describe an example of sensory adaptation from your everyday life."
+            }, 
+            "configFixup": [
+              {
+                "name": "journalId", 
+                "type": "set-property", 
+                "value": {
+                  "domain": "info", 
+                  "refId": "sequenceNodeKey", 
+                  "type": "ref"
+                }
+              }
+            ]
+          }
+        ], 
+        "containerId": "b29180bcfdd4d4dc2ae53f0f410ebeaae", 
+        "description": "Describe an example of sensory adaptation from your everyday life", 
+        "hookupActions": [
+          {
+            "args": [
+              {
+                "domain": "brix", 
+                "refId": "J1", 
+                "type": "ref"
+              }
+            ], 
+            "description": "Hookup the submit manager to evaluate answers", 
+            "instance": {
+              "type": "submit-manager"
+            }, 
+            "methodName": "handleRequestsFrom", 
+            "type": "method-call"
+          }, 
+          {
+            "args": [
+              {
+                "selector": "#b29180bcfdd4d4dc2ae53f0f410ebeaae", 
+                "type": "d3select"
+              }
+            ], 
+            "description": "Draw the journal", 
+            "instance": {
+              "domain": "brix", 
+              "refId": "J1", 
+              "type": "ref"
+            }, 
+            "methodName": "draw", 
+            "type": "method-call"
+          }
+        ]
+      }
+    ], 
+    "description": "Sensory limits"
+  }, 
+  "metadata": {
+    "contentTypeTier1": "Activity", 
+    "contentTypeTier2": [
+      "Exercise"
+    ], 
+    "created": "2014-01-31T13:51:34.741418", 
+    "description": "Describe an example of sensory adaptation from your everyday life.", 
+    "format": [
+      "application/vnd.pearson.sanvan.v1.activity"
+    ], 
+    "guid": "49149ea4-dbf0-4e66-b569-77adfa1d1d88", 
+    "intendedEndUserRole": [
+      "Student"
+    ], 
+    "owner": "Brix", 
+    "subject": [
+      "Psychology"
+    ], 
+    "timeRequired": "PT20S", 
+    "title": "Describe an example of sensory adaptation from your everyday life."
+  }
+}

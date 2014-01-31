@@ -1,0 +1,91 @@
+{
+  "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope", 
+  "@type": "Envelope", 
+  "body": {
+    "containerConfig": [
+      {
+        "brixConfig": [
+          {
+            "answerKey": {
+              "assessmentType": "alwayscorrect"
+            }, 
+            "bricId": "J1", 
+            "bricType": "Journal", 
+            "config": {
+              "id": "sampleJ1", 
+              "title": "Use a personal example to explain the difference between bottom-up and top-down processing."
+            }, 
+            "configFixup": [
+              {
+                "name": "journalId", 
+                "type": "set-property", 
+                "value": {
+                  "domain": "info", 
+                  "refId": "sequenceNodeKey", 
+                  "type": "ref"
+                }
+              }
+            ]
+          }
+        ], 
+        "containerId": "b726bc5a9807d4edf939d0e6d51fe6050", 
+        "description": "Use a personal example to explain the difference between bottom-up and top-down processing", 
+        "hookupActions": [
+          {
+            "args": [
+              {
+                "domain": "brix", 
+                "refId": "J1", 
+                "type": "ref"
+              }
+            ], 
+            "description": "Hookup the submit manager to evaluate answers", 
+            "instance": {
+              "type": "submit-manager"
+            }, 
+            "methodName": "handleRequestsFrom", 
+            "type": "method-call"
+          }, 
+          {
+            "args": [
+              {
+                "selector": "#b726bc5a9807d4edf939d0e6d51fe6050", 
+                "type": "d3select"
+              }
+            ], 
+            "description": "Draw the journal", 
+            "instance": {
+              "domain": "brix", 
+              "refId": "J1", 
+              "type": "ref"
+            }, 
+            "methodName": "draw", 
+            "type": "method-call"
+          }
+        ]
+      }
+    ], 
+    "description": "Relationships among the sensory systems"
+  }, 
+  "metadata": {
+    "contentTypeTier1": "Activity", 
+    "contentTypeTier2": [
+      "Exercise"
+    ], 
+    "created": "2014-01-31T13:51:34.741550", 
+    "description": "Use a personal example to explain the difference between bottom-up and top-down processing.", 
+    "format": [
+      "application/vnd.pearson.sanvan.v1.activity"
+    ], 
+    "guid": "b1214ea4-5899-4d50-b31f-d22cabeaf3c4", 
+    "intendedEndUserRole": [
+      "Student"
+    ], 
+    "owner": "Brix", 
+    "subject": [
+      "Psychology"
+    ], 
+    "timeRequired": "PT20S", 
+    "title": "Use a personal example to explain the difference between bottom-up and top-down processing."
+  }
+}

@@ -1,0 +1,91 @@
+{
+  "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope", 
+  "@type": "Envelope", 
+  "body": {
+    "containerConfig": [
+      {
+        "brixConfig": [
+          {
+            "answerKey": {
+              "assessmentType": "alwayscorrect"
+            }, 
+            "bricId": "J1", 
+            "bricType": "Journal", 
+            "config": {
+              "id": "sampleJ1", 
+              "title": "Would you make the argument that smell and taste are two separate senses, or one sense? Explain."
+            }, 
+            "configFixup": [
+              {
+                "name": "journalId", 
+                "type": "set-property", 
+                "value": {
+                  "domain": "info", 
+                  "refId": "sequenceNodeKey", 
+                  "type": "ref"
+                }
+              }
+            ]
+          }
+        ], 
+        "containerId": "bbd4b5014bcfd48d19d6ab0ac5cbd4be2", 
+        "description": "Would you make the argument that smell and taste are two separate senses, or one sense? Explain.", 
+        "hookupActions": [
+          {
+            "args": [
+              {
+                "domain": "brix", 
+                "refId": "J1", 
+                "type": "ref"
+              }
+            ], 
+            "description": "Hookup the submit manager to evaluate answers", 
+            "instance": {
+              "type": "submit-manager"
+            }, 
+            "methodName": "handleRequestsFrom", 
+            "type": "method-call"
+          }, 
+          {
+            "args": [
+              {
+                "selector": "#bbd4b5014bcfd48d19d6ab0ac5cbd4be2", 
+                "type": "d3select"
+              }
+            ], 
+            "description": "Draw the journal", 
+            "instance": {
+              "domain": "brix", 
+              "refId": "J1", 
+              "type": "ref"
+            }, 
+            "methodName": "draw", 
+            "type": "method-call"
+          }
+        ]
+      }
+    ], 
+    "description": "The Chemical Senses"
+  }, 
+  "metadata": {
+    "contentTypeTier1": "Activity", 
+    "contentTypeTier2": [
+      "Exercise"
+    ], 
+    "created": "2014-01-31T13:51:34.741819", 
+    "description": "Would you make the argument that smell and taste are two separate senses, or one sense? Explain.", 
+    "format": [
+      "application/vnd.pearson.sanvan.v1.activity"
+    ], 
+    "guid": "decc2a4f-000a-433e-9da7-ad2922336447", 
+    "intendedEndUserRole": [
+      "Student"
+    ], 
+    "owner": "Brix", 
+    "subject": [
+      "Psychology"
+    ], 
+    "timeRequired": "PT20S", 
+    "title": "Would you make the argument that smell and taste are two separate senses, or one sense? Explain."
+  }
+}
