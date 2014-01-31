@@ -1,0 +1,208 @@
+{
+  "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope", 
+  "@type": "Envelope", 
+  "body": {
+    "containerConfig": [
+      {
+        "brixConfig": [
+          {
+            "bricId": "image1", 
+            "bricType": "Image", 
+            "config": {
+              "actualSize": {
+                "height": 379, 
+                "width": 570
+              }, 
+              "caption": "The rate of interracial marriage overall has grown considerably in recent years, although faster between some racial and ethnic groups than others.<br> <br> <br>", 
+              "captionPosition": "below", 
+              "id": "img1"
+            }, 
+            "configFixup": [
+              {
+                "name": "URI", 
+                "type": "set-property", 
+                "value": {
+                  "parts": [
+                    {
+                      "domain": "info", 
+                      "refId": "imgBaseUrl", 
+                      "type": "ref"
+                    }, 
+                    {
+                      "type": "constant", 
+                      "value": "img/P10-17.jpg"
+                    }
+                  ], 
+                  "type": "join"
+                }
+              }
+            ]
+          }, 
+          {
+            "bricId": "image2", 
+            "bricType": "Image", 
+            "config": {
+              "actualSize": {
+                "height": 379, 
+                "width": 570
+              }, 
+              "caption": "However, it is important to note that Asian and Hispanic newlyweds are more likely than blacks to have spouses of a different race (Wang 2012).", 
+              "captionPosition": "below", 
+              "id": "img2"
+            }, 
+            "configFixup": [
+              {
+                "name": "URI", 
+                "type": "set-property", 
+                "value": {
+                  "parts": [
+                    {
+                      "domain": "info", 
+                      "refId": "imgBaseUrl", 
+                      "type": "ref"
+                    }, 
+                    {
+                      "type": "constant", 
+                      "value": "img/11.26b _COU701JG_120_001_SuperRes.jpg"
+                    }
+                  ], 
+                  "type": "join"
+                }
+              }
+            ]
+          }, 
+          {
+            "bricId": "image3", 
+            "bricType": "Image", 
+            "config": {
+              "actualSize": {
+                "height": 379, 
+                "width": 570
+              }, 
+              "caption": "In addition, individuals of mixed-race ancestry are more likely to identify themselves (or be identified) as multiracial if they have Asian ancestry, but to be assigned to a single race\u2014black\u2014if they have African ancestry (Gullickson and Morning 2011).", 
+              "captionPosition": "below", 
+              "id": "img3"
+            }, 
+            "configFixup": [
+              {
+                "name": "URI", 
+                "type": "set-property", 
+                "value": {
+                  "parts": [
+                    {
+                      "domain": "info", 
+                      "refId": "imgBaseUrl", 
+                      "type": "ref"
+                    }, 
+                    {
+                      "type": "constant", 
+                      "value": "img/11.26c_YNG081CK_001_001_SuperRes.jpg"
+                    }
+                  ], 
+                  "type": "join"
+                }
+              }
+            ]
+          }, 
+          {
+            "bricId": "carousel1", 
+            "bricType": "ImageViewer", 
+            "config": {
+              "displayWidth": 579, 
+              "id": "csel1"
+            }, 
+            "configFixup": [
+              {
+                "name": "items", 
+                "type": "set-property", 
+                "value": {
+                  "elements": [
+                    {
+                      "domain": "brix", 
+                      "refId": "image1", 
+                      "type": "ref"
+                    }, 
+                    {
+                      "domain": "brix", 
+                      "refId": "image2", 
+                      "type": "ref"
+                    }, 
+                    {
+                      "domain": "brix", 
+                      "refId": "image3", 
+                      "type": "ref"
+                    }
+                  ], 
+                  "type": "array"
+                }
+              }
+            ]
+          }, 
+          {
+            "bricId": "cntr1", 
+            "bricType": "SvgContainer", 
+            "config": {
+              "maxSize": {
+                "height": "650", 
+                "width": "579"
+              }
+            }, 
+            "configFixup": [
+              {
+                "name": "node", 
+                "type": "set-property", 
+                "value": {
+                  "selector": "#b8e5d57f829c34e4785a88658ec794b80", 
+                  "type": "d3select"
+                }
+              }
+            ]
+          }
+        ], 
+        "containerId": "imgContainer", 
+        "description": "Container for the ImageViewer bric", 
+        "hookupActions": [
+          {
+            "args": [
+              {
+                "domain": "brix", 
+                "refId": "carousel1", 
+                "type": "ref"
+              }
+            ], 
+            "description": "Append the captioned image to the svg container", 
+            "instance": {
+              "domain": "brix", 
+              "refId": "cntr1", 
+              "type": "ref"
+            }, 
+            "methodName": "append", 
+            "type": "method-call"
+          }
+        ]
+      }
+    ], 
+    "description": "Image carousel showing people of different nationalities"
+  }, 
+  "metadata": {
+    "contentTypeTier1": "Activity", 
+    "contentTypeTier2": [
+      "Exercise"
+    ], 
+    "created": "2014-01-31T17:28:11.007241", 
+    "description": "Are Racial Boundaries Fading?", 
+    "format": [
+      "application/vnd.pearson.sanvan.v1.activity"
+    ], 
+    "guid": "dda95b42-a206-4a45-9a2c-3b04d5df3278", 
+    "intendedEndUserRole": [
+      "Student"
+    ], 
+    "owner": "Brix", 
+    "subject": [
+      "Sociology"
+    ], 
+    "timeRequired": "PT20S", 
+    "title": "Are Racial Boundaries Fading?"
+  }
+}

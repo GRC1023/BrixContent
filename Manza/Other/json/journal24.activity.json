@@ -1,0 +1,91 @@
+{
+  "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope", 
+  "@type": "Envelope", 
+  "body": {
+    "containerConfig": [
+      {
+        "brixConfig": [
+          {
+            "answerKey": {
+              "assessmentType": "alwayscorrect"
+            }, 
+            "bricId": "J1", 
+            "bricType": "Journal", 
+            "config": {
+              "id": "sampleJ1", 
+              "title": "Some people are optimistic about the future of race and ethnic relations in the United States, while others are more pessimistic. What do you think are the best reasons for optimism that America will eventually overcome its racial and ethnic divide? On the other hand, what factors give you concern about the future, as far as racial and ethnic inequalities are concerned?"
+            }, 
+            "configFixup": [
+              {
+                "name": "journalId", 
+                "type": "set-property", 
+                "value": {
+                  "domain": "info", 
+                  "refId": "sequenceNodeKey", 
+                  "type": "ref"
+                }
+              }
+            ]
+          }
+        ], 
+        "containerId": "b6c77215489b34dde93dee27b509116d9", 
+        "description": "Some people are optimistic about the future of race and ethnic relations in the United States, while others are more pessimistic. What do you think are the best reasons for optimism that America will eventually overcome its racial and ethnic divide? On the other hand, what factors give you concern about the future, as far as racial and ethnic inequalities are concerned?", 
+        "hookupActions": [
+          {
+            "args": [
+              {
+                "domain": "brix", 
+                "refId": "J1", 
+                "type": "ref"
+              }
+            ], 
+            "description": "Hookup the submit manager to evaluate answers", 
+            "instance": {
+              "type": "submit-manager"
+            }, 
+            "methodName": "handleRequestsFrom", 
+            "type": "method-call"
+          }, 
+          {
+            "args": [
+              {
+                "selector": "#b6c77215489b34dde93dee27b509116d9", 
+                "type": "d3select"
+              }
+            ], 
+            "description": "Draw the journal", 
+            "instance": {
+              "domain": "brix", 
+              "refId": "J1", 
+              "type": "ref"
+            }, 
+            "methodName": "draw", 
+            "type": "method-call"
+          }
+        ]
+      }
+    ], 
+    "description": "11.5 Summary, How are Race and Ethnicity Changing in the Twenty-First Century? Journal"
+  }, 
+  "metadata": {
+    "contentTypeTier1": "Activity", 
+    "contentTypeTier2": [
+      "Exercise"
+    ], 
+    "created": "2014-01-31T17:28:11.009708", 
+    "description": "Some people are optimistic about the future of race and ethnic relations in the United States, while others are more pessimistic. What do you think are the best reasons for optimism that America will eventually overcome its racial and ethnic divide? On the other hand, what factors give you concern about the future, as far as racial and ethnic inequalities are concerned?", 
+    "format": [
+      "application/vnd.pearson.sanvan.v1.activity"
+    ], 
+    "guid": "a73d72d6-0512-4e27-bccd-1e6ab8a2681d", 
+    "intendedEndUserRole": [
+      "Student"
+    ], 
+    "owner": "Brix", 
+    "subject": [
+      "Sociology"
+    ], 
+    "timeRequired": "PT20S", 
+    "title": "Some people are optimistic about the future of race and ethnic relations in the United States, while others are more pessimistic. What do you think are the best reasons for optimism that America will eventually overcome its racial and ethnic divide? On the other hand, what factors give you concern about the future, as far as racial and ethnic inequalities are concerned?"
+  }
+}

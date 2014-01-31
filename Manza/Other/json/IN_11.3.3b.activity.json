@@ -1,0 +1,706 @@
+{
+  "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope", 
+  "@type": "Envelope", 
+  "body": {
+    "containerConfig": [
+      {
+        "brixConfig": [
+          {
+            "bricId": "swapGraph", 
+            "bricType": "LineGraph", 
+            "config": {
+              "id": "graph1", 
+              "type": "lines", 
+              "xAxisFormat": {
+                "format": "0f", 
+                "label": "Year", 
+                "orientation": "bottom", 
+                "ticks": [
+                  1970, 
+                  1980, 
+                  1990, 
+                  2000, 
+                  2010, 
+                  2020
+                ], 
+                "type": "linear"
+              }, 
+              "yAxisFormat": {
+                "label": "Percentage (%)", 
+                "orientation": "left", 
+                "ticks": [
+                  0, 
+                  10, 
+                  20, 
+                  30, 
+                  40, 
+                  50, 
+                  60, 
+                  70, 
+                  80, 
+                  90, 
+                  100
+                ], 
+                "type": "linear"
+              }
+            }, 
+            "configFixup": [
+              {
+                "name": "Data", 
+                "type": "set-property", 
+                "value": {
+                  "domain": "data", 
+                  "refId": "effort", 
+                  "type": "ref"
+                }
+              }
+            ]
+          }, 
+          {
+            "bricId": "legend1", 
+            "bricType": "Legend", 
+            "config": {
+              "id": "legendSchools", 
+              "type": "line", 
+              "xPos": "right", 
+              "yPos": "top"
+            }, 
+            "configFixup": [
+              {
+                "name": "labels", 
+                "type": "set-property", 
+                "value": {
+                  "domain": "data", 
+                  "refId": "effortLegend", 
+                  "type": "ref"
+                }
+              }
+            ]
+          }, 
+          {
+            "bricId": "labelSelector1", 
+            "bricType": "LabelSelector", 
+            "config": {
+              "id": "dataLabels", 
+              "itemMargin": {
+                "bottom": 5, 
+                "left": 0, 
+                "right": 0, 
+                "top": 5
+              }, 
+              "labels": [
+                "Motivation", 
+                "Effort", 
+                "Favors"
+              ], 
+              "layout": "vertical"
+            }
+          }, 
+          {
+            "bricId": "cntr1", 
+            "bricType": "SvgContainer", 
+            "config": {
+              "maxSize": {
+                "height": 400, 
+                "width": 579
+              }
+            }, 
+            "configFixup": [
+              {
+                "name": "node", 
+                "type": "set-property", 
+                "value": {
+                  "selector": "#b1414d633f78446ddaa597a2fd737e70d", 
+                  "type": "d3select"
+                }
+              }
+            ]
+          }
+        ], 
+        "containerId": "b1414d633f78446ddaa597a2fd737e70d", 
+        "description": "container for the graph and labels", 
+        "hookupActions": [
+          {
+            "args": [
+              {
+                "domain": "brix", 
+                "refId": "swapGraph", 
+                "type": "ref"
+              }, 
+              {
+                "type": "constant", 
+                "value": {
+                  "heightPercent": 0.85, 
+                  "leftPercentOffset": 0, 
+                  "topPercentOffset": 0.15, 
+                  "widthPercent": 1
+                }
+              }
+            ], 
+            "description": "Append the swap graph to the svg container", 
+            "instance": {
+              "domain": "brix", 
+              "refId": "cntr1", 
+              "type": "ref"
+            }, 
+            "methodName": "append", 
+            "type": "method-call"
+          }, 
+          {
+            "args": [
+              {
+                "domain": "brix", 
+                "refId": "legend1", 
+                "type": "ref"
+              }
+            ], 
+            "description": "Append the legend to the svg container", 
+            "instance": {
+              "domain": "brix", 
+              "refId": "swapGraph", 
+              "type": "ref"
+            }, 
+            "methodName": "append", 
+            "type": "method-call"
+          }, 
+          {
+            "args": [
+              {
+                "domain": "brix", 
+                "refId": "labelSelector1", 
+                "type": "ref"
+              }, 
+              {
+                "type": "constant", 
+                "value": {
+                  "heightPercent": 0.2, 
+                  "leftPercentOffset": 0, 
+                  "topPercentOffset": 0.0, 
+                  "widthPercent": 1
+                }
+              }
+            ], 
+            "description": "Append the labels to the svg container", 
+            "instance": {
+              "domain": "brix", 
+              "refId": "cntr1", 
+              "type": "ref"
+            }, 
+            "methodName": "append", 
+            "type": "method-call"
+          }, 
+          {
+            "args": [
+              {
+                "type": "constant", 
+                "value": "0"
+              }
+            ], 
+            "description": "Initial condition: select 1st label", 
+            "instance": {
+              "domain": "brix", 
+              "refId": "labelSelector1", 
+              "type": "ref"
+            }, 
+            "methodName": "lite", 
+            "type": "method-call"
+          }, 
+          {
+            "args": [
+              {
+                "type": "constant", 
+                "value": "0"
+              }
+            ], 
+            "description": "Initial condition: select 1st legend", 
+            "instance": {
+              "domain": "brix", 
+              "refId": "legend1", 
+              "type": "ref"
+            }, 
+            "methodName": "lite", 
+            "type": "method-call"
+          }, 
+          {
+            "args": [
+              {
+                "type": "constant", 
+                "value": "0"
+              }
+            ], 
+            "description": "Initial condition: select 1st graph trace", 
+            "instance": {
+              "domain": "brix", 
+              "refId": "swapGraph", 
+              "type": "ref"
+            }, 
+            "methodName": "lite", 
+            "type": "method-call"
+          }
+        ], 
+        "mortarConfig": [
+          {
+            "config": {
+              "dataPropertySetter": "setData", 
+              "eventDetailsProperty": "index"
+            }, 
+            "configFixup": [
+              {
+                "name": "topic", 
+                "type": "set-property", 
+                "value": {
+                  "bricType": "LabelSelector", 
+                  "eventName": "selected", 
+                  "instanceId": "dataLabels", 
+                  "type": "brix-topic"
+                }
+              }, 
+              {
+                "name": "sourceDataArray", 
+                "type": "set-property", 
+                "value": {
+                  "elements": [
+                    {
+                      "domain": "data", 
+                      "refId": "effort", 
+                      "type": "ref"
+                    }, 
+                    {
+                      "domain": "data", 
+                      "refId": "motivation", 
+                      "type": "ref"
+                    }, 
+                    {
+                      "domain": "data", 
+                      "refId": "favors", 
+                      "type": "ref"
+                    }
+                  ], 
+                  "type": "array"
+                }
+              }, 
+              {
+                "name": "targetBric", 
+                "type": "set-property", 
+                "value": {
+                  "domain": "brix", 
+                  "refId": "swapGraph", 
+                  "type": "ref"
+                }
+              }
+            ], 
+            "mortarId": "dataswap1", 
+            "mortarType": "Dataswap"
+          }, 
+          {
+            "config": {
+              "dataPropertySetter": "setLabels", 
+              "eventDetailsProperty": "index"
+            }, 
+            "configFixup": [
+              {
+                "name": "topic", 
+                "type": "set-property", 
+                "value": {
+                  "bricType": "LabelSelector", 
+                  "eventName": "selected", 
+                  "instanceId": "dataLabels", 
+                  "type": "brix-topic"
+                }
+              }, 
+              {
+                "name": "sourceDataArray", 
+                "type": "set-property", 
+                "value": {
+                  "elements": [
+                    {
+                      "domain": "data", 
+                      "refId": "effortLegend", 
+                      "type": "ref"
+                    }, 
+                    {
+                      "domain": "data", 
+                      "refId": "motivationLegend", 
+                      "type": "ref"
+                    }, 
+                    {
+                      "domain": "data", 
+                      "refId": "favorsLegend", 
+                      "type": "ref"
+                    }
+                  ], 
+                  "type": "array"
+                }
+              }, 
+              {
+                "name": "targetBric", 
+                "type": "set-property", 
+                "value": {
+                  "domain": "brix", 
+                  "refId": "legend1", 
+                  "type": "ref"
+                }
+              }
+            ], 
+            "mortarId": "dataswap2", 
+            "mortarType": "Dataswap"
+          }, 
+          {
+            "config": {
+              "eventDetailsProperty": "selectKey"
+            }, 
+            "configFixup": [
+              {
+                "name": "topic", 
+                "type": "set-property", 
+                "value": {
+                  "bricType": "Legend", 
+                  "eventName": "selected", 
+                  "instanceId": "legendSchools", 
+                  "type": "brix-topic"
+                }
+              }, 
+              {
+                "name": "targetBric", 
+                "type": "set-property", 
+                "value": {
+                  "domain": "brix", 
+                  "refId": "swapGraph", 
+                  "type": "ref"
+                }
+              }
+            ], 
+            "mortarId": "hilite3", 
+            "mortarType": "Hilite"
+          }, 
+          {
+            "config": {
+              "eventDetailsProperty": "selectKey"
+            }, 
+            "configFixup": [
+              {
+                "name": "topic", 
+                "type": "set-property", 
+                "value": {
+                  "bricType": "LineGraph", 
+                  "eventName": "selected", 
+                  "instanceId": "graph1", 
+                  "type": "brix-topic"
+                }
+              }, 
+              {
+                "name": "targetBric", 
+                "type": "set-property", 
+                "value": {
+                  "domain": "brix", 
+                  "refId": "legend1", 
+                  "type": "ref"
+                }
+              }
+            ], 
+            "mortarId": "hilite2", 
+            "mortarType": "Hilite"
+          }
+        ]
+      }, 
+      {
+        "brixConfig": [
+          {
+            "bricId": "lbltbl1", 
+            "bricType": "Callouts", 
+            "config": {
+              "id": "callme", 
+              "textBits": [
+                {
+                  "cols": [
+                    "<b>Survey Question Asked:</b><br> On the average, (Negroes/blacks/African Americans) have worse jobs, income, and housing than white people. Do you think these differences are...because most (Negroes/blacks/African Americans) just don't have the motivation or will power to pull themselves out of poverty?"
+                  ]
+                }, 
+                {
+                  "cols": [
+                    "<b>Survey Question Asked:</b><br>Do you agree or disagree with the statement: It's really a matter of some people not trying hard enough; if blacks would only try harder they could be just as well off as white."
+                  ]
+                }, 
+                {
+                  "cols": [
+                    "<b>Survey Question Asked:</b><br>Do you agree or disagree with the statement: Irish, Italians, Jewish and many other minorities overcame prejudice and worked their way up. Blacks should do the same without any special favors."
+                  ]
+                }
+              ]
+            }
+          }
+        ], 
+        "containerId": "b1414d633f78446ddaa597a2fd737e70d", 
+        "description": "The 'b1414d633f78446ddaa597a2fd737e70d' container contains the swappable callouts", 
+        "hookupActions": [
+          {
+            "args": [
+              {
+                "selector": "#b1414d633f78446ddaa597a2fd737e70d", 
+                "type": "d3select"
+              }
+            ], 
+            "description": "draw the label table", 
+            "instance": {
+              "domain": "brix", 
+              "refId": "lbltbl1", 
+              "type": "ref"
+            }, 
+            "methodName": "draw", 
+            "type": "method-call"
+          }, 
+          {
+            "args": [
+              {
+                "type": "constant", 
+                "value": "0"
+              }
+            ], 
+            "description": "Initial condition: select 1st table row (note that we may want to use the state field to do this later)", 
+            "instance": {
+              "domain": "brix", 
+              "refId": "lbltbl1", 
+              "type": "ref"
+            }, 
+            "methodName": "lite", 
+            "type": "method-call"
+          }
+        ], 
+        "mortarConfig": [
+          {
+            "config": {
+              "eventDetailsProperty": "selectKey"
+            }, 
+            "configFixup": [
+              {
+                "name": "topic", 
+                "type": "set-property", 
+                "value": {
+                  "bricType": "LabelSelector", 
+                  "eventName": "selected", 
+                  "instanceId": "dataLabels", 
+                  "type": "brix-topic"
+                }
+              }, 
+              {
+                "name": "targetBric", 
+                "type": "set-property", 
+                "value": {
+                  "domain": "brix", 
+                  "refId": "lbltbl1", 
+                  "type": "ref"
+                }
+              }
+            ], 
+            "mortarId": "hilite1", 
+            "mortarType": "Hilite"
+          }
+        ]
+      }
+    ], 
+    "data": {
+      "effort": [
+        [
+          {
+            "x": 1977, 
+            "y": 34
+          }, 
+          {
+            "x": 1988, 
+            "y": 38
+          }, 
+          {
+            "x": 1998, 
+            "y": 53
+          }, 
+          {
+            "x": 2010, 
+            "y": 50
+          }
+        ], 
+        [
+          {
+            "x": 1977, 
+            "y": 66
+          }, 
+          {
+            "x": 1988, 
+            "y": 62
+          }, 
+          {
+            "x": 1998, 
+            "y": 47
+          }, 
+          {
+            "x": 2010, 
+            "y": 50
+          }
+        ]
+      ], 
+      "effortLegend": [
+        {
+          "content": "No"
+        }, 
+        {
+          "content": "Yes"
+        }
+      ], 
+      "favors": [
+        [
+          {
+            "x": 1986, 
+            "y": 22
+          }, 
+          {
+            "x": 1992, 
+            "y": 15
+          }, 
+          {
+            "x": 2000, 
+            "y": 16
+          }, 
+          {
+            "x": 2010, 
+            "y": 12
+          }
+        ], 
+        [
+          {
+            "x": 1986, 
+            "y": 67
+          }, 
+          {
+            "x": 1992, 
+            "y": 77
+          }, 
+          {
+            "x": 2000, 
+            "y": 73
+          }, 
+          {
+            "x": 2010, 
+            "y": 75
+          }
+        ], 
+        [
+          {
+            "x": 1986, 
+            "y": 12
+          }, 
+          {
+            "x": 1992, 
+            "y": 8
+          }, 
+          {
+            "x": 2000, 
+            "y": 11
+          }, 
+          {
+            "x": 2010, 
+            "y": 13
+          }
+        ]
+      ], 
+      "favorsLegend": [
+        {
+          "content": "Disagree"
+        }, 
+        {
+          "content": "Agree"
+        }, 
+        {
+          "content": "Neutral"
+        }
+      ], 
+      "motivation": [
+        [
+          {
+            "x": 1986, 
+            "y": 29
+          }, 
+          {
+            "x": 1994, 
+            "y": 22
+          }, 
+          {
+            "x": 2004, 
+            "y": 24
+          }, 
+          {
+            "x": 2008, 
+            "y": 22
+          }
+        ], 
+        [
+          {
+            "x": 1986, 
+            "y": 58
+          }, 
+          {
+            "x": 1994, 
+            "y": 65
+          }, 
+          {
+            "x": 2004, 
+            "y": 58
+          }, 
+          {
+            "x": 2008, 
+            "y": 60
+          }
+        ], 
+        [
+          {
+            "x": 1986, 
+            "y": 13
+          }, 
+          {
+            "x": 1994, 
+            "y": 13
+          }, 
+          {
+            "x": 2004, 
+            "y": 16
+          }, 
+          {
+            "x": 2008, 
+            "y": 18
+          }
+        ]
+      ], 
+      "motivationLegend": [
+        {
+          "content": "Disagree"
+        }, 
+        {
+          "content": "Agree"
+        }, 
+        {
+          "content": "Neutral"
+        }
+      ]
+    }, 
+    "description": "Graph carousel on Post-Civil Rights Era Racial Attitudes on Inequality Due to Group Characteristics"
+  }, 
+  "metadata": {
+    "contentTypeTier1": "Activity", 
+    "contentTypeTier2": [
+      "Exercise"
+    ], 
+    "created": "2014-01-31T17:28:11.006357", 
+    "description": "Post-Civil Rights Era Racial Attitudes on Inequality Due to Group Characteristics", 
+    "format": [
+      "application/vnd.pearson.sanvan.v1.activity"
+    ], 
+    "guid": "9c4083c4-71cb-4558-98b7-40e11771eb12", 
+    "intendedEndUserRole": [
+      "Student"
+    ], 
+    "owner": "Brix", 
+    "subject": [
+      "Sociology"
+    ], 
+    "timeRequired": "PT20S", 
+    "title": "Post-Civil Rights Era Racial Attitudes on Inequality Due to Group Characteristics"
+  }
+}

@@ -1,0 +1,91 @@
+{
+  "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope", 
+  "@type": "Envelope", 
+  "body": {
+    "containerConfig": [
+      {
+        "brixConfig": [
+          {
+            "answerKey": {
+              "assessmentType": "alwayscorrect"
+            }, 
+            "bricId": "J1", 
+            "bricType": "Journal", 
+            "config": {
+              "id": "sampleJ1", 
+              "title": "Think about your friends and other people (not family members) you are in contact with regularly. How do you (or would you) characterize the race and ethnicity of these people? Do you use primarily racial or ethnic terms, or both? Discuss a few individuals from this group (don&#x2019;t use real names) whose racial and/or ethnic identity seems ambiguous. How do others characterize their race? How do they characterize it themselves (you can ask if necessary)?"
+            }, 
+            "configFixup": [
+              {
+                "name": "journalId", 
+                "type": "set-property", 
+                "value": {
+                  "domain": "info", 
+                  "refId": "sequenceNodeKey", 
+                  "type": "ref"
+                }
+              }
+            ]
+          }
+        ], 
+        "containerId": "bde1e1b6c5f6f49ba9958d55c8eb1a796", 
+        "description": "Think about your friends and other people (not family members) you are in contact with regularly. How do you (or would you) characterize the race and ethnicity of these people? Do you use primarily racial or ethnic terms, or both? Discuss a few individuals from this group (don&#x2019;t use real names) whose racial and/or ethnic identity seems ambiguous. How do others characterize their race? How do they characterize it themselves (you can ask if necessary)?", 
+        "hookupActions": [
+          {
+            "args": [
+              {
+                "domain": "brix", 
+                "refId": "J1", 
+                "type": "ref"
+              }
+            ], 
+            "description": "Hookup the submit manager to evaluate answers", 
+            "instance": {
+              "type": "submit-manager"
+            }, 
+            "methodName": "handleRequestsFrom", 
+            "type": "method-call"
+          }, 
+          {
+            "args": [
+              {
+                "selector": "#bde1e1b6c5f6f49ba9958d55c8eb1a796", 
+                "type": "d3select"
+              }
+            ], 
+            "description": "Draw the journal", 
+            "instance": {
+              "domain": "brix", 
+              "refId": "J1", 
+              "type": "ref"
+            }, 
+            "methodName": "draw", 
+            "type": "method-call"
+          }
+        ]
+      }
+    ], 
+    "description": "11.1 Summary, What is the Difference between Race and Ethnicity? Journal"
+  }, 
+  "metadata": {
+    "contentTypeTier1": "Activity", 
+    "contentTypeTier2": [
+      "Exercise"
+    ], 
+    "created": "2014-01-31T17:28:11.009263", 
+    "description": "Think about your friends and other people (not family members) you are in contact with regularly. How do you (or would you) characterize the race and ethnicity of these people? Do you use primarily racial or ethnic terms, or both? Discuss a few individuals from this group (don&#x2019;t use real names) whose racial and/or ethnic identity seems ambiguous. How do others characterize their race? How do they characterize it themselves (you can ask if necessary)?", 
+    "format": [
+      "application/vnd.pearson.sanvan.v1.activity"
+    ], 
+    "guid": "a17365dd-1464-4f35-ac96-a9b39e0f98ee", 
+    "intendedEndUserRole": [
+      "Student"
+    ], 
+    "owner": "Brix", 
+    "subject": [
+      "Sociology"
+    ], 
+    "timeRequired": "PT20S", 
+    "title": "Think about your friends and other people (not family members) you are in contact with regularly. How do you (or would you) characterize the race and ethnicity of these people? Do you use primarily racial or ethnic terms, or both? Discuss a few individuals from this group (don&#x2019;t use real names) whose racial and/or ethnic identity seems ambiguous. How do others characterize their race? How do they characterize it themselves (you can ask if necessary)?"
+  }
+}

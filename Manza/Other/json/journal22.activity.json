@@ -1,0 +1,91 @@
+{
+  "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope", 
+  "@type": "Envelope", 
+  "body": {
+    "containerConfig": [
+      {
+        "brixConfig": [
+          {
+            "answerKey": {
+              "assessmentType": "alwayscorrect"
+            }, 
+            "bricId": "J1", 
+            "bricType": "Journal", 
+            "config": {
+              "id": "sampleJ1", 
+              "title": "In France, the national government has banned the use of race in public policy, and the French Census cannot even ask people about their race and ethnicity. Officially, the government has long attempted to make France a &#x201c;color-blind&#x201d; society. Yet France has an increasingly diverse society with high levels of immigration from North Africa and other countries around the world that were once colonized by France. What impact do you think such &#x201c;color-blind&#x201d; policies might have? In what ways might they tend to reduce racism, or tensions between minority and majority groups? Are there ways that they might increase tensions or expression of racist attitudes?"
+            }, 
+            "configFixup": [
+              {
+                "name": "journalId", 
+                "type": "set-property", 
+                "value": {
+                  "domain": "info", 
+                  "refId": "sequenceNodeKey", 
+                  "type": "ref"
+                }
+              }
+            ]
+          }
+        ], 
+        "containerId": "bd60a4c86539f4e36be098ca52f3cd7b7", 
+        "description": "In France, the national government has banned the use of race in public policy, and the French Census cannot even ask people about their race and ethnicity. Officially, the government has long attempted to make France a &#x201c;color-blind&#x201d; society. Yet France has an increasingly diverse society with high levels of immigration from North Africa and other countries around the world that were once colonized by France. What impact do you think such &#x201c;color-blind&#x201d; policies might have? In what ways might they tend to reduce racism, or tensions between minority and majority groups? Are there ways that they might increase tensions or expression of racist attitudes?", 
+        "hookupActions": [
+          {
+            "args": [
+              {
+                "domain": "brix", 
+                "refId": "J1", 
+                "type": "ref"
+              }
+            ], 
+            "description": "Hookup the submit manager to evaluate answers", 
+            "instance": {
+              "type": "submit-manager"
+            }, 
+            "methodName": "handleRequestsFrom", 
+            "type": "method-call"
+          }, 
+          {
+            "args": [
+              {
+                "selector": "#bd60a4c86539f4e36be098ca52f3cd7b7", 
+                "type": "d3select"
+              }
+            ], 
+            "description": "Draw the journal", 
+            "instance": {
+              "domain": "brix", 
+              "refId": "J1", 
+              "type": "ref"
+            }, 
+            "methodName": "draw", 
+            "type": "method-call"
+          }
+        ]
+      }
+    ], 
+    "description": "11.3 Summary, Does Racism Still Exist in the United States? Journal"
+  }, 
+  "metadata": {
+    "contentTypeTier1": "Activity", 
+    "contentTypeTier2": [
+      "Exercise"
+    ], 
+    "created": "2014-01-31T17:28:11.009485", 
+    "description": "In France, the national government has banned the use of race in public policy, and the French Census cannot even ask people about their race and ethnicity. Officially, the government has long attempted to make France a &#x201c;color-blind&#x201d; society. Yet France has an increasingly diverse society with high levels of immigration from North Africa and other countries around the world that were once colonized by France. What impact do you think such &#x201c;color-blind&#x201d; policies might have? In what ways might they tend to reduce racism, or tensions between minority and majority groups? Are there ways that they might increase tensions or expression of racist attitudes?", 
+    "format": [
+      "application/vnd.pearson.sanvan.v1.activity"
+    ], 
+    "guid": "c0cf5c40-1448-4eae-ac59-0a1d0c109016", 
+    "intendedEndUserRole": [
+      "Student"
+    ], 
+    "owner": "Brix", 
+    "subject": [
+      "Sociology"
+    ], 
+    "timeRequired": "PT20S", 
+    "title": "In France, the national government has banned the use of race in public policy, and the French Census cannot even ask people about their race and ethnicity. Officially, the government has long attempted to make France a &#x201c;color-blind&#x201d; society. Yet France has an increasingly diverse society with high levels of immigration from North Africa and other countries around the world that were once colonized by France. What impact do you think such &#x201c;color-blind&#x201d; policies might have? In what ways might they tend to reduce racism, or tensions between minority and majority groups? Are there ways that they might increase tensions or expression of racist attitudes?"
+  }
+}

@@ -1,0 +1,208 @@
+{
+  "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope", 
+  "@type": "Envelope", 
+  "body": {
+    "containerConfig": [
+      {
+        "brixConfig": [
+          {
+            "bricId": "image1", 
+            "bricType": "Image", 
+            "config": {
+              "actualSize": {
+                "height": 379, 
+                "width": 570
+              }, 
+              "caption": "The 1810 census listed the following categories: Free White Males; Free White Females; All Other Free Persons, Except Indians Not Taxed; Slaves <br> &nbsp; <br> &nbsp;<br> &nbsp;<br> <br>", 
+              "captionPosition": "below", 
+              "id": "img1"
+            }, 
+            "configFixup": [
+              {
+                "name": "URI", 
+                "type": "set-property", 
+                "value": {
+                  "parts": [
+                    {
+                      "domain": "info", 
+                      "refId": "imgBaseUrl", 
+                      "type": "ref"
+                    }, 
+                    {
+                      "type": "constant", 
+                      "value": "img/P11.25a.jpg"
+                    }
+                  ], 
+                  "type": "join"
+                }
+              }
+            ]
+          }, 
+          {
+            "bricId": "image2", 
+            "bricType": "Image", 
+            "config": {
+              "actualSize": {
+                "height": 379, 
+                "width": 570
+              }, 
+              "caption": "The 1910 census listed the following categories: white; black; mulatto; quadroon; octoroon; Chinese; Japanese; Indian", 
+              "captionPosition": "below", 
+              "id": "img2"
+            }, 
+            "configFixup": [
+              {
+                "name": "URI", 
+                "type": "set-property", 
+                "value": {
+                  "parts": [
+                    {
+                      "domain": "info", 
+                      "refId": "imgBaseUrl", 
+                      "type": "ref"
+                    }, 
+                    {
+                      "type": "constant", 
+                      "value": "img/1890_questionnaire_Page_1.jpg"
+                    }
+                  ], 
+                  "type": "join"
+                }
+              }
+            ]
+          }, 
+          {
+            "bricId": "image3", 
+            "bricType": "Image", 
+            "config": {
+              "actualSize": {
+                "height": 379, 
+                "width": 570
+              }, 
+              "caption": "The 2010 census listed the following categories: White; Black, African Am., or Negro; American Indian or Alaska Native; Asian Indian; Chinese; Filipino; Japanese; Korean; Vietnamese; Native Hawaiian; Guamanian or Chamorro; Samoan; Other Asian; Other Pacific Islander; Some other race", 
+              "captionPosition": "below", 
+              "id": "img3"
+            }, 
+            "configFixup": [
+              {
+                "name": "URI", 
+                "type": "set-property", 
+                "value": {
+                  "parts": [
+                    {
+                      "domain": "info", 
+                      "refId": "imgBaseUrl", 
+                      "type": "ref"
+                    }, 
+                    {
+                      "type": "constant", 
+                      "value": "img/P11.25c.jpg"
+                    }
+                  ], 
+                  "type": "join"
+                }
+              }
+            ]
+          }, 
+          {
+            "bricId": "carousel1", 
+            "bricType": "ImageViewer", 
+            "config": {
+              "displayWidth": 579, 
+              "id": "csel1"
+            }, 
+            "configFixup": [
+              {
+                "name": "items", 
+                "type": "set-property", 
+                "value": {
+                  "elements": [
+                    {
+                      "domain": "brix", 
+                      "refId": "image1", 
+                      "type": "ref"
+                    }, 
+                    {
+                      "domain": "brix", 
+                      "refId": "image2", 
+                      "type": "ref"
+                    }, 
+                    {
+                      "domain": "brix", 
+                      "refId": "image3", 
+                      "type": "ref"
+                    }
+                  ], 
+                  "type": "array"
+                }
+              }
+            ]
+          }, 
+          {
+            "bricId": "cntr1", 
+            "bricType": "SvgContainer", 
+            "config": {
+              "maxSize": {
+                "height": "650", 
+                "width": "579"
+              }
+            }, 
+            "configFixup": [
+              {
+                "name": "node", 
+                "type": "set-property", 
+                "value": {
+                  "selector": "#b8e5d57f829c34e4785a88658ec794b80", 
+                  "type": "d3select"
+                }
+              }
+            ]
+          }
+        ], 
+        "containerId": "imgContainer", 
+        "description": "Container for the ImageViewer bric", 
+        "hookupActions": [
+          {
+            "args": [
+              {
+                "domain": "brix", 
+                "refId": "carousel1", 
+                "type": "ref"
+              }
+            ], 
+            "description": "Append the captioned image to the svg container", 
+            "instance": {
+              "domain": "brix", 
+              "refId": "cntr1", 
+              "type": "ref"
+            }, 
+            "methodName": "append", 
+            "type": "method-call"
+          }
+        ]
+      }
+    ], 
+    "description": "Image carousel showing people of different nationalities"
+  }, 
+  "metadata": {
+    "contentTypeTier1": "Activity", 
+    "contentTypeTier2": [
+      "Exercise"
+    ], 
+    "created": "2014-01-31T17:28:11.007115", 
+    "description": "Census Categories Through the Years", 
+    "format": [
+      "application/vnd.pearson.sanvan.v1.activity"
+    ], 
+    "guid": "f20869e7-d0ca-4815-b30c-88392978af80", 
+    "intendedEndUserRole": [
+      "Student"
+    ], 
+    "owner": "Brix", 
+    "subject": [
+      "Sociology"
+    ], 
+    "timeRequired": "PT20S", 
+    "title": "Census Categories Through the Years"
+  }
+}

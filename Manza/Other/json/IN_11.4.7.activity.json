@@ -1,0 +1,208 @@
+{
+  "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope", 
+  "@type": "Envelope", 
+  "body": {
+    "containerConfig": [
+      {
+        "brixConfig": [
+          {
+            "bricId": "image1", 
+            "bricType": "Image", 
+            "config": {
+              "actualSize": {
+                "height": 379, 
+                "width": 570
+              }, 
+              "caption": "African American men account for 40 percent of the prison population. <br/><br/><br/><br/>", 
+              "captionPosition": "below", 
+              "id": "img1"
+            }, 
+            "configFixup": [
+              {
+                "name": "URI", 
+                "type": "set-property", 
+                "value": {
+                  "parts": [
+                    {
+                      "domain": "info", 
+                      "refId": "imgBaseUrl", 
+                      "type": "ref"
+                    }, 
+                    {
+                      "type": "constant", 
+                      "value": "img/11.20a _PRS151AR_081_001_SuperRes.jpg"
+                    }
+                  ], 
+                  "type": "join"
+                }
+              }
+            ]
+          }, 
+          {
+            "bricId": "image2", 
+            "bricType": "Image", 
+            "config": {
+              "actualSize": {
+                "height": 379, 
+                "width": 570
+              }, 
+              "caption": "Yet they account for only 12 percent of the general population (Pager 2007:3).", 
+              "captionPosition": "below", 
+              "id": "img2"
+            }, 
+            "configFixup": [
+              {
+                "name": "URI", 
+                "type": "set-property", 
+                "value": {
+                  "parts": [
+                    {
+                      "domain": "info", 
+                      "refId": "imgBaseUrl", 
+                      "type": "ref"
+                    }, 
+                    {
+                      "type": "constant", 
+                      "value": "img/11.20b _C62BBB.jpg"
+                    }
+                  ], 
+                  "type": "join"
+                }
+              }
+            ]
+          }, 
+          {
+            "bricId": "image3", 
+            "bricType": "Image", 
+            "config": {
+              "actualSize": {
+                "height": 287, 
+                "width": 400
+              }, 
+              "caption": "In 2010, black men were seven times more likely to be incarcerated than white men and about twice as likely as Hispanic men (U.S. Bureau of Justice Statistics 2011).", 
+              "captionPosition": "below", 
+              "id": "img3"
+            }, 
+            "configFixup": [
+              {
+                "name": "URI", 
+                "type": "set-property", 
+                "value": {
+                  "parts": [
+                    {
+                      "domain": "info", 
+                      "refId": "imgBaseUrl", 
+                      "type": "ref"
+                    }, 
+                    {
+                      "type": "constant", 
+                      "value": "img/LA10-3.jpg"
+                    }
+                  ], 
+                  "type": "join"
+                }
+              }
+            ]
+          }, 
+          {
+            "bricId": "carousel1", 
+            "bricType": "ImageViewer", 
+            "config": {
+              "displayWidth": 579, 
+              "id": "csel1"
+            }, 
+            "configFixup": [
+              {
+                "name": "items", 
+                "type": "set-property", 
+                "value": {
+                  "elements": [
+                    {
+                      "domain": "brix", 
+                      "refId": "image1", 
+                      "type": "ref"
+                    }, 
+                    {
+                      "domain": "brix", 
+                      "refId": "image2", 
+                      "type": "ref"
+                    }, 
+                    {
+                      "domain": "brix", 
+                      "refId": "image3", 
+                      "type": "ref"
+                    }
+                  ], 
+                  "type": "array"
+                }
+              }
+            ]
+          }, 
+          {
+            "bricId": "cntr1", 
+            "bricType": "SvgContainer", 
+            "config": {
+              "maxSize": {
+                "height": "600", 
+                "width": "579"
+              }
+            }, 
+            "configFixup": [
+              {
+                "name": "node", 
+                "type": "set-property", 
+                "value": {
+                  "selector": "#b5a9607b48c804f479141d943b16036e8", 
+                  "type": "d3select"
+                }
+              }
+            ]
+          }
+        ], 
+        "containerId": "imgContainer", 
+        "description": "Container for the ImageViewer bric", 
+        "hookupActions": [
+          {
+            "args": [
+              {
+                "domain": "brix", 
+                "refId": "carousel1", 
+                "type": "ref"
+              }
+            ], 
+            "description": "Append the captioned image to the svg container", 
+            "instance": {
+              "domain": "brix", 
+              "refId": "cntr1", 
+              "type": "ref"
+            }, 
+            "methodName": "append", 
+            "type": "method-call"
+          }
+        ]
+      }
+    ], 
+    "description": "Photo/Image carousel showing images of incarcerated men, general population, and Figure 10.3 bar graph comparing incarceration rates."
+  }, 
+  "metadata": {
+    "contentTypeTier1": "Activity", 
+    "contentTypeTier2": [
+      "Exercise"
+    ], 
+    "created": "2014-01-31T17:28:11.006609", 
+    "description": "Figure 11.5: Incarceration Rates", 
+    "format": [
+      "application/vnd.pearson.sanvan.v1.activity"
+    ], 
+    "guid": "af989d38-b8a0-4c6e-bbfc-f30f02a90da8", 
+    "intendedEndUserRole": [
+      "Student"
+    ], 
+    "owner": "Brix", 
+    "subject": [
+      "Sociology"
+    ], 
+    "timeRequired": "PT20S", 
+    "title": "Figure 11.5: Incarceration Rates"
+  }
+}

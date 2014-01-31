@@ -1,0 +1,246 @@
+{
+  "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope", 
+  "@type": "Envelope", 
+  "body": {
+    "containerConfig": [
+      {
+        "brixConfig": [
+          {
+            "bricId": "image1", 
+            "bricType": "Image", 
+            "config": {
+              "actualSize": {
+                "height": 379, 
+                "width": 570
+              }, 
+              "caption": "Native Americans, such as these Hopi Indians, are regarded as a distinct ethnic group in the United States, even though their ancestors were native to the area. <br/><br/>", 
+              "captionPosition": "below", 
+              "id": "img1"
+            }, 
+            "configFixup": [
+              {
+                "name": "URI", 
+                "type": "set-property", 
+                "value": {
+                  "parts": [
+                    {
+                      "domain": "info", 
+                      "refId": "imgBaseUrl", 
+                      "type": "ref"
+                    }, 
+                    {
+                      "type": "constant", 
+                      "value": "img/P10-5.jpg"
+                    }
+                  ], 
+                  "type": "join"
+                }
+              }
+            ]
+          }, 
+          {
+            "bricId": "image2", 
+            "bricType": "Image", 
+            "config": {
+              "actualSize": {
+                "height": 379, 
+                "width": 570
+              }, 
+              "caption": "German Americans are generally recognized as descended from immigrants. A day or event of special significance to Germans - such as a parade - may provide a context to assert an ethnic identity.", 
+              "captionPosition": "below", 
+              "id": "img2"
+            }, 
+            "configFixup": [
+              {
+                "name": "URI", 
+                "type": "set-property", 
+                "value": {
+                  "parts": [
+                    {
+                      "domain": "info", 
+                      "refId": "imgBaseUrl", 
+                      "type": "ref"
+                    }, 
+                    {
+                      "type": "constant", 
+                      "value": "img/11.10b_106602894817.jpg"
+                    }
+                  ], 
+                  "type": "join"
+                }
+              }
+            ]
+          }, 
+          {
+            "bricId": "image3", 
+            "bricType": "Image", 
+            "config": {
+              "actualSize": {
+                "height": 379, 
+                "width": 570
+              }, 
+              "caption": "Immigrant groups like Cuban Americans also participate in events that can prompt close ethnic identity.", 
+              "captionPosition": "below", 
+              "id": "img3"
+            }, 
+            "configFixup": [
+              {
+                "name": "URI", 
+                "type": "set-property", 
+                "value": {
+                  "parts": [
+                    {
+                      "domain": "info", 
+                      "refId": "imgBaseUrl", 
+                      "type": "ref"
+                    }, 
+                    {
+                      "type": "constant", 
+                      "value": "img/11.10c_epaphotostwo611373.jpg"
+                    }
+                  ], 
+                  "type": "join"
+                }
+              }
+            ]
+          }, 
+          {
+            "bricId": "image4", 
+            "bricType": "Image", 
+            "config": {
+              "actualSize": {
+                "height": 379, 
+                "width": 570
+              }, 
+              "caption": "Cooking traditional meals is another common way for the descendants of immigrants to express their ethnic identity.", 
+              "captionPosition": "below", 
+              "id": "img3"
+            }, 
+            "configFixup": [
+              {
+                "name": "URI", 
+                "type": "set-property", 
+                "value": {
+                  "parts": [
+                    {
+                      "domain": "info", 
+                      "refId": "imgBaseUrl", 
+                      "type": "ref"
+                    }, 
+                    {
+                      "type": "constant", 
+                      "value": "img/11.10d _FAM351KMD003_001_SuperRes.jpg"
+                    }
+                  ], 
+                  "type": "join"
+                }
+              }
+            ]
+          }, 
+          {
+            "bricId": "carousel1", 
+            "bricType": "ImageViewer", 
+            "config": {
+              "displayWidth": 579, 
+              "id": "csel1"
+            }, 
+            "configFixup": [
+              {
+                "name": "items", 
+                "type": "set-property", 
+                "value": {
+                  "elements": [
+                    {
+                      "domain": "brix", 
+                      "refId": "image1", 
+                      "type": "ref"
+                    }, 
+                    {
+                      "domain": "brix", 
+                      "refId": "image2", 
+                      "type": "ref"
+                    }, 
+                    {
+                      "domain": "brix", 
+                      "refId": "image3", 
+                      "type": "ref"
+                    }, 
+                    {
+                      "domain": "brix", 
+                      "refId": "image4", 
+                      "type": "ref"
+                    }
+                  ], 
+                  "type": "array"
+                }
+              }
+            ]
+          }, 
+          {
+            "bricId": "cntr1", 
+            "bricType": "SvgContainer", 
+            "config": {
+              "maxSize": {
+                "height": "570", 
+                "width": "579"
+              }
+            }, 
+            "configFixup": [
+              {
+                "name": "node", 
+                "type": "set-property", 
+                "value": {
+                  "selector": "#be657869f38d44501b03bb93cd15faf6e", 
+                  "type": "d3select"
+                }
+              }
+            ]
+          }
+        ], 
+        "containerId": "imgContainer", 
+        "description": "Container for the ImageViewer bric", 
+        "hookupActions": [
+          {
+            "args": [
+              {
+                "domain": "brix", 
+                "refId": "carousel1", 
+                "type": "ref"
+              }
+            ], 
+            "description": "Append the captioned image to the svg container", 
+            "instance": {
+              "domain": "brix", 
+              "refId": "cntr1", 
+              "type": "ref"
+            }, 
+            "methodName": "append", 
+            "type": "method-call"
+          }
+        ]
+      }
+    ], 
+    "description": "Image carousel Distinguishing Native and Migrant Ethnic Groups"
+  }, 
+  "metadata": {
+    "contentTypeTier1": "Activity", 
+    "contentTypeTier2": [
+      "Exercise"
+    ], 
+    "created": "2014-01-31T17:28:11.005881", 
+    "description": "Native and Migrant Ethnic Groups", 
+    "format": [
+      "application/vnd.pearson.sanvan.v1.activity"
+    ], 
+    "guid": "149864d8-792b-42de-81c0-0973b81164bd", 
+    "intendedEndUserRole": [
+      "Student"
+    ], 
+    "owner": "Brix", 
+    "subject": [
+      "Sociology"
+    ], 
+    "timeRequired": "PT20S", 
+    "title": "Native and Migrant Ethnic Groups"
+  }
+}

@@ -1,0 +1,420 @@
+{
+  "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope", 
+  "@type": "Envelope", 
+  "body": {
+    "containerConfig": [
+      {
+        "brixConfig": [
+          {
+            "bricId": "swapGraph", 
+            "bricType": "BarChart", 
+            "config": {
+              "id": "graph1", 
+              "xAxisFormat": {
+                "format": "0f", 
+                "label": "Mortality Rate (deaths per 100,000/year)", 
+                "orientation": "bottom", 
+                "ticks": 4, 
+                "type": "linear"
+              }, 
+              "yAxisFormat": {
+                "orientation": "left", 
+                "type": "ordinal"
+              }
+            }, 
+            "configFixup": [
+              {
+                "name": "Data", 
+                "type": "set-property", 
+                "value": {
+                  "domain": "data", 
+                  "refId": "coronary", 
+                  "type": "ref"
+                }
+              }
+            ]
+          }, 
+          {
+            "bricId": "labelSelector1", 
+            "bricType": "LabelSelector", 
+            "config": {
+              "id": "dataLabels", 
+              "itemMargin": {
+                "bottom": 5, 
+                "left": 0, 
+                "right": 0, 
+                "top": 5
+              }, 
+              "labels": [
+                "Coronary Deaths", 
+                "HIV Deaths", 
+                "Infant Mortality", 
+                "Homicide"
+              ], 
+              "layout": "vertical"
+            }
+          }, 
+          {
+            "bricId": "cntr1", 
+            "bricType": "SvgContainer", 
+            "config": {
+              "maxSize": {
+                "height": 400, 
+                "width": 579
+              }
+            }, 
+            "configFixup": [
+              {
+                "name": "node", 
+                "type": "set-property", 
+                "value": {
+                  "selector": "#b44e9c12d59d0400788b9367db1b2a6fb", 
+                  "type": "d3select"
+                }
+              }
+            ]
+          }
+        ], 
+        "containerId": "b44e9c12d59d0400788b9367db1b2a6fb", 
+        "description": "container for the graph and labels", 
+        "hookupActions": [
+          {
+            "args": [
+              {
+                "domain": "brix", 
+                "refId": "swapGraph", 
+                "type": "ref"
+              }, 
+              {
+                "type": "constant", 
+                "value": {
+                  "heightPercent": 0.85, 
+                  "leftPercentOffset": 0, 
+                  "topPercentOffset": 0.15, 
+                  "widthPercent": 1
+                }
+              }
+            ], 
+            "description": "Append the swap graph to the svg container", 
+            "instance": {
+              "domain": "brix", 
+              "refId": "cntr1", 
+              "type": "ref"
+            }, 
+            "methodName": "append", 
+            "type": "method-call"
+          }, 
+          {
+            "args": [
+              {
+                "domain": "brix", 
+                "refId": "labelSelector1", 
+                "type": "ref"
+              }, 
+              {
+                "type": "constant", 
+                "value": {
+                  "heightPercent": 0.2, 
+                  "leftPercentOffset": 0, 
+                  "topPercentOffset": 0.0, 
+                  "widthPercent": 1
+                }
+              }
+            ], 
+            "description": "Append the labels to the svg container", 
+            "instance": {
+              "domain": "brix", 
+              "refId": "cntr1", 
+              "type": "ref"
+            }, 
+            "methodName": "append", 
+            "type": "method-call"
+          }, 
+          {
+            "args": [
+              {
+                "type": "constant", 
+                "value": "0"
+              }
+            ], 
+            "description": "Initial condition: select 1st label", 
+            "instance": {
+              "domain": "brix", 
+              "refId": "labelSelector1", 
+              "type": "ref"
+            }, 
+            "methodName": "lite", 
+            "type": "method-call"
+          }
+        ], 
+        "mortarConfig": [
+          {
+            "config": {
+              "dataPropertySetter": "setData", 
+              "eventDetailsProperty": "index"
+            }, 
+            "configFixup": [
+              {
+                "name": "topic", 
+                "type": "set-property", 
+                "value": {
+                  "bricType": "LabelSelector", 
+                  "eventName": "selected", 
+                  "instanceId": "dataLabels", 
+                  "type": "brix-topic"
+                }
+              }, 
+              {
+                "name": "sourceDataArray", 
+                "type": "set-property", 
+                "value": {
+                  "elements": [
+                    {
+                      "domain": "data", 
+                      "refId": "coronary", 
+                      "type": "ref"
+                    }, 
+                    {
+                      "domain": "data", 
+                      "refId": "hiv", 
+                      "type": "ref"
+                    }, 
+                    {
+                      "domain": "data", 
+                      "refId": "infant", 
+                      "type": "ref"
+                    }, 
+                    {
+                      "domain": "data", 
+                      "refId": "homicide", 
+                      "type": "ref"
+                    }
+                  ], 
+                  "type": "array"
+                }
+              }, 
+              {
+                "name": "targetBric", 
+                "type": "set-property", 
+                "value": {
+                  "domain": "brix", 
+                  "refId": "swapGraph", 
+                  "type": "ref"
+                }
+              }
+            ], 
+            "mortarId": "dataswap1", 
+            "mortarType": "Dataswap"
+          }
+        ]
+      }, 
+      {
+        "brixConfig": [
+          {
+            "bricId": "lbltbl1", 
+            "bricType": "Callouts", 
+            "config": {
+              "id": "callme", 
+              "textBits": [
+                {
+                  "cols": [
+                    "<strong>Death Rates for Coronary Heart Disease in 2008</strong>", 
+                    "Coronary heart disease is the leading cause of death in the United States, but African Americans are much more likely to die from this condition than any other racial group (Centers for Disease Control and Prevention 2011)."
+                  ]
+                }, 
+                {
+                  "cols": [
+                    "<strong>Rates of HIV Infection of Persons Over 13 Years of Age per 100,000 in 2008</strong>", 
+                    "Blacks have by far the highest rates of HIV infection among any racial or ethnic group in the United States. The rate of HIV infection among African Americans is about 10 times the rate for whites and Asians and about 3 times the rate for Hispanics. "
+                  ]
+                }, 
+                {
+                  "cols": [
+                    "<strong>Rates of Infant Mortality per 100,000 in 2006</strong>", 
+                    "African Americans have the highest rate of infant mortality in the United States, a rate that is more than double that of whites, Asians, and Hispanics."
+                  ]
+                }, 
+                {
+                  "cols": [
+                    "<strong>Homicide Rates per 100,000 in 2007</strong>", 
+                    "One of the most striking disparities in mortality is in the area of homicide. For example, in 2007 the homicide rate for black males was over 10 times the rate for white and Asian males and about 4 times the rate for Latinos and Native Americans."
+                  ]
+                }
+              ]
+            }
+          }
+        ], 
+        "containerId": "b1414d633f78446ddaa597a2fd737e70d", 
+        "description": "The 'b1414d633f78446ddaa597a2fd737e70d' container contains the swappable callouts", 
+        "hookupActions": [
+          {
+            "args": [
+              {
+                "selector": "#b44e9c12d59d0400788b9367db1b2a6fb", 
+                "type": "d3select"
+              }
+            ], 
+            "description": "draw the label table", 
+            "instance": {
+              "domain": "brix", 
+              "refId": "lbltbl1", 
+              "type": "ref"
+            }, 
+            "methodName": "draw", 
+            "type": "method-call"
+          }, 
+          {
+            "args": [
+              {
+                "type": "constant", 
+                "value": "0"
+              }
+            ], 
+            "description": "Initial condition: select 1st table row (note that we may want to use the state field to do this later)", 
+            "instance": {
+              "domain": "brix", 
+              "refId": "lbltbl1", 
+              "type": "ref"
+            }, 
+            "methodName": "lite", 
+            "type": "method-call"
+          }
+        ], 
+        "mortarConfig": [
+          {
+            "config": {
+              "eventDetailsProperty": "selectKey"
+            }, 
+            "configFixup": [
+              {
+                "name": "topic", 
+                "type": "set-property", 
+                "value": {
+                  "bricType": "LabelSelector", 
+                  "eventName": "selected", 
+                  "instanceId": "dataLabels", 
+                  "type": "brix-topic"
+                }
+              }, 
+              {
+                "name": "targetBric", 
+                "type": "set-property", 
+                "value": {
+                  "domain": "brix", 
+                  "refId": "lbltbl1", 
+                  "type": "ref"
+                }
+              }
+            ], 
+            "mortarId": "hilite1", 
+            "mortarType": "Hilite"
+          }
+        ]
+      }
+    ], 
+    "data": {
+      "coronary": [
+        [
+          {
+            "x": 134.2, 
+            "y": "Whites"
+          }, 
+          {
+            "x": 161.6, 
+            "y": "Blacks"
+          }, 
+          {
+            "x": 106.4, 
+            "y": "Hispanics"
+          }, 
+          {
+            "x": 77.1, 
+            "y": "Asians"
+          }
+        ]
+      ], 
+      "hiv": [
+        [
+          {
+            "x": 8.2, 
+            "y": "Whites"
+          }, 
+          {
+            "x": 73.7, 
+            "y": "Blacks"
+          }, 
+          {
+            "x": 25, 
+            "y": "Hispanics"
+          }, 
+          {
+            "x": 7.2, 
+            "y": "Asians"
+          }
+        ]
+      ], 
+      "homicide": [
+        [
+          {
+            "x": 2.7, 
+            "y": "Whites"
+          }, 
+          {
+            "x": 23.1, 
+            "y": "Blacks"
+          }, 
+          {
+            "x": 7.6, 
+            "y": "Hispanics"
+          }, 
+          {
+            "x": 2.4, 
+            "y": "Asians"
+          }
+        ]
+      ], 
+      "infant": [
+        [
+          {
+            "x": 5.58, 
+            "y": "Whites"
+          }, 
+          {
+            "x": 13.36, 
+            "y": "Blacks"
+          }, 
+          {
+            "x": 5.41, 
+            "y": "Hispanics"
+          }, 
+          {
+            "x": 4.55, 
+            "y": "Asians"
+          }
+        ]
+      ]
+    }, 
+    "description": "Various Health-Related Indicators"
+  }, 
+  "metadata": {
+    "contentTypeTier1": "Activity", 
+    "contentTypeTier2": [
+      "Exercise"
+    ], 
+    "created": "2014-01-31T17:28:11.006732", 
+    "description": "Figure 11.6: Various Health-Related Indicators", 
+    "format": [
+      "application/vnd.pearson.sanvan.v1.activity"
+    ], 
+    "guid": "9a59152f-7b19-44fb-9cd3-e6a0eef9ef43", 
+    "intendedEndUserRole": [
+      "Student"
+    ], 
+    "owner": "Brix", 
+    "subject": [
+      "Sociology"
+    ], 
+    "timeRequired": "PT20S", 
+    "title": "Figure 11.6: Various Health-Related Indicators"
+  }
+}

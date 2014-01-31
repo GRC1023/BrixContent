@@ -1,0 +1,207 @@
+{
+  "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope", 
+  "@type": "Envelope", 
+  "body": {
+    "containerConfig": [
+      {
+        "brixConfig": [
+          {
+            "bricId": "lblCarousel1", 
+            "bricType": "LabelCarousel", 
+            "config": {
+              "displayWidth": 579, 
+              "id": "lblCrsl1", 
+              "imagesActualSize": {
+                "height": 287, 
+                "width": 400
+              }, 
+              "type": "textLabels"
+            }, 
+            "configFixup": [
+              {
+                "name": "images", 
+                "type": "set-property", 
+                "value": {
+                  "elements": [
+                    {
+                      "properties": [
+                        {
+                          "name": "URI", 
+                          "value": {
+                            "parts": [
+                              {
+                                "domain": "info", 
+                                "refId": "imgBaseUrl", 
+                                "type": "ref"
+                              }, 
+                              {
+                                "type": "constant", 
+                                "value": "img/IN_11.5.5aa.png"
+                              }
+                            ], 
+                            "type": "join"
+                          }
+                        }, 
+                        {
+                          "name": "caption", 
+                          "value": {
+                            "type": "constant", 
+                            "value": "In 1910, 89 percent of the U.S. population consisted of non-Hispanic whites. Explore this map of the United States to see where the highest concentration of non-Hispanic whites were located at this time.<br><br><br><br>"
+                          }
+                        }, 
+                        {
+                          "name": "selectorLabel", 
+                          "value": {
+                            "type": "constant", 
+                            "value": "1910"
+                          }
+                        }
+                      ], 
+                      "type": "object"
+                    }, 
+                    {
+                      "properties": [
+                        {
+                          "name": "URI", 
+                          "value": {
+                            "parts": [
+                              {
+                                "domain": "info", 
+                                "refId": "imgBaseUrl", 
+                                "type": "ref"
+                              }, 
+                              {
+                                "type": "constant", 
+                                "value": "img/IN_11.5.5ab.png"
+                              }
+                            ], 
+                            "type": "join"
+                          }
+                        }, 
+                        {
+                          "name": "caption", 
+                          "value": {
+                            "type": "constant", 
+                            "value": "By 2010, the percentage of non-Hispanic whites in the United States had shrunk from 89 percent to 69.1 percent. Explore this map to see which areas of the United States experienced the most dramatic changes in racial composition."
+                          }
+                        }, 
+                        {
+                          "name": "selectorLabel", 
+                          "value": {
+                            "type": "constant", 
+                            "value": "2010"
+                          }
+                        }
+                      ], 
+                      "type": "object"
+                    }, 
+                    {
+                      "properties": [
+                        {
+                          "name": "URI", 
+                          "value": {
+                            "parts": [
+                              {
+                                "domain": "info", 
+                                "refId": "imgBaseUrl", 
+                                "type": "ref"
+                              }, 
+                              {
+                                "type": "constant", 
+                                "value": "img/IN_11.5.5ac.png"
+                              }
+                            ], 
+                            "type": "join"
+                          }
+                        }, 
+                        {
+                          "name": "caption", 
+                          "value": {
+                            "type": "constant", 
+                            "value": "The U.S. Census Bureau has forecast that before mid-century, the non-Hispanic white population of the United States will shrink to less than half of the total. Current Bureau projections for 2050 put the white share of the U.S. population at 46 percent, Hispanics at 30 percent, blacks at 12 percent, Asians at 8 percent, American Indians and Alaska Natives at 1 percent, and multiracial people at 3 percent."
+                          }
+                        }, 
+                        {
+                          "name": "selectorLabel", 
+                          "value": {
+                            "type": "constant", 
+                            "value": "2050"
+                          }
+                        }
+                      ], 
+                      "type": "object"
+                    }
+                  ], 
+                  "type": "array"
+                }
+              }
+            ]
+          }, 
+          {
+            "bricId": "cntr1", 
+            "bricType": "SvgContainer", 
+            "config": {
+              "maxSize": {
+                "height": 600, 
+                "width": 579
+              }
+            }, 
+            "configFixup": [
+              {
+                "name": "node", 
+                "type": "set-property", 
+                "value": {
+                  "selector": "#bc13c498f2c12482a8fbb0ea343d2e305", 
+                  "type": "d3select"
+                }
+              }
+            ]
+          }
+        ], 
+        "containerId": "imgContainer", 
+        "description": "Container for the LabelCarousel", 
+        "hookupActions": [
+          {
+            "args": [
+              {
+                "domain": "brix", 
+                "refId": "lblCarousel1", 
+                "type": "ref"
+              }
+            ], 
+            "description": "Append the label image carousel to the svg container", 
+            "instance": {
+              "domain": "brix", 
+              "refId": "cntr1", 
+              "type": "ref"
+            }, 
+            "methodName": "append", 
+            "type": "method-call"
+          }
+        ]
+      }
+    ], 
+    "description": "Becoming a Majority-Minority Nation [Map]"
+  }, 
+  "metadata": {
+    "contentTypeTier1": "Activity", 
+    "contentTypeTier2": [
+      "Exercise"
+    ], 
+    "created": "2014-01-31T17:28:11.006925", 
+    "description": "Becoming a Majority-Minority Nation [Map]", 
+    "format": [
+      "application/vnd.pearson.sanvan.v1.activity"
+    ], 
+    "guid": "9eb189a8-7f84-494d-91d7-66de424640f0", 
+    "intendedEndUserRole": [
+      "Student"
+    ], 
+    "owner": "Brix", 
+    "subject": [
+      "Sociology"
+    ], 
+    "timeRequired": "PT20S", 
+    "title": "Becoming a Majority-Minority Nation [Map]"
+  }
+}
