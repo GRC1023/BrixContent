@@ -1,0 +1,149 @@
+{
+  "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope", 
+  "@type": "Envelope", 
+  "body": {
+    "containerConfig": [
+      {
+        "brixConfig": [
+          {
+            "answerKey": {
+              "answers": {
+                "answer1": {
+                  "response": "Yes, Brazil focuses on very specific combinations of physical traits when assigning race. Because of this, members of the same biological family are sometimes assigned different races.", 
+                  "score": 1
+                }, 
+                "answer2": {
+                  "response": "Refer to Learning Objective 11.2.3: Discuss how race is understood differently around the world.", 
+                  "score": 0
+                }, 
+                "answer3": {
+                  "response": "Refer to Learning Objective 11.2.3: Discuss how race is understood differently around the world.", 
+                  "score": 0
+                }, 
+                "answer4": {
+                  "response": "Refer to Learning Objective 11.2.3: Discuss how race is understood differently around the world.", 
+                  "score": 0
+                }, 
+                "answer5": {
+                  "response": "Refer to Learning Objective 11.2.3: Discuss how race is understood differently around the world.", 
+                  "score": 0
+                }
+              }, 
+              "assessmentType": "multiplechoice"
+            }, 
+            "bricId": "Q1", 
+            "bricType": "MultipleChoiceQuestion", 
+            "config": {
+              "choices": [
+                {
+                  "answerKey": "answer1", 
+                  "content": "siblings can be assigned different race labels"
+                }, 
+                {
+                  "answerKey": "answer2", 
+                  "content": "physical characteristics do not play a role"
+                }, 
+                {
+                  "answerKey": "answer3", 
+                  "content": "it is fixed and permanent over time"
+                }, 
+                {
+                  "answerKey": "answer4", 
+                  "content": "whiteness does not exist"
+                }, 
+                {
+                  "answerKey": "answer5", 
+                  "content": "there are only two racial categories"
+                }
+              ], 
+              "id": "sampleQ1", 
+              "order": "randomized", 
+              "presenterConfig": {
+                "numberFormat": "latin-upper"
+              }, 
+              "presenterType": "RadioGroup", 
+              "question": "In Brazil, race is defined in a way that ________."
+            }, 
+            "configFixup": [
+              {
+                "name": "questionId", 
+                "type": "set-property", 
+                "value": {
+                  "domain": "info", 
+                  "refId": "sequenceNodeKey", 
+                  "type": "ref"
+                }
+              }, 
+              {
+                "name": "maxAttempts", 
+                "type": "set-property", 
+                "value": {
+                  "domain": "info", 
+                  "refId": "maxAttempts", 
+                  "type": "ref"
+                }
+              }
+            ]
+          }
+        ], 
+        "containerId": "target1", 
+        "description": "container for the sample multiple choice question", 
+        "hookupActions": [
+          {
+            "args": [
+              {
+                "domain": "brix", 
+                "refId": "Q1", 
+                "type": "ref"
+              }
+            ], 
+            "description": "Hookup the submit manager to evaluate answers", 
+            "instance": {
+              "type": "submit-manager"
+            }, 
+            "methodName": "handleRequestsFrom", 
+            "type": "method-call"
+          }, 
+          {
+            "args": [
+              {
+                "selector": "#target1", 
+                "type": "d3select"
+              }
+            ], 
+            "description": "Draw the question", 
+            "instance": {
+              "domain": "brix", 
+              "refId": "Q1", 
+              "type": "ref"
+            }, 
+            "methodName": "draw", 
+            "type": "method-call"
+          }
+        ]
+      }
+    ], 
+    "description": "A Sample Activity containing a single multiple choice bric"
+  }, 
+  "metadata": {
+    "contentTypeTier1": "Test and Assessment", 
+    "contentTypeTier2": [
+      "assessment item"
+    ], 
+    "created": "2014-01-31T12:00:45.272866", 
+    "description": "Rev.11.2.5.html", 
+    "format": [
+      "application/vnd.pearson.sanvan.v1.activity"
+    ], 
+    "guid": "93079fdc-edc0-4a56-b7bb-7601d70e1251", 
+    "intendedEndUserRole": [
+      "Student"
+    ], 
+    "owner": "Brix", 
+    "subject": [
+      ""
+    ], 
+    "timeRequired": "PT20S", 
+    "title": "Rev.11.2.5.html"
+  }
+}

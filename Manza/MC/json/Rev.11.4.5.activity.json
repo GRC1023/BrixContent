@@ -1,0 +1,149 @@
+{
+  "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope", 
+  "@type": "Envelope", 
+  "body": {
+    "containerConfig": [
+      {
+        "brixConfig": [
+          {
+            "answerKey": {
+              "answers": {
+                "answer1": {
+                  "response": "Yes, since the passage of the Civil Rights Act of 1964 and the Voting Rights Act of 1965, rates of participation in elections have narrowed dramatically between whites and blacks, as the new legislation enabled black voters and candidates to participate fully. ", 
+                  "score": 1
+                }, 
+                "answer2": {
+                  "response": "Refer to Learning Objective 11.4.6: Discuss the relationship between high incarceration rates among African American men and their political participation and representation.", 
+                  "score": 0
+                }, 
+                "answer3": {
+                  "response": "Refer to Learning Objective 11.4.6: Discuss the relationship between high incarceration rates among African American men and their political participation and representation.", 
+                  "score": 0
+                }, 
+                "answer4": {
+                  "response": "Refer to Learning Objective 11.4.6: Discuss the relationship between high incarceration rates among African American men and their political participation and representation.", 
+                  "score": 0
+                }, 
+                "answer5": {
+                  "response": "Refer to Learning Objective 11.4.6: Discuss the relationship between high incarceration rates among African American men and their political participation and representation.", 
+                  "score": 0
+                }
+              }, 
+              "assessmentType": "multiplechoice"
+            }, 
+            "bricId": "Q1", 
+            "bricType": "MultipleChoiceQuestion", 
+            "config": {
+              "choices": [
+                {
+                  "answerKey": "answer1", 
+                  "content": "the passage of the Civil Rights Act and the Voting Rights Act"
+                }, 
+                {
+                  "answerKey": "answer2", 
+                  "content": "the concept of racial hierarchy was abolished"
+                }, 
+                {
+                  "answerKey": "answer3", 
+                  "content": "white supremacists have gained power"
+                }, 
+                {
+                  "answerKey": "answer4", 
+                  "content": "affirmative action was first deployed"
+                }, 
+                {
+                  "answerKey": "answer5", 
+                  "content": "Barack Obama was elected President in 2008"
+                }
+              ], 
+              "id": "sampleQ1", 
+              "order": "randomized", 
+              "presenterConfig": {
+                "numberFormat": "latin-upper"
+              }, 
+              "presenterType": "RadioGroup", 
+              "question": "Since ______________, African Americans have experienced significant gains in political participation and representation."
+            }, 
+            "configFixup": [
+              {
+                "name": "questionId", 
+                "type": "set-property", 
+                "value": {
+                  "domain": "info", 
+                  "refId": "sequenceNodeKey", 
+                  "type": "ref"
+                }
+              }, 
+              {
+                "name": "maxAttempts", 
+                "type": "set-property", 
+                "value": {
+                  "domain": "info", 
+                  "refId": "maxAttempts", 
+                  "type": "ref"
+                }
+              }
+            ]
+          }
+        ], 
+        "containerId": "target1", 
+        "description": "container for the sample multiple choice question", 
+        "hookupActions": [
+          {
+            "args": [
+              {
+                "domain": "brix", 
+                "refId": "Q1", 
+                "type": "ref"
+              }
+            ], 
+            "description": "Hookup the submit manager to evaluate answers", 
+            "instance": {
+              "type": "submit-manager"
+            }, 
+            "methodName": "handleRequestsFrom", 
+            "type": "method-call"
+          }, 
+          {
+            "args": [
+              {
+                "selector": "#target1", 
+                "type": "d3select"
+              }
+            ], 
+            "description": "Draw the question", 
+            "instance": {
+              "domain": "brix", 
+              "refId": "Q1", 
+              "type": "ref"
+            }, 
+            "methodName": "draw", 
+            "type": "method-call"
+          }
+        ]
+      }
+    ], 
+    "description": "A Sample Activity containing a single multiple choice bric"
+  }, 
+  "metadata": {
+    "contentTypeTier1": "Test and Assessment", 
+    "contentTypeTier2": [
+      "assessment item"
+    ], 
+    "created": "2014-01-31T12:00:45.273566", 
+    "description": "Rev.11.4.5.html", 
+    "format": [
+      "application/vnd.pearson.sanvan.v1.activity"
+    ], 
+    "guid": "df25d79f-3714-4e01-899b-c74d208bd515", 
+    "intendedEndUserRole": [
+      "Student"
+    ], 
+    "owner": "Brix", 
+    "subject": [
+      ""
+    ], 
+    "timeRequired": "PT20S", 
+    "title": "Rev.11.4.5.html"
+  }
+}

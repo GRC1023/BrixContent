@@ -1,0 +1,149 @@
+{
+  "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope", 
+  "@type": "Envelope", 
+  "body": {
+    "containerConfig": [
+      {
+        "brixConfig": [
+          {
+            "answerKey": {
+              "answers": {
+                "answer1": {
+                  "response": "Yes, the one-drop rule states that having only one grandparent of a non-white race would define a person\u2019s racial identity. This was a custom in the United States in the early twentieth century.", 
+                  "score": 1
+                }, 
+                "answer2": {
+                  "response": "Refer to Learning Objective 11.1.1: Compare and contrast contemporary sociologists\u2019 and Max Weber\u2019s definitions of race and ethnicity.", 
+                  "score": 0
+                }, 
+                "answer3": {
+                  "response": "Refer to Learning Objective 11.1.1: Compare and contrast contemporary sociologists\u2019 and Max Weber\u2019s definitions of race and ethnicity.", 
+                  "score": 0
+                }, 
+                "answer4": {
+                  "response": "Refer to Learning Objective 11.1.1: Compare and contrast contemporary sociologists\u2019 and Max Weber\u2019s definitions of race and ethnicity.", 
+                  "score": 0
+                }, 
+                "answer5": {
+                  "response": "Refer to Learning Objective 11.1.1: Compare and contrast contemporary sociologists\u2019 and Max Weber\u2019s definitions of race and ethnicity.", 
+                  "score": 0
+                }
+              }, 
+              "assessmentType": "multiplechoice"
+            }, 
+            "bricId": "Q1", 
+            "bricType": "MultipleChoiceQuestion", 
+            "config": {
+              "choices": [
+                {
+                  "answerKey": "answer1", 
+                  "content": "black"
+                }, 
+                {
+                  "answerKey": "answer2", 
+                  "content": "white"
+                }, 
+                {
+                  "answerKey": "answer3", 
+                  "content": "mixed race"
+                }, 
+                {
+                  "answerKey": "answer4", 
+                  "content": "Hispanic"
+                }, 
+                {
+                  "answerKey": "answer5", 
+                  "content": "unclassifiable"
+                }
+              ], 
+              "id": "sampleQ1", 
+              "order": "randomized", 
+              "presenterConfig": {
+                "numberFormat": "latin-upper"
+              }, 
+              "presenterType": "RadioGroup", 
+              "question": "According to the one-drop rule, a person with three black grandparents and one white grandparent would be ________."
+            }, 
+            "configFixup": [
+              {
+                "name": "questionId", 
+                "type": "set-property", 
+                "value": {
+                  "domain": "info", 
+                  "refId": "sequenceNodeKey", 
+                  "type": "ref"
+                }
+              }, 
+              {
+                "name": "maxAttempts", 
+                "type": "set-property", 
+                "value": {
+                  "domain": "info", 
+                  "refId": "maxAttempts", 
+                  "type": "ref"
+                }
+              }
+            ]
+          }
+        ], 
+        "containerId": "target1", 
+        "description": "container for the sample multiple choice question", 
+        "hookupActions": [
+          {
+            "args": [
+              {
+                "domain": "brix", 
+                "refId": "Q1", 
+                "type": "ref"
+              }
+            ], 
+            "description": "Hookup the submit manager to evaluate answers", 
+            "instance": {
+              "type": "submit-manager"
+            }, 
+            "methodName": "handleRequestsFrom", 
+            "type": "method-call"
+          }, 
+          {
+            "args": [
+              {
+                "selector": "#target1", 
+                "type": "d3select"
+              }
+            ], 
+            "description": "Draw the question", 
+            "instance": {
+              "domain": "brix", 
+              "refId": "Q1", 
+              "type": "ref"
+            }, 
+            "methodName": "draw", 
+            "type": "method-call"
+          }
+        ]
+      }
+    ], 
+    "description": "A Sample Activity containing a single multiple choice bric"
+  }, 
+  "metadata": {
+    "contentTypeTier1": "Test and Assessment", 
+    "contentTypeTier2": [
+      "assessment item"
+    ], 
+    "created": "2014-01-31T12:00:45.272460", 
+    "description": "Rev.11.1.4.html", 
+    "format": [
+      "application/vnd.pearson.sanvan.v1.activity"
+    ], 
+    "guid": "15ddcabb-e45c-4401-87d9-b00d27d17184", 
+    "intendedEndUserRole": [
+      "Student"
+    ], 
+    "owner": "Brix", 
+    "subject": [
+      ""
+    ], 
+    "timeRequired": "PT20S", 
+    "title": "Rev.11.1.4.html"
+  }
+}

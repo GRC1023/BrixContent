@@ -1,0 +1,149 @@
+{
+  "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope", 
+  "@type": "Envelope", 
+  "body": {
+    "containerConfig": [
+      {
+        "brixConfig": [
+          {
+            "answerKey": {
+              "answers": {
+                "answer1": {
+                  "response": "Yes, changes in public policies contributed to changing attitudes. In 1967, the Supreme Court struck down all state laws banning interracial marriage. In 1997, the federal government revised its official racial classifications to permit individuals to identify with more than one race. Both decisions signaled a sea change in Americans' willingness to recognize and even accept new ways of thinking about race.", 
+                  "score": 1
+                }, 
+                "answer2": {
+                  "response": "Refer to Learning Objective 11.5.1: Discuss changes in attitudes toward interracial unions and multiracial people in the United States.", 
+                  "score": 0
+                }, 
+                "answer3": {
+                  "response": "Refer to Learning Objective 11.5.1: Discuss changes in attitudes toward interracial unions and multiracial people in the United States.", 
+                  "score": 0
+                }, 
+                "answer4": {
+                  "response": "Refer to Learning Objective 11.5.1: Discuss changes in attitudes toward interracial unions and multiracial people in the United States.", 
+                  "score": 0
+                }, 
+                "answer5": {
+                  "response": "Refer to Learning Objective 11.5.1: Discuss changes in attitudes toward interracial unions and multiracial people in the United States.", 
+                  "score": 0
+                }
+              }, 
+              "assessmentType": "multiplechoice"
+            }, 
+            "bricId": "Q1", 
+            "bricType": "MultipleChoiceQuestion", 
+            "config": {
+              "choices": [
+                {
+                  "answerKey": "answer1", 
+                  "content": "Policy shifts revising racial classifications and interracial unions changed public attitudes."
+                }, 
+                {
+                  "answerKey": "answer2", 
+                  "content": "An open immigration policy encouraged Americans to be more accepting of other races."
+                }, 
+                {
+                  "answerKey": "answer3", 
+                  "content": "More mixed-race people in the government formulate public policies in favor of their own people."
+                }, 
+                {
+                  "answerKey": "answer4", 
+                  "content": "The government changed census forms to include all ethnicities."
+                }, 
+                {
+                  "answerKey": "answer5", 
+                  "content": "Multi-racial people are now equal to Americans in terms of wealth."
+                }
+              ], 
+              "id": "sampleQ1", 
+              "order": "randomized", 
+              "presenterConfig": {
+                "numberFormat": "latin-upper"
+              }, 
+              "presenterType": "RadioGroup", 
+              "question": "What has contributed to a change in the attitudes of Americans toward interracial unions or multiracial people?"
+            }, 
+            "configFixup": [
+              {
+                "name": "questionId", 
+                "type": "set-property", 
+                "value": {
+                  "domain": "info", 
+                  "refId": "sequenceNodeKey", 
+                  "type": "ref"
+                }
+              }, 
+              {
+                "name": "maxAttempts", 
+                "type": "set-property", 
+                "value": {
+                  "domain": "info", 
+                  "refId": "maxAttempts", 
+                  "type": "ref"
+                }
+              }
+            ]
+          }
+        ], 
+        "containerId": "target1", 
+        "description": "container for the sample multiple choice question", 
+        "hookupActions": [
+          {
+            "args": [
+              {
+                "domain": "brix", 
+                "refId": "Q1", 
+                "type": "ref"
+              }
+            ], 
+            "description": "Hookup the submit manager to evaluate answers", 
+            "instance": {
+              "type": "submit-manager"
+            }, 
+            "methodName": "handleRequestsFrom", 
+            "type": "method-call"
+          }, 
+          {
+            "args": [
+              {
+                "selector": "#target1", 
+                "type": "d3select"
+              }
+            ], 
+            "description": "Draw the question", 
+            "instance": {
+              "domain": "brix", 
+              "refId": "Q1", 
+              "type": "ref"
+            }, 
+            "methodName": "draw", 
+            "type": "method-call"
+          }
+        ]
+      }
+    ], 
+    "description": "A Sample Activity containing a single multiple choice bric"
+  }, 
+  "metadata": {
+    "contentTypeTier1": "Test and Assessment", 
+    "contentTypeTier2": [
+      "assessment item"
+    ], 
+    "created": "2014-01-31T12:00:45.273740", 
+    "description": "Rev.11.5.2.html", 
+    "format": [
+      "application/vnd.pearson.sanvan.v1.activity"
+    ], 
+    "guid": "15297d3f-0c3a-4645-8a18-a9a451cad301", 
+    "intendedEndUserRole": [
+      "Student"
+    ], 
+    "owner": "Brix", 
+    "subject": [
+      ""
+    ], 
+    "timeRequired": "PT20S", 
+    "title": "Rev.11.5.2.html"
+  }
+}

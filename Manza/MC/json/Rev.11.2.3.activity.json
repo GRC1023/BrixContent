@@ -1,0 +1,149 @@
+{
+  "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope", 
+  "@type": "Envelope", 
+  "body": {
+    "containerConfig": [
+      {
+        "brixConfig": [
+          {
+            "answerKey": {
+              "answers": {
+                "answer1": {
+                  "response": "Yes, the social construction of race says that race was invented by humans. In this way, it changes over time and in relation to culture.", 
+                  "score": 1
+                }, 
+                "answer2": {
+                  "response": "Refer to Learning Objective 11.2.1: Explain how changing American definitions of who counts as white supports the constructivist view of race.", 
+                  "score": 0
+                }, 
+                "answer3": {
+                  "response": "Refer to Learning Objective 11.2.1: Explain how changing American definitions of who counts as white supports the constructivist view of race.", 
+                  "score": 0
+                }, 
+                "answer4": {
+                  "response": "Refer to Learning Objective 11.2.1: Explain how changing American definitions of who counts as white supports the constructivist view of race.", 
+                  "score": 0
+                }, 
+                "answer5": {
+                  "response": "Refer to Learning Objective 11.2.1: Explain how changing American definitions of who counts as white supports the constructivist view of race.", 
+                  "score": 0
+                }
+              }, 
+              "assessmentType": "multiplechoice"
+            }, 
+            "bricId": "Q1", 
+            "bricType": "MultipleChoiceQuestion", 
+            "config": {
+              "choices": [
+                {
+                  "answerKey": "answer1", 
+                  "content": "race was invented by humans"
+                }, 
+                {
+                  "answerKey": "answer2", 
+                  "content": "race is natural"
+                }, 
+                {
+                  "answerKey": "answer3", 
+                  "content": "race is the work of a single individual"
+                }, 
+                {
+                  "answerKey": "answer4", 
+                  "content": "race is static"
+                }, 
+                {
+                  "answerKey": "answer5", 
+                  "content": "race is uninfluenced by politics"
+                }
+              ], 
+              "id": "sampleQ1", 
+              "order": "randomized", 
+              "presenterConfig": {
+                "numberFormat": "latin-upper"
+              }, 
+              "presenterType": "RadioGroup", 
+              "question": "The social construction of race means that ________."
+            }, 
+            "configFixup": [
+              {
+                "name": "questionId", 
+                "type": "set-property", 
+                "value": {
+                  "domain": "info", 
+                  "refId": "sequenceNodeKey", 
+                  "type": "ref"
+                }
+              }, 
+              {
+                "name": "maxAttempts", 
+                "type": "set-property", 
+                "value": {
+                  "domain": "info", 
+                  "refId": "maxAttempts", 
+                  "type": "ref"
+                }
+              }
+            ]
+          }
+        ], 
+        "containerId": "target1", 
+        "description": "container for the sample multiple choice question", 
+        "hookupActions": [
+          {
+            "args": [
+              {
+                "domain": "brix", 
+                "refId": "Q1", 
+                "type": "ref"
+              }
+            ], 
+            "description": "Hookup the submit manager to evaluate answers", 
+            "instance": {
+              "type": "submit-manager"
+            }, 
+            "methodName": "handleRequestsFrom", 
+            "type": "method-call"
+          }, 
+          {
+            "args": [
+              {
+                "selector": "#target1", 
+                "type": "d3select"
+              }
+            ], 
+            "description": "Draw the question", 
+            "instance": {
+              "domain": "brix", 
+              "refId": "Q1", 
+              "type": "ref"
+            }, 
+            "methodName": "draw", 
+            "type": "method-call"
+          }
+        ]
+      }
+    ], 
+    "description": "A Sample Activity containing a single multiple choice bric"
+  }, 
+  "metadata": {
+    "contentTypeTier1": "Test and Assessment", 
+    "contentTypeTier2": [
+      "assessment item"
+    ], 
+    "created": "2014-01-31T12:00:45.272746", 
+    "description": "Rev.11.2.3.html", 
+    "format": [
+      "application/vnd.pearson.sanvan.v1.activity"
+    ], 
+    "guid": "c145ad58-a49c-400d-a6a3-78474f8b78bb", 
+    "intendedEndUserRole": [
+      "Student"
+    ], 
+    "owner": "Brix", 
+    "subject": [
+      ""
+    ], 
+    "timeRequired": "PT20S", 
+    "title": "Rev.11.2.3.html"
+  }
+}
