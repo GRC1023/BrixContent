@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="Template for Journal Brix" name="description">
+
+    <!-- widgets.css contains styling for the interactive brix -->
+    <link href="css/widgets.css" rel="stylesheet">
+</head>
+<body>
+    <div id="b525e06fc242043e0ac9f66ff46e43360"></div>
+    <script src="js/d3.v3.min.js"></script>
+
+	
+    <script src="js/brixlib-compiled.js"></script>
+	
+
+    <script>
+        pearson.utils.logToConsole(true, 'FINER', 'pearson');
+    </script>
+
+    <script>
+
+	// Create an object that will contain the objects needed for the activities
+	// on this page.
+	pearson.brix.activity = {};
+	var a = pearson.brix.activity;
+
+	// The activity config that defines the brix and mortar for this page
+	a.config =
+		{
+			"description": "Optical Illusions",
+			"containerConfig":
+				[
+					{
+						"description": "What are optical illusions and how can they be both beneficial and problematic in daily life?",
+						"containerId": "b525e06fc242043e0ac9f66ff46e43360",
+						"brixConfig":
+							[
+								{
+									"bricId": "J1",
+									"bricType": "Journal",
+									"config":
+										{
+											"id": "sampleJ1",
+                                            "title": "What are optical illusions and how can they be both beneficial and problematic in daily life?"
+										},
+									"configFixup":
+                                        [
+                                            {
+                                                "type": "set-property",
+                                                "name": "journalId",
+                                                "value": { "type": "ref", "domain": "info", "refId": "sequenceNodeKey" }
+                                            }
+                                        ],
+									"answerKey":
+										{
+											"assessmentType": "alwayscorrect"
+										}
+								}
+							],
+						"hookupActions":
+							[
+								{
+									"description": "Hookup the submit manager to evaluate answers",
+									"type": "method-call",
+									"instance": { "type": "submit-manager" },
+									"methodName": "handleRequestsFrom",
+									"args":
+										[
+											{ "type": "ref", "domain": "brix", "refId": "J1" }
+										]
+								},
+								{
+									"description": "Draw the journal",
+									"type": "method-call",
+									"instance": {"type": "ref", "domain": "brix", "refId": "J1"},
+									"methodName": "draw",
+									"args":
+										[
+											{ "type": "d3select", "selector": "#b525e06fc242043e0ac9f66ff46e43360" }
+										]
+								}
+							]
+					}
+				]
+		};
+
+	// create the eventmanager to be used by the created brix, and the
+	// bricLayer which will create them, and then tell the bricLayer to build.
+	a.eventManager = new pearson.utils.EventManager();
+	a.answerMan = new pearson.brix.utils.LocalAnswerMan();
+	a.submitManager = new pearson.brix.utils.SubmitManager(a.eventManager, a.answerMan);
+
+	a.bricLayer = new pearson.brix.BricLayer(null, a.eventManager, a.submitManager);
+
+	a.building = a.bricLayer.build(a.config);
+
+	a.answerMan.registerAnswerKey(a.config.sequenceNodeKey,
+								  a.config.containerConfig[0].brixConfig[0].answerKey);
+
+    </script>
+</body>
+</html>
