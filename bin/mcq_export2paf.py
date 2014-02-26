@@ -2,9 +2,10 @@ import csv      # imports the csv module
 import uuid     # imports the uuid module
 import os.path  # imports the os and os.path module
 import json     # imports the json module
-import datetime #imports the datetime module
+import datetime # imports the datetime module
 import re       # imports the regular expression module
 import sys      # imports the sys module
+import zipfile  # imports the zipfile module
 import traceback
 
 #
@@ -37,6 +38,27 @@ def fixupCommentsAndTrailingCommas(lines):
                 lines[lineno - 1] = m.group(1)
         lineno += 1
 
+def replacePlaceholdersInFile(inputFn, outputFn, placeholderValues):
+    """
+    Write the input file to the output file replacing any placeholders in the
+    input file with the values in the given dictionary. Placeholders are
+    identified by a prefix of '<*PLACEHOLDER-' and a suffix of '*>'. The
+    string in between the prefix and suffix is the key used to retrieve the
+    substitution value.
+
+    :inputFn: The input filename
+    :outputFn: The output filename
+    :placeholderValues: A dictionary of replacement values for placeholders
+    :returns: @todo
+
+    """
+    placeholder = re.compile(r"<\*PLACEHOLDER-(.*?)\*>")
+
+    with open(inputFn, 'rt') as fi, open(outputFn, 'wt') as fo:
+        for line in fi:
+            newLine =placeholder.sub(lambda m: placeholderValues[m.group(1)], line)
+            fo.write(newLine)
+
 class PAFActivity(object):
     """
     A PAF activity
@@ -62,6 +84,7 @@ class PAFActivity(object):
         self.subject = info.subject
         b, t = os.path.splitext(self.fileName)
         self.jsonFilename = b + ".activity.json"
+        self.pxeFilename = b + ".pxe.xhtml"
         self.PAFjson = \
             {
                 "@context" : "http://purl.org/pearson/content/v1/ctx/metadata/envelope",
@@ -99,6 +122,21 @@ class PAFActivity(object):
             print("writing ", self.jsonFilename)
             self.readActivityConfig()
             json.dump(self.PAFjson, ofile, indent=2, sort_keys=True)
+
+    def writePXE(self, pxeTemplateFn, placeholderValues):
+        """
+        Create a new file by copying the given template and substituting
+        the assignment and activity UUIDs into the placeholders in that file.
+
+        :pxeTemplateFn: @todo
+        :placeholderValues: A dictionary of replacement values for placeholders
+        :returns: the name of the file created
+
+        """
+        placeholderValues['activityUUID'] = str(self.uuid)
+        replacePlaceholdersInFile(pxeTemplateFn, self.pxeFilename, placeholderValues)
+        return self.pxeFilename
+
 
     def readActivityConfig(self):
         """Write the envelope info and any lines that should be before the activity config"""
@@ -236,6 +274,19 @@ class PAFAssignment(object):
         for activity in self.activities:
             activity.writeJSON()
 
+    def writePXE(self, pxeTemplateFn):
+        """
+        Create a new pxe file for each activity in this assignment using the
+        given template and substituting the assignment and activity UUIDs
+        into the placeholders in that file.
+
+        :pxeTemplateFn: @todo
+        :returns: a lsit of the names of the pxe files created
+
+        """
+        placeholderValues = {'assignmentUUID': str(self.uuid)}
+
+        return [activity.writePXE(pxeTemplateFn, placeholderValues) for activity in self.activities]
 
 
 class MCQSpreadsheetInfoRow(object):
@@ -308,7 +359,8 @@ def buildPAFAssignments(spreadsheetRows):
 #
 #
 
-# opens the csv file
+# Read the csv file given on the command line into the spreadsheetRows list
+# of MCQSpreadsheetInfoRow instances.
 csvfn = sys.argv[1]
 headerRow = []
 spreadsheetRows = []
@@ -319,21 +371,58 @@ with open(csvfn, 'rt') as f:
         spreadsheetRows.append(MCQSpreadsheetInfoRow(row))
         #print(spreadsheetRows[len(spreadsheetRows)-1])
 
+# build a list of PAFAssignments containing activities by processing all of
+# the spreadsheetRows.
 assignments = buildPAFAssignments(spreadsheetRows)
 
+# write the assignments created to stdout
 for assignment in assignments:
     print(assignment)
 
+# write a new csv file using the original name w/ ".updated" appended
+# containing any updated information such as activity and assignment uuids
 with open(csvfn + ".updated", "wt") as f:
     writer = csv.writer(f)
     writer.writerow(headerRow)
     for info in spreadsheetRows:
         writer.writerow(info.getRowTuple())
 
-# Test writing assignment and activity json w/ the 1st assignment
-#assignments[0].writeJSON()
+# Write the assignment JSON files (which will also write all the
+# activity JSON files of the activities belonging to the written
+# assignments).
 for assignment in assignments:
     assignment.writeJSON()
 
+# Write the assignment PXE files which is actually just the PXE files for
+# all of the activities in the assignment.
+chapterFiles = {}
+for assignment in assignments:
+    pxeFiles = assignment.writePXE('quizz-template.html')
+    # add this assignments pxeFiles to the other pxeFiles for the assignment's chapter
+    if assignment.chapter not in chapterFiles:
+        chapterFiles[assignment.chapter] = []
+    chapterFiles[assignment.chapter].extend(pxeFiles)
+
+# Move the pxeFiles into the zipfile for the chapter they're associated with
+for chapter, files in chapterFiles.items():
+    print("'" + chapter + "' has " + str(len(files)) + ' files')
+    
+    with zipfile.ZipFile(chapter + '.zip', 'w', zipfile.ZIP_DEFLATED) as myzip:
+        for pxeFile in files:
+            myzip.write(pxeFile)
+
+    # after the files are safely in the closed zipfile, delete them
+    print('removing the ' + str(len(files)) + 'files now stored in the ' + chapter + ' zip')
+    i = 0
+    for pxeFile in files:
+        i = i + 1
+        print(i, ')removing ' + pxeFile)
+        try:
+            os.unlink(pxeFile)
+        except FileNotFoundError as e:
+            problemlog.append('could not delete file ' + pxeFile + '. This implies it was already deleted which means 2 or more activities had the same filename!')
+            print(e)
+
+# Write out the error log
 with open("mcq_export2paf_error.log", "wt") as f:
     f.write("\n".join(problemlog) + "\n")
