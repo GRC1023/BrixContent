@@ -355,13 +355,18 @@ def buildPAFAssignments(spreadsheetRows):
 
     return assignments
 
-#
-#
-#
+#                              #
+# SCRIPT EXECUTION STARTS HERE #
+#                              #
 
 # Read the csv file given on the command line into the spreadsheetRows list
 # of MCQSpreadsheetInfoRow instances.
 csvfn = sys.argv[1]
+pxeTemplateFn = sys.argv[2] if len(sys.argv) == 3 else None
+
+print("Using csv file='" + csvfn +
+	  ('\nNo pxe files will be generated\n' if pxeTemplateFn is None else "'\nUsing pxe tempate file='" + pxeTemplateFn + "'\n"))
+
 headerRow = []
 spreadsheetRows = []
 with open(csvfn, 'rt') as f:
@@ -393,35 +398,36 @@ with open(csvfn + ".updated", "wt") as f:
 for assignment in assignments:
     assignment.writeJSON()
 
-# Write the assignment PXE files which is actually just the PXE files for
-# all of the activities in the assignment.
-chapterFiles = {}
-for assignment in assignments:
-    pxeFiles = assignment.writePXE('quizz-template.html')
-    # add this assignments pxeFiles to the other pxeFiles for the assignment's chapter
-    if assignment.chapter not in chapterFiles:
-        chapterFiles[assignment.chapter] = []
-    chapterFiles[assignment.chapter].extend(pxeFiles)
+if pxeTemplateFn is not None:
+	# Write the assignment PXE files which is actually just the PXE files for
+	# all of the activities in the assignment.
+	chapterFiles = {}
+	for assignment in assignments:
+		pxeFiles = assignment.writePXE(pxeTemplateFn)
+		# add this assignments pxeFiles to the other pxeFiles for the assignment's chapter
+		if assignment.chapter not in chapterFiles:
+			chapterFiles[assignment.chapter] = []
+		chapterFiles[assignment.chapter].extend(pxeFiles)
 
-# Move the pxeFiles into the zipfile for the chapter they're associated with
-for chapter, files in chapterFiles.items():
-    print("'" + chapter + "' has " + str(len(files)) + ' files')
-    
-    with zipfile.ZipFile(chapter + '.zip', 'w', zipfile.ZIP_DEFLATED) as myzip:
-        for pxeFile in files:
-            myzip.write(pxeFile)
+	# Move the pxeFiles into the zipfile for the chapter they're associated with
+	for chapter, files in chapterFiles.items():
+		print("'" + chapter + "' has " + str(len(files)) + ' files')
+		
+		with zipfile.ZipFile(chapter + '.zip', 'w', zipfile.ZIP_DEFLATED) as myzip:
+			for pxeFile in files:
+				myzip.write(pxeFile)
 
-    # after the files are safely in the closed zipfile, delete them
-    print('removing the ' + str(len(files)) + 'files now stored in the ' + chapter + ' zip')
-    i = 0
-    for pxeFile in files:
-        i = i + 1
-        print(i, ')removing ' + pxeFile)
-        try:
-            os.unlink(pxeFile)
-        except FileNotFoundError as e:
-            problemlog.append('could not delete file ' + pxeFile + '. This implies it was already deleted which means 2 or more activities had the same filename!')
-            print(e)
+		# after the files are safely in the closed zipfile, delete them
+		print('removing the ' + str(len(files)) + ' files now stored in the ' + chapter + ' zip')
+		i = 0
+		for pxeFile in files:
+			i = i + 1
+			print(i, ')removing ' + pxeFile)
+			try:
+				os.unlink(pxeFile)
+			except FileNotFoundError as e:
+				problemlog.append('could not delete file ' + pxeFile + '. This implies it was already deleted which means 2 or more activities had the same filename!')
+				print(e)
 
 # Write out the error log
 with open("mcq_export2paf_error.log", "wt") as f:
