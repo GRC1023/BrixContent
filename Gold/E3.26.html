@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="Template for Label Selector Image Carousel Brix" name="description">
+    
+    <!-- widgets.css contains styling for the interactive brix -->
+    <link href="css/widgets.css" rel="stylesheet">
+</head>
+<body>
+    <div id="bac1fc58ce64a451dbb6a864e27cc4ac7"></div>
+    <script src="js/d3.v3.min.js"></script>
+    
+    <script src="js/brixlib-compiled.js"></script>
+
+<script>
+    // Create an object that will contain the objects needed for the activities
+    // on this page.
+    pearson.brix.activity = {};
+    var a = pearson.brix.activity;
+
+    // The activity config that defines the brix and mortar for this page
+    // 
+    // Set imgBaseUrl to imgBaseUrl": "http://localhost:8088/images/", or whatever server the IPS is running
+    // on to serve the images that route, or just leave it empty ("imgBaseUrl": "",) to point to images
+    // local to this html file
+
+    a.config =
+        {
+			"description": "Image carousel showing a reversible figure.",
+            //"imgBaseUrl": "http://localhost:8088/images/",
+            "imgBaseUrl": "",
+            "containerConfig":
+                [
+                    {
+                        "description": "Container for the LabelCarousel",
+                        "containerId": "imgContainer",
+                        "brixConfig":
+                            [
+                                {
+                                    "bricId": "lblCarousel1",
+                                    "bricType": "LabelCarousel",
+                                    "config":
+                                        {
+                                            "id": "lblCrsl1",
+                                            "type": "textLabels",
+                                            "imagesActualSize": { "height": 405, "width": 570 },
+                                            "displayWidth": 600
+                                        },
+                                    "configFixup":
+                                        [
+                                            {
+                                                "type": "set-property",
+                                                "name": "images",
+                                                "value":
+                                                    {
+                                                        "type": "array",
+                                                        "elements":
+                                                            [
+                                                                {
+                                                                    "type": "object",
+                                                                    "properties":
+                                                                        [
+                                                                            {
+                                                                                "name": "URI",
+                                                                                "value":
+                                                                                    {
+                                                                                        "type": "join",
+                                                                                        "parts":
+                                                                                        [
+                                                                                            { "type": "ref", "domain": "info", "refId": "imgBaseUrl" },
+                                                                                            { "type": "constant", "value": "img/figure03-20_frame3.png" }
+                                                                                        ]
+                                                                                    }
+                                                                            },
+                                                                            {
+                                                                                "name": "caption",
+                                                                                "value": { "type": "constant", "value": "Do you see both the man and the woman?" }
+                                                                            },
+                                                                            {
+                                                                                "name": "selectorLabel",
+                                                                                "value": { "type": "constant", "value": "Reversible Figure" }
+                                                                            }
+                                                                        ]
+                                                                },
+                                                                {
+                                                                    "type": "object",
+                                                                    "properties":
+                                                                        [
+                                                                            {
+                                                                                "name": "URI",
+                                                                                "value":
+                                                                                    {
+                                                                                        "type": "join",
+                                                                                        "parts":
+                                                                                        [
+                                                                                            { "type": "ref", "domain": "info", "refId": "imgBaseUrl" },
+                                                                                            { "type": "constant", "value": "img/figure03-20_frame1.png"}
+                                                                                        ]
+                                                                                    }
+                                                                            },
+                                                                            {
+                                                                                "name": "caption",
+                                                                                "value": { "type": "constant", "value": "This version of the image shows the man playing a saxophone." }
+                                                                            },
+                                                                            {
+                                                                                "name": "selectorLabel",
+                                                                                "value": { "type": "constant", "value": "The Man" }
+                                                                            }
+                                                                        ]
+                                                                },
+                                                                {
+                                                                    "type": "object",
+                                                                    "properties":
+                                                                        [
+                                                                            {
+                                                                                "name": "URI",
+                                                                                "value":
+                                                                                    {
+                                                                                        "type": "join",
+                                                                                        "parts":
+                                                                                        [
+                                                                                            { "type": "ref", "domain": "info", "refId": "imgBaseUrl" },
+                                                                                            { "type": "constant", "value": "img/figure03-20_frame2.png"}
+                                                                                        ]
+                                                                                    }
+                                                                            },
+                                                                            {
+                                                                                "name": "caption",
+                                                                                "value": { "type": "constant", "value": "This version of the image shows the woman’s face." }
+                                                                            },
+                                                                            {
+                                                                                "name": "selectorLabel",
+                                                                                "value": { "type": "constant", "value": "The Woman" }
+                                                                            }
+                                                                        ]
+                                                                }
+                                                            ]
+                                                    }
+                                            }
+                                        ]
+                                },
+                                {
+                                    "bricId": "cntr1",
+                                    "bricType": "SvgContainer",
+                                    "config":
+                                        {
+                                            "maxSize": { "height": 535, "width": 579 },
+                                        },
+                                    "configFixup":
+                                        [
+                                            {
+                                                "type": "set-property",
+                                                "name": "node",
+                                                "value":
+                                                    {
+                                                        "type": "d3select",
+                                                        "selector": "#bac1fc58ce64a451dbb6a864e27cc4ac7"
+                                                    }
+                                            }
+                                        ]
+                                }
+                            ],
+                        "hookupActions":
+                            [
+                                {
+                                    "description": "Append the label image carousel to the svg container",
+                                    "type": "method-call",
+                                    "instance": {"type": "ref", "domain": "brix", "refId": "cntr1"},
+                                    "methodName": "append",
+                                    "args":
+                                        [
+                                            { "type": "ref", "domain": "brix", "refId": "lblCarousel1" }
+                                        ]
+                                }
+                            ]
+                    }
+            ]
+        };
+
+    // create the eventmanager to be used by the created brix, and the
+    // bricLayer which will create them, and then tell the bricLayer to build.
+    a.eventManager = new pearson.utils.EventManager();
+    a.answerMan = new pearson.brix.utils.LocalAnswerMan();
+    a.submitManager = new pearson.brix.utils.SubmitManager(a.eventManager, a.answerMan);
+
+    a.bricLayer = new pearson.brix.BricLayer(null, a.eventManager, a.submitManager);
+
+    a.building = a.bricLayer.build(a.config);
+
+    </script>
+</body>
+</html>
