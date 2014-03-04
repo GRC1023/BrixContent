@@ -1,0 +1,287 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <meta content="Template for Thumbnail Image Carousel Brix" name="description"/>
+    
+   <!-- widgets.css contains styling for the interactive brix -->
+    <link href="css/widgets.css" rel="stylesheet" type="text/css"/>
+
+</head>
+<body>
+    <div id="b3751e68bff4c4b8d97727b873683e1c9"></div>
+    <script src="js/d3.v3.min.js"></script>
+    <script src="js/brixlib-compiled.js"></script>
+
+    <script>
+    // Create an object that will contain the objects needed for the activities
+    // on this page.
+    pearson.brix.activity = {};
+    var a = pearson.brix.activity;
+
+    // The activity config that defines the brix and mortar for this page
+    // 
+    // Set imgBaseUrl to imgBaseUrl": "http://localhost:8088/images/", or whatever server the IPS is running
+    // on to serve the images that route, or just leave it empty ("imgBaseUrl": "",) to point to images
+    // local to this html file
+
+    a.config =
+		{
+			"description": "Modern Celebrities with Multiracial Ancestry",
+			"imgBaseUrl": "",
+			"containerConfig":
+				[
+					{
+						"description": "Container for the ImageViewer bric",
+						"containerId": "b3751e68bff4c4b8d97727b873683e1c9",
+						"brixConfig":
+							[
+								{
+									"bricId": "image1",
+									"bricType": "Image",
+									"config":
+										{
+											"id": "img1",
+											"actualSize": { "height": 400, "width": 600 },
+											"caption":  "Professional golfer Tiger Woods is of Asian, African, European, and American Indian descent.",
+											"captionPosition": "below"
+										},
+									"configFixup":
+										[
+											{
+												"type": "set-property",
+												"name": "URI",
+												"value":
+													{
+														"type": "join",
+														"parts":
+														[
+															{ "type": "ref", "domain": "info", "refId": "imgBaseUrl" },
+															{ "type": "constant", "value": "img/P10-16.jpg" }
+														]
+													}
+											}
+										]
+													   
+								},
+								{
+									"bricId": "image2",
+									"bricType": "Image",
+									"config":
+										{
+											"id": "img2",
+											"actualSize": { "height": 400, "width": 600 },
+											"caption":  "Actress Jessica Alba is partly of Mexican descent.",
+											"captionPosition": "below"
+										},
+									"configFixup":
+										[
+											{
+												"type": "set-property",
+												"name": "URI",
+												"value":
+													{
+														"type": "join",
+														"parts":
+														[
+															{ "type": "ref", "domain": "info", "refId": "imgBaseUrl" },
+															{ "type": "constant", "value": "img/11.24b _C34XAX.jpg" }
+														]
+													}
+											}
+										]
+													   
+								},
+								{
+									"bricId": "image3",
+									"bricType": "Image",
+									"config":
+										{
+											"id": "img3",
+											"actualSize": { "height": 400, "width": 600 },
+											"caption":  "Keanu Reeves is of Hawaiian and Chinese descent.",
+											"captionPosition": "below"
+										},
+									"configFixup":
+										[
+											{
+												"type": "set-property",
+												"name": "URI",
+												"value":
+													{
+														"type": "join",
+														"parts":
+														[
+															{ "type": "ref", "domain": "info", "refId": "imgBaseUrl" },
+															{ "type": "constant", "value": "img/11.24c _D85A82.jpg" }
+														]
+													}
+											}
+										]
+													   
+								},
+								{
+									"bricId": "image4",
+									"bricType": "Image",
+									"config":
+										{
+											"id": "img3",
+											"actualSize": { "height": 400, "width": 600 },
+											"caption":  "Actress and singer Vanessa Hudgens is of Chinese, Filipino, Spanish, Irish, and Native American descent.",
+											"captionPosition": "below"
+										},
+									"configFixup":
+										[
+											{
+												"type": "set-property",
+												"name": "URI",
+												"value":
+													{
+														"type": "join",
+														"parts":
+														[
+															{ "type": "ref", "domain": "info", "refId": "imgBaseUrl" },
+															{ "type": "constant", "value": "img/11.24d_D9719Y.jpg" }
+														]
+													}
+											}
+										]
+													   
+								},
+								{
+									"bricId": "image5",
+									"bricType": "Image",
+									"config":
+										{
+											"id": "img3",
+											"actualSize": { "height": 400, "width": 600 },
+											"caption":  "Swimmer Ryan Lochte is of Cuban and German-Irish descent.",
+											"captionPosition": "below"
+										},
+									"configFixup":
+										[
+											{
+												"type": "set-property",
+												"name": "URI",
+												"value":
+													{
+														"type": "join",
+														"parts":
+														[
+															{ "type": "ref", "domain": "info", "refId": "imgBaseUrl" },
+															{ "type": "constant", "value": "img/11.24e _D6W2PH.jpg" }
+														]
+													}
+											}
+										]
+													   
+								},
+								{
+									"bricId": "image6",
+									"bricType": "Image",
+									"config":
+										{
+											"id": "img3",
+											"actualSize": { "height": 400, "width": 600 },
+											"caption":  "R&#38;B artist Ne-Yo is of African and Chinese descent.",
+											"captionPosition": "below"
+										},
+									"configFixup":
+										[
+											{
+												"type": "set-property",
+												"name": "URI",
+												"value":
+													{
+														"type": "join",
+														"parts":
+														[
+															{ "type": "ref", "domain": "info", "refId": "imgBaseUrl" },
+															{ "type": "constant", "value": "img/11.24f _D4KWGH.jpg" }
+														]
+													}
+											}
+										]
+													   
+								},
+								{
+									"bricId": "carousel1",
+									"bricType": "ImageViewer",
+									"config":
+										{
+											"id": "csel1",
+											"displayWidth": 579
+										},
+									"configFixup":
+										[
+											{
+												"type": "set-property",
+												"name": "items",
+												"value":
+													{
+														"type": "array",
+														"elements":
+																[
+																   { "type": "ref", "domain": "brix", "refId": "image1" },
+																   { "type": "ref", "domain": "brix", "refId": "image2" },
+																   { "type": "ref", "domain": "brix", "refId": "image3" },
+																   { "type": "ref", "domain": "brix", "refId": "image4" },
+																   { "type": "ref", "domain": "brix", "refId": "image5" },
+																   { "type": "ref", "domain": "brix", "refId": "image6" }
+																]
+													}
+											}
+										]
+								},
+								{
+									"bricId": "cntr1",
+									"bricType": "SvgContainer",
+									"config":
+										{
+											"maxSize": {"height": "570", "width": "579"},
+										},
+									"configFixup":
+										[
+											{
+												"type": "set-property",
+												"name": "node",
+												"value":
+													{
+														"type": "d3select",
+														"selector": "#b3751e68bff4c4b8d97727b873683e1c9"
+													}
+											}
+										]
+								}
+							],
+						"hookupActions":
+							[
+								{
+									"description": "Append the captioned image to the svg container",
+									"type": "method-call",
+									"instance": {"type": "ref", "domain": "brix", "refId": "cntr1"},
+									"methodName": "append",
+									"args":
+										[
+											{ "type": "ref", "domain": "brix", "refId": "carousel1" }
+										]
+								}
+							]
+					}
+				]
+			};
+
+    // create the eventmanager to be used by the created brix, and the
+    // bricLayer which will create them, and then tell the bricLayer to build.
+    a.eventManager = new pearson.utils.EventManager();
+    a.answerMan = new pearson.brix.utils.LocalAnswerMan();
+    a.submitManager = new pearson.brix.utils.SubmitManager(a.eventManager, a.answerMan);
+
+    a.bricLayer = new pearson.brix.BricLayer(null, a.eventManager, a.submitManager);
+
+    a.building = a.bricLayer.build(a.config);
+
+    </script>
+</body>
+</html>
