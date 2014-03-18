@@ -1,0 +1,141 @@
+{
+  "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope", 
+  "@type": "Envelope", 
+  "body": {
+    "containerConfig": [
+      {
+        "brixConfig": [
+          {
+            "answerKey": {
+              "answers": {
+                "answer1": {
+                  "response": "Incorrect. Consider this: People living in high-income countries are economically well off. Refer to Learning Objective 1.2: State several reasons that a global perspective is important in today\u2019s world.", 
+                  "score": 0
+                }, 
+                "answer2": {
+                  "response": "Correct", 
+                  "score": 1
+                }, 
+                "answer3": {
+                  "response": "Incorrect. Consider this: People living in high-income countries are economically well off. Refer to Learning Objective 1.2: State several reasons that a global perspective is important in today\u2019s world.", 
+                  "score": 0
+                }, 
+                "answer4": {
+                  "response": "Incorrect. Consider this: People living in high-income countries are economically well off. Refer to Learning Objective 1.2: State several reasons that a global perspective is important in today\u2019s world.", 
+                  "score": 0
+                }
+              }, 
+              "assessmentType": "multiplechoice"
+            }, 
+            "bricId": "Q1", 
+            "bricType": "MultipleChoiceQuestion", 
+            "config": {
+              "choices": [
+                {
+                  "answerKey": "answer1", 
+                  "content": "All of the people living there have an extremely low standard of living"
+                }, 
+                {
+                  "answerKey": "answer2", 
+                  "content": "Both kinds of countries have considerable social inequality, with a few rich but many poor."
+                }, 
+                {
+                  "answerKey": "answer3", 
+                  "content": "Most of the people in these countries have no educational opportunities"
+                }, 
+                {
+                  "answerKey": "answer4", 
+                  "content": "Both of these kinds of countries have little warfare."
+                }
+              ], 
+              "id": "macionis_15e_ch01_CE.01.13", 
+              "order": "randomized", 
+              "presenterConfig": {
+                "numberFormat": ""
+              }, 
+              "presenterType": "RadioGroup", 
+              "question": "Which of the following characteristics do middle- and low-income countries have in common?"
+            }, 
+            "configFixup": [
+              {
+                "name": "questionId", 
+                "type": "set-property", 
+                "value": {
+                  "domain": "info", 
+                  "refId": "sequenceNodeKey", 
+                  "type": "ref"
+                }
+              }, 
+              {
+                "name": "maxAttempts", 
+                "type": "set-property", 
+                "value": {
+                  "domain": "info", 
+                  "refId": "maxAttempts", 
+                  "type": "ref"
+                }
+              }
+            ]
+          }
+        ], 
+        "containerId": "target1", 
+        "description": "container for the sample multiple choice question", 
+        "hookupActions": [
+          {
+            "args": [
+              {
+                "domain": "brix", 
+                "refId": "Q1", 
+                "type": "ref"
+              }
+            ], 
+            "description": "Hookup the submit manager to evaluate answers", 
+            "instance": {
+              "type": "submit-manager"
+            }, 
+            "methodName": "handleRequestsFrom", 
+            "type": "method-call"
+          }, 
+          {
+            "args": [
+              {
+                "selector": "#target1", 
+                "type": "d3select"
+              }
+            ], 
+            "description": "Draw the question", 
+            "instance": {
+              "domain": "brix", 
+              "refId": "Q1", 
+              "type": "ref"
+            }, 
+            "methodName": "draw", 
+            "type": "method-call"
+          }
+        ]
+      }
+    ], 
+    "description": "A Sample Activity containing a single multiple choice bric"
+  }, 
+  "metadata": {
+    "contentTypeTier1": "Test and Assessment", 
+    "contentTypeTier2": [
+      "assessment item"
+    ], 
+    "created": "2014-03-17T19:27:56.128351", 
+    "description": "macionis_15e_ch01_CE.01.13.xhtml", 
+    "format": [
+      "application/vnd.pearson.sanvan.v1.activity"
+    ], 
+    "guid": "32f12fd0-4531-4bf0-b5e2-f3e3d9e91879", 
+    "intendedEndUserRole": [
+      "Student"
+    ], 
+    "owner": "Brix", 
+    "subject": [
+      "Sociology"
+    ], 
+    "timeRequired": "PT20S", 
+    "title": "macionis_15e_ch01_CE.01.13.xhtml"
+  }
+}

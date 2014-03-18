@@ -1,0 +1,141 @@
+{
+  "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope", 
+  "@type": "Envelope", 
+  "body": {
+    "containerConfig": [
+      {
+        "brixConfig": [
+          {
+            "answerKey": {
+              "answers": {
+                "answer1": {
+                  "response": "Incorrect. Consider this: Given the societal \u201crules\u201d that are in place, Michelle is most likely to marry the person of the opposite sex most like her. Refer to Learning Objective 1.1: Explain how the sociological perspective differs from common sense.", 
+                  "score": 0
+                }, 
+                "answer2": {
+                  "response": "Incorrect. Consider this: Given the societal \u201crules\u201d that are in place, Michelle is most likely to marry the person of the opposite sex most like her. Refer to Learning Objective 1.1: Explain how the sociological perspective differs from common sense.", 
+                  "score": 0
+                }, 
+                "answer3": {
+                  "response": "Correct", 
+                  "score": 1
+                }, 
+                "answer4": {
+                  "response": "Consider this: Given the societal \u201crules\u201d that are in place, Michelle is most likely to marry the person of the opposite sex most like her. Refer to Learning Objective 1.1: Explain how the sociological perspective differs from common sense.", 
+                  "score": 0
+                }
+              }, 
+              "assessmentType": "multiplechoice"
+            }, 
+            "bricId": "Q1", 
+            "bricType": "MultipleChoiceQuestion", 
+            "config": {
+              "choices": [
+                {
+                  "answerKey": "answer1", 
+                  "content": "22-year-old African American woman with her PhDIncorrect."
+                }, 
+                {
+                  "answerKey": "answer2", 
+                  "content": "32-year-old Asian American man with a high school diploma"
+                }, 
+                {
+                  "answerKey": "answer3", 
+                  "content": "35-year-old African American man who is also a college graduate"
+                }, 
+                {
+                  "answerKey": "answer4", 
+                  "content": "35-year-old Caucasian American man who is also a college graduate"
+                }
+              ], 
+              "id": "macionis_15e_ch01_CE.01.02", 
+              "order": "randomized", 
+              "presenterConfig": {
+                "numberFormat": ""
+              }, 
+              "presenterType": "RadioGroup", 
+              "question": "Michelle is a 32-year-old African American college graduate. Thinking sociologically, we might expect that she is most likely to marry a __________."
+            }, 
+            "configFixup": [
+              {
+                "name": "questionId", 
+                "type": "set-property", 
+                "value": {
+                  "domain": "info", 
+                  "refId": "sequenceNodeKey", 
+                  "type": "ref"
+                }
+              }, 
+              {
+                "name": "maxAttempts", 
+                "type": "set-property", 
+                "value": {
+                  "domain": "info", 
+                  "refId": "maxAttempts", 
+                  "type": "ref"
+                }
+              }
+            ]
+          }
+        ], 
+        "containerId": "target1", 
+        "description": "container for the sample multiple choice question", 
+        "hookupActions": [
+          {
+            "args": [
+              {
+                "domain": "brix", 
+                "refId": "Q1", 
+                "type": "ref"
+              }
+            ], 
+            "description": "Hookup the submit manager to evaluate answers", 
+            "instance": {
+              "type": "submit-manager"
+            }, 
+            "methodName": "handleRequestsFrom", 
+            "type": "method-call"
+          }, 
+          {
+            "args": [
+              {
+                "selector": "#target1", 
+                "type": "d3select"
+              }
+            ], 
+            "description": "Draw the question", 
+            "instance": {
+              "domain": "brix", 
+              "refId": "Q1", 
+              "type": "ref"
+            }, 
+            "methodName": "draw", 
+            "type": "method-call"
+          }
+        ]
+      }
+    ], 
+    "description": "A Sample Activity containing a single multiple choice bric"
+  }, 
+  "metadata": {
+    "contentTypeTier1": "Test and Assessment", 
+    "contentTypeTier2": [
+      "assessment item"
+    ], 
+    "created": "2014-03-17T19:27:56.128147", 
+    "description": "macionis_15e_ch01_CE.01.02.xhtml", 
+    "format": [
+      "application/vnd.pearson.sanvan.v1.activity"
+    ], 
+    "guid": "a2350998-5e7f-4569-964c-e5ae65a448ec", 
+    "intendedEndUserRole": [
+      "Student"
+    ], 
+    "owner": "Brix", 
+    "subject": [
+      "Sociology"
+    ], 
+    "timeRequired": "PT20S", 
+    "title": "macionis_15e_ch01_CE.01.02.xhtml"
+  }
+}

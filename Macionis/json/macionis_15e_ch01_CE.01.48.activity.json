@@ -1,0 +1,141 @@
+{
+  "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope", 
+  "@type": "Envelope", 
+  "body": {
+    "containerConfig": [
+      {
+        "brixConfig": [
+          {
+            "answerKey": {
+              "answers": {
+                "answer1": {
+                  "response": "Correct! They often depend on income levels because some sports are costly", 
+                  "score": 1
+                }, 
+                "answer2": {
+                  "response": "Incorrect. Consider this: The social-conflict approach looks for inequality. Refer to Learning Objective 1.6: Apply sociology\u2019s major theoretical approaches to the topic of sports.", 
+                  "score": 0
+                }, 
+                "answer3": {
+                  "response": "Incorrect. Consider this: The social-conflict approach looks for inequality. Refer to Learning Objective 1.6: Apply sociology\u2019s major theoretical approaches to the topic of sports.", 
+                  "score": 0
+                }, 
+                "answer4": {
+                  "response": "Incorrect. Consider this: The social-conflict approach looks for inequality. Refer to Learning Objective 1.6: Apply sociology\u2019s major theoretical approaches to the topic of sports.", 
+                  "score": 0
+                }
+              }, 
+              "assessmentType": "multiplechoice"
+            }, 
+            "bricId": "Q1", 
+            "bricType": "MultipleChoiceQuestion", 
+            "config": {
+              "choices": [
+                {
+                  "answerKey": "answer1", 
+                  "content": "that the games people play reflect their social standing"
+                }, 
+                {
+                  "answerKey": "answer2", 
+                  "content": "how sports promote physical fitness and provide a stress release"
+                }, 
+                {
+                  "answerKey": "answer3", 
+                  "content": "how different people interpret the rules of games slightly differently"
+                }, 
+                {
+                  "answerKey": "answer4", 
+                  "content": "that sports provide a social setting and create thousands of jobs"
+                }
+              ], 
+              "id": "macionis_15e_ch01_CE.01.48", 
+              "order": "randomized", 
+              "presenterConfig": {
+                "numberFormat": ""
+              }, 
+              "presenterType": "RadioGroup", 
+              "question": "A social-conflict analysis of sports points out __________."
+            }, 
+            "configFixup": [
+              {
+                "name": "questionId", 
+                "type": "set-property", 
+                "value": {
+                  "domain": "info", 
+                  "refId": "sequenceNodeKey", 
+                  "type": "ref"
+                }
+              }, 
+              {
+                "name": "maxAttempts", 
+                "type": "set-property", 
+                "value": {
+                  "domain": "info", 
+                  "refId": "maxAttempts", 
+                  "type": "ref"
+                }
+              }
+            ]
+          }
+        ], 
+        "containerId": "target1", 
+        "description": "container for the sample multiple choice question", 
+        "hookupActions": [
+          {
+            "args": [
+              {
+                "domain": "brix", 
+                "refId": "Q1", 
+                "type": "ref"
+              }
+            ], 
+            "description": "Hookup the submit manager to evaluate answers", 
+            "instance": {
+              "type": "submit-manager"
+            }, 
+            "methodName": "handleRequestsFrom", 
+            "type": "method-call"
+          }, 
+          {
+            "args": [
+              {
+                "selector": "#target1", 
+                "type": "d3select"
+              }
+            ], 
+            "description": "Draw the question", 
+            "instance": {
+              "domain": "brix", 
+              "refId": "Q1", 
+              "type": "ref"
+            }, 
+            "methodName": "draw", 
+            "type": "method-call"
+          }
+        ]
+      }
+    ], 
+    "description": "A Sample Activity containing a single multiple choice bric"
+  }, 
+  "metadata": {
+    "contentTypeTier1": "Test and Assessment", 
+    "contentTypeTier2": [
+      "assessment item"
+    ], 
+    "created": "2014-03-17T19:27:56.128956", 
+    "description": "macionis_15e_ch01_CE.01.48.xhtml", 
+    "format": [
+      "application/vnd.pearson.sanvan.v1.activity"
+    ], 
+    "guid": "f89edba0-2513-4244-9797-c980c320af46", 
+    "intendedEndUserRole": [
+      "Student"
+    ], 
+    "owner": "Brix", 
+    "subject": [
+      "Sociology"
+    ], 
+    "timeRequired": "PT20S", 
+    "title": "macionis_15e_ch01_CE.01.48.xhtml"
+  }
+}
