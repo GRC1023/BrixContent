@@ -1,0 +1,181 @@
+{
+  "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope",
+  "@type": "Envelope",
+  "metadata": {
+    "guid": "d44b0d2e-315b-4a78-a6df-3bbea80335b2",
+    "bookTitle": "Psychology",
+    "subject": [
+      "Psychology - General Studies"
+    ],
+    "bookAuthor": "Ciccarelli/White",
+    "title": "Ch01 ModuleQuiz1.1 Q5",
+    "contentTypeTier1": "Assessment",
+    "contentTypeTier2": [
+      "AssignmentItem"
+    ],
+    "format": [
+      "application/vnd.pearson.sanvan.v1.activity"
+    ],
+    "educationalAlignment": [
+      "http://purl.org/pearson/objectives/183725473384362"
+    ],
+    "extendedMetadata": [
+      {
+        "name": "ISBN",
+        "value": "0205972241"
+      },
+      {
+        "name": "M",
+        "value": "1"
+      },
+      {
+        "name": "assessment_title",
+        "value": "Module Quiz: 1.1 What is Psychology? and Psychology Then: The History of Psychology"
+      },
+      {
+        "name": "chapterTitle",
+        "value": "The Science of Psychology"
+      },
+      {
+        "name": "module",
+        "value": "Psychology Then: The History of Psychology"
+      },
+      {
+        "name": "item_title",
+        "value": "0205972241_ch1_m1_q0005"
+      },
+      {
+        "name": "questionlayout",
+        "value": "1"
+      },
+      {
+        "name": "LearningObjective",
+        "value": ""
+      },
+      {
+        "name": "CH",
+        "value": "1"
+      },
+      {
+        "name": "shuffle_choices",
+        "value": "Yes"
+      }
+    ]
+  },
+  "body": {
+    "description": "Ch01_ModuleQuiz1.1_Q5",
+    "containerConfig": [
+      {
+        "description": "Ch01_ModuleQuiz1.1_Q5",
+        "containerId": "target1",
+        "brixConfig": [
+          {
+            "bricId": "q1",
+            "bricType": "MultipleChoiceQuestion",
+            "config": {
+              "id": "QUE56803",
+              "question": "Who was the first woman to complete the coursework for a doctorate at Harvard University?\n\u003cbr /\u003e",
+              "order": "randomized",
+              "presenterType": "RadioGroup",
+              "presenterConfig": {
+                "numberFormat": "none"
+              },
+              "choices": [
+                {
+                  "answerKey": "answer_1",
+                  "content": "Mary Whiton Calkins"
+                },
+                {
+                  "answerKey": "answer_2",
+                  "content": "Mary Cover Jones"
+                },
+                {
+                  "answerKey": "answer_3",
+                  "content": "Margaret Washburn"
+                },
+                {
+                  "answerKey": "answer_4",
+                  "content": "Ruth Howard"
+                }
+              ]
+            },
+            "answerKey": {
+              "assessmentType": "multiplechoice",
+              "answers": {
+                "answer_3": {
+                  "score": 0.0,
+                  "response": "Incorrect."
+                },
+                "answer_2": {
+                  "score": 0.0,
+                  "response": "Incorrect."
+                },
+                "answer_1": {
+                  "score": 1.0,
+                  "response": "Correct!"
+                },
+                "answer_4": {
+                  "score": 0.0,
+                  "response": "Incorrect."
+                }
+              }
+            },
+            "configFixup": [
+              {
+                "name": "questionId",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "sequenceNodeKey",
+                  "type": "ref"
+                }
+              },
+              {
+                "name": "maxAttempts",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "maxAttempts",
+                  "type": "ref"
+                }
+              }
+            ]
+          }
+        ],
+        "hookupActions": [
+          {
+            "description": "Hookup the submit manager to evaluate answers",
+            "methodName": "handleRequestsFrom",
+            "type": "method-call",
+            "args": [
+              {
+                "domain": "brix",
+                "refId": "q1",
+                "type": "ref"
+              }
+            ],
+            "instance": {
+              "type": "submit-manager"
+            }
+          },
+          {
+            "description": "Draw the question",
+            "methodName": "draw",
+            "type": "method-call",
+            "args": [
+              {
+                "selector": "#target1",
+                "type": "d3select"
+              }
+            ],
+            "instance": {
+              "domain": "brix",
+              "refId": "q1",
+              "type": "ref"
+            }
+          }
+        ]
+      }
+    ]
+  }
+}
