@@ -9,11 +9,12 @@ PAFTOOL='java -jar brix-tool-pafclient-0.3-jar-with-dependencies.jar'
 METHOD=PUT
 DEV_URL='http://repo.paf.dev.pearsoncmg.com/paf-repo/resources/activities'
 CERT_URL='http://repo.paf.cert.pearsoncmg.com/paf-repo/resources/activities'
+REV_URL='http://repo.paf.staging.pearsoncmg.com/paf-repo/resources/activities'
 PROD_URL='http://repo.paf.pearsoncmg.com/paf-repo/resources/activities'
 ACTIVITY_HDR='Content-Type: application/vnd.pearson.paf.v1.envelope+json;body="application/vnd.pearson.sanvan.v1.activity""'
 ASSIGNMENT_HDR='Content-Type: application/vnd.pearson.paf.v1.envelope+json;body="application/vnd.pearson.paf.v1.assignment+json""'
 
-URL=$CERT_URL
+URL=$REV_URL
 
 PAF_RECTYPE=$1
 REC_GUID=$2

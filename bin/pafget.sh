@@ -7,13 +7,14 @@ PAFIMPORTER='java -jar brix-tool-pafclient-0.3-jar-with-dependencies.jar'
 METHOD=GET
 DEV_URL='http://repo.paf.dev.pearsoncmg.com/paf-repo/resources/activities'
 CERT_URL='http://repo.paf.cert.pearsoncmg.com/paf-repo/resources/activities'
+REV_URL='http://repo.paf.staging.pearsoncmg.com/paf-repo/resources/activities'
 PROD_URL='http://repo.paf.pearsoncmg.com/paf-repo/resources/activities'
 ACTIVITY_HDR='Accept:application/vnd.pearson.sanvan.v1.activity'
 ASSIGNMENT_HDR='Accept:application/vnd.pearson.paf.v1.assignment+json'
 TYPE=$1
 GUID=$2
 
-URL=$DEV_URL
+URL=$REV_URL
 
 if [[ $TYPE == 'activity' ]]
 then
