@@ -6,10 +6,10 @@ DEV_URL='http://repo.paf.dev.pearsoncmg.com/paf-repo/resources/activities'
 CERT_URL='http://repo.paf.cert.pearsoncmg.com/paf-repo/resources/activities'
 PROD_URL='http://repo.paf.pearsoncmg.com/paf-repo/resources/activities'
 REV_URL='http://repo.paf.staging.pearsoncmg.com/paf-repo/resources/activities'
-ACTIVITY_HDR='Content-Type: application/vnd.pearson.paf.v1.envelope+json;body="application/vnd.pearson.sanvan.v1.activity""'
-ASSIGNMENT_HDR='Content-Type: application/vnd.pearson.paf.v1.envelope+json;body="application/vnd.pearson.paf.v1.assignment+json""'
+ACTIVITY_HDR='Content-Type: application/vnd.pearson.paf.v1.envelope+json;charset=UTF-8;body="application/vnd.pearson.sanvan.v1.activity""'
+ASSIGNMENT_HDR='Content-Type: application/vnd.pearson.paf.v1.envelope+json;charset=UTF-8;body="application/vnd.pearson.paf.v1.assignment+json""'
 
-URL=$REV_URL
+URL=$CERT_URL
 
 if [[ $1 == 'activity' ]]
 then
