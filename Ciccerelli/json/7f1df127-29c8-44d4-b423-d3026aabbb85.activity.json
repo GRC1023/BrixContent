@@ -1,0 +1,181 @@
+{
+  "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope",
+  "@type": "Envelope",
+  "metadata": {
+    "guid": "7f1df127-29c8-44d4-b423-d3026aabbb85",
+    "bookTitle": "Psychology",
+    "subject": [
+      "Psychology"
+    ],
+    "bookAuthor": "Saundra K. Ciccarelli; J. Noland White",
+    "title": "Ch01 ModuleQuiz1.1 Q4",
+    "contentTypeTier1": "Assessment",
+    "contentTypeTier2": [
+      "AssignmentItem"
+    ],
+    "format": [
+      "application/vnd.pearson.sanvan.v1.activity"
+    ],
+    "educationalAlignment": [
+      "http://purl.org/pearson/objectives/183725473384362"
+    ],
+    "extendedMetadata": [
+      {
+        "name": "ISBN",
+        "value": "0133794652"
+      },
+      {
+        "name": "M",
+        "value": "m01"
+      },
+      {
+        "name": "assessment_title",
+        "value": "Quiz: What is Psychology and Psychology Then"
+      },
+      {
+        "name": "chapterTitle",
+        "value": "The Science of Psychology"
+      },
+      {
+        "name": "module",
+        "value": "What is Psychology and Psychology Then"
+      },
+      {
+        "name": "item_title",
+        "value": "0133794652_Saundra K. Ciccarelli; J. Noland White_ch01_m01_q0004"
+      },
+      {
+        "name": "questionlayout",
+        "value": "1"
+      },
+      {
+        "name": "LearningObjective",
+        "value": ""
+      },
+      {
+        "name": "CH",
+        "value": "1"
+      },
+      {
+        "name": "shuffle_choices",
+        "value": "Yes"
+      }
+    ]
+  },
+  "body": {
+    "description": "Ch01_ModuleQuiz1.1_Q4",
+    "containerConfig": [
+      {
+        "description": "Ch01_ModuleQuiz1.1_Q4",
+        "containerId": "target1",
+        "brixConfig": [
+          {
+            "bricId": "q1",
+            "bricType": "MultipleChoiceQuestion",
+            "config": {
+              "id": "QUE56802",
+              "question": "Which of the following early psychologists would have been most likely to agree with the statement, “The study of the mind should focus on how it functions in everyday life”?\n\u003cbr /\u003e",
+              "order": "randomized",
+              "presenterType": "RadioGroup",
+              "presenterConfig": {
+                "numberFormat": "none"
+              },
+              "choices": [
+                {
+                  "answerKey": "answer_1",
+                  "content": "Wilhelm Wundt"
+                },
+                {
+                  "answerKey": "answer_2",
+                  "content": "William James"
+                },
+                {
+                  "answerKey": "answer_3",
+                  "content": "John Watson"
+                },
+                {
+                  "answerKey": "answer_4",
+                  "content": "Sigmund Freud"
+                }
+              ]
+            },
+            "answerKey": {
+              "assessmentType": "multiplechoice",
+              "answers": {
+                "answer_3": {
+                  "score": 0.0,
+                  "response": ""
+                },
+                "answer_2": {
+                  "score": 1.0,
+                  "response": ""
+                },
+                "answer_1": {
+                  "score": 0.0,
+                  "response": ""
+                },
+                "answer_4": {
+                  "score": 0.0,
+                  "response": ""
+                }
+              }
+            },
+            "configFixup": [
+              {
+                "name": "questionId",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "sequenceNodeKey",
+                  "type": "ref"
+                }
+              },
+              {
+                "name": "maxAttempts",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "maxAttempts",
+                  "type": "ref"
+                }
+              }
+            ]
+          }
+        ],
+        "hookupActions": [
+          {
+            "description": "Hookup the submit manager to evaluate answers",
+            "methodName": "handleRequestsFrom",
+            "type": "method-call",
+            "args": [
+              {
+                "domain": "brix",
+                "refId": "q1",
+                "type": "ref"
+              }
+            ],
+            "instance": {
+              "type": "submit-manager"
+            }
+          },
+          {
+            "description": "Draw the question",
+            "methodName": "draw",
+            "type": "method-call",
+            "args": [
+              {
+                "selector": "#target1",
+                "type": "d3select"
+              }
+            ],
+            "instance": {
+              "domain": "brix",
+              "refId": "q1",
+              "type": "ref"
+            }
+          }
+        ]
+      }
+    ]
+  }
+}

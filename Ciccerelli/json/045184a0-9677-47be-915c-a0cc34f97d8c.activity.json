@@ -1,0 +1,177 @@
+{
+  "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope",
+  "@type": "Envelope",
+  "metadata": {
+    "guid": "045184a0-9677-47be-915c-a0cc34f97d8c",
+    "bookTitle": "Psychology",
+    "subject": [
+      "Psychology"
+    ],
+    "bookAuthor": "Saundra K. Ciccarelli; J. Noland White",
+    "title": "Ch01 ChapterQuiz1 Q12",
+    "contentTypeTier1": "Assessment",
+    "contentTypeTier2": [
+      "AssignmentItem"
+    ],
+    "format": [
+      "application/vnd.pearson.sanvan.v1.activity"
+    ],
+    "educationalAlignment": [
+      "http://purl.org/pearson/objectives/183725473384362"
+    ],
+    "extendedMetadata": [
+      {
+        "name": "ISBN",
+        "value": "0133794652"
+      },
+      {
+        "name": "M",
+        "value": "c01"
+      },
+      {
+        "name": "assessment_title",
+        "value": "Quiz: The Science of Psychology"
+      },
+      {
+        "name": "chapterTitle",
+        "value": "The Science of Psychology"
+      },
+      {
+        "name": "item_title",
+        "value": "0133794652_Saundra K. Ciccarelli; J. Noland White_ch01_c01_q0012"
+      },
+      {
+        "name": "questionlayout",
+        "value": "1"
+      },
+      {
+        "name": "LearningObjective",
+        "value": ""
+      },
+      {
+        "name": "CH",
+        "value": "1"
+      },
+      {
+        "name": "shuffle_choices",
+        "value": "Yes"
+      }
+    ]
+  },
+  "body": {
+    "description": "Ch01_ChapterQuiz1_Q12",
+    "containerConfig": [
+      {
+        "description": "Ch01_ChapterQuiz1_Q12",
+        "containerId": "target1",
+        "brixConfig": [
+          {
+            "bricId": "q1",
+            "bricType": "MultipleChoiceQuestion",
+            "config": {
+              "id": "QUE56790",
+              "question": "Brianne wants to find an explanation for the behavior of her lab rats in her study. Which step in the scientific method is she currently focusing on?\n\u003cbr /\u003e",
+              "order": "randomized",
+              "presenterType": "RadioGroup",
+              "presenterConfig": {
+                "numberFormat": "none"
+              },
+              "choices": [
+                {
+                  "answerKey": "answer_1",
+                  "content": "testing a hypothesis"
+                },
+                {
+                  "answerKey": "answer_2",
+                  "content": "perceiving the question"
+                },
+                {
+                  "answerKey": "answer_3",
+                  "content": "drawing conclusions"
+                },
+                {
+                  "answerKey": "answer_4",
+                  "content": "reporting her results"
+                }
+              ]
+            },
+            "answerKey": {
+              "assessmentType": "multiplechoice",
+              "answers": {
+                "answer_3": {
+                  "score": 0.0,
+                  "response": "Consider this: There are a variety of methods you might use for this step, including conducting a survey or designing an experiment. L.O. 1.6: Why is psychology considered a science, and what are the steps in using the scientific method?"
+                },
+                "answer_2": {
+                  "score": 0.0,
+                  "response": "Consider this: There are a variety of methods you might use for this step, including conducting a survey or designing an experiment. L.O. 1.6: Why is psychology considered a science, and what are the steps in using the scientific method?"
+                },
+                "answer_1": {
+                  "score": 1.0,
+                  "response": ""
+                },
+                "answer_4": {
+                  "score": 0.0,
+                  "response": "Consider this: There are a variety of methods you might use for this step, including conducting a survey or designing an experiment. L.O. 1.6: Why is psychology considered a science, and what are the steps in using the scientific method?"
+                }
+              }
+            },
+            "configFixup": [
+              {
+                "name": "questionId",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "sequenceNodeKey",
+                  "type": "ref"
+                }
+              },
+              {
+                "name": "maxAttempts",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "maxAttempts",
+                  "type": "ref"
+                }
+              }
+            ]
+          }
+        ],
+        "hookupActions": [
+          {
+            "description": "Hookup the submit manager to evaluate answers",
+            "methodName": "handleRequestsFrom",
+            "type": "method-call",
+            "args": [
+              {
+                "domain": "brix",
+                "refId": "q1",
+                "type": "ref"
+              }
+            ],
+            "instance": {
+              "type": "submit-manager"
+            }
+          },
+          {
+            "description": "Draw the question",
+            "methodName": "draw",
+            "type": "method-call",
+            "args": [
+              {
+                "selector": "#target1",
+                "type": "d3select"
+              }
+            ],
+            "instance": {
+              "domain": "brix",
+              "refId": "q1",
+              "type": "ref"
+            }
+          }
+        ]
+      }
+    ]
+  }
+}
