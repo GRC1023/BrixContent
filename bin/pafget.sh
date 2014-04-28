@@ -33,7 +33,7 @@ else
 fi
 
 date
-echo getting $TYPE $GUID from PAF cert...
+echo getting $TYPE $GUID from PAF $URL...
 $PAFIMPORTER -c -m $METHOD -h "$HEADER" -u $URL/$GUID
-echo ...done getting $TYPE $GUID from PAF cert
+echo ...done getting $TYPE $GUID from PAF $URL
 date
