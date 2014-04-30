@@ -1,5 +1,5 @@
-brixContent
-=========
+BrixContent
+===========
 
 ## Repository Contents ##
 
@@ -21,10 +21,19 @@ brixContent
      
     - The activity json files match '*.activity.json' and the assignment files match '*.assignment.json'
 * Import the files into PAF.
-    - The pafimport.sh script should be edited to confirm that it is configured for the desired target PAF environment.
-    - run the pafimport script for the activity and assignment json files that were just created by processing the csv file.
+    - Run the pafimport script passing it the name of the PAF environment to import to and the list of json files to import
 
-        brixcontent/bin $ ./pafimport.sh activity ../Neff/MC/json/*.activity.json | tee -a pafimport_MC_PROD.log
-        brixcontent/bin $ ./pafimport.sh assignment ../Neff/MC/json/*.assignment.json | tee -a pafimport_MC_PROD.log
+Here is an example of running the `pafimport.sh` script once for the activities and then again for the assignments:
+
+    ~/brixcontent/Neff/MC/json $ ../../../bin/pafimport.sh dev *.activity.json | tee pafimport_MC_DEV.log
+    ~/brixcontent/Neff/MC/json $ ../../../bin/pafimport.sh dev *.assignment.json | tee -a pafimport_MC_DEV.log
+
         
+## Prerequisites ##
 
+The `pafimport.sh` script in the bin directory requires that the [jq][] tool be installed in order to work. See the [jq download page][jq-download].
+
+
+
+[jq]: <http://stedolan.github.io/jq/> "JSON parser"
+[jq-download]: <http://stedolan.github.io/jq/download/>
