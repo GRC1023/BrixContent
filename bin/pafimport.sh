@@ -13,7 +13,6 @@ if [ -z `which jq` ]
 then
     echo "This script will not run without jq available. Get it from: http://stedolan.github.io/jq/download/"
 fi
-exit
 
 # get the requested PAF environment which must be one of the supported environments: DEV, CERT, REV (aka staging), PROD
 TARGET_PAF_ENV=$1
