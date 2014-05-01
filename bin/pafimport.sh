@@ -1,7 +1,12 @@
 #! /bin/bash
+#
+# This script will import the assignment or activity JSON in a list of files into
+# a specified PAF environment. It will add the assignment or activity if it is
+# not already there, and it will update the assignment or activity if it is already
+# there.
+#
 # usage:
-# get an activity: ./pafget.sh activity PUT_THE_GUID_HERE
-# get an assignment: ./pafget.sh assignment PUT_THE_GUID_HERE
+#     pafimport.sh <PAF-env> json-files...
 
 function getfullpath() {
   DIR=$(echo "${1%/*}")
@@ -12,11 +17,18 @@ function getfullpath() {
 if [ -z `which jq` ]
 then
     echo "This script will not run without jq available. Get it from: http://stedolan.github.io/jq/download/"
+	exit 1
 fi
 
 # get the requested PAF environment which must be one of the supported environments: DEV, CERT, REV (aka staging), PROD
 TARGET_PAF_ENV=$1
 shift
+
+# uppercase the user specified PAF environment name
+# This works w/ bash ver >= 4.0.0, but the Mac has version 
+#UC_TARGET_PAF_ENV=${TARGET_PAF_ENV^^}
+# therefore this is the work-around
+UC_TARGET_PAF_ENV=$(tr '[:lower:]' '[:upper:]' <<< "$TARGET_PAF_ENV")
 
 # Get the path to this script file which is where the paf tool jar file lives.
 SCRIPT_PATH="`getfullpath $0`"
@@ -39,7 +51,7 @@ ACTIVITY_HDR='Content-Type: application/vnd.pearson.paf.v1.envelope+json;charset
 ASSIGNMENT_HDR='Content-Type: application/vnd.pearson.paf.v1.envelope+json;charset=UTF-8;body="application/vnd.pearson.paf.v1.assignment+json""'
 
 # get the url for the target PAF environment
-eval "URL=\$${TARGET_PAF_ENV^^}_URL"
+eval "URL=\$${UC_TARGET_PAF_ENV}_URL"
 
 if [ -z "$URL" ]
 then
