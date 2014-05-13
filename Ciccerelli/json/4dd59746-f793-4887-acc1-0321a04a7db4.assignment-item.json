@@ -1,0 +1,182 @@
+{
+  "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope",
+  "@type": "Envelope",
+  "metadata": {
+    "bookTitle": "Psychology",
+    "keywords": [
+      "Ciccarelli 4e",
+      "Chapter 11"
+    ],
+    "extendedMetadata": [
+      {
+        "name": "ISBN",
+        "value": "0133794652"
+      },
+      {
+        "name": "M",
+        "value": "c01"
+      },
+      {
+        "name": "assessment_title",
+        "value": "Chapter Quiz: Stress and Health"
+      },
+      {
+        "name": "chapterTitle",
+        "value": "Stress and Health"
+      },
+      {
+        "name": "item_title",
+        "value": "0133794652_Saundra K. Ciccarelli; J. Noland White_ch11_c01_q0014"
+      },
+      {
+        "name": "questionlayout",
+        "value": "1"
+      },
+      {
+        "name": "LearningObjective",
+        "value": ""
+      },
+      {
+        "name": "CH",
+        "value": "11"
+      },
+      {
+        "name": "shuffle_choices",
+        "value": "Yes"
+      }
+    ],
+    "subject": [
+      "Psychology"
+    ],
+    "contentTypeTier2": [
+      "AssignmentItem"
+    ],
+    "contentTypeTier1": "Assessment",
+    "format": [
+      "application/vnd.pearson.sanvan.v1.activity"
+    ],
+    "version": "1.0",
+    "guid": "4dd59746-f793-4887-acc1-0321a04a7db4",
+    "bookAuthor": "Saundra K. Ciccarelli; J. Noland White",
+    "title": "Ch11 ChapterQuiz11 Q14",
+    "educationalAlignment": [
+      "http://purl.org/pearson/objectives/183725473384362"
+    ]
+  },
+  "body": {
+    "description": "Ch11_ChapterQuiz11_Q14",
+    "containerConfig": [
+      {
+        "description": "Ch11_ChapterQuiz11_Q14",
+        "containerId": "target1",
+        "brixConfig": [
+          {
+            "bricId": "q1",
+            "bricType": "MultipleChoiceQuestion",
+            "config": {
+              "id": "QUE57229",
+              "question": "According to Richard Lazarus, determining what can be done to deal with one’s stress is an example of a ________________ appraisal.\n\u003cbr /\u003e",
+              "order": "randomized",
+              "presenterType": "RadioGroup",
+              "presenterConfig": {
+                "numberFormat": "none"
+              },
+              "choices": [
+                {
+                  "answerKey": "answer_1",
+                  "content": "primary"
+                },
+                {
+                  "answerKey": "answer_2",
+                  "content": "secondary"
+                },
+                {
+                  "answerKey": "answer_3",
+                  "content": "formal"
+                },
+                {
+                  "answerKey": "answer_4",
+                  "content": "tertiary"
+                }
+              ]
+            },
+            "answerKey": {
+              "assessmentType": "multiplechoice",
+              "answers": {
+                "answer_3": {
+                  "score": 0.0,
+                  "response": "Consider this: It would be hard to determine how you can deal with a stressor until you actually establish that it is, in fact, a stressor, right? L.O. 11.5: How do cognitive factors and personality differences affect the experience of stress?"
+                },
+                "answer_2": {
+                  "score": 1.0,
+                  "response": ""
+                },
+                "answer_1": {
+                  "score": 0.0,
+                  "response": "Consider this: It would be hard to determine how you can deal with a stressor until you actually establish that it is, in fact, a stressor, right? L.O. 11.5: How do cognitive factors and personality differences affect the experience of stress?"
+                },
+                "answer_4": {
+                  "score": 0.0,
+                  "response": "Consider this: It would be hard to determine how you can deal with a stressor until you actually establish that it is, in fact, a stressor, right? L.O. 11.5: How do cognitive factors and personality differences affect the experience of stress?"
+                }
+              }
+            },
+            "configFixup": [
+              {
+                "name": "questionId",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "sequenceNodeKey",
+                  "type": "ref"
+                }
+              },
+              {
+                "name": "maxAttempts",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "maxAttempts",
+                  "type": "ref"
+                }
+              }
+            ]
+          }
+        ],
+        "hookupActions": [
+          {
+            "description": "Hookup the submit manager to evaluate answers",
+            "methodName": "handleRequestsFrom",
+            "type": "method-call",
+            "args": [
+              {
+                "domain": "brix",
+                "refId": "q1",
+                "type": "ref"
+              }
+            ],
+            "instance": {
+              "type": "submit-manager"
+            }
+          },
+          {
+            "description": "Draw the question",
+            "methodName": "draw",
+            "type": "method-call",
+            "args": [
+              {
+                "selector": "#target1",
+                "type": "d3select"
+              }
+            ],
+            "instance": {
+              "domain": "brix",
+              "refId": "q1",
+              "type": "ref"
+            }
+          }
+        ]
+      }
+    ]
+  }
+}

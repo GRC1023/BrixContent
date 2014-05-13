@@ -1,0 +1,182 @@
+{
+  "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope",
+  "@type": "Envelope",
+  "metadata": {
+    "bookTitle": "Psychology",
+    "keywords": [
+      "Ciccarelli 4e",
+      "Chapter 11"
+    ],
+    "extendedMetadata": [
+      {
+        "name": "ISBN",
+        "value": "0133794652"
+      },
+      {
+        "name": "M",
+        "value": "c01"
+      },
+      {
+        "name": "assessment_title",
+        "value": "Chapter Quiz: Stress and Health"
+      },
+      {
+        "name": "chapterTitle",
+        "value": "Stress and Health"
+      },
+      {
+        "name": "item_title",
+        "value": "0133794652_Saundra K. Ciccarelli; J. Noland White_ch11_c01_q0010"
+      },
+      {
+        "name": "questionlayout",
+        "value": "1"
+      },
+      {
+        "name": "LearningObjective",
+        "value": ""
+      },
+      {
+        "name": "CH",
+        "value": "11"
+      },
+      {
+        "name": "shuffle_choices",
+        "value": "Yes"
+      }
+    ],
+    "subject": [
+      "Psychology"
+    ],
+    "contentTypeTier2": [
+      "AssignmentItem"
+    ],
+    "contentTypeTier1": "Assessment",
+    "format": [
+      "application/vnd.pearson.sanvan.v1.activity"
+    ],
+    "version": "1.0",
+    "guid": "39847e16-77dd-40a9-a630-49048ca0fbed",
+    "bookAuthor": "Saundra K. Ciccarelli; J. Noland White",
+    "title": "Ch11 ChapterQuiz11 Q10",
+    "educationalAlignment": [
+      "http://purl.org/pearson/objectives/183725473384362"
+    ]
+  },
+  "body": {
+    "description": "Ch11_ChapterQuiz11_Q10",
+    "containerConfig": [
+      {
+        "description": "Ch11_ChapterQuiz11_Q10",
+        "containerId": "target1",
+        "brixConfig": [
+          {
+            "bricId": "q1",
+            "bricType": "MultipleChoiceQuestion",
+            "config": {
+              "id": "QUE57224",
+              "question": "Kina’s husband comes home from work angry because of an argument he had with his boss. Subsequently, Kina’s husband begins yelling at her for no apparent reason. Ultimately, Kina finds herself yelling at their youngest child for apparently no good reason other than being frustrated. Kina is displaying\n\u003cbr /\u003e",
+              "order": "randomized",
+              "presenterType": "RadioGroup",
+              "presenterConfig": {
+                "numberFormat": "none"
+              },
+              "choices": [
+                {
+                  "answerKey": "answer_1",
+                  "content": "escape."
+                },
+                {
+                  "answerKey": "answer_2",
+                  "content": "withdrawal."
+                },
+                {
+                  "answerKey": "answer_3",
+                  "content": "displaced aggression."
+                },
+                {
+                  "answerKey": "answer_4",
+                  "content": "projection."
+                }
+              ]
+            },
+            "answerKey": {
+              "assessmentType": "multiplechoice",
+              "answers": {
+                "answer_3": {
+                  "score": 1.0,
+                  "response": ""
+                },
+                "answer_2": {
+                  "score": 0.0,
+                  "response": "Consider this: Do you think Kina really wants to scream back at her husband? Maybe yelling at her child is a \"safer\" option, even if it is an inappropriate behavior. L.O. 11.3: What are some psychological factors in stress?"
+                },
+                "answer_1": {
+                  "score": 0.0,
+                  "response": "Consider this: Do you think Kina really wants to scream back at her husband? Maybe yelling at her child is a \"safer\" option, even if it is an inappropriate behavior. L.O. 11.3: What are some psychological factors in stress?"
+                },
+                "answer_4": {
+                  "score": 0.0,
+                  "response": "Consider this: Do you think Kina really wants to scream back at her husband? Maybe yelling at her child is a \"safer\" option, even if it is an inappropriate behavior. L.O. 11.3: What are some psychological factors in stress?"
+                }
+              }
+            },
+            "configFixup": [
+              {
+                "name": "questionId",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "sequenceNodeKey",
+                  "type": "ref"
+                }
+              },
+              {
+                "name": "maxAttempts",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "maxAttempts",
+                  "type": "ref"
+                }
+              }
+            ]
+          }
+        ],
+        "hookupActions": [
+          {
+            "description": "Hookup the submit manager to evaluate answers",
+            "methodName": "handleRequestsFrom",
+            "type": "method-call",
+            "args": [
+              {
+                "domain": "brix",
+                "refId": "q1",
+                "type": "ref"
+              }
+            ],
+            "instance": {
+              "type": "submit-manager"
+            }
+          },
+          {
+            "description": "Draw the question",
+            "methodName": "draw",
+            "type": "method-call",
+            "args": [
+              {
+                "selector": "#target1",
+                "type": "d3select"
+              }
+            ],
+            "instance": {
+              "domain": "brix",
+              "refId": "q1",
+              "type": "ref"
+            }
+          }
+        ]
+      }
+    ]
+  }
+}

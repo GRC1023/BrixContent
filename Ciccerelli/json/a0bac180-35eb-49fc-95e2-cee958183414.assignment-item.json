@@ -1,0 +1,182 @@
+{
+  "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope",
+  "@type": "Envelope",
+  "metadata": {
+    "bookTitle": "Psychology",
+    "keywords": [
+      "Ciccarelli 4e",
+      "Chapter Introduction (00)"
+    ],
+    "extendedMetadata": [
+      {
+        "name": "ISBN",
+        "value": "0133794652"
+      },
+      {
+        "name": "M",
+        "value": "c01"
+      },
+      {
+        "name": "assessment_title",
+        "value": "Chapter Quiz: Psychology in Action"
+      },
+      {
+        "name": "chapterTitle",
+        "value": "Psychology in Action"
+      },
+      {
+        "name": "item_title",
+        "value": "0133794652_Saundra K. Ciccarelli; J. Noland White_ch00_c01_q0003"
+      },
+      {
+        "name": "questionlayout",
+        "value": "1"
+      },
+      {
+        "name": "LearningObjective",
+        "value": ""
+      },
+      {
+        "name": "CH",
+        "value": "0"
+      },
+      {
+        "name": "shuffle_choices",
+        "value": "Yes"
+      }
+    ],
+    "subject": [
+      "Psychology"
+    ],
+    "contentTypeTier2": [
+      "AssignmentItem"
+    ],
+    "contentTypeTier1": "Assessment",
+    "format": [
+      "application/vnd.pearson.sanvan.v1.activity"
+    ],
+    "version": "1.0",
+    "guid": "a0bac180-35eb-49fc-95e2-cee958183414",
+    "bookAuthor": "Saundra K. Ciccarelli; J. Noland White",
+    "title": "Ch00 ChapterQuizIntro Q3",
+    "educationalAlignment": [
+      "http://purl.org/pearson/objectives/183725473384362"
+    ]
+  },
+  "body": {
+    "description": "Ch00_ChapterQuizIntro_Q3",
+    "containerConfig": [
+      {
+        "description": "Ch00_ChapterQuizIntro_Q3",
+        "containerId": "target1",
+        "brixConfig": [
+          {
+            "bricId": "q1",
+            "bricType": "MultipleChoiceQuestion",
+            "config": {
+              "id": "QUE56757",
+              "question": "What learning aid gives the student the ability to more effectively read and remember material?\n\u003cbr /\u003e",
+              "order": "randomized",
+              "presenterType": "RadioGroup",
+              "presenterConfig": {
+                "numberFormat": "none"
+              },
+              "choices": [
+                {
+                  "answerKey": "answer_1",
+                  "content": "MyPsychLab"
+                },
+                {
+                  "answerKey": "answer_2",
+                  "content": "content maps"
+                },
+                {
+                  "answerKey": "answer_3",
+                  "content": "SQ3R"
+                },
+                {
+                  "answerKey": "answer_4",
+                  "content": "practice quizzes"
+                }
+              ]
+            },
+            "answerKey": {
+              "assessmentType": "multiplechoice",
+              "answers": {
+                "answer_3": {
+                  "score": 1.0,
+                  "response": ""
+                },
+                "answer_2": {
+                  "score": 0.0,
+                  "response": "Consider this: This method involves several steps that help you \"reach\" the material you are studying on a deep and meaningful level. L.O. PIA.3: How should you go about reading a textbook so that you get the most out of your reading efforts?"
+                },
+                "answer_1": {
+                  "score": 0.0,
+                  "response": "Consider this: This method involves several steps that help you \"reach\" the material you are studying on a deep and meaningful level. L.O. PIA.3: How should you go about reading a textbook so that you get the most out of your reading efforts?"
+                },
+                "answer_4": {
+                  "score": 0.0,
+                  "response": "Consider this: This method involves several steps that help you \"reach\" the material you are studying on a deep and meaningful level. L.O. PIA.3: How should you go about reading a textbook so that you get the most out of your reading efforts?"
+                }
+              }
+            },
+            "configFixup": [
+              {
+                "name": "questionId",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "sequenceNodeKey",
+                  "type": "ref"
+                }
+              },
+              {
+                "name": "maxAttempts",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "maxAttempts",
+                  "type": "ref"
+                }
+              }
+            ]
+          }
+        ],
+        "hookupActions": [
+          {
+            "description": "Hookup the submit manager to evaluate answers",
+            "methodName": "handleRequestsFrom",
+            "type": "method-call",
+            "args": [
+              {
+                "domain": "brix",
+                "refId": "q1",
+                "type": "ref"
+              }
+            ],
+            "instance": {
+              "type": "submit-manager"
+            }
+          },
+          {
+            "description": "Draw the question",
+            "methodName": "draw",
+            "type": "method-call",
+            "args": [
+              {
+                "selector": "#target1",
+                "type": "d3select"
+              }
+            ],
+            "instance": {
+              "domain": "brix",
+              "refId": "q1",
+              "type": "ref"
+            }
+          }
+        ]
+      }
+    ]
+  }
+}
