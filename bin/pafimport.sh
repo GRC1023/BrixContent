@@ -20,12 +20,12 @@ then
 	exit 1
 fi
 
-# get the requested PAF environment which must be one of the supported environments: DEV, CERT, REV (aka staging), PROD
+# get the requested PAF environment which must be one of the supported environments: DEV, CERT, REV (aka staging), PRE_PROD, PROD
 TARGET_PAF_ENV=$1
 shift
 
 # uppercase the user specified PAF environment name
-# This works w/ bash ver >= 4.0.0, but the Mac has version 
+# This works w/ bash ver >= 4.0.0, but the Mac has version 3.2.48 
 #UC_TARGET_PAF_ENV=${TARGET_PAF_ENV^^}
 # therefore this is the work-around
 UC_TARGET_PAF_ENV=$(tr '[:lower:]' '[:upper:]' <<< "$TARGET_PAF_ENV")
@@ -40,6 +40,7 @@ PAFTOOL="java -jar $SCRIPT_PATH/brix-tool-pafclient-0.3-jar-with-dependencies.ja
 DEV_URL='http://repo.paf.dev.pearsoncmg.com/paf-repo/resources/activities'
 CERT_URL='http://repo.paf.cert.pearsoncmg.com/paf-repo/resources/activities'
 REV_URL='http://repo.paf.staging.pearsoncmg.com/paf-repo/resources/activities'
+PRE_PROD_URL='http://repo.paf.ppe.pearsoncmg.com/paf-repo/resources/activities'
 PROD_URL='http://repo.paf.pearsoncmg.com/paf-repo/resources/activities'
 
 #GET headers (not required, and it's easier not to use them)
@@ -57,7 +58,7 @@ if [ -z "$URL" ]
 then
 	echo "The specified PAF environment \"$TARGET_PAF_ENV\" is not supported by this script"
 	echo "This script supports the following PAF enviornments:"
-	echo "DEV, CERT, REV (aka staging), PROD"
+	echo "DEV, CERT, REV (aka staging), PRE_PROD, PROD"
     echo ''
     echo 'usage:'
     echo "\$ $0 <PAF-env> json-files..."
