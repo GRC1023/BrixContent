@@ -1,191 +1,160 @@
 {
+  "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope", 
+  "@type": "Envelope", 
   "body": {
     "containerConfig": [
       {
-        "description": "container for the graph and labels", 
-        "hookupActions": [
-          {
-            "methodName": "append", 
-            "description": "Append the image to the svg container", 
-            "args": [
-              {
-                "refId": "imageGraph", 
-                "domain": "brix", 
-                "type": "ref"
-              }
-            ], 
-            "type": "method-call", 
-            "instance": {
-              "refId": "cntr1", 
-              "domain": "brix", 
-              "type": "ref"
-            }
-          }, 
-          {
-            "methodName": "append", 
-            "description": "Append the labels to the svg container", 
-            "args": [
-              {
-                "refId": "labelGroup1", 
-                "domain": "brix", 
-                "type": "ref"
-              }
-            ], 
-            "type": "method-call", 
-            "instance": {
-              "refId": "cntr1", 
-              "domain": "brix", 
-              "type": "ref"
-            }
-          }, 
-          {
-            "methodName": "lite", 
-            "description": "Initial condition: select 1st label", 
-            "args": [
-              {
-                "value": "0", 
-                "type": "constant"
-              }
-            ], 
-            "type": "method-call", 
-            "instance": {
-              "refId": "labelGroup1", 
-              "domain": "brix", 
-              "type": "ref"
-            }
-          }
-        ], 
         "brixConfig": [
           {
+            "bricId": "imageGraph", 
             "bricType": "Image", 
+            "config": {
+              "actualSize": {
+                "height": 330, 
+                "width": 477
+              }, 
+              "caption": "How an automobile internal combustion engine works", 
+              "id": "image1"
+            }, 
             "configFixup": [
               {
                 "name": "URI", 
+                "type": "set-property", 
                 "value": {
                   "parts": [
                     {
-                      "refId": "imgBaseUrl", 
                       "domain": "info", 
+                      "refId": "imgBaseUrl", 
                       "type": "ref"
                     }, 
                     {
-                      "value": "img/68830_EU_06_02.png", 
-                      "type": "constant"
+                      "type": "constant", 
+                      "value": "img/68830_EU_06_02.png"
                     }
                   ], 
                   "type": "join"
-                }, 
-                "type": "set-property"
+                }
               }
-            ], 
-            "config": {
-              "id": "image1", 
-              "actualSize": {
-                "width": 477, 
-                "height": 330
-              }, 
-              "caption": "How an automobile internal combustion engine works"
-            }, 
-            "bricId": "imageGraph"
+            ]
           }, 
           {
+            "bricId": "labelGroup1", 
             "bricType": "LabelGroup", 
             "config": {
               "id": "dataLabels", 
               "labels": [
                 {
                   "content": "1", 
+                  "width": 0, 
                   "xyPos": [
                     0.018, 
                     0.87
-                  ], 
-                  "width": 0
+                  ]
                 }, 
                 {
                   "content": "2", 
+                  "width": 0, 
                   "xyPos": [
                     0.35, 
                     0.7
-                  ], 
-                  "width": 0
+                  ]
                 }, 
                 {
                   "content": "3", 
+                  "width": 0, 
                   "xyPos": [
                     0.85, 
                     0.58
-                  ], 
-                  "width": 0
+                  ]
                 }
               ], 
               "type": "numbered"
-            }, 
-            "bricId": "labelGroup1"
+            }
           }, 
           {
+            "bricId": "cntr1", 
             "bricType": "SvgContainer", 
+            "config": {
+              "maxSize": {
+                "height": 330, 
+                "width": 457
+              }
+            }, 
             "configFixup": [
               {
                 "name": "node", 
+                "type": "set-property", 
                 "value": {
                   "selector": "#bfb86bc5f0171485792ccf98432f8b6d5", 
                   "type": "d3select"
-                }, 
-                "type": "set-property"
+                }
               }
-            ], 
-            "config": {
-              "maxSize": {
-                "width": 457, 
-                "height": 330
-              }
-            }, 
-            "bricId": "cntr1"
+            ]
           }
         ], 
-        "containerId": "bfb86bc5f0171485792ccf98432f8b6d5"
-      }, 
-      {
-        "description": "The container contains the liteable callouts", 
+        "containerId": "bfb86bc5f0171485792ccf98432f8b6d5", 
+        "description": "container for the graph and labels", 
         "hookupActions": [
           {
-            "methodName": "draw", 
-            "description": "draw the label table", 
             "args": [
               {
-                "selector": "#bfb86bc5f0171485792ccf98432f8b6d5", 
-                "type": "d3select"
+                "domain": "brix", 
+                "refId": "imageGraph", 
+                "type": "ref"
               }
             ], 
-            "type": "method-call", 
+            "description": "Append the image to the svg container", 
             "instance": {
-              "refId": "lbltbl1", 
               "domain": "brix", 
+              "refId": "cntr1", 
               "type": "ref"
-            }
+            }, 
+            "methodName": "append", 
+            "type": "method-call"
           }, 
           {
-            "methodName": "lite", 
-            "description": "Initial condition: select 1st table row", 
             "args": [
               {
-                "value": "0", 
-                "type": "constant"
+                "domain": "brix", 
+                "refId": "labelGroup1", 
+                "type": "ref"
               }
             ], 
-            "type": "method-call", 
+            "description": "Append the labels to the svg container", 
             "instance": {
-              "refId": "lbltbl1", 
               "domain": "brix", 
+              "refId": "cntr1", 
               "type": "ref"
-            }
+            }, 
+            "methodName": "append", 
+            "type": "method-call"
+          }, 
+          {
+            "args": [
+              {
+                "type": "constant", 
+                "value": "0"
+              }
+            ], 
+            "description": "Initial condition: select 1st label", 
+            "instance": {
+              "domain": "brix", 
+              "refId": "labelGroup1", 
+              "type": "ref"
+            }, 
+            "methodName": "lite", 
+            "type": "method-call"
           }
-        ], 
+        ]
+      }, 
+      {
         "brixConfig": [
           {
+            "bricId": "lbltbl1", 
             "bricType": "Callouts", 
             "config": {
               "id": "callme", 
+              "show": "all", 
               "textBits": [
                 {
                   "cols": [
@@ -203,10 +172,44 @@
                   ]
                 }
               ], 
-              "type": "numbered", 
-              "show": "all"
+              "type": "numbered"
+            }
+          }
+        ], 
+        "containerId": "bfb86bc5f0171485792ccf98432f8b6d5", 
+        "description": "The container contains the liteable callouts", 
+        "hookupActions": [
+          {
+            "args": [
+              {
+                "selector": "#bfb86bc5f0171485792ccf98432f8b6d5", 
+                "type": "d3select"
+              }
+            ], 
+            "description": "draw the label table", 
+            "instance": {
+              "domain": "brix", 
+              "refId": "lbltbl1", 
+              "type": "ref"
             }, 
-            "bricId": "lbltbl1"
+            "methodName": "draw", 
+            "type": "method-call"
+          }, 
+          {
+            "args": [
+              {
+                "type": "constant", 
+                "value": "0"
+              }
+            ], 
+            "description": "Initial condition: select 1st table row", 
+            "instance": {
+              "domain": "brix", 
+              "refId": "lbltbl1", 
+              "type": "ref"
+            }, 
+            "methodName": "lite", 
+            "type": "method-call"
           }
         ], 
         "mortarConfig": [
@@ -217,22 +220,22 @@
             "configFixup": [
               {
                 "name": "topic", 
+                "type": "set-property", 
                 "value": {
                   "bricType": "LabelGroup", 
+                  "eventName": "selected", 
                   "instanceId": "dataLabels", 
-                  "type": "brix-topic", 
-                  "eventName": "selected"
-                }, 
-                "type": "set-property"
+                  "type": "brix-topic"
+                }
               }, 
               {
                 "name": "targetBric", 
+                "type": "set-property", 
                 "value": {
-                  "refId": "lbltbl1", 
                   "domain": "brix", 
+                  "refId": "lbltbl1", 
                   "type": "ref"
-                }, 
-                "type": "set-property"
+                }
               }
             ], 
             "mortarId": "hilite1", 
@@ -245,54 +248,51 @@
             "configFixup": [
               {
                 "name": "topic", 
+                "type": "set-property", 
                 "value": {
                   "bricType": "Callouts", 
+                  "eventName": "selected", 
                   "instanceId": "callme", 
-                  "type": "brix-topic", 
-                  "eventName": "selected"
-                }, 
-                "type": "set-property"
+                  "type": "brix-topic"
+                }
               }, 
               {
                 "name": "targetBric", 
+                "type": "set-property", 
                 "value": {
-                  "refId": "labelGroup1", 
                   "domain": "brix", 
+                  "refId": "labelGroup1", 
                   "type": "ref"
-                }, 
-                "type": "set-property"
+                }
               }
             ], 
             "mortarId": "hilite2", 
             "mortarType": "Hilite"
           }
-        ], 
-        "containerId": "bfb86bc5f0171485792ccf98432f8b6d5"
+        ]
       }
     ], 
     "description": "How an automobile internal combustion engine works"
   }, 
-  "@type": "Envelope", 
   "metadata": {
-    "format": [
-      "application/vnd.pearson.sanvan.v1.activity"
-    ], 
-    "intendedEndUserRole": [
-      "Student"
-    ], 
-    "subject": [
-      "EnvironmentalScience"
-    ], 
-    "owner": "Brix", 
-    "created": "2013-12-20T13:45:56.091006", 
-    "title": "How an automobile internal combustion engine works", 
-    "timeRequired": "PT20S", 
-    "description": "How an automobile internal combustion engine works", 
-    "guid": "51809b27-ec1e-4364-b622-f502cb9138c2", 
     "contentTypeTier1": "Activity", 
     "contentTypeTier2": [
       "Exercise"
-    ]
-  }, 
-  "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope"
+    ], 
+    "created": "2013-12-20T13:45:56.091006", 
+    "description": "How an automobile internal combustion engine works", 
+    "format": [
+      "application/vnd.pearson.sanvan.v1.activity"
+    ], 
+    "guid": "51809b27-ec1e-4364-b622-f502cb9138c2", 
+    "intendedEndUserRole": [
+      "Student"
+    ], 
+    "owner": "Brix", 
+    "subject": [
+      "EnvironmentalScience"
+    ], 
+    "timeRequired": "PT20S", 
+    "title": "How an automobile internal combustion engine works"
+  }
 }

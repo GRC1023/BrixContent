@@ -1,35 +1,26 @@
 {
+  "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope", 
+  "@type": "Envelope", 
   "body": {
     "containerConfig": [
       {
-        "description": "Container for the LabelCarousel", 
-        "hookupActions": [
-          {
-            "methodName": "append", 
-            "description": "Append the label image carousel to the svg container", 
-            "args": [
-              {
-                "refId": "lblCarousel1", 
-                "domain": "brix", 
-                "type": "ref"
-              }
-            ], 
-            "type": "method-call", 
-            "instance": {
-              "refId": "cntr1", 
-              "domain": "brix", 
-              "type": "ref"
-            }
-          }
-        ], 
         "brixConfig": [
           {
+            "bricId": "lblCarousel1", 
             "bricType": "LabelCarousel", 
+            "config": {
+              "displayWidth": 355, 
+              "id": "lblCrsl1", 
+              "imagesActualSize": {
+                "height": 467, 
+                "width": 355
+              }
+            }, 
             "configFixup": [
               {
                 "name": "images", 
+                "type": "set-property", 
                 "value": {
-                  "type": "array", 
                   "elements": [
                     {
                       "properties": [
@@ -38,13 +29,13 @@
                           "value": {
                             "parts": [
                               {
-                                "refId": "imgBaseUrl", 
                                 "domain": "info", 
+                                "refId": "imgBaseUrl", 
                                 "type": "ref"
                               }, 
                               {
-                                "value": "img/68830_RE_04_01_S1.jpg", 
-                                "type": "constant"
+                                "type": "constant", 
+                                "value": "img/68830_RE_04_01_S1.jpg"
                               }
                             ], 
                             "type": "join"
@@ -53,8 +44,8 @@
                         {
                           "name": "caption", 
                           "value": {
-                            "value": "Biomass energy can be used directly for heat.<br/>            ", 
-                            "type": "constant"
+                            "type": "constant", 
+                            "value": "Biomass energy can be used directly for heat.<br/>            "
                           }
                         }
                       ], 
@@ -67,13 +58,13 @@
                           "value": {
                             "parts": [
                               {
-                                "refId": "imgBaseUrl", 
                                 "domain": "info", 
+                                "refId": "imgBaseUrl", 
                                 "type": "ref"
                               }, 
                               {
-                                "value": "img/68830_RE_04_01_S2.jpg", 
-                                "type": "constant"
+                                "type": "constant", 
+                                "value": "img/68830_RE_04_01_S2.jpg"
                               }
                             ], 
                             "type": "join"
@@ -82,75 +73,84 @@
                         {
                           "name": "caption", 
                           "value": {
-                            "value": "Biomass energy can be converted to liquid fuels.", 
-                            "type": "constant"
+                            "type": "constant", 
+                            "value": "Biomass energy can be converted to liquid fuels."
                           }
                         }
                       ], 
                       "type": "object"
                     }
-                  ]
-                }, 
-                "type": "set-property"
+                  ], 
+                  "type": "array"
+                }
               }
-            ], 
-            "config": {
-              "id": "lblCrsl1", 
-              "displayWidth": 355, 
-              "imagesActualSize": {
-                "width": 355, 
-                "height": 467
-              }
-            }, 
-            "bricId": "lblCarousel1"
+            ]
           }, 
           {
+            "bricId": "cntr1", 
             "bricType": "SvgContainer", 
+            "config": {
+              "maxSize": {
+                "height": 570, 
+                "width": 355
+              }
+            }, 
             "configFixup": [
               {
                 "name": "node", 
+                "type": "set-property", 
                 "value": {
                   "selector": "#b6788757e24a3415daa76aa02d1d52a99", 
                   "type": "d3select"
-                }, 
-                "type": "set-property"
+                }
               }
-            ], 
-            "config": {
-              "maxSize": {
-                "width": 355, 
-                "height": 570
-              }
-            }, 
-            "bricId": "cntr1"
+            ]
           }
         ], 
-        "containerId": "b6788757e24a3415daa76aa02d1d52a99"
+        "containerId": "b6788757e24a3415daa76aa02d1d52a99", 
+        "description": "Container for the LabelCarousel", 
+        "hookupActions": [
+          {
+            "args": [
+              {
+                "domain": "brix", 
+                "refId": "lblCarousel1", 
+                "type": "ref"
+              }
+            ], 
+            "description": "Append the label image carousel to the svg container", 
+            "instance": {
+              "domain": "brix", 
+              "refId": "cntr1", 
+              "type": "ref"
+            }, 
+            "methodName": "append", 
+            "type": "method-call"
+          }
+        ]
       }
     ], 
     "description": "Use of biomass fuel"
   }, 
-  "@type": "Envelope", 
   "metadata": {
-    "format": [
-      "application/vnd.pearson.sanvan.v1.activity"
-    ], 
-    "intendedEndUserRole": [
-      "Student"
-    ], 
-    "subject": [
-      "EnvironmentalScience"
-    ], 
-    "owner": "Brix", 
-    "created": "2013-12-20T13:45:56.092691", 
-    "title": "Use of biomass fuel", 
-    "timeRequired": "PT20S", 
-    "description": "Use of biomass fuel", 
-    "guid": "b9494746-85fe-478b-90c8-744c8ae85ab7", 
     "contentTypeTier1": "Activity", 
     "contentTypeTier2": [
       "Exercise"
-    ]
-  }, 
-  "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope"
+    ], 
+    "created": "2013-12-20T13:45:56.092691", 
+    "description": "Use of biomass fuel", 
+    "format": [
+      "application/vnd.pearson.sanvan.v1.activity"
+    ], 
+    "guid": "b9494746-85fe-478b-90c8-744c8ae85ab7", 
+    "intendedEndUserRole": [
+      "Student"
+    ], 
+    "owner": "Brix", 
+    "subject": [
+      "EnvironmentalScience"
+    ], 
+    "timeRequired": "PT20S", 
+    "title": "Use of biomass fuel"
+  }
 }

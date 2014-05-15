@@ -1,35 +1,26 @@
 {
+  "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope", 
+  "@type": "Envelope", 
   "body": {
     "containerConfig": [
       {
-        "description": "Container for the LabelCarousel", 
-        "hookupActions": [
-          {
-            "methodName": "append", 
-            "description": "Append the label image carousel to the svg container", 
-            "args": [
-              {
-                "refId": "lblCarousel1", 
-                "domain": "brix", 
-                "type": "ref"
-              }
-            ], 
-            "type": "method-call", 
-            "instance": {
-              "refId": "cntr1", 
-              "domain": "brix", 
-              "type": "ref"
-            }
-          }
-        ], 
         "brixConfig": [
           {
+            "bricId": "lblCarousel1", 
             "bricType": "LabelCarousel", 
+            "config": {
+              "displayWidth": 335, 
+              "id": "lblCrsl1", 
+              "imagesActualSize": {
+                "height": 335, 
+                "width": 335
+              }
+            }, 
             "configFixup": [
               {
                 "name": "images", 
+                "type": "set-property", 
                 "value": {
-                  "type": "array", 
                   "elements": [
                     {
                       "properties": [
@@ -38,13 +29,13 @@
                           "value": {
                             "parts": [
                               {
-                                "refId": "imgBaseUrl", 
                                 "domain": "info", 
+                                "refId": "imgBaseUrl", 
                                 "type": "ref"
                               }, 
                               {
-                                "value": "img/68830_NE_06_05_S1.jpg", 
-                                "type": "constant"
+                                "type": "constant", 
+                                "value": "img/68830_NE_06_05_S1.jpg"
                               }
                             ], 
                             "type": "join"
@@ -53,8 +44,8 @@
                         {
                           "name": "caption", 
                           "value": {
-                            "value": "Contamination and ecological damage from uranium mining", 
-                            "type": "constant"
+                            "type": "constant", 
+                            "value": "Contamination and ecological damage from uranium mining"
                           }
                         }
                       ], 
@@ -67,13 +58,13 @@
                           "value": {
                             "parts": [
                               {
-                                "refId": "imgBaseUrl", 
                                 "domain": "info", 
+                                "refId": "imgBaseUrl", 
                                 "type": "ref"
                               }, 
                               {
-                                "value": "img/68830_NE_06_05_S2.jpg", 
-                                "type": "constant"
+                                "type": "constant", 
+                                "value": "img/68830_NE_06_05_S2.jpg"
                               }
                             ], 
                             "type": "join"
@@ -82,8 +73,8 @@
                         {
                           "name": "caption", 
                           "value": {
-                            "value": "Release of radiation from a damaged nuclear reactor such as this one in Fukushima, Japan", 
-                            "type": "constant"
+                            "type": "constant", 
+                            "value": "Release of radiation from a damaged nuclear reactor such as this one in Fukushima, Japan"
                           }
                         }
                       ], 
@@ -96,13 +87,13 @@
                           "value": {
                             "parts": [
                               {
-                                "refId": "imgBaseUrl", 
                                 "domain": "info", 
+                                "refId": "imgBaseUrl", 
                                 "type": "ref"
                               }, 
                               {
-                                "value": "img/68830_NE_06_05_S3.jpg", 
-                                "type": "constant"
+                                "type": "constant", 
+                                "value": "img/68830_NE_06_05_S3.jpg"
                               }
                             ], 
                             "type": "join"
@@ -111,75 +102,84 @@
                         {
                           "name": "caption", 
                           "value": {
-                            "value": "Generation of highly radioactive nuclear waste", 
-                            "type": "constant"
+                            "type": "constant", 
+                            "value": "Generation of highly radioactive nuclear waste"
                           }
                         }
                       ], 
                       "type": "object"
                     }
-                  ]
-                }, 
-                "type": "set-property"
+                  ], 
+                  "type": "array"
+                }
               }
-            ], 
-            "config": {
-              "id": "lblCrsl1", 
-              "displayWidth": 335, 
-              "imagesActualSize": {
-                "width": 335, 
-                "height": 335
-              }
-            }, 
-            "bricId": "lblCarousel1"
+            ]
           }, 
           {
+            "bricId": "cntr1", 
             "bricType": "SvgContainer", 
+            "config": {
+              "maxSize": {
+                "height": 450, 
+                "width": 335
+              }
+            }, 
             "configFixup": [
               {
                 "name": "node", 
+                "type": "set-property", 
                 "value": {
                   "selector": "#b5dbc93dc44074b47b6f549c99c5c7be3", 
                   "type": "d3select"
-                }, 
-                "type": "set-property"
+                }
               }
-            ], 
-            "config": {
-              "maxSize": {
-                "width": 335, 
-                "height": 450
-              }
-            }, 
-            "bricId": "cntr1"
+            ]
           }
         ], 
-        "containerId": "b5dbc93dc44074b47b6f549c99c5c7be3"
+        "containerId": "b5dbc93dc44074b47b6f549c99c5c7be3", 
+        "description": "Container for the LabelCarousel", 
+        "hookupActions": [
+          {
+            "args": [
+              {
+                "domain": "brix", 
+                "refId": "lblCarousel1", 
+                "type": "ref"
+              }
+            ], 
+            "description": "Append the label image carousel to the svg container", 
+            "instance": {
+              "domain": "brix", 
+              "refId": "cntr1", 
+              "type": "ref"
+            }, 
+            "methodName": "append", 
+            "type": "method-call"
+          }
+        ]
       }
     ], 
     "description": "Some impacts of NUCLEAR ENERGY PRODUCTION"
   }, 
-  "@type": "Envelope", 
   "metadata": {
-    "format": [
-      "application/vnd.pearson.sanvan.v1.activity"
-    ], 
-    "intendedEndUserRole": [
-      "Student"
-    ], 
-    "subject": [
-      "EnvironmentalScience"
-    ], 
-    "owner": "Brix", 
-    "created": "2013-12-20T13:45:56.091785", 
-    "title": "Some impacts of NUCLEAR ENERGY PRODUCTION", 
-    "timeRequired": "PT20S", 
-    "description": "Some impacts of NUCLEAR ENERGY PRODUCTION", 
-    "guid": "61b1b4d4-f26f-4bae-a7bf-ac303424c629", 
     "contentTypeTier1": "Activity", 
     "contentTypeTier2": [
       "Exercise"
-    ]
-  }, 
-  "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope"
+    ], 
+    "created": "2013-12-20T13:45:56.091785", 
+    "description": "Some impacts of NUCLEAR ENERGY PRODUCTION", 
+    "format": [
+      "application/vnd.pearson.sanvan.v1.activity"
+    ], 
+    "guid": "61b1b4d4-f26f-4bae-a7bf-ac303424c629", 
+    "intendedEndUserRole": [
+      "Student"
+    ], 
+    "owner": "Brix", 
+    "subject": [
+      "EnvironmentalScience"
+    ], 
+    "timeRequired": "PT20S", 
+    "title": "Some impacts of NUCLEAR ENERGY PRODUCTION"
+  }
 }

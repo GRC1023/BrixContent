@@ -1,35 +1,25 @@
 {
+  "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope", 
+  "@type": "Envelope", 
   "body": {
     "containerConfig": [
       {
-        "description": "Container for the LabelCarousel", 
-        "hookupActions": [
-          {
-            "methodName": "append", 
-            "description": "Append the label image carousel to the svg container", 
-            "args": [
-              {
-                "refId": "lblCarousel1", 
-                "domain": "brix", 
-                "type": "ref"
-              }
-            ], 
-            "type": "method-call", 
-            "instance": {
-              "refId": "cntr1", 
-              "domain": "brix", 
-              "type": "ref"
-            }
-          }
-        ], 
         "brixConfig": [
           {
+            "bricId": "lblCarousel1", 
             "bricType": "LabelCarousel", 
+            "config": {
+              "id": "lblCrsl1", 
+              "imagesActualSize": {
+                "height": 467, 
+                "width": 477
+              }
+            }, 
             "configFixup": [
               {
                 "name": "images", 
+                "type": "set-property", 
                 "value": {
-                  "type": "array", 
                   "elements": [
                     {
                       "properties": [
@@ -38,13 +28,13 @@
                           "value": {
                             "parts": [
                               {
-                                "refId": "imgBaseUrl", 
                                 "domain": "info", 
+                                "refId": "imgBaseUrl", 
                                 "type": "ref"
                               }, 
                               {
-                                "value": "img/68830_HP_05_01_S1.png", 
-                                "type": "constant"
+                                "type": "constant", 
+                                "value": "img/68830_HP_05_01_S1.png"
                               }
                             ], 
                             "type": "join"
@@ -53,8 +43,8 @@
                         {
                           "name": "caption", 
                           "value": {
-                            "value": "Impact increases with the size of the population.<br/><br/><br/><br/>", 
-                            "type": "constant"
+                            "type": "constant", 
+                            "value": "Impact increases with the size of the population.<br/><br/><br/><br/>"
                           }
                         }
                       ], 
@@ -67,13 +57,13 @@
                           "value": {
                             "parts": [
                               {
-                                "refId": "imgBaseUrl", 
                                 "domain": "info", 
+                                "refId": "imgBaseUrl", 
                                 "type": "ref"
                               }, 
                               {
-                                "value": "img/68830_HP_05_01_S2.png", 
-                                "type": "constant"
+                                "type": "constant", 
+                                "value": "img/68830_HP_05_01_S2.png"
                               }
                             ], 
                             "type": "join"
@@ -82,8 +72,8 @@
                         {
                           "name": "caption", 
                           "value": {
-                            "value": "Impact increases if affluence leads to greater consumption, but impact can decrease when more affluent populations demand increased environmental protection.", 
-                            "type": "constant"
+                            "type": "constant", 
+                            "value": "Impact increases if affluence leads to greater consumption, but impact can decrease when more affluent populations demand increased environmental protection."
                           }
                         }
                       ], 
@@ -96,13 +86,13 @@
                           "value": {
                             "parts": [
                               {
-                                "refId": "imgBaseUrl", 
                                 "domain": "info", 
+                                "refId": "imgBaseUrl", 
                                 "type": "ref"
                               }, 
                               {
-                                "value": "img/68830_HP_05_01_S3.png", 
-                                "type": "constant"
+                                "type": "constant", 
+                                "value": "img/68830_HP_05_01_S3.png"
                               }
                             ], 
                             "type": "join"
@@ -111,74 +101,84 @@
                         {
                           "name": "caption", 
                           "value": {
-                            "value": "Impact increases if technology contributes to pollution or creates more demand for resources, but impact can decrease if technology is used to reduce environmental impacts of consumption.", 
-                            "type": "constant"
+                            "type": "constant", 
+                            "value": "Impact increases if technology contributes to pollution or creates more demand for resources, but impact can decrease if technology is used to reduce environmental impacts of consumption."
                           }
                         }
                       ], 
                       "type": "object"
                     }
-                  ]
-                }, 
-                "type": "set-property"
+                  ], 
+                  "type": "array"
+                }
               }
-            ], 
-            "config": {
-              "id": "lblCrsl1", 
-              "imagesActualSize": {
-                "width": 477, 
-                "height": 467
-              }
-            }, 
-            "bricId": "lblCarousel1"
+            ]
           }, 
           {
+            "bricId": "cntr1", 
             "bricType": "SvgContainer", 
+            "config": {
+              "maxSize": {
+                "height": 620, 
+                "width": 457
+              }
+            }, 
             "configFixup": [
               {
                 "name": "node", 
+                "type": "set-property", 
                 "value": {
                   "selector": "#bb46c3a9f598843e0b2990ec683d27d51", 
                   "type": "d3select"
-                }, 
-                "type": "set-property"
+                }
               }
-            ], 
-            "config": {
-              "maxSize": {
-                "width": 457, 
-                "height": 620
-              }
-            }, 
-            "bricId": "cntr1"
+            ]
           }
         ], 
-        "containerId": "bb46c3a9f598843e0b2990ec683d27d51"
+        "containerId": "bb46c3a9f598843e0b2990ec683d27d51", 
+        "description": "Container for the LabelCarousel", 
+        "hookupActions": [
+          {
+            "args": [
+              {
+                "domain": "brix", 
+                "refId": "lblCarousel1", 
+                "type": "ref"
+              }
+            ], 
+            "description": "Append the label image carousel to the svg container", 
+            "instance": {
+              "domain": "brix", 
+              "refId": "cntr1", 
+              "type": "ref"
+            }, 
+            "methodName": "append", 
+            "type": "method-call"
+          }
+        ]
       }
     ], 
     "description": "The I=PAT model"
   }, 
-  "@type": "Envelope", 
   "metadata": {
-    "format": [
-      "application/vnd.pearson.sanvan.v1.activity"
-    ], 
-    "intendedEndUserRole": [
-      "Student"
-    ], 
-    "subject": [
-      "EnvironmentalScience"
-    ], 
-    "owner": "Brix", 
-    "created": "2013-12-20T13:45:56.090661", 
-    "title": "The I=PAT model", 
-    "timeRequired": "PT20S", 
-    "description": "The I=PAT model", 
-    "guid": "fa24cae5-0b53-4951-90a3-a9b28018a76a", 
     "contentTypeTier1": "Activity", 
     "contentTypeTier2": [
       "Exercise"
-    ]
-  }, 
-  "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope"
+    ], 
+    "created": "2013-12-20T13:45:56.090661", 
+    "description": "The I=PAT model", 
+    "format": [
+      "application/vnd.pearson.sanvan.v1.activity"
+    ], 
+    "guid": "fa24cae5-0b53-4951-90a3-a9b28018a76a", 
+    "intendedEndUserRole": [
+      "Student"
+    ], 
+    "owner": "Brix", 
+    "subject": [
+      "EnvironmentalScience"
+    ], 
+    "timeRequired": "PT20S", 
+    "title": "The I=PAT model"
+  }
 }

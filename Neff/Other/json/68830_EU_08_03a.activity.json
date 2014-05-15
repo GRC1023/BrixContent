@@ -1,35 +1,26 @@
 {
+  "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope", 
+  "@type": "Envelope", 
   "body": {
     "containerConfig": [
       {
-        "description": "Container for the LabelCarousel", 
-        "hookupActions": [
-          {
-            "methodName": "append", 
-            "description": "Append the label image carousel to the svg container", 
-            "args": [
-              {
-                "refId": "lblCarousel1", 
-                "domain": "brix", 
-                "type": "ref"
-              }
-            ], 
-            "type": "method-call", 
-            "instance": {
-              "refId": "cntr1", 
-              "domain": "brix", 
-              "type": "ref"
-            }
-          }
-        ], 
         "brixConfig": [
           {
+            "bricId": "lblCarousel1", 
             "bricType": "LabelCarousel", 
+            "config": {
+              "displayWidth": 335, 
+              "id": "lblCrsl1", 
+              "imagesActualSize": {
+                "height": 335, 
+                "width": 335
+              }
+            }, 
             "configFixup": [
               {
                 "name": "images", 
+                "type": "set-property", 
                 "value": {
-                  "type": "array", 
                   "elements": [
                     {
                       "properties": [
@@ -38,13 +29,13 @@
                           "value": {
                             "parts": [
                               {
-                                "refId": "imgBaseUrl", 
                                 "domain": "info", 
+                                "refId": "imgBaseUrl", 
                                 "type": "ref"
                               }, 
                               {
-                                "value": "img/68830_EU_08_03a_S1.jpg", 
-                                "type": "constant"
+                                "type": "constant", 
+                                "value": "img/68830_EU_08_03a_S1.jpg"
                               }
                             ], 
                             "type": "join"
@@ -53,8 +44,8 @@
                         {
                           "name": "caption", 
                           "value": {
-                            "value": "Increasing home size<br/><br/>", 
-                            "type": "constant"
+                            "type": "constant", 
+                            "value": "Increasing home size<br/><br/>"
                           }
                         }
                       ], 
@@ -67,13 +58,13 @@
                           "value": {
                             "parts": [
                               {
-                                "refId": "imgBaseUrl", 
                                 "domain": "info", 
+                                "refId": "imgBaseUrl", 
                                 "type": "ref"
                               }, 
                               {
-                                "value": "img/68830_EU_08_03a_S2.jpg", 
-                                "type": "constant"
+                                "type": "constant", 
+                                "value": "img/68830_EU_08_03a_S2.jpg"
                               }
                             ], 
                             "type": "join"
@@ -82,8 +73,8 @@
                         {
                           "name": "caption", 
                           "value": {
-                            "value": "Increasing affluence", 
-                            "type": "constant"
+                            "type": "constant", 
+                            "value": "Increasing affluence"
                           }
                         }
                       ], 
@@ -96,13 +87,13 @@
                           "value": {
                             "parts": [
                               {
-                                "refId": "imgBaseUrl", 
                                 "domain": "info", 
+                                "refId": "imgBaseUrl", 
                                 "type": "ref"
                               }, 
                               {
-                                "value": "img/68830_EU_08_03a_S3.jpg", 
-                                "type": "constant"
+                                "type": "constant", 
+                                "value": "img/68830_EU_08_03a_S3.jpg"
                               }
                             ], 
                             "type": "join"
@@ -111,8 +102,8 @@
                         {
                           "name": "caption", 
                           "value": {
-                            "value": "Increased use of air conditioning", 
-                            "type": "constant"
+                            "type": "constant", 
+                            "value": "Increased use of air conditioning"
                           }
                         }
                       ], 
@@ -125,13 +116,13 @@
                           "value": {
                             "parts": [
                               {
-                                "refId": "imgBaseUrl", 
                                 "domain": "info", 
+                                "refId": "imgBaseUrl", 
                                 "type": "ref"
                               }, 
                               {
-                                "value": "img/68830_EU_08_03a_S4.jpg", 
-                                "type": "constant"
+                                "type": "constant", 
+                                "value": "img/68830_EU_08_03a_S4.jpg"
                               }
                             ], 
                             "type": "join"
@@ -140,75 +131,84 @@
                         {
                           "name": "caption", 
                           "value": {
-                            "value": "Population growth", 
-                            "type": "constant"
+                            "type": "constant", 
+                            "value": "Population growth"
                           }
                         }
                       ], 
                       "type": "object"
                     }
-                  ]
-                }, 
-                "type": "set-property"
+                  ], 
+                  "type": "array"
+                }
               }
-            ], 
-            "config": {
-              "id": "lblCrsl1", 
-              "displayWidth": 335, 
-              "imagesActualSize": {
-                "width": 335, 
-                "height": 335
-              }
-            }, 
-            "bricId": "lblCarousel1"
+            ]
           }, 
           {
+            "bricId": "cntr1", 
             "bricType": "SvgContainer", 
+            "config": {
+              "maxSize": {
+                "height": 450, 
+                "width": 335
+              }
+            }, 
             "configFixup": [
               {
                 "name": "node", 
+                "type": "set-property", 
                 "value": {
                   "selector": "#b36f44bf63e2e4f808c91cdc6bebc6be0", 
                   "type": "d3select"
-                }, 
-                "type": "set-property"
+                }
               }
-            ], 
-            "config": {
-              "maxSize": {
-                "width": 335, 
-                "height": 450
-              }
-            }, 
-            "bricId": "cntr1"
+            ]
           }
         ], 
-        "containerId": "b36f44bf63e2e4f808c91cdc6bebc6be0"
+        "containerId": "b36f44bf63e2e4f808c91cdc6bebc6be0", 
+        "description": "Container for the LabelCarousel", 
+        "hookupActions": [
+          {
+            "args": [
+              {
+                "domain": "brix", 
+                "refId": "lblCarousel1", 
+                "type": "ref"
+              }
+            ], 
+            "description": "Append the label image carousel to the svg container", 
+            "instance": {
+              "domain": "brix", 
+              "refId": "cntr1", 
+              "type": "ref"
+            }, 
+            "methodName": "append", 
+            "type": "method-call"
+          }
+        ]
       }
     ], 
     "description": "Technology and choices that may INCREASE future impacts of heating cooling and cooking"
   }, 
-  "@type": "Envelope", 
   "metadata": {
-    "format": [
-      "application/vnd.pearson.sanvan.v1.activity"
-    ], 
-    "intendedEndUserRole": [
-      "Student"
-    ], 
-    "subject": [
-      "EnvironmentalScience"
-    ], 
-    "owner": "Brix", 
-    "created": "2013-12-20T13:45:56.091266", 
-    "title": "Technology and choices that may INCREASE future impacts of heating cooling and cooking", 
-    "timeRequired": "PT20S", 
-    "description": "Technology and choices that may INCREASE future impacts of heating cooling and cooking", 
-    "guid": "65741b86-eaf5-442b-8c6f-24838f139b44", 
     "contentTypeTier1": "Activity", 
     "contentTypeTier2": [
       "Exercise"
-    ]
-  }, 
-  "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope"
+    ], 
+    "created": "2013-12-20T13:45:56.091266", 
+    "description": "Technology and choices that may INCREASE future impacts of heating cooling and cooking", 
+    "format": [
+      "application/vnd.pearson.sanvan.v1.activity"
+    ], 
+    "guid": "65741b86-eaf5-442b-8c6f-24838f139b44", 
+    "intendedEndUserRole": [
+      "Student"
+    ], 
+    "owner": "Brix", 
+    "subject": [
+      "EnvironmentalScience"
+    ], 
+    "timeRequired": "PT20S", 
+    "title": "Technology and choices that may INCREASE future impacts of heating cooling and cooking"
+  }
 }

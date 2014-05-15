@@ -1,35 +1,26 @@
 {
+  "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope", 
+  "@type": "Envelope", 
   "body": {
     "containerConfig": [
       {
-        "description": "Container for the LabelCarousel", 
-        "hookupActions": [
-          {
-            "methodName": "append", 
-            "description": "Append the label image carousel to the svg container", 
-            "args": [
-              {
-                "refId": "lblCarousel1", 
-                "domain": "brix", 
-                "type": "ref"
-              }
-            ], 
-            "type": "method-call", 
-            "instance": {
-              "refId": "cntr1", 
-              "domain": "brix", 
-              "type": "ref"
-            }
-          }
-        ], 
         "brixConfig": [
           {
+            "bricId": "lblCarousel1", 
             "bricType": "LabelCarousel", 
+            "config": {
+              "displayWidth": 335, 
+              "id": "lblCrsl1", 
+              "imagesActualSize": {
+                "height": 335, 
+                "width": 335
+              }
+            }, 
             "configFixup": [
               {
                 "name": "images", 
+                "type": "set-property", 
                 "value": {
-                  "type": "array", 
                   "elements": [
                     {
                       "properties": [
@@ -38,13 +29,13 @@
                           "value": {
                             "parts": [
                               {
-                                "refId": "imgBaseUrl", 
                                 "domain": "info", 
+                                "refId": "imgBaseUrl", 
                                 "type": "ref"
                               }, 
                               {
-                                "value": "img/68830_NE_04_03a_S1.jpg", 
-                                "type": "constant"
+                                "type": "constant", 
+                                "value": "img/68830_NE_04_03a_S1.jpg"
                               }
                             ], 
                             "type": "join"
@@ -53,8 +44,8 @@
                         {
                           "name": "caption", 
                           "value": {
-                            "value": "Contamination of streams and groundwater by wastewater ponds", 
-                            "type": "constant"
+                            "type": "constant", 
+                            "value": "Contamination of streams and groundwater by wastewater ponds"
                           }
                         }
                       ], 
@@ -67,13 +58,13 @@
                           "value": {
                             "parts": [
                               {
-                                "refId": "imgBaseUrl", 
                                 "domain": "info", 
+                                "refId": "imgBaseUrl", 
                                 "type": "ref"
                               }, 
                               {
-                                "value": "img/68830_NE_04_03a_S2.jpg", 
-                                "type": "constant"
+                                "type": "constant", 
+                                "value": "img/68830_NE_04_03a_S2.jpg"
                               }
                             ], 
                             "type": "join"
@@ -82,8 +73,8 @@
                         {
                           "name": "caption", 
                           "value": {
-                            "value": "Ecological disturbance from road construction at drilling sites", 
-                            "type": "constant"
+                            "type": "constant", 
+                            "value": "Ecological disturbance from road construction at drilling sites"
                           }
                         }
                       ], 
@@ -96,13 +87,13 @@
                           "value": {
                             "parts": [
                               {
-                                "refId": "imgBaseUrl", 
                                 "domain": "info", 
+                                "refId": "imgBaseUrl", 
                                 "type": "ref"
                               }, 
                               {
-                                "value": "img/68830_NE_04_03a_S3.jpg", 
-                                "type": "constant"
+                                "type": "constant", 
+                                "value": "img/68830_NE_04_03a_S3.jpg"
                               }
                             ], 
                             "type": "join"
@@ -111,75 +102,84 @@
                         {
                           "name": "caption", 
                           "value": {
-                            "value": "Rural air pollution at drilling sites", 
-                            "type": "constant"
+                            "type": "constant", 
+                            "value": "Rural air pollution at drilling sites"
                           }
                         }
                       ], 
                       "type": "object"
                     }
-                  ]
-                }, 
-                "type": "set-property"
+                  ], 
+                  "type": "array"
+                }
               }
-            ], 
-            "config": {
-              "id": "lblCrsl1", 
-              "displayWidth": 335, 
-              "imagesActualSize": {
-                "width": 335, 
-                "height": 335
-              }
-            }, 
-            "bricId": "lblCarousel1"
+            ]
           }, 
           {
+            "bricId": "cntr1", 
             "bricType": "SvgContainer", 
+            "config": {
+              "maxSize": {
+                "height": 450, 
+                "width": 335
+              }
+            }, 
             "configFixup": [
               {
                 "name": "node", 
+                "type": "set-property", 
                 "value": {
                   "selector": "#b5cadd3cae73f45fab8e87d6781fef92b", 
                   "type": "d3select"
-                }, 
-                "type": "set-property"
+                }
               }
-            ], 
-            "config": {
-              "maxSize": {
-                "width": 335, 
-                "height": 450
-              }
-            }, 
-            "bricId": "cntr1"
+            ]
           }
         ], 
-        "containerId": "b5cadd3cae73f45fab8e87d6781fef92b"
+        "containerId": "b5cadd3cae73f45fab8e87d6781fef92b", 
+        "description": "Container for the LabelCarousel", 
+        "hookupActions": [
+          {
+            "args": [
+              {
+                "domain": "brix", 
+                "refId": "lblCarousel1", 
+                "type": "ref"
+              }
+            ], 
+            "description": "Append the label image carousel to the svg container", 
+            "instance": {
+              "domain": "brix", 
+              "refId": "cntr1", 
+              "type": "ref"
+            }, 
+            "methodName": "append", 
+            "type": "method-call"
+          }
+        ]
       }
     ], 
     "description": "Some impacts of NATURAL GAS PRODUCTION"
   }, 
-  "@type": "Envelope", 
   "metadata": {
-    "format": [
-      "application/vnd.pearson.sanvan.v1.activity"
-    ], 
-    "intendedEndUserRole": [
-      "Student"
-    ], 
-    "subject": [
-      "EnvironmentalScience"
-    ], 
-    "owner": "Brix", 
-    "created": "2013-12-20T13:45:56.091591", 
-    "title": "Some impacts of NATURAL GAS PRODUCTION", 
-    "timeRequired": "PT20S", 
-    "description": "Some impacts of NATURAL GAS PRODUCTION", 
-    "guid": "842d238f-d18e-41a3-9b71-87f5f86a2af4", 
     "contentTypeTier1": "Activity", 
     "contentTypeTier2": [
       "Exercise"
-    ]
-  }, 
-  "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope"
+    ], 
+    "created": "2013-12-20T13:45:56.091591", 
+    "description": "Some impacts of NATURAL GAS PRODUCTION", 
+    "format": [
+      "application/vnd.pearson.sanvan.v1.activity"
+    ], 
+    "guid": "842d238f-d18e-41a3-9b71-87f5f86a2af4", 
+    "intendedEndUserRole": [
+      "Student"
+    ], 
+    "owner": "Brix", 
+    "subject": [
+      "EnvironmentalScience"
+    ], 
+    "timeRequired": "PT20S", 
+    "title": "Some impacts of NATURAL GAS PRODUCTION"
+  }
 }

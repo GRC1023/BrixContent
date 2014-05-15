@@ -1,35 +1,27 @@
 {
+  "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope", 
+  "@type": "Envelope", 
   "body": {
     "containerConfig": [
       {
-        "description": "Container for the LabelCarousel", 
-        "hookupActions": [
-          {
-            "methodName": "append", 
-            "description": "Append the label image carousel to the svg container", 
-            "args": [
-              {
-                "refId": "lblCarousel1", 
-                "domain": "brix", 
-                "type": "ref"
-              }
-            ], 
-            "type": "method-call", 
-            "instance": {
-              "refId": "cntr1", 
-              "domain": "brix", 
-              "type": "ref"
-            }
-          }
-        ], 
         "brixConfig": [
           {
+            "bricId": "lblCarousel1", 
             "bricType": "LabelCarousel", 
+            "config": {
+              "displayWidth": 457, 
+              "id": "lblCrsl1", 
+              "imagesActualSize": {
+                "height": 377, 
+                "width": 457
+              }, 
+              "type": "textLabels"
+            }, 
             "configFixup": [
               {
                 "name": "images", 
+                "type": "set-property", 
                 "value": {
-                  "type": "array", 
                   "elements": [
                     {
                       "properties": [
@@ -38,13 +30,13 @@
                           "value": {
                             "parts": [
                               {
-                                "refId": "imgBaseUrl", 
                                 "domain": "info", 
+                                "refId": "imgBaseUrl", 
                                 "type": "ref"
                               }, 
                               {
-                                "value": "img/68830_RE_02_02a_S1.png", 
-                                "type": "constant"
+                                "type": "constant", 
+                                "value": "img/68830_RE_02_02a_S1.png"
                               }
                             ], 
                             "type": "join"
@@ -53,15 +45,15 @@
                         {
                           "name": "caption", 
                           "value": {
-                            "value": "An extended roofline (eves) on the south side of a house shades windows from sun in the summer. A vent at the top of a pitched roofline allows heat to escape.", 
-                            "type": "constant"
+                            "type": "constant", 
+                            "value": "An extended roofline (eves) on the south side of a house shades windows from sun in the summer. A vent at the top of a pitched roofline allows heat to escape."
                           }
                         }, 
                         {
                           "name": "selectorLabel", 
                           "value": {
-                            "value": "Summer sun", 
-                            "type": "constant"
+                            "type": "constant", 
+                            "value": "Summer sun"
                           }
                         }
                       ], 
@@ -74,13 +66,13 @@
                           "value": {
                             "parts": [
                               {
-                                "refId": "imgBaseUrl", 
                                 "domain": "info", 
+                                "refId": "imgBaseUrl", 
                                 "type": "ref"
                               }, 
                               {
-                                "value": "img/68830_RE_02_02a_S2.png", 
-                                "type": "constant"
+                                "type": "constant", 
+                                "value": "img/68830_RE_02_02a_S2.png"
                               }
                             ], 
                             "type": "join"
@@ -89,83 +81,91 @@
                         {
                           "name": "caption", 
                           "value": {
-                            "value": "In the winter, the sun is lower in the sky and sunlight enters the south-facing window and warms the house. The heat is trapped and stored in the walls and floor.", 
-                            "type": "constant"
+                            "type": "constant", 
+                            "value": "In the winter, the sun is lower in the sky and sunlight enters the south-facing window and warms the house. The heat is trapped and stored in the walls and floor."
                           }
                         }, 
                         {
                           "name": "selectorLabel", 
                           "value": {
-                            "value": "Winter sun", 
-                            "type": "constant"
+                            "type": "constant", 
+                            "value": "Winter sun"
                           }
                         }
                       ], 
                       "type": "object"
                     }
-                  ]
-                }, 
-                "type": "set-property"
+                  ], 
+                  "type": "array"
+                }
               }
-            ], 
-            "config": {
-              "id": "lblCrsl1", 
-              "type": "textLabels", 
-              "displayWidth": 457, 
-              "imagesActualSize": {
-                "width": 457, 
-                "height": 377
-              }
-            }, 
-            "bricId": "lblCarousel1"
+            ]
           }, 
           {
+            "bricId": "cntr1", 
             "bricType": "SvgContainer", 
+            "config": {
+              "maxSize": {
+                "height": 500, 
+                "width": 457
+              }
+            }, 
             "configFixup": [
               {
                 "name": "node", 
+                "type": "set-property", 
                 "value": {
                   "selector": "#bd7906e022b064115ba409446812c767f", 
                   "type": "d3select"
-                }, 
-                "type": "set-property"
+                }
               }
-            ], 
-            "config": {
-              "maxSize": {
-                "width": 457, 
-                "height": 500
-              }
-            }, 
-            "bricId": "cntr1"
+            ]
           }
         ], 
-        "containerId": "bd7906e022b064115ba409446812c767f"
+        "containerId": "bd7906e022b064115ba409446812c767f", 
+        "description": "Container for the LabelCarousel", 
+        "hookupActions": [
+          {
+            "args": [
+              {
+                "domain": "brix", 
+                "refId": "lblCarousel1", 
+                "type": "ref"
+              }
+            ], 
+            "description": "Append the label image carousel to the svg container", 
+            "instance": {
+              "domain": "brix", 
+              "refId": "cntr1", 
+              "type": "ref"
+            }, 
+            "methodName": "append", 
+            "type": "method-call"
+          }
+        ]
       }
     ], 
     "description": "Some elements of passive solar design"
   }, 
-  "@type": "Envelope", 
   "metadata": {
-    "format": [
-      "application/vnd.pearson.sanvan.v1.activity"
-    ], 
-    "intendedEndUserRole": [
-      "Student"
-    ], 
-    "subject": [
-      "EnvironmentalScience"
-    ], 
-    "owner": "Brix", 
-    "created": "2013-12-20T13:45:56.092263", 
-    "title": "Some elements of passive solar design", 
-    "timeRequired": "PT20S", 
-    "description": "Some elements of passive solar design", 
-    "guid": "b1e6392b-bdbd-4d8d-9ce7-8244735382f6", 
     "contentTypeTier1": "Activity", 
     "contentTypeTier2": [
       "Exercise"
-    ]
-  }, 
-  "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope"
+    ], 
+    "created": "2013-12-20T13:45:56.092263", 
+    "description": "Some elements of passive solar design", 
+    "format": [
+      "application/vnd.pearson.sanvan.v1.activity"
+    ], 
+    "guid": "b1e6392b-bdbd-4d8d-9ce7-8244735382f6", 
+    "intendedEndUserRole": [
+      "Student"
+    ], 
+    "owner": "Brix", 
+    "subject": [
+      "EnvironmentalScience"
+    ], 
+    "timeRequired": "PT20S", 
+    "title": "Some elements of passive solar design"
+  }
 }

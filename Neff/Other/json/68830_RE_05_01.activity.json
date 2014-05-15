@@ -1,35 +1,27 @@
 {
+  "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope", 
+  "@type": "Envelope", 
   "body": {
     "containerConfig": [
       {
-        "description": "Container for the LabelCarousel", 
-        "hookupActions": [
-          {
-            "methodName": "append", 
-            "description": "Append the label image carousel to the svg container", 
-            "args": [
-              {
-                "refId": "lblCarousel1", 
-                "domain": "brix", 
-                "type": "ref"
-              }
-            ], 
-            "type": "method-call", 
-            "instance": {
-              "refId": "cntr1", 
-              "domain": "brix", 
-              "type": "ref"
-            }
-          }
-        ], 
         "brixConfig": [
           {
+            "bricId": "lblCarousel1", 
             "bricType": "LabelCarousel", 
+            "config": {
+              "displayWidth": 457, 
+              "id": "lblCrsl1", 
+              "imagesActualSize": {
+                "height": 442, 
+                "width": 478
+              }, 
+              "type": "textLabels"
+            }, 
             "configFixup": [
               {
                 "name": "images", 
+                "type": "set-property", 
                 "value": {
-                  "type": "array", 
                   "elements": [
                     {
                       "properties": [
@@ -38,13 +30,13 @@
                           "value": {
                             "parts": [
                               {
-                                "refId": "imgBaseUrl", 
                                 "domain": "info", 
+                                "refId": "imgBaseUrl", 
                                 "type": "ref"
                               }, 
                               {
-                                "value": "img/68830_RE_05_01_S1.png", 
-                                "type": "constant"
+                                "type": "constant", 
+                                "value": "img/68830_RE_05_01_S1.png"
                               }
                             ], 
                             "type": "join"
@@ -53,15 +45,15 @@
                         {
                           "name": "caption", 
                           "value": {
-                            "value": "In winter, heat is transferred from the ground to the building.", 
-                            "type": "constant"
+                            "type": "constant", 
+                            "value": "In winter, heat is transferred from the ground to the building."
                           }
                         }, 
                         {
                           "name": "selectorLabel", 
                           "value": {
-                            "value": "Winter", 
-                            "type": "constant"
+                            "type": "constant", 
+                            "value": "Winter"
                           }
                         }
                       ], 
@@ -74,13 +66,13 @@
                           "value": {
                             "parts": [
                               {
-                                "refId": "imgBaseUrl", 
                                 "domain": "info", 
+                                "refId": "imgBaseUrl", 
                                 "type": "ref"
                               }, 
                               {
-                                "value": "img/68830_RE_05_01_S2.png", 
-                                "type": "constant"
+                                "type": "constant", 
+                                "value": "img/68830_RE_05_01_S2.png"
                               }
                             ], 
                             "type": "join"
@@ -89,83 +81,91 @@
                         {
                           "name": "caption", 
                           "value": {
-                            "value": "In summer, heat is transferred from the building to the ground.", 
-                            "type": "constant"
+                            "type": "constant", 
+                            "value": "In summer, heat is transferred from the building to the ground."
                           }
                         }, 
                         {
                           "name": "selectorLabel", 
                           "value": {
-                            "value": "Summer", 
-                            "type": "constant"
+                            "type": "constant", 
+                            "value": "Summer"
                           }
                         }
                       ], 
                       "type": "object"
                     }
-                  ]
-                }, 
-                "type": "set-property"
+                  ], 
+                  "type": "array"
+                }
               }
-            ], 
-            "config": {
-              "id": "lblCrsl1", 
-              "type": "textLabels", 
-              "displayWidth": 457, 
-              "imagesActualSize": {
-                "width": 478, 
-                "height": 442
-              }
-            }, 
-            "bricId": "lblCarousel1"
+            ]
           }, 
           {
+            "bricId": "cntr1", 
             "bricType": "SvgContainer", 
+            "config": {
+              "maxSize": {
+                "height": 530, 
+                "width": 457
+              }
+            }, 
             "configFixup": [
               {
                 "name": "node", 
+                "type": "set-property", 
                 "value": {
                   "selector": "#bd630aef97cb74801ae448fdf7528d523", 
                   "type": "d3select"
-                }, 
-                "type": "set-property"
+                }
               }
-            ], 
-            "config": {
-              "maxSize": {
-                "width": 457, 
-                "height": 530
-              }
-            }, 
-            "bricId": "cntr1"
+            ]
           }
         ], 
-        "containerId": "bd630aef97cb74801ae448fdf7528d523"
+        "containerId": "bd630aef97cb74801ae448fdf7528d523", 
+        "description": "Container for the LabelCarousel", 
+        "hookupActions": [
+          {
+            "args": [
+              {
+                "domain": "brix", 
+                "refId": "lblCarousel1", 
+                "type": "ref"
+              }
+            ], 
+            "description": "Append the label image carousel to the svg container", 
+            "instance": {
+              "domain": "brix", 
+              "refId": "cntr1", 
+              "type": "ref"
+            }, 
+            "methodName": "append", 
+            "type": "method-call"
+          }
+        ]
       }
     ], 
     "description": "Geothermal Heat Pumps"
   }, 
-  "@type": "Envelope", 
   "metadata": {
-    "format": [
-      "application/vnd.pearson.sanvan.v1.activity"
-    ], 
-    "intendedEndUserRole": [
-      "Student"
-    ], 
-    "subject": [
-      "EnvironmentalScience"
-    ], 
-    "owner": "Brix", 
-    "created": "2013-12-20T13:45:56.093016", 
-    "title": "Geothermal heat pumps", 
-    "timeRequired": "PT20S", 
-    "description": "Geothermal heat pumps", 
-    "guid": "8517ec85-34b7-4244-ad40-2aa12cf9cfb8", 
     "contentTypeTier1": "Activity", 
     "contentTypeTier2": [
       "Exercise"
-    ]
-  }, 
-  "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope"
+    ], 
+    "created": "2013-12-20T13:45:56.093016", 
+    "description": "Geothermal heat pumps", 
+    "format": [
+      "application/vnd.pearson.sanvan.v1.activity"
+    ], 
+    "guid": "8517ec85-34b7-4244-ad40-2aa12cf9cfb8", 
+    "intendedEndUserRole": [
+      "Student"
+    ], 
+    "owner": "Brix", 
+    "subject": [
+      "EnvironmentalScience"
+    ], 
+    "timeRequired": "PT20S", 
+    "title": "Geothermal heat pumps"
+  }
 }

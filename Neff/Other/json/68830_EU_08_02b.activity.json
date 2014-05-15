@@ -1,35 +1,26 @@
 {
+  "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope", 
+  "@type": "Envelope", 
   "body": {
     "containerConfig": [
       {
-        "description": "Container for the LabelCarousel", 
-        "hookupActions": [
-          {
-            "methodName": "append", 
-            "description": "Append the label image carousel to the svg container", 
-            "args": [
-              {
-                "refId": "lblCarousel1", 
-                "domain": "brix", 
-                "type": "ref"
-              }
-            ], 
-            "type": "method-call", 
-            "instance": {
-              "refId": "cntr1", 
-              "domain": "brix", 
-              "type": "ref"
-            }
-          }
-        ], 
         "brixConfig": [
           {
+            "bricId": "lblCarousel1", 
             "bricType": "LabelCarousel", 
+            "config": {
+              "displayWidth": 335, 
+              "id": "lblCrsl2", 
+              "imagesActualSize": {
+                "height": 335, 
+                "width": 335
+              }
+            }, 
             "configFixup": [
               {
                 "name": "images", 
+                "type": "set-property", 
                 "value": {
-                  "type": "array", 
                   "elements": [
                     {
                       "properties": [
@@ -38,13 +29,13 @@
                           "value": {
                             "parts": [
                               {
-                                "refId": "imgBaseUrl", 
                                 "domain": "info", 
+                                "refId": "imgBaseUrl", 
                                 "type": "ref"
                               }, 
                               {
-                                "value": "img/68830_EU_08_02b_S1.jpg", 
-                                "type": "constant"
+                                "type": "constant", 
+                                "value": "img/68830_EU_08_02b_S1.jpg"
                               }
                             ], 
                             "type": "join"
@@ -53,8 +44,8 @@
                         {
                           "name": "caption", 
                           "value": {
-                            "value": "Vehicles with high fuel efficiency<br/><br/>", 
-                            "type": "constant"
+                            "type": "constant", 
+                            "value": "Vehicles with high fuel efficiency<br/><br/>"
                           }
                         }
                       ], 
@@ -67,13 +58,13 @@
                           "value": {
                             "parts": [
                               {
-                                "refId": "imgBaseUrl", 
                                 "domain": "info", 
+                                "refId": "imgBaseUrl", 
                                 "type": "ref"
                               }, 
                               {
-                                "value": "img/68830_EU_08_02b_S2.jpg", 
-                                "type": "constant"
+                                "type": "constant", 
+                                "value": "img/68830_EU_08_02b_S2.jpg"
                               }
                             ], 
                             "type": "join"
@@ -82,8 +73,8 @@
                         {
                           "name": "caption", 
                           "value": {
-                            "value": "Electric cars paired with renewable sources of electricity", 
-                            "type": "constant"
+                            "type": "constant", 
+                            "value": "Electric cars paired with renewable sources of electricity"
                           }
                         }
                       ], 
@@ -96,13 +87,13 @@
                           "value": {
                             "parts": [
                               {
-                                "refId": "imgBaseUrl", 
                                 "domain": "info", 
+                                "refId": "imgBaseUrl", 
                                 "type": "ref"
                               }, 
                               {
-                                "value": "img/68830_EU_08_02b_S3.jpg", 
-                                "type": "constant"
+                                "type": "constant", 
+                                "value": "img/68830_EU_08_02b_S3.jpg"
                               }
                             ], 
                             "type": "join"
@@ -111,8 +102,8 @@
                         {
                           "name": "caption", 
                           "value": {
-                            "value": "Discovery and use of sustainable alternatives to fossil fuels", 
-                            "type": "constant"
+                            "type": "constant", 
+                            "value": "Discovery and use of sustainable alternatives to fossil fuels"
                           }
                         }
                       ], 
@@ -125,13 +116,13 @@
                           "value": {
                             "parts": [
                               {
-                                "refId": "imgBaseUrl", 
                                 "domain": "info", 
+                                "refId": "imgBaseUrl", 
                                 "type": "ref"
                               }, 
                               {
-                                "value": "img/68830_EU_08_02b_S4.jpg", 
-                                "type": "constant"
+                                "type": "constant", 
+                                "value": "img/68830_EU_08_02b_S4.jpg"
                               }
                             ], 
                             "type": "join"
@@ -140,75 +131,84 @@
                         {
                           "name": "caption", 
                           "value": {
-                            "value": "Strict policies regarding emissions and fuel efficiency", 
-                            "type": "constant"
+                            "type": "constant", 
+                            "value": "Strict policies regarding emissions and fuel efficiency"
                           }
                         }
                       ], 
                       "type": "object"
                     }
-                  ]
-                }, 
-                "type": "set-property"
+                  ], 
+                  "type": "array"
+                }
               }
-            ], 
-            "config": {
-              "id": "lblCrsl2", 
-              "displayWidth": 335, 
-              "imagesActualSize": {
-                "width": 335, 
-                "height": 335
-              }
-            }, 
-            "bricId": "lblCarousel1"
+            ]
           }, 
           {
+            "bricId": "cntr1", 
             "bricType": "SvgContainer", 
+            "config": {
+              "maxSize": {
+                "height": 450, 
+                "width": 335
+              }
+            }, 
             "configFixup": [
               {
                 "name": "node", 
+                "type": "set-property", 
                 "value": {
                   "selector": "#bee6a05af481c4308a6a022945db2034e", 
                   "type": "d3select"
-                }, 
-                "type": "set-property"
+                }
               }
-            ], 
-            "config": {
-              "maxSize": {
-                "width": 335, 
-                "height": 450
-              }
-            }, 
-            "bricId": "cntr1"
+            ]
           }
         ], 
-        "containerId": "bee6a05af481c4308a6a022945db2034e"
+        "containerId": "bee6a05af481c4308a6a022945db2034e", 
+        "description": "Container for the LabelCarousel", 
+        "hookupActions": [
+          {
+            "args": [
+              {
+                "domain": "brix", 
+                "refId": "lblCarousel1", 
+                "type": "ref"
+              }
+            ], 
+            "description": "Append the label image carousel to the svg container", 
+            "instance": {
+              "domain": "brix", 
+              "refId": "cntr1", 
+              "type": "ref"
+            }, 
+            "methodName": "append", 
+            "type": "method-call"
+          }
+        ]
       }
     ], 
     "description": "Technology and choices that may DECREASE future impacts of transportation"
   }, 
-  "@type": "Envelope", 
   "metadata": {
-    "format": [
-      "application/vnd.pearson.sanvan.v1.activity"
-    ], 
-    "intendedEndUserRole": [
-      "Student"
-    ], 
-    "subject": [
-      "EnvironmentalScience"
-    ], 
-    "owner": "Brix", 
-    "created": "2013-12-20T13:45:56.091161", 
-    "title": "Technology and choices that may DECREASE future impacts of transportation", 
-    "timeRequired": "PT20S", 
-    "description": "Technology and choices that may DECREASE future impacts of transportation", 
-    "guid": "09b9ef3a-d872-41ff-b102-57da74e5c0f1", 
     "contentTypeTier1": "Activity", 
     "contentTypeTier2": [
       "Exercise"
-    ]
-  }, 
-  "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope"
+    ], 
+    "created": "2013-12-20T13:45:56.091161", 
+    "description": "Technology and choices that may DECREASE future impacts of transportation", 
+    "format": [
+      "application/vnd.pearson.sanvan.v1.activity"
+    ], 
+    "guid": "09b9ef3a-d872-41ff-b102-57da74e5c0f1", 
+    "intendedEndUserRole": [
+      "Student"
+    ], 
+    "owner": "Brix", 
+    "subject": [
+      "EnvironmentalScience"
+    ], 
+    "timeRequired": "PT20S", 
+    "title": "Technology and choices that may DECREASE future impacts of transportation"
+  }
 }

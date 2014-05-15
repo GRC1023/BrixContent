@@ -1,35 +1,25 @@
 {
+  "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope", 
+  "@type": "Envelope", 
   "body": {
     "containerConfig": [
       {
-        "description": "Container for the LabelCarousel", 
-        "hookupActions": [
-          {
-            "methodName": "append", 
-            "description": "Append the label image carousel to the svg container", 
-            "args": [
-              {
-                "refId": "lblCarousel1", 
-                "domain": "brix", 
-                "type": "ref"
-              }
-            ], 
-            "type": "method-call", 
-            "instance": {
-              "refId": "cntr1", 
-              "domain": "brix", 
-              "type": "ref"
-            }
-          }
-        ], 
         "brixConfig": [
           {
+            "bricId": "lblCarousel1", 
             "bricType": "LabelCarousel", 
+            "config": {
+              "id": "lblCrsl1", 
+              "imagesActualSize": {
+                "height": 457, 
+                "width": 457
+              }
+            }, 
             "configFixup": [
               {
                 "name": "images", 
+                "type": "set-property", 
                 "value": {
-                  "type": "array", 
                   "elements": [
                     {
                       "properties": [
@@ -38,13 +28,13 @@
                           "value": {
                             "parts": [
                               {
-                                "refId": "imgBaseUrl", 
                                 "domain": "info", 
+                                "refId": "imgBaseUrl", 
                                 "type": "ref"
                               }, 
                               {
-                                "value": "img/68830_EU_06_01_S1.png", 
-                                "type": "constant"
+                                "type": "constant", 
+                                "value": "img/68830_EU_06_01_S1.png"
                               }
                             ], 
                             "type": "join"
@@ -53,8 +43,8 @@
                         {
                           "name": "caption", 
                           "value": {
-                            "value": "Drilling for crude oil", 
-                            "type": "constant"
+                            "type": "constant", 
+                            "value": "Drilling for crude oil"
                           }
                         }
                       ], 
@@ -67,13 +57,13 @@
                           "value": {
                             "parts": [
                               {
-                                "refId": "imgBaseUrl", 
                                 "domain": "info", 
+                                "refId": "imgBaseUrl", 
                                 "type": "ref"
                               }, 
                               {
-                                "value": "img/68830_EU_06_01_S2.png", 
-                                "type": "constant"
+                                "type": "constant", 
+                                "value": "img/68830_EU_06_01_S2.png"
                               }
                             ], 
                             "type": "join"
@@ -82,8 +72,8 @@
                         {
                           "name": "caption", 
                           "value": {
-                            "value": "Transport to refinery", 
-                            "type": "constant"
+                            "type": "constant", 
+                            "value": "Transport to refinery"
                           }
                         }
                       ], 
@@ -96,13 +86,13 @@
                           "value": {
                             "parts": [
                               {
-                                "refId": "imgBaseUrl", 
                                 "domain": "info", 
+                                "refId": "imgBaseUrl", 
                                 "type": "ref"
                               }, 
                               {
-                                "value": "img/68830_EU_06_01_S3.jpg", 
-                                "type": "constant"
+                                "type": "constant", 
+                                "value": "img/68830_EU_06_01_S3.jpg"
                               }
                             ], 
                             "type": "join"
@@ -111,8 +101,8 @@
                         {
                           "name": "caption", 
                           "value": {
-                            "value": "Conversion into fuels at refinery", 
-                            "type": "constant"
+                            "type": "constant", 
+                            "value": "Conversion into fuels at refinery"
                           }
                         }
                       ], 
@@ -125,13 +115,13 @@
                           "value": {
                             "parts": [
                               {
-                                "refId": "imgBaseUrl", 
                                 "domain": "info", 
+                                "refId": "imgBaseUrl", 
                                 "type": "ref"
                               }, 
                               {
-                                "value": "img/68830_EU_06_01_S4.jpg", 
-                                "type": "constant"
+                                "type": "constant", 
+                                "value": "img/68830_EU_06_01_S4.jpg"
                               }
                             ], 
                             "type": "join"
@@ -140,74 +130,84 @@
                         {
                           "name": "caption", 
                           "value": {
-                            "value": "Transport to stations", 
-                            "type": "constant"
+                            "type": "constant", 
+                            "value": "Transport to stations"
                           }
                         }
                       ], 
                       "type": "object"
                     }
-                  ]
-                }, 
-                "type": "set-property"
+                  ], 
+                  "type": "array"
+                }
               }
-            ], 
-            "config": {
-              "id": "lblCrsl1", 
-              "imagesActualSize": {
-                "width": 457, 
-                "height": 457
-              }
-            }, 
-            "bricId": "lblCarousel1"
+            ]
           }, 
           {
+            "bricId": "cntr1", 
             "bricType": "SvgContainer", 
+            "config": {
+              "maxSize": {
+                "height": 580, 
+                "width": 457
+              }
+            }, 
             "configFixup": [
               {
                 "name": "node", 
+                "type": "set-property", 
                 "value": {
                   "selector": "#b37df0a684fa340eda04d73fa43644ea0", 
                   "type": "d3select"
-                }, 
-                "type": "set-property"
+                }
               }
-            ], 
-            "config": {
-              "maxSize": {
-                "width": 457, 
-                "height": 580
-              }
-            }, 
-            "bricId": "cntr1"
+            ]
           }
         ], 
-        "containerId": "b37df0a684fa340eda04d73fa43644ea0"
+        "containerId": "b37df0a684fa340eda04d73fa43644ea0", 
+        "description": "Container for the LabelCarousel", 
+        "hookupActions": [
+          {
+            "args": [
+              {
+                "domain": "brix", 
+                "refId": "lblCarousel1", 
+                "type": "ref"
+              }
+            ], 
+            "description": "Append the label image carousel to the svg container", 
+            "instance": {
+              "domain": "brix", 
+              "refId": "cntr1", 
+              "type": "ref"
+            }, 
+            "methodName": "append", 
+            "type": "method-call"
+          }
+        ]
       }
     ], 
     "description": "How we get fuel for transportation"
   }, 
-  "@type": "Envelope", 
   "metadata": {
-    "format": [
-      "application/vnd.pearson.sanvan.v1.activity"
-    ], 
-    "intendedEndUserRole": [
-      "Student"
-    ], 
-    "subject": [
-      "EnvironmentalScience"
-    ], 
-    "owner": "Brix", 
-    "created": "2013-12-20T13:45:56.090964", 
-    "title": "How we get fuel for transportation ", 
-    "timeRequired": "PT20S", 
-    "description": "How we get fuel for transportation ", 
-    "guid": "152941b0-4154-4e2d-8c2e-982ecf8a923d", 
     "contentTypeTier1": "Activity", 
     "contentTypeTier2": [
       "Exercise"
-    ]
-  }, 
-  "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope"
+    ], 
+    "created": "2013-12-20T13:45:56.090964", 
+    "description": "How we get fuel for transportation ", 
+    "format": [
+      "application/vnd.pearson.sanvan.v1.activity"
+    ], 
+    "guid": "152941b0-4154-4e2d-8c2e-982ecf8a923d", 
+    "intendedEndUserRole": [
+      "Student"
+    ], 
+    "owner": "Brix", 
+    "subject": [
+      "EnvironmentalScience"
+    ], 
+    "timeRequired": "PT20S", 
+    "title": "How we get fuel for transportation "
+  }
 }

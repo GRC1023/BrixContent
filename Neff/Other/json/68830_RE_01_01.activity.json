@@ -1,200 +1,169 @@
 {
+  "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope", 
+  "@type": "Envelope", 
   "body": {
     "containerConfig": [
       {
-        "description": "container for the graph and labels", 
-        "hookupActions": [
-          {
-            "methodName": "append", 
-            "description": "Append the image to the svg container", 
-            "args": [
-              {
-                "refId": "imagetoLabel", 
-                "domain": "brix", 
-                "type": "ref"
-              }
-            ], 
-            "type": "method-call", 
-            "instance": {
-              "refId": "cntr1", 
-              "domain": "brix", 
-              "type": "ref"
-            }
-          }, 
-          {
-            "methodName": "append", 
-            "description": "Append the labels to the svg container", 
-            "args": [
-              {
-                "refId": "labelGroup1", 
-                "domain": "brix", 
-                "type": "ref"
-              }
-            ], 
-            "type": "method-call", 
-            "instance": {
-              "refId": "cntr1", 
-              "domain": "brix", 
-              "type": "ref"
-            }
-          }, 
-          {
-            "methodName": "lite", 
-            "description": "Initial condition: select 1st label", 
-            "args": [
-              {
-                "value": "0", 
-                "type": "constant"
-              }
-            ], 
-            "type": "method-call", 
-            "instance": {
-              "refId": "labelGroup1", 
-              "domain": "brix", 
-              "type": "ref"
-            }
-          }
-        ], 
         "brixConfig": [
           {
+            "bricId": "imagetoLabel", 
             "bricType": "Image", 
+            "config": {
+              "actualSize": {
+                "height": 390, 
+                "width": 457
+              }, 
+              "caption": "Hydropower dam schematic", 
+              "displayWidth": 457, 
+              "id": "image1"
+            }, 
             "configFixup": [
               {
                 "name": "URI", 
+                "type": "set-property", 
                 "value": {
                   "parts": [
                     {
-                      "refId": "imgBaseUrl", 
                       "domain": "info", 
+                      "refId": "imgBaseUrl", 
                       "type": "ref"
                     }, 
                     {
-                      "value": "img/68830_RE_01_01.png", 
-                      "type": "constant"
+                      "type": "constant", 
+                      "value": "img/68830_RE_01_01.png"
                     }
                   ], 
                   "type": "join"
-                }, 
-                "type": "set-property"
+                }
               }
-            ], 
-            "config": {
-              "id": "image1", 
-              "actualSize": {
-                "width": 457, 
-                "height": 390
-              }, 
-              "caption": "Hydropower dam schematic", 
-              "displayWidth": 457
-            }, 
-            "bricId": "imagetoLabel"
+            ]
           }, 
           {
+            "bricId": "labelGroup1", 
             "bricType": "LabelGroup", 
             "config": {
               "id": "dataLabels", 
               "labels": [
                 {
                   "content": "1", 
+                  "width": 0, 
                   "xyPos": [
                     0.035, 
                     0.65
-                  ], 
-                  "width": 0
+                  ]
                 }, 
                 {
                   "content": "2", 
+                  "width": 0, 
                   "xyPos": [
                     0.47, 
                     0.27
-                  ], 
-                  "width": 0
+                  ]
                 }, 
                 {
                   "content": "3", 
+                  "width": 0, 
                   "xyPos": [
                     0.42, 
                     0.58
-                  ], 
-                  "width": 0
+                  ]
                 }, 
                 {
                   "content": "4", 
+                  "width": 0, 
                   "xyPos": [
                     0.67, 
                     0.66
-                  ], 
-                  "width": 0
+                  ]
                 }
               ], 
               "type": "numbered"
-            }, 
-            "bricId": "labelGroup1"
+            }
           }, 
           {
+            "bricId": "cntr1", 
             "bricType": "SvgContainer", 
+            "config": {
+              "maxSize": {
+                "height": 385, 
+                "width": 457
+              }
+            }, 
             "configFixup": [
               {
                 "name": "node", 
+                "type": "set-property", 
                 "value": {
                   "selector": "#bdb25361c090a46c382a06ab5248940a3", 
                   "type": "d3select"
-                }, 
-                "type": "set-property"
+                }
               }
-            ], 
-            "config": {
-              "maxSize": {
-                "width": 457, 
-                "height": 385
-              }
-            }, 
-            "bricId": "cntr1"
+            ]
           }
         ], 
-        "containerId": "bdb25361c090a46c382a06ab5248940a3"
-      }, 
-      {
-        "description": "The container contains the liteable callouts", 
+        "containerId": "bdb25361c090a46c382a06ab5248940a3", 
+        "description": "container for the graph and labels", 
         "hookupActions": [
           {
-            "methodName": "draw", 
-            "description": "draw the label table", 
             "args": [
               {
-                "selector": "#bdb25361c090a46c382a06ab5248940a3", 
-                "type": "d3select"
+                "domain": "brix", 
+                "refId": "imagetoLabel", 
+                "type": "ref"
               }
             ], 
-            "type": "method-call", 
+            "description": "Append the image to the svg container", 
             "instance": {
-              "refId": "lbltbl1", 
               "domain": "brix", 
+              "refId": "cntr1", 
               "type": "ref"
-            }
+            }, 
+            "methodName": "append", 
+            "type": "method-call"
           }, 
           {
-            "methodName": "lite", 
-            "description": "Initial condition: select 1st table row", 
             "args": [
               {
-                "value": "0", 
-                "type": "constant"
+                "domain": "brix", 
+                "refId": "labelGroup1", 
+                "type": "ref"
               }
             ], 
-            "type": "method-call", 
+            "description": "Append the labels to the svg container", 
             "instance": {
-              "refId": "lbltbl1", 
               "domain": "brix", 
+              "refId": "cntr1", 
               "type": "ref"
-            }
+            }, 
+            "methodName": "append", 
+            "type": "method-call"
+          }, 
+          {
+            "args": [
+              {
+                "type": "constant", 
+                "value": "0"
+              }
+            ], 
+            "description": "Initial condition: select 1st label", 
+            "instance": {
+              "domain": "brix", 
+              "refId": "labelGroup1", 
+              "type": "ref"
+            }, 
+            "methodName": "lite", 
+            "type": "method-call"
           }
-        ], 
+        ]
+      }, 
+      {
         "brixConfig": [
           {
+            "bricId": "lbltbl1", 
             "bricType": "Callouts", 
             "config": {
               "id": "callme", 
+              "show": "all", 
               "textBits": [
                 {
                   "cols": [
@@ -217,10 +186,44 @@
                   ]
                 }
               ], 
-              "type": "numbered", 
-              "show": "all"
+              "type": "numbered"
+            }
+          }
+        ], 
+        "containerId": "bdb25361c090a46c382a06ab5248940a3", 
+        "description": "The container contains the liteable callouts", 
+        "hookupActions": [
+          {
+            "args": [
+              {
+                "selector": "#bdb25361c090a46c382a06ab5248940a3", 
+                "type": "d3select"
+              }
+            ], 
+            "description": "draw the label table", 
+            "instance": {
+              "domain": "brix", 
+              "refId": "lbltbl1", 
+              "type": "ref"
             }, 
-            "bricId": "lbltbl1"
+            "methodName": "draw", 
+            "type": "method-call"
+          }, 
+          {
+            "args": [
+              {
+                "type": "constant", 
+                "value": "0"
+              }
+            ], 
+            "description": "Initial condition: select 1st table row", 
+            "instance": {
+              "domain": "brix", 
+              "refId": "lbltbl1", 
+              "type": "ref"
+            }, 
+            "methodName": "lite", 
+            "type": "method-call"
           }
         ], 
         "mortarConfig": [
@@ -231,22 +234,22 @@
             "configFixup": [
               {
                 "name": "topic", 
+                "type": "set-property", 
                 "value": {
                   "bricType": "LabelGroup", 
+                  "eventName": "selected", 
                   "instanceId": "dataLabels", 
-                  "type": "brix-topic", 
-                  "eventName": "selected"
-                }, 
-                "type": "set-property"
+                  "type": "brix-topic"
+                }
               }, 
               {
                 "name": "targetBric", 
+                "type": "set-property", 
                 "value": {
-                  "refId": "lbltbl1", 
                   "domain": "brix", 
+                  "refId": "lbltbl1", 
                   "type": "ref"
-                }, 
-                "type": "set-property"
+                }
               }
             ], 
             "mortarId": "hilite1", 
@@ -259,54 +262,51 @@
             "configFixup": [
               {
                 "name": "topic", 
+                "type": "set-property", 
                 "value": {
                   "bricType": "Callouts", 
+                  "eventName": "selected", 
                   "instanceId": "callme", 
-                  "type": "brix-topic", 
-                  "eventName": "selected"
-                }, 
-                "type": "set-property"
+                  "type": "brix-topic"
+                }
               }, 
               {
                 "name": "targetBric", 
+                "type": "set-property", 
                 "value": {
-                  "refId": "labelGroup1", 
                   "domain": "brix", 
+                  "refId": "labelGroup1", 
                   "type": "ref"
-                }, 
-                "type": "set-property"
+                }
               }
             ], 
             "mortarId": "hilite2", 
             "mortarType": "Hilite"
           }
-        ], 
-        "containerId": "bdb25361c090a46c382a06ab5248940a3"
+        ]
       }
     ], 
     "description": "Hydropower dam"
   }, 
-  "@type": "Envelope", 
   "metadata": {
-    "format": [
-      "application/vnd.pearson.sanvan.v1.activity"
-    ], 
-    "intendedEndUserRole": [
-      "Student"
-    ], 
-    "subject": [
-      "EnvironmentalScience"
-    ], 
-    "owner": "Brix", 
-    "created": "2013-12-20T13:45:56.091924", 
-    "title": "Hydropower dam", 
-    "timeRequired": "PT20S", 
-    "description": "Hydropower dam", 
-    "guid": "303cb8df-6d18-4c96-8dfb-3631da047b58", 
     "contentTypeTier1": "Activity", 
     "contentTypeTier2": [
       "Exercise"
-    ]
-  }, 
-  "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope"
+    ], 
+    "created": "2013-12-20T13:45:56.091924", 
+    "description": "Hydropower dam", 
+    "format": [
+      "application/vnd.pearson.sanvan.v1.activity"
+    ], 
+    "guid": "303cb8df-6d18-4c96-8dfb-3631da047b58", 
+    "intendedEndUserRole": [
+      "Student"
+    ], 
+    "owner": "Brix", 
+    "subject": [
+      "EnvironmentalScience"
+    ], 
+    "timeRequired": "PT20S", 
+    "title": "Hydropower dam"
+  }
 }

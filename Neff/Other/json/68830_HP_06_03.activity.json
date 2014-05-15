@@ -1,35 +1,25 @@
 {
+  "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope", 
+  "@type": "Envelope", 
   "body": {
     "containerConfig": [
       {
-        "description": "Container for the LabelCarousel", 
-        "hookupActions": [
-          {
-            "methodName": "append", 
-            "description": "Append the label image carousel to the svg container", 
-            "args": [
-              {
-                "refId": "lblCarousel1", 
-                "domain": "brix", 
-                "type": "ref"
-              }
-            ], 
-            "type": "method-call", 
-            "instance": {
-              "refId": "cntr1", 
-              "domain": "brix", 
-              "type": "ref"
-            }
-          }
-        ], 
         "brixConfig": [
           {
+            "bricId": "lblCarousel1", 
             "bricType": "LabelCarousel", 
+            "config": {
+              "id": "lblCrsl1", 
+              "imagesActualSize": {
+                "height": 379, 
+                "width": 570
+              }
+            }, 
             "configFixup": [
               {
                 "name": "images", 
+                "type": "set-property", 
                 "value": {
-                  "type": "array", 
                   "elements": [
                     {
                       "properties": [
@@ -38,13 +28,13 @@
                           "value": {
                             "parts": [
                               {
-                                "refId": "imgBaseUrl", 
                                 "domain": "info", 
+                                "refId": "imgBaseUrl", 
                                 "type": "ref"
                               }, 
                               {
-                                "value": "img/68830_HP_06_03_S1.png", 
-                                "type": "constant"
+                                "type": "constant", 
+                                "value": "img/68830_HP_06_03_S1.png"
                               }
                             ], 
                             "type": "join"
@@ -53,8 +43,8 @@
                         {
                           "name": "caption", 
                           "value": {
-                            "value": "70% more food", 
-                            "type": "constant"
+                            "type": "constant", 
+                            "value": "70% more food"
                           }
                         }
                       ], 
@@ -67,13 +57,13 @@
                           "value": {
                             "parts": [
                               {
-                                "refId": "imgBaseUrl", 
                                 "domain": "info", 
+                                "refId": "imgBaseUrl", 
                                 "type": "ref"
                               }, 
                               {
-                                "value": "img/68830_HP_06_03_S2.png", 
-                                "type": "constant"
+                                "type": "constant", 
+                                "value": "img/68830_HP_06_03_S2.png"
                               }
                             ], 
                             "type": "join"
@@ -82,8 +72,8 @@
                         {
                           "name": "caption", 
                           "value": {
-                            "value": "200% more energy", 
-                            "type": "constant"
+                            "type": "constant", 
+                            "value": "200% more energy"
                           }
                         }
                       ], 
@@ -96,13 +86,13 @@
                           "value": {
                             "parts": [
                               {
-                                "refId": "imgBaseUrl", 
                                 "domain": "info", 
+                                "refId": "imgBaseUrl", 
                                 "type": "ref"
                               }, 
                               {
-                                "value": "img/68830_HP_06_03_S3.png", 
-                                "type": "constant"
+                                "type": "constant", 
+                                "value": "img/68830_HP_06_03_S3.png"
                               }
                             ], 
                             "type": "join"
@@ -111,74 +101,84 @@
                         {
                           "name": "caption", 
                           "value": {
-                            "value": "80% more water for agriculture", 
-                            "type": "constant"
+                            "type": "constant", 
+                            "value": "80% more water for agriculture"
                           }
                         }
                       ], 
                       "type": "object"
                     }
-                  ]
-                }, 
-                "type": "set-property"
+                  ], 
+                  "type": "array"
+                }
               }
-            ], 
-            "config": {
-              "id": "lblCrsl1", 
-              "imagesActualSize": {
-                "width": 570, 
-                "height": 379
-              }
-            }, 
-            "bricId": "lblCarousel1"
+            ]
           }, 
           {
+            "bricId": "cntr1", 
             "bricType": "SvgContainer", 
+            "config": {
+              "maxSize": {
+                "height": 410, 
+                "width": 477
+              }
+            }, 
             "configFixup": [
               {
                 "name": "node", 
+                "type": "set-property", 
                 "value": {
                   "selector": "#b6f8740919ba145c9bc44c4e8c31015e8", 
                   "type": "d3select"
-                }, 
-                "type": "set-property"
+                }
               }
-            ], 
-            "config": {
-              "maxSize": {
-                "width": 477, 
-                "height": 410
-              }
-            }, 
-            "bricId": "cntr1"
+            ]
           }
         ], 
-        "containerId": "b6f8740919ba145c9bc44c4e8c31015e8"
+        "containerId": "b6f8740919ba145c9bc44c4e8c31015e8", 
+        "description": "Container for the LabelCarousel", 
+        "hookupActions": [
+          {
+            "args": [
+              {
+                "domain": "brix", 
+                "refId": "lblCarousel1", 
+                "type": "ref"
+              }
+            ], 
+            "description": "Append the label image carousel to the svg container", 
+            "instance": {
+              "domain": "brix", 
+              "refId": "cntr1", 
+              "type": "ref"
+            }, 
+            "methodName": "append", 
+            "type": "method-call"
+          }
+        ]
       }
     ], 
     "description": "What would be required to feed 9 billion people by 2050?"
   }, 
-  "@type": "Envelope", 
   "metadata": {
-    "format": [
-      "application/vnd.pearson.sanvan.v1.activity"
-    ], 
-    "intendedEndUserRole": [
-      "Student"
-    ], 
-    "subject": [
-      "EnvironmentalScience"
-    ], 
-    "owner": "Brix", 
-    "created": "2013-12-20T13:45:56.090701", 
-    "title": "What would be required to feed 9 billion people by 2050?", 
-    "timeRequired": "PT20S", 
-    "description": "What would be required to feed 9 billion people by 2050?", 
-    "guid": "a4f5ee22-06e0-4e86-bc0e-1126b0087649", 
     "contentTypeTier1": "Activity", 
     "contentTypeTier2": [
       "Exercise"
-    ]
-  }, 
-  "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope"
+    ], 
+    "created": "2013-12-20T13:45:56.090701", 
+    "description": "What would be required to feed 9 billion people by 2050?", 
+    "format": [
+      "application/vnd.pearson.sanvan.v1.activity"
+    ], 
+    "guid": "a4f5ee22-06e0-4e86-bc0e-1126b0087649", 
+    "intendedEndUserRole": [
+      "Student"
+    ], 
+    "owner": "Brix", 
+    "subject": [
+      "EnvironmentalScience"
+    ], 
+    "timeRequired": "PT20S", 
+    "title": "What would be required to feed 9 billion people by 2050?"
+  }
 }

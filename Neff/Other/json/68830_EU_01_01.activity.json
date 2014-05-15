@@ -1,191 +1,160 @@
 {
+  "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope", 
+  "@type": "Envelope", 
   "body": {
     "containerConfig": [
       {
-        "description": "container for the graph and labels", 
-        "hookupActions": [
-          {
-            "methodName": "append", 
-            "description": "Append the image to the svg container", 
-            "args": [
-              {
-                "refId": "imageGraph", 
-                "domain": "brix", 
-                "type": "ref"
-              }
-            ], 
-            "type": "method-call", 
-            "instance": {
-              "refId": "cntr1", 
-              "domain": "brix", 
-              "type": "ref"
-            }
-          }, 
-          {
-            "methodName": "append", 
-            "description": "Append the labels to the svg container", 
-            "args": [
-              {
-                "refId": "labelGroup1", 
-                "domain": "brix", 
-                "type": "ref"
-              }
-            ], 
-            "type": "method-call", 
-            "instance": {
-              "refId": "cntr1", 
-              "domain": "brix", 
-              "type": "ref"
-            }
-          }, 
-          {
-            "methodName": "lite", 
-            "description": "Initial condition: select 1st label", 
-            "args": [
-              {
-                "value": "0", 
-                "type": "constant"
-              }
-            ], 
-            "type": "method-call", 
-            "instance": {
-              "refId": "labelGroup1", 
-              "domain": "brix", 
-              "type": "ref"
-            }
-          }
-        ], 
         "brixConfig": [
           {
+            "bricId": "imageGraph", 
             "bricType": "Image", 
+            "config": {
+              "actualSize": {
+                "height": 599, 
+                "width": 425
+              }, 
+              "caption": "Global energy use, 1800\u20132000", 
+              "id": "image1"
+            }, 
             "configFixup": [
               {
                 "name": "URI", 
+                "type": "set-property", 
                 "value": {
                   "parts": [
                     {
-                      "refId": "imgBaseUrl", 
                       "domain": "info", 
+                      "refId": "imgBaseUrl", 
                       "type": "ref"
                     }, 
                     {
-                      "value": "img/68830_EU_01_01.png", 
-                      "type": "constant"
+                      "type": "constant", 
+                      "value": "img/68830_EU_01_01.png"
                     }
                   ], 
                   "type": "join"
-                }, 
-                "type": "set-property"
+                }
               }
-            ], 
-            "config": {
-              "id": "image1", 
-              "actualSize": {
-                "width": 425, 
-                "height": 599
-              }, 
-              "caption": "Global energy use, 1800\u20132000"
-            }, 
-            "bricId": "imageGraph"
+            ]
           }, 
           {
+            "bricId": "labelGroup1", 
             "bricType": "LabelGroup", 
             "config": {
               "id": "dataLabels", 
               "labels": [
                 {
                   "content": "1", 
+                  "width": 0, 
                   "xyPos": [
                     0.235, 
                     0.13
-                  ], 
-                  "width": 0
+                  ]
                 }, 
                 {
                   "content": "2", 
+                  "width": 0, 
                   "xyPos": [
                     0.43, 
                     0.13
-                  ], 
-                  "width": 0
+                  ]
                 }, 
                 {
                   "content": "3", 
+                  "width": 0, 
                   "xyPos": [
                     0.61, 
                     0.13
-                  ], 
-                  "width": 0
+                  ]
                 }
               ], 
               "type": "numbered"
-            }, 
-            "bricId": "labelGroup1"
+            }
           }, 
           {
+            "bricId": "cntr1", 
             "bricType": "SvgContainer", 
+            "config": {
+              "maxSize": {
+                "height": 445, 
+                "width": 557
+              }
+            }, 
             "configFixup": [
               {
                 "name": "node", 
+                "type": "set-property", 
                 "value": {
                   "selector": "#bb689ee6c8a4143feab39daa527951ae5", 
                   "type": "d3select"
-                }, 
-                "type": "set-property"
+                }
               }
-            ], 
-            "config": {
-              "maxSize": {
-                "width": 557, 
-                "height": 445
-              }
-            }, 
-            "bricId": "cntr1"
+            ]
           }
         ], 
-        "containerId": "bb689ee6c8a4143feab39daa527951ae5"
-      }, 
-      {
-        "description": "The container contains the liteable callouts", 
+        "containerId": "bb689ee6c8a4143feab39daa527951ae5", 
+        "description": "container for the graph and labels", 
         "hookupActions": [
           {
-            "methodName": "draw", 
-            "description": "draw the label table", 
             "args": [
               {
-                "selector": "#bb689ee6c8a4143feab39daa527951ae5", 
-                "type": "d3select"
+                "domain": "brix", 
+                "refId": "imageGraph", 
+                "type": "ref"
               }
             ], 
-            "type": "method-call", 
+            "description": "Append the image to the svg container", 
             "instance": {
-              "refId": "lbltbl1", 
               "domain": "brix", 
+              "refId": "cntr1", 
               "type": "ref"
-            }
+            }, 
+            "methodName": "append", 
+            "type": "method-call"
           }, 
           {
-            "methodName": "lite", 
-            "description": "Initial condition: select 1st table row", 
             "args": [
               {
-                "value": "0", 
-                "type": "constant"
+                "domain": "brix", 
+                "refId": "labelGroup1", 
+                "type": "ref"
               }
             ], 
-            "type": "method-call", 
+            "description": "Append the labels to the svg container", 
             "instance": {
-              "refId": "lbltbl1", 
               "domain": "brix", 
+              "refId": "cntr1", 
               "type": "ref"
-            }
+            }, 
+            "methodName": "append", 
+            "type": "method-call"
+          }, 
+          {
+            "args": [
+              {
+                "type": "constant", 
+                "value": "0"
+              }
+            ], 
+            "description": "Initial condition: select 1st label", 
+            "instance": {
+              "domain": "brix", 
+              "refId": "labelGroup1", 
+              "type": "ref"
+            }, 
+            "methodName": "lite", 
+            "type": "method-call"
           }
-        ], 
+        ]
+      }, 
+      {
         "brixConfig": [
           {
+            "bricId": "lbltbl1", 
             "bricType": "Callouts", 
             "config": {
               "id": "callme", 
+              "show": "all", 
               "textBits": [
                 {
                   "cols": [
@@ -202,10 +171,44 @@
                     "Phase 3 (after 1950): A new series of power plants fueled by coal, natural gas, and nuclear energy generate electricity that is distributed to homes and businesses through the electric power grid."
                   ]
                 }
-              ], 
-              "show": "all"
+              ]
+            }
+          }
+        ], 
+        "containerId": "bb689ee6c8a4143feab39daa527951ae5", 
+        "description": "The container contains the liteable callouts", 
+        "hookupActions": [
+          {
+            "args": [
+              {
+                "selector": "#bb689ee6c8a4143feab39daa527951ae5", 
+                "type": "d3select"
+              }
+            ], 
+            "description": "draw the label table", 
+            "instance": {
+              "domain": "brix", 
+              "refId": "lbltbl1", 
+              "type": "ref"
             }, 
-            "bricId": "lbltbl1"
+            "methodName": "draw", 
+            "type": "method-call"
+          }, 
+          {
+            "args": [
+              {
+                "type": "constant", 
+                "value": "0"
+              }
+            ], 
+            "description": "Initial condition: select 1st table row", 
+            "instance": {
+              "domain": "brix", 
+              "refId": "lbltbl1", 
+              "type": "ref"
+            }, 
+            "methodName": "lite", 
+            "type": "method-call"
           }
         ], 
         "mortarConfig": [
@@ -216,22 +219,22 @@
             "configFixup": [
               {
                 "name": "topic", 
+                "type": "set-property", 
                 "value": {
                   "bricType": "LabelGroup", 
+                  "eventName": "selected", 
                   "instanceId": "dataLabels", 
-                  "type": "brix-topic", 
-                  "eventName": "selected"
-                }, 
-                "type": "set-property"
+                  "type": "brix-topic"
+                }
               }, 
               {
                 "name": "targetBric", 
+                "type": "set-property", 
                 "value": {
-                  "refId": "lbltbl1", 
                   "domain": "brix", 
+                  "refId": "lbltbl1", 
                   "type": "ref"
-                }, 
-                "type": "set-property"
+                }
               }
             ], 
             "mortarId": "hilite1", 
@@ -244,54 +247,51 @@
             "configFixup": [
               {
                 "name": "topic", 
+                "type": "set-property", 
                 "value": {
                   "bricType": "Callouts", 
+                  "eventName": "selected", 
                   "instanceId": "callme", 
-                  "type": "brix-topic", 
-                  "eventName": "selected"
-                }, 
-                "type": "set-property"
+                  "type": "brix-topic"
+                }
               }, 
               {
                 "name": "targetBric", 
+                "type": "set-property", 
                 "value": {
-                  "refId": "labelGroup1", 
                   "domain": "brix", 
+                  "refId": "labelGroup1", 
                   "type": "ref"
-                }, 
-                "type": "set-property"
+                }
               }
             ], 
             "mortarId": "hilite2", 
             "mortarType": "Hilite"
           }
-        ], 
-        "containerId": "bb689ee6c8a4143feab39daa527951ae5"
+        ]
       }
     ], 
     "description": "Global energy use, 1800\u20132000"
   }, 
-  "@type": "Envelope", 
   "metadata": {
-    "format": [
-      "application/vnd.pearson.sanvan.v1.activity"
-    ], 
-    "intendedEndUserRole": [
-      "Student"
-    ], 
-    "subject": [
-      "EnvironmentalScience"
-    ], 
-    "owner": "Brix", 
-    "created": "2013-12-20T13:45:56.090744", 
-    "title": "Global energy use, 1800\u20132000", 
-    "timeRequired": "PT20S", 
-    "description": "Global energy use, 1800\u20132000", 
-    "guid": "c7680821-900f-4a72-a8a8-16422ec16ce9", 
     "contentTypeTier1": "Activity", 
     "contentTypeTier2": [
       "Exercise"
-    ]
-  }, 
-  "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope"
+    ], 
+    "created": "2013-12-20T13:45:56.090744", 
+    "description": "Global energy use, 1800\u20132000", 
+    "format": [
+      "application/vnd.pearson.sanvan.v1.activity"
+    ], 
+    "guid": "c7680821-900f-4a72-a8a8-16422ec16ce9", 
+    "intendedEndUserRole": [
+      "Student"
+    ], 
+    "owner": "Brix", 
+    "subject": [
+      "EnvironmentalScience"
+    ], 
+    "timeRequired": "PT20S", 
+    "title": "Global energy use, 1800\u20132000"
+  }
 }
