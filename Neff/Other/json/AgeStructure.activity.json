@@ -186,22 +186,28 @@
                 "height": 500, 
                 "width": 577
               }
-            }, 
-            "configFixup": [
-              {
-                "name": "node", 
-                "type": "set-property", 
-                "value": {
-                  "selector": "#b709beaea284b4d1f91902621422fee1b", 
-                  "type": "d3select"
-                }
-              }
-            ]
+            }
           }
         ], 
         "containerId": "b709beaea284b4d1f91902621422fee1b", 
         "description": "container for interactive pyramid chart based on year slider value", 
         "hookupActions": [
+          {
+            "args": [
+              {
+                "selector": "#b709beaea284b4d1f91902621422fee1b", 
+                "type": "d3select"
+              }
+            ], 
+            "description": "Draw the svg container", 
+            "instance": {
+              "domain": "brix", 
+              "refId": "cntr2", 
+              "type": "ref"
+            }, 
+            "methodName": "draw", 
+            "type": "method-call"
+          }, 
           {
             "args": [
               {

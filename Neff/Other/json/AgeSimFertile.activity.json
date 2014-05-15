@@ -224,22 +224,28 @@
                 "height": 450, 
                 "width": 577
               }
-            }, 
-            "configFixup": [
-              {
-                "name": "node", 
-                "type": "set-property", 
-                "value": {
-                  "selector": "#b0f426ac794f646bdb493df7cfa969fd6", 
-                  "type": "d3select"
-                }
-              }
-            ]
+            }
           }
         ], 
         "containerId": "b0f426ac794f646bdb493df7cfa969fd6", 
         "description": "container for interactive graph based on slider value", 
         "hookupActions": [
+          {
+            "args": [
+              {
+                "selector": "#b0f426ac794f646bdb493df7cfa969fd6", 
+                "type": "d3select"
+              }
+            ], 
+            "description": "Draw the svg container", 
+            "instance": {
+              "domain": "brix", 
+              "refId": "cntr2", 
+              "type": "ref"
+            }, 
+            "methodName": "draw", 
+            "type": "method-call"
+          }, 
           {
             "args": [
               {
