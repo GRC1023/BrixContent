@@ -124,22 +124,28 @@
                 "height": 630, 
                 "width": 333
               }
-            }, 
-            "configFixup": [
-              {
-                "name": "node", 
-                "type": "set-property", 
-                "value": {
-                  "selector": "#bd5e7f0acf9f143898f40a08acd072471", 
-                  "type": "d3select"
-                }
-              }
-            ]
+            }
           }
         ], 
         "containerId": "imgContainer", 
         "description": "Container for the LabelCarousel", 
         "hookupActions": [
+          {
+            "args": [
+              {
+                "selector": "#bd5e7f0acf9f143898f40a08acd072471", 
+                "type": "d3select"
+              }
+            ], 
+            "description": "Draw the svg container", 
+            "instance": {
+              "domain": "brix", 
+              "refId": "cntr1", 
+              "type": "ref"
+            }, 
+            "methodName": "draw", 
+            "type": "method-call"
+          }, 
           {
             "args": [
               {

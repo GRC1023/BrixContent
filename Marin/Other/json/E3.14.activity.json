@@ -126,10 +126,10 @@
         "brixConfig": [
           {
             "bricId": "wavegraph", 
-            "bricType": "LineGraph", 
+            "bricType": "ProtoLineGraph", 
             "config": {
+              "Data": [], 
               "id": "lngrph-waveform", 
-              "Data": [],
               "type": "lines", 
               "xAxisFormat": {
                 "label": "time (sec)", 
@@ -161,22 +161,28 @@
                 "height": 400, 
                 "width": 577
               }
-            }, 
-            "configFixup": [
-              {
-                "name": "node", 
-                "type": "set-property", 
-                "value": {
-                  "selector": "#b147b485daada4c18be9d724142ae7b97", 
-                  "type": "d3select"
-                }
-              }
-            ]
+            }
           }
         ], 
         "containerId": "b147b485daada4c18be9d724142ae7b97", 
         "description": "container for interactive line graph based on slider value", 
         "hookupActions": [
+          {
+            "args": [
+              {
+                "selector": "#b147b485daada4c18be9d724142ae7b97", 
+                "type": "d3select"
+              }
+            ], 
+            "description": "Draw the svg container", 
+            "instance": {
+              "domain": "brix", 
+              "refId": "cntr2", 
+              "type": "ref"
+            }, 
+            "methodName": "draw", 
+            "type": "method-call"
+          }, 
           {
             "args": [
               {
