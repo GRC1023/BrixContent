@@ -260,22 +260,28 @@
                 "height": "570", 
                 "width": "579"
               }
-            }, 
-            "configFixup": [
-              {
-                "name": "node", 
-                "type": "set-property", 
-                "value": {
-                  "selector": "#bbf82730c109748b4b39a4280af3bbe1c", 
-                  "type": "d3select"
-                }
-              }
-            ]
+            }
           }
         ], 
         "containerId": "bbf82730c109748b4b39a4280af3bbe1c", 
         "description": "Photo carousel includes photos of a Norwegian person, an Italian person, a Nigerian person, an Ethiopian person, an Indian person, and a Korean person", 
         "hookupActions": [
+          {
+            "args": [
+              {
+                "selector": "#bbf82730c109748b4b39a4280af3bbe1c", 
+                "type": "d3select"
+              }
+            ], 
+            "description": "Draw the svg container", 
+            "instance": {
+              "domain": "brix", 
+              "refId": "cntr1", 
+              "type": "ref"
+            }, 
+            "methodName": "draw", 
+            "type": "method-call"
+          }, 
           {
             "args": [
               {

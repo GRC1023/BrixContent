@@ -7,7 +7,7 @@
         "brixConfig": [
           {
             "bricId": "swapGraph", 
-            "bricType": "LineGraph", 
+            "bricType": "ProtoLineGraph", 
             "config": {
               "id": "graph1", 
               "type": "lines", 
@@ -104,22 +104,28 @@
                 "height": 400, 
                 "width": 600
               }
-            }, 
-            "configFixup": [
-              {
-                "name": "node", 
-                "type": "set-property", 
-                "value": {
-                  "selector": "#ba32da54f454548448a665159d090a2d9", 
-                  "type": "d3select"
-                }
-              }
-            ]
+            }
           }
         ], 
         "containerId": "target1", 
         "description": "container for the graph and labels", 
         "hookupActions": [
+          {
+            "args": [
+              {
+                "selector": "#ba32da54f454548448a665159d090a2d9", 
+                "type": "d3select"
+              }
+            ], 
+            "description": "Draw the svg container", 
+            "instance": {
+              "domain": "brix", 
+              "refId": "cntr1", 
+              "type": "ref"
+            }, 
+            "methodName": "draw", 
+            "type": "method-call"
+          }, 
           {
             "args": [
               {
@@ -382,7 +388,7 @@
                 "name": "topic", 
                 "type": "set-property", 
                 "value": {
-                  "bricType": "LineGraph", 
+                  "bricType": "ProtoLineGraph", 
                   "eventName": "selected", 
                   "instanceId": "graph1", 
                   "type": "brix-topic"

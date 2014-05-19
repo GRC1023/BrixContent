@@ -7,7 +7,7 @@
         "brixConfig": [
           {
             "bricId": "swapGraph", 
-            "bricType": "BarChart", 
+            "bricType": "ProtoBarChart", 
             "config": {
               "id": "graph1", 
               "xAxisFormat": {
@@ -62,22 +62,28 @@
                 "height": 400, 
                 "width": 579
               }
-            }, 
-            "configFixup": [
-              {
-                "name": "node", 
-                "type": "set-property", 
-                "value": {
-                  "selector": "#b44e9c12d59d0400788b9367db1b2a6fb", 
-                  "type": "d3select"
-                }
-              }
-            ]
+            }
           }
         ], 
         "containerId": "b44e9c12d59d0400788b9367db1b2a6fb", 
         "description": "container for the graph and labels", 
         "hookupActions": [
+          {
+            "args": [
+              {
+                "selector": "#b44e9c12d59d0400788b9367db1b2a6fb", 
+                "type": "d3select"
+              }
+            ], 
+            "description": "Draw the svg container", 
+            "instance": {
+              "domain": "brix", 
+              "refId": "cntr1", 
+              "type": "ref"
+            }, 
+            "methodName": "draw", 
+            "type": "method-call"
+          }, 
           {
             "args": [
               {

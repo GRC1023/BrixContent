@@ -146,22 +146,28 @@
                 "height": "600", 
                 "width": "579"
               }
-            }, 
-            "configFixup": [
-              {
-                "name": "node", 
-                "type": "set-property", 
-                "value": {
-                  "selector": "#b1cf76059d701466fa3d7556cba879db5", 
-                  "type": "d3select"
-                }
-              }
-            ]
+            }
           }
         ], 
         "containerId": "b1cf76059d701466fa3d7556cba879db5", 
         "description": "Container for the ImageViewer bric", 
         "hookupActions": [
+          {
+            "args": [
+              {
+                "selector": "#b1cf76059d701466fa3d7556cba879db5", 
+                "type": "d3select"
+              }
+            ], 
+            "description": "Draw the svg container", 
+            "instance": {
+              "domain": "brix", 
+              "refId": "cntr1", 
+              "type": "ref"
+            }, 
+            "methodName": "draw", 
+            "type": "method-call"
+          }, 
           {
             "args": [
               {
