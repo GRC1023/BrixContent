@@ -14,6 +14,13 @@ import traceback
 # A global log file for issues we should report after execution of the script
 problemlog = []
 
+def renameBricType(newType, bricConfig, containerConfig):
+    """Change the bricType property to the newType"""
+    oldType = bricConfig["bricType"]
+    bricConfig["bricType"] = newType
+    return oldType != newType
+
+
 def transformSvgContainer092to100(bricConfig, containerConfig):
     """Convert the 0.92 SvgContainer to 1.0.0 SvgContainer"""
     # find the configFixup for the 'node' property, if it doesn't exist then
@@ -51,12 +58,53 @@ def transformSvgContainer092to100(bricConfig, containerConfig):
 def convertPafActivity(pafActivity):
     """Convert the given brix activity config"""
     converted = False
+
+    # if there's no containerConfig it's not a valid brix activity
+    if "containerConfig" not in pafActivity["body"]:
+        return False
+
     for containerConfig in pafActivity["body"]["containerConfig"]:
         for bricConfig in containerConfig["brixConfig"]:
             bricType = bricConfig["bricType"]
             if bricType == "SvgContainer":
-                print("found SvgContainer " + bricType)
-                converted = transformSvgContainer092to100(bricConfig, containerConfig)
+                print("found SvgContainer " + bricConfig["bricId"])
+                converted = transformSvgContainer092to100(bricConfig, containerConfig) or converted
+            elif bricType == "LineGraph":
+                print("found LineGraph " + bricConfig["bricId"])
+                converted = renameBricType("ProtoLineGraph", bricConfig, containerConfig) or converted
+            elif bricType == "BarChart":
+                print("found BarChart " + bricConfig["bricId"])
+                converted = renameBricType("ProtoBarChart", bricConfig, containerConfig) or converted
+
+    # look through all configFixup set-property values
+    for containerConfig in pafActivity["body"]["containerConfig"]:
+        for bricConfig in containerConfig["brixConfig"]:
+            if "configFixup" in bricConfig:
+                for fixup in bricConfig["configFixup"]:
+                    fixupValue = fixup["value"]
+                    if fixupValue["type"] == "brix-topic" and fixupValue["bricType"] == "LineGraph":
+                        print("found (b) brix-topic for " + fixupValue["bricType"] + " " + fixupValue["instanceId"])
+                        fixupValue["bricType"] = "ProtoLineGraph"
+                        converted = True
+                    elif fixupValue["type"] == "brix-topic" and fixupValue["bricType"] == "BarChart":
+                        print("found (b) brix-topic for " + fixupValue["bricType"] + " " + fixupValue["instanceId"])
+                        fixupValue["bricType"] = "ProtoBarChart"
+                        converted = True
+
+        # mortarConfig is optional
+        if "mortarConfig" in containerConfig:
+            for mortarConfig in containerConfig["mortarConfig"]:
+                if "configFixup" in mortarConfig:
+                    for fixup in mortarConfig["configFixup"]:
+                        fixupValue = fixup["value"]
+                        if fixupValue["type"] == "brix-topic" and fixupValue["bricType"] == "LineGraph":
+                            print("found (m) brix-topic for " + fixupValue["bricType"] + " " + fixupValue["instanceId"])
+                            fixupValue["bricType"] = "ProtoLineGraph"
+                            converted = True
+                        elif fixupValue["type"] == "brix-topic" and fixupValue["bricType"] == "BarChart":
+                            print("found (m) brix-topic for " + fixupValue["bricType"] + " " + fixupValue["instanceId"])
+                            fixupValue["bricType"] = "ProtoBarChart"
+                            converted = True
 
     return converted
 
