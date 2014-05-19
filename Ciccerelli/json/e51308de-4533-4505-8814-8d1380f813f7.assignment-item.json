@@ -1,0 +1,182 @@
+{
+  "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope",
+  "@type": "Envelope",
+  "metadata": {
+    "bookTitle": "Psychology",
+    "keywords": [
+      "Ciccarelli 4e",
+      "Chapter 02"
+    ],
+    "extendedMetadata": [
+      {
+        "name": "ISBN",
+        "value": "0133794652"
+      },
+      {
+        "name": "M",
+        "value": "c01"
+      },
+      {
+        "name": "assessment_title",
+        "value": "Quiz: The Biological Perspective"
+      },
+      {
+        "name": "chapterTitle",
+        "value": "The Biological Perspective"
+      },
+      {
+        "name": "item_title",
+        "value": "0133794652_Saundra K. Ciccarelli; J. Noland White_ch02_c01_q0020"
+      },
+      {
+        "name": "questionlayout",
+        "value": "1"
+      },
+      {
+        "name": "LearningObjective",
+        "value": ""
+      },
+      {
+        "name": "CH",
+        "value": "2"
+      },
+      {
+        "name": "shuffle_choices",
+        "value": "Yes"
+      }
+    ],
+    "subject": [
+      "Psychology"
+    ],
+    "contentTypeTier2": [
+      "AssignmentItem"
+    ],
+    "contentTypeTier1": "Assessment",
+    "format": [
+      "application/vnd.pearson.sanvan.v1.activity"
+    ],
+    "version": "1.0",
+    "guid": "e51308de-4533-4505-8814-8d1380f813f7",
+    "bookAuthor": "Saundra K. Ciccarelli; J. Noland White",
+    "title": "Ch02 ChapterQuiz Q20",
+    "educationalAlignment": [
+      "http://purl.org/pearson/objectives/183725473384362"
+    ]
+  },
+  "body": {
+    "description": "Ch02_ChapterQuiz_Q20",
+    "containerConfig": [
+      {
+        "description": "Ch02_ChapterQuiz_Q20",
+        "containerId": "target1",
+        "brixConfig": [
+          {
+            "bricId": "q1",
+            "bricType": "MultipleChoiceQuestion",
+            "config": {
+              "id": "QUE56841",
+              "question": "Although the brain works largely as a whole, which of the following is not a correct pairing of hemisphere and function?\n\u003cbr /\u003e",
+              "order": "randomized",
+              "presenterType": "RadioGroup",
+              "presenterConfig": {
+                "numberFormat": "none"
+              },
+              "choices": [
+                {
+                  "answerKey": "answer_1",
+                  "content": "left; control of right-handed motor functions"
+                },
+                {
+                  "answerKey": "answer_2",
+                  "content": "right; control of right-handed motor functions"
+                },
+                {
+                  "answerKey": "answer_3",
+                  "content": "right; recognition of faces"
+                },
+                {
+                  "answerKey": "answer_4",
+                  "content": "left; reading"
+                }
+              ]
+            },
+            "answerKey": {
+              "assessmentType": "multiplechoice",
+              "answers": {
+                "answer_3": {
+                  "score": 0.0,
+                  "response": "Consider this: Have you ever heard the joke that, \"only left-handed people are in their right mind?\" Maybe that will help you find the \"right\" answer! L.O. 2.11: How does the left side of the brain differ from the right side?"
+                },
+                "answer_2": {
+                  "score": 1.0,
+                  "response": ""
+                },
+                "answer_1": {
+                  "score": 0.0,
+                  "response": "Consider this: Have you ever heard the joke that, \"only left-handed people are in their right mind?\" Maybe that will help you find the \"right\" answer! L.O. 2.11: How does the left side of the brain differ from the right side?"
+                },
+                "answer_4": {
+                  "score": 0.0,
+                  "response": "Consider this: Have you ever heard the joke that, \"only left-handed people are in their right mind?\" Maybe that will help you find the \"right\" answer! L.O. 2.11: How does the left side of the brain differ from the right side?"
+                }
+              }
+            },
+            "configFixup": [
+              {
+                "name": "questionId",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "sequenceNodeKey",
+                  "type": "ref"
+                }
+              },
+              {
+                "name": "maxAttempts",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "maxAttempts",
+                  "type": "ref"
+                }
+              }
+            ]
+          }
+        ],
+        "hookupActions": [
+          {
+            "description": "Hookup the submit manager to evaluate answers",
+            "methodName": "handleRequestsFrom",
+            "type": "method-call",
+            "args": [
+              {
+                "domain": "brix",
+                "refId": "q1",
+                "type": "ref"
+              }
+            ],
+            "instance": {
+              "type": "submit-manager"
+            }
+          },
+          {
+            "description": "Draw the question",
+            "methodName": "draw",
+            "type": "method-call",
+            "args": [
+              {
+                "selector": "#target1",
+                "type": "d3select"
+              }
+            ],
+            "instance": {
+              "domain": "brix",
+              "refId": "q1",
+              "type": "ref"
+            }
+          }
+        ]
+      }
+    ]
+  }
+}

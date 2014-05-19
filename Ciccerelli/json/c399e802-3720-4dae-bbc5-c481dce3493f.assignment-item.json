@@ -1,0 +1,183 @@
+{
+  "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope",
+  "@type": "Envelope",
+  "metadata": {
+    "bookTitle": "Psychology",
+    "keywords": [
+      "ciccarelli",
+      "4e",
+      "ch14"
+    ],
+    "extendedMetadata": [
+      {
+        "name": "ISBN",
+        "value": "0133794652"
+      },
+      {
+        "name": "M",
+        "value": "c01"
+      },
+      {
+        "name": "assessment_title",
+        "value": "Chapter Quiz: Psychological Disorders"
+      },
+      {
+        "name": "chapterTitle",
+        "value": "Psychological Disorders"
+      },
+      {
+        "name": "item_title",
+        "value": "0133794652_Saundra K. Ciccarelli; J. Noland White_ch14_c01_q0002"
+      },
+      {
+        "name": "questionlayout",
+        "value": "1"
+      },
+      {
+        "name": "LearningObjective",
+        "value": ""
+      },
+      {
+        "name": "CH",
+        "value": "14"
+      },
+      {
+        "name": "shuffle_choices",
+        "value": "Yes"
+      }
+    ],
+    "subject": [
+      "Psychology"
+    ],
+    "contentTypeTier2": [
+      "AssignmentItem"
+    ],
+    "contentTypeTier1": "Assessment",
+    "format": [
+      "application/vnd.pearson.sanvan.v1.activity"
+    ],
+    "version": "1.0",
+    "guid": "c399e802-3720-4dae-bbc5-c481dce3493f",
+    "bookAuthor": "Saundra K. Ciccarelli; J. Noland White",
+    "title": "Ch14 ChapterQuiz14 Q2",
+    "educationalAlignment": [
+      "http://purl.org/pearson/objectives/183725473384362"
+    ]
+  },
+  "body": {
+    "description": "Ch14_ChapterQuiz14_Q2",
+    "containerConfig": [
+      {
+        "description": "Ch14_ChapterQuiz14_Q2",
+        "containerId": "target1",
+        "brixConfig": [
+          {
+            "bricId": "q1",
+            "bricType": "MultipleChoiceQuestion",
+            "config": {
+              "id": "QUE57425",
+              "question": "In 1972, a jet carrying a rugby team from Peru crashed high in the snow-covered Andes Mountains. Many of the players survived for over 2 months by eating the remains of those who died. Psychologists justified their cannibalism because that was the only way they could have survived so long without food. By what definition might their behavior best be classified?\n\u003cbr /\u003e",
+              "order": "randomized",
+              "presenterType": "RadioGroup",
+              "presenterConfig": {
+                "numberFormat": "none"
+              },
+              "choices": [
+                {
+                  "answerKey": "answer_1",
+                  "content": "statistical"
+                },
+                {
+                  "answerKey": "answer_2",
+                  "content": "subjective discomfort"
+                },
+                {
+                  "answerKey": "answer_3",
+                  "content": "maladaptive"
+                },
+                {
+                  "answerKey": "answer_4",
+                  "content": "situational context"
+                }
+              ]
+            },
+            "answerKey": {
+              "assessmentType": "multiplechoice",
+              "answers": {
+                "answer_3": {
+                  "score": 0.0,
+                  "response": "Consider this: As the saying goes, \"everything is relative.\" L.O. 14.1: How has mental illness been explained in the past and how is abnormal behavior and thinking defined today?"
+                },
+                "answer_2": {
+                  "score": 0.0,
+                  "response": "Consider this: As the saying goes, \"everything is relative.\" L.O. 14.1: How has mental illness been explained in the past and how is abnormal behavior and thinking defined today?"
+                },
+                "answer_1": {
+                  "score": 0.0,
+                  "response": "Consider this: As the saying goes, \"everything is relative.\" L.O. 14.1: How has mental illness been explained in the past and how is abnormal behavior and thinking defined today?"
+                },
+                "answer_4": {
+                  "score": 1.0,
+                  "response": ""
+                }
+              }
+            },
+            "configFixup": [
+              {
+                "name": "questionId",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "sequenceNodeKey",
+                  "type": "ref"
+                }
+              },
+              {
+                "name": "maxAttempts",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "maxAttempts",
+                  "type": "ref"
+                }
+              }
+            ]
+          }
+        ],
+        "hookupActions": [
+          {
+            "description": "Hookup the submit manager to evaluate answers",
+            "methodName": "handleRequestsFrom",
+            "type": "method-call",
+            "args": [
+              {
+                "domain": "brix",
+                "refId": "q1",
+                "type": "ref"
+              }
+            ],
+            "instance": {
+              "type": "submit-manager"
+            }
+          },
+          {
+            "description": "Draw the question",
+            "methodName": "draw",
+            "type": "method-call",
+            "args": [
+              {
+                "selector": "#target1",
+                "type": "d3select"
+              }
+            ],
+            "instance": {
+              "domain": "brix",
+              "refId": "q1",
+              "type": "ref"
+            }
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,182 @@
+{
+  "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope",
+  "@type": "Envelope",
+  "metadata": {
+    "bookTitle": "Psychology",
+    "keywords": [
+      "Ciccarelli 4e",
+      "Chapter 04"
+    ],
+    "extendedMetadata": [
+      {
+        "name": "ISBN",
+        "value": "0133794652"
+      },
+      {
+        "name": "M",
+        "value": "c01"
+      },
+      {
+        "name": "assessment_title",
+        "value": "Chapter Quiz: Consciousness"
+      },
+      {
+        "name": "chapterTitle",
+        "value": "Consciousness"
+      },
+      {
+        "name": "item_title",
+        "value": "0133794652_Saundra K. Ciccarelli; J. Noland White_ch04_c01_q0007"
+      },
+      {
+        "name": "questionlayout",
+        "value": "1"
+      },
+      {
+        "name": "LearningObjective",
+        "value": ""
+      },
+      {
+        "name": "CH",
+        "value": "4"
+      },
+      {
+        "name": "shuffle_choices",
+        "value": "Yes"
+      }
+    ],
+    "subject": [
+      "Psychology"
+    ],
+    "contentTypeTier2": [
+      "AssignmentItem"
+    ],
+    "contentTypeTier1": "Assessment",
+    "format": [
+      "application/vnd.pearson.sanvan.v1.activity"
+    ],
+    "version": "1.0",
+    "guid": "12bb599f-bb60-47e6-abba-f07fd5ca1099",
+    "bookAuthor": "Saundra K. Ciccarelli; J. Noland White",
+    "title": "Ch04 ChapterQuiz4 Q7",
+    "educationalAlignment": [
+      "http://purl.org/pearson/objectives/183725473384362"
+    ]
+  },
+  "body": {
+    "description": "Ch04_ChapterQuiz4_Q7",
+    "containerConfig": [
+      {
+        "description": "Ch04_ChapterQuiz4_Q7",
+        "containerId": "target1",
+        "brixConfig": [
+          {
+            "bricId": "q1",
+            "bricType": "MultipleChoiceQuestion",
+            "config": {
+              "id": "QUE56937",
+              "question": "Studies have found that certain chemicals that help repair damaged cells only function while we sleep. What theory best explains this?\n\u003cbr /\u003e",
+              "order": "randomized",
+              "presenterType": "RadioGroup",
+              "presenterConfig": {
+                "numberFormat": "none"
+              },
+              "choices": [
+                {
+                  "answerKey": "answer_1",
+                  "content": "circadian rhythm of sleep"
+                },
+                {
+                  "answerKey": "answer_2",
+                  "content": "adaptive theory of sleep"
+                },
+                {
+                  "answerKey": "answer_3",
+                  "content": "restorative theory of sleep"
+                },
+                {
+                  "answerKey": "answer_4",
+                  "content": "sleep deprivation theory"
+                }
+              ]
+            },
+            "answerKey": {
+              "assessmentType": "multiplechoice",
+              "answers": {
+                "answer_3": {
+                  "score": 1.0,
+                  "response": ""
+                },
+                "answer_2": {
+                  "score": 0.0,
+                  "response": "Consider this: If you get a really good night of sleep, don\u0027t you feel sort of \"recharged\" when you wake up in the morning? L.O. 4.2: Why do people need to sleep, and how does sleep work?"
+                },
+                "answer_1": {
+                  "score": 0.0,
+                  "response": "Consider this: If you get a really good night of sleep, don\u0027t you feel sort of \"recharged\" when you wake up in the morning? L.O. 4.2: Why do people need to sleep, and how does sleep work?"
+                },
+                "answer_4": {
+                  "score": 0.0,
+                  "response": "Consider this: If you get a really good night of sleep, don\u0027t you feel sort of \"recharged\" when you wake up in the morning? L.O. 4.2: Why do people need to sleep, and how does sleep work?"
+                }
+              }
+            },
+            "configFixup": [
+              {
+                "name": "questionId",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "sequenceNodeKey",
+                  "type": "ref"
+                }
+              },
+              {
+                "name": "maxAttempts",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "maxAttempts",
+                  "type": "ref"
+                }
+              }
+            ]
+          }
+        ],
+        "hookupActions": [
+          {
+            "description": "Hookup the submit manager to evaluate answers",
+            "methodName": "handleRequestsFrom",
+            "type": "method-call",
+            "args": [
+              {
+                "domain": "brix",
+                "refId": "q1",
+                "type": "ref"
+              }
+            ],
+            "instance": {
+              "type": "submit-manager"
+            }
+          },
+          {
+            "description": "Draw the question",
+            "methodName": "draw",
+            "type": "method-call",
+            "args": [
+              {
+                "selector": "#target1",
+                "type": "d3select"
+              }
+            ],
+            "instance": {
+              "domain": "brix",
+              "refId": "q1",
+              "type": "ref"
+            }
+          }
+        ]
+      }
+    ]
+  }
+}

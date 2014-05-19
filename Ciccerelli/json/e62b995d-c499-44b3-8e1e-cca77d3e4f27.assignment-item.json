@@ -1,0 +1,183 @@
+{
+  "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope",
+  "@type": "Envelope",
+  "metadata": {
+    "bookTitle": "Psychology",
+    "keywords": [
+      "ciccarelli",
+      "4e",
+      "ch12"
+    ],
+    "extendedMetadata": [
+      {
+        "name": "ISBN",
+        "value": "0133794652"
+      },
+      {
+        "name": "M",
+        "value": "c01"
+      },
+      {
+        "name": "assessment_title",
+        "value": "Chapter Quiz: Social Psychology"
+      },
+      {
+        "name": "chapterTitle",
+        "value": "Social Psychology"
+      },
+      {
+        "name": "item_title",
+        "value": "0133794652_Saundra K. Ciccarelli; J. Noland White_ch12_c01_q0018"
+      },
+      {
+        "name": "questionlayout",
+        "value": "1"
+      },
+      {
+        "name": "LearningObjective",
+        "value": ""
+      },
+      {
+        "name": "CH",
+        "value": "12"
+      },
+      {
+        "name": "shuffle_choices",
+        "value": "Yes"
+      }
+    ],
+    "subject": [
+      "Psychology"
+    ],
+    "contentTypeTier2": [
+      "AssignmentItem"
+    ],
+    "contentTypeTier1": "Assessment",
+    "format": [
+      "application/vnd.pearson.sanvan.v1.activity"
+    ],
+    "version": "1.0",
+    "guid": "e62b995d-c499-44b3-8e1e-cca77d3e4f27",
+    "bookAuthor": "Saundra K. Ciccarelli; J. Noland White",
+    "title": "Ch12 ChapterQuiz12 Q18",
+    "educationalAlignment": [
+      "http://purl.org/pearson/objectives/183725473384362"
+    ]
+  },
+  "body": {
+    "description": "Ch12_ChapterQuiz12_Q18",
+    "containerConfig": [
+      {
+        "description": "Ch12_ChapterQuiz12_Q18",
+        "containerId": "target1",
+        "brixConfig": [
+          {
+            "bricId": "q1",
+            "bricType": "MultipleChoiceQuestion",
+            "config": {
+              "id": "QUE57324",
+              "question": "To which two processes do most social psychologists attribute the failure of those around LaShanda Calloway to help her?\n\u003cbr /\u003e",
+              "order": "randomized",
+              "presenterType": "RadioGroup",
+              "presenterConfig": {
+                "numberFormat": "none"
+              },
+              "choices": [
+                {
+                  "answerKey": "answer_1",
+                  "content": "bystander effect and altruism"
+                },
+                {
+                  "answerKey": "answer_2",
+                  "content": "aggression and diffusion of responsibility"
+                },
+                {
+                  "answerKey": "answer_3",
+                  "content": "altruism and diffusion of responsibility"
+                },
+                {
+                  "answerKey": "answer_4",
+                  "content": "bystander effect and diffusion of responsibility"
+                }
+              ]
+            },
+            "answerKey": {
+              "assessmentType": "multiplechoice",
+              "answers": {
+                "answer_3": {
+                  "score": 0.0,
+                  "response": "Consider this: The case of Calloway mirrored the effect(s) in place in the case of Kitty Genovese. L.O. 12.12: What is altruism, and how is deciding to help someone related to the presence of others?"
+                },
+                "answer_2": {
+                  "score": 0.0,
+                  "response": "Consider this: The case of Calloway mirrored the effect(s) in place in the case of Kitty Genovese. L.O. 12.12: What is altruism, and how is deciding to help someone related to the presence of others?"
+                },
+                "answer_1": {
+                  "score": 0.0,
+                  "response": "Consider this: The case of Calloway mirrored the effect(s) in place in the case of Kitty Genovese. L.O. 12.12: What is altruism, and how is deciding to help someone related to the presence of others?"
+                },
+                "answer_4": {
+                  "score": 1.0,
+                  "response": ""
+                }
+              }
+            },
+            "configFixup": [
+              {
+                "name": "questionId",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "sequenceNodeKey",
+                  "type": "ref"
+                }
+              },
+              {
+                "name": "maxAttempts",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "maxAttempts",
+                  "type": "ref"
+                }
+              }
+            ]
+          }
+        ],
+        "hookupActions": [
+          {
+            "description": "Hookup the submit manager to evaluate answers",
+            "methodName": "handleRequestsFrom",
+            "type": "method-call",
+            "args": [
+              {
+                "domain": "brix",
+                "refId": "q1",
+                "type": "ref"
+              }
+            ],
+            "instance": {
+              "type": "submit-manager"
+            }
+          },
+          {
+            "description": "Draw the question",
+            "methodName": "draw",
+            "type": "method-call",
+            "args": [
+              {
+                "selector": "#target1",
+                "type": "d3select"
+              }
+            ],
+            "instance": {
+              "domain": "brix",
+              "refId": "q1",
+              "type": "ref"
+            }
+          }
+        ]
+      }
+    ]
+  }
+}

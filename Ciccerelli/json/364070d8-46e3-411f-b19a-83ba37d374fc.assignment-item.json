@@ -1,0 +1,178 @@
+{
+  "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope",
+  "@type": "Envelope",
+  "metadata": {
+    "guid": "364070d8-46e3-411f-b19a-83ba37d374fc",
+    "bookAuthor": "Saundra K. Ciccarelli; J. Noland White",
+    "bookTitle": "Psychology",
+    "title": "Ch06 ChapterQuiz Q16",
+    "extendedMetadata": [
+      {
+        "name": "ISBN",
+        "value": "0133794652"
+      },
+      {
+        "name": "M",
+        "value": "c01"
+      },
+      {
+        "name": "assessment_title",
+        "value": "Quiz: Memory"
+      },
+      {
+        "name": "chapterTitle",
+        "value": "Memory"
+      },
+      {
+        "name": "item_title",
+        "value": "0133794652_Saundra K. Ciccarelli; J. Noland White_ch06_c01_q0016"
+      },
+      {
+        "name": "questionlayout",
+        "value": "1"
+      },
+      {
+        "name": "LearningObjective",
+        "value": ""
+      },
+      {
+        "name": "CH",
+        "value": "6"
+      },
+      {
+        "name": "shuffle_choices",
+        "value": "Yes"
+      }
+    ],
+    "subject": [
+      "Psychology"
+    ],
+    "contentTypeTier2": [
+      "AssignmentItem"
+    ],
+    "contentTypeTier1": "Assessment",
+    "format": [
+      "application/vnd.pearson.sanvan.v1.activity"
+    ],
+    "educationalAlignment": [
+      "http://purl.org/pearson/objectives/183725473384362"
+    ],
+    "version": "1.0"
+  },
+  "body": {
+    "description": "Ch06_ChapterQuiz_Q16",
+    "containerConfig": [
+      {
+        "description": "Ch06_ChapterQuiz_Q16",
+        "containerId": "target1",
+        "brixConfig": [
+          {
+            "bricId": "q1",
+            "bricType": "MultipleChoiceQuestion",
+            "config": {
+              "id": "QUE57036",
+              "question": "The ability to remember where you were and what you were doing when the United States was attacked on September 11, 2001, is an example of\n\u003cbr /\u003e",
+              "order": "randomized",
+              "presenterType": "RadioGroup",
+              "presenterConfig": {
+                "numberFormat": "none"
+              },
+              "choices": [
+                {
+                  "answerKey": "answer_1",
+                  "content": "eyewitness testimony."
+                },
+                {
+                  "answerKey": "answer_2",
+                  "content": "encoding specificity hypothesis."
+                },
+                {
+                  "answerKey": "answer_3",
+                  "content": "false-memory syndrome."
+                },
+                {
+                  "answerKey": "answer_4",
+                  "content": "flashbulb memory."
+                }
+              ]
+            },
+            "answerKey": {
+              "assessmentType": "multiplechoice",
+              "answers": {
+                "answer_3": {
+                  "score": 0.0,
+                  "response": "Consider this: Think of an old-fashioned camera. No, not the digital kind… the type that actually used film. L.O. 6.7: How do the retrieval processes of recall and recognition differ, and how reliable are our memories of events?"
+                },
+                "answer_2": {
+                  "score": 0.0,
+                  "response": "Consider this: Think of an old-fashioned camera. No, not the digital kind… the type that actually used film. L.O. 6.7: How do the retrieval processes of recall and recognition differ, and how reliable are our memories of events?"
+                },
+                "answer_1": {
+                  "score": 0.0,
+                  "response": "Consider this: Think of an old-fashioned camera. No, not the digital kind… the type that actually used film. L.O. 6.7: How do the retrieval processes of recall and recognition differ, and how reliable are our memories of events?"
+                },
+                "answer_4": {
+                  "score": 1.0,
+                  "response": ""
+                }
+              }
+            },
+            "configFixup": [
+              {
+                "name": "questionId",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "sequenceNodeKey",
+                  "type": "ref"
+                }
+              },
+              {
+                "name": "maxAttempts",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "maxAttempts",
+                  "type": "ref"
+                }
+              }
+            ]
+          }
+        ],
+        "hookupActions": [
+          {
+            "description": "Hookup the submit manager to evaluate answers",
+            "methodName": "handleRequestsFrom",
+            "type": "method-call",
+            "args": [
+              {
+                "domain": "brix",
+                "refId": "q1",
+                "type": "ref"
+              }
+            ],
+            "instance": {
+              "type": "submit-manager"
+            }
+          },
+          {
+            "description": "Draw the question",
+            "methodName": "draw",
+            "type": "method-call",
+            "args": [
+              {
+                "selector": "#target1",
+                "type": "d3select"
+              }
+            ],
+            "instance": {
+              "domain": "brix",
+              "refId": "q1",
+              "type": "ref"
+            }
+          }
+        ]
+      }
+    ]
+  }
+}

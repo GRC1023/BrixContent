@@ -1,0 +1,178 @@
+{
+  "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope",
+  "@type": "Envelope",
+  "metadata": {
+    "guid": "7cfd690c-6d25-4772-b254-ce61dacbff1d",
+    "bookAuthor": "Saundra K. Ciccarelli; J. Noland White",
+    "bookTitle": "Psychology",
+    "title": "Ch09 ChapterQuiz9 Q13",
+    "extendedMetadata": [
+      {
+        "name": "ISBN",
+        "value": "0133794652"
+      },
+      {
+        "name": "M",
+        "value": "c01"
+      },
+      {
+        "name": "assessment_title",
+        "value": "Chapter Quiz: Motivation and Emotion"
+      },
+      {
+        "name": "chapterTitle",
+        "value": "Motivation and Emotion"
+      },
+      {
+        "name": "item_title",
+        "value": "0133794652_Saundra K. Ciccarelli; J. Noland White_ch09_c01_q0013"
+      },
+      {
+        "name": "questionlayout",
+        "value": "1"
+      },
+      {
+        "name": "LearningObjective",
+        "value": ""
+      },
+      {
+        "name": "CH",
+        "value": "9"
+      },
+      {
+        "name": "shuffle_choices",
+        "value": "Yes"
+      }
+    ],
+    "subject": [
+      "Psychology"
+    ],
+    "contentTypeTier2": [
+      "AssignmentItem"
+    ],
+    "contentTypeTier1": "Assessment",
+    "format": [
+      "application/vnd.pearson.sanvan.v1.activity"
+    ],
+    "educationalAlignment": [
+      "http://purl.org/pearson/objectives/183725473384362"
+    ],
+    "version": "1.0"
+  },
+  "body": {
+    "description": "Ch09_ChapterQuiz9_Q13",
+    "containerConfig": [
+      {
+        "description": "Ch09_ChapterQuiz9_Q13",
+        "containerId": "target1",
+        "brixConfig": [
+          {
+            "bricId": "q1",
+            "bricType": "MultipleChoiceQuestion",
+            "config": {
+              "id": "QUE57135",
+              "question": "Studies indicate that women from __________________ are more likely to eat because their body tells them they are hungry.\n\u003cbr /\u003e",
+              "order": "randomized",
+              "presenterType": "RadioGroup",
+              "presenterConfig": {
+                "numberFormat": "none"
+              },
+              "choices": [
+                {
+                  "answerKey": "answer_1",
+                  "content": "Hungary"
+                },
+                {
+                  "answerKey": "answer_2",
+                  "content": "the United States"
+                },
+                {
+                  "answerKey": "answer_3",
+                  "content": "Italy"
+                },
+                {
+                  "answerKey": "answer_4",
+                  "content": "Japan"
+                }
+              ]
+            },
+            "answerKey": {
+              "assessmentType": "multiplechoice",
+              "answers": {
+                "answer_3": {
+                  "score": 0.0,
+                  "response": "Consider this: In which society would you expect there to be the least amount of social influence over what someone eats so that eating behavior is driven more by hunger-related cues? L.O. 9.5: What happens in the body to cause hunger, and how do social factors influence a person’s experience of hunger?"
+                },
+                "answer_2": {
+                  "score": 0.0,
+                  "response": "Consider this: In which society would you expect there to be the least amount of social influence over what someone eats so that eating behavior is driven more by hunger-related cues? L.O. 9.5: What happens in the body to cause hunger, and how do social factors influence a person’s experience of hunger?"
+                },
+                "answer_1": {
+                  "score": 0.0,
+                  "response": "Consider this: In which society would you expect there to be the least amount of social influence over what someone eats so that eating behavior is driven more by hunger-related cues? L.O. 9.5: What happens in the body to cause hunger, and how do social factors influence a person’s experience of hunger?"
+                },
+                "answer_4": {
+                  "score": 1.0,
+                  "response": ""
+                }
+              }
+            },
+            "configFixup": [
+              {
+                "name": "questionId",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "sequenceNodeKey",
+                  "type": "ref"
+                }
+              },
+              {
+                "name": "maxAttempts",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "maxAttempts",
+                  "type": "ref"
+                }
+              }
+            ]
+          }
+        ],
+        "hookupActions": [
+          {
+            "description": "Hookup the submit manager to evaluate answers",
+            "methodName": "handleRequestsFrom",
+            "type": "method-call",
+            "args": [
+              {
+                "domain": "brix",
+                "refId": "q1",
+                "type": "ref"
+              }
+            ],
+            "instance": {
+              "type": "submit-manager"
+            }
+          },
+          {
+            "description": "Draw the question",
+            "methodName": "draw",
+            "type": "method-call",
+            "args": [
+              {
+                "selector": "#target1",
+                "type": "d3select"
+              }
+            ],
+            "instance": {
+              "domain": "brix",
+              "refId": "q1",
+              "type": "ref"
+            }
+          }
+        ]
+      }
+    ]
+  }
+}

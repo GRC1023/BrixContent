@@ -1,0 +1,183 @@
+{
+  "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope",
+  "@type": "Envelope",
+  "metadata": {
+    "bookTitle": "Psychology",
+    "keywords": [
+      "ciccarelli",
+      "4e",
+      "ch14"
+    ],
+    "extendedMetadata": [
+      {
+        "name": "ISBN",
+        "value": "0133794652"
+      },
+      {
+        "name": "M",
+        "value": "c01"
+      },
+      {
+        "name": "assessment_title",
+        "value": "Chapter Quiz: Psychological Disorders"
+      },
+      {
+        "name": "chapterTitle",
+        "value": "Psychological Disorders"
+      },
+      {
+        "name": "item_title",
+        "value": "0133794652_Saundra K. Ciccarelli; J. Noland White_ch14_c01_q0020"
+      },
+      {
+        "name": "questionlayout",
+        "value": "1"
+      },
+      {
+        "name": "LearningObjective",
+        "value": ""
+      },
+      {
+        "name": "CH",
+        "value": "14"
+      },
+      {
+        "name": "shuffle_choices",
+        "value": "Yes"
+      }
+    ],
+    "subject": [
+      "Psychology"
+    ],
+    "contentTypeTier2": [
+      "AssignmentItem"
+    ],
+    "contentTypeTier1": "Assessment",
+    "format": [
+      "application/vnd.pearson.sanvan.v1.activity"
+    ],
+    "version": "1.0",
+    "guid": "98f73eaa-bf58-4644-9222-5b02d5f28de9",
+    "bookAuthor": "Saundra K. Ciccarelli; J. Noland White",
+    "title": "Ch14 ChapterQuiz14 Q20",
+    "educationalAlignment": [
+      "http://purl.org/pearson/objectives/183725473384362"
+    ]
+  },
+  "body": {
+    "description": "Ch14_ChapterQuiz14_Q20",
+    "containerConfig": [
+      {
+        "description": "Ch14_ChapterQuiz14_Q20",
+        "containerId": "target1",
+        "brixConfig": [
+          {
+            "bricId": "q1",
+            "bricType": "MultipleChoiceQuestion",
+            "config": {
+              "id": "QUE57443",
+              "question": "Colleen found herself attracted to her psychology instructor. She would frequently go by his office just to be near him. When he didn’t respond to her advances, Colleen eventually told him that she had thoughts of killing herself so that he would spend time trying to counsel her. What personality disorder best describes Colleen’s thinking and behavior?\n\u003cbr /\u003e",
+              "order": "randomized",
+              "presenterType": "RadioGroup",
+              "presenterConfig": {
+                "numberFormat": "none"
+              },
+              "choices": [
+                {
+                  "answerKey": "answer_1",
+                  "content": "borderline personality disorder"
+                },
+                {
+                  "answerKey": "answer_2",
+                  "content": "schizoid personality disorder"
+                },
+                {
+                  "answerKey": "answer_3",
+                  "content": "schizotypal personality disorder"
+                },
+                {
+                  "answerKey": "answer_4",
+                  "content": "antisocial personality disorder"
+                }
+              ]
+            },
+            "answerKey": {
+              "assessmentType": "multiplechoice",
+              "answers": {
+                "answer_3": {
+                  "score": 0.0,
+                  "response": "Consider this: Extremely intense and unstable relationships with others are usually a hallmark of this particular personality disorder. L.O. 14.9: How do various personality disorders differ, and what is thought to be the cause of personality disorders?"
+                },
+                "answer_2": {
+                  "score": 0.0,
+                  "response": "Consider this: Extremely intense and unstable relationships with others are usually a hallmark of this particular personality disorder. L.O. 14.9: How do various personality disorders differ, and what is thought to be the cause of personality disorders?"
+                },
+                "answer_1": {
+                  "score": 1.0,
+                  "response": ""
+                },
+                "answer_4": {
+                  "score": 0.0,
+                  "response": "Consider this: Extremely intense and unstable relationships with others are usually a hallmark of this particular personality disorder. L.O. 14.9: How do various personality disorders differ, and what is thought to be the cause of personality disorders?"
+                }
+              }
+            },
+            "configFixup": [
+              {
+                "name": "questionId",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "sequenceNodeKey",
+                  "type": "ref"
+                }
+              },
+              {
+                "name": "maxAttempts",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "maxAttempts",
+                  "type": "ref"
+                }
+              }
+            ]
+          }
+        ],
+        "hookupActions": [
+          {
+            "description": "Hookup the submit manager to evaluate answers",
+            "methodName": "handleRequestsFrom",
+            "type": "method-call",
+            "args": [
+              {
+                "domain": "brix",
+                "refId": "q1",
+                "type": "ref"
+              }
+            ],
+            "instance": {
+              "type": "submit-manager"
+            }
+          },
+          {
+            "description": "Draw the question",
+            "methodName": "draw",
+            "type": "method-call",
+            "args": [
+              {
+                "selector": "#target1",
+                "type": "d3select"
+              }
+            ],
+            "instance": {
+              "domain": "brix",
+              "refId": "q1",
+              "type": "ref"
+            }
+          }
+        ]
+      }
+    ]
+  }
+}

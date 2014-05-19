@@ -1,0 +1,183 @@
+{
+  "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope",
+  "@type": "Envelope",
+  "metadata": {
+    "bookTitle": "Psychology",
+    "keywords": [
+      "Ciccarelli 4e",
+      "Chapter 01",
+      "alick"
+    ],
+    "extendedMetadata": [
+      {
+        "name": "ISBN",
+        "value": "0133794652"
+      },
+      {
+        "name": "M",
+        "value": "c01"
+      },
+      {
+        "name": "assessment_title",
+        "value": "Quiz: The Science of Psychology"
+      },
+      {
+        "name": "chapterTitle",
+        "value": "The Science of Psychology"
+      },
+      {
+        "name": "item_title",
+        "value": "0133794652_Saundra K. Ciccarelli; J. Noland White_ch01_c01_q0005"
+      },
+      {
+        "name": "questionlayout",
+        "value": "1"
+      },
+      {
+        "name": "LearningObjective",
+        "value": ""
+      },
+      {
+        "name": "CH",
+        "value": "1"
+      },
+      {
+        "name": "shuffle_choices",
+        "value": "Yes"
+      }
+    ],
+    "subject": [
+      "Psychology"
+    ],
+    "contentTypeTier2": [
+      "AssignmentItem"
+    ],
+    "contentTypeTier1": "Assessment",
+    "format": [
+      "application/vnd.pearson.sanvan.v1.activity"
+    ],
+    "version": "1.0",
+    "guid": "fcf79cac-94fc-46d0-b9e8-f6de7833937a",
+    "bookAuthor": "Saundra K. Ciccarelli; J. Noland White",
+    "title": "Ch01 ChapterQuiz1 Q5",
+    "educationalAlignment": [
+      "http://purl.org/pearson/objectives/183725473384362"
+    ]
+  },
+  "body": {
+    "description": "Ch01_ChapterQuiz1_Q5",
+    "containerConfig": [
+      {
+        "description": "Ch01_ChapterQuiz1_Q5",
+        "containerId": "target1",
+        "brixConfig": [
+          {
+            "bricId": "q1",
+            "bricType": "MultipleChoiceQuestion",
+            "config": {
+              "id": "QUE56783",
+              "question": "Which psychologist dared to ignore the whole consciousness issue and return to a study of scientific inquiry by focusing on observable behavior?\n\u003cbr /\u003e",
+              "order": "randomized",
+              "presenterType": "RadioGroup",
+              "presenterConfig": {
+                "numberFormat": "none"
+              },
+              "choices": [
+                {
+                  "answerKey": "answer_1",
+                  "content": "Ivan Pavlov"
+                },
+                {
+                  "answerKey": "answer_2",
+                  "content": "John Watson"
+                },
+                {
+                  "answerKey": "answer_3",
+                  "content": "Sigmund Freud"
+                },
+                {
+                  "answerKey": "answer_4",
+                  "content": "William James"
+                }
+              ]
+            },
+            "answerKey": {
+              "assessmentType": "multiplechoice",
+              "answers": {
+                "answer_3": {
+                  "score": 0.0,
+                  "response": "Consider this: This person conditioned \"Little Albert\" to fear a white rat to show that phobias are learned through the process of conditioning. L.O. 1.3: What were the basic ideas and who were the important people behind the approaches known as Gestalt, psychoanalysis, and behaviorism?"
+                },
+                "answer_2": {
+                  "score": 1.0,
+                  "response": ""
+                },
+                "answer_1": {
+                  "score": 0.0,
+                  "response": "Consider this: This person conditioned \"Little Albert\" to fear a white rat to show that phobias are learned through the process of conditioning. L.O. 1.3: What were the basic ideas and who were the important people behind the approaches known as Gestalt, psychoanalysis, and behaviorism?"
+                },
+                "answer_4": {
+                  "score": 0.0,
+                  "response": "Consider this: This person conditioned \"Little Albert\" to fear a white rat to show that phobias are learned through the process of conditioning. L.O. 1.3: What were the basic ideas and who were the important people behind the approaches known as Gestalt, psychoanalysis, and behaviorism?"
+                }
+              }
+            },
+            "configFixup": [
+              {
+                "name": "questionId",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "sequenceNodeKey",
+                  "type": "ref"
+                }
+              },
+              {
+                "name": "maxAttempts",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "maxAttempts",
+                  "type": "ref"
+                }
+              }
+            ]
+          }
+        ],
+        "hookupActions": [
+          {
+            "description": "Hookup the submit manager to evaluate answers",
+            "methodName": "handleRequestsFrom",
+            "type": "method-call",
+            "args": [
+              {
+                "domain": "brix",
+                "refId": "q1",
+                "type": "ref"
+              }
+            ],
+            "instance": {
+              "type": "submit-manager"
+            }
+          },
+          {
+            "description": "Draw the question",
+            "methodName": "draw",
+            "type": "method-call",
+            "args": [
+              {
+                "selector": "#target1",
+                "type": "d3select"
+              }
+            ],
+            "instance": {
+              "domain": "brix",
+              "refId": "q1",
+              "type": "ref"
+            }
+          }
+        ]
+      }
+    ]
+  }
+}

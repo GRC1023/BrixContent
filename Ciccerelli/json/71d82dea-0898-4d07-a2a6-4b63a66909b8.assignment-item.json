@@ -1,0 +1,183 @@
+{
+  "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope",
+  "@type": "Envelope",
+  "metadata": {
+    "bookTitle": "Psychology",
+    "keywords": [
+      "ciccarelli",
+      "4e",
+      "ch13"
+    ],
+    "extendedMetadata": [
+      {
+        "name": "ISBN",
+        "value": "0133794652"
+      },
+      {
+        "name": "M",
+        "value": "c01"
+      },
+      {
+        "name": "assessment_title",
+        "value": "Chapter Quiz: Theories of Personality"
+      },
+      {
+        "name": "chapterTitle",
+        "value": "Theories of Personality"
+      },
+      {
+        "name": "item_title",
+        "value": "0133794652_Saundra K. Ciccarelli; J. Noland White_ch13_c01_q0020"
+      },
+      {
+        "name": "questionlayout",
+        "value": "1"
+      },
+      {
+        "name": "LearningObjective",
+        "value": ""
+      },
+      {
+        "name": "CH",
+        "value": "13"
+      },
+      {
+        "name": "shuffle_choices",
+        "value": "Yes"
+      }
+    ],
+    "subject": [
+      "Psychology"
+    ],
+    "contentTypeTier2": [
+      "AssignmentItem"
+    ],
+    "contentTypeTier1": "Assessment",
+    "format": [
+      "application/vnd.pearson.sanvan.v1.activity"
+    ],
+    "version": "1.0",
+    "guid": "71d82dea-0898-4d07-a2a6-4b63a66909b8",
+    "bookAuthor": "Saundra K. Ciccarelli; J. Noland White",
+    "title": "Ch13 ChapterQuiz13 Q20",
+    "educationalAlignment": [
+      "http://purl.org/pearson/objectives/183725473384362"
+    ]
+  },
+  "body": {
+    "description": "Ch13_ChapterQuiz13_Q20",
+    "containerConfig": [
+      {
+        "description": "Ch13_ChapterQuiz13_Q20",
+        "containerId": "target1",
+        "brixConfig": [
+          {
+            "bricId": "q1",
+            "bricType": "MultipleChoiceQuestion",
+            "config": {
+              "id": "QUE57423",
+              "question": "Personality neuroscience is an emerging field offering evidence of a possible relationship between various aspects of personality with\n\u003cbr /\u003e",
+              "order": "randomized",
+              "presenterType": "RadioGroup",
+              "presenterConfig": {
+                "numberFormat": "none"
+              },
+              "choices": [
+                {
+                  "answerKey": "answer_1",
+                  "content": "brain structure and function."
+                },
+                {
+                  "answerKey": "answer_2",
+                  "content": "the structure and function of individual neurons."
+                },
+                {
+                  "answerKey": "answer_3",
+                  "content": "skull shape and size."
+                },
+                {
+                  "answerKey": "answer_4",
+                  "content": "neuroticism."
+                }
+              ]
+            },
+            "answerKey": {
+              "assessmentType": "multiplechoice",
+              "answers": {
+                "answer_3": {
+                  "score": 0.0,
+                  "response": "Consider this: Do you think it is important to understand why adults are less impulsive and less emotional than children? This approach to personality study would provide some answers to these questions. L.O. 13.9: What are some biological bases of the Big Five theory of personality?"
+                },
+                "answer_2": {
+                  "score": 0.0,
+                  "response": "Consider this: Do you think it is important to understand why adults are less impulsive and less emotional than children? This approach to personality study would provide some answers to these questions. L.O. 13.9: What are some biological bases of the Big Five theory of personality?"
+                },
+                "answer_1": {
+                  "score": 1.0,
+                  "response": ""
+                },
+                "answer_4": {
+                  "score": 0.0,
+                  "response": "Consider this: Do you think it is important to understand why adults are less impulsive and less emotional than children? This approach to personality study would provide some answers to these questions. L.O. 13.9: What are some biological bases of the Big Five theory of personality?"
+                }
+              }
+            },
+            "configFixup": [
+              {
+                "name": "questionId",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "sequenceNodeKey",
+                  "type": "ref"
+                }
+              },
+              {
+                "name": "maxAttempts",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "maxAttempts",
+                  "type": "ref"
+                }
+              }
+            ]
+          }
+        ],
+        "hookupActions": [
+          {
+            "description": "Hookup the submit manager to evaluate answers",
+            "methodName": "handleRequestsFrom",
+            "type": "method-call",
+            "args": [
+              {
+                "domain": "brix",
+                "refId": "q1",
+                "type": "ref"
+              }
+            ],
+            "instance": {
+              "type": "submit-manager"
+            }
+          },
+          {
+            "description": "Draw the question",
+            "methodName": "draw",
+            "type": "method-call",
+            "args": [
+              {
+                "selector": "#target1",
+                "type": "d3select"
+              }
+            ],
+            "instance": {
+              "domain": "brix",
+              "refId": "q1",
+              "type": "ref"
+            }
+          }
+        ]
+      }
+    ]
+  }
+}

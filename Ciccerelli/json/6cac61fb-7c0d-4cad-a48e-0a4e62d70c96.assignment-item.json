@@ -1,0 +1,178 @@
+{
+  "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope",
+  "@type": "Envelope",
+  "metadata": {
+    "guid": "6cac61fb-7c0d-4cad-a48e-0a4e62d70c96",
+    "bookAuthor": "Saundra K. Ciccarelli; J. Noland White",
+    "bookTitle": "Psychology",
+    "title": "Ch07 ChapterQuiz7 Q7",
+    "extendedMetadata": [
+      {
+        "name": "ISBN",
+        "value": "0133794652"
+      },
+      {
+        "name": "M",
+        "value": "c01"
+      },
+      {
+        "name": "assessment_title",
+        "value": "Chapter Quiz: Cognition: Thinking, Intelligence, and Language"
+      },
+      {
+        "name": "chapterTitle",
+        "value": "Cognition: Thinking, Intelligence, and Language"
+      },
+      {
+        "name": "item_title",
+        "value": "0133794652_Saundra K. Ciccarelli; J. Noland White_ch07_c01_q0007"
+      },
+      {
+        "name": "questionlayout",
+        "value": "1"
+      },
+      {
+        "name": "LearningObjective",
+        "value": ""
+      },
+      {
+        "name": "CH",
+        "value": "7"
+      },
+      {
+        "name": "shuffle_choices",
+        "value": "Yes"
+      }
+    ],
+    "subject": [
+      "Psychology"
+    ],
+    "contentTypeTier2": [
+      "AssignmentItem"
+    ],
+    "contentTypeTier1": "Assessment",
+    "format": [
+      "application/vnd.pearson.sanvan.v1.activity"
+    ],
+    "educationalAlignment": [
+      "http://purl.org/pearson/objectives/183725473384362"
+    ],
+    "version": "1.0"
+  },
+  "body": {
+    "description": "Ch07_ChapterQuiz7_Q7",
+    "containerConfig": [
+      {
+        "description": "Ch07_ChapterQuiz7_Q7",
+        "containerId": "target1",
+        "brixConfig": [
+          {
+            "bricId": "q1",
+            "bricType": "MultipleChoiceQuestion",
+            "config": {
+              "id": "QUE57011",
+              "question": "Which of the following questions would be more likely to produce divergent thinking?\n\u003cbr /\u003e",
+              "order": "randomized",
+              "presenterType": "RadioGroup",
+              "presenterConfig": {
+                "numberFormat": "none"
+              },
+              "choices": [
+                {
+                  "answerKey": "answer_1",
+                  "content": "“What is a clothes hanger?”"
+                },
+                {
+                  "answerKey": "answer_2",
+                  "content": "“How do you spell clothes hanger?”"
+                },
+                {
+                  "answerKey": "answer_3",
+                  "content": "“How many uses can you think of for a clothes hanger?”"
+                },
+                {
+                  "answerKey": "answer_4",
+                  "content": "“What does a clothes hanger typically look like?”"
+                }
+              ]
+            },
+            "answerKey": {
+              "assessmentType": "multiplechoice",
+              "answers": {
+                "answer_3": {
+                  "score": 1.0,
+                  "response": ""
+                },
+                "answer_2": {
+                  "score": 0.0,
+                  "response": "Consider this: This type of thinking helps to generate a multitude of possible answers rather than a single solution. L.O. 7.3: Why does problem solving sometimes fail, and what is meant by creative thinking?"
+                },
+                "answer_1": {
+                  "score": 0.0,
+                  "response": "Consider this: This type of thinking helps to generate a multitude of possible answers rather than a single solution. L.O. 7.3: Why does problem solving sometimes fail, and what is meant by creative thinking?"
+                },
+                "answer_4": {
+                  "score": 0.0,
+                  "response": "Consider this: This type of thinking helps to generate a multitude of possible answers rather than a single solution. L.O. 7.3: Why does problem solving sometimes fail, and what is meant by creative thinking?"
+                }
+              }
+            },
+            "configFixup": [
+              {
+                "name": "questionId",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "sequenceNodeKey",
+                  "type": "ref"
+                }
+              },
+              {
+                "name": "maxAttempts",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "maxAttempts",
+                  "type": "ref"
+                }
+              }
+            ]
+          }
+        ],
+        "hookupActions": [
+          {
+            "description": "Hookup the submit manager to evaluate answers",
+            "methodName": "handleRequestsFrom",
+            "type": "method-call",
+            "args": [
+              {
+                "domain": "brix",
+                "refId": "q1",
+                "type": "ref"
+              }
+            ],
+            "instance": {
+              "type": "submit-manager"
+            }
+          },
+          {
+            "description": "Draw the question",
+            "methodName": "draw",
+            "type": "method-call",
+            "args": [
+              {
+                "selector": "#target1",
+                "type": "d3select"
+              }
+            ],
+            "instance": {
+              "domain": "brix",
+              "refId": "q1",
+              "type": "ref"
+            }
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,183 @@
+{
+  "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope",
+  "@type": "Envelope",
+  "metadata": {
+    "bookTitle": "Psychology",
+    "keywords": [
+      "ciccarelli",
+      "4e",
+      "ch12"
+    ],
+    "extendedMetadata": [
+      {
+        "name": "ISBN",
+        "value": "0133794652"
+      },
+      {
+        "name": "M",
+        "value": "c01"
+      },
+      {
+        "name": "assessment_title",
+        "value": "Chapter Quiz: Social Psychology"
+      },
+      {
+        "name": "chapterTitle",
+        "value": "Social Psychology"
+      },
+      {
+        "name": "item_title",
+        "value": "0133794652_Saundra K. Ciccarelli; J. Noland White_ch12_c01_q0005"
+      },
+      {
+        "name": "questionlayout",
+        "value": "1"
+      },
+      {
+        "name": "LearningObjective",
+        "value": ""
+      },
+      {
+        "name": "CH",
+        "value": "12"
+      },
+      {
+        "name": "shuffle_choices",
+        "value": "Yes"
+      }
+    ],
+    "subject": [
+      "Psychology"
+    ],
+    "contentTypeTier2": [
+      "AssignmentItem"
+    ],
+    "contentTypeTier1": "Assessment",
+    "format": [
+      "application/vnd.pearson.sanvan.v1.activity"
+    ],
+    "version": "1.0",
+    "guid": "66b6bedb-2b98-40a4-bb85-1837da69cfb1",
+    "bookAuthor": "Saundra K. Ciccarelli; J. Noland White",
+    "title": "Ch12 ChapterQuiz12 Q5",
+    "educationalAlignment": [
+      "http://purl.org/pearson/objectives/183725473384362"
+    ]
+  },
+  "body": {
+    "description": "Ch12_ChapterQuiz12_Q5",
+    "containerConfig": [
+      {
+        "description": "Ch12_ChapterQuiz12_Q5",
+        "containerId": "target1",
+        "brixConfig": [
+          {
+            "bricId": "q1",
+            "bricType": "MultipleChoiceQuestion",
+            "config": {
+              "id": "QUE57307",
+              "question": "Which of the following people would probably not be a prime candidate for membership into a cult?\n\u003cbr /\u003e",
+              "order": "randomized",
+              "presenterType": "RadioGroup",
+              "presenterConfig": {
+                "numberFormat": "none"
+              },
+              "choices": [
+                {
+                  "answerKey": "answer_1",
+                  "content": "Lewis, who is mad at the world, especially his parents"
+                },
+                {
+                  "answerKey": "answer_2",
+                  "content": "Leticia, who is open to new ideas and wants world peace and harmony among people"
+                },
+                {
+                  "answerKey": "answer_3",
+                  "content": "Lauren, who is under a lot of stress and dissatisfied with her life"
+                },
+                {
+                  "answerKey": "answer_4",
+                  "content": "Lawrence, who has only has a high school diploma but tends to be independent and happy with his life"
+                }
+              ]
+            },
+            "answerKey": {
+              "assessmentType": "multiplechoice",
+              "answers": {
+                "answer_3": {
+                  "score": 0.0,
+                  "response": "Consider this: Part of the process of recruiting into a cult involves \"love bombing,\" which takes advantage of a potential member\u0027s sense of loneliness and discontent with their lives. L.O. 12.2: How is compliance defined, and what are some ways to gain the compliance of another?"
+                },
+                "answer_2": {
+                  "score": 0.0,
+                  "response": "Consider this: Part of the process of recruiting into a cult involves \"love bombing,\" which takes advantage of a potential member\u0027s sense of loneliness and discontent with their lives. L.O. 12.2: How is compliance defined, and what are some ways to gain the compliance of another?"
+                },
+                "answer_1": {
+                  "score": 0.0,
+                  "response": "Consider this: Part of the process of recruiting into a cult involves \"love bombing,\" which takes advantage of a potential member\u0027s sense of loneliness and discontent with their lives. L.O. 12.2: How is compliance defined, and what are some ways to gain the compliance of another?"
+                },
+                "answer_4": {
+                  "score": 1.0,
+                  "response": ""
+                }
+              }
+            },
+            "configFixup": [
+              {
+                "name": "questionId",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "sequenceNodeKey",
+                  "type": "ref"
+                }
+              },
+              {
+                "name": "maxAttempts",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "maxAttempts",
+                  "type": "ref"
+                }
+              }
+            ]
+          }
+        ],
+        "hookupActions": [
+          {
+            "description": "Hookup the submit manager to evaluate answers",
+            "methodName": "handleRequestsFrom",
+            "type": "method-call",
+            "args": [
+              {
+                "domain": "brix",
+                "refId": "q1",
+                "type": "ref"
+              }
+            ],
+            "instance": {
+              "type": "submit-manager"
+            }
+          },
+          {
+            "description": "Draw the question",
+            "methodName": "draw",
+            "type": "method-call",
+            "args": [
+              {
+                "selector": "#target1",
+                "type": "d3select"
+              }
+            ],
+            "instance": {
+              "domain": "brix",
+              "refId": "q1",
+              "type": "ref"
+            }
+          }
+        ]
+      }
+    ]
+  }
+}

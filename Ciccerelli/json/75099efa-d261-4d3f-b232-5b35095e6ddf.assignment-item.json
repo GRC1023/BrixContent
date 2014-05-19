@@ -1,0 +1,183 @@
+{
+  "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope",
+  "@type": "Envelope",
+  "metadata": {
+    "bookTitle": "Psychology",
+    "keywords": [
+      "ciccarelli",
+      "4e",
+      "ch14"
+    ],
+    "extendedMetadata": [
+      {
+        "name": "ISBN",
+        "value": "0133794652"
+      },
+      {
+        "name": "M",
+        "value": "c01"
+      },
+      {
+        "name": "assessment_title",
+        "value": "Chapter Quiz: Psychological Disorders"
+      },
+      {
+        "name": "chapterTitle",
+        "value": "Psychological Disorders"
+      },
+      {
+        "name": "item_title",
+        "value": "0133794652_Saundra K. Ciccarelli; J. Noland White_ch14_c01_q0007"
+      },
+      {
+        "name": "questionlayout",
+        "value": "1"
+      },
+      {
+        "name": "LearningObjective",
+        "value": ""
+      },
+      {
+        "name": "CH",
+        "value": "14"
+      },
+      {
+        "name": "shuffle_choices",
+        "value": "Yes"
+      }
+    ],
+    "subject": [
+      "Psychology"
+    ],
+    "contentTypeTier2": [
+      "AssignmentItem"
+    ],
+    "contentTypeTier1": "Assessment",
+    "format": [
+      "application/vnd.pearson.sanvan.v1.activity"
+    ],
+    "version": "1.0",
+    "guid": "75099efa-d261-4d3f-b232-5b35095e6ddf",
+    "bookAuthor": "Saundra K. Ciccarelli; J. Noland White",
+    "title": "Ch14 ChapterQuiz14 Q7",
+    "educationalAlignment": [
+      "http://purl.org/pearson/objectives/183725473384362"
+    ]
+  },
+  "body": {
+    "description": "Ch14_ChapterQuiz14_Q7",
+    "containerConfig": [
+      {
+        "description": "Ch14_ChapterQuiz14_Q7",
+        "containerId": "target1",
+        "brixConfig": [
+          {
+            "bricId": "q1",
+            "bricType": "MultipleChoiceQuestion",
+            "config": {
+              "id": "QUE57430",
+              "question": "Ria experienced a sudden attack of intense fear when she was boarding a plane with her friends to fly to Mexico for spring break. Ria’s heart raced, she became dizzy, and she was certain she would die in a plane crash if she boarded the plane. Subsequently she did not go on her trip, and the plane arrived safely in Mexico 3 hours later. Ria experienced\n\u003cbr /\u003e",
+              "order": "randomized",
+              "presenterType": "RadioGroup",
+              "presenterConfig": {
+                "numberFormat": "none"
+              },
+              "choices": [
+                {
+                  "answerKey": "answer_1",
+                  "content": "a depressive episode."
+                },
+                {
+                  "answerKey": "answer_2",
+                  "content": "a panic attack."
+                },
+                {
+                  "answerKey": "answer_3",
+                  "content": "panic disorder."
+                },
+                {
+                  "answerKey": "answer_4",
+                  "content": "agoraphobia."
+                }
+              ]
+            },
+            "answerKey": {
+              "assessmentType": "multiplechoice",
+              "answers": {
+                "answer_3": {
+                  "score": 0.0,
+                  "response": "Consider this: A person experiencing this may become convinced that they are having a heart attack. L.O. 14.4: What are different types of anxiety disorders, obsessive-compulsive disorder, and stress-related disorders, and what are their symptoms and causes?"
+                },
+                "answer_2": {
+                  "score": 1.0,
+                  "response": ""
+                },
+                "answer_1": {
+                  "score": 0.0,
+                  "response": "Consider this: A person experiencing this may become convinced that they are having a heart attack. L.O. 14.4: What are different types of anxiety disorders, obsessive-compulsive disorder, and stress-related disorders, and what are their symptoms and causes?"
+                },
+                "answer_4": {
+                  "score": 0.0,
+                  "response": "Consider this: A person experiencing this may become convinced that they are having a heart attack. L.O. 14.4: What are different types of anxiety disorders, obsessive-compulsive disorder, and stress-related disorders, and what are their symptoms and causes?"
+                }
+              }
+            },
+            "configFixup": [
+              {
+                "name": "questionId",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "sequenceNodeKey",
+                  "type": "ref"
+                }
+              },
+              {
+                "name": "maxAttempts",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "maxAttempts",
+                  "type": "ref"
+                }
+              }
+            ]
+          }
+        ],
+        "hookupActions": [
+          {
+            "description": "Hookup the submit manager to evaluate answers",
+            "methodName": "handleRequestsFrom",
+            "type": "method-call",
+            "args": [
+              {
+                "domain": "brix",
+                "refId": "q1",
+                "type": "ref"
+              }
+            ],
+            "instance": {
+              "type": "submit-manager"
+            }
+          },
+          {
+            "description": "Draw the question",
+            "methodName": "draw",
+            "type": "method-call",
+            "args": [
+              {
+                "selector": "#target1",
+                "type": "d3select"
+              }
+            ],
+            "instance": {
+              "domain": "brix",
+              "refId": "q1",
+              "type": "ref"
+            }
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,183 @@
+{
+  "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope",
+  "@type": "Envelope",
+  "metadata": {
+    "bookTitle": "Psychology",
+    "keywords": [
+      "Ciccarelli 4e",
+      "Chapter 10",
+      "alick"
+    ],
+    "extendedMetadata": [
+      {
+        "name": "ISBN",
+        "value": "0133794652"
+      },
+      {
+        "name": "M",
+        "value": "c01"
+      },
+      {
+        "name": "assessment_title",
+        "value": "Chapter Quiz: Sexuality and Gender"
+      },
+      {
+        "name": "chapterTitle",
+        "value": "Sexuality and Gender"
+      },
+      {
+        "name": "item_title",
+        "value": "0133794652_Saundra K. Ciccarelli; J. Noland White_ch10_c01_q0004"
+      },
+      {
+        "name": "questionlayout",
+        "value": "1"
+      },
+      {
+        "name": "LearningObjective",
+        "value": ""
+      },
+      {
+        "name": "CH",
+        "value": "10"
+      },
+      {
+        "name": "shuffle_choices",
+        "value": "Yes"
+      }
+    ],
+    "subject": [
+      "Psychology"
+    ],
+    "contentTypeTier2": [
+      "AssignmentItem"
+    ],
+    "contentTypeTier1": "Assessment",
+    "format": [
+      "application/vnd.pearson.sanvan.v1.activity"
+    ],
+    "version": "1.0",
+    "guid": "9d935bee-3a82-4eb1-a051-6cb39d469925",
+    "bookAuthor": "Saundra K. Ciccarelli; J. Noland White",
+    "title": "Ch10 ChapterQuiz10 Q4",
+    "educationalAlignment": [
+      "http://purl.org/pearson/objectives/183725473384362"
+    ]
+  },
+  "body": {
+    "description": "Ch10_ChapterQuiz10_Q4",
+    "containerConfig": [
+      {
+        "description": "Ch10_ChapterQuiz10_Q4",
+        "containerId": "target1",
+        "brixConfig": [
+          {
+            "bricId": "q1",
+            "bricType": "MultipleChoiceQuestion",
+            "config": {
+              "id": "QUE57194",
+              "question": "An intersexed person is\n\u003cbr /\u003e",
+              "order": "randomized",
+              "presenterType": "RadioGroup",
+              "presenterConfig": {
+                "numberFormat": "none"
+              },
+              "choices": [
+                {
+                  "answerKey": "answer_1",
+                  "content": "a person who has sex with both men and women."
+                },
+                {
+                  "answerKey": "answer_2",
+                  "content": "another name for a homosexual."
+                },
+                {
+                  "answerKey": "answer_3",
+                  "content": "a person born with ambiguous sexual organs."
+                },
+                {
+                  "answerKey": "answer_4",
+                  "content": "another name for a heterosexual."
+                }
+              ]
+            },
+            "answerKey": {
+              "assessmentType": "multiplechoice",
+              "answers": {
+                "answer_3": {
+                  "score": 1.0,
+                  "response": ""
+                },
+                "answer_2": {
+                  "score": 0.0,
+                  "response": "Consider this: The term \n\u003cem\u003ehermaphroditism\u003c/em\u003e was previously used to refer to people in such a circumstance, although that term has taken on a negative connotation over time and is generally not used anymore. L.O. 10.1: What are the physical differences between females and males?"
+                },
+                "answer_1": {
+                  "score": 0.0,
+                  "response": "Consider this: The term \n\u003cem\u003ehermaphroditism\u003c/em\u003e was previously used to refer to people in such a circumstance, although that term has taken on a negative connotation over time and is generally not used anymore. L.O. 10.1: What are the physical differences between females and males?"
+                },
+                "answer_4": {
+                  "score": 0.0,
+                  "response": "Consider this: The term \n\u003cem\u003ehermaphroditism\u003c/em\u003e was previously used to refer to people in such a circumstance, although that term has taken on a negative connotation over time and is generally not used anymore. L.O. 10.1: What are the physical differences between females and males?"
+                }
+              }
+            },
+            "configFixup": [
+              {
+                "name": "questionId",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "sequenceNodeKey",
+                  "type": "ref"
+                }
+              },
+              {
+                "name": "maxAttempts",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "maxAttempts",
+                  "type": "ref"
+                }
+              }
+            ]
+          }
+        ],
+        "hookupActions": [
+          {
+            "description": "Hookup the submit manager to evaluate answers",
+            "methodName": "handleRequestsFrom",
+            "type": "method-call",
+            "args": [
+              {
+                "domain": "brix",
+                "refId": "q1",
+                "type": "ref"
+              }
+            ],
+            "instance": {
+              "type": "submit-manager"
+            }
+          },
+          {
+            "description": "Draw the question",
+            "methodName": "draw",
+            "type": "method-call",
+            "args": [
+              {
+                "selector": "#target1",
+                "type": "d3select"
+              }
+            ],
+            "instance": {
+              "domain": "brix",
+              "refId": "q1",
+              "type": "ref"
+            }
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,183 @@
+{
+  "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope",
+  "@type": "Envelope",
+  "metadata": {
+    "bookTitle": "Psychology",
+    "keywords": [
+      "ciccarelli 4e",
+      "chapter 03",
+      "alick"
+    ],
+    "extendedMetadata": [
+      {
+        "name": "ISBN",
+        "value": "0133794652"
+      },
+      {
+        "name": "M",
+        "value": "c01"
+      },
+      {
+        "name": "assessment_title",
+        "value": "Chapter Quiz: Sensation and Perception"
+      },
+      {
+        "name": "chapterTitle",
+        "value": "Sensation and Perception"
+      },
+      {
+        "name": "item_title",
+        "value": "0133794652_Saundra K. Ciccarelli; J. Noland White_ch03_c01_q0016"
+      },
+      {
+        "name": "questionlayout",
+        "value": "1"
+      },
+      {
+        "name": "LearningObjective",
+        "value": ""
+      },
+      {
+        "name": "CH",
+        "value": "3"
+      },
+      {
+        "name": "shuffle_choices",
+        "value": "Yes"
+      }
+    ],
+    "subject": [
+      "Psychology"
+    ],
+    "contentTypeTier2": [
+      "AssignmentItem"
+    ],
+    "contentTypeTier1": "Assessment",
+    "format": [
+      "application/vnd.pearson.sanvan.v1.activity"
+    ],
+    "version": "1.0",
+    "guid": "19d7adcd-7f27-4662-bd88-b65ffe0bea5b",
+    "bookAuthor": "Saundra K. Ciccarelli; J. Noland White",
+    "title": "Ch03 ChapterQuiz3 Q16",
+    "educationalAlignment": [
+      "http://purl.org/pearson/objectives/183725473384362"
+    ]
+  },
+  "body": {
+    "description": "Ch03_ChapterQuiz3_Q16",
+    "containerConfig": [
+      {
+        "description": "Ch03_ChapterQuiz3_Q16",
+        "containerId": "target1",
+        "brixConfig": [
+          {
+            "bricId": "q1",
+            "bricType": "MultipleChoiceQuestion",
+            "config": {
+              "id": "QUE56874",
+              "question": "XX XX XX       XXXXXX\n\u003cbr /\u003eXX XX XX       XXXXXX\n\u003cbr /\u003eXX XX XX       XXXXXX\n\u003cbr /\u003eIn viewing the items above, seeing three columns of Xs on the left versus three rows of Xs on the right can be explained by the Gestalt principle of __________.\n\u003cbr /\u003e",
+              "order": "randomized",
+              "presenterType": "RadioGroup",
+              "presenterConfig": {
+                "numberFormat": "none"
+              },
+              "choices": [
+                {
+                  "answerKey": "answer_1",
+                  "content": "closure"
+                },
+                {
+                  "answerKey": "answer_2",
+                  "content": "similarity"
+                },
+                {
+                  "answerKey": "answer_3",
+                  "content": "proximity"
+                },
+                {
+                  "answerKey": "answer_4",
+                  "content": "contiguity"
+                }
+              ]
+            },
+            "answerKey": {
+              "assessmentType": "multiplechoice",
+              "answers": {
+                "answer_3": {
+                  "score": 1.0,
+                  "response": ""
+                },
+                "answer_2": {
+                  "score": 0.0,
+                  "response": "Consider this: The best answer to this question involves how \"near\" the different parts of the visual stimulus are to each other. L.O. 3.9: What are the Gestalt principles of perception?"
+                },
+                "answer_1": {
+                  "score": 0.0,
+                  "response": "Consider this: The best answer to this question involves how \"near\" the different parts of the visual stimulus are to each other. L.O. 3.9: What are the Gestalt principles of perception?"
+                },
+                "answer_4": {
+                  "score": 0.0,
+                  "response": "Consider this: The best answer to this question involves how \"near\" the different parts of the visual stimulus are to each other. L.O. 3.9: What are the Gestalt principles of perception?"
+                }
+              }
+            },
+            "configFixup": [
+              {
+                "name": "questionId",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "sequenceNodeKey",
+                  "type": "ref"
+                }
+              },
+              {
+                "name": "maxAttempts",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "maxAttempts",
+                  "type": "ref"
+                }
+              }
+            ]
+          }
+        ],
+        "hookupActions": [
+          {
+            "description": "Hookup the submit manager to evaluate answers",
+            "methodName": "handleRequestsFrom",
+            "type": "method-call",
+            "args": [
+              {
+                "domain": "brix",
+                "refId": "q1",
+                "type": "ref"
+              }
+            ],
+            "instance": {
+              "type": "submit-manager"
+            }
+          },
+          {
+            "description": "Draw the question",
+            "methodName": "draw",
+            "type": "method-call",
+            "args": [
+              {
+                "selector": "#target1",
+                "type": "d3select"
+              }
+            ],
+            "instance": {
+              "domain": "brix",
+              "refId": "q1",
+              "type": "ref"
+            }
+          }
+        ]
+      }
+    ]
+  }
+}

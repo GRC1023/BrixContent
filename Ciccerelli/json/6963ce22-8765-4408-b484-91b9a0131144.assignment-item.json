@@ -1,0 +1,178 @@
+{
+  "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope",
+  "@type": "Envelope",
+  "metadata": {
+    "guid": "6963ce22-8765-4408-b484-91b9a0131144",
+    "bookAuthor": "Saundra K. Ciccarelli; J. Noland White",
+    "bookTitle": "Psychology",
+    "title": "Ch07 ChapterQuiz7 Q19",
+    "extendedMetadata": [
+      {
+        "name": "ISBN",
+        "value": "0133794652"
+      },
+      {
+        "name": "M",
+        "value": "c01"
+      },
+      {
+        "name": "assessment_title",
+        "value": "Chapter Quiz: Cognition: Thinking, Intelligence, and Language"
+      },
+      {
+        "name": "chapterTitle",
+        "value": "Cognition: Thinking, Intelligence, and Language"
+      },
+      {
+        "name": "item_title",
+        "value": "0133794652_Saundra K. Ciccarelli; J. Noland White_ch07_c01_q0019"
+      },
+      {
+        "name": "questionlayout",
+        "value": "1"
+      },
+      {
+        "name": "LearningObjective",
+        "value": ""
+      },
+      {
+        "name": "CH",
+        "value": "7"
+      },
+      {
+        "name": "shuffle_choices",
+        "value": "Yes"
+      }
+    ],
+    "subject": [
+      "Psychology"
+    ],
+    "contentTypeTier2": [
+      "AssignmentItem"
+    ],
+    "contentTypeTier1": "Assessment",
+    "format": [
+      "application/vnd.pearson.sanvan.v1.activity"
+    ],
+    "educationalAlignment": [
+      "http://purl.org/pearson/objectives/183725473384362"
+    ],
+    "version": "1.0"
+  },
+  "body": {
+    "description": "Ch07_ChapterQuiz7_Q19",
+    "containerConfig": [
+      {
+        "description": "Ch07_ChapterQuiz7_Q19",
+        "containerId": "target1",
+        "brixConfig": [
+          {
+            "bricId": "q1",
+            "bricType": "MultipleChoiceQuestion",
+            "config": {
+              "id": "QUE57035",
+              "question": "Edward Sapir and Benjamin Whorf theorized that ____________, a concept reflected in their linguistic relativity hypothesis.\n\u003cbr /\u003e",
+              "order": "randomized",
+              "presenterType": "RadioGroup",
+              "presenterConfig": {
+                "numberFormat": "none"
+              },
+              "choices": [
+                {
+                  "answerKey": "answer_1",
+                  "content": "language shapes thoughts"
+                },
+                {
+                  "answerKey": "answer_2",
+                  "content": "thoughts shape language"
+                },
+                {
+                  "answerKey": "answer_3",
+                  "content": "language and thought develop independently"
+                },
+                {
+                  "answerKey": "answer_4",
+                  "content": "language and thought influence each other"
+                }
+              ]
+            },
+            "answerKey": {
+              "assessmentType": "multiplechoice",
+              "answers": {
+                "answer_3": {
+                  "score": 0.0,
+                  "response": "Consider this: Remember that Sapir and Whorf are credited with posing the linguistic relativity hypothesis. What did that model suggest about the relationship between thought and language? L.O. 7.10: Does language influence the way people think, and are animals capable of learning language?"
+                },
+                "answer_2": {
+                  "score": 0.0,
+                  "response": "Consider this: Remember that Sapir and Whorf are credited with posing the linguistic relativity hypothesis. What did that model suggest about the relationship between thought and language? L.O. 7.10: Does language influence the way people think, and are animals capable of learning language?"
+                },
+                "answer_1": {
+                  "score": 1.0,
+                  "response": ""
+                },
+                "answer_4": {
+                  "score": 0.0,
+                  "response": "Consider this: Remember that Sapir and Whorf are credited with posing the linguistic relativity hypothesis. What did that model suggest about the relationship between thought and language? L.O. 7.10: Does language influence the way people think, and are animals capable of learning language?"
+                }
+              }
+            },
+            "configFixup": [
+              {
+                "name": "questionId",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "sequenceNodeKey",
+                  "type": "ref"
+                }
+              },
+              {
+                "name": "maxAttempts",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "maxAttempts",
+                  "type": "ref"
+                }
+              }
+            ]
+          }
+        ],
+        "hookupActions": [
+          {
+            "description": "Hookup the submit manager to evaluate answers",
+            "methodName": "handleRequestsFrom",
+            "type": "method-call",
+            "args": [
+              {
+                "domain": "brix",
+                "refId": "q1",
+                "type": "ref"
+              }
+            ],
+            "instance": {
+              "type": "submit-manager"
+            }
+          },
+          {
+            "description": "Draw the question",
+            "methodName": "draw",
+            "type": "method-call",
+            "args": [
+              {
+                "selector": "#target1",
+                "type": "d3select"
+              }
+            ],
+            "instance": {
+              "domain": "brix",
+              "refId": "q1",
+              "type": "ref"
+            }
+          }
+        ]
+      }
+    ]
+  }
+}

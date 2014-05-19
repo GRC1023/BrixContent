@@ -1,0 +1,178 @@
+{
+  "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope",
+  "@type": "Envelope",
+  "metadata": {
+    "guid": "8c61a12c-bee5-404d-861a-0e711bc00a51",
+    "bookAuthor": "Saundra K. Ciccarelli; J. Noland White",
+    "bookTitle": "Psychology",
+    "title": "Ch08 ChapterQuiz8 Q3",
+    "extendedMetadata": [
+      {
+        "name": "ISBN",
+        "value": "0133794652"
+      },
+      {
+        "name": "M",
+        "value": "c01"
+      },
+      {
+        "name": "assessment_title",
+        "value": "Chapter Quiz: Development Across the Life Span"
+      },
+      {
+        "name": "chapterTitle",
+        "value": "Development Across the Life Span"
+      },
+      {
+        "name": "item_title",
+        "value": "0133794652_Saundra K. Ciccarelli; J. Noland White_ch08_c01_q0003"
+      },
+      {
+        "name": "questionlayout",
+        "value": "1"
+      },
+      {
+        "name": "LearningObjective",
+        "value": ""
+      },
+      {
+        "name": "CH",
+        "value": "8"
+      },
+      {
+        "name": "shuffle_choices",
+        "value": "Yes"
+      }
+    ],
+    "subject": [
+      "Psychology"
+    ],
+    "contentTypeTier2": [
+      "AssignmentItem"
+    ],
+    "contentTypeTier1": "Assessment",
+    "format": [
+      "application/vnd.pearson.sanvan.v1.activity"
+    ],
+    "educationalAlignment": [
+      "http://purl.org/pearson/objectives/183725473384362"
+    ],
+    "version": "1.0"
+  },
+  "body": {
+    "description": "Ch08_ChapterQuiz8_Q3",
+    "containerConfig": [
+      {
+        "description": "Ch08_ChapterQuiz8_Q3",
+        "containerId": "target1",
+        "brixConfig": [
+          {
+            "bricId": "q1",
+            "bricType": "MultipleChoiceQuestion",
+            "config": {
+              "id": "QUE57095",
+              "question": "In __________ syndrome, the 23rd pair of chromosomes consists of an XXY pairing, resulting in reduced masculine characteristics and excessive height.\n\u003cbr /\u003e",
+              "order": "randomized",
+              "presenterType": "RadioGroup",
+              "presenterConfig": {
+                "numberFormat": "none"
+              },
+              "choices": [
+                {
+                  "answerKey": "answer_1",
+                  "content": "PKU"
+                },
+                {
+                  "answerKey": "answer_2",
+                  "content": "Down"
+                },
+                {
+                  "answerKey": "answer_3",
+                  "content": "Klinefelter’s"
+                },
+                {
+                  "answerKey": "answer_4",
+                  "content": "Turner’s"
+                }
+              ]
+            },
+            "answerKey": {
+              "assessmentType": "multiplechoice",
+              "answers": {
+                "answer_3": {
+                  "score": 1.0,
+                  "response": ""
+                },
+                "answer_2": {
+                  "score": 0.0,
+                  "response": "Consider this: This chromosomal condition can also lead to enlarged breasts, obesity, and excessive height in men. L.O. 8.3: How do chromosomes, genes, and DNA determine a person’s characteristics or disorders?"
+                },
+                "answer_1": {
+                  "score": 0.0,
+                  "response": "Consider this: This chromosomal condition can also lead to enlarged breasts, obesity, and excessive height in men. L.O. 8.3: How do chromosomes, genes, and DNA determine a person’s characteristics or disorders?"
+                },
+                "answer_4": {
+                  "score": 0.0,
+                  "response": "Consider this: This chromosomal condition can also lead to enlarged breasts, obesity, and excessive height in men. L.O. 8.3: How do chromosomes, genes, and DNA determine a person’s characteristics or disorders?"
+                }
+              }
+            },
+            "configFixup": [
+              {
+                "name": "questionId",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "sequenceNodeKey",
+                  "type": "ref"
+                }
+              },
+              {
+                "name": "maxAttempts",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "maxAttempts",
+                  "type": "ref"
+                }
+              }
+            ]
+          }
+        ],
+        "hookupActions": [
+          {
+            "description": "Hookup the submit manager to evaluate answers",
+            "methodName": "handleRequestsFrom",
+            "type": "method-call",
+            "args": [
+              {
+                "domain": "brix",
+                "refId": "q1",
+                "type": "ref"
+              }
+            ],
+            "instance": {
+              "type": "submit-manager"
+            }
+          },
+          {
+            "description": "Draw the question",
+            "methodName": "draw",
+            "type": "method-call",
+            "args": [
+              {
+                "selector": "#target1",
+                "type": "d3select"
+              }
+            ],
+            "instance": {
+              "domain": "brix",
+              "refId": "q1",
+              "type": "ref"
+            }
+          }
+        ]
+      }
+    ]
+  }
+}

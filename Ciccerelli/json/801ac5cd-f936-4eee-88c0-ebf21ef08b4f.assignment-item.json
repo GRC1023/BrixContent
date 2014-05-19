@@ -1,0 +1,146 @@
+{
+  "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope",
+  "@type": "Envelope",
+  "metadata": {
+    "guid": "801ac5cd-f936-4eee-88c0-ebf21ef08b4f",
+    "title": "Ch13 ModuleQuiz13.2 Q3",
+    "keywords": [
+      "ciccarelli",
+      "4e",
+      "ch13"
+    ],
+    "extendedMetadata": [
+      {
+        "name": "LearningObjective",
+        "value": ""
+      }
+    ],
+    "contentTypeTier2": [
+      "AssignmentItem"
+    ],
+    "contentTypeTier1": "Assessment",
+    "format": [
+      "application/vnd.pearson.sanvan.v1.activity"
+    ],
+    "educationalAlignment": [
+      "http://purl.org/pearson/objectives/183725473384362"
+    ],
+    "version": "1.0"
+  },
+  "body": {
+    "description": "Ch13_ModuleQuiz13.2_Q3",
+    "containerConfig": [
+      {
+        "description": "Ch13_ModuleQuiz13.2_Q3",
+        "containerId": "target1",
+        "brixConfig": [
+          {
+            "bricId": "q1",
+            "bricType": "MultipleChoiceQuestion",
+            "config": {
+              "id": "QUE57357",
+              "question": "You have walked in late to class and your psychology professor is explaining how one personality theorist sees personality as a relatively stable set of potential responses to various situations. You know immediately that your professor is talking about the theories of\n\u003cbr /\u003e",
+              "order": "randomized",
+              "presenterType": "RadioGroup",
+              "presenterConfig": {
+                "numberFormat": "none"
+              },
+              "choices": [
+                {
+                  "answerKey": "answer_1",
+                  "content": "Julian Rotter."
+                },
+                {
+                  "answerKey": "answer_2",
+                  "content": "B. F. Skinner."
+                },
+                {
+                  "answerKey": "answer_3",
+                  "content": "Albert Bandura."
+                },
+                {
+                  "answerKey": "answer_4",
+                  "content": "John Watson."
+                }
+              ]
+            },
+            "answerKey": {
+              "assessmentType": "multiplechoice",
+              "answers": {
+                "answer_3": {
+                  "score": 0.0,
+                  "response": "Incorrect."
+                },
+                "answer_2": {
+                  "score": 0.0,
+                  "response": "Incorrect."
+                },
+                "answer_1": {
+                  "score": 1.0,
+                  "response": "Correct!"
+                },
+                "answer_4": {
+                  "score": 0.0,
+                  "response": "Incorrect."
+                }
+              }
+            },
+            "configFixup": [
+              {
+                "name": "questionId",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "sequenceNodeKey",
+                  "type": "ref"
+                }
+              },
+              {
+                "name": "maxAttempts",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "maxAttempts",
+                  "type": "ref"
+                }
+              }
+            ]
+          }
+        ],
+        "hookupActions": [
+          {
+            "description": "Hookup the submit manager to evaluate answers",
+            "methodName": "handleRequestsFrom",
+            "type": "method-call",
+            "args": [
+              {
+                "domain": "brix",
+                "refId": "q1",
+                "type": "ref"
+              }
+            ],
+            "instance": {
+              "type": "submit-manager"
+            }
+          },
+          {
+            "description": "Draw the question",
+            "methodName": "draw",
+            "type": "method-call",
+            "args": [
+              {
+                "selector": "#target1",
+                "type": "d3select"
+              }
+            ],
+            "instance": {
+              "domain": "brix",
+              "refId": "q1",
+              "type": "ref"
+            }
+          }
+        ]
+      }
+    ]
+  }
+}

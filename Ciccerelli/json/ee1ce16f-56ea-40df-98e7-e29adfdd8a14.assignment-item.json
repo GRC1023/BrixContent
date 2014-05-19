@@ -1,0 +1,178 @@
+{
+  "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope",
+  "@type": "Envelope",
+  "metadata": {
+    "guid": "ee1ce16f-56ea-40df-98e7-e29adfdd8a14",
+    "bookAuthor": "Saundra K. Ciccarelli; J. Noland White",
+    "bookTitle": "Psychology",
+    "title": "Ch09 ChapterQuiz9 Q6",
+    "extendedMetadata": [
+      {
+        "name": "ISBN",
+        "value": "0133794652"
+      },
+      {
+        "name": "M",
+        "value": "c01"
+      },
+      {
+        "name": "assessment_title",
+        "value": "Chapter Quiz: Motivation and Emotion"
+      },
+      {
+        "name": "chapterTitle",
+        "value": "Motivation and Emotion"
+      },
+      {
+        "name": "item_title",
+        "value": "0133794652_Saundra K. Ciccarelli; J. Noland White_ch09_c01_q0006"
+      },
+      {
+        "name": "questionlayout",
+        "value": "1"
+      },
+      {
+        "name": "LearningObjective",
+        "value": ""
+      },
+      {
+        "name": "CH",
+        "value": "9"
+      },
+      {
+        "name": "shuffle_choices",
+        "value": "Yes"
+      }
+    ],
+    "subject": [
+      "Psychology"
+    ],
+    "contentTypeTier2": [
+      "AssignmentItem"
+    ],
+    "contentTypeTier1": "Assessment",
+    "format": [
+      "application/vnd.pearson.sanvan.v1.activity"
+    ],
+    "educationalAlignment": [
+      "http://purl.org/pearson/objectives/183725473384362"
+    ],
+    "version": "1.0"
+  },
+  "body": {
+    "description": "Ch09_ChapterQuiz9_Q6",
+    "containerConfig": [
+      {
+        "description": "Ch09_ChapterQuiz9_Q6",
+        "containerId": "target1",
+        "brixConfig": [
+          {
+            "bricId": "q1",
+            "bricType": "MultipleChoiceQuestion",
+            "config": {
+              "id": "QUE57123",
+              "question": "An important component to Carol Dweck’s theory of motivation is\n\u003cbr /\u003e",
+              "order": "randomized",
+              "presenterType": "RadioGroup",
+              "presenterConfig": {
+                "numberFormat": "none"
+              },
+              "choices": [
+                {
+                  "answerKey": "answer_1",
+                  "content": "one’s view of self."
+                },
+                {
+                  "answerKey": "answer_2",
+                  "content": "an understanding of classical conditioning and its impact on motivation."
+                },
+                {
+                  "answerKey": "answer_3",
+                  "content": "the importance of heredity on biological motivations."
+                },
+                {
+                  "answerKey": "answer_4",
+                  "content": "an understanding of emotions."
+                }
+              ]
+            },
+            "answerKey": {
+              "assessmentType": "multiplechoice",
+              "answers": {
+                "answer_3": {
+                  "score": 0.0,
+                  "response": "Consider this: Dweck\u0027s theory is based on an older notion of \n\u003cem\u003elocus of control,\u003c/em\u003e which refers to one\u0027s assessment of the amount of influence they have over the events that occur in their lives. L.O. 9.2: What are the characteristics of the three types of needs?"
+                },
+                "answer_2": {
+                  "score": 0.0,
+                  "response": "Consider this: Dweck\u0027s theory is based on an older notion of \n\u003cem\u003elocus of control,\u003c/em\u003e which refers to one\u0027s assessment of the amount of influence they have over the events that occur in their lives. L.O. 9.2: What are the characteristics of the three types of needs?"
+                },
+                "answer_1": {
+                  "score": 1.0,
+                  "response": ""
+                },
+                "answer_4": {
+                  "score": 0.0,
+                  "response": "Consider this: Dweck\u0027s theory is based on an older notion of \n\u003cem\u003elocus of control,\u003c/em\u003e which refers to one\u0027s assessment of the amount of influence they have over the events that occur in their lives. L.O. 9.2: What are the characteristics of the three types of needs?"
+                }
+              }
+            },
+            "configFixup": [
+              {
+                "name": "questionId",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "sequenceNodeKey",
+                  "type": "ref"
+                }
+              },
+              {
+                "name": "maxAttempts",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "maxAttempts",
+                  "type": "ref"
+                }
+              }
+            ]
+          }
+        ],
+        "hookupActions": [
+          {
+            "description": "Hookup the submit manager to evaluate answers",
+            "methodName": "handleRequestsFrom",
+            "type": "method-call",
+            "args": [
+              {
+                "domain": "brix",
+                "refId": "q1",
+                "type": "ref"
+              }
+            ],
+            "instance": {
+              "type": "submit-manager"
+            }
+          },
+          {
+            "description": "Draw the question",
+            "methodName": "draw",
+            "type": "method-call",
+            "args": [
+              {
+                "selector": "#target1",
+                "type": "d3select"
+              }
+            ],
+            "instance": {
+              "domain": "brix",
+              "refId": "q1",
+              "type": "ref"
+            }
+          }
+        ]
+      }
+    ]
+  }
+}

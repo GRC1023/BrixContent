@@ -1,0 +1,183 @@
+{
+  "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope",
+  "@type": "Envelope",
+  "metadata": {
+    "bookTitle": "Psychology",
+    "keywords": [
+      "Ciccarelli 4e",
+      "Chapter 10",
+      "alick"
+    ],
+    "extendedMetadata": [
+      {
+        "name": "ISBN",
+        "value": "0133794652"
+      },
+      {
+        "name": "M",
+        "value": "c01"
+      },
+      {
+        "name": "assessment_title",
+        "value": "Chapter Quiz: Sexuality and Gender"
+      },
+      {
+        "name": "chapterTitle",
+        "value": "Sexuality and Gender"
+      },
+      {
+        "name": "item_title",
+        "value": "0133794652_Saundra K. Ciccarelli; J. Noland White_ch10_c01_q0016"
+      },
+      {
+        "name": "questionlayout",
+        "value": "1"
+      },
+      {
+        "name": "LearningObjective",
+        "value": ""
+      },
+      {
+        "name": "CH",
+        "value": "10"
+      },
+      {
+        "name": "shuffle_choices",
+        "value": "Yes"
+      }
+    ],
+    "subject": [
+      "Psychology"
+    ],
+    "contentTypeTier2": [
+      "AssignmentItem"
+    ],
+    "contentTypeTier1": "Assessment",
+    "format": [
+      "application/vnd.pearson.sanvan.v1.activity"
+    ],
+    "version": "1.0",
+    "guid": "8bd7b5be-7a7d-42ab-aef7-1f85bf054be7",
+    "bookAuthor": "Saundra K. Ciccarelli; J. Noland White",
+    "title": "Ch10 ChapterQuiz10 Q16",
+    "educationalAlignment": [
+      "http://purl.org/pearson/objectives/183725473384362"
+    ]
+  },
+  "body": {
+    "description": "Ch10_ChapterQuiz10_Q16",
+    "containerConfig": [
+      {
+        "description": "Ch10_ChapterQuiz10_Q16",
+        "containerId": "target1",
+        "brixConfig": [
+          {
+            "bricId": "q1",
+            "bricType": "MultipleChoiceQuestion",
+            "config": {
+              "id": "QUE57206",
+              "question": "Sexual dysfunctions and problems can be caused by\n\u003cbr /\u003e",
+              "order": "randomized",
+              "presenterType": "RadioGroup",
+              "presenterConfig": {
+                "numberFormat": "none"
+              },
+              "choices": [
+                {
+                  "answerKey": "answer_1",
+                  "content": "organic factors."
+                },
+                {
+                  "answerKey": "answer_2",
+                  "content": "organic and sociocultural factors."
+                },
+                {
+                  "answerKey": "answer_3",
+                  "content": "organic, psychological, and sociocultural factors."
+                },
+                {
+                  "answerKey": "answer_4",
+                  "content": "hereditary factors primarily."
+                }
+              ]
+            },
+            "answerKey": {
+              "assessmentType": "multiplechoice",
+              "answers": {
+                "answer_3": {
+                  "score": 1.0,
+                  "response": ""
+                },
+                "answer_2": {
+                  "score": 0.0,
+                  "response": "Consider this: Remember that \"single cause solutions\" are usually oversimplistic and, as such, are often wrong. L.O. 10.8: How do physical and psychological sexual problems differ?"
+                },
+                "answer_1": {
+                  "score": 0.0,
+                  "response": "Consider this: Remember that \"single cause solutions\" are usually oversimplistic and, as such, are often wrong. L.O. 10.8: How do physical and psychological sexual problems differ?"
+                },
+                "answer_4": {
+                  "score": 0.0,
+                  "response": "Consider this: Remember that \"single cause solutions\" are usually oversimplistic and, as such, are often wrong. L.O. 10.8: How do physical and psychological sexual problems differ?"
+                }
+              }
+            },
+            "configFixup": [
+              {
+                "name": "questionId",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "sequenceNodeKey",
+                  "type": "ref"
+                }
+              },
+              {
+                "name": "maxAttempts",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "maxAttempts",
+                  "type": "ref"
+                }
+              }
+            ]
+          }
+        ],
+        "hookupActions": [
+          {
+            "description": "Hookup the submit manager to evaluate answers",
+            "methodName": "handleRequestsFrom",
+            "type": "method-call",
+            "args": [
+              {
+                "domain": "brix",
+                "refId": "q1",
+                "type": "ref"
+              }
+            ],
+            "instance": {
+              "type": "submit-manager"
+            }
+          },
+          {
+            "description": "Draw the question",
+            "methodName": "draw",
+            "type": "method-call",
+            "args": [
+              {
+                "selector": "#target1",
+                "type": "d3select"
+              }
+            ],
+            "instance": {
+              "domain": "brix",
+              "refId": "q1",
+              "type": "ref"
+            }
+          }
+        ]
+      }
+    ]
+  }
+}

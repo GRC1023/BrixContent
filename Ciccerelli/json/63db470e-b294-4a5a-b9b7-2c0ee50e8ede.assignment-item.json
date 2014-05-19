@@ -1,0 +1,183 @@
+{
+  "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope",
+  "@type": "Envelope",
+  "metadata": {
+    "bookTitle": "Psychology",
+    "keywords": [
+      "ciccarelli",
+      "4e",
+      "ch14"
+    ],
+    "extendedMetadata": [
+      {
+        "name": "ISBN",
+        "value": "0133794652"
+      },
+      {
+        "name": "M",
+        "value": "c01"
+      },
+      {
+        "name": "assessment_title",
+        "value": "Chapter Quiz: Psychological Disorders"
+      },
+      {
+        "name": "chapterTitle",
+        "value": "Psychological Disorders"
+      },
+      {
+        "name": "item_title",
+        "value": "0133794652_Saundra K. Ciccarelli; J. Noland White_ch14_c01_q0008"
+      },
+      {
+        "name": "questionlayout",
+        "value": "1"
+      },
+      {
+        "name": "LearningObjective",
+        "value": ""
+      },
+      {
+        "name": "CH",
+        "value": "14"
+      },
+      {
+        "name": "shuffle_choices",
+        "value": "Yes"
+      }
+    ],
+    "subject": [
+      "Psychology"
+    ],
+    "contentTypeTier2": [
+      "AssignmentItem"
+    ],
+    "contentTypeTier1": "Assessment",
+    "format": [
+      "application/vnd.pearson.sanvan.v1.activity"
+    ],
+    "version": "1.0",
+    "guid": "63db470e-b294-4a5a-b9b7-2c0ee50e8ede",
+    "bookAuthor": "Saundra K. Ciccarelli; J. Noland White",
+    "title": "Ch14 ChapterQuiz14 Q8",
+    "educationalAlignment": [
+      "http://purl.org/pearson/objectives/183725473384362"
+    ]
+  },
+  "body": {
+    "description": "Ch14_ChapterQuiz14_Q8",
+    "containerConfig": [
+      {
+        "description": "Ch14_ChapterQuiz14_Q8",
+        "containerId": "target1",
+        "brixConfig": [
+          {
+            "bricId": "q1",
+            "bricType": "MultipleChoiceQuestion",
+            "config": {
+              "id": "QUE57431",
+              "question": "Dr. Kirby has been meeting with 9-year-old Loren, whose family lost everything in a tornado. In her initial visit, Loren was diagnosed with acute stress disorder. During a 2-month follow-up with Dr. Kirby, Loren is still exhibiting many of the same symptoms. What should Dr. Kirby do?\n\u003cbr /\u003e",
+              "order": "randomized",
+              "presenterType": "RadioGroup",
+              "presenterConfig": {
+                "numberFormat": "none"
+              },
+              "choices": [
+                {
+                  "answerKey": "answer_1",
+                  "content": "Dr. Kirby will revise Loren’s diagnosis from ASD to posttraumatic stress disorder."
+                },
+                {
+                  "answerKey": "answer_2",
+                  "content": "Dr. Kirby will revise Loren’s diagnosis from ASD to generalized anxiety disorder."
+                },
+                {
+                  "answerKey": "answer_3",
+                  "content": "Dr. Kirby will continue treatment for acute stress disorder for at least 6 months."
+                },
+                {
+                  "answerKey": "answer_4",
+                  "content": "Dr. Kirby should tell Loren she is cured so as to speed her recovery."
+                }
+              ]
+            },
+            "answerKey": {
+              "assessmentType": "multiplechoice",
+              "answers": {
+                "answer_3": {
+                  "score": 0.0,
+                  "response": "Consider this: Which of these diagnoses do you think refers to a longer-term reaction to a particularly upsetting event? L.O. 14.4: What are different types of anxiety disorders, obsessive-compulsive disorder, and stress-related disorders, and what are their symptoms and causes?"
+                },
+                "answer_2": {
+                  "score": 0.0,
+                  "response": "Consider this: Which of these diagnoses do you think refers to a longer-term reaction to a particularly upsetting event? L.O. 14.4: What are different types of anxiety disorders, obsessive-compulsive disorder, and stress-related disorders, and what are their symptoms and causes?"
+                },
+                "answer_1": {
+                  "score": 1.0,
+                  "response": ""
+                },
+                "answer_4": {
+                  "score": 0.0,
+                  "response": "Consider this: Which of these diagnoses do you think refers to a longer-term reaction to a particularly upsetting event? L.O. 14.4: What are different types of anxiety disorders, obsessive-compulsive disorder, and stress-related disorders, and what are their symptoms and causes?"
+                }
+              }
+            },
+            "configFixup": [
+              {
+                "name": "questionId",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "sequenceNodeKey",
+                  "type": "ref"
+                }
+              },
+              {
+                "name": "maxAttempts",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "maxAttempts",
+                  "type": "ref"
+                }
+              }
+            ]
+          }
+        ],
+        "hookupActions": [
+          {
+            "description": "Hookup the submit manager to evaluate answers",
+            "methodName": "handleRequestsFrom",
+            "type": "method-call",
+            "args": [
+              {
+                "domain": "brix",
+                "refId": "q1",
+                "type": "ref"
+              }
+            ],
+            "instance": {
+              "type": "submit-manager"
+            }
+          },
+          {
+            "description": "Draw the question",
+            "methodName": "draw",
+            "type": "method-call",
+            "args": [
+              {
+                "selector": "#target1",
+                "type": "d3select"
+              }
+            ],
+            "instance": {
+              "domain": "brix",
+              "refId": "q1",
+              "type": "ref"
+            }
+          }
+        ]
+      }
+    ]
+  }
+}

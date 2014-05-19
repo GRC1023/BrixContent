@@ -1,0 +1,182 @@
+{
+  "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope",
+  "@type": "Envelope",
+  "metadata": {
+    "bookTitle": "Psychology",
+    "keywords": [
+      "Ciccarelli 4e",
+      "Chapter 04"
+    ],
+    "extendedMetadata": [
+      {
+        "name": "ISBN",
+        "value": "0133794652"
+      },
+      {
+        "name": "M",
+        "value": "c01"
+      },
+      {
+        "name": "assessment_title",
+        "value": "Chapter Quiz: Consciousness"
+      },
+      {
+        "name": "chapterTitle",
+        "value": "Consciousness"
+      },
+      {
+        "name": "item_title",
+        "value": "0133794652_Saundra K. Ciccarelli; J. Noland White_ch04_c01_q0005"
+      },
+      {
+        "name": "questionlayout",
+        "value": "1"
+      },
+      {
+        "name": "LearningObjective",
+        "value": ""
+      },
+      {
+        "name": "CH",
+        "value": "4"
+      },
+      {
+        "name": "shuffle_choices",
+        "value": "Yes"
+      }
+    ],
+    "subject": [
+      "Psychology"
+    ],
+    "contentTypeTier2": [
+      "AssignmentItem"
+    ],
+    "contentTypeTier1": "Assessment",
+    "format": [
+      "application/vnd.pearson.sanvan.v1.activity"
+    ],
+    "version": "1.0",
+    "guid": "c282843d-688f-474d-9c4e-b538ce3a3895",
+    "bookAuthor": "Saundra K. Ciccarelli; J. Noland White",
+    "title": "Ch04 ChapterQuiz4 Q5",
+    "educationalAlignment": [
+      "http://purl.org/pearson/objectives/183725473384362"
+    ]
+  },
+  "body": {
+    "description": "Ch04_ChapterQuiz4_Q5",
+    "containerConfig": [
+      {
+        "description": "Ch04_ChapterQuiz4_Q5",
+        "containerId": "target1",
+        "brixConfig": [
+          {
+            "bricId": "q1",
+            "bricType": "MultipleChoiceQuestion",
+            "config": {
+              "id": "QUE56935",
+              "question": "Your uncle Karl, who recently retired, has mentioned how he doesn’t sleep as well as he did when he was younger. For many years, he regularly slept about 7–8 hours, but now that he is in his 60s he tends to get only 5–6 hours of sleep per night. What would you tell him?\n\u003cbr /\u003e",
+              "order": "randomized",
+              "presenterType": "RadioGroup",
+              "presenterConfig": {
+                "numberFormat": "none"
+              },
+              "choices": [
+                {
+                  "answerKey": "answer_1",
+                  "content": "Getting less sleep seems to be a common consequence of aging."
+                },
+                {
+                  "answerKey": "answer_2",
+                  "content": "Getting less sleep as we age is not normal, since studies show we need more sleep as we age."
+                },
+                {
+                  "answerKey": "answer_3",
+                  "content": "Getting less sleep is dangerous as we age. People should seek medical intervention to help them sleep."
+                },
+                {
+                  "answerKey": "answer_4",
+                  "content": "Getting less sleep is associated with mental health problems in our later years. Uncle Karl should consider seeing a psychologist."
+                }
+              ]
+            },
+            "answerKey": {
+              "assessmentType": "multiplechoice",
+              "answers": {
+                "answer_3": {
+                  "score": 0.0,
+                  "response": "Consider this: Who sleeps more, your grandfather or a newborn baby? L.O. 4.2: Why do people need to sleep, and how does sleep work?"
+                },
+                "answer_2": {
+                  "score": 0.0,
+                  "response": "Consider this: Who sleeps more, your grandfather or a newborn baby? L.O. 4.2: Why do people need to sleep, and how does sleep work?"
+                },
+                "answer_1": {
+                  "score": 1.0,
+                  "response": ""
+                },
+                "answer_4": {
+                  "score": 0.0,
+                  "response": "Consider this: Who sleeps more, your grandfather or a newborn baby? L.O. 4.2: Why do people need to sleep, and how does sleep work?"
+                }
+              }
+            },
+            "configFixup": [
+              {
+                "name": "questionId",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "sequenceNodeKey",
+                  "type": "ref"
+                }
+              },
+              {
+                "name": "maxAttempts",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "maxAttempts",
+                  "type": "ref"
+                }
+              }
+            ]
+          }
+        ],
+        "hookupActions": [
+          {
+            "description": "Hookup the submit manager to evaluate answers",
+            "methodName": "handleRequestsFrom",
+            "type": "method-call",
+            "args": [
+              {
+                "domain": "brix",
+                "refId": "q1",
+                "type": "ref"
+              }
+            ],
+            "instance": {
+              "type": "submit-manager"
+            }
+          },
+          {
+            "description": "Draw the question",
+            "methodName": "draw",
+            "type": "method-call",
+            "args": [
+              {
+                "selector": "#target1",
+                "type": "d3select"
+              }
+            ],
+            "instance": {
+              "domain": "brix",
+              "refId": "q1",
+              "type": "ref"
+            }
+          }
+        ]
+      }
+    ]
+  }
+}
