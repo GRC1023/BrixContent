@@ -28,6 +28,7 @@ var _ = require('lodash');
 var Q = require('q');
 var fs = require('fs');
 var SubPub = require('eclg-prospero');
+var template = require('./resources/assessment_item_type_template.json');
 
 // assessmentType Handlers
 var assessmentHandlers = {
@@ -78,6 +79,7 @@ var sp = new SubPub(subPubConfig);
 var fileSuffix = '.assignment-item.json';
 var itemFiles = [];
 
+
 /* **************************************************************************
  * assessmentTypesHash                                                 */ /**
  *
@@ -112,6 +114,8 @@ if (_.isEmpty(args)) {
 }
 processFiles(args);
 
+// This is just a little function that sends sample files in test/mock off to 
+// SubPub for testing.
 //testSubPubMessage();
 
 // Crudely handle errors.
@@ -155,10 +159,13 @@ function processFiles(args) {
 				// @todo - figure out if we're a Create or Update
 				var action = 'Create';
 
-				var guid = jsonFileData.metadata.guid;
-
+				// Fire up the assessment handler
 				var handler = assessmentHandlers[assessmentInfo.assessmentType].createAssessmentHandler();
-				var payload = handler.processConfig(assessmentInfo.assessmentConfig, action, guid);
+				
+				// Fill out the base payload
+				var payload = processConfig(assessmentInfo.assessmentConfig, action, jsonFileData.metadata.guid);
+				// Add the assessment-specific data
+				payload = handler.addAssessmentSpecificConfig(payload, assessmentInfo.assessmentConfig);
 
 				//console.log(JSON.stringify(payload));
 				publish(payload, action.toLowerCase());
@@ -211,13 +218,13 @@ function getItemFiles(files) {
 function testSubPubMessage() {
 	console.log("testSubPubMessage Test Run:");
 	// send the message through SubPub
-	var sampleMaster = require('./test/mock/sampleCreate1.json');
+	var sampleMaster = require('./test/mock/sampleUpdate1.json');
 	var sample1 = _.cloneDeep(sampleMaster);
 	var now = new Date().toISOString();
 
 	sample1.Transaction_Datetime = now;
 	//console.log(JSON.stringify(sample1));
-	var action = 'create';
+	var action = 'update';
 	publish(sample1, action);
 }
 
@@ -308,4 +315,36 @@ function getAssessmentInfo(jsonFileData){
         //throw new Error(msg);
     }
     return assessmentInfo;
+}
+
+/* **************************************************************************
+ * processConfig                                                       */ /**
+ * 
+ * Fill out the basic template information
+ * 
+ * @param  {Object} assessmentConfig brixConfig for this assessment
+ * @param  {string} action           Create, Update, Delete (uppercase first)
+ * @param  {string} guid             Activity GUID (sans URL)
+ * @return {Object}                  The payload to be sent to SubPub
+ */
+function processConfig(assessmentConfig, action, guid) {
+	// Start with the template
+	var payload = _.cloneDeep(template);
+
+	// Add Transaction_Type_Code
+	payload.Transaction_Type_Code = action;
+
+	// Add Transaction_Datetime
+	var now = new Date().toISOString();
+	payload.Transaction_Datetime = now;
+
+	// Assessment_Items array will only ever have one value as we're only 
+	// going to send one item at a time because Transaction_Type_Code
+	// is a top-level property.
+	// @todo - we could refactor this later so it sends all Creates in 
+	// one message and all Updates in another.
+
+	payload.Assessment_Items[0].Assessment_Item_Source_System_Record_Id = guid;
+
+	return payload;
 }

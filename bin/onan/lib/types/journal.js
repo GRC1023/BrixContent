@@ -24,10 +24,9 @@
  ****************************************************************************/
 function AssessmentHandler() {
 
-	this.processConfig = function(assessmentConfig) {
-		var payload = {
-			"super": true
-		};
+	this.addAssessmentSpecificConfig = function(payload, assessmentConfig) {		
+		payload.Assessment_Items[0].Assessment_Item_Type_Code = "Journal";
+
 		return payload;
 	};
 }
