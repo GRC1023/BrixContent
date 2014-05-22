@@ -16,7 +16,7 @@
     <script src="js/brixlib-compiled.js"></script>
 
     <script>
-    <![CDATA[
+    //<![CDATA[
     // Create an object that will contain the objects needed for the activities
     // on this page.
     pearson.brix.activity = {};
@@ -88,7 +88,7 @@
 														"parts":
 														[
 															{ "type": "ref", "domain": "info", "refId": "imgBaseUrl" },
-															{ "type": "constant", "value": "img/11.24b _C34XAX.jpg" }
+															{ "type": "constant", "value": "img/11.24b_C34XAX.jpg" }
 														]
 													}
 											}
@@ -116,7 +116,7 @@
 														"parts":
 														[
 															{ "type": "ref", "domain": "info", "refId": "imgBaseUrl" },
-															{ "type": "constant", "value": "img/11.24c _D85A82.jpg" }
+															{ "type": "constant", "value": "img/11.24c_D85A82.jpg" }
 														]
 													}
 											}
@@ -172,7 +172,7 @@
 														"parts":
 														[
 															{ "type": "ref", "domain": "info", "refId": "imgBaseUrl" },
-															{ "type": "constant", "value": "img/11.24e _D6W2PH.jpg" }
+															{ "type": "constant", "value": "img/11.24e_D6W2PH.jpg" }
 														]
 													}
 											}
@@ -200,7 +200,7 @@
 														"parts":
 														[
 															{ "type": "ref", "domain": "info", "refId": "imgBaseUrl" },
-															{ "type": "constant", "value": "img/11.24f _D4KWGH.jpg" }
+															{ "type": "constant", "value": "img/11.24f_D4KWGH.jpg" }
 														]
 													}
 											}
@@ -253,7 +253,18 @@
 														"type": "d3select",
 														"selector": "#b3751e68bff4c4b8d97727b873683e1c9"
 													}
-											}
+											},
+		                                    {
+		                                        "type": "set-property",
+		                                        "name": "maxSize",
+		                                        "value":
+		                                            {
+		                                                "type": "property-of-ref",
+		                                                "domain": "brix",
+		                                                "refId": "carousel1",
+		                                                "accessor": "getSizeAt100Pct"
+		                                            }
+		                                    } 
 										]
 								}
 							],
@@ -284,7 +295,7 @@
 
     a.building = a.bricLayer.build(a.config);
 
-    ]]>
+    //]]>
     </script>
 </body>
 </html>
