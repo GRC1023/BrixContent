@@ -24,6 +24,7 @@
  * @copyright (c) 2014 Pearson, All rights reserved.
  *
  * **************************************************************************/
+var config = require('config');
 var _ = require('lodash');
 var Q = require('q');
 var fs = require('fs');
@@ -38,7 +39,7 @@ var assessmentHandlers = {
 
 // Test variable to do everything except publish to SubPub.  SubPub object
 // is written to console.  (if true).  false to publish.
-var noPublish = true;
+var noPublish = config.noPublish;
 
 /* @todo
 
@@ -50,24 +51,26 @@ var noPublish = true;
 
 /* ************************************************************************** 
  * SubPub Variables
+ * Note: 'Prospero' is the old name of 'SubPub' and still used in the 
+ * eclg-prospero node module.
  ****************************************************************************/
 
-// Issue a GET to these to get the status
+// Protip: Issue a GET to these to get the status endpoints to check for alive
 // http://prospero.qaprod.ecollege.com/v1/status // old SubPub cluster in staging
 // http://stg-subpub.prsn.us/v1/status // new SubPub cluster in staging
-var subPubRootUrl = 'http://stg-subpub.prsn.us';
+var subPubRootUrl = config.subPubRootUrl;
 var subPubConfig = {
 	rootUrl: subPubRootUrl,
-	principal: "BRIX",
-	sharedKey: "1Rd9ikrP3rw8w39l",
+	principal: config.principal,
+	sharedKey: config.sharedKey,
 	prosperoDefaults: {
 		tags: {},
-		client: 'DaaltClient',               // CLIENT
-		clientString: 'DaaltClient',         // CLIENT-STRING
-		system: 'brix',               // SYSTEM
-		subSystem: 'brix',            // SUB-SYSTEM
-		realm: 'pearson.brix.*',                // REALM
-		payloadContentType: 'application/json',   // PAYLOAD-CONTENT-TYPE
+		client: config.prosperoDefaults.client,
+		clientString: config.prosperoDefaults.clientString,
+		system: config.prosperoDefaults.system,
+		subSystem: config.prosperoDefaults.subSystem,
+		realm: config.prosperoDefaults.realm,
+		payloadContentType: config.prosperoDefaults.payloadContentType
 	}
 };
 var sp = new SubPub(subPubConfig);
@@ -75,7 +78,7 @@ var sp = new SubPub(subPubConfig);
 /* ************************************************************************** 
  * Other Variables
  ****************************************************************************/
-var fileSuffix = '.assignment-item.json';
+var fileSuffix = config.fileSuffix;
 var itemFiles = [];
 
 

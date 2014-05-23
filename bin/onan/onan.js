@@ -27,11 +27,6 @@
 var _ = require('lodash');
 var ItemSeeder = require('./lib/itemSeeder').ItemSeeder;
 
-// Test variable to do everything except publish to SubPub.  SubPub object
-// is written to console.  (if true).  false to publish.
-// @todo - add this as a command-line argument, though you'll have to do 
-// something about all arguments at that point.
-var noPublish = true;
 
 /* @todo
 
