@@ -112,11 +112,11 @@ if (_.isEmpty(args)) {
 	console.log("No args.  Exiting");
 	process.exit(0);
 }
-processFiles(args);
+//processFiles(args);
 
 // This is just a little function that sends sample files in test/mock off to 
 // SubPub for testing.
-//testSubPubMessage();
+testSubPubMessage();
 
 // Crudely handle errors.
 // @todo - make this not terrible
@@ -213,12 +213,13 @@ function getItemFiles(files) {
  * testSubPubMessage                                                   */ /**
  * 
  * This is just a simple function that sends a hardcoded sample message
- * to SubPub through the publish function.
+ * to SubPub through the publish function.  Whatever timestamp happens to
+ * be in the json file is replaced with the current datetime.
  ****************************************************************************/
 function testSubPubMessage() {
 	console.log("testSubPubMessage Test Run:");
 	// send the message through SubPub
-	var sampleMaster = require('./test/mock/sampleUpdate1.json');
+	var sampleMaster = require('./test/mock/sampleUpdate4.json');
 	var sample1 = _.cloneDeep(sampleMaster);
 	var now = new Date().toISOString();
 
