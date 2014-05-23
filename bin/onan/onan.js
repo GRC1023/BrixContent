@@ -27,6 +27,12 @@
 var _ = require('lodash');
 var ItemSeeder = require('./lib/itemSeeder').ItemSeeder;
 
+// Force environment
+// @todo - This is fine in a script (maybe you'd want it in command args) but
+// you'll want to do something else (bin/conf) if you want this as a part of a 
+// web app.
+process.env.NODE_ENV = 'staging';
+//process.env.NODE_ENV = 'prod';
 
 /* @todo
 

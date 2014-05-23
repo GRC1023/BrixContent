@@ -18,6 +18,8 @@ var expect = require('chai').expect;
 var config = require('config');
 var Q = require('q');
 var _ = require('lodash');
+var config = require('config');
+
 var isMock = require('../mock/itemSeeder.mock');
 var ItemSeeder = require('../../lib/itemSeeder').ItemSeeder;
 
@@ -34,7 +36,7 @@ describe('Item Seeder seeding items', function() {
         itemSeeder = new ItemSeeder();
     });
 
-    it('should build the right payload template with a journal', function (done){
+    it.only('should build the right payload template with a journal', function (done){
         var assessmentConfig = _.cloneDeep(isMock.journalAssessmentConfig);
         var action = 'Create';
         var guid = '12345';
