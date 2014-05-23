@@ -12,6 +12,7 @@
  *
  * **************************************************************************/
 var _ = require('lodash');
+var Q = require('q');
 
 
 /* **************************************************************************
@@ -25,7 +26,9 @@ var _ = require('lodash');
  ****************************************************************************/
 function AssessmentHandler() {
 
-	this.addAssessmentSpecificConfig = function(payload, assessmentConfig) {		
+	this.addAssessmentSpecificConfig = function(payload, assessmentConfig) {
+		var deferred = Q.defer();
+
 		var answerKeys = _.keys(assessmentConfig.answerKey.answers);
 		payload.Assessment_Items[0].Assessment_Item_Type_Code = "MultipleChoice_" + answerKeys.length;
 
@@ -35,7 +38,8 @@ function AssessmentHandler() {
 			payload.Assessment_Items[0].Answers.push(answer);
 		});
 
-		return payload;
+		deferred.resolve(payload);
+		return deferred.promise;
 	};
 }
 

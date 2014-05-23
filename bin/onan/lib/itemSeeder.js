@@ -65,12 +65,12 @@ var subPubConfig = {
 	sharedKey: config.sharedKey,
 	prosperoDefaults: {
 		tags: {},
-		client: config.prosperoDefaults.client,
-		clientString: config.prosperoDefaults.clientString,
-		system: config.prosperoDefaults.system,
-		subSystem: config.prosperoDefaults.subSystem,
-		realm: config.prosperoDefaults.realm,
-		payloadContentType: config.prosperoDefaults.payloadContentType
+		client: config.client,
+		clientString: config.clientString,
+		system: config.system,
+		subSystem: config.subSystem,
+		realm: config.realm,
+		payloadContentType: config.payloadContentType
 	}
 };
 var sp = new SubPub(subPubConfig);
@@ -79,14 +79,15 @@ var sp = new SubPub(subPubConfig);
  * Other Variables
  ****************************************************************************/
 var fileSuffix = config.fileSuffix;
-var itemFiles = [];
+
 
 
 /* **************************************************************************
  * assessmentTypesHash                                                 */ /**
  *
  * This is the map of bricType to assessmentType, used to map to 
- * DAALT's "Assessment_Item_Type" message.
+ * DAALT's "Assessment_Item_Type" message.  The value of our hash
+ * maps to the assessmentHandlers required above.
  *
  * This should be similar StatsAssessment.presenterTypesHash in the 
  * brixClient code.
@@ -130,8 +131,60 @@ module.exports.ItemSeeder = function() {
 		// files into the itemFiles array.
 		// This is a largely synchronous operation.
 		// @todo - change this to async and use promises
-		this.getItemFiles(args);
+		var itemFiles = [];
+		this.getItemFiles(args, itemFiles);
 
+		// Iterate over the items and publish them.
+		this.iterateOverItems(itemFiles);
+
+
+		console.log("I'm done.  I've processed " + itemFiles.length + " files.");
+	};
+
+	/* **************************************************************************
+	 * getItemFiles                                                        */ /**
+	 * 
+	 * Iterate over an array of files and collect the proper assessment-item
+	 * files (those that match fileSuffix).
+	 * 
+	 * @param  {Array} files  An array of files
+	 ****************************************************************************/
+	this.getItemFiles = function(files, itemFiles) {
+		var that = this;
+		// loop over files
+		_(files).each(function(filename) {
+			var regex = new RegExp(".*" + fileSuffix + "$");
+			var stats = fs.statSync(filename);
+
+			// If the file is a directory, grab the path, prepend that to all
+			// the files therein, and iterate over those
+			if (stats.isDirectory()) {
+				var path = fs.realpathSync(filename);
+				var files = fs.readdirSync(filename);
+				_(files).each(function(part, index, files) {
+					files[index] = path + "/" + files[index];
+				});
+				that.getItemFiles(files, itemFiles);
+			} else {
+				// if the file is a directory, loop over everything in it
+				if ( filename.match(regex) ) {
+					itemFiles.push(filename);
+				}	
+			}
+		});
+	};
+
+	/**
+	 * iterateOverItems
+	 *
+	 * Iterate over the itemFiles array, figure out what kind of assessment type
+	 * you've got and hand the config off to the appropriate assessment type 
+	 * handler.
+	 * 
+	 * @param  {Array} itemFiles An array of itemFiles with proper paths
+	 */
+	this.iterateOverItems = function(itemFiles) {
+		var that = this;
 		// Iterate over the itemFiles array, figure out what kind of assessment type
 		// you've got and hand the config off to the appropriate assessment type 
 		// handler.
@@ -151,51 +204,33 @@ module.exports.ItemSeeder = function() {
 					var handler = assessmentHandlers[assessmentInfo.assessmentType].createAssessmentHandler();
 					
 					// Fill out the base payload
-					var payload = that.processConfig(assessmentInfo.assessmentConfig, action, jsonFileData.metadata.guid);
-					// Add the assessment-specific data
-					payload = handler.addAssessmentSpecificConfig(payload, assessmentInfo.assessmentConfig);
-
-					//console.log(JSON.stringify(payload));
-					that.publish(payload, action.toLowerCase());
+					that.processConfig(assessmentInfo.assessmentConfig, action, jsonFileData.metadata.guid)
+						.then(function(payload){
+							// Add the assessment-specific data
+							return handler.addAssessmentSpecificConfig(payload, assessmentInfo.assessmentConfig);
+						})
+						.then(function(payload){
+							// Publish it.
+							return that.publish(payload, action.toLowerCase());
+						})
+						.then(function(result){
+							if (result.statusCode === 900) {
+								// We've got a bs status code and are just returning the obj we planned to send
+								// to SubPub.  This is when we set config to not publish.
+								console.log(JSON.stringify(result.obj));
+							} else {
+								//@todo - write to db
+							}
+						})
+						.catch(function (error) {
+							// Handle any error from all above steps
+							// @todo
+						}).done();
 				}
 
 			});
 		});
 
-
-		console.log("I'm done.  I've processed " + itemFiles.length + " files.");
-	};
-
-	/* **************************************************************************
-	 * getItemFiles                                                        */ /**
-	 * 
-	 * Iterate over an array of files and collect the proper assessment-item
-	 * files (those that match fileSuffix).
-	 * @param  {Array} files  An array of files
-	 ****************************************************************************/
-	this.getItemFiles = function(files) {
-		var that = this;
-		// loop over files
-		_(files).each(function(filename) {
-			var regex = new RegExp(".*" + fileSuffix + "$");
-			var stats = fs.statSync(filename);
-
-			// If the file is a directory, grab the path, prepend that to all
-			// the files therein, and iterate over those
-			if (stats.isDirectory()) {
-				var path = fs.realpathSync(filename);
-				var files = fs.readdirSync(filename);
-				_(files).each(function(part, index, files) {
-					files[index] = path + "/" + files[index];
-				});
-				that.getItemFiles(files);
-			} else {
-				// if the file is a directory, loop over everything in it
-				if ( filename.match(regex) ) {
-					itemFiles.push(filename);
-				}	
-			}
-		});
 	};
 
 	/* **************************************************************************
@@ -227,8 +262,10 @@ module.exports.ItemSeeder = function() {
 	 * @param  {string} action  create, update, or delete (lowercase first letter)
 	 ****************************************************************************/
 	this.publish = function(payload, action) {
-		var system = 'brix';
-		var domainModel = 'assessment-item-type';
+		var deferred = Q.defer();
+
+		var system = config.system;
+		var domainModel = config.domainModel;
 		// action is either what you pass in or 'create'
 		// @todo make sure action is create, update, or delete
 		action = action ? action : 'create';
@@ -238,7 +275,7 @@ module.exports.ItemSeeder = function() {
 		var obj = {
 			//tags: { UserID: "joe" },  
 			messageType: messageType,
-			payloadContentType: 'application/json', // @todo - unnecessary thanks to defaults?
+			payloadContentType: config.payloadContentType, // @todo - unnecessary thanks to defaults?
 			payload: payload
 		};
 
@@ -249,18 +286,28 @@ module.exports.ItemSeeder = function() {
 		
 		if (noPublish) {
 			console.log("NOT PUBLISHING object:");
-			console.log(JSON.stringify(obj));
+			var result = {};
+			// fake status code
+			result.statusCode = 900;
+			result.obj = obj;
+			deferred.resolve(result);
 		} else {
 
 			sp.publish(obj, function(error, result) {
 				console.log("I have published");
-				if (error) console.log(error);
-				console.log("RESULT ----");
-				console.log(JSON.stringify(result));
-				/*if (result.statusCode === 200)
-					var messageId = result.data.message.id;*/
+				if (error) {
+					console.log(error);
+					deferred.reject(error);
+				} else {
+					console.log("RESULT ----");
+					console.log(JSON.stringify(result));
+					/*if (result.statusCode === 200)
+						var messageId = result.data.message.id;*/
+					deferred.resolve(result);
+				}
 			});
 		}
+		return deferred.promise;
 	};
 
 	/* **************************************************************************
@@ -318,6 +365,8 @@ module.exports.ItemSeeder = function() {
 	 * @return {Object}                  The payload to be sent to SubPub
 	 */
 	this.processConfig = function(assessmentConfig, action, guid) {
+		var deferred = Q.defer();
+
 		// Start with the template
 		var payload = _.cloneDeep(template);
 
@@ -336,6 +385,7 @@ module.exports.ItemSeeder = function() {
 
 		payload.Assessment_Items[0].Assessment_Item_Source_System_Record_Id = guid;
 
-		return payload;
+		deferred.resolve(payload);
+		return deferred.promise;
 	};
 };
