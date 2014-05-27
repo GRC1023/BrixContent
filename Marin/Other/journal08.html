@@ -5,8 +5,8 @@
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta content="Template for Journal Brix" name="description">
 
-    <!-- widgets.css contains styling for the interactive brix -->
-    <link href="css/widgets.css" rel="stylesheet">
+    <!-- brix.css contains styling for the interactive brix -->
+    <link href="css/brix.css" rel="stylesheet">
 </head>
 <body>
     <div id="bb3137bb750a947128953b7c83f856d6e"></div>
@@ -93,7 +93,7 @@
 	a.answerMan = new pearson.brix.utils.LocalAnswerMan();
 	a.submitManager = new pearson.brix.utils.SubmitManager(a.eventManager, a.answerMan);
 
-	a.bricLayer = new pearson.brix.BricLayer(null, a.eventManager, a.submitManager);
+	a.bricLayer = new pearson.brix.utils.BricLayer(null, a.eventManager, a.submitManager);
 
 	a.building = a.bricLayer.build(a.config);
 
