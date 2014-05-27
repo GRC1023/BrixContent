@@ -1,0 +1,114 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <meta content="Stepped Diagram" name="description"/>
+    
+   <!-- widgets.css contains styling for the interactive brix -->
+    <link href="css/widgets.css" rel="stylesheet" type="text/css"/>
+
+</head>
+<body>
+    <div id="bdc328cbba71b474eb02866361cfb1663"></div>
+    <script src="js/d3.v3.min.js"></script>
+    
+	<script src="js/brixlib-compiled.js"></script>
+
+    <script type="text/javascript">
+	//<![CDATA[
+    //// Create an object that will contain the objects needed for the activities
+	// on this page.
+	pearson.brix.activity = {};
+	var a = pearson.brix.activity;
+
+	// The activity config that defines the brix and mortar for this page
+	a.config =
+		{
+			"description": "An image and a container that resizes to support it",
+            "imgBaseUrl": "",
+			"containerConfig":
+				[
+					{
+						"description": "container for the graph and labels",
+						"containerId": "bdc328cbba71b474eb02866361cfb1663",
+						"brixConfig":
+							[
+								{
+									"bricId": "image1",
+									"bricType": "CaptionedImage",
+									"config":
+										{
+											"id": "image_1",
+                                            "URI": "img/68830_EU_04_01.png",
+                                            "caption": "Image of a nuclear reactor",
+                                            "actualSize": {"height": 359 , "width": 599},
+                                            "displayWidth": 557
+										}
+								},
+								{
+									"bricId": "cntr1",
+									"bricType": "SvgContainer",
+									"config":
+										{
+											//"maxSize": {"height": 360, "width": 557}
+										},
+									"configFixup":
+                                        [
+                                            {
+                                                "type": "set-property",
+                                                "name": "node",
+                                                "value":
+                                                    {
+                                                        "type": "d3select",
+                                                        "selector": "#bdc328cbba71b474eb02866361cfb1663"
+                                                    }
+                                            },
+                                            {
+                                            "type": "set-property",
+                                            "name": "maxSize",
+                                            "value":
+                                                {
+                                                    "type": "property-of-ref",
+                                                    "domain": "brix",
+                                                    "refId": "image1",
+                                                    "accessor": "getSizeAt100Pct"
+                                                }
+                                            }
+                                        ]
+								}
+							],
+						"hookupActions":
+							[
+								{
+									"description": "Append the image to the svg container",
+									"type": "method-call",
+									"instance": {"type": "ref", "domain": "brix", "refId": "cntr1"},
+									"methodName": "append",
+									"args":
+										[
+											{ "type": "ref", "domain": "brix", "refId": "image1" }
+										]
+								}
+							]
+					}
+				]
+		};
+
+	// create the eventmanager to be used by the created brix, and the
+	// bricLayer which will create them, and then tell the bricLayer to build.
+	a.eventManager = new pearson.utils.EventManager();
+	a.answerMan = new pearson.brix.utils.LocalAnswerMan();
+	a.submitManager = new pearson.brix.utils.SubmitManager(a.eventManager, a.answerMan);
+
+	a.bricLayer = new pearson.brix.BricLayer(null, a.eventManager, a.submitManager);
+
+	pearson.utils.logToConsole(true, "FINER");
+
+	a.building = a.bricLayer.build(a.config);
+    //]]>
+
+    </script>
+</body>
+</html>
