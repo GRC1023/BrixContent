@@ -11,7 +11,7 @@
  * @copyright (c) 2014 Pearson, All rights reserved.
  *
  * **************************************************************************/
-//force test environment
+//force test environment, though this should be set in the Makefile
 process.env.NODE_ENV = 'test';
 
 var expect = require('chai').expect;

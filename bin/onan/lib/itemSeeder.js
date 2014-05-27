@@ -28,6 +28,7 @@ var config = require('config');
 var _ = require('lodash');
 var Q = require('q');
 var fs = require('fs');
+var Engine = require('tingodb')();
 var SubPub = require('eclg-prospero');
 var template = require('../resources/assessment_item_type_template.json');
 
@@ -79,6 +80,7 @@ var sp = new SubPub(subPubConfig);
  * Other Variables
  ****************************************************************************/
 var fileSuffix = config.fileSuffix;
+var db = new Engine.Db(config.dbPath, {});
 
 
 
@@ -184,52 +186,58 @@ module.exports.ItemSeeder = function() {
 	 */
 	this.iterateOverItems = function(itemFiles) {
 		var that = this;
-		// Iterate over the itemFiles array, figure out what kind of assessment type
-		// you've got and hand the config off to the appropriate assessment type 
-		// handler.
-		// @todo - change these callbacks to promises
-		_(itemFiles).each(function(filename) {
-			fs.readFile(filename, 'utf8', function (err, fileData) {
-				if (err) throw err;
-				var jsonFileData = JSON.parse(fileData);
-				var assessmentInfo = that.getAssessmentInfo(jsonFileData);
 
-				// If we've found a proper assessment type, let's process it
-				if (assessmentInfo.assessmentType) {
-					// @todo - figure out if we're a Create or Update
-					var action = 'Create';
+		// Open a db connection
+		db.open(function(err,db) {
+			db.collection("items", function (err, items) {
 
-					// Fire up the assessment handler
-					var handler = assessmentHandlers[assessmentInfo.assessmentType].createAssessmentHandler();
-					
-					// Fill out the base payload
-					that.processConfig(assessmentInfo.assessmentConfig, action, jsonFileData.metadata.guid)
-						.then(function(payload){
-							// Add the assessment-specific data
-							return handler.addAssessmentSpecificConfig(payload, assessmentInfo.assessmentConfig);
-						})
-						.then(function(payload){
-							// Publish it.
-							return that.publish(payload, action.toLowerCase());
-						})
-						.then(function(result){
-							if (result.statusCode === 900) {
-								// We've got a bs status code and are just returning the obj we planned to send
-								// to SubPub.  This is when we set config to not publish.
-								console.log(JSON.stringify(result.obj));
-							} else {
-								//@todo - write to db
-							}
-						})
-						.catch(function (error) {
-							// Handle any error from all above steps
-							// @todo
-						}).done();
-				}
+				// Iterate over the itemFiles array, figure out what kind of assessment type
+				// you've got and hand the config off to the appropriate assessment type 
+				// handler.
+				// @todo - change these callbacks to promises
+				_(itemFiles).each(function(filename) {
+					fs.readFile(filename, 'utf8', function (err, fileData) {
+						if (err) throw err;
+						var jsonFileData = JSON.parse(fileData);
+						var guid = jsonFileData.metadata.guid;
+						var assessmentInfo = that.getAssessmentInfo(jsonFileData);
 
+						// If we've found a proper assessment type, let's process it
+						if (assessmentInfo.assessmentType) {
+							
+							items.findOne({activityGuid:guid}, function (err, item) {
+								// @todo - do something with db err
+								
+								var action = item ? 'Update' : 'Create';
+
+								// Fire up the assessment handler
+								var handler = assessmentHandlers[assessmentInfo.assessmentType].createAssessmentHandler();
+								
+								// Fill out the base payload
+								that.processConfig(assessmentInfo.assessmentConfig, action, guid)
+									.then(function(payload){
+										// Add the assessment-specific data
+										return handler.addAssessmentSpecificConfig(payload, assessmentInfo.assessmentConfig);
+									})
+									.then(function(payload){
+										// Publish it.
+										return that.publish(payload, action.toLowerCase());
+									})
+									.then(function(result){
+										// Build our record to create/update into db
+										return that.writeRecord(result, guid, action, items);
+									})
+									.catch(function (error) {
+										// Handle any error from all above steps
+										// @todo
+										console.log(error);
+									}).done();
+							});
+						}
+					});
+				});
 			});
 		});
-
 	};
 
 	/* **************************************************************************
@@ -249,7 +257,21 @@ module.exports.ItemSeeder = function() {
 		sample1.Transaction_Datetime = now;
 		//console.log(JSON.stringify(sample1));
 		var action = 'create';
-		this.publish(sample1, action);
+		this.publish(sample1, action)
+			.then(function(result){
+				if (result.statusCode === 900) {
+					// We've got a bs status code and are just returning the obj we planned to send
+					// to SubPub.  This is when we set config to not publish.
+					console.log(JSON.stringify(result.obj));
+				} else {
+					console.log("Yay.");
+				}
+			})
+			.catch(function (error) {
+				// Handle any error from all above steps
+				// @todo
+				console.log(error);
+			}).done();
 	};
 
 	/* **************************************************************************
@@ -278,8 +300,6 @@ module.exports.ItemSeeder = function() {
 			payload: payload
 		};
 
-		
-
 		// SubPub message codes are defined here:
 		// http://code.pearson.com/pearson-learningstudio/events/event-concepts/event-integration-guide-producing-messages-rest_x
 		
@@ -293,11 +313,23 @@ module.exports.ItemSeeder = function() {
 		} else {
 
 			sp.publish(obj, function(error, result) {
-				console.log("I have published");
 				if (error) {
-					console.log(error);
+					/* A sample error message looks like:
+						[Error: Unexpected HTTP Status 401]
+						and has a result that looks like:
+						{ statusCode: 401,
+						  data: 'Unable to authenticate: Principal Brix does not exist' }
+						You can get this by setting your Principal to something it shouldn't be, 
+						like 'Brix' instead of the proper 'BRIX'.
+					
+					 */
+					console.log(result);
 					deferred.reject(error);
 				} else {
+					/*
+						A proper response looks like:
+						{"statusCode":200,"data":{"message":{"id":"00000cd2-e9a4-a1a4-3b95-76d3eed24d94"}}}
+					 */
 					console.log("RESULT ----");
 					console.log(JSON.stringify(result));
 					/*if (result.statusCode === 200)
@@ -306,6 +338,62 @@ module.exports.ItemSeeder = function() {
 				}
 			});
 		}
+		return deferred.promise;
+	};
+
+	/* **************************************************************************
+	 * writeRecord                                                         */ /**
+	 * 
+	 * Given a successful result from SubPub, we're going to log it in our 
+	 * database.  
+	 * @param  {Object} result Result object from SubPub
+	 * @param  {string} guid   Activity GUID
+	 * @param  {string} action Create or Update
+	 * @param  {Object} items  Items db collection object
+	 * @return {promise}       Promise
+	 */
+	this.writeRecord = function(result, guid, action, items) {
+		var deferred = Q.defer();
+		var id = "test data";
+		if (result.data && result.data.message && result.data.message.id) {
+			id = result.data.message.id;
+		}										 
+		var timestamp = new Date().toJSON();
+		var subPubRecord = {
+			"id": id,
+			"timestamp": timestamp
+		};
+
+		if (action === 'Create') {
+			var createDoc = { 
+				activityGuid: guid, 
+				subPubRecords: []
+			};
+			createDoc.subPubRecords.push(subPubRecord);
+			items.insert(createDoc, {w:1}, function(err, result) {
+				if (err) {
+					deferred.reject(error);
+				} else {
+					deferred.resolve(result);
+				}
+				
+			});
+		} else { // Update
+			items.update({activityGuid:guid}, {$push:{subPubRecords:subPubRecord}}, {w:1}, function(err, result) {
+				if (err) {
+					deferred.reject(error);
+				} else {
+					deferred.resolve(result);					
+				}
+			});
+		}
+
+		if (result.statusCode === 900) {
+			// We've got a bs status code and are just returning the obj we planned to send
+			// to SubPub.  This is when we set config to not publish.
+			console.log(JSON.stringify(result.obj));
+		}
+
 		return deferred.promise;
 	};
 
