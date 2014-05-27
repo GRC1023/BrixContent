@@ -1,0 +1,145 @@
+{
+  "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope",
+  "@type": "Envelope",
+  "metadata": {
+    "guid": "0e319802-8a6e-4532-9414-1efb1acb133b",
+    "bookAuthor": "Jason Neff",
+    "bookTitle": "Our Changing Planet",
+    "title": "68830_EU_GDV_08.html",
+    "keywords": [
+      "guided data visualization"
+    ],
+    "extendedMetadata": [
+      {
+        "name": "chapterTitle",
+        "value": "Energy Use"
+      },
+      {
+        "name": "CH",
+        "value": "18"
+      },
+      {
+        "name": "item_title",
+        "value": "A question about energy use"
+      }
+    ],
+    "contentTypeTier2": [
+      "AssignmentItem"
+    ],
+    "contentTypeTier1": "Assessment",
+    "format": [
+      "application/vnd.pearson.sanvan.v1.activity"
+    ],
+    "educationalAlignment": [
+      "http://purl.org/pearson/objectives/183725473384362"
+    ],
+    "version": "1.0"
+  },
+  "body": {
+    "containerConfig": [
+      {
+        "brixConfig": [
+          {
+            "config": {
+              "presenterType": "RadioGroup",
+              "question": "Examine the per capita electricity use in China and imagine what would happen if this trend continued. How much electricity would each person in China be consuming by 2020?\u0026nbsp;",
+              "presenterConfig": {
+                "numberFormat": ""
+              },
+              "choices": [
+                {
+                  "content": "About 4.0 megawatts per person",
+                  "answerKey": "answer1"
+                },
+                {
+                  "content": " About 3.5 megawatts per person",
+                  "answerKey": "answer2"
+                },
+                {
+                  "content": " About 5.0 megawatts per person",
+                  "answerKey": "answer3"
+                },
+                {
+                  "content": " About 6.0 megawatts per person\u0026nbsp;",
+                  "answerKey": "answer4"
+                }
+              ],
+              "order": "randomized",
+              "id": "sampleQ1"
+            },
+            "answerKey": {
+              "assessmentType": "multiplechoice",
+              "answers": {
+                "answer4": {
+                  "score": 0.0,
+                  "response": "Try to trace the curve out to 2020 and compare this value to the line from the 6 megawatt hours per person consumption. Is it below this value?"
+                },
+                "answer1": {
+                  "score": 1.0,
+                  "response": ""
+                },
+                "answer3": {
+                  "score": 0.0,
+                  "response": "Try to trace the curve out to 2020 and compare this value to the line from the 5 megawatt hours per person consumption. Is it below this value?"
+                },
+                "answer2": {
+                  "score": 0.0,
+                  "response": "If you look at the graph, you can see that the per capita electricity use is still rising in China.  "
+                }
+              }
+            },
+            "bricType": "MultipleChoiceQuestion",
+            "bricId": "Q1",
+            "configFixup": [
+              {
+                "type": "set-property",
+                "name": "questionId",
+                "value": {
+                  "domain": "info",
+                  "type": "ref",
+                  "refId": "sequenceNodeKey"
+                }
+              }
+            ]
+          }
+        ],
+        "description": "container for the sample multiple choice question",
+        "hookupActions": [
+          {
+            "instance": {
+              "type": "submit-manager"
+            },
+            "args": [
+              {
+                "domain": "brix",
+                "type": "ref",
+                "refId": "Q1"
+              }
+            ],
+            "type": "method-call",
+            "description": "Hookup the submit manager to evaluate answers",
+            "methodName": "handleRequestsFrom"
+          },
+          {
+            "instance": {
+              "domain": "brix",
+              "type": "ref",
+              "refId": "Q1"
+            },
+            "args": [
+              {
+                "type": "d3select",
+                "selector": "#target1"
+              }
+            ],
+            "type": "method-call",
+            "description": "Draw the question",
+            "methodName": "draw"
+          }
+        ],
+        "containerId": "target1"
+      }
+    ],
+    "description": "A Sample Activity containing a single multiple choice bric"
+  }
+}

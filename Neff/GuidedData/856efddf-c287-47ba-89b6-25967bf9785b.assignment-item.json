@@ -1,0 +1,130 @@
+{
+  "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope",
+  "@type": "Envelope",
+  "metadata": {
+    "guid": "856efddf-c287-47ba-89b6-25967bf9785b",
+    "title": "68830_EU_GDV_06.html",
+    "keywords": [
+      "guided data visualization"
+    ],
+    "extendedMetadata": [],
+    "contentTypeTier2": [
+      "AssignmentItem"
+    ],
+    "contentTypeTier1": "Assessment",
+    "format": [
+      "application/vnd.pearson.sanvan.v1.activity"
+    ],
+    "educationalAlignment": [
+      "http://purl.org/pearson/objectives/183725473384362"
+    ],
+    "version": "1.0"
+  },
+  "body": {
+    "containerConfig": [
+      {
+        "brixConfig": [
+          {
+            "config": {
+              "presenterType": "RadioGroup",
+              "question": "Thus far you have examined total energy consumption for entire nations. Now you will have the opportunity to examine per capita (per person) consumption. Before you do this, make a prediction about how recent per capita consumption of energy use differs between the United States and China.",
+              "presenterConfig": {
+                "numberFormat": ""
+              },
+              "choices": [
+                {
+                  "content": "The average American consumes about 4 times more energy than an average Chinese citizen. ",
+                  "answerKey": "answer1"
+                },
+                {
+                  "content": "The average American consumes about 2 times more energy than an average Chinese citizen. ",
+                  "answerKey": "answer2"
+                },
+                {
+                  "content": "The average American consumes about 10 times more energy than an average Chinese citizen. ",
+                  "answerKey": "answer3"
+                },
+                {
+                  "content": "The average American consumes about 100 times more energy than an average Chinese citizen. ",
+                  "answerKey": "answer4"
+                }
+              ],
+              "order": "randomized",
+              "id": "sampleQ1"
+            },
+            "answerKey": {
+              "assessmentType": "multiplechoice",
+              "answers": {
+                "answer4": {
+                  "score": 0.0,
+                  "response": "We\u0027ll check your prediction in the graph on the next page. "
+                },
+                "answer1": {
+                  "score": 1.0,
+                  "response": "We\u0027ll check your prediction in the graph on the next page. "
+                },
+                "answer3": {
+                  "score": 0.0,
+                  "response": "We\u0027ll check your prediction in the graph on the next page. "
+                },
+                "answer2": {
+                  "score": 0.0,
+                  "response": "We\u0027ll check your prediction in the graph on the next page. "
+                }
+              }
+            },
+            "bricType": "MultipleChoiceQuestion",
+            "bricId": "Q1",
+            "configFixup": [
+              {
+                "type": "set-property",
+                "name": "questionId",
+                "value": {
+                  "domain": "info",
+                  "type": "ref",
+                  "refId": "sequenceNodeKey"
+                }
+              }
+            ]
+          }
+        ],
+        "description": "container for the sample multiple choice question",
+        "hookupActions": [
+          {
+            "instance": {
+              "type": "submit-manager"
+            },
+            "args": [
+              {
+                "domain": "brix",
+                "type": "ref",
+                "refId": "Q1"
+              }
+            ],
+            "type": "method-call",
+            "description": "Hookup the submit manager to evaluate answers",
+            "methodName": "handleRequestsFrom"
+          },
+          {
+            "instance": {
+              "domain": "brix",
+              "type": "ref",
+              "refId": "Q1"
+            },
+            "args": [
+              {
+                "type": "d3select",
+                "selector": "#target1"
+              }
+            ],
+            "type": "method-call",
+            "description": "Draw the question",
+            "methodName": "draw"
+          }
+        ],
+        "containerId": "target1"
+      }
+    ],
+    "description": "A Sample Activity containing a single multiple choice bric"
+  }
+}
