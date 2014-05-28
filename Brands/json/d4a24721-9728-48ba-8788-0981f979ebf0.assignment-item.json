@@ -1,0 +1,191 @@
+{
+  "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope",
+  "@type": "Envelope",
+  "metadata": {
+    "bookTitle": "American Stories: A History of the United States, Combined Volume",
+    "keywords": [
+      "Brands 3e",
+      "Ch25",
+      "Alick"
+    ],
+    "extendedMetadata": [
+      {
+        "name": "ISBN",
+        "value": "013379461X"
+      },
+      {
+        "name": "M",
+        "value": "m02"
+      },
+      {
+        "name": "assessment_title",
+        "value": "Quiz: City Life in the Roaring Twenties"
+      },
+      {
+        "name": "Topic",
+        "value": "City Life in the Roaring Twenties"
+      },
+      {
+        "name": "chapterTitle",
+        "value": "Transition to Modern America 1919â1928"
+      },
+      {
+        "name": "module",
+        "value": "City Life in the Roaring Twenties"
+      },
+      {
+        "name": "item_title",
+        "value": "013379461X_H. W. Brands; T. H. Breen; R. Hal Williams; Ariela J. Gros_ch25_m02_q0005"
+      },
+      {
+        "name": "questionlayout",
+        "value": "1"
+      },
+      {
+        "name": "CH",
+        "value": "25"
+      },
+      {
+        "name": "Objective",
+        "value": "LO: 25.2: How did life in the cities change after World War I?"
+      },
+      {
+        "name": "shuffle_choices",
+        "value": "Yes"
+      }
+    ],
+    "subject": [
+      "US History"
+    ],
+    "contentTypeTier2": [
+      "AssignmentItem"
+    ],
+    "contentTypeTier1": "Assessment",
+    "format": [
+      "application/vnd.pearson.sanvan.v1.activity"
+    ],
+    "version": "1.0",
+    "guid": "d4a24721-9728-48ba-8788-0981f979ebf0",
+    "bookAuthor": "H. W. Brands; T. H. Breen; R. Hal Williams; Ariela J. Gros",
+    "title": "POST 25 07",
+    "educationalAlignment": [
+      "http://purl.org/pearson/objectives/183725473384362"
+    ]
+  },
+  "body": {
+    "description": "POST_25_07",
+    "containerConfig": [
+      {
+        "description": "POST_25_07",
+        "containerId": "target1",
+        "brixConfig": [
+          {
+            "bricId": "q1",
+            "bricType": "MultipleChoiceQuestion",
+            "config": {
+              "id": "QUE61391",
+              "question": "In the 1920s, the \n\u003cem\u003eNew York Daily News\u003c/em\u003e was an example of __________.\n\u003cbr /\u003e",
+              "order": "randomized",
+              "presenterType": "RadioGroup",
+              "presenterConfig": {
+                "numberFormat": "none"
+              },
+              "choices": [
+                {
+                  "answerKey": "answer_1",
+                  "content": "the new urban tabloids that fed into a fascination with tales of sexual impropriety"
+                },
+                {
+                  "answerKey": "answer_2",
+                  "content": "the decline in objective journalism and rise of politically biased media outlets"
+                },
+                {
+                  "answerKey": "answer_3",
+                  "content": "a truly “free” press, one of the first news conglomerates to operate independently within the White House Press Corps"
+                },
+                {
+                  "answerKey": "answer_4",
+                  "content": "early global media that tapped into the nations’ interest in world events following its participation in the Great War"
+                }
+              ]
+            },
+            "answerKey": {
+              "assessmentType": "multiplechoice",
+              "answers": {
+                "answer_3": {
+                  "score": 0.0,
+                  "response": "Sex became a popular topic as Victorian standards crumbled. Sophisticated city dwellers seemed to be intent on exploring a new freedom in sexual expression. Plays and novels focused on adultery, and the new urban tabloids—led by the \n\u003cem\u003eNew York Daily News\u003c/em\u003e—delighted in telling their readers about love nests and kept women."
+                },
+                "answer_2": {
+                  "score": 0.0,
+                  "response": "Sex became a popular topic as Victorian standards crumbled. Sophisticated city dwellers seemed to be intent on exploring a new freedom in sexual expression. Plays and novels focused on adultery, and the new urban tabloids—led by the \n\u003cem\u003eNew York Daily News\u003c/em\u003e—delighted in telling their readers about love nests and kept women."
+                },
+                "answer_1": {
+                  "score": 1.0,
+                  "response": "Sex became a popular topic as Victorian standards crumbled. Sophisticated city dwellers seemed to be intent on exploring a new freedom in sexual expression. Plays and novels focused on adultery, and the new urban tabloids—led by the \n\u003cem\u003eNew York Daily News\u003c/em\u003e—delighted in telling their readers about love nests and kept women."
+                },
+                "answer_4": {
+                  "score": 0.0,
+                  "response": "Sex became a popular topic as Victorian standards crumbled. Sophisticated city dwellers seemed to be intent on exploring a new freedom in sexual expression. Plays and novels focused on adultery, and the new urban tabloids—led by the \n\u003cem\u003eNew York Daily News\u003c/em\u003e—delighted in telling their readers about love nests and kept women."
+                }
+              }
+            },
+            "configFixup": [
+              {
+                "name": "questionId",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "sequenceNodeKey",
+                  "type": "ref"
+                }
+              },
+              {
+                "name": "maxAttempts",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "maxAttempts",
+                  "type": "ref"
+                }
+              }
+            ]
+          }
+        ],
+        "hookupActions": [
+          {
+            "description": "Hookup the submit manager to evaluate answers",
+            "methodName": "handleRequestsFrom",
+            "type": "method-call",
+            "args": [
+              {
+                "domain": "brix",
+                "refId": "q1",
+                "type": "ref"
+              }
+            ],
+            "instance": {
+              "type": "submit-manager"
+            }
+          },
+          {
+            "description": "Draw the question",
+            "methodName": "draw",
+            "type": "method-call",
+            "args": [
+              {
+                "selector": "#target1",
+                "type": "d3select"
+              }
+            ],
+            "instance": {
+              "domain": "brix",
+              "refId": "q1",
+              "type": "ref"
+            }
+          }
+        ]
+      }
+    ]
+  }
+}

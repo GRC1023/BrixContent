@@ -1,0 +1,191 @@
+{
+  "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope",
+  "@type": "Envelope",
+  "metadata": {
+    "bookTitle": "American Stories: A History of the United States, Combined Volume",
+    "keywords": [
+      "Brands 3e",
+      "Ch07",
+      "Alick"
+    ],
+    "extendedMetadata": [
+      {
+        "name": "ISBN",
+        "value": "013379461X"
+      },
+      {
+        "name": "M",
+        "value": "m05"
+      },
+      {
+        "name": "assessment_title",
+        "value": "Quiz: The Adams Presidency Politics of Mistrust"
+      },
+      {
+        "name": "Topic",
+        "value": "The Adams Presidency: Politics of Mistrust"
+      },
+      {
+        "name": "chapterTitle",
+        "value": "Democracy and Dissent: The Violence of Party Politics 1788â1800"
+      },
+      {
+        "name": "module",
+        "value": "The Adams Presidency Politics of Mistrust"
+      },
+      {
+        "name": "item_title",
+        "value": "013379461X_H. W. Brands; T. H. Breen; R. Hal Williams; Ariela J. Gros_ch07_m05_q0004"
+      },
+      {
+        "name": "questionlayout",
+        "value": "1"
+      },
+      {
+        "name": "CH",
+        "value": "7"
+      },
+      {
+        "name": "Objective",
+        "value": "LO: 7.5: Why were some Federalists willing to sacrifice political freedoms for party advantage?"
+      },
+      {
+        "name": "shuffle_choices",
+        "value": "Yes"
+      }
+    ],
+    "subject": [
+      "US History"
+    ],
+    "contentTypeTier2": [
+      "AssignmentItem"
+    ],
+    "contentTypeTier1": "Assessment",
+    "format": [
+      "application/vnd.pearson.sanvan.v1.activity"
+    ],
+    "version": "1.0",
+    "guid": "d33db5e8-9b6e-4868-9771-c208dde9cf0b",
+    "bookAuthor": "H. W. Brands; T. H. Breen; R. Hal Williams; Ariela J. Gros",
+    "title": "PRE 07 12 ",
+    "educationalAlignment": [
+      "http://purl.org/pearson/objectives/183725473384362"
+    ]
+  },
+  "body": {
+    "description": "PRE_07_12",
+    "containerConfig": [
+      {
+        "description": "PRE_07_12",
+        "containerId": "target1",
+        "brixConfig": [
+          {
+            "bricId": "q1",
+            "bricType": "MultipleChoiceQuestion",
+            "config": {
+              "id": "QUE60866",
+              "question": "What does the term “midnight judges” refer to?\n\u003cbr /\u003e",
+              "order": "randomized",
+              "presenterType": "RadioGroup",
+              "presenterConfig": {
+                "numberFormat": "none"
+              },
+              "choices": [
+                {
+                  "answerKey": "answer_1",
+                  "content": "Federalists who were hastily appointed by Adams in his final days as president"
+                },
+                {
+                  "answerKey": "answer_2",
+                  "content": "judges who hastened to hear as many cases as possible before being replaced by the incoming president, Jefferson"
+                },
+                {
+                  "answerKey": "answer_3",
+                  "content": "those members of the federal bench who were hastily appointed by Hamilton before Adams was elected as the president"
+                },
+                {
+                  "answerKey": "answer_4",
+                  "content": "federal judges who were asked by Adams, in his final days as president, to pass judgment on certain key cases"
+                }
+              ]
+            },
+            "answerKey": {
+              "assessmentType": "multiplechoice",
+              "answers": {
+                "answer_3": {
+                  "score": 0.0,
+                  "response": "During the final days of his presidency, Adams appointed as many Federalists as possible to the federal bench. Because these appointments were made hastily, they were termed “midnight judges.”"
+                },
+                "answer_2": {
+                  "score": 0.0,
+                  "response": "During the final days of his presidency, Adams appointed as many Federalists as possible to the federal bench. Because these appointments were made hastily, they were termed “midnight judges.”"
+                },
+                "answer_1": {
+                  "score": 1.0,
+                  "response": "During the final days of his presidency, Adams appointed as many Federalists as possible to the federal bench. Because these appointments were made hastily, they were termed “midnight judges.”"
+                },
+                "answer_4": {
+                  "score": 0.0,
+                  "response": "During the final days of his presidency, Adams appointed as many Federalists as possible to the federal bench. Because these appointments were made hastily, they were termed “midnight judges.”"
+                }
+              }
+            },
+            "configFixup": [
+              {
+                "name": "questionId",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "sequenceNodeKey",
+                  "type": "ref"
+                }
+              },
+              {
+                "name": "maxAttempts",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "maxAttempts",
+                  "type": "ref"
+                }
+              }
+            ]
+          }
+        ],
+        "hookupActions": [
+          {
+            "description": "Hookup the submit manager to evaluate answers",
+            "methodName": "handleRequestsFrom",
+            "type": "method-call",
+            "args": [
+              {
+                "domain": "brix",
+                "refId": "q1",
+                "type": "ref"
+              }
+            ],
+            "instance": {
+              "type": "submit-manager"
+            }
+          },
+          {
+            "description": "Draw the question",
+            "methodName": "draw",
+            "type": "method-call",
+            "args": [
+              {
+                "selector": "#target1",
+                "type": "d3select"
+              }
+            ],
+            "instance": {
+              "domain": "brix",
+              "refId": "q1",
+              "type": "ref"
+            }
+          }
+        ]
+      }
+    ]
+  }
+}

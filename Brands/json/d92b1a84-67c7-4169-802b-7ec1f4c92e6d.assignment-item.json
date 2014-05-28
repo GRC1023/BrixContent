@@ -1,0 +1,187 @@
+{
+  "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope",
+  "@type": "Envelope",
+  "metadata": {
+    "bookTitle": "American Stories: A History of the United States, Combined Volume",
+    "keywords": [
+      "Brands 3e",
+      "Ch32",
+      "Alick"
+    ],
+    "extendedMetadata": [
+      {
+        "name": "ISBN",
+        "value": "013379461X"
+      },
+      {
+        "name": "M",
+        "value": "c01"
+      },
+      {
+        "name": "assessment_title",
+        "value": "Chapter Quiz: Into the Twenty-First Century 1989â2013"
+      },
+      {
+        "name": "Topic",
+        "value": "Republicans Resurgent"
+      },
+      {
+        "name": "chapterTitle",
+        "value": "Into the Twenty-First Century 1989â2013"
+      },
+      {
+        "name": "item_title",
+        "value": "013379461X_H. W. Brands; T. H. Breen; R. Hal Williams; Ariela J. Gros_ch32_c01_q0014"
+      },
+      {
+        "name": "questionlayout",
+        "value": "1"
+      },
+      {
+        "name": "CH",
+        "value": "32"
+      },
+      {
+        "name": "Objective",
+        "value": "32.4"
+      },
+      {
+        "name": "shuffle_choices",
+        "value": "Yes"
+      }
+    ],
+    "subject": [
+      "US History"
+    ],
+    "contentTypeTier2": [
+      "AssignmentItem"
+    ],
+    "contentTypeTier1": "Assessment",
+    "format": [
+      "application/vnd.pearson.sanvan.v1.activity"
+    ],
+    "version": "1.0",
+    "guid": "d92b1a84-67c7-4169-802b-7ec1f4c92e6d",
+    "bookAuthor": "H. W. Brands; T. H. Breen; R. Hal Williams; Ariela J. Gros",
+    "title": "FA Analyze 32 03",
+    "educationalAlignment": [
+      "http://purl.org/pearson/objectives/183725473384362"
+    ]
+  },
+  "body": {
+    "description": "FA_Analyze_32_03",
+    "containerConfig": [
+      {
+        "description": "FA_Analyze_32_03",
+        "containerId": "target1",
+        "brixConfig": [
+          {
+            "bricId": "q1",
+            "bricType": "MultipleChoiceQuestion",
+            "config": {
+              "id": "QUE61665",
+              "question": "Which of the following statements best summarizes a major difference between the situation leading up to the 1991 U.S. attack on Iraq and that leading up to the 2003 U.S. invasion of Iraq?\n\u003cbr /\u003e",
+              "order": "randomized",
+              "presenterType": "RadioGroup",
+              "presenterConfig": {
+                "numberFormat": "none"
+              },
+              "choices": [
+                {
+                  "answerKey": "answer_1",
+                  "content": "In 1991, the first President Bush was unable to win the support of the U.S. Congress and the United Nations for military action in Iraq and hence chose unilateral action for the first time, whereas President George W. Bush arranged a coalition of partners in the United Nations whose militaries joined the United States in punishing Iraq for its actions."
+                },
+                {
+                  "answerKey": "answer_2",
+                  "content": "In 1991, the first President Bush secured approval of the United Nations and arranged a coalition of allied nations whose militaries joined the United States in punishing Iraq for its actions, whereas in 2003 President George W. Bush acted on unconfirmed intelligence reports and, unable to secure the support of the United Nations, directed the U.S. to act unilaterally."
+                },
+                {
+                  "answerKey": "answer_3",
+                  "content": "Though the first President Bush secured in 1991 the approval of the United Nations, he failed to get Congress to approve the attack on Iraq and thus acted unilaterally, whereas President George W. Bush ordered the 2003 invasion of Iraq only after the discovery of chemical weapons and after gaining Russia’s approval in the United Nations."
+                },
+                {
+                  "answerKey": "answer_4",
+                  "content": "The first President Bush was unable in 1991 to secure the approval of the United Nations but, having gained the support of a large coalition of allied nations, acted in punishing Iraq, whereas President George W. Bush, after delivering an impassioned speech to the United Nations, was given authority in 2003 to end Saddam Hussein’s regime once and for all."
+                }
+              ]
+            },
+            "answerKey": {
+              "assessmentType": "multiplechoice",
+              "answers": {
+                "answer_3": {
+                  "score": 0.0,
+                  "response": "Consider This: The new administration of George W. Bush initiated a new global policy of American preeminence. For the first time since the end of the Cold War, the United States had a clear, if controversial, blueprint for international affairs. See L.O. 32.4 Republicans Resurgent."
+                },
+                "answer_2": {
+                  "score": 1.0,
+                  "response": ""
+                },
+                "answer_1": {
+                  "score": 0.0,
+                  "response": "Consider This: The new administration of George W. Bush initiated a new global policy of American preeminence. For the first time since the end of the Cold War, the United States had a clear, if controversial, blueprint for international affairs. See L.O. 32.4 Republicans Resurgent."
+                },
+                "answer_4": {
+                  "score": 0.0,
+                  "response": "Consider This: The new administration of George W. Bush initiated a new global policy of American preeminence. For the first time since the end of the Cold War, the United States had a clear, if controversial, blueprint for international affairs. See L.O. 32.4 Republicans Resurgent."
+                }
+              }
+            },
+            "configFixup": [
+              {
+                "name": "questionId",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "sequenceNodeKey",
+                  "type": "ref"
+                }
+              },
+              {
+                "name": "maxAttempts",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "maxAttempts",
+                  "type": "ref"
+                }
+              }
+            ]
+          }
+        ],
+        "hookupActions": [
+          {
+            "description": "Hookup the submit manager to evaluate answers",
+            "methodName": "handleRequestsFrom",
+            "type": "method-call",
+            "args": [
+              {
+                "domain": "brix",
+                "refId": "q1",
+                "type": "ref"
+              }
+            ],
+            "instance": {
+              "type": "submit-manager"
+            }
+          },
+          {
+            "description": "Draw the question",
+            "methodName": "draw",
+            "type": "method-call",
+            "args": [
+              {
+                "selector": "#target1",
+                "type": "d3select"
+              }
+            ],
+            "instance": {
+              "domain": "brix",
+              "refId": "q1",
+              "type": "ref"
+            }
+          }
+        ]
+      }
+    ]
+  }
+}

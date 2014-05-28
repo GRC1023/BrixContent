@@ -1,0 +1,187 @@
+{
+  "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope",
+  "@type": "Envelope",
+  "metadata": {
+    "bookTitle": "American Stories: A History of the United States, Combined Volume",
+    "keywords": [
+      "Brands 3e",
+      "Ch18",
+      "Alick"
+    ],
+    "extendedMetadata": [
+      {
+        "name": "ISBN",
+        "value": "013379461X"
+      },
+      {
+        "name": "M",
+        "value": "c01"
+      },
+      {
+        "name": "assessment_title",
+        "value": "Chapter Quiz: The Industrial Society 1850â1901"
+      },
+      {
+        "name": "Topic",
+        "value": "The Sellers"
+      },
+      {
+        "name": "chapterTitle",
+        "value": "The Industrial Society 1850â1901"
+      },
+      {
+        "name": "item_title",
+        "value": "013379461X_H. W. Brands; T. H. Breen; R. Hal Williams; Ariela J. Gros_ch18_c01_q0005"
+      },
+      {
+        "name": "questionlayout",
+        "value": "1"
+      },
+      {
+        "name": "CH",
+        "value": "18"
+      },
+      {
+        "name": "Objective",
+        "value": "LO: 18.3: Why were the new methods of advertising so important?"
+      },
+      {
+        "name": "shuffle_choices",
+        "value": "Yes"
+      }
+    ],
+    "subject": [
+      "US History"
+    ],
+    "contentTypeTier2": [
+      "AssignmentItem"
+    ],
+    "contentTypeTier1": "Assessment",
+    "format": [
+      "application/vnd.pearson.sanvan.v1.activity"
+    ],
+    "version": "1.0",
+    "guid": "cc62a4c5-6085-4dd5-8c96-e149367c0016",
+    "bookAuthor": "H. W. Brands; T. H. Breen; R. Hal Williams; Ariela J. Gros",
+    "title": "FA Remember 18 03",
+    "educationalAlignment": [
+      "http://purl.org/pearson/objectives/183725473384362"
+    ]
+  },
+  "body": {
+    "description": "FA_Remember_18_03",
+    "containerConfig": [
+      {
+        "description": "FA_Remember_18_03",
+        "containerId": "target1",
+        "brixConfig": [
+          {
+            "bricId": "q1",
+            "bricType": "MultipleChoiceQuestion",
+            "config": {
+              "id": "QUE61160",
+              "question": "What was the main requirement for ensuring that mail-order catalogs were an effective sales technique?\n\u003cbr /\u003e",
+              "order": "randomized",
+              "presenterType": "RadioGroup",
+              "presenterConfig": {
+                "numberFormat": "none"
+              },
+              "choices": [
+                {
+                  "answerKey": "answer_1",
+                  "content": "low-end product purchases"
+                },
+                {
+                  "answerKey": "answer_2",
+                  "content": "high customer literacy"
+                },
+                {
+                  "answerKey": "answer_3",
+                  "content": "bulk purchase of products"
+                },
+                {
+                  "answerKey": "answer_4",
+                  "content": "high-end purchases"
+                }
+              ]
+            },
+            "answerKey": {
+              "assessmentType": "multiplechoice",
+              "answers": {
+                "answer_3": {
+                  "score": 0.0,
+                  "response": "Consider This: Advertising, brand names, chain stores, and mail-order houses brought Americans into a national market. Aaron Montgomery Ward started the mail-order trend in 1872 with a one-sheet price list offered from a Chicago loft. By 1884, he offered almost 10,000 items in a 240-page catalogue. See L.O. 18.3 Why were the new methods of advertising so important?"
+                },
+                "answer_2": {
+                  "score": 1.0,
+                  "response": ""
+                },
+                "answer_1": {
+                  "score": 0.0,
+                  "response": "Consider This: Advertising, brand names, chain stores, and mail-order houses brought Americans into a national market. Aaron Montgomery Ward started the mail-order trend in 1872 with a one-sheet price list offered from a Chicago loft. By 1884, he offered almost 10,000 items in a 240-page catalogue. See L.O. 18.3 Why were the new methods of advertising so important?"
+                },
+                "answer_4": {
+                  "score": 0.0,
+                  "response": "Consider This: Advertising, brand names, chain stores, and mail-order houses brought Americans into a national market. Aaron Montgomery Ward started the mail-order trend in 1872 with a one-sheet price list offered from a Chicago loft. By 1884, he offered almost 10,000 items in a 240-page catalogue. See L.O. 18.3 Why were the new methods of advertising so important?"
+                }
+              }
+            },
+            "configFixup": [
+              {
+                "name": "questionId",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "sequenceNodeKey",
+                  "type": "ref"
+                }
+              },
+              {
+                "name": "maxAttempts",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "maxAttempts",
+                  "type": "ref"
+                }
+              }
+            ]
+          }
+        ],
+        "hookupActions": [
+          {
+            "description": "Hookup the submit manager to evaluate answers",
+            "methodName": "handleRequestsFrom",
+            "type": "method-call",
+            "args": [
+              {
+                "domain": "brix",
+                "refId": "q1",
+                "type": "ref"
+              }
+            ],
+            "instance": {
+              "type": "submit-manager"
+            }
+          },
+          {
+            "description": "Draw the question",
+            "methodName": "draw",
+            "type": "method-call",
+            "args": [
+              {
+                "selector": "#target1",
+                "type": "d3select"
+              }
+            ],
+            "instance": {
+              "domain": "brix",
+              "refId": "q1",
+              "type": "ref"
+            }
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,187 @@
+{
+  "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope",
+  "@type": "Envelope",
+  "metadata": {
+    "bookTitle": "American Stories: A History of the United States, Combined Volume",
+    "keywords": [
+      "Brands 3e",
+      "Ch32",
+      "Alick"
+    ],
+    "extendedMetadata": [
+      {
+        "name": "ISBN",
+        "value": "013379461X"
+      },
+      {
+        "name": "M",
+        "value": "c01"
+      },
+      {
+        "name": "assessment_title",
+        "value": "Chapter Quiz: Into the Twenty-First Century 1989â2013"
+      },
+      {
+        "name": "Topic",
+        "value": "Barack Obama\u0026amp;rsquo;s Triumph and Trials"
+      },
+      {
+        "name": "chapterTitle",
+        "value": "Into the Twenty-First Century 1989â2013"
+      },
+      {
+        "name": "item_title",
+        "value": "013379461X_H. W. Brands; T. H. Breen; R. Hal Williams; Ariela J. Gros_ch32_c01_q0007"
+      },
+      {
+        "name": "questionlayout",
+        "value": "1"
+      },
+      {
+        "name": "CH",
+        "value": "32"
+      },
+      {
+        "name": "Objective",
+        "value": "32.5"
+      },
+      {
+        "name": "shuffle_choices",
+        "value": "Yes"
+      }
+    ],
+    "subject": [
+      "US History"
+    ],
+    "contentTypeTier2": [
+      "AssignmentItem"
+    ],
+    "contentTypeTier1": "Assessment",
+    "format": [
+      "application/vnd.pearson.sanvan.v1.activity"
+    ],
+    "version": "1.0",
+    "guid": "dc8a389f-fd90-4ed9-8104-93fcf6068282",
+    "bookAuthor": "H. W. Brands; T. H. Breen; R. Hal Williams; Ariela J. Gros",
+    "title": "FA Remember 32 05",
+    "educationalAlignment": [
+      "http://purl.org/pearson/objectives/183725473384362"
+    ]
+  },
+  "body": {
+    "description": "FA_Remember_32_05",
+    "containerConfig": [
+      {
+        "description": "FA_Remember_32_05",
+        "containerId": "target1",
+        "brixConfig": [
+          {
+            "bricId": "q1",
+            "bricType": "MultipleChoiceQuestion",
+            "config": {
+              "id": "QUE61658",
+              "question": "What type of policies are designed to ensure greater participation by minorities?\n\u003cbr /\u003e",
+              "order": "randomized",
+              "presenterType": "RadioGroup",
+              "presenterConfig": {
+                "numberFormat": "none"
+              },
+              "choices": [
+                {
+                  "answerKey": "answer_1",
+                  "content": "affirmative action"
+                },
+                {
+                  "answerKey": "answer_2",
+                  "content": "social Darwinism"
+                },
+                {
+                  "answerKey": "answer_3",
+                  "content": "voter ID cards"
+                },
+                {
+                  "answerKey": "answer_4",
+                  "content": "positive liberty"
+                }
+              ]
+            },
+            "answerKey": {
+              "assessmentType": "multiplechoice",
+              "answers": {
+                "answer_3": {
+                  "score": 0.0,
+                  "response": "Consider This: The race question has remained alive and contentious, despite the election of an African American as president in 2008. Conservatives have continued to be dissatisfied with the thirty-year-old Supreme Court ruling in \n\u003ci\u003eBakke v. Regents of the University of California\u003c/i\u003e. See L.O. 32.5 Barack Obama’s Triumph and Trials."
+                },
+                "answer_2": {
+                  "score": 0.0,
+                  "response": "Consider This: The race question has remained alive and contentious, despite the election of an African American as president in 2008. Conservatives have continued to be dissatisfied with the thirty-year-old Supreme Court ruling in \n\u003ci\u003eBakke v. Regents of the University of California\u003c/i\u003e. See L.O. 32.5 Barack Obama’s Triumph and Trials."
+                },
+                "answer_1": {
+                  "score": 1.0,
+                  "response": ""
+                },
+                "answer_4": {
+                  "score": 0.0,
+                  "response": "Consider This: The race question has remained alive and contentious, despite the election of an African American as president in 2008. Conservatives have continued to be dissatisfied with the thirty-year-old Supreme Court ruling in \n\u003ci\u003eBakke v. Regents of the University of California\u003c/i\u003e. See L.O. 32.5 Barack Obama’s Triumph and Trials."
+                }
+              }
+            },
+            "configFixup": [
+              {
+                "name": "questionId",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "sequenceNodeKey",
+                  "type": "ref"
+                }
+              },
+              {
+                "name": "maxAttempts",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "maxAttempts",
+                  "type": "ref"
+                }
+              }
+            ]
+          }
+        ],
+        "hookupActions": [
+          {
+            "description": "Hookup the submit manager to evaluate answers",
+            "methodName": "handleRequestsFrom",
+            "type": "method-call",
+            "args": [
+              {
+                "domain": "brix",
+                "refId": "q1",
+                "type": "ref"
+              }
+            ],
+            "instance": {
+              "type": "submit-manager"
+            }
+          },
+          {
+            "description": "Draw the question",
+            "methodName": "draw",
+            "type": "method-call",
+            "args": [
+              {
+                "selector": "#target1",
+                "type": "d3select"
+              }
+            ],
+            "instance": {
+              "domain": "brix",
+              "refId": "q1",
+              "type": "ref"
+            }
+          }
+        ]
+      }
+    ]
+  }
+}

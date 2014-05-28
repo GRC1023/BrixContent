@@ -1,0 +1,191 @@
+{
+  "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope",
+  "@type": "Envelope",
+  "metadata": {
+    "bookTitle": "American Stories: A History of the United States, Combined Volume",
+    "keywords": [
+      "Brands 3e",
+      "Ch21",
+      "Alick"
+    ],
+    "extendedMetadata": [
+      {
+        "name": "ISBN",
+        "value": "013379461X"
+      },
+      {
+        "name": "M",
+        "value": "m02"
+      },
+      {
+        "name": "assessment_title",
+        "value": "Quiz: War With Spain"
+      },
+      {
+        "name": "Topic",
+        "value": "War with Spain"
+      },
+      {
+        "name": "chapterTitle",
+        "value": "Toward Empire 1865â1902"
+      },
+      {
+        "name": "module",
+        "value": "War With Spain"
+      },
+      {
+        "name": "item_title",
+        "value": "013379461X_H. W. Brands; T. H. Breen; R. Hal Williams; Ariela J. Gros_ch21_m02_q0005"
+      },
+      {
+        "name": "questionlayout",
+        "value": "1"
+      },
+      {
+        "name": "CH",
+        "value": "21"
+      },
+      {
+        "name": "Objective",
+        "value": "21.2"
+      },
+      {
+        "name": "shuffle_choices",
+        "value": "Yes"
+      }
+    ],
+    "subject": [
+      "US History"
+    ],
+    "contentTypeTier2": [
+      "AssignmentItem"
+    ],
+    "contentTypeTier1": "Assessment",
+    "format": [
+      "application/vnd.pearson.sanvan.v1.activity"
+    ],
+    "version": "1.0",
+    "guid": "d56524f6-7dcf-4ab8-b4c2-7d4d80bf5389",
+    "bookAuthor": "H. W. Brands; T. H. Breen; R. Hal Williams; Ariela J. Gros",
+    "title": "POST 21 11",
+    "educationalAlignment": [
+      "http://purl.org/pearson/objectives/183725473384362"
+    ]
+  },
+  "body": {
+    "description": "POST_21_11",
+    "containerConfig": [
+      {
+        "description": "POST_21_11",
+        "containerId": "target1",
+        "brixConfig": [
+          {
+            "bricId": "q1",
+            "bricType": "MultipleChoiceQuestion",
+            "config": {
+              "id": "QUE61253",
+              "question": "What position did Grover Cleveland take regarding the Cuban rebellion?\n\u003cbr /\u003e",
+              "order": "randomized",
+              "presenterType": "RadioGroup",
+              "presenterConfig": {
+                "numberFormat": "none"
+              },
+              "choices": [
+                {
+                  "answerKey": "answer_1",
+                  "content": "He favored neutrality, attempting to quiet popular support for annexation."
+                },
+                {
+                  "answerKey": "answer_2",
+                  "content": "He supported the rebels and offered them munitions."
+                },
+                {
+                  "answerKey": "answer_3",
+                  "content": "He urged Spain to arbitrate the dispute immediately."
+                },
+                {
+                  "answerKey": "answer_4",
+                  "content": "He formed an alliance with the French to put an end to colonization in Cuba."
+                }
+              ]
+            },
+            "answerKey": {
+              "assessmentType": "multiplechoice",
+              "answers": {
+                "answer_3": {
+                  "score": 0.0,
+                  "response": "Grover Cleveland, under whose administration the rebellion began, preferred Spanish rule to the kind of turmoil that might invite foreign intervention. Opposed to the annexation of Cuba, he issued a proclamation of neutrality and tried to restrain public opinion."
+                },
+                "answer_2": {
+                  "score": 0.0,
+                  "response": "Grover Cleveland, under whose administration the rebellion began, preferred Spanish rule to the kind of turmoil that might invite foreign intervention. Opposed to the annexation of Cuba, he issued a proclamation of neutrality and tried to restrain public opinion."
+                },
+                "answer_1": {
+                  "score": 1.0,
+                  "response": "Grover Cleveland, under whose administration the rebellion began, preferred Spanish rule to the kind of turmoil that might invite foreign intervention. Opposed to the annexation of Cuba, he issued a proclamation of neutrality and tried to restrain public opinion."
+                },
+                "answer_4": {
+                  "score": 0.0,
+                  "response": "Grover Cleveland, under whose administration the rebellion began, preferred Spanish rule to the kind of turmoil that might invite foreign intervention. Opposed to the annexation of Cuba, he issued a proclamation of neutrality and tried to restrain public opinion."
+                }
+              }
+            },
+            "configFixup": [
+              {
+                "name": "questionId",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "sequenceNodeKey",
+                  "type": "ref"
+                }
+              },
+              {
+                "name": "maxAttempts",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "maxAttempts",
+                  "type": "ref"
+                }
+              }
+            ]
+          }
+        ],
+        "hookupActions": [
+          {
+            "description": "Hookup the submit manager to evaluate answers",
+            "methodName": "handleRequestsFrom",
+            "type": "method-call",
+            "args": [
+              {
+                "domain": "brix",
+                "refId": "q1",
+                "type": "ref"
+              }
+            ],
+            "instance": {
+              "type": "submit-manager"
+            }
+          },
+          {
+            "description": "Draw the question",
+            "methodName": "draw",
+            "type": "method-call",
+            "args": [
+              {
+                "selector": "#target1",
+                "type": "d3select"
+              }
+            ],
+            "instance": {
+              "domain": "brix",
+              "refId": "q1",
+              "type": "ref"
+            }
+          }
+        ]
+      }
+    ]
+  }
+}

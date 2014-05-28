@@ -1,0 +1,191 @@
+{
+  "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope",
+  "@type": "Envelope",
+  "metadata": {
+    "bookTitle": "American Stories: A History of the United States, Combined Volume",
+    "keywords": [
+      "Brands 3e",
+      "Ch26",
+      "Alick"
+    ],
+    "extendedMetadata": [
+      {
+        "name": "ISBN",
+        "value": "013379461X"
+      },
+      {
+        "name": "M",
+        "value": "m02"
+      },
+      {
+        "name": "assessment_title",
+        "value": "Quiz: Fighting the Depression"
+      },
+      {
+        "name": "Topic",
+        "value": "Fighting the Depression"
+      },
+      {
+        "name": "chapterTitle",
+        "value": "Franklin D. Roosevelt and the New Deal 1929â1939"
+      },
+      {
+        "name": "module",
+        "value": "Fighting the Depression"
+      },
+      {
+        "name": "item_title",
+        "value": "013379461X_H. W. Brands; T. H. Breen; R. Hal Williams; Ariela J. Gros_ch26_m02_q0003"
+      },
+      {
+        "name": "questionlayout",
+        "value": "1"
+      },
+      {
+        "name": "CH",
+        "value": "26"
+      },
+      {
+        "name": "Objective",
+        "value": "26.2"
+      },
+      {
+        "name": "shuffle_choices",
+        "value": "Yes"
+      }
+    ],
+    "subject": [
+      "US History"
+    ],
+    "contentTypeTier2": [
+      "AssignmentItem"
+    ],
+    "contentTypeTier1": "Assessment",
+    "format": [
+      "application/vnd.pearson.sanvan.v1.activity"
+    ],
+    "version": "1.0",
+    "guid": "d861eff0-9845-4530-a88c-77d0b8d12f5b",
+    "bookAuthor": "H. W. Brands; T. H. Breen; R. Hal Williams; Ariela J. Gros",
+    "title": "PRE 26 03",
+    "educationalAlignment": [
+      "http://purl.org/pearson/objectives/183725473384362"
+    ]
+  },
+  "body": {
+    "description": "PRE_26_03",
+    "containerConfig": [
+      {
+        "description": "PRE_26_03",
+        "containerId": "target1",
+        "brixConfig": [
+          {
+            "bricId": "q1",
+            "bricType": "MultipleChoiceQuestion",
+            "config": {
+              "id": "QUE61456",
+              "question": "The Civilian Conservation Corps was primarily designed to __________.\n\u003cbr /\u003e",
+              "order": "randomized",
+              "presenterType": "RadioGroup",
+              "presenterConfig": {
+                "numberFormat": "none"
+              },
+              "choices": [
+                {
+                  "answerKey": "answer_1",
+                  "content": "provide jobs for unemployed young men"
+                },
+                {
+                  "answerKey": "answer_2",
+                  "content": "find new uses for fallow farmland"
+                },
+                {
+                  "answerKey": "answer_3",
+                  "content": "train civilians for military reserves"
+                },
+                {
+                  "answerKey": "answer_4",
+                  "content": "control flooding and generate electricity"
+                }
+              ]
+            },
+            "answerKey": {
+              "assessmentType": "multiplechoice",
+              "answers": {
+                "answer_3": {
+                  "score": 0.0,
+                  "response": "The Civilian Conservation Corps enrolled young males from city families on relief and sent them to work on the nation’s public lands cutting trails, planting trees, building bridges, and paving roads."
+                },
+                "answer_2": {
+                  "score": 0.0,
+                  "response": "The Civilian Conservation Corps enrolled young males from city families on relief and sent them to work on the nation’s public lands cutting trails, planting trees, building bridges, and paving roads."
+                },
+                "answer_1": {
+                  "score": 1.0,
+                  "response": "The Civilian Conservation Corps enrolled young males from city families on relief and sent them to work on the nation’s public lands cutting trails, planting trees, building bridges, and paving roads."
+                },
+                "answer_4": {
+                  "score": 0.0,
+                  "response": "The Civilian Conservation Corps enrolled young males from city families on relief and sent them to work on the nation’s public lands cutting trails, planting trees, building bridges, and paving roads."
+                }
+              }
+            },
+            "configFixup": [
+              {
+                "name": "questionId",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "sequenceNodeKey",
+                  "type": "ref"
+                }
+              },
+              {
+                "name": "maxAttempts",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "maxAttempts",
+                  "type": "ref"
+                }
+              }
+            ]
+          }
+        ],
+        "hookupActions": [
+          {
+            "description": "Hookup the submit manager to evaluate answers",
+            "methodName": "handleRequestsFrom",
+            "type": "method-call",
+            "args": [
+              {
+                "domain": "brix",
+                "refId": "q1",
+                "type": "ref"
+              }
+            ],
+            "instance": {
+              "type": "submit-manager"
+            }
+          },
+          {
+            "description": "Draw the question",
+            "methodName": "draw",
+            "type": "method-call",
+            "args": [
+              {
+                "selector": "#target1",
+                "type": "d3select"
+              }
+            ],
+            "instance": {
+              "domain": "brix",
+              "refId": "q1",
+              "type": "ref"
+            }
+          }
+        ]
+      }
+    ]
+  }
+}

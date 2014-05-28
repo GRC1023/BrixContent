@@ -1,0 +1,191 @@
+{
+  "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope",
+  "@type": "Envelope",
+  "metadata": {
+    "bookTitle": "American Stories: A History of the United States, Combined Volume",
+    "keywords": [
+      "Brands 3e",
+      "Ch28",
+      "Alick"
+    ],
+    "extendedMetadata": [
+      {
+        "name": "ISBN",
+        "value": "013379461X"
+      },
+      {
+        "name": "M",
+        "value": "m04"
+      },
+      {
+        "name": "assessment_title",
+        "value": "Quiz: The Cold War at Home"
+      },
+      {
+        "name": "Topic",
+        "value": "The Cold War at Home"
+      },
+      {
+        "name": "chapterTitle",
+        "value": "The Onset of the Cold War 1945â1960"
+      },
+      {
+        "name": "module",
+        "value": "The Cold War at Home"
+      },
+      {
+        "name": "item_title",
+        "value": "013379461X_H. W. Brands; T. H. Breen; R. Hal Williams; Ariela J. Gros_ch28_m04_q0007"
+      },
+      {
+        "name": "questionlayout",
+        "value": "1"
+      },
+      {
+        "name": "CH",
+        "value": "28"
+      },
+      {
+        "name": "Objective",
+        "value": "28.4"
+      },
+      {
+        "name": "shuffle_choices",
+        "value": "Yes"
+      }
+    ],
+    "subject": [
+      "US History"
+    ],
+    "contentTypeTier2": [
+      "AssignmentItem"
+    ],
+    "contentTypeTier1": "Assessment",
+    "format": [
+      "application/vnd.pearson.sanvan.v1.activity"
+    ],
+    "version": "1.0",
+    "guid": "cb1a0b73-c9a2-48c9-bffd-9a923f07e0fd",
+    "bookAuthor": "H. W. Brands; T. H. Breen; R. Hal Williams; Ariela J. Gros",
+    "title": "POST 28 14",
+    "educationalAlignment": [
+      "http://purl.org/pearson/objectives/183725473384362"
+    ]
+  },
+  "body": {
+    "description": "POST_28_14",
+    "containerConfig": [
+      {
+        "description": "POST_28_14",
+        "containerId": "target1",
+        "brixConfig": [
+          {
+            "bricId": "q1",
+            "bricType": "MultipleChoiceQuestion",
+            "config": {
+              "id": "QUE61564",
+              "question": "How did the Republican party’s stance with regard to Truman’s foreign policy lead to the party’s defeat in the 1948 election?\n\u003cbr /\u003e",
+              "order": "randomized",
+              "presenterType": "RadioGroup",
+              "presenterConfig": {
+                "numberFormat": "none"
+              },
+              "choices": [
+                {
+                  "answerKey": "answer_1",
+                  "content": "It failed to challenge Truman’s conduct in the Cold War."
+                },
+                {
+                  "answerKey": "answer_2",
+                  "content": "It offered no alternative solution to the Berlin blockade."
+                },
+                {
+                  "answerKey": "answer_3",
+                  "content": "It supported the Marshall Plan against the wishes of the public."
+                },
+                {
+                  "answerKey": "answer_4",
+                  "content": "It proposed reconciliation rather than confrontation with the Russians."
+                }
+              ]
+            },
+            "answerKey": {
+              "assessmentType": "multiplechoice",
+              "answers": {
+                "answer_3": {
+                  "score": 0.0,
+                  "response": "During this election, held at the height of the Berlin crisis, the GOP failed to challenge Truman’s conduct of the Cold War. Locked in a tense rivalry with the Soviet Union, the American people saw no reason to reject a president who had countered aggression overseas with the Truman Doctrine and the Marshall Plan."
+                },
+                "answer_2": {
+                  "score": 0.0,
+                  "response": "During this election, held at the height of the Berlin crisis, the GOP failed to challenge Truman’s conduct of the Cold War. Locked in a tense rivalry with the Soviet Union, the American people saw no reason to reject a president who had countered aggression overseas with the Truman Doctrine and the Marshall Plan."
+                },
+                "answer_1": {
+                  "score": 1.0,
+                  "response": "During this election, held at the height of the Berlin crisis, the GOP failed to challenge Truman’s conduct of the Cold War. Locked in a tense rivalry with the Soviet Union, the American people saw no reason to reject a president who had countered aggression overseas with the Truman Doctrine and the Marshall Plan."
+                },
+                "answer_4": {
+                  "score": 0.0,
+                  "response": "During this election, held at the height of the Berlin crisis, the GOP failed to challenge Truman’s conduct of the Cold War. Locked in a tense rivalry with the Soviet Union, the American people saw no reason to reject a president who had countered aggression overseas with the Truman Doctrine and the Marshall Plan."
+                }
+              }
+            },
+            "configFixup": [
+              {
+                "name": "questionId",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "sequenceNodeKey",
+                  "type": "ref"
+                }
+              },
+              {
+                "name": "maxAttempts",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "maxAttempts",
+                  "type": "ref"
+                }
+              }
+            ]
+          }
+        ],
+        "hookupActions": [
+          {
+            "description": "Hookup the submit manager to evaluate answers",
+            "methodName": "handleRequestsFrom",
+            "type": "method-call",
+            "args": [
+              {
+                "domain": "brix",
+                "refId": "q1",
+                "type": "ref"
+              }
+            ],
+            "instance": {
+              "type": "submit-manager"
+            }
+          },
+          {
+            "description": "Draw the question",
+            "methodName": "draw",
+            "type": "method-call",
+            "args": [
+              {
+                "selector": "#target1",
+                "type": "d3select"
+              }
+            ],
+            "instance": {
+              "domain": "brix",
+              "refId": "q1",
+              "type": "ref"
+            }
+          }
+        ]
+      }
+    ]
+  }
+}

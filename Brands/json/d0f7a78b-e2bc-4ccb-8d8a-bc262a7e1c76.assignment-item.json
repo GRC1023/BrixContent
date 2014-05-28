@@ -1,0 +1,191 @@
+{
+  "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope",
+  "@type": "Envelope",
+  "metadata": {
+    "bookTitle": "American Stories: A History of the United States, Combined Volume",
+    "keywords": [
+      "Brands 3e",
+      "Ch30",
+      "Alick"
+    ],
+    "extendedMetadata": [
+      {
+        "name": "ISBN",
+        "value": "013379461X"
+      },
+      {
+        "name": "M",
+        "value": "m06"
+      },
+      {
+        "name": "assessment_title",
+        "value": "Quiz: The Return of Richard Nixon"
+      },
+      {
+        "name": "Topic",
+        "value": "The Return of Richard Nixon"
+      },
+      {
+        "name": "chapterTitle",
+        "value": "The Turbulent Sixties 1960â1968"
+      },
+      {
+        "name": "module",
+        "value": "The Return of Richard Nixon"
+      },
+      {
+        "name": "item_title",
+        "value": "013379461X_H. W. Brands; T. H. Breen; R. Hal Williams; Ariela J. Gros_ch30_m06_q0003"
+      },
+      {
+        "name": "questionlayout",
+        "value": "1"
+      },
+      {
+        "name": "CH",
+        "value": "30"
+      },
+      {
+        "name": "Objective",
+        "value": "30.6"
+      },
+      {
+        "name": "shuffle_choices",
+        "value": "Yes"
+      }
+    ],
+    "subject": [
+      "US History"
+    ],
+    "contentTypeTier2": [
+      "AssignmentItem"
+    ],
+    "contentTypeTier1": "Assessment",
+    "format": [
+      "application/vnd.pearson.sanvan.v1.activity"
+    ],
+    "version": "1.0",
+    "guid": "d0f7a78b-e2bc-4ccb-8d8a-bc262a7e1c76",
+    "bookAuthor": "H. W. Brands; T. H. Breen; R. Hal Williams; Ariela J. Gros",
+    "title": "PRE 30 13",
+    "educationalAlignment": [
+      "http://purl.org/pearson/objectives/183725473384362"
+    ]
+  },
+  "body": {
+    "description": "PRE_30_13",
+    "containerConfig": [
+      {
+        "description": "PRE_30_13",
+        "containerId": "target1",
+        "brixConfig": [
+          {
+            "bricId": "q1",
+            "bricType": "MultipleChoiceQuestion",
+            "config": {
+              "id": "QUE61678",
+              "question": "How did the Vietnam War benefit Richard Nixon?\n\u003cbr /\u003e",
+              "order": "randomized",
+              "presenterType": "RadioGroup",
+              "presenterConfig": {
+                "numberFormat": "none"
+              },
+              "choices": [
+                {
+                  "answerKey": "answer_1",
+                  "content": "Johnson abandoned plans to run for reelection in 1968 because of his failure in the Vietnam War, thus allowing Nixon to win easily."
+                },
+                {
+                  "answerKey": "answer_2",
+                  "content": "Nixon outlined a clear and decisive policy to end the conflict in Vietnam, and as a result, he won the election in 1968."
+                },
+                {
+                  "answerKey": "answer_3",
+                  "content": "Johnson was a weak candidate in the election in 1968 because of his failure in the Vietnam War, thus allowing Nixon to win easily."
+                },
+                {
+                  "answerKey": "answer_4",
+                  "content": "Nixon continuously called for the signing of a peace treaty with the North Vietnamese, which helped him win the election handily."
+                }
+              ]
+            },
+            "answerKey": {
+              "assessmentType": "multiplechoice",
+              "answers": {
+                "answer_3": {
+                  "score": 0.0,
+                  "response": "Johnson’s failure in Vietnam discredited his administration and produced desire for change. He abandoned plans to run for reelection in 1968, opening the door to Richard Nixon."
+                },
+                "answer_2": {
+                  "score": 0.0,
+                  "response": "Johnson’s failure in Vietnam discredited his administration and produced desire for change. He abandoned plans to run for reelection in 1968, opening the door to Richard Nixon."
+                },
+                "answer_1": {
+                  "score": 1.0,
+                  "response": "Johnson’s failure in Vietnam discredited his administration and produced desire for change. He abandoned plans to run for reelection in 1968, opening the door to Richard Nixon."
+                },
+                "answer_4": {
+                  "score": 0.0,
+                  "response": "Johnson’s failure in Vietnam discredited his administration and produced desire for change. He abandoned plans to run for reelection in 1968, opening the door to Richard Nixon."
+                }
+              }
+            },
+            "configFixup": [
+              {
+                "name": "questionId",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "sequenceNodeKey",
+                  "type": "ref"
+                }
+              },
+              {
+                "name": "maxAttempts",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "maxAttempts",
+                  "type": "ref"
+                }
+              }
+            ]
+          }
+        ],
+        "hookupActions": [
+          {
+            "description": "Hookup the submit manager to evaluate answers",
+            "methodName": "handleRequestsFrom",
+            "type": "method-call",
+            "args": [
+              {
+                "domain": "brix",
+                "refId": "q1",
+                "type": "ref"
+              }
+            ],
+            "instance": {
+              "type": "submit-manager"
+            }
+          },
+          {
+            "description": "Draw the question",
+            "methodName": "draw",
+            "type": "method-call",
+            "args": [
+              {
+                "selector": "#target1",
+                "type": "d3select"
+              }
+            ],
+            "instance": {
+              "domain": "brix",
+              "refId": "q1",
+              "type": "ref"
+            }
+          }
+        ]
+      }
+    ]
+  }
+}

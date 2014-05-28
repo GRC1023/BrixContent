@@ -1,0 +1,191 @@
+{
+  "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope",
+  "@type": "Envelope",
+  "metadata": {
+    "bookTitle": "American Stories: A History of the United States, Combined Volume",
+    "keywords": [
+      "Brands 3e",
+      "Ch11",
+      "Alick"
+    ],
+    "extendedMetadata": [
+      {
+        "name": "ISBN",
+        "value": "013379461X"
+      },
+      {
+        "name": "M",
+        "value": "m01"
+      },
+      {
+        "name": "assessment_title",
+        "value": "Quiz: The World of Southern Blacks"
+      },
+      {
+        "name": "Topic",
+        "value": "The World of Southern Blacks"
+      },
+      {
+        "name": "chapterTitle",
+        "value": "Slaves and Masters 1793â1861"
+      },
+      {
+        "name": "module",
+        "value": "The World of Southern Blacks"
+      },
+      {
+        "name": "item_title",
+        "value": "013379461X_H. W. Brands; T. H. Breen; R. Hal Williams; Ariela J. Gros_ch11_m01_q0006"
+      },
+      {
+        "name": "questionlayout",
+        "value": "1"
+      },
+      {
+        "name": "CH",
+        "value": "11"
+      },
+      {
+        "name": "Objective",
+        "value": "LO: 11.1: What factors made living conditions for southern blacks more or less difficult?"
+      },
+      {
+        "name": "shuffle_choices",
+        "value": "Yes"
+      }
+    ],
+    "subject": [
+      "US History"
+    ],
+    "contentTypeTier2": [
+      "AssignmentItem"
+    ],
+    "contentTypeTier1": "Assessment",
+    "format": [
+      "application/vnd.pearson.sanvan.v1.activity"
+    ],
+    "version": "1.0",
+    "guid": "dfe4b676-ae03-4f5d-96ce-7089b9b9c8b7",
+    "bookAuthor": "H. W. Brands; T. H. Breen; R. Hal Williams; Ariela J. Gros",
+    "title": "POST 11 09",
+    "educationalAlignment": [
+      "http://purl.org/pearson/objectives/183725473384362"
+    ]
+  },
+  "body": {
+    "description": "POST_11_09",
+    "containerConfig": [
+      {
+        "description": "POST_11_09",
+        "containerId": "target1",
+        "brixConfig": [
+          {
+            "bricId": "q1",
+            "bricType": "MultipleChoiceQuestion",
+            "config": {
+              "id": "QUE60977",
+              "question": "How were the lives of urban slaves different from those of slaves working on cotton plantations?\n\u003cbr /\u003e",
+              "order": "randomized",
+              "presenterType": "RadioGroup",
+              "presenterConfig": {
+                "numberFormat": "none"
+              },
+              "choices": [
+                {
+                  "answerKey": "answer_1",
+                  "content": "Slaves in the cities did a wider range of jobs and enjoyed more autonomy."
+                },
+                {
+                  "answerKey": "answer_2",
+                  "content": "In the cities, slaves enjoyed a position of equality with their masters."
+                },
+                {
+                  "answerKey": "answer_3",
+                  "content": "Slaves in the cities could form unions and have their demands met."
+                },
+                {
+                  "answerKey": "answer_4",
+                  "content": "In the cities, slaves were free to socialize and form relationships with other slaves."
+                }
+              ]
+            },
+            "answerKey": {
+              "assessmentType": "multiplechoice",
+              "answers": {
+                "answer_3": {
+                  "score": 0.0,
+                  "response": "Slaves in cities did a wider range of jobs than plantation slaves, and in general enjoyed more autonomy. They worked in restaurants and saloons, in hotels, and as skilled tradesmen. Some urban slaves even lived apart from their masters and hired out their own time, returning part of their wages to their owners."
+                },
+                "answer_2": {
+                  "score": 0.0,
+                  "response": "Slaves in cities did a wider range of jobs than plantation slaves, and in general enjoyed more autonomy. They worked in restaurants and saloons, in hotels, and as skilled tradesmen. Some urban slaves even lived apart from their masters and hired out their own time, returning part of their wages to their owners."
+                },
+                "answer_1": {
+                  "score": 1.0,
+                  "response": "Slaves in cities did a wider range of jobs than plantation slaves, and in general enjoyed more autonomy. They worked in restaurants and saloons, in hotels, and as skilled tradesmen. Some urban slaves even lived apart from their masters and hired out their own time, returning part of their wages to their owners."
+                },
+                "answer_4": {
+                  "score": 0.0,
+                  "response": "Slaves in cities did a wider range of jobs than plantation slaves, and in general enjoyed more autonomy. They worked in restaurants and saloons, in hotels, and as skilled tradesmen. Some urban slaves even lived apart from their masters and hired out their own time, returning part of their wages to their owners."
+                }
+              }
+            },
+            "configFixup": [
+              {
+                "name": "questionId",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "sequenceNodeKey",
+                  "type": "ref"
+                }
+              },
+              {
+                "name": "maxAttempts",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "maxAttempts",
+                  "type": "ref"
+                }
+              }
+            ]
+          }
+        ],
+        "hookupActions": [
+          {
+            "description": "Hookup the submit manager to evaluate answers",
+            "methodName": "handleRequestsFrom",
+            "type": "method-call",
+            "args": [
+              {
+                "domain": "brix",
+                "refId": "q1",
+                "type": "ref"
+              }
+            ],
+            "instance": {
+              "type": "submit-manager"
+            }
+          },
+          {
+            "description": "Draw the question",
+            "methodName": "draw",
+            "type": "method-call",
+            "args": [
+              {
+                "selector": "#target1",
+                "type": "d3select"
+              }
+            ],
+            "instance": {
+              "domain": "brix",
+              "refId": "q1",
+              "type": "ref"
+            }
+          }
+        ]
+      }
+    ]
+  }
+}

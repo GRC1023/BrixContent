@@ -1,0 +1,191 @@
+{
+  "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope",
+  "@type": "Envelope",
+  "metadata": {
+    "bookTitle": "American Stories: A History of the United States, Combined Volume",
+    "keywords": [
+      "Brands 3e",
+      "Ch27",
+      "Alick"
+    ],
+    "extendedMetadata": [
+      {
+        "name": "ISBN",
+        "value": "013379461X"
+      },
+      {
+        "name": "M",
+        "value": "m02"
+      },
+      {
+        "name": "assessment_title",
+        "value": "Quiz: The Road to War"
+      },
+      {
+        "name": "Topic",
+        "value": "The Road to War"
+      },
+      {
+        "name": "chapterTitle",
+        "value": "America and the World 1921â1945"
+      },
+      {
+        "name": "module",
+        "value": "The Road to War"
+      },
+      {
+        "name": "item_title",
+        "value": "013379461X_H. W. Brands; T. H. Breen; R. Hal Williams; Ariela J. Gros_ch27_m02_q0002"
+      },
+      {
+        "name": "questionlayout",
+        "value": "1"
+      },
+      {
+        "name": "CH",
+        "value": "27"
+      },
+      {
+        "name": "Objective",
+        "value": "27.2"
+      },
+      {
+        "name": "shuffle_choices",
+        "value": "Yes"
+      }
+    ],
+    "subject": [
+      "US History"
+    ],
+    "contentTypeTier2": [
+      "AssignmentItem"
+    ],
+    "contentTypeTier1": "Assessment",
+    "format": [
+      "application/vnd.pearson.sanvan.v1.activity"
+    ],
+    "version": "1.0",
+    "guid": "d99d6c8b-1037-4f10-8d4d-e77203acfccb",
+    "bookAuthor": "H. W. Brands; T. H. Breen; R. Hal Williams; Ariela J. Gros",
+    "title": "POST 27 01",
+    "educationalAlignment": [
+      "http://purl.org/pearson/objectives/183725473384362"
+    ]
+  },
+  "body": {
+    "description": "POST_27_01",
+    "containerConfig": [
+      {
+        "description": "POST_27_01",
+        "containerId": "target1",
+        "brixConfig": [
+          {
+            "bricId": "q1",
+            "bricType": "MultipleChoiceQuestion",
+            "config": {
+              "id": "QUE61466",
+              "question": "The German offensive that drove the British off the European continent was known as the __________, which means “lightning war.”\n\u003cbr /\u003e",
+              "order": "randomized",
+              "presenterType": "RadioGroup",
+              "presenterConfig": {
+                "numberFormat": "none"
+              },
+              "choices": [
+                {
+                  "answerKey": "answer_1",
+                  "content": "\u003ci\u003eblitzkrieg\u003c/i\u003e"
+                },
+                {
+                  "answerKey": "answer_2",
+                  "content": "\u003ci\u003ekristallnacht\u003c/i\u003e"
+                },
+                {
+                  "answerKey": "answer_3",
+                  "content": "\u003ci\u003egesellschaft\u003c/i\u003e"
+                },
+                {
+                  "answerKey": "answer_4",
+                  "content": "\u003ci\u003eschadenfreude\u003c/i\u003e"
+                }
+              ]
+            },
+            "answerKey": {
+              "assessmentType": "multiplechoice",
+              "answers": {
+                "answer_3": {
+                  "score": 0.0,
+                  "response": "The Germans unleashed the \n\u003ci\u003eblitzkrieg\u003c/i\u003e (lightning war) on the western front. Using tanks, infantry, and dive-bombers in close coordination, the German army overran the Netherlands, Belgium, and Luxembourg en route to France."
+                },
+                "answer_2": {
+                  "score": 0.0,
+                  "response": "The Germans unleashed the \n\u003ci\u003eblitzkrieg\u003c/i\u003e (lightning war) on the western front. Using tanks, infantry, and dive-bombers in close coordination, the German army overran the Netherlands, Belgium, and Luxembourg en route to France."
+                },
+                "answer_1": {
+                  "score": 1.0,
+                  "response": "The Germans unleashed the \n\u003ci\u003eblitzkrieg\u003c/i\u003e (lightning war) on the western front. Using tanks, infantry, and dive-bombers in close coordination, the German army overran the Netherlands, Belgium, and Luxembourg en route to France."
+                },
+                "answer_4": {
+                  "score": 0.0,
+                  "response": "The Germans unleashed the \n\u003ci\u003eblitzkrieg\u003c/i\u003e (lightning war) on the western front. Using tanks, infantry, and dive-bombers in close coordination, the German army overran the Netherlands, Belgium, and Luxembourg en route to France."
+                }
+              }
+            },
+            "configFixup": [
+              {
+                "name": "questionId",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "sequenceNodeKey",
+                  "type": "ref"
+                }
+              },
+              {
+                "name": "maxAttempts",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "maxAttempts",
+                  "type": "ref"
+                }
+              }
+            ]
+          }
+        ],
+        "hookupActions": [
+          {
+            "description": "Hookup the submit manager to evaluate answers",
+            "methodName": "handleRequestsFrom",
+            "type": "method-call",
+            "args": [
+              {
+                "domain": "brix",
+                "refId": "q1",
+                "type": "ref"
+              }
+            ],
+            "instance": {
+              "type": "submit-manager"
+            }
+          },
+          {
+            "description": "Draw the question",
+            "methodName": "draw",
+            "type": "method-call",
+            "args": [
+              {
+                "selector": "#target1",
+                "type": "d3select"
+              }
+            ],
+            "instance": {
+              "domain": "brix",
+              "refId": "q1",
+              "type": "ref"
+            }
+          }
+        ]
+      }
+    ]
+  }
+}

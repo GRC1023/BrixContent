@@ -1,0 +1,187 @@
+{
+  "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope",
+  "@type": "Envelope",
+  "metadata": {
+    "bookTitle": "American Stories: A History of the United States, Combined Volume",
+    "keywords": [
+      "Brands 3e",
+      "Ch07",
+      "Alick"
+    ],
+    "extendedMetadata": [
+      {
+        "name": "ISBN",
+        "value": "013379461X"
+      },
+      {
+        "name": "M",
+        "value": "c01"
+      },
+      {
+        "name": "assessment_title",
+        "value": "Chapter Quiz: Democracy and Dissent: The Violence of Party Politics 1788â1800"
+      },
+      {
+        "name": "Topic",
+        "value": "Hamiltonâs Plan for Prosperity and Security"
+      },
+      {
+        "name": "chapterTitle",
+        "value": "Democracy and Dissent: The Violence of Party Politics 1788â1800"
+      },
+      {
+        "name": "item_title",
+        "value": "013379461X_H. W. Brands; T. H. Breen; R. Hal Williams; Ariela J. Gros_ch07_c01_q0001"
+      },
+      {
+        "name": "questionlayout",
+        "value": "1"
+      },
+      {
+        "name": "CH",
+        "value": "7"
+      },
+      {
+        "name": "Objective",
+        "value": "LO: 7.2: Why did many Americans oppose Alexander Hamiltonâs blueprint for national prosperity?,"
+      },
+      {
+        "name": "shuffle_choices",
+        "value": "Yes"
+      }
+    ],
+    "subject": [
+      "US History"
+    ],
+    "contentTypeTier2": [
+      "AssignmentItem"
+    ],
+    "contentTypeTier1": "Assessment",
+    "format": [
+      "application/vnd.pearson.sanvan.v1.activity"
+    ],
+    "version": "1.0",
+    "guid": "ce4da18c-aff0-4a3f-b1ae-dc1c75cfa35a",
+    "bookAuthor": "H. W. Brands; T. H. Breen; R. Hal Williams; Ariela J. Gros",
+    "title": "PRE 07 14 ",
+    "educationalAlignment": [
+      "http://purl.org/pearson/objectives/183725473384362"
+    ]
+  },
+  "body": {
+    "description": "PRE_07_14",
+    "containerConfig": [
+      {
+        "description": "PRE_07_14",
+        "containerId": "target1",
+        "brixConfig": [
+          {
+            "bricId": "q1",
+            "bricType": "MultipleChoiceQuestion",
+            "config": {
+              "id": "QUE60823",
+              "question": "How did Hamilton use Article 1, Section 8, of the Constitution to his advantage?\n\u003cbr /\u003e",
+              "order": "randomized",
+              "presenterType": "RadioGroup",
+              "presenterConfig": {
+                "numberFormat": "none"
+              },
+              "choices": [
+                {
+                  "answerKey": "answer_1",
+                  "content": "to secure passage of the Judiciary Act of 1789"
+                },
+                {
+                  "answerKey": "answer_2",
+                  "content": "to further his vision of creating a totalitarian state"
+                },
+                {
+                  "answerKey": "answer_3",
+                  "content": "to justify the creation of the Navy Department"
+                },
+                {
+                  "answerKey": "answer_4",
+                  "content": "to add support to his plan for a national bank"
+                }
+              ]
+            },
+            "answerKey": {
+              "assessmentType": "multiplechoice",
+              "answers": {
+                "answer_3": {
+                  "score": 0.0,
+                  "response": "Consider This: He used the article to help convince the president not to veto a particular piece of legislation. See L.O. 7.2 Why did many Americans oppose Alexander Hamilton’s blueprint for national prosperity?"
+                },
+                "answer_2": {
+                  "score": 0.0,
+                  "response": "Consider This: He used the article to help convince the president not to veto a particular piece of legislation. See L.O. 7.2 Why did many Americans oppose Alexander Hamilton’s blueprint for national prosperity?"
+                },
+                "answer_1": {
+                  "score": 0.0,
+                  "response": "Consider This: He used the article to help convince the president not to veto a particular piece of legislation. See L.O. 7.2 Why did many Americans oppose Alexander Hamilton’s blueprint for national prosperity?"
+                },
+                "answer_4": {
+                  "score": 1.0,
+                  "response": ""
+                }
+              }
+            },
+            "configFixup": [
+              {
+                "name": "questionId",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "sequenceNodeKey",
+                  "type": "ref"
+                }
+              },
+              {
+                "name": "maxAttempts",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "maxAttempts",
+                  "type": "ref"
+                }
+              }
+            ]
+          }
+        ],
+        "hookupActions": [
+          {
+            "description": "Hookup the submit manager to evaluate answers",
+            "methodName": "handleRequestsFrom",
+            "type": "method-call",
+            "args": [
+              {
+                "domain": "brix",
+                "refId": "q1",
+                "type": "ref"
+              }
+            ],
+            "instance": {
+              "type": "submit-manager"
+            }
+          },
+          {
+            "description": "Draw the question",
+            "methodName": "draw",
+            "type": "method-call",
+            "args": [
+              {
+                "selector": "#target1",
+                "type": "d3select"
+              }
+            ],
+            "instance": {
+              "domain": "brix",
+              "refId": "q1",
+              "type": "ref"
+            }
+          }
+        ]
+      }
+    ]
+  }
+}

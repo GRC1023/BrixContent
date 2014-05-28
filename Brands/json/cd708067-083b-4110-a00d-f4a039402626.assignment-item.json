@@ -1,0 +1,191 @@
+{
+  "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope",
+  "@type": "Envelope",
+  "metadata": {
+    "bookTitle": "American Stories: A History of the United States, Combined Volume",
+    "keywords": [
+      "Brands 3e",
+      "Ch05",
+      "Alick"
+    ],
+    "extendedMetadata": [
+      {
+        "name": "ISBN",
+        "value": "013379461X"
+      },
+      {
+        "name": "M",
+        "value": "m01"
+      },
+      {
+        "name": "assessment_title",
+        "value": "Quiz: Structure of Colonial Society"
+      },
+      {
+        "name": "Topic",
+        "value": "Structure of Colonial Society"
+      },
+      {
+        "name": "chapterTitle",
+        "value": "The American Revolution: From Elite Protest to Popular Revolt, 1763â1783"
+      },
+      {
+        "name": "module",
+        "value": "Structure of Colonial Society"
+      },
+      {
+        "name": "item_title",
+        "value": "013379461X_H. W. Brands; T. H. Breen; R. Hal Williams; Ariela J. Gros_ch05_m01_q0001"
+      },
+      {
+        "name": "questionlayout",
+        "value": "1"
+      },
+      {
+        "name": "CH",
+        "value": "5"
+      },
+      {
+        "name": "Objective",
+        "value": "LO: 5.1: Why did Americans resist parliamentary taxation?"
+      },
+      {
+        "name": "shuffle_choices",
+        "value": "Yes"
+      }
+    ],
+    "subject": [
+      "US History"
+    ],
+    "contentTypeTier2": [
+      "AssignmentItem"
+    ],
+    "contentTypeTier1": "Assessment",
+    "format": [
+      "application/vnd.pearson.sanvan.v1.activity"
+    ],
+    "version": "1.0",
+    "guid": "cd708067-083b-4110-a00d-f4a039402626",
+    "bookAuthor": "H. W. Brands; T. H. Breen; R. Hal Williams; Ariela J. Gros",
+    "title": "PRE 05 07",
+    "educationalAlignment": [
+      "http://purl.org/pearson/objectives/183725473384362"
+    ]
+  },
+  "body": {
+    "description": "PRE_05_07",
+    "containerConfig": [
+      {
+        "description": "PRE_05_07",
+        "containerId": "target1",
+        "brixConfig": [
+          {
+            "bricId": "q1",
+            "bricType": "MultipleChoiceQuestion",
+            "config": {
+              "id": "QUE60792",
+              "question": "What was the impact of the colonial pamphleteers on the American Revolution?\n\u003cbr /\u003e",
+              "order": "randomized",
+              "presenterType": "RadioGroup",
+              "presenterConfig": {
+                "numberFormat": "none"
+              },
+              "choices": [
+                {
+                  "answerKey": "answer_1",
+                  "content": "They successfully roused ordinary men and women to resist Britain with force of arms."
+                },
+                {
+                  "answerKey": "answer_2",
+                  "content": "They relied solely on reason to solve social and political problems."
+                },
+                {
+                  "answerKey": "answer_3",
+                  "content": "They countered the highly emotional, conspiratorial rhetoric of some American rebels."
+                },
+                {
+                  "answerKey": "answer_4",
+                  "content": "They took a dispassionate, legalistic approach to their analysis of power and liberty."
+                }
+              ]
+            },
+            "answerKey": {
+              "assessmentType": "multiplechoice",
+              "answers": {
+                "answer_3": {
+                  "score": 0.0,
+                  "response": "With their highly emotional, conspiratorial rhetoric, the colonial pamphleteers successfully roused ordinary men and women to resist Britain with force of arms."
+                },
+                "answer_2": {
+                  "score": 0.0,
+                  "response": "With their highly emotional, conspiratorial rhetoric, the colonial pamphleteers successfully roused ordinary men and women to resist Britain with force of arms."
+                },
+                "answer_1": {
+                  "score": 1.0,
+                  "response": "With their highly emotional, conspiratorial rhetoric, the colonial pamphleteers successfully roused ordinary men and women to resist Britain with force of arms."
+                },
+                "answer_4": {
+                  "score": 0.0,
+                  "response": "With their highly emotional, conspiratorial rhetoric, the colonial pamphleteers successfully roused ordinary men and women to resist Britain with force of arms."
+                }
+              }
+            },
+            "configFixup": [
+              {
+                "name": "questionId",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "sequenceNodeKey",
+                  "type": "ref"
+                }
+              },
+              {
+                "name": "maxAttempts",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "maxAttempts",
+                  "type": "ref"
+                }
+              }
+            ]
+          }
+        ],
+        "hookupActions": [
+          {
+            "description": "Hookup the submit manager to evaluate answers",
+            "methodName": "handleRequestsFrom",
+            "type": "method-call",
+            "args": [
+              {
+                "domain": "brix",
+                "refId": "q1",
+                "type": "ref"
+              }
+            ],
+            "instance": {
+              "type": "submit-manager"
+            }
+          },
+          {
+            "description": "Draw the question",
+            "methodName": "draw",
+            "type": "method-call",
+            "args": [
+              {
+                "selector": "#target1",
+                "type": "d3select"
+              }
+            ],
+            "instance": {
+              "domain": "brix",
+              "refId": "q1",
+              "type": "ref"
+            }
+          }
+        ]
+      }
+    ]
+  }
+}
