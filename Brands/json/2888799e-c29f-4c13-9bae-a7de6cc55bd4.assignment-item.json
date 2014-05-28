@@ -1,0 +1,187 @@
+{
+  "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope",
+  "@type": "Envelope",
+  "metadata": {
+    "bookTitle": "American Stories: A History of the United States, Combined Volume",
+    "keywords": [
+      "Brands 3e",
+      "Ch31",
+      "Alick"
+    ],
+    "extendedMetadata": [
+      {
+        "name": "ISBN",
+        "value": "013379461X"
+      },
+      {
+        "name": "M",
+        "value": "c01"
+      },
+      {
+        "name": "assessment_title",
+        "value": "Chapter Quiz: To a New Conservatism 1969â1988"
+      },
+      {
+        "name": "Topic",
+        "value": "The Reagan Revolution"
+      },
+      {
+        "name": "chapterTitle",
+        "value": "To a New Conservatism 1969â1988"
+      },
+      {
+        "name": "item_title",
+        "value": "013379461X_H. W. Brands; T. H. Breen; R. Hal Williams; Ariela J. Gros_ch31_c01_q0008"
+      },
+      {
+        "name": "questionlayout",
+        "value": "1"
+      },
+      {
+        "name": "CH",
+        "value": "31"
+      },
+      {
+        "name": "Objective",
+        "value": "31.5"
+      },
+      {
+        "name": "shuffle_choices",
+        "value": "Yes"
+      }
+    ],
+    "subject": [
+      "US History"
+    ],
+    "contentTypeTier2": [
+      "AssignmentItem"
+    ],
+    "contentTypeTier1": "Assessment",
+    "format": [
+      "application/vnd.pearson.sanvan.v1.activity"
+    ],
+    "version": "1.0",
+    "guid": "2888799e-c29f-4c13-9bae-a7de6cc55bd4",
+    "bookAuthor": "H. W. Brands; T. H. Breen; R. Hal Williams; Ariela J. Gros",
+    "title": "FA Remember 31 05",
+    "educationalAlignment": [
+      "http://purl.org/pearson/objectives/183725473384362"
+    ]
+  },
+  "body": {
+    "description": "FA_Remember_31_05",
+    "containerConfig": [
+      {
+        "description": "FA_Remember_31_05",
+        "containerId": "target1",
+        "brixConfig": [
+          {
+            "bricId": "q1",
+            "bricType": "MultipleChoiceQuestion",
+            "config": {
+              "id": "QUE61586",
+              "question": "President Ronald Reagan based his economic policy on __________.\n\u003cbr /\u003e",
+              "order": "randomized",
+              "presenterType": "RadioGroup",
+              "presenterConfig": {
+                "numberFormat": "none"
+              },
+              "choices": [
+                {
+                  "answerKey": "answer_1",
+                  "content": "expanding the public sector"
+                },
+                {
+                  "answerKey": "answer_2",
+                  "content": "Keynesian economics"
+                },
+                {
+                  "answerKey": "answer_3",
+                  "content": "neoclassical economics"
+                },
+                {
+                  "answerKey": "answer_4",
+                  "content": "supply-side economics"
+                }
+              ]
+            },
+            "answerKey": {
+              "assessmentType": "multiplechoice",
+              "answers": {
+                "answer_3": {
+                  "score": 0.0,
+                  "response": "Consider This: When Ronald Reagan took office in January 1981, inflation had devastated the economy. He blamed “the worst economic mess since the Great Depression” on high federal spending and excessive taxation. “Government is not the solution to our problems,” Reagan announced in his inaugural address. “Government is the problem.” He believed enacting tax cuts to benefit the private sector would lead to an economic boom. See L.O. 31.5 The Reagan Revolution."
+                },
+                "answer_2": {
+                  "score": 0.0,
+                  "response": "Consider This: When Ronald Reagan took office in January 1981, inflation had devastated the economy. He blamed “the worst economic mess since the Great Depression” on high federal spending and excessive taxation. “Government is not the solution to our problems,” Reagan announced in his inaugural address. “Government is the problem.” He believed enacting tax cuts to benefit the private sector would lead to an economic boom. See L.O. 31.5 The Reagan Revolution."
+                },
+                "answer_1": {
+                  "score": 0.0,
+                  "response": "Consider This: When Ronald Reagan took office in January 1981, inflation had devastated the economy. He blamed “the worst economic mess since the Great Depression” on high federal spending and excessive taxation. “Government is not the solution to our problems,” Reagan announced in his inaugural address. “Government is the problem.” He believed enacting tax cuts to benefit the private sector would lead to an economic boom. See L.O. 31.5 The Reagan Revolution."
+                },
+                "answer_4": {
+                  "score": 1.0,
+                  "response": ""
+                }
+              }
+            },
+            "configFixup": [
+              {
+                "name": "questionId",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "sequenceNodeKey",
+                  "type": "ref"
+                }
+              },
+              {
+                "name": "maxAttempts",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "maxAttempts",
+                  "type": "ref"
+                }
+              }
+            ]
+          }
+        ],
+        "hookupActions": [
+          {
+            "description": "Hookup the submit manager to evaluate answers",
+            "methodName": "handleRequestsFrom",
+            "type": "method-call",
+            "args": [
+              {
+                "domain": "brix",
+                "refId": "q1",
+                "type": "ref"
+              }
+            ],
+            "instance": {
+              "type": "submit-manager"
+            }
+          },
+          {
+            "description": "Draw the question",
+            "methodName": "draw",
+            "type": "method-call",
+            "args": [
+              {
+                "selector": "#target1",
+                "type": "d3select"
+              }
+            ],
+            "instance": {
+              "domain": "brix",
+              "refId": "q1",
+              "type": "ref"
+            }
+          }
+        ]
+      }
+    ]
+  }
+}

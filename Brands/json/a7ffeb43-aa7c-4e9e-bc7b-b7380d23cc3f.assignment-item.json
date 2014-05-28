@@ -1,0 +1,191 @@
+{
+  "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope",
+  "@type": "Envelope",
+  "metadata": {
+    "bookTitle": "American Stories: A History of the United States, Combined Volume",
+    "keywords": [
+      "Brands 3e",
+      "Ch06",
+      "Alick"
+    ],
+    "extendedMetadata": [
+      {
+        "name": "ISBN",
+        "value": "013379461X"
+      },
+      {
+        "name": "M",
+        "value": "m01"
+      },
+      {
+        "name": "assessment_title",
+        "value": "Quiz: Defining Republican Culture"
+      },
+      {
+        "name": "Topic",
+        "value": "Defining Republican Culture"
+      },
+      {
+        "name": "chapterTitle",
+        "value": "The Republican Experiment 1783â1788"
+      },
+      {
+        "name": "module",
+        "value": "Defining Republican Culture"
+      },
+      {
+        "name": "item_title",
+        "value": "013379461X_H. W. Brands; T. H. Breen; R. Hal Williams; Ariela J. Gros_ch06_m01_q0004"
+      },
+      {
+        "name": "questionlayout",
+        "value": "1"
+      },
+      {
+        "name": "CH",
+        "value": "6"
+      },
+      {
+        "name": "Objective",
+        "value": "LO: 6.1: What were the limits of equality in the ârepublicanâ society of the new United States?"
+      },
+      {
+        "name": "shuffle_choices",
+        "value": "Yes"
+      }
+    ],
+    "subject": [
+      "US History"
+    ],
+    "contentTypeTier2": [
+      "AssignmentItem"
+    ],
+    "contentTypeTier1": "Assessment",
+    "format": [
+      "application/vnd.pearson.sanvan.v1.activity"
+    ],
+    "version": "1.0",
+    "guid": "a7ffeb43-aa7c-4e9e-bc7b-b7380d23cc3f",
+    "bookAuthor": "H. W. Brands; T. H. Breen; R. Hal Williams; Ariela J. Gros",
+    "title": "POST 06 09",
+    "educationalAlignment": [
+      "http://purl.org/pearson/objectives/183725473384362"
+    ]
+  },
+  "body": {
+    "description": "POST_06_09",
+    "containerConfig": [
+      {
+        "description": "POST_06_09",
+        "containerId": "target1",
+        "brixConfig": [
+          {
+            "bricId": "q1",
+            "bricType": "MultipleChoiceQuestion",
+            "config": {
+              "id": "QUE60839",
+              "question": "What impact did republican ideas have on the relation between church and state in Virginia?\n\u003cbr /\u003e",
+              "order": "randomized",
+              "presenterType": "RadioGroup",
+              "presenterConfig": {
+                "numberFormat": "none"
+              },
+              "choices": [
+                {
+                  "answerKey": "answer_1",
+                  "content": "Virginia cut the ties between church and state."
+                },
+                {
+                  "answerKey": "answer_2",
+                  "content": "The church was given a say in the assembly."
+                },
+                {
+                  "answerKey": "answer_3",
+                  "content": "Priests were given honorary memberships in the assembly."
+                },
+                {
+                  "answerKey": "answer_4",
+                  "content": "Virginian officials were banned from visiting churches."
+                }
+              ]
+            },
+            "answerKey": {
+              "assessmentType": "multiplechoice",
+              "answers": {
+                "answer_3": {
+                  "score": 0.0,
+                  "response": "In 1786, Virginia cut the last ties between church and state. Other southern states also disestablished the Anglican Church, but in Massachusetts, Connecticut, and New Hampshire, Congregational churches continued to enjoy special status."
+                },
+                "answer_2": {
+                  "score": 0.0,
+                  "response": "In 1786, Virginia cut the last ties between church and state. Other southern states also disestablished the Anglican Church, but in Massachusetts, Connecticut, and New Hampshire, Congregational churches continued to enjoy special status."
+                },
+                "answer_1": {
+                  "score": 1.0,
+                  "response": "In 1786, Virginia cut the last ties between church and state. Other southern states also disestablished the Anglican Church, but in Massachusetts, Connecticut, and New Hampshire, Congregational churches continued to enjoy special status."
+                },
+                "answer_4": {
+                  "score": 0.0,
+                  "response": "In 1786, Virginia cut the last ties between church and state. Other southern states also disestablished the Anglican Church, but in Massachusetts, Connecticut, and New Hampshire, Congregational churches continued to enjoy special status."
+                }
+              }
+            },
+            "configFixup": [
+              {
+                "name": "questionId",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "sequenceNodeKey",
+                  "type": "ref"
+                }
+              },
+              {
+                "name": "maxAttempts",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "maxAttempts",
+                  "type": "ref"
+                }
+              }
+            ]
+          }
+        ],
+        "hookupActions": [
+          {
+            "description": "Hookup the submit manager to evaluate answers",
+            "methodName": "handleRequestsFrom",
+            "type": "method-call",
+            "args": [
+              {
+                "domain": "brix",
+                "refId": "q1",
+                "type": "ref"
+              }
+            ],
+            "instance": {
+              "type": "submit-manager"
+            }
+          },
+          {
+            "description": "Draw the question",
+            "methodName": "draw",
+            "type": "method-call",
+            "args": [
+              {
+                "selector": "#target1",
+                "type": "d3select"
+              }
+            ],
+            "instance": {
+              "domain": "brix",
+              "refId": "q1",
+              "type": "ref"
+            }
+          }
+        ]
+      }
+    ]
+  }
+}

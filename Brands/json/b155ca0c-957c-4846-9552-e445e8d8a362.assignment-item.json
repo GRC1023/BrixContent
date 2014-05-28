@@ -1,0 +1,191 @@
+{
+  "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope",
+  "@type": "Envelope",
+  "metadata": {
+    "bookTitle": "American Stories: A History of the United States, Combined Volume",
+    "keywords": [
+      "Brands 3e",
+      "Ch03",
+      "Alick"
+    ],
+    "extendedMetadata": [
+      {
+        "name": "ISBN",
+        "value": "013379461X"
+      },
+      {
+        "name": "M",
+        "value": "m05"
+      },
+      {
+        "name": "assessment_title",
+        "value": "Quiz: Colonial Political Revolts"
+      },
+      {
+        "name": "Topic",
+        "value": "Colonial Political Revolts"
+      },
+      {
+        "name": "chapterTitle",
+        "value": "Putting Down Roots: Opportunity and Oppression in Colonial Society 1619â1692"
+      },
+      {
+        "name": "module",
+        "value": "Colonial Political Revolts"
+      },
+      {
+        "name": "item_title",
+        "value": "013379461X_H. W. Brands; T. H. Breen; R. Hal Williams; Ariela J. Gros_ch03_m05_q0001"
+      },
+      {
+        "name": "questionlayout",
+        "value": "1"
+      },
+      {
+        "name": "CH",
+        "value": "3"
+      },
+      {
+        "name": "Objective",
+        "value": "LO: 3.5: How did colonial revolts affect the political culture of Virginia and New England?"
+      },
+      {
+        "name": "shuffle_choices",
+        "value": "Yes"
+      }
+    ],
+    "subject": [
+      "US History"
+    ],
+    "contentTypeTier2": [
+      "AssignmentItem"
+    ],
+    "contentTypeTier1": "Assessment",
+    "format": [
+      "application/vnd.pearson.sanvan.v1.activity"
+    ],
+    "version": "1.0",
+    "guid": "b155ca0c-957c-4846-9552-e445e8d8a362",
+    "bookAuthor": "H. W. Brands; T. H. Breen; R. Hal Williams; Ariela J. Gros",
+    "title": "POST 03 07",
+    "educationalAlignment": [
+      "http://purl.org/pearson/objectives/183725473384362"
+    ]
+  },
+  "body": {
+    "description": "POST_03_07",
+    "containerConfig": [
+      {
+        "description": "POST_03_07",
+        "containerId": "target1",
+        "brixConfig": [
+          {
+            "bricId": "q1",
+            "bricType": "MultipleChoiceQuestion",
+            "config": {
+              "id": "QUE60746",
+              "question": "Those people accused of being witches in Salem were generally __________.\n\u003cbr /\u003e",
+              "order": "randomized",
+              "presenterType": "RadioGroup",
+              "presenterConfig": {
+                "numberFormat": "none"
+              },
+              "choices": [
+                {
+                  "answerKey": "answer_1",
+                  "content": "from families associated with Salem’s burgeoning market economy"
+                },
+                {
+                  "answerKey": "answer_2",
+                  "content": "from the poorer and more uneducated segments of the town"
+                },
+                {
+                  "answerKey": "answer_3",
+                  "content": "notorious for their deviation from the moral norms of the community"
+                },
+                {
+                  "answerKey": "answer_4",
+                  "content": "outspoken opponents of the Puritan clergy"
+                }
+              ]
+            },
+            "answerKey": {
+              "assessmentType": "multiplechoice",
+              "answers": {
+                "answer_3": {
+                  "score": 0.0,
+                  "response": "No one knows exactly what sparked the terror in Salem Village. The community had a history of religious discord, and during the 1680s the people split into angry factions over the choice of a minister. Economic tensions also played a part. Poorer, more traditional farmers accused members of prosperous, commercially oriented families of being witches."
+                },
+                "answer_2": {
+                  "score": 0.0,
+                  "response": "No one knows exactly what sparked the terror in Salem Village. The community had a history of religious discord, and during the 1680s the people split into angry factions over the choice of a minister. Economic tensions also played a part. Poorer, more traditional farmers accused members of prosperous, commercially oriented families of being witches."
+                },
+                "answer_1": {
+                  "score": 1.0,
+                  "response": "No one knows exactly what sparked the terror in Salem Village. The community had a history of religious discord, and during the 1680s the people split into angry factions over the choice of a minister. Economic tensions also played a part. Poorer, more traditional farmers accused members of prosperous, commercially oriented families of being witches."
+                },
+                "answer_4": {
+                  "score": 0.0,
+                  "response": "No one knows exactly what sparked the terror in Salem Village. The community had a history of religious discord, and during the 1680s the people split into angry factions over the choice of a minister. Economic tensions also played a part. Poorer, more traditional farmers accused members of prosperous, commercially oriented families of being witches."
+                }
+              }
+            },
+            "configFixup": [
+              {
+                "name": "questionId",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "sequenceNodeKey",
+                  "type": "ref"
+                }
+              },
+              {
+                "name": "maxAttempts",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "maxAttempts",
+                  "type": "ref"
+                }
+              }
+            ]
+          }
+        ],
+        "hookupActions": [
+          {
+            "description": "Hookup the submit manager to evaluate answers",
+            "methodName": "handleRequestsFrom",
+            "type": "method-call",
+            "args": [
+              {
+                "domain": "brix",
+                "refId": "q1",
+                "type": "ref"
+              }
+            ],
+            "instance": {
+              "type": "submit-manager"
+            }
+          },
+          {
+            "description": "Draw the question",
+            "methodName": "draw",
+            "type": "method-call",
+            "args": [
+              {
+                "selector": "#target1",
+                "type": "d3select"
+              }
+            ],
+            "instance": {
+              "domain": "brix",
+              "refId": "q1",
+              "type": "ref"
+            }
+          }
+        ]
+      }
+    ]
+  }
+}

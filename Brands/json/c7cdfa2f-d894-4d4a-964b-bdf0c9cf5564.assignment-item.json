@@ -1,0 +1,187 @@
+{
+  "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope",
+  "@type": "Envelope",
+  "metadata": {
+    "bookTitle": "American Stories: A History of the United States, Combined Volume",
+    "keywords": [
+      "Brands 3e",
+      "Ch25",
+      "Alick"
+    ],
+    "extendedMetadata": [
+      {
+        "name": "ISBN",
+        "value": "013379461X"
+      },
+      {
+        "name": "M",
+        "value": "c01"
+      },
+      {
+        "name": "assessment_title",
+        "value": "Chapter Quiz: Transition to Modern America 1919â1928"
+      },
+      {
+        "name": "Topic",
+        "value": "The Conservative Counterattack"
+      },
+      {
+        "name": "chapterTitle",
+        "value": "Transition to Modern America 1919â1928"
+      },
+      {
+        "name": "item_title",
+        "value": "013379461X_H. W. Brands; T. H. Breen; R. Hal Williams; Ariela J. Gros_ch25_c01_q0008"
+      },
+      {
+        "name": "questionlayout",
+        "value": "1"
+      },
+      {
+        "name": "CH",
+        "value": "25"
+      },
+      {
+        "name": "Objective",
+        "value": "LO: 25.3: How did conservatives resist the changes of the decade?,"
+      },
+      {
+        "name": "shuffle_choices",
+        "value": "Yes"
+      }
+    ],
+    "subject": [
+      "US History"
+    ],
+    "contentTypeTier2": [
+      "AssignmentItem"
+    ],
+    "contentTypeTier1": "Assessment",
+    "format": [
+      "application/vnd.pearson.sanvan.v1.activity"
+    ],
+    "version": "1.0",
+    "guid": "c7cdfa2f-d894-4d4a-964b-bdf0c9cf5564",
+    "bookAuthor": "H. W. Brands; T. H. Breen; R. Hal Williams; Ariela J. Gros",
+    "title": "FA Remember 25 04",
+    "educationalAlignment": [
+      "http://purl.org/pearson/objectives/183725473384362"
+    ]
+  },
+  "body": {
+    "description": "FA_Remember_25_04",
+    "containerConfig": [
+      {
+        "description": "FA_Remember_25_04",
+        "containerId": "target1",
+        "brixConfig": [
+          {
+            "bricId": "q1",
+            "bricType": "MultipleChoiceQuestion",
+            "config": {
+              "id": "QUE61358",
+              "question": "Which act implemented prohibition and banned most commercial production and distribution of beverages containing more than one-half of 1 percent of alcohol by volume?\n\u003cbr /\u003e",
+              "order": "randomized",
+              "presenterType": "RadioGroup",
+              "presenterConfig": {
+                "numberFormat": "none"
+              },
+              "choices": [
+                {
+                  "answerKey": "answer_1",
+                  "content": "Sheppard-Towner Act"
+                },
+                {
+                  "answerKey": "answer_2",
+                  "content": "Volstead Act"
+                },
+                {
+                  "answerKey": "answer_3",
+                  "content": "National Origins Quota Act"
+                },
+                {
+                  "answerKey": "answer_4",
+                  "content": "Fordney−McCumber Tariff Act"
+                }
+              ]
+            },
+            "answerKey": {
+              "assessmentType": "multiplechoice",
+              "answers": {
+                "answer_3": {
+                  "score": 0.0,
+                  "response": "Consider This: Despite the risk of illness or death from extraordinarily high alcohol content or poor distillation, Americans consumed some 150 million quarts of liquor a year in the 1920s. Bootleggers took in nearly $2 billion annually, about 2 percent of the gross national product. See L.O. 25.3 How did conservatives resist the changes of the decade? "
+                },
+                "answer_2": {
+                  "score": 1.0,
+                  "response": ""
+                },
+                "answer_1": {
+                  "score": 0.0,
+                  "response": "Consider This: Despite the risk of illness or death from extraordinarily high alcohol content or poor distillation, Americans consumed some 150 million quarts of liquor a year in the 1920s. Bootleggers took in nearly $2 billion annually, about 2 percent of the gross national product. See L.O. 25.3 How did conservatives resist the changes of the decade? "
+                },
+                "answer_4": {
+                  "score": 0.0,
+                  "response": "Consider This: Despite the risk of illness or death from extraordinarily high alcohol content or poor distillation, Americans consumed some 150 million quarts of liquor a year in the 1920s. Bootleggers took in nearly $2 billion annually, about 2 percent of the gross national product. See L.O. 25.3 How did conservatives resist the changes of the decade? "
+                }
+              }
+            },
+            "configFixup": [
+              {
+                "name": "questionId",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "sequenceNodeKey",
+                  "type": "ref"
+                }
+              },
+              {
+                "name": "maxAttempts",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "maxAttempts",
+                  "type": "ref"
+                }
+              }
+            ]
+          }
+        ],
+        "hookupActions": [
+          {
+            "description": "Hookup the submit manager to evaluate answers",
+            "methodName": "handleRequestsFrom",
+            "type": "method-call",
+            "args": [
+              {
+                "domain": "brix",
+                "refId": "q1",
+                "type": "ref"
+              }
+            ],
+            "instance": {
+              "type": "submit-manager"
+            }
+          },
+          {
+            "description": "Draw the question",
+            "methodName": "draw",
+            "type": "method-call",
+            "args": [
+              {
+                "selector": "#target1",
+                "type": "d3select"
+              }
+            ],
+            "instance": {
+              "domain": "brix",
+              "refId": "q1",
+              "type": "ref"
+            }
+          }
+        ]
+      }
+    ]
+  }
+}

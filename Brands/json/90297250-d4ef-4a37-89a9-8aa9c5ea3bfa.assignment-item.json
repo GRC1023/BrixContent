@@ -1,0 +1,191 @@
+{
+  "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope",
+  "@type": "Envelope",
+  "metadata": {
+    "bookTitle": "American Stories: A History of the United States, Combined Volume",
+    "keywords": [
+      "Brands 3e",
+      "Ch23",
+      "Alick"
+    ],
+    "extendedMetadata": [
+      {
+        "name": "ISBN",
+        "value": "013379461X"
+      },
+      {
+        "name": "M",
+        "value": "m04"
+      },
+      {
+        "name": "assessment_title",
+        "value": "Quiz: Roosevelt Progressivism at its Height"
+      },
+      {
+        "name": "Topic",
+        "value": "Roosevelt Progressivism at Its Height"
+      },
+      {
+        "name": "chapterTitle",
+        "value": "From Roosevelt to Wilson in the Age of Progressivism 1900â1920"
+      },
+      {
+        "name": "module",
+        "value": "Roosevelt Progressivism at its Height"
+      },
+      {
+        "name": "item_title",
+        "value": "013379461X_H. W. Brands; T. H. Breen; R. Hal Williams; Ariela J. Gros_ch23_m04_q0002"
+      },
+      {
+        "name": "questionlayout",
+        "value": "1"
+      },
+      {
+        "name": "CH",
+        "value": "23"
+      },
+      {
+        "name": "Objective",
+        "value": "23.4"
+      },
+      {
+        "name": "shuffle_choices",
+        "value": "Yes"
+      }
+    ],
+    "subject": [
+      "US History"
+    ],
+    "contentTypeTier2": [
+      "AssignmentItem"
+    ],
+    "contentTypeTier1": "Assessment",
+    "format": [
+      "application/vnd.pearson.sanvan.v1.activity"
+    ],
+    "version": "1.0",
+    "guid": "90297250-d4ef-4a37-89a9-8aa9c5ea3bfa",
+    "bookAuthor": "H. W. Brands; T. H. Breen; R. Hal Williams; Ariela J. Gros",
+    "title": "PRE 23 05",
+    "educationalAlignment": [
+      "http://purl.org/pearson/objectives/183725473384362"
+    ]
+  },
+  "body": {
+    "description": "PRE_23_05",
+    "containerConfig": [
+      {
+        "description": "PRE_23_05",
+        "containerId": "target1",
+        "brixConfig": [
+          {
+            "bricId": "q1",
+            "bricType": "MultipleChoiceQuestion",
+            "config": {
+              "id": "QUE61328",
+              "question": "Which novel by Upton Sinclair led to public indignation and a cry for reform in the meatpacking industry? \n\u003cbr /\u003e",
+              "order": "randomized",
+              "presenterType": "RadioGroup",
+              "presenterConfig": {
+                "numberFormat": "none"
+              },
+              "choices": [
+                {
+                  "answerKey": "answer_1",
+                  "content": "\u003ci\u003eThe Jungle\u003c/i\u003e"
+                },
+                {
+                  "answerKey": "answer_2",
+                  "content": "\u003ci\u003eThe Meatpackers\u003c/i\u003e"
+                },
+                {
+                  "answerKey": "answer_3",
+                  "content": "\u003ci\u003eThe Wage Slaves\u003c/i\u003e"
+                },
+                {
+                  "answerKey": "answer_4",
+                  "content": "\u003ci\u003eThe Beef Trust\u003c/i\u003e"
+                }
+              ]
+            },
+            "answerKey": {
+              "assessmentType": "multiplechoice",
+              "answers": {
+                "answer_3": {
+                  "score": 0.0,
+                  "response": "Muckraking articles had touched frequently on filthy conditions in meatpacking houses and Upton Sinclair’s book The Jungle (1906) set off a storm of indignation."
+                },
+                "answer_2": {
+                  "score": 0.0,
+                  "response": "Muckraking articles had touched frequently on filthy conditions in meatpacking houses and Upton Sinclair’s book The Jungle (1906) set off a storm of indignation."
+                },
+                "answer_1": {
+                  "score": 1.0,
+                  "response": "Muckraking articles had touched frequently on filthy conditions in meatpacking houses and Upton Sinclair’s book The Jungle (1906) set off a storm of indignation."
+                },
+                "answer_4": {
+                  "score": 0.0,
+                  "response": "Muckraking articles had touched frequently on filthy conditions in meatpacking houses and Upton Sinclair’s book The Jungle (1906) set off a storm of indignation."
+                }
+              }
+            },
+            "configFixup": [
+              {
+                "name": "questionId",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "sequenceNodeKey",
+                  "type": "ref"
+                }
+              },
+              {
+                "name": "maxAttempts",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "maxAttempts",
+                  "type": "ref"
+                }
+              }
+            ]
+          }
+        ],
+        "hookupActions": [
+          {
+            "description": "Hookup the submit manager to evaluate answers",
+            "methodName": "handleRequestsFrom",
+            "type": "method-call",
+            "args": [
+              {
+                "domain": "brix",
+                "refId": "q1",
+                "type": "ref"
+              }
+            ],
+            "instance": {
+              "type": "submit-manager"
+            }
+          },
+          {
+            "description": "Draw the question",
+            "methodName": "draw",
+            "type": "method-call",
+            "args": [
+              {
+                "selector": "#target1",
+                "type": "d3select"
+              }
+            ],
+            "instance": {
+              "domain": "brix",
+              "refId": "q1",
+              "type": "ref"
+            }
+          }
+        ]
+      }
+    ]
+  }
+}

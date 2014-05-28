@@ -1,0 +1,191 @@
+{
+  "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope",
+  "@type": "Envelope",
+  "metadata": {
+    "bookTitle": "American Stories: A History of the United States, Combined Volume",
+    "keywords": [
+      "Brands 3e",
+      "Ch02",
+      "Alick"
+    ],
+    "extendedMetadata": [
+      {
+        "name": "ISBN",
+        "value": "013379461X"
+      },
+      {
+        "name": "M",
+        "value": "m01"
+      },
+      {
+        "name": "assessment_title",
+        "value": "Quiz: Decisions to Move to America"
+      },
+      {
+        "name": "Topic",
+        "value": "Breaking Away: Decisions to Move to America"
+      },
+      {
+        "name": "chapterTitle",
+        "value": "Englandâs New World Experiments 1607â1732"
+      },
+      {
+        "name": "module",
+        "value": "Decisions to Move to America"
+      },
+      {
+        "name": "item_title",
+        "value": "013379461X_H. W. Brands; T. H. Breen; R. Hal Williams; Ariela J. Gros_ch02_m01_q0002"
+      },
+      {
+        "name": "questionlayout",
+        "value": "1"
+      },
+      {
+        "name": "CH",
+        "value": "2"
+      },
+      {
+        "name": "Objective",
+        "value": "LO: 2.1: Why did the Chesapeake colonies not prosper during the earliest years of settlement?"
+      },
+      {
+        "name": "shuffle_choices",
+        "value": "Yes"
+      }
+    ],
+    "subject": [
+      "US History"
+    ],
+    "contentTypeTier2": [
+      "AssignmentItem"
+    ],
+    "contentTypeTier1": "Assessment",
+    "format": [
+      "application/vnd.pearson.sanvan.v1.activity"
+    ],
+    "version": "1.0",
+    "guid": "a7b26fd2-a874-4c40-b5b0-c37bbeb37b79",
+    "bookAuthor": "H. W. Brands; T. H. Breen; R. Hal Williams; Ariela J. Gros",
+    "title": "POST 02 06",
+    "educationalAlignment": [
+      "http://purl.org/pearson/objectives/183725473384362"
+    ]
+  },
+  "body": {
+    "description": "POST_02_06",
+    "containerConfig": [
+      {
+        "description": "POST_02_06",
+        "containerId": "target1",
+        "brixConfig": [
+          {
+            "bricId": "q1",
+            "bricType": "MultipleChoiceQuestion",
+            "config": {
+              "id": "QUE60702",
+              "question": "Representative government was first introduced to America in which colony?\n\u003cbr /\u003e",
+              "order": "randomized",
+              "presenterType": "RadioGroup",
+              "presenterConfig": {
+                "numberFormat": "none"
+              },
+              "choices": [
+                {
+                  "answerKey": "answer_1",
+                  "content": "Virginia"
+                },
+                {
+                  "answerKey": "answer_2",
+                  "content": "Maryland"
+                },
+                {
+                  "answerKey": "answer_3",
+                  "content": "North Carolina"
+                },
+                {
+                  "answerKey": "answer_4",
+                  "content": "Georgia"
+                }
+              ]
+            },
+            "answerKey": {
+              "assessmentType": "multiplechoice",
+              "answers": {
+                "answer_3": {
+                  "score": 0.0,
+                  "response": "The Virginia Company sponsored an ambitious effort to transform the colony into a profitable enterprise. In 1618, Sir Edwin Sandys (pronounced Sands) led a faction of stockholders that began to pump life into the dying organization by instituting sweeping reforms and eventually ousting Sir Thomas Smith and his friends. Sandys wanted private investors to develop their own estates in Virginia. Before 1618, there had been little incentive to do so, but by relaxing Dale’s martial law and promising an elective representative assembly called the House of Burgesses, Sandys thought he could make the colony more attractive to wealthy speculators."
+                },
+                "answer_2": {
+                  "score": 0.0,
+                  "response": "The Virginia Company sponsored an ambitious effort to transform the colony into a profitable enterprise. In 1618, Sir Edwin Sandys (pronounced Sands) led a faction of stockholders that began to pump life into the dying organization by instituting sweeping reforms and eventually ousting Sir Thomas Smith and his friends. Sandys wanted private investors to develop their own estates in Virginia. Before 1618, there had been little incentive to do so, but by relaxing Dale’s martial law and promising an elective representative assembly called the House of Burgesses, Sandys thought he could make the colony more attractive to wealthy speculators."
+                },
+                "answer_1": {
+                  "score": 1.0,
+                  "response": "The Virginia Company sponsored an ambitious effort to transform the colony into a profitable enterprise. In 1618, Sir Edwin Sandys (pronounced Sands) led a faction of stockholders that began to pump life into the dying organization by instituting sweeping reforms and eventually ousting Sir Thomas Smith and his friends. Sandys wanted private investors to develop their own estates in Virginia. Before 1618, there had been little incentive to do so, but by relaxing Dale’s martial law and promising an elective representative assembly called the House of Burgesses, Sandys thought he could make the colony more attractive to wealthy speculators."
+                },
+                "answer_4": {
+                  "score": 0.0,
+                  "response": "The Virginia Company sponsored an ambitious effort to transform the colony into a profitable enterprise. In 1618, Sir Edwin Sandys (pronounced Sands) led a faction of stockholders that began to pump life into the dying organization by instituting sweeping reforms and eventually ousting Sir Thomas Smith and his friends. Sandys wanted private investors to develop their own estates in Virginia. Before 1618, there had been little incentive to do so, but by relaxing Dale’s martial law and promising an elective representative assembly called the House of Burgesses, Sandys thought he could make the colony more attractive to wealthy speculators."
+                }
+              }
+            },
+            "configFixup": [
+              {
+                "name": "questionId",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "sequenceNodeKey",
+                  "type": "ref"
+                }
+              },
+              {
+                "name": "maxAttempts",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "maxAttempts",
+                  "type": "ref"
+                }
+              }
+            ]
+          }
+        ],
+        "hookupActions": [
+          {
+            "description": "Hookup the submit manager to evaluate answers",
+            "methodName": "handleRequestsFrom",
+            "type": "method-call",
+            "args": [
+              {
+                "domain": "brix",
+                "refId": "q1",
+                "type": "ref"
+              }
+            ],
+            "instance": {
+              "type": "submit-manager"
+            }
+          },
+          {
+            "description": "Draw the question",
+            "methodName": "draw",
+            "type": "method-call",
+            "args": [
+              {
+                "selector": "#target1",
+                "type": "d3select"
+              }
+            ],
+            "instance": {
+              "domain": "brix",
+              "refId": "q1",
+              "type": "ref"
+            }
+          }
+        ]
+      }
+    ]
+  }
+}

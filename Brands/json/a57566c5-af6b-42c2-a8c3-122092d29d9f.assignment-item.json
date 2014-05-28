@@ -1,0 +1,191 @@
+{
+  "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope",
+  "@type": "Envelope",
+  "metadata": {
+    "bookTitle": "American Stories: A History of the United States, Combined Volume",
+    "keywords": [
+      "Brands 3e",
+      "Ch32",
+      "Alick"
+    ],
+    "extendedMetadata": [
+      {
+        "name": "ISBN",
+        "value": "013379461X"
+      },
+      {
+        "name": "M",
+        "value": "m03"
+      },
+      {
+        "name": "assessment_title",
+        "value": "Quiz: The New Democrats"
+      },
+      {
+        "name": "Topic",
+        "value": "The New Democrats"
+      },
+      {
+        "name": "chapterTitle",
+        "value": "Into the Twenty-First Century 1989â2013"
+      },
+      {
+        "name": "module",
+        "value": "The New Democrats"
+      },
+      {
+        "name": "item_title",
+        "value": "013379461X_H. W. Brands; T. H. Breen; R. Hal Williams; Ariela J. Gros_ch32_m03_q0006"
+      },
+      {
+        "name": "questionlayout",
+        "value": "1"
+      },
+      {
+        "name": "CH",
+        "value": "32"
+      },
+      {
+        "name": "Objective",
+        "value": "32.3"
+      },
+      {
+        "name": "shuffle_choices",
+        "value": "Yes"
+      }
+    ],
+    "subject": [
+      "US History"
+    ],
+    "contentTypeTier2": [
+      "AssignmentItem"
+    ],
+    "contentTypeTier1": "Assessment",
+    "format": [
+      "application/vnd.pearson.sanvan.v1.activity"
+    ],
+    "version": "1.0",
+    "guid": "a57566c5-af6b-42c2-a8c3-122092d29d9f",
+    "bookAuthor": "H. W. Brands; T. H. Breen; R. Hal Williams; Ariela J. Gros",
+    "title": "POST 32 13",
+    "educationalAlignment": [
+      "http://purl.org/pearson/objectives/183725473384362"
+    ]
+  },
+  "body": {
+    "description": "POST_32_13",
+    "containerConfig": [
+      {
+        "description": "POST_32_13",
+        "containerId": "target1",
+        "brixConfig": [
+          {
+            "bricId": "q1",
+            "bricType": "MultipleChoiceQuestion",
+            "config": {
+              "id": "QUE61690",
+              "question": "In 1996, Republicans had control of both houses, but despite this, Democrat Bill Clinton was reelected president because of __________.\n\u003cbr /\u003e",
+              "order": "randomized",
+              "presenterType": "RadioGroup",
+              "presenterConfig": {
+                "numberFormat": "none"
+              },
+              "choices": [
+                {
+                  "answerKey": "answer_1",
+                  "content": "the Republicans’ stand on budget issues"
+                },
+                {
+                  "answerKey": "answer_2",
+                  "content": "the successful ending of the Cold War and destruction of the Soviet Union"
+                },
+                {
+                  "answerKey": "answer_3",
+                  "content": "Clinton’s public image as trustworthy and squeaky-clean"
+                },
+                {
+                  "answerKey": "answer_4",
+                  "content": "revelations of wrongdoing by his Republican challenger during the 1996 campaign"
+                }
+              ]
+            },
+            "answerKey": {
+              "assessmentType": "multiplechoice",
+              "answers": {
+                "answer_3": {
+                  "score": 0.0,
+                  "response": "Clinton turned deadlock to his benefit in 1996 after the Republicans, having failed to force him to accept cuts in Medicare, college loans, and other social services, refused to pass a budget bill, and thereby shut down the federal government. Clinton persuaded voters that the Republicans were to blame and carried this theme into his 1996 reelection campaign."
+                },
+                "answer_2": {
+                  "score": 0.0,
+                  "response": "Clinton turned deadlock to his benefit in 1996 after the Republicans, having failed to force him to accept cuts in Medicare, college loans, and other social services, refused to pass a budget bill, and thereby shut down the federal government. Clinton persuaded voters that the Republicans were to blame and carried this theme into his 1996 reelection campaign."
+                },
+                "answer_1": {
+                  "score": 1.0,
+                  "response": "Clinton turned deadlock to his benefit in 1996 after the Republicans, having failed to force him to accept cuts in Medicare, college loans, and other social services, refused to pass a budget bill, and thereby shut down the federal government. Clinton persuaded voters that the Republicans were to blame and carried this theme into his 1996 reelection campaign."
+                },
+                "answer_4": {
+                  "score": 0.0,
+                  "response": "Clinton turned deadlock to his benefit in 1996 after the Republicans, having failed to force him to accept cuts in Medicare, college loans, and other social services, refused to pass a budget bill, and thereby shut down the federal government. Clinton persuaded voters that the Republicans were to blame and carried this theme into his 1996 reelection campaign."
+                }
+              }
+            },
+            "configFixup": [
+              {
+                "name": "questionId",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "sequenceNodeKey",
+                  "type": "ref"
+                }
+              },
+              {
+                "name": "maxAttempts",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "maxAttempts",
+                  "type": "ref"
+                }
+              }
+            ]
+          }
+        ],
+        "hookupActions": [
+          {
+            "description": "Hookup the submit manager to evaluate answers",
+            "methodName": "handleRequestsFrom",
+            "type": "method-call",
+            "args": [
+              {
+                "domain": "brix",
+                "refId": "q1",
+                "type": "ref"
+              }
+            ],
+            "instance": {
+              "type": "submit-manager"
+            }
+          },
+          {
+            "description": "Draw the question",
+            "methodName": "draw",
+            "type": "method-call",
+            "args": [
+              {
+                "selector": "#target1",
+                "type": "d3select"
+              }
+            ],
+            "instance": {
+              "domain": "brix",
+              "refId": "q1",
+              "type": "ref"
+            }
+          }
+        ]
+      }
+    ]
+  }
+}

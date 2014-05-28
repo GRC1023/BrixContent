@@ -1,0 +1,191 @@
+{
+  "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope",
+  "@type": "Envelope",
+  "metadata": {
+    "bookTitle": "American Stories: A History of the United States, Combined Volume",
+    "keywords": [
+      "Brands 3e",
+      "Ch11",
+      "Alick"
+    ],
+    "extendedMetadata": [
+      {
+        "name": "ISBN",
+        "value": "013379461X"
+      },
+      {
+        "name": "M",
+        "value": "m03"
+      },
+      {
+        "name": "assessment_title",
+        "value": "Quiz: White Society in the Antebellum South"
+      },
+      {
+        "name": "Topic",
+        "value": "Slavery and the Southern Economy"
+      },
+      {
+        "name": "chapterTitle",
+        "value": "Slaves and Masters 1793â1861"
+      },
+      {
+        "name": "module",
+        "value": "White Society in the Antebellum South"
+      },
+      {
+        "name": "item_title",
+        "value": "013379461X_H. W. Brands; T. H. Breen; R. Hal Williams; Ariela J. Gros_ch11_m03_q0004"
+      },
+      {
+        "name": "questionlayout",
+        "value": "1"
+      },
+      {
+        "name": "CH",
+        "value": "11"
+      },
+      {
+        "name": "Objective",
+        "value": "LO: 11.3: How was slavery related to economic success in the South?"
+      },
+      {
+        "name": "shuffle_choices",
+        "value": "Yes"
+      }
+    ],
+    "subject": [
+      "US History"
+    ],
+    "contentTypeTier2": [
+      "AssignmentItem"
+    ],
+    "contentTypeTier1": "Assessment",
+    "format": [
+      "application/vnd.pearson.sanvan.v1.activity"
+    ],
+    "version": "1.0",
+    "guid": "b9b521da-3a17-4b38-a45c-574a83a3ced2",
+    "bookAuthor": "H. W. Brands; T. H. Breen; R. Hal Williams; Ariela J. Gros",
+    "title": "PRE 11 12",
+    "educationalAlignment": [
+      "http://purl.org/pearson/objectives/183725473384362"
+    ]
+  },
+  "body": {
+    "description": "PRE_11_12",
+    "containerConfig": [
+      {
+        "description": "PRE_11_12",
+        "containerId": "target1",
+        "brixConfig": [
+          {
+            "bricId": "q1",
+            "bricType": "MultipleChoiceQuestion",
+            "config": {
+              "id": "QUE60996",
+              "question": "Why did public loyalty to the institution of slavery in the Upper South gradually decline?\n\u003cbr /\u003e",
+              "order": "randomized",
+              "presenterType": "RadioGroup",
+              "presenterConfig": {
+                "numberFormat": "none"
+              },
+              "choices": [
+                {
+                  "answerKey": "answer_1",
+                  "content": "Slaves were less crucial to the region’s growing industrial sector and diversified agriculture."
+                },
+                {
+                  "answerKey": "answer_2",
+                  "content": "Southerners there gradually accepted the idea of abolitionism."
+                },
+                {
+                  "answerKey": "answer_3",
+                  "content": "The slaveowners had personally witnessed the brutality of slave traders."
+                },
+                {
+                  "answerKey": "answer_4",
+                  "content": "The limited availability of slaves caused an increase in slave prices."
+                }
+              ]
+            },
+            "answerKey": {
+              "assessmentType": "multiplechoice",
+              "answers": {
+                "answer_3": {
+                  "score": 0.0,
+                  "response": "The institution of slavery had a weaker hold on public loyalty due to the declining importance of slave labor in the Upper South. More rapid urban and industrial development than elsewhere in the South accompanied this diversification of agriculture."
+                },
+                "answer_2": {
+                  "score": 0.0,
+                  "response": "The institution of slavery had a weaker hold on public loyalty due to the declining importance of slave labor in the Upper South. More rapid urban and industrial development than elsewhere in the South accompanied this diversification of agriculture."
+                },
+                "answer_1": {
+                  "score": 1.0,
+                  "response": "The institution of slavery had a weaker hold on public loyalty due to the declining importance of slave labor in the Upper South. More rapid urban and industrial development than elsewhere in the South accompanied this diversification of agriculture."
+                },
+                "answer_4": {
+                  "score": 0.0,
+                  "response": "The institution of slavery had a weaker hold on public loyalty due to the declining importance of slave labor in the Upper South. More rapid urban and industrial development than elsewhere in the South accompanied this diversification of agriculture."
+                }
+              }
+            },
+            "configFixup": [
+              {
+                "name": "questionId",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "sequenceNodeKey",
+                  "type": "ref"
+                }
+              },
+              {
+                "name": "maxAttempts",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "maxAttempts",
+                  "type": "ref"
+                }
+              }
+            ]
+          }
+        ],
+        "hookupActions": [
+          {
+            "description": "Hookup the submit manager to evaluate answers",
+            "methodName": "handleRequestsFrom",
+            "type": "method-call",
+            "args": [
+              {
+                "domain": "brix",
+                "refId": "q1",
+                "type": "ref"
+              }
+            ],
+            "instance": {
+              "type": "submit-manager"
+            }
+          },
+          {
+            "description": "Draw the question",
+            "methodName": "draw",
+            "type": "method-call",
+            "args": [
+              {
+                "selector": "#target1",
+                "type": "d3select"
+              }
+            ],
+            "instance": {
+              "domain": "brix",
+              "refId": "q1",
+              "type": "ref"
+            }
+          }
+        ]
+      }
+    ]
+  }
+}

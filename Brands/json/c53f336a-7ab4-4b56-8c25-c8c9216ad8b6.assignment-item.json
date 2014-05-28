@@ -1,0 +1,187 @@
+{
+  "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope",
+  "@type": "Envelope",
+  "metadata": {
+    "bookTitle": "American Stories: A History of the United States, Combined Volume",
+    "keywords": [
+      "Brands 3e",
+      "Ch08",
+      "Alick"
+    ],
+    "extendedMetadata": [
+      {
+        "name": "ISBN",
+        "value": "013379461X"
+      },
+      {
+        "name": "M",
+        "value": "c01"
+      },
+      {
+        "name": "assessment_title",
+        "value": "Chapter Quiz: Republican Ascendancy: The Jeffersonian Vision 1800â1814"
+      },
+      {
+        "name": "Topic",
+        "value": "Race and Dissent Under Jefferson"
+      },
+      {
+        "name": "chapterTitle",
+        "value": "Republican Ascendancy: The Jeffersonian Vision 1800â1814"
+      },
+      {
+        "name": "item_title",
+        "value": "013379461X_H. W. Brands; T. H. Breen; R. Hal Williams; Ariela J. Gros_ch08_c01_q0002"
+      },
+      {
+        "name": "questionlayout",
+        "value": "1"
+      },
+      {
+        "name": "CH",
+        "value": "8"
+      },
+      {
+        "name": "Objective",
+        "value": "LO: 8.3: How did Jeffersonians deal with the difficult problems of party politics and slavery?"
+      },
+      {
+        "name": "shuffle_choices",
+        "value": "Yes"
+      }
+    ],
+    "subject": [
+      "US History"
+    ],
+    "contentTypeTier2": [
+      "AssignmentItem"
+    ],
+    "contentTypeTier1": "Assessment",
+    "format": [
+      "application/vnd.pearson.sanvan.v1.activity"
+    ],
+    "version": "1.0",
+    "guid": "c53f336a-7ab4-4b56-8c25-c8c9216ad8b6",
+    "bookAuthor": "H. W. Brands; T. H. Breen; R. Hal Williams; Ariela J. Gros",
+    "title": "PRE 08 15",
+    "educationalAlignment": [
+      "http://purl.org/pearson/objectives/183725473384362"
+    ]
+  },
+  "body": {
+    "description": "PRE_08_15",
+    "containerConfig": [
+      {
+        "description": "PRE_08_15",
+        "containerId": "target1",
+        "brixConfig": [
+          {
+            "bricId": "q1",
+            "bricType": "MultipleChoiceQuestion",
+            "config": {
+              "id": "QUE60877",
+              "question": "What was of particular importance during the \n\u003cem\u003eMarbury v. Madison\u003c/em\u003e case of 1803?\n\u003cbr /\u003e",
+              "order": "randomized",
+              "presenterType": "RadioGroup",
+              "presenterConfig": {
+                "numberFormat": "none"
+              },
+              "choices": [
+                {
+                  "answerKey": "answer_1",
+                  "content": "It was the first time that the Supreme Court ruled against a judge."
+                },
+                {
+                  "answerKey": "answer_2",
+                  "content": "Marshall was willing to accept that the case proved his Federalist leanings."
+                },
+                {
+                  "answerKey": "answer_3",
+                  "content": "The judiciary asserted its right to judge the constitutionality of a congressional act."
+                },
+                {
+                  "answerKey": "answer_4",
+                  "content": "The chief justice wanted to provoke a confrontation with the executive branch."
+                }
+              ]
+            },
+            "answerKey": {
+              "assessmentType": "multiplechoice",
+              "answers": {
+                "answer_3": {
+                  "score": 1.0,
+                  "response": ""
+                },
+                "answer_2": {
+                  "score": 0.0,
+                  "response": "Consider This: The decision represented a step that had never before been taken by the judicial branch. See L.O. 8.3 How did Jeffersonians deal with the difficult problems of party politics and slavery?"
+                },
+                "answer_1": {
+                  "score": 0.0,
+                  "response": "Consider This: The decision represented a step that had never before been taken by the judicial branch. See L.O. 8.3 How did Jeffersonians deal with the difficult problems of party politics and slavery?"
+                },
+                "answer_4": {
+                  "score": 0.0,
+                  "response": "Consider This: The decision represented a step that had never before been taken by the judicial branch. See L.O. 8.3 How did Jeffersonians deal with the difficult problems of party politics and slavery?"
+                }
+              }
+            },
+            "configFixup": [
+              {
+                "name": "questionId",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "sequenceNodeKey",
+                  "type": "ref"
+                }
+              },
+              {
+                "name": "maxAttempts",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "maxAttempts",
+                  "type": "ref"
+                }
+              }
+            ]
+          }
+        ],
+        "hookupActions": [
+          {
+            "description": "Hookup the submit manager to evaluate answers",
+            "methodName": "handleRequestsFrom",
+            "type": "method-call",
+            "args": [
+              {
+                "domain": "brix",
+                "refId": "q1",
+                "type": "ref"
+              }
+            ],
+            "instance": {
+              "type": "submit-manager"
+            }
+          },
+          {
+            "description": "Draw the question",
+            "methodName": "draw",
+            "type": "method-call",
+            "args": [
+              {
+                "selector": "#target1",
+                "type": "d3select"
+              }
+            ],
+            "instance": {
+              "domain": "brix",
+              "refId": "q1",
+              "type": "ref"
+            }
+          }
+        ]
+      }
+    ]
+  }
+}

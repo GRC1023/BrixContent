@@ -1,0 +1,191 @@
+{
+  "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope",
+  "@type": "Envelope",
+  "metadata": {
+    "bookTitle": "American Stories: A History of the United States, Combined Volume",
+    "keywords": [
+      "Brands 3e",
+      "Ch30",
+      "Alick"
+    ],
+    "extendedMetadata": [
+      {
+        "name": "ISBN",
+        "value": "013379461X"
+      },
+      {
+        "name": "M",
+        "value": "m05"
+      },
+      {
+        "name": "assessment_title",
+        "value": "Quiz: Years of Turmoil"
+      },
+      {
+        "name": "Topic",
+        "value": "Years of Turmoil"
+      },
+      {
+        "name": "chapterTitle",
+        "value": "The Turbulent Sixties 1960â1968"
+      },
+      {
+        "name": "module",
+        "value": "Years of Turmoil"
+      },
+      {
+        "name": "item_title",
+        "value": "013379461X_H. W. Brands; T. H. Breen; R. Hal Williams; Ariela J. Gros_ch30_m05_q0001"
+      },
+      {
+        "name": "questionlayout",
+        "value": "1"
+      },
+      {
+        "name": "CH",
+        "value": "30"
+      },
+      {
+        "name": "Objective",
+        "value": "30.5"
+      },
+      {
+        "name": "shuffle_choices",
+        "value": "Yes"
+      }
+    ],
+    "subject": [
+      "US History"
+    ],
+    "contentTypeTier2": [
+      "AssignmentItem"
+    ],
+    "contentTypeTier1": "Assessment",
+    "format": [
+      "application/vnd.pearson.sanvan.v1.activity"
+    ],
+    "version": "1.0",
+    "guid": "c74e5053-9f2f-438b-9b7d-50c4365f7e5d",
+    "bookAuthor": "H. W. Brands; T. H. Breen; R. Hal Williams; Ariela J. Gros",
+    "title": "PRE 30 05",
+    "educationalAlignment": [
+      "http://purl.org/pearson/objectives/183725473384362"
+    ]
+  },
+  "body": {
+    "description": "PRE_30_05",
+    "containerConfig": [
+      {
+        "description": "PRE_30_05",
+        "containerId": "target1",
+        "brixConfig": [
+          {
+            "bricId": "q1",
+            "bricType": "MultipleChoiceQuestion",
+            "config": {
+              "id": "QUE61667",
+              "question": "The student rebellion that came to be known as the __________ occurred at the University of California at Berkeley in 1964.\n\u003cbr /\u003e",
+              "order": "randomized",
+              "presenterType": "RadioGroup",
+              "presenterConfig": {
+                "numberFormat": "none"
+              },
+              "choices": [
+                {
+                  "answerKey": "answer_1",
+                  "content": "Free Speech movement"
+                },
+                {
+                  "answerKey": "answer_2",
+                  "content": "Radical movement"
+                },
+                {
+                  "answerKey": "answer_3",
+                  "content": "Student Union movement"
+                },
+                {
+                  "answerKey": "answer_4",
+                  "content": "New Left movement"
+                }
+              ]
+            },
+            "answerKey": {
+              "assessmentType": "multiplechoice",
+              "answers": {
+                "answer_3": {
+                  "score": 0.0,
+                  "response": "The first sign of student rebellion came in the fall of 1964 at the University of California at Berkeley. Forming the Free Speech movement, students occupied administration buildings and blocked the arrest of a nonstudent protestor."
+                },
+                "answer_2": {
+                  "score": 0.0,
+                  "response": "The first sign of student rebellion came in the fall of 1964 at the University of California at Berkeley. Forming the Free Speech movement, students occupied administration buildings and blocked the arrest of a nonstudent protestor."
+                },
+                "answer_1": {
+                  "score": 1.0,
+                  "response": "The first sign of student rebellion came in the fall of 1964 at the University of California at Berkeley. Forming the Free Speech movement, students occupied administration buildings and blocked the arrest of a nonstudent protestor."
+                },
+                "answer_4": {
+                  "score": 0.0,
+                  "response": "The first sign of student rebellion came in the fall of 1964 at the University of California at Berkeley. Forming the Free Speech movement, students occupied administration buildings and blocked the arrest of a nonstudent protestor."
+                }
+              }
+            },
+            "configFixup": [
+              {
+                "name": "questionId",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "sequenceNodeKey",
+                  "type": "ref"
+                }
+              },
+              {
+                "name": "maxAttempts",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "maxAttempts",
+                  "type": "ref"
+                }
+              }
+            ]
+          }
+        ],
+        "hookupActions": [
+          {
+            "description": "Hookup the submit manager to evaluate answers",
+            "methodName": "handleRequestsFrom",
+            "type": "method-call",
+            "args": [
+              {
+                "domain": "brix",
+                "refId": "q1",
+                "type": "ref"
+              }
+            ],
+            "instance": {
+              "type": "submit-manager"
+            }
+          },
+          {
+            "description": "Draw the question",
+            "methodName": "draw",
+            "type": "method-call",
+            "args": [
+              {
+                "selector": "#target1",
+                "type": "d3select"
+              }
+            ],
+            "instance": {
+              "domain": "brix",
+              "refId": "q1",
+              "type": "ref"
+            }
+          }
+        ]
+      }
+    ]
+  }
+}

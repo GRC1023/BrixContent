@@ -1,0 +1,191 @@
+{
+  "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope",
+  "@type": "Envelope",
+  "metadata": {
+    "bookTitle": "American Stories: A History of the United States, Combined Volume",
+    "keywords": [
+      "Brands 3e",
+      "Ch13",
+      "Alick"
+    ],
+    "extendedMetadata": [
+      {
+        "name": "ISBN",
+        "value": "013379461X"
+      },
+      {
+        "name": "M",
+        "value": "m01"
+      },
+      {
+        "name": "assessment_title",
+        "value": "Quiz: Texas, Manifest Destiny, and the Mexican American War"
+      },
+      {
+        "name": "Topic",
+        "value": "Texas, Manifest Destiny, and the MexicanâAmerican War"
+      },
+      {
+        "name": "chapterTitle",
+        "value": "An Age of Expansionism 1830â1861"
+      },
+      {
+        "name": "module",
+        "value": "Texas, Manifest Destiny, and the Mexican American War"
+      },
+      {
+        "name": "item_title",
+        "value": "013379461X_H. W. Brands; T. H. Breen; R. Hal Williams; Ariela J. Gros_ch13_m01_q0003"
+      },
+      {
+        "name": "questionlayout",
+        "value": "1"
+      },
+      {
+        "name": "CH",
+        "value": "13"
+      },
+      {
+        "name": "Objective",
+        "value": "LO: 13.1: Why did the United States annex Texas and the Southwest?"
+      },
+      {
+        "name": "shuffle_choices",
+        "value": "Yes"
+      }
+    ],
+    "subject": [
+      "US History"
+    ],
+    "contentTypeTier2": [
+      "AssignmentItem"
+    ],
+    "contentTypeTier1": "Assessment",
+    "format": [
+      "application/vnd.pearson.sanvan.v1.activity"
+    ],
+    "version": "1.0",
+    "guid": "bc262b46-d505-432c-ade9-4f74fd70fbb7",
+    "bookAuthor": "H. W. Brands; T. H. Breen; R. Hal Williams; Ariela J. Gros",
+    "title": "PRE 13 01",
+    "educationalAlignment": [
+      "http://purl.org/pearson/objectives/183725473384362"
+    ]
+  },
+  "body": {
+    "description": "PRE_13_01",
+    "containerConfig": [
+      {
+        "description": "PRE_13_01",
+        "containerId": "target1",
+        "brixConfig": [
+          {
+            "bricId": "q1",
+            "bricType": "MultipleChoiceQuestion",
+            "config": {
+              "id": "QUE61705",
+              "question": "What attracted settlers from the United States to Texas in the early 1820s?\n\u003cbr /\u003e",
+              "order": "randomized",
+              "presenterType": "RadioGroup",
+              "presenterConfig": {
+                "numberFormat": "none"
+              },
+              "choices": [
+                {
+                  "answerKey": "answer_1",
+                  "content": "generous Mexican land grants"
+                },
+                {
+                  "answerKey": "answer_2",
+                  "content": "the absence of taxation laws"
+                },
+                {
+                  "answerKey": "answer_3",
+                  "content": "freedom from religious persecution"
+                },
+                {
+                  "answerKey": "answer_4",
+                  "content": "the prohibition of slavery"
+                }
+              ]
+            },
+            "answerKey": {
+              "assessmentType": "multiplechoice",
+              "answers": {
+                "answer_3": {
+                  "score": 0.0,
+                  "response": "Newly independent Mexico granted Stephen F. Austin, son of a one-time Spanish citizen, a huge piece of land in hopes he would help attract and settle new colonists from the United States. Some fifteen other Anglo-American empresarios received land grants in the 1820s."
+                },
+                "answer_2": {
+                  "score": 0.0,
+                  "response": "Newly independent Mexico granted Stephen F. Austin, son of a one-time Spanish citizen, a huge piece of land in hopes he would help attract and settle new colonists from the United States. Some fifteen other Anglo-American empresarios received land grants in the 1820s."
+                },
+                "answer_1": {
+                  "score": 1.0,
+                  "response": "Newly independent Mexico granted Stephen F. Austin, son of a one-time Spanish citizen, a huge piece of land in hopes he would help attract and settle new colonists from the United States. Some fifteen other Anglo-American empresarios received land grants in the 1820s."
+                },
+                "answer_4": {
+                  "score": 0.0,
+                  "response": "Newly independent Mexico granted Stephen F. Austin, son of a one-time Spanish citizen, a huge piece of land in hopes he would help attract and settle new colonists from the United States. Some fifteen other Anglo-American empresarios received land grants in the 1820s."
+                }
+              }
+            },
+            "configFixup": [
+              {
+                "name": "questionId",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "sequenceNodeKey",
+                  "type": "ref"
+                }
+              },
+              {
+                "name": "maxAttempts",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "maxAttempts",
+                  "type": "ref"
+                }
+              }
+            ]
+          }
+        ],
+        "hookupActions": [
+          {
+            "description": "Hookup the submit manager to evaluate answers",
+            "methodName": "handleRequestsFrom",
+            "type": "method-call",
+            "args": [
+              {
+                "domain": "brix",
+                "refId": "q1",
+                "type": "ref"
+              }
+            ],
+            "instance": {
+              "type": "submit-manager"
+            }
+          },
+          {
+            "description": "Draw the question",
+            "methodName": "draw",
+            "type": "method-call",
+            "args": [
+              {
+                "selector": "#target1",
+                "type": "d3select"
+              }
+            ],
+            "instance": {
+              "domain": "brix",
+              "refId": "q1",
+              "type": "ref"
+            }
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,187 @@
+{
+  "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope",
+  "@type": "Envelope",
+  "metadata": {
+    "bookTitle": "American Stories: A History of the United States, Combined Volume",
+    "keywords": [
+      "Brands 3e",
+      "Ch19",
+      "Alick"
+    ],
+    "extendedMetadata": [
+      {
+        "name": "ISBN",
+        "value": "013379461X"
+      },
+      {
+        "name": "M",
+        "value": "c01"
+      },
+      {
+        "name": "assessment_title",
+        "value": "Chapter Quiz: Toward an Urban Society 1877â1900"
+      },
+      {
+        "name": "Topic",
+        "value": "The Stirrings of Reform"
+      },
+      {
+        "name": "chapterTitle",
+        "value": "Toward an Urban Society 1877â1900"
+      },
+      {
+        "name": "item_title",
+        "value": "013379461X_H. W. Brands; T. H. Breen; R. Hal Williams; Ariela J. Gros_ch19_c01_q0011"
+      },
+      {
+        "name": "questionlayout",
+        "value": "1"
+      },
+      {
+        "name": "CH",
+        "value": "19"
+      },
+      {
+        "name": "Objective",
+        "value": "LO: 19.4: How did life in the growing cities lead to ideas of reform?"
+      },
+      {
+        "name": "shuffle_choices",
+        "value": "Yes"
+      }
+    ],
+    "subject": [
+      "US History"
+    ],
+    "contentTypeTier2": [
+      "AssignmentItem"
+    ],
+    "contentTypeTier1": "Assessment",
+    "format": [
+      "application/vnd.pearson.sanvan.v1.activity"
+    ],
+    "version": "1.0",
+    "guid": "92838d8c-277d-4d0e-afdd-527d59f78987",
+    "bookAuthor": "H. W. Brands; T. H. Breen; R. Hal Williams; Ariela J. Gros",
+    "title": "FA Analyze 19 03",
+    "educationalAlignment": [
+      "http://purl.org/pearson/objectives/183725473384362"
+    ]
+  },
+  "body": {
+    "description": "FA_Analyze_19_03",
+    "containerConfig": [
+      {
+        "description": "FA_Analyze_19_03",
+        "containerId": "target1",
+        "brixConfig": [
+          {
+            "bricId": "q1",
+            "bricType": "MultipleChoiceQuestion",
+            "config": {
+              "id": "QUE61178",
+              "question": "How did life in the growing cities eventually lead to reform?\n\u003cbr /\u003e",
+              "order": "randomized",
+              "presenterType": "RadioGroup",
+              "presenterConfig": {
+                "numberFormat": "none"
+              },
+              "choices": [
+                {
+                  "answerKey": "answer_1",
+                  "content": "Social Darwinists, who claimed that society was capable of rapid change, initiated several reform movements."
+                },
+                {
+                  "answerKey": "answer_2",
+                  "content": "City life encouraged many politicians to act altruistically and work toward the emancipation of the downtrodden."
+                },
+                {
+                  "answerKey": "answer_3",
+                  "content": "City life enabled African Americans to access health and educational facilities easily and initiated reform movements amongst them."
+                },
+                {
+                  "answerKey": "answer_4",
+                  "content": "Cities introduced new problems or exacerbated old ones, leading to the need for reforms."
+                }
+              ]
+            },
+            "answerKey": {
+              "assessmentType": "multiplechoice",
+              "answers": {
+                "answer_3": {
+                  "score": 0.0,
+                  "response": "Consider This: The city could not hide the contrasts between rich and poor, the dirtiness and dangers of factory life, and the woeful lot of millions of immigrants. The reformers wanted to bridge the socioeconomic gap between rich and poor and bring education, culture, and hope to the slums. They sought to create in the heart of the city the values and sense of community of small-town America. See L.O. 19.4 How did life in the growing cities lead to ideas of reform?"
+                },
+                "answer_2": {
+                  "score": 0.0,
+                  "response": "Consider This: The city could not hide the contrasts between rich and poor, the dirtiness and dangers of factory life, and the woeful lot of millions of immigrants. The reformers wanted to bridge the socioeconomic gap between rich and poor and bring education, culture, and hope to the slums. They sought to create in the heart of the city the values and sense of community of small-town America. See L.O. 19.4 How did life in the growing cities lead to ideas of reform?"
+                },
+                "answer_1": {
+                  "score": 0.0,
+                  "response": "Consider This: The city could not hide the contrasts between rich and poor, the dirtiness and dangers of factory life, and the woeful lot of millions of immigrants. The reformers wanted to bridge the socioeconomic gap between rich and poor and bring education, culture, and hope to the slums. They sought to create in the heart of the city the values and sense of community of small-town America. See L.O. 19.4 How did life in the growing cities lead to ideas of reform?"
+                },
+                "answer_4": {
+                  "score": 1.0,
+                  "response": ""
+                }
+              }
+            },
+            "configFixup": [
+              {
+                "name": "questionId",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "sequenceNodeKey",
+                  "type": "ref"
+                }
+              },
+              {
+                "name": "maxAttempts",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "maxAttempts",
+                  "type": "ref"
+                }
+              }
+            ]
+          }
+        ],
+        "hookupActions": [
+          {
+            "description": "Hookup the submit manager to evaluate answers",
+            "methodName": "handleRequestsFrom",
+            "type": "method-call",
+            "args": [
+              {
+                "domain": "brix",
+                "refId": "q1",
+                "type": "ref"
+              }
+            ],
+            "instance": {
+              "type": "submit-manager"
+            }
+          },
+          {
+            "description": "Draw the question",
+            "methodName": "draw",
+            "type": "method-call",
+            "args": [
+              {
+                "selector": "#target1",
+                "type": "d3select"
+              }
+            ],
+            "instance": {
+              "domain": "brix",
+              "refId": "q1",
+              "type": "ref"
+            }
+          }
+        ]
+      }
+    ]
+  }
+}

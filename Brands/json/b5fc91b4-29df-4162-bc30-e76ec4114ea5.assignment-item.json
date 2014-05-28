@@ -1,0 +1,191 @@
+{
+  "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope",
+  "@type": "Envelope",
+  "metadata": {
+    "bookTitle": "American Stories: A History of the United States, Combined Volume",
+    "keywords": [
+      "Brands 3e",
+      "Ch05",
+      "Alick"
+    ],
+    "extendedMetadata": [
+      {
+        "name": "ISBN",
+        "value": "013379461X"
+      },
+      {
+        "name": "M",
+        "value": "m04"
+      },
+      {
+        "name": "assessment_title",
+        "value": "Quiz: Fighting for Independence"
+      },
+      {
+        "name": "Topic",
+        "value": "Fighting for Independence"
+      },
+      {
+        "name": "chapterTitle",
+        "value": "The American Revolution: From Elite Protest to Popular Revolt, 1763â1783"
+      },
+      {
+        "name": "module",
+        "value": "Fighting for Independence"
+      },
+      {
+        "name": "item_title",
+        "value": "013379461X_H. W. Brands; T. H. Breen; R. Hal Williams; Ariela J. Gros_ch05_m04_q0002"
+      },
+      {
+        "name": "questionlayout",
+        "value": "1"
+      },
+      {
+        "name": "CH",
+        "value": "5"
+      },
+      {
+        "name": "Objective",
+        "value": "5.4"
+      },
+      {
+        "name": "shuffle_choices",
+        "value": "Yes"
+      }
+    ],
+    "subject": [
+      "US History"
+    ],
+    "contentTypeTier2": [
+      "AssignmentItem"
+    ],
+    "contentTypeTier1": "Assessment",
+    "format": [
+      "application/vnd.pearson.sanvan.v1.activity"
+    ],
+    "version": "1.0",
+    "guid": "b5fc91b4-29df-4162-bc30-e76ec4114ea5",
+    "bookAuthor": "H. W. Brands; T. H. Breen; R. Hal Williams; Ariela J. Gros",
+    "title": "PRE 05 11",
+    "educationalAlignment": [
+      "http://purl.org/pearson/objectives/183725473384362"
+    ]
+  },
+  "body": {
+    "description": "PRE_05_11",
+    "containerConfig": [
+      {
+        "description": "PRE_05_11",
+        "containerId": "target1",
+        "brixConfig": [
+          {
+            "bricId": "q1",
+            "bricType": "MultipleChoiceQuestion",
+            "config": {
+              "id": "QUE60806",
+              "question": "How did Benjamin Franklin contribute to the French decision to officially support America’s cause?\n\u003cbr /\u003e",
+              "order": "randomized",
+              "presenterType": "RadioGroup",
+              "presenterConfig": {
+                "numberFormat": "none"
+              },
+              "choices": [
+                {
+                  "answerKey": "answer_1",
+                  "content": "He led the French to believe the Americans were ready to end the war."
+                },
+                {
+                  "answerKey": "answer_2",
+                  "content": "He convinced the French that the rebels had a small force and were on the verge of defeat."
+                },
+                {
+                  "answerKey": "answer_3",
+                  "content": "He promised certain Indian-held territories to the French if they helped the republican cause."
+                },
+                {
+                  "answerKey": "answer_4",
+                  "content": "He made an effective case for democracy and convinced the French monarchy that it was their duty to support it."
+                }
+              ]
+            },
+            "answerKey": {
+              "assessmentType": "multiplechoice",
+              "answers": {
+                "answer_3": {
+                  "score": 0.0,
+                  "response": "Franklin hinted to French officials in Paris that the Americans might accept a British peace initiative. If the French wanted the war to continue, if they really wanted to embarrass their old rival, then they had to do what the British refused to do: formally recognize the independence of the United States."
+                },
+                "answer_2": {
+                  "score": 0.0,
+                  "response": "Franklin hinted to French officials in Paris that the Americans might accept a British peace initiative. If the French wanted the war to continue, if they really wanted to embarrass their old rival, then they had to do what the British refused to do: formally recognize the independence of the United States."
+                },
+                "answer_1": {
+                  "score": 1.0,
+                  "response": "Franklin hinted to French officials in Paris that the Americans might accept a British peace initiative. If the French wanted the war to continue, if they really wanted to embarrass their old rival, then they had to do what the British refused to do: formally recognize the independence of the United States."
+                },
+                "answer_4": {
+                  "score": 0.0,
+                  "response": "Franklin hinted to French officials in Paris that the Americans might accept a British peace initiative. If the French wanted the war to continue, if they really wanted to embarrass their old rival, then they had to do what the British refused to do: formally recognize the independence of the United States."
+                }
+              }
+            },
+            "configFixup": [
+              {
+                "name": "questionId",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "sequenceNodeKey",
+                  "type": "ref"
+                }
+              },
+              {
+                "name": "maxAttempts",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "maxAttempts",
+                  "type": "ref"
+                }
+              }
+            ]
+          }
+        ],
+        "hookupActions": [
+          {
+            "description": "Hookup the submit manager to evaluate answers",
+            "methodName": "handleRequestsFrom",
+            "type": "method-call",
+            "args": [
+              {
+                "domain": "brix",
+                "refId": "q1",
+                "type": "ref"
+              }
+            ],
+            "instance": {
+              "type": "submit-manager"
+            }
+          },
+          {
+            "description": "Draw the question",
+            "methodName": "draw",
+            "type": "method-call",
+            "args": [
+              {
+                "selector": "#target1",
+                "type": "d3select"
+              }
+            ],
+            "instance": {
+              "domain": "brix",
+              "refId": "q1",
+              "type": "ref"
+            }
+          }
+        ]
+      }
+    ]
+  }
+}

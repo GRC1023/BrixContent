@@ -1,0 +1,191 @@
+{
+  "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope",
+  "@type": "Envelope",
+  "metadata": {
+    "bookTitle": "American Stories: A History of the United States, Combined Volume",
+    "keywords": [
+      "Brands 3e",
+      "Ch32",
+      "Alick"
+    ],
+    "extendedMetadata": [
+      {
+        "name": "ISBN",
+        "value": "013379461X"
+      },
+      {
+        "name": "M",
+        "value": "m02"
+      },
+      {
+        "name": "assessment_title",
+        "value": "Quiz: The Changing Faces of America"
+      },
+      {
+        "name": "Topic",
+        "value": "The Changing Faces of America"
+      },
+      {
+        "name": "chapterTitle",
+        "value": "Into the Twenty-First Century 1989â2013"
+      },
+      {
+        "name": "module",
+        "value": "The Changing Faces of America"
+      },
+      {
+        "name": "item_title",
+        "value": "013379461X_H. W. Brands; T. H. Breen; R. Hal Williams; Ariela J. Gros_ch32_m02_q0002"
+      },
+      {
+        "name": "questionlayout",
+        "value": "1"
+      },
+      {
+        "name": "CH",
+        "value": "32"
+      },
+      {
+        "name": "Objective",
+        "value": "32.2"
+      },
+      {
+        "name": "shuffle_choices",
+        "value": "Yes"
+      }
+    ],
+    "subject": [
+      "US History"
+    ],
+    "contentTypeTier2": [
+      "AssignmentItem"
+    ],
+    "contentTypeTier1": "Assessment",
+    "format": [
+      "application/vnd.pearson.sanvan.v1.activity"
+    ],
+    "version": "1.0",
+    "guid": "c8a34dc5-2455-45e9-b6d7-624277b9828f",
+    "bookAuthor": "H. W. Brands; T. H. Breen; R. Hal Williams; Ariela J. Gros",
+    "title": "POST 32 04",
+    "educationalAlignment": [
+      "http://purl.org/pearson/objectives/183725473384362"
+    ]
+  },
+  "body": {
+    "description": "POST_32_04",
+    "containerConfig": [
+      {
+        "description": "POST_32_04",
+        "containerId": "target1",
+        "brixConfig": [
+          {
+            "bricId": "q1",
+            "bricType": "MultipleChoiceQuestion",
+            "config": {
+              "id": "QUE61681",
+              "question": "By the early twenty-first century, African Americans had made many social and economic gains, including __________.\n\u003cbr /\u003e",
+              "order": "randomized",
+              "presenterType": "RadioGroup",
+              "presenterConfig": {
+                "numberFormat": "none"
+              },
+              "choices": [
+                {
+                  "answerKey": "answer_1",
+                  "content": "an increase in the number of black-owned businesses"
+                },
+                {
+                  "answerKey": "answer_2",
+                  "content": "overturning traditional poverty rates"
+                },
+                {
+                  "answerKey": "answer_3",
+                  "content": "migrating from the North to the Sunbelt for jobs"
+                },
+                {
+                  "answerKey": "answer_4",
+                  "content": "matching white income levels"
+                }
+              ]
+            },
+            "answerKey": {
+              "assessmentType": "multiplechoice",
+              "answers": {
+                "answer_3": {
+                  "score": 0.0,
+                  "response": "African Americans made gains in certain areas of life. In 2010, more than 80 percent of blacks aged 25 and older had earned a high school diploma, and nearly one in five possessed a college degree. The number of black-owned businesses grew significantly."
+                },
+                "answer_2": {
+                  "score": 0.0,
+                  "response": "African Americans made gains in certain areas of life. In 2010, more than 80 percent of blacks aged 25 and older had earned a high school diploma, and nearly one in five possessed a college degree. The number of black-owned businesses grew significantly."
+                },
+                "answer_1": {
+                  "score": 1.0,
+                  "response": "African Americans made gains in certain areas of life. In 2010, more than 80 percent of blacks aged 25 and older had earned a high school diploma, and nearly one in five possessed a college degree. The number of black-owned businesses grew significantly."
+                },
+                "answer_4": {
+                  "score": 0.0,
+                  "response": "African Americans made gains in certain areas of life. In 2010, more than 80 percent of blacks aged 25 and older had earned a high school diploma, and nearly one in five possessed a college degree. The number of black-owned businesses grew significantly."
+                }
+              }
+            },
+            "configFixup": [
+              {
+                "name": "questionId",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "sequenceNodeKey",
+                  "type": "ref"
+                }
+              },
+              {
+                "name": "maxAttempts",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "maxAttempts",
+                  "type": "ref"
+                }
+              }
+            ]
+          }
+        ],
+        "hookupActions": [
+          {
+            "description": "Hookup the submit manager to evaluate answers",
+            "methodName": "handleRequestsFrom",
+            "type": "method-call",
+            "args": [
+              {
+                "domain": "brix",
+                "refId": "q1",
+                "type": "ref"
+              }
+            ],
+            "instance": {
+              "type": "submit-manager"
+            }
+          },
+          {
+            "description": "Draw the question",
+            "methodName": "draw",
+            "type": "method-call",
+            "args": [
+              {
+                "selector": "#target1",
+                "type": "d3select"
+              }
+            ],
+            "instance": {
+              "domain": "brix",
+              "refId": "q1",
+              "type": "ref"
+            }
+          }
+        ]
+      }
+    ]
+  }
+}

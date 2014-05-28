@@ -1,0 +1,187 @@
+{
+  "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope",
+  "@type": "Envelope",
+  "metadata": {
+    "bookTitle": "American Stories: A History of the United States, Combined Volume",
+    "keywords": [
+      "Brands 3e",
+      "Ch29",
+      "Alick"
+    ],
+    "extendedMetadata": [
+      {
+        "name": "ISBN",
+        "value": "013379461X"
+      },
+      {
+        "name": "M",
+        "value": "c01"
+      },
+      {
+        "name": "assessment_title",
+        "value": "Chapter Quiz: Affluence and Anxiety 1945â1960"
+      },
+      {
+        "name": "Topic",
+        "value": "The Postwar Boom"
+      },
+      {
+        "name": "chapterTitle",
+        "value": "Affluence and Anxiety 1945â1960"
+      },
+      {
+        "name": "item_title",
+        "value": "013379461X_H. W. Brands; T. H. Breen; R. Hal Williams; Ariela J. Gros_ch29_c01_q0009"
+      },
+      {
+        "name": "questionlayout",
+        "value": "1"
+      },
+      {
+        "name": "CH",
+        "value": "29"
+      },
+      {
+        "name": "Objective",
+        "value": "29.1"
+      },
+      {
+        "name": "shuffle_choices",
+        "value": "Yes"
+      }
+    ],
+    "subject": [
+      "US History"
+    ],
+    "contentTypeTier2": [
+      "AssignmentItem"
+    ],
+    "contentTypeTier1": "Assessment",
+    "format": [
+      "application/vnd.pearson.sanvan.v1.activity"
+    ],
+    "version": "1.0",
+    "guid": "aa6cf2d2-dd78-4e01-b1f2-d3e670b534ab",
+    "bookAuthor": "H. W. Brands; T. H. Breen; R. Hal Williams; Ariela J. Gros",
+    "title": "FA Understand 29 02",
+    "educationalAlignment": [
+      "http://purl.org/pearson/objectives/183725473384362"
+    ]
+  },
+  "body": {
+    "description": "FA_Understand_29_02",
+    "containerConfig": [
+      {
+        "description": "FA_Understand_29_02",
+        "containerId": "target1",
+        "brixConfig": [
+          {
+            "bricId": "q1",
+            "bricType": "MultipleChoiceQuestion",
+            "config": {
+              "id": "QUE61523",
+              "question": "Why did the Sunbelt experience growth during the 1950s while the New England area did not?\n\u003cbr /\u003e",
+              "order": "randomized",
+              "presenterType": "RadioGroup",
+              "presenterConfig": {
+                "numberFormat": "none"
+              },
+              "choices": [
+                {
+                  "answerKey": "answer_1",
+                  "content": "The Sunbelt area was home to booming industries such as aircraft and electronics, while New England was home to more stagnant industries, such as older forms of manufacturing."
+                },
+                {
+                  "answerKey": "answer_2",
+                  "content": "The Sunbelt area provided employment in the booming steel industry, while New England primarily offered jobs in the aircraft industry."
+                },
+                {
+                  "answerKey": "answer_3",
+                  "content": "The Sunbelt area offered attractive, exclusive communities that denied housing to African Americans, while New England was more inclusive."
+                },
+                {
+                  "answerKey": "answer_4",
+                  "content": "The Sunbelt area was the first to establish Levittowns and other suburban communities, while New England fell behind."
+                }
+              ]
+            },
+            "answerKey": {
+              "assessmentType": "multiplechoice",
+              "answers": {
+                "answer_3": {
+                  "score": 0.0,
+                  "response": "Consider This: The baby boom and the spectacular growth of suburbia were great stimulants to the consumer goods industries. American industry averaged more than $10 billion a year in capital investment. Yet the economic abundance of the 1950s was not without its problems. Various sections of the nation did not benefit equally from the changes taking place in industry. See L.O. 29.1 The Postwar Boom."
+                },
+                "answer_2": {
+                  "score": 0.0,
+                  "response": "Consider This: The baby boom and the spectacular growth of suburbia were great stimulants to the consumer goods industries. American industry averaged more than $10 billion a year in capital investment. Yet the economic abundance of the 1950s was not without its problems. Various sections of the nation did not benefit equally from the changes taking place in industry. See L.O. 29.1 The Postwar Boom."
+                },
+                "answer_1": {
+                  "score": 1.0,
+                  "response": ""
+                },
+                "answer_4": {
+                  "score": 0.0,
+                  "response": "Consider This: The baby boom and the spectacular growth of suburbia were great stimulants to the consumer goods industries. American industry averaged more than $10 billion a year in capital investment. Yet the economic abundance of the 1950s was not without its problems. Various sections of the nation did not benefit equally from the changes taking place in industry. See L.O. 29.1 The Postwar Boom."
+                }
+              }
+            },
+            "configFixup": [
+              {
+                "name": "questionId",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "sequenceNodeKey",
+                  "type": "ref"
+                }
+              },
+              {
+                "name": "maxAttempts",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "maxAttempts",
+                  "type": "ref"
+                }
+              }
+            ]
+          }
+        ],
+        "hookupActions": [
+          {
+            "description": "Hookup the submit manager to evaluate answers",
+            "methodName": "handleRequestsFrom",
+            "type": "method-call",
+            "args": [
+              {
+                "domain": "brix",
+                "refId": "q1",
+                "type": "ref"
+              }
+            ],
+            "instance": {
+              "type": "submit-manager"
+            }
+          },
+          {
+            "description": "Draw the question",
+            "methodName": "draw",
+            "type": "method-call",
+            "args": [
+              {
+                "selector": "#target1",
+                "type": "d3select"
+              }
+            ],
+            "instance": {
+              "domain": "brix",
+              "refId": "q1",
+              "type": "ref"
+            }
+          }
+        ]
+      }
+    ]
+  }
+}

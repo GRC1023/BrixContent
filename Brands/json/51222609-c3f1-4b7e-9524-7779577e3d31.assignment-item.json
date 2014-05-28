@@ -1,0 +1,191 @@
+{
+  "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope",
+  "@type": "Envelope",
+  "metadata": {
+    "bookTitle": "American Stories: A History of the United States, Combined Volume",
+    "keywords": [
+      "Brands 3e",
+      "Ch30",
+      "Alick"
+    ],
+    "extendedMetadata": [
+      {
+        "name": "ISBN",
+        "value": "013379461X"
+      },
+      {
+        "name": "M",
+        "value": "m02"
+      },
+      {
+        "name": "assessment_title",
+        "value": "Quiz: The New Frontier at Home"
+      },
+      {
+        "name": "Topic",
+        "value": "The New Frontier at Home"
+      },
+      {
+        "name": "chapterTitle",
+        "value": "The Turbulent Sixties 1960â1968"
+      },
+      {
+        "name": "module",
+        "value": "LBJ\u0027s Great Society"
+      },
+      {
+        "name": "item_title",
+        "value": "013379461X_H. W. Brands; T. H. Breen; R. Hal Williams; Ariela J. Gros_ch30_m02_q0007"
+      },
+      {
+        "name": "questionlayout",
+        "value": "1"
+      },
+      {
+        "name": "CH",
+        "value": "30"
+      },
+      {
+        "name": "Objective",
+        "value": "30.2"
+      },
+      {
+        "name": "shuffle_choices",
+        "value": "Yes"
+      }
+    ],
+    "subject": [
+      "US History"
+    ],
+    "contentTypeTier2": [
+      "AssignmentItem"
+    ],
+    "contentTypeTier1": "Assessment",
+    "format": [
+      "application/vnd.pearson.sanvan.v1.activity"
+    ],
+    "version": "1.0",
+    "guid": "51222609-c3f1-4b7e-9524-7779577e3d31",
+    "bookAuthor": "H. W. Brands; T. H. Breen; R. Hal Williams; Ariela J. Gros",
+    "title": "POST 30 12",
+    "educationalAlignment": [
+      "http://purl.org/pearson/objectives/183725473384362"
+    ]
+  },
+  "body": {
+    "description": "POST_30_12",
+    "containerConfig": [
+      {
+        "description": "POST_30_12",
+        "containerId": "target1",
+        "brixConfig": [
+          {
+            "bricId": "q1",
+            "bricType": "MultipleChoiceQuestion",
+            "config": {
+              "id": "QUE61642",
+              "question": "Martin Luther King, Jr., changed Kennedy’s approach toward the civil rights movement by forcing Kennedy to __________.\n\u003cbr /\u003e",
+              "order": "randomized",
+              "presenterType": "RadioGroup",
+              "presenterConfig": {
+                "numberFormat": "none"
+              },
+              "choices": [
+                {
+                  "answerKey": "answer_1",
+                  "content": "abandon caution and sponsor civil rights legislation"
+                },
+                {
+                  "answerKey": "answer_2",
+                  "content": "dismiss police Commissioner Eugene “Bull” Connor"
+                },
+                {
+                  "answerKey": "answer_3",
+                  "content": "allow activists to stage a march on Washington"
+                },
+                {
+                  "answerKey": "answer_4",
+                  "content": "support a freedom ride that protested segregation"
+                }
+              ]
+            },
+            "answerKey": {
+              "assessmentType": "multiplechoice",
+              "answers": {
+                "answer_3": {
+                  "score": 0.0,
+                  "response": "Martin Luther King, Jr., finally forced Kennedy to openly support racial justice. More important, Kennedy finally called for action. “We are confronted primarily with a moral issue,” he told the nation on June 11. “It is as old as the Scriptures and is as clear as the American Constitution.” Eight days later, the administration sponsored civil rights legislation providing equal access to all public accommodations and an extension of voting rights for African Americans."
+                },
+                "answer_2": {
+                  "score": 0.0,
+                  "response": "Martin Luther King, Jr., finally forced Kennedy to openly support racial justice. More important, Kennedy finally called for action. “We are confronted primarily with a moral issue,” he told the nation on June 11. “It is as old as the Scriptures and is as clear as the American Constitution.” Eight days later, the administration sponsored civil rights legislation providing equal access to all public accommodations and an extension of voting rights for African Americans."
+                },
+                "answer_1": {
+                  "score": 1.0,
+                  "response": "Martin Luther King, Jr., finally forced Kennedy to openly support racial justice. More important, Kennedy finally called for action. “We are confronted primarily with a moral issue,” he told the nation on June 11. “It is as old as the Scriptures and is as clear as the American Constitution.” Eight days later, the administration sponsored civil rights legislation providing equal access to all public accommodations and an extension of voting rights for African Americans."
+                },
+                "answer_4": {
+                  "score": 0.0,
+                  "response": "Martin Luther King, Jr., finally forced Kennedy to openly support racial justice. More important, Kennedy finally called for action. “We are confronted primarily with a moral issue,” he told the nation on June 11. “It is as old as the Scriptures and is as clear as the American Constitution.” Eight days later, the administration sponsored civil rights legislation providing equal access to all public accommodations and an extension of voting rights for African Americans."
+                }
+              }
+            },
+            "configFixup": [
+              {
+                "name": "questionId",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "sequenceNodeKey",
+                  "type": "ref"
+                }
+              },
+              {
+                "name": "maxAttempts",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "maxAttempts",
+                  "type": "ref"
+                }
+              }
+            ]
+          }
+        ],
+        "hookupActions": [
+          {
+            "description": "Hookup the submit manager to evaluate answers",
+            "methodName": "handleRequestsFrom",
+            "type": "method-call",
+            "args": [
+              {
+                "domain": "brix",
+                "refId": "q1",
+                "type": "ref"
+              }
+            ],
+            "instance": {
+              "type": "submit-manager"
+            }
+          },
+          {
+            "description": "Draw the question",
+            "methodName": "draw",
+            "type": "method-call",
+            "args": [
+              {
+                "selector": "#target1",
+                "type": "d3select"
+              }
+            ],
+            "instance": {
+              "domain": "brix",
+              "refId": "q1",
+              "type": "ref"
+            }
+          }
+        ]
+      }
+    ]
+  }
+}

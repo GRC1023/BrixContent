@@ -1,0 +1,191 @@
+{
+  "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope",
+  "@type": "Envelope",
+  "metadata": {
+    "bookTitle": "American Stories: A History of the United States, Combined Volume",
+    "keywords": [
+      "Brands 3e",
+      "Ch12",
+      "Alick"
+    ],
+    "extendedMetadata": [
+      {
+        "name": "ISBN",
+        "value": "013379461X"
+      },
+      {
+        "name": "M",
+        "value": "m02"
+      },
+      {
+        "name": "assessment_title",
+        "value": "Quiz: Domesticity and Changes in the American Family"
+      },
+      {
+        "name": "Topic",
+        "value": "Domesticity and Changes in the American Family"
+      },
+      {
+        "name": "chapterTitle",
+        "value": "The Pursuit of Perfection 1800â1861"
+      },
+      {
+        "name": "module",
+        "value": "Domesticity and Changes in the American Family"
+      },
+      {
+        "name": "item_title",
+        "value": "013379461X_H. W. Brands; T. H. Breen; R. Hal Williams; Ariela J. Gros_ch12_m02_q0001"
+      },
+      {
+        "name": "questionlayout",
+        "value": "1"
+      },
+      {
+        "name": "CH",
+        "value": "12"
+      },
+      {
+        "name": "Objective",
+        "value": "LO: 12.2: What was the doctrine of âseparate spheres,â and how did it change family life?"
+      },
+      {
+        "name": "shuffle_choices",
+        "value": "Yes"
+      }
+    ],
+    "subject": [
+      "US History"
+    ],
+    "contentTypeTier2": [
+      "AssignmentItem"
+    ],
+    "contentTypeTier1": "Assessment",
+    "format": [
+      "application/vnd.pearson.sanvan.v1.activity"
+    ],
+    "version": "1.0",
+    "guid": "bfe1a13c-05c8-468c-a503-d138511f23c8",
+    "bookAuthor": "H. W. Brands; T. H. Breen; R. Hal Williams; Ariela J. Gros",
+    "title": "PRE 12 02",
+    "educationalAlignment": [
+      "http://purl.org/pearson/objectives/183725473384362"
+    ]
+  },
+  "body": {
+    "description": "PRE_12_02",
+    "containerConfig": [
+      {
+        "description": "PRE_12_02",
+        "containerId": "target1",
+        "brixConfig": [
+          {
+            "bricId": "q1",
+            "bricType": "MultipleChoiceQuestion",
+            "config": {
+              "id": "QUE61047",
+              "question": "What does the ideology of “separate spheres” advocate?\n\u003cbr /\u003e",
+              "order": "randomized",
+              "presenterType": "RadioGroup",
+              "presenterConfig": {
+                "numberFormat": "none"
+              },
+              "choices": [
+                {
+                  "answerKey": "answer_1",
+                  "content": "Women should stay at home while men go out to work."
+                },
+                {
+                  "answerKey": "answer_2",
+                  "content": "Menial jobs should be done by blacks and superior jobs by whites."
+                },
+                {
+                  "answerKey": "answer_3",
+                  "content": "There should be separate public offices for Catholics and Protestants."
+                },
+                {
+                  "answerKey": "answer_4",
+                  "content": "The church should not influence the decisions of the state."
+                }
+              ]
+            },
+            "answerKey": {
+              "assessmentType": "multiplechoice",
+              "answers": {
+                "answer_3": {
+                  "score": 0.0,
+                  "response": "The notion that women belonged in the home while the public sphere belonged to men has been called the ideology of “separate spheres.”"
+                },
+                "answer_2": {
+                  "score": 0.0,
+                  "response": "The notion that women belonged in the home while the public sphere belonged to men has been called the ideology of “separate spheres.”"
+                },
+                "answer_1": {
+                  "score": 1.0,
+                  "response": "The notion that women belonged in the home while the public sphere belonged to men has been called the ideology of “separate spheres.”"
+                },
+                "answer_4": {
+                  "score": 0.0,
+                  "response": "The notion that women belonged in the home while the public sphere belonged to men has been called the ideology of “separate spheres.”"
+                }
+              }
+            },
+            "configFixup": [
+              {
+                "name": "questionId",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "sequenceNodeKey",
+                  "type": "ref"
+                }
+              },
+              {
+                "name": "maxAttempts",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "maxAttempts",
+                  "type": "ref"
+                }
+              }
+            ]
+          }
+        ],
+        "hookupActions": [
+          {
+            "description": "Hookup the submit manager to evaluate answers",
+            "methodName": "handleRequestsFrom",
+            "type": "method-call",
+            "args": [
+              {
+                "domain": "brix",
+                "refId": "q1",
+                "type": "ref"
+              }
+            ],
+            "instance": {
+              "type": "submit-manager"
+            }
+          },
+          {
+            "description": "Draw the question",
+            "methodName": "draw",
+            "type": "method-call",
+            "args": [
+              {
+                "selector": "#target1",
+                "type": "d3select"
+              }
+            ],
+            "instance": {
+              "domain": "brix",
+              "refId": "q1",
+              "type": "ref"
+            }
+          }
+        ]
+      }
+    ]
+  }
+}

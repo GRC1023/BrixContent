@@ -1,0 +1,187 @@
+{
+  "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope",
+  "@type": "Envelope",
+  "metadata": {
+    "bookTitle": "American Stories: A History of the United States, Combined Volume",
+    "keywords": [
+      "Brands 3e",
+      "Ch32",
+      "Alick"
+    ],
+    "extendedMetadata": [
+      {
+        "name": "ISBN",
+        "value": "013379461X"
+      },
+      {
+        "name": "M",
+        "value": "c01"
+      },
+      {
+        "name": "assessment_title",
+        "value": "Chapter Quiz: Into the Twenty-First Century 1989â2013"
+      },
+      {
+        "name": "Topic",
+        "value": "Barack Obama\u0026amp;rsquo;s Triumph and Trials"
+      },
+      {
+        "name": "chapterTitle",
+        "value": "Into the Twenty-First Century 1989â2013"
+      },
+      {
+        "name": "item_title",
+        "value": "013379461X_H. W. Brands; T. H. Breen; R. Hal Williams; Ariela J. Gros_ch32_c01_q0004"
+      },
+      {
+        "name": "questionlayout",
+        "value": "1"
+      },
+      {
+        "name": "CH",
+        "value": "32"
+      },
+      {
+        "name": "Objective",
+        "value": "32.5"
+      },
+      {
+        "name": "shuffle_choices",
+        "value": "Yes"
+      }
+    ],
+    "subject": [
+      "US History"
+    ],
+    "contentTypeTier2": [
+      "AssignmentItem"
+    ],
+    "contentTypeTier1": "Assessment",
+    "format": [
+      "application/vnd.pearson.sanvan.v1.activity"
+    ],
+    "version": "1.0",
+    "guid": "33676157-5935-4816-a405-f1d8d1565ce1",
+    "bookAuthor": "H. W. Brands; T. H. Breen; R. Hal Williams; Ariela J. Gros",
+    "title": "POST 32 20",
+    "educationalAlignment": [
+      "http://purl.org/pearson/objectives/183725473384362"
+    ]
+  },
+  "body": {
+    "description": "POST_32_20",
+    "containerConfig": [
+      {
+        "description": "POST_32_20",
+        "containerId": "target1",
+        "brixConfig": [
+          {
+            "bricId": "q1",
+            "bricType": "MultipleChoiceQuestion",
+            "config": {
+              "id": "QUE61655",
+              "question": "Although both Barack Obama and Bill Clinton were Democrats, what was one situational difference that existed when they were elected to the presidency?\n\u003cbr /\u003e",
+              "order": "randomized",
+              "presenterType": "RadioGroup",
+              "presenterConfig": {
+                "numberFormat": "none"
+              },
+              "choices": [
+                {
+                  "answerKey": "answer_1",
+                  "content": "One took over during an economic recession and the other during a time of inflation."
+                },
+                {
+                  "answerKey": "answer_2",
+                  "content": "One won the election in the Supreme Court while the other won solely by popular vote."
+                },
+                {
+                  "answerKey": "answer_3",
+                  "content": "One took over at a time of war while the other did not."
+                },
+                {
+                  "answerKey": "answer_4",
+                  "content": "One had support from minority voters, but the other had little minority voter support."
+                }
+              ]
+            },
+            "answerKey": {
+              "assessmentType": "multiplechoice",
+              "answers": {
+                "answer_3": {
+                  "score": 1.0,
+                  "response": ""
+                },
+                "answer_2": {
+                  "score": 0.0,
+                  "response": "Consider This: The first President Bush’s Persian Gulf crisis had been resolved prior to Bill Clinton’s election in 1992. The second President Bush’s quagmires in Iraq and Afghanistan persisted into the presidential campaign of 2008. See L.O. 32.5 Barack Obama’s Triumph and Trials."
+                },
+                "answer_1": {
+                  "score": 0.0,
+                  "response": "Consider This: The first President Bush’s Persian Gulf crisis had been resolved prior to Bill Clinton’s election in 1992. The second President Bush’s quagmires in Iraq and Afghanistan persisted into the presidential campaign of 2008. See L.O. 32.5 Barack Obama’s Triumph and Trials."
+                },
+                "answer_4": {
+                  "score": 0.0,
+                  "response": "Consider This: The first President Bush’s Persian Gulf crisis had been resolved prior to Bill Clinton’s election in 1992. The second President Bush’s quagmires in Iraq and Afghanistan persisted into the presidential campaign of 2008. See L.O. 32.5 Barack Obama’s Triumph and Trials."
+                }
+              }
+            },
+            "configFixup": [
+              {
+                "name": "questionId",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "sequenceNodeKey",
+                  "type": "ref"
+                }
+              },
+              {
+                "name": "maxAttempts",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "maxAttempts",
+                  "type": "ref"
+                }
+              }
+            ]
+          }
+        ],
+        "hookupActions": [
+          {
+            "description": "Hookup the submit manager to evaluate answers",
+            "methodName": "handleRequestsFrom",
+            "type": "method-call",
+            "args": [
+              {
+                "domain": "brix",
+                "refId": "q1",
+                "type": "ref"
+              }
+            ],
+            "instance": {
+              "type": "submit-manager"
+            }
+          },
+          {
+            "description": "Draw the question",
+            "methodName": "draw",
+            "type": "method-call",
+            "args": [
+              {
+                "selector": "#target1",
+                "type": "d3select"
+              }
+            ],
+            "instance": {
+              "domain": "brix",
+              "refId": "q1",
+              "type": "ref"
+            }
+          }
+        ]
+      }
+    ]
+  }
+}

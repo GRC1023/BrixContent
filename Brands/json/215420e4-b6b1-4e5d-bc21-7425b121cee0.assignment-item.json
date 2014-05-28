@@ -1,0 +1,191 @@
+{
+  "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope",
+  "@type": "Envelope",
+  "metadata": {
+    "bookTitle": "American Stories: A History of the United States, Combined Volume",
+    "keywords": [
+      "Brands 3e",
+      "Ch10",
+      "Alick"
+    ],
+    "extendedMetadata": [
+      {
+        "name": "ISBN",
+        "value": "013379461X"
+      },
+      {
+        "name": "M",
+        "value": "m03"
+      },
+      {
+        "name": "assessment_title",
+        "value": "Quiz: The Politics of Nation Building After the War of 1812"
+      },
+      {
+        "name": "Topic",
+        "value": "The Politics of Nation Building After the War of 1812"
+      },
+      {
+        "name": "chapterTitle",
+        "value": "Nation Building and Nationalism1815â1825"
+      },
+      {
+        "name": "module",
+        "value": "The Politics of Nation Building After the War of 1812"
+      },
+      {
+        "name": "item_title",
+        "value": "013379461X_H. W. Brands; T. H. Breen; R. Hal Williams; Ariela J. Gros_ch09_m03_q0002"
+      },
+      {
+        "name": "questionlayout",
+        "value": "1"
+      },
+      {
+        "name": "CH",
+        "value": "9"
+      },
+      {
+        "name": "Objective",
+        "value": "LO: 9.3: What decisions did the federal government face as the country expanded?"
+      },
+      {
+        "name": "shuffle_choices",
+        "value": "Yes"
+      }
+    ],
+    "subject": [
+      "US History"
+    ],
+    "contentTypeTier2": [
+      "AssignmentItem"
+    ],
+    "contentTypeTier1": "Assessment",
+    "format": [
+      "application/vnd.pearson.sanvan.v1.activity"
+    ],
+    "version": "1.0",
+    "guid": "215420e4-b6b1-4e5d-bc21-7425b121cee0",
+    "bookAuthor": "H. W. Brands; T. H. Breen; R. Hal Williams; Ariela J. Gros",
+    "title": "PRE 09 11",
+    "educationalAlignment": [
+      "http://purl.org/pearson/objectives/183725473384362"
+    ]
+  },
+  "body": {
+    "description": "PRE_09_11",
+    "containerConfig": [
+      {
+        "description": "PRE_09_11",
+        "containerId": "target1",
+        "brixConfig": [
+          {
+            "bricId": "q1",
+            "bricType": "MultipleChoiceQuestion",
+            "config": {
+              "id": "QUE60938",
+              "question": "Which of the following would best explain why the South supported Missouri’s admission into the Union as a slave state?\n\u003cbr /\u003e",
+              "order": "randomized",
+              "presenterType": "RadioGroup",
+              "presenterConfig": {
+                "numberFormat": "none"
+              },
+              "choices": [
+                {
+                  "answerKey": "answer_1",
+                  "content": "It was afraid of a greater majority of northerners in the House of Representatives."
+                },
+                {
+                  "answerKey": "answer_2",
+                  "content": "The South wanted to use Maine to address the imbalance of free and slave states."
+                },
+                {
+                  "answerKey": "answer_3",
+                  "content": "Missouri was south of the line traditionally dividing slave from free states."
+                },
+                {
+                  "answerKey": "answer_4",
+                  "content": "The South was by then dwarfed by the North in terms of territory."
+                }
+              ]
+            },
+            "answerKey": {
+              "assessmentType": "multiplechoice",
+              "answers": {
+                "answer_3": {
+                  "score": 0.0,
+                  "response": "The northern population was growing more rapidly than the southern, and the North had a decisive majority in the House. Hence the South saw its equal vote in the Senate as essential for preserving the balance."
+                },
+                "answer_2": {
+                  "score": 0.0,
+                  "response": "The northern population was growing more rapidly than the southern, and the North had a decisive majority in the House. Hence the South saw its equal vote in the Senate as essential for preserving the balance."
+                },
+                "answer_1": {
+                  "score": 1.0,
+                  "response": "The northern population was growing more rapidly than the southern, and the North had a decisive majority in the House. Hence the South saw its equal vote in the Senate as essential for preserving the balance."
+                },
+                "answer_4": {
+                  "score": 0.0,
+                  "response": "The northern population was growing more rapidly than the southern, and the North had a decisive majority in the House. Hence the South saw its equal vote in the Senate as essential for preserving the balance."
+                }
+              }
+            },
+            "configFixup": [
+              {
+                "name": "questionId",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "sequenceNodeKey",
+                  "type": "ref"
+                }
+              },
+              {
+                "name": "maxAttempts",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "maxAttempts",
+                  "type": "ref"
+                }
+              }
+            ]
+          }
+        ],
+        "hookupActions": [
+          {
+            "description": "Hookup the submit manager to evaluate answers",
+            "methodName": "handleRequestsFrom",
+            "type": "method-call",
+            "args": [
+              {
+                "domain": "brix",
+                "refId": "q1",
+                "type": "ref"
+              }
+            ],
+            "instance": {
+              "type": "submit-manager"
+            }
+          },
+          {
+            "description": "Draw the question",
+            "methodName": "draw",
+            "type": "method-call",
+            "args": [
+              {
+                "selector": "#target1",
+                "type": "d3select"
+              }
+            ],
+            "instance": {
+              "domain": "brix",
+              "refId": "q1",
+              "type": "ref"
+            }
+          }
+        ]
+      }
+    ]
+  }
+}
