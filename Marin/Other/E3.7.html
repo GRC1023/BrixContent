@@ -5,8 +5,8 @@
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta content="Template for Thumbnail Image Carousel Brix" name="description">
     
-    <!-- widgets.css contains styling for the interactive brix -->
-    <link href="css/widgets.css" rel="stylesheet">
+    <!-- brix.css contains styling for the interactive brix -->
+    <link href="css/brix.css" rel="stylesheet">
 </head>
 <body>
     <div id="b8e5d57f829c34e4785a88658ec794b80"></div>
@@ -30,160 +30,193 @@
 		{
 			"description": "Image carousel showing retina, photo receptors and close up of rods and cones.",
 			"imgBaseUrl": "",
-			"containerConfig":
-				[
-					{
-						"description": "Container for the ImageViewer bric",
-						"containerId": "imgContainer",
-						"brixConfig":
-							[
-								{
-									"bricId": "image1",
-									"bricType": "Image",
-									"config":
-										{
-											"id": "img1",
-											"actualSize": { "height": 379, "width": 570 },
-											"caption":  "The retina contains photoreceptor cells.",
-											"captionPosition": "below"
-										},
-									"configFixup":
-										[
-											{
-												"type": "set-property",
-												"name": "URI",
-												"value":
-													{
-														"type": "join",
-														"parts":
-														[
-															{ "type": "ref", "domain": "info", "refId": "imgBaseUrl" },
-															{ "type": "constant", "value": "img/03-07_frame_01.png" }
-														]
-													}
-											}
-										]
-													   
-								},
-								{
-									"bricId": "image2",
-									"bricType": "Image",
-									"config":
-										{
-											"id": "img2",
-											"actualSize": { "height": 379, "width": 570 },
-											"caption":  "These photoreceptor cells are called rods and cones.",
-											"captionPosition": "below"
-										},
-									"configFixup":
-										[
-											{
-												"type": "set-property",
-												"name": "URI",
-												"value":
-													{
-														"type": "join",
-														"parts":
-														[
-															{ "type": "ref", "domain": "info", "refId": "imgBaseUrl" },
-															{ "type": "constant", "value": "img/03-07_frame_02.png" }
-														]
-													}
-											}
-										]
-													   
-								},
-								{
-									"bricId": "image3",
-									"bricType": "Image",
-									"config":
-										{
-											"id": "img3",
-											"actualSize": { "height": 379, "width": 570 },
-											"caption":  "Take a look at the photograph for a real-life view of rods and cones.",
-											"captionPosition": "below"
-										},
-									"configFixup":
-										[
-											{
-												"type": "set-property",
-												"name": "URI",
-												"value":
-													{
-														"type": "join",
-														"parts":
-														[
-															{ "type": "ref", "domain": "info", "refId": "imgBaseUrl" },
-															{ "type": "constant", "value": "img/03-07_frame_03.png" }
-														]
-													}
-											}
-										]
-													   
-								},
-								{
-									"bricId": "carousel1",
-									"bricType": "ImageViewer",
-									"config":
-										{
-											"id": "csel1",
-											"displayWidth": 579
-										},
-									"configFixup":
-										[
-											{
-												"type": "set-property",
-												"name": "items",
-												"value":
-													{
-														"type": "array",
-														"elements":
-																[
-																   { "type": "ref", "domain": "brix", "refId": "image1" },
-																   { "type": "ref", "domain": "brix", "refId": "image2" },
-																   { "type": "ref", "domain": "brix", "refId": "image3" }
-																]
-													}
-											}
-										]
-								},
-								{
-									"bricId": "cntr1",
-									"bricType": "SvgContainer",
-									"config":
-										{
-											"maxSize": {"height": "570", "width": "579"},
-										},
-									"configFixup":
-										[
-											{
-												"type": "set-property",
-												"name": "node",
-												"value":
-													{
-														"type": "d3select",
-														"selector": "#b8e5d57f829c34e4785a88658ec794b80"
-													}
-											}
-										]
-								}
-							],
-						"hookupActions":
-							[
-								{
-									"description": "Append the captioned image to the svg container",
-									"type": "method-call",
-									"instance": {"type": "ref", "domain": "brix", "refId": "cntr1"},
-									"methodName": "append",
-									"args":
-										[
-											{ "type": "ref", "domain": "brix", "refId": "carousel1" }
-										]
-								}
-							]
-					}
-				]
-			};
+			  "containerConfig": [
+      {
+        "brixConfig": [
+          {
+            "bricId": "image1", 
+            "bricType": "Image", 
+            "config": {
+              "actualSize": {
+                "height": 379, 
+                "width": 570
+              }, 
+              "caption": "The retina contains photoreceptor cells.", 
+              "captionPosition": "below", 
+              "id": "img1"
+            }, 
+            "configFixup": [
+              {
+                "name": "URI", 
+                "type": "set-property", 
+                "value": {
+                  "parts": [
+                    {
+                      "domain": "info", 
+                      "refId": "imgBaseUrl", 
+                      "type": "ref"
+                    }, 
+                    {
+                      "type": "constant", 
+                      "value": "img/03-07_frame_01.png"
+                    }
+                  ], 
+                  "type": "join"
+                }
+              }
+            ]
+          }, 
+          {
+            "bricId": "image2", 
+            "bricType": "Image", 
+            "config": {
+              "actualSize": {
+                "height": 379, 
+                "width": 570
+              }, 
+              "caption": "These photoreceptor cells are called rods and cones.", 
+              "captionPosition": "below", 
+              "id": "img2"
+            }, 
+            "configFixup": [
+              {
+                "name": "URI", 
+                "type": "set-property", 
+                "value": {
+                  "parts": [
+                    {
+                      "domain": "info", 
+                      "refId": "imgBaseUrl", 
+                      "type": "ref"
+                    }, 
+                    {
+                      "type": "constant", 
+                      "value": "img/03-07_frame_02.png"
+                    }
+                  ], 
+                  "type": "join"
+                }
+              }
+            ]
+          }, 
+          {
+            "bricId": "image3", 
+            "bricType": "Image", 
+            "config": {
+              "actualSize": {
+                "height": 379, 
+                "width": 570
+              }, 
+              "caption": "Take a look at the photograph for a real-life view of rods and cones.", 
+              "captionPosition": "below", 
+              "id": "img3"
+            }, 
+            "configFixup": [
+              {
+                "name": "URI", 
+                "type": "set-property", 
+                "value": {
+                  "parts": [
+                    {
+                      "domain": "info", 
+                      "refId": "imgBaseUrl", 
+                      "type": "ref"
+                    }, 
+                    {
+                      "type": "constant", 
+                      "value": "img/03-07_frame_03.png"
+                    }
+                  ], 
+                  "type": "join"
+                }
+              }
+            ]
+          }, 
+          {
+            "bricId": "carousel1", 
+            "bricType": "ImageViewer", 
+            "config": {
+              "displayWidth": 579, 
+              "id": "csel1"
+            }, 
+            "configFixup": [
+              {
+                "name": "items", 
+                "type": "set-property", 
+                "value": {
+                  "elements": [
+                    {
+                      "domain": "brix", 
+                      "refId": "image1", 
+                      "type": "ref"
+                    }, 
+                    {
+                      "domain": "brix", 
+                      "refId": "image2", 
+                      "type": "ref"
+                    }, 
+                    {
+                      "domain": "brix", 
+                      "refId": "image3", 
+                      "type": "ref"
+                    }
+                  ], 
+                  "type": "array"
+                }
+              }
+            ]
+          }, 
+          {
+            "bricId": "cntr1", 
+            "bricType": "SvgContainer", 
+            "config": {
+              "maxSize": {
+                "height": "570", 
+                "width": "579"
+              }
+            }
+          }
+        ], 
+        "containerId": "imgContainer", 
+        "description": "Container for the ImageViewer bric", 
+        "hookupActions": [
+          {
+            "args": [
+              {
+                "selector": "#b8e5d57f829c34e4785a88658ec794b80", 
+                "type": "d3select"
+              }
+            ], 
+            "description": "Draw the svg container", 
+            "instance": {
+              "domain": "brix", 
+              "refId": "cntr1", 
+              "type": "ref"
+            }, 
+            "methodName": "draw", 
+            "type": "method-call"
+          }, 
+          {
+            "args": [
+              {
+                "domain": "brix", 
+                "refId": "carousel1", 
+                "type": "ref"
+              }
+            ], 
+            "description": "Append the captioned image to the svg container", 
+            "instance": {
+              "domain": "brix", 
+              "refId": "cntr1", 
+              "type": "ref"
+            }, 
+            "methodName": "append", 
+            "type": "method-call"
+          }
+        ]
+      }
+    ]
+};
 
     // create the eventmanager to be used by the created brix, and the
     // bricLayer which will create them, and then tell the bricLayer to build.
@@ -191,7 +224,7 @@
     a.answerMan = new pearson.brix.utils.LocalAnswerMan();
     a.submitManager = new pearson.brix.utils.SubmitManager(a.eventManager, a.answerMan);
 
-    a.bricLayer = new pearson.brix.BricLayer(null, a.eventManager, a.submitManager);
+    a.bricLayer = new pearson.brix.utils.BricLayer(null, a.eventManager, a.submitManager);
 
     a.building = a.bricLayer.build(a.config);
 

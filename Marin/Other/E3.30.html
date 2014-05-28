@@ -5,8 +5,8 @@
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta content="Template for Label Selector Image Carousel Brix" name="description">
     
-    <!-- widgets.css contains styling for the interactive brix -->
-    <link href="css/widgets.css" rel="stylesheet">
+    <!-- brix.css contains styling for the interactive brix -->
+    <link href="css/brix.css" rel="stylesheet">
 </head>
 <body>
     <div id="bd5e7f0acf9f143898f40a08acd072471"></div>
@@ -31,140 +31,170 @@
 			"description": "Image carousel showing where on the face babies focus (typical development and babies with autism)",
             //"imgBaseUrl": "http://localhost:8088/images/",
             "imgBaseUrl": "",
-            "containerConfig":
-                [
+            "containerConfig": [
+      {
+        "brixConfig": [
+          {
+            "bricId": "lblCarousel1", 
+            "bricType": "LabelCarousel", 
+            "config": {
+              "displayWidth": 333, 
+              "id": "lblCrsl1", 
+              "imagesActualSize": {
+                "height": 500, 
+                "width": 333
+              }, 
+              "type": "bullets"
+            }, 
+            "configFixup": [
+              {
+                "name": "images", 
+                "type": "set-property", 
+                "value": {
+                  "elements": [
                     {
-                        "description": "Container for the LabelCarousel",
-                        "containerId": "imgContainer",
-                        "brixConfig":
-                            [
-                                {
-                                    "bricId": "lblCarousel1",
-                                    "bricType": "LabelCarousel",
-                                    "config":
-                                        {
-                                            "id": "lblCrsl1",
-                                            "type": "bullets",
-                                            "imagesActualSize": { "height": 500, "width": 333 },
-                                            "displayWidth": 333
-                                        },
-                                    "configFixup":
-                                        [
-                                            {
-                                                "type": "set-property",
-                                                "name": "images",
-                                                "value":
-                                                    {
-                                                        "type": "array",
-                                                        "elements":
-                                                            [
-                                                                {
-                                                                    "type": "object",
-                                                                    "properties":
-                                                                        [
-                                                                            {
-                                                                                "name": "URI",
-                                                                                "value":
-                                                                                    {
-                                                                                        "type": "join",
-                                                                                        "parts":
-                                                                                        [
-                                                                                            { "type": "ref", "domain": "info", "refId": "imgBaseUrl" },
-                                                                                            { "type": "constant", "value": "img/03-30_frame_01.png" }
-                                                                                        ]
-                                                                                    }
-                                                                            },
-                                                                            {
-                                                                                "name": "caption",
-                                                                                "value": { "type": "constant", "value": "Studies of preferential looking are sometimes used as a predictor of social disability.<br />" }
-                                                                            }
-                                                                        ]
-                                                                },
-                                                                {
-                                                                    "type": "object",
-                                                                    "properties":
-                                                                        [
-                                                                            {
-                                                                                "name": "URI",
-                                                                                "value":
-                                                                                    {
-                                                                                        "type": "join",
-                                                                                        "parts":
-                                                                                        [
-                                                                                            { "type": "ref", "domain": "info", "refId": "imgBaseUrl" },
-                                                                                            { "type": "constant", "value": "img/03-30_frame_02.png"}
-                                                                                        ]
-                                                                                    }
-                                                                            },
-                                                                            {
-                                                                                "name": "caption",
-                                                                                "value": { "type": "constant", "value": "Typically developing babies focus their attention on the eyes when viewing a face." }
-                                                                            }
-                                                                        ]
-                                                                },
-                                                                {
-                                                                    "type": "object",
-                                                                    "properties":
-                                                                        [
-                                                                            {
-                                                                                "name": "URI",
-                                                                                "value":
-                                                                                    {
-                                                                                        "type": "join",
-                                                                                        "parts":
-                                                                                        [
-                                                                                            { "type": "ref", "domain": "info", "refId": "imgBaseUrl" },
-                                                                                            { "type": "constant", "value": "img/03-30_frame_03.png"}
-                                                                                        ]
-                                                                                    }
-                                                                            },
-                                                                            {
-                                                                                "name": "caption",
-                                                                                "value": { "type": "constant", "value": "Babies with autism are more likely to focus their attention on the mouth when viewing a face (McPartland et al., 2011)." }
-                                                                            }
-                                                                        ]
-                                                                }
-                                                            ]
-                                                    }
-                                            }
-                                        ]
-                                },
-                                {
-                                    "bricId": "cntr1",
-                                    "bricType": "SvgContainer",
-                                    "config":
-                                        {
-                                            "maxSize": { "height": 630, "width": 333 },
-                                        },
-                                    "configFixup":
-                                        [
-                                            {
-                                                "type": "set-property",
-                                                "name": "node",
-                                                "value":
-                                                    {
-                                                        "type": "d3select",
-                                                        "selector": "#bd5e7f0acf9f143898f40a08acd072471"
-                                                    }
-                                            }
-                                        ]
-                                }
-                            ],
-                        "hookupActions":
-                            [
-                                {
-                                    "description": "Append the label image carousel to the svg container",
-                                    "type": "method-call",
-                                    "instance": {"type": "ref", "domain": "brix", "refId": "cntr1"},
-                                    "methodName": "append",
-                                    "args":
-                                        [
-                                            { "type": "ref", "domain": "brix", "refId": "lblCarousel1" }
-                                        ]
-                                }
-                            ]
+                      "properties": [
+                        {
+                          "name": "URI", 
+                          "value": {
+                            "parts": [
+                              {
+                                "domain": "info", 
+                                "refId": "imgBaseUrl", 
+                                "type": "ref"
+                              }, 
+                              {
+                                "type": "constant", 
+                                "value": "img/03-30_frame_01.png"
+                              }
+                            ], 
+                            "type": "join"
+                          }
+                        }, 
+                        {
+                          "name": "caption", 
+                          "value": {
+                            "type": "constant", 
+                            "value": "Studies of preferential looking are sometimes used as a predictor of social disability. <br />"
+                          }
+                        }
+                      ], 
+                      "type": "object"
+                    }, 
+                    {
+                      "properties": [
+                        {
+                          "name": "URI", 
+                          "value": {
+                            "parts": [
+                              {
+                                "domain": "info", 
+                                "refId": "imgBaseUrl", 
+                                "type": "ref"
+                              }, 
+                              {
+                                "type": "constant", 
+                                "value": "img/03-30_frame_02.png"
+                              }
+                            ], 
+                            "type": "join"
+                          }
+                        }, 
+                        {
+                          "name": "caption", 
+                          "value": {
+                            "type": "constant", 
+                            "value": "Typically developing babies focus their attention on the eyes when viewing a face."
+                          }
+                        }
+                      ], 
+                      "type": "object"
+                    }, 
+                    {
+                      "properties": [
+                        {
+                          "name": "URI", 
+                          "value": {
+                            "parts": [
+                              {
+                                "domain": "info", 
+                                "refId": "imgBaseUrl", 
+                                "type": "ref"
+                              }, 
+                              {
+                                "type": "constant", 
+                                "value": "img/03-30_frame_03.png"
+                              }
+                            ], 
+                            "type": "join"
+                          }
+                        }, 
+                        {
+                          "name": "caption", 
+                          "value": {
+                            "type": "constant", 
+                            "value": "Babies with autism are more likely to focus their attention on the mouth when viewing a face (McPartland et al., 2011)."
+                          }
+                        }
+                      ], 
+                      "type": "object"
                     }
+                  ], 
+                  "type": "array"
+                }
+              }
             ]
+          }, 
+          {
+            "bricId": "cntr1", 
+            "bricType": "SvgContainer", 
+            "config": {
+              "maxSize": {
+                "height": 630, 
+                "width": 333
+              }
+            }
+          }
+        ], 
+        "containerId": "imgContainer", 
+        "description": "Container for the LabelCarousel", 
+        "hookupActions": [
+          {
+            "args": [
+              {
+                "selector": "#bd5e7f0acf9f143898f40a08acd072471", 
+                "type": "d3select"
+              }
+            ], 
+            "description": "Draw the svg container", 
+            "instance": {
+              "domain": "brix", 
+              "refId": "cntr1", 
+              "type": "ref"
+            }, 
+            "methodName": "draw", 
+            "type": "method-call"
+          }, 
+          {
+            "args": [
+              {
+                "domain": "brix", 
+                "refId": "lblCarousel1", 
+                "type": "ref"
+              }
+            ], 
+            "description": "Append the label image carousel to the svg container", 
+            "instance": {
+              "domain": "brix", 
+              "refId": "cntr1", 
+              "type": "ref"
+            }, 
+            "methodName": "append", 
+            "type": "method-call"
+          }
+        ]
+      }
+    ]
         };
 
     // create the eventmanager to be used by the created brix, and the
@@ -173,7 +203,7 @@
     a.answerMan = new pearson.brix.utils.LocalAnswerMan();
     a.submitManager = new pearson.brix.utils.SubmitManager(a.eventManager, a.answerMan);
 
-    a.bricLayer = new pearson.brix.BricLayer(null, a.eventManager, a.submitManager);
+    a.bricLayer = new pearson.brix.utils.BricLayer(null, a.eventManager, a.submitManager);
 
     a.building = a.bricLayer.build(a.config);
 

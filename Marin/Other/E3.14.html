@@ -9,8 +9,8 @@
 	<meta content="Carmen Santiago, Demo Book" name="description" />
 	<title class="setTitle"></title>
 	
-  	<!-- widgets.css contains styling for the interactive brix -->
-	<link href="css/widgets.css" rel="stylesheet">
+  	<!-- brix.css contains styling for the interactive brix -->
+	<link href="css/brix.css" rel="stylesheet">
     </head>
 <body>
 <!-- Body Content -->
@@ -22,20 +22,6 @@
 	
     <!-- Local directory copy of built brixlib -->
     <script src="js/brixlib-compiled.js"></script>
-
-    <!--
-    <script src="js/closure-library/closure/goog/base.js"></script>
-    <script src="js/brixlib-deps.js"></script>
-    <script>
-    //<![CDATA[
-        goog.require('pearson.utils');
-        goog.require('pearson.brix.utils.BricLayer');
-        goog.require('pearson.utils.EventManager');
-        goog.require('pearson.brix.utils.SubmitManager');
-        goog.require('pearson.brix.utils.LocalAnswerMan');
-    //]]>
-    </script>
-    -->
 
     <script>
     //<![CDATA[
@@ -184,30 +170,23 @@
             "brixConfig": [
               {
                 "bricId": "wavegraph", 
-                "bricType": "ProtoLineGraph", 
+                "bricType": "LineGraph", 
                 "config": {
-                  "Data": [], 
+                  "tracePoints": [], 
                   "id": "lngrph-waveform", 
-                  "type": "lines", 
-                  "xAxisFormat": {
+                  "xAxis": {
                     "label": "time (sec)", 
-                    "orientation": "bottom", 
-                    "ticks": 5, 
-                    "type": "linear"
-                  }, 
-                  "yAxisFormat": {
+                    "location": "bottom", 
+                    "tickmarkSettings":  {
+                      "ticks": 5
+                      }
+                    }, 
+                  "yAxis": {
                     "label": "Age ranges", 
-                    "orientation": "left", 
-                    "ticks": [
-                      -120, 
-                      -80, 
-                      -40, 
-                      0, 
-                      40, 
-                      80, 
-                      120
-                    ], 
-                    "type": "linear"
+                    "location": "left", 
+                    "tickmarkSettings": {
+                      "ticks": [-120,-80,-40,0,40,80,120]
+                    }
                   }
                 }
               }, 
