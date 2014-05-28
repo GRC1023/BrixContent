@@ -1,0 +1,191 @@
+{
+  "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope",
+  "@type": "Envelope",
+  "metadata": {
+    "bookTitle": "American Stories: A History of the United States, Combined Volume",
+    "keywords": [
+      "Brands 3e",
+      "Ch28",
+      "Alick"
+    ],
+    "extendedMetadata": [
+      {
+        "name": "ISBN",
+        "value": "013379461X"
+      },
+      {
+        "name": "M",
+        "value": "m03"
+      },
+      {
+        "name": "assessment_title",
+        "value": "Quiz: The Cold War Expands"
+      },
+      {
+        "name": "Topic",
+        "value": "The Cold War Expands"
+      },
+      {
+        "name": "chapterTitle",
+        "value": "The Onset of the Cold War 1945â1960"
+      },
+      {
+        "name": "module",
+        "value": "The Cold War Expands"
+      },
+      {
+        "name": "item_title",
+        "value": "013379461X_H. W. Brands; T. H. Breen; R. Hal Williams; Ariela J. Gros_ch28_m03_q0006"
+      },
+      {
+        "name": "questionlayout",
+        "value": "1"
+      },
+      {
+        "name": "CH",
+        "value": "28"
+      },
+      {
+        "name": "Objective",
+        "value": "28.3"
+      },
+      {
+        "name": "shuffle_choices",
+        "value": "Yes"
+      }
+    ],
+    "subject": [
+      "US History"
+    ],
+    "contentTypeTier2": [
+      "AssignmentItem"
+    ],
+    "contentTypeTier1": "Assessment",
+    "format": [
+      "application/vnd.pearson.sanvan.v1.activity"
+    ],
+    "version": "1.0",
+    "guid": "6ea9474b-ad72-48b2-a7e4-4b8736a0e609",
+    "bookAuthor": "H. W. Brands; T. H. Breen; R. Hal Williams; Ariela J. Gros",
+    "title": "POST 28 12",
+    "educationalAlignment": [
+      "http://purl.org/pearson/objectives/183725473384362"
+    ]
+  },
+  "body": {
+    "description": "POST_28_12",
+    "containerConfig": [
+      {
+        "description": "POST_28_12",
+        "containerId": "target1",
+        "brixConfig": [
+          {
+            "bricId": "q1",
+            "bricType": "MultipleChoiceQuestion",
+            "config": {
+              "id": "QUE61549",
+              "question": "How did the United States consolidate its influence in Japan?\n\u003cbr /\u003e",
+              "order": "randomized",
+              "presenterType": "RadioGroup",
+              "presenterConfig": {
+                "numberFormat": "none"
+              },
+              "choices": [
+                {
+                  "answerKey": "answer_1",
+                  "content": "It introduced a constitutional democracy, excluding communists from all government positions."
+                },
+                {
+                  "answerKey": "answer_2",
+                  "content": "It brought in Americans to fill administrative positions in Japan."
+                },
+                {
+                  "answerKey": "answer_3",
+                  "content": "It rebuilt the Japanese military by supplying advanced weaponry."
+                },
+                {
+                  "answerKey": "answer_4",
+                  "content": "It provided Japan with industrial machinery and raw materials."
+                }
+              ]
+            },
+            "answerKey": {
+              "assessmentType": "multiplechoice",
+              "answers": {
+                "answer_3": {
+                  "score": 0.0,
+                  "response": "MacArthur supervised the transition of the Japanese government into a constitutional democracy along Western lines, in which communists were barred from government. The Japanese renounced war in their new constitution, relying on American forces to protect their security."
+                },
+                "answer_2": {
+                  "score": 0.0,
+                  "response": "MacArthur supervised the transition of the Japanese government into a constitutional democracy along Western lines, in which communists were barred from government. The Japanese renounced war in their new constitution, relying on American forces to protect their security."
+                },
+                "answer_1": {
+                  "score": 1.0,
+                  "response": "MacArthur supervised the transition of the Japanese government into a constitutional democracy along Western lines, in which communists were barred from government. The Japanese renounced war in their new constitution, relying on American forces to protect their security."
+                },
+                "answer_4": {
+                  "score": 0.0,
+                  "response": "MacArthur supervised the transition of the Japanese government into a constitutional democracy along Western lines, in which communists were barred from government. The Japanese renounced war in their new constitution, relying on American forces to protect their security."
+                }
+              }
+            },
+            "configFixup": [
+              {
+                "name": "questionId",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "sequenceNodeKey",
+                  "type": "ref"
+                }
+              },
+              {
+                "name": "maxAttempts",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "maxAttempts",
+                  "type": "ref"
+                }
+              }
+            ]
+          }
+        ],
+        "hookupActions": [
+          {
+            "description": "Hookup the submit manager to evaluate answers",
+            "methodName": "handleRequestsFrom",
+            "type": "method-call",
+            "args": [
+              {
+                "domain": "brix",
+                "refId": "q1",
+                "type": "ref"
+              }
+            ],
+            "instance": {
+              "type": "submit-manager"
+            }
+          },
+          {
+            "description": "Draw the question",
+            "methodName": "draw",
+            "type": "method-call",
+            "args": [
+              {
+                "selector": "#target1",
+                "type": "d3select"
+              }
+            ],
+            "instance": {
+              "domain": "brix",
+              "refId": "q1",
+              "type": "ref"
+            }
+          }
+        ]
+      }
+    ]
+  }
+}

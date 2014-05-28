@@ -1,0 +1,191 @@
+{
+  "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope",
+  "@type": "Envelope",
+  "metadata": {
+    "bookTitle": "American Stories: A History of the United States, Combined Volume",
+    "keywords": [
+      "Brands 3e",
+      "Ch11",
+      "Alick"
+    ],
+    "extendedMetadata": [
+      {
+        "name": "ISBN",
+        "value": "013379461X"
+      },
+      {
+        "name": "M",
+        "value": "m03"
+      },
+      {
+        "name": "assessment_title",
+        "value": "Quiz: White Society in the Antebellum South"
+      },
+      {
+        "name": "Topic",
+        "value": "Slavery and the Southern Economy"
+      },
+      {
+        "name": "chapterTitle",
+        "value": "Slaves and Masters 1793â1861"
+      },
+      {
+        "name": "module",
+        "value": "White Society in the Antebellum South"
+      },
+      {
+        "name": "item_title",
+        "value": "013379461X_H. W. Brands; T. H. Breen; R. Hal Williams; Ariela J. Gros_ch11_m03_q0002"
+      },
+      {
+        "name": "questionlayout",
+        "value": "1"
+      },
+      {
+        "name": "CH",
+        "value": "11"
+      },
+      {
+        "name": "Objective",
+        "value": "LO: 11.3: How was slavery related to economic success in the South?"
+      },
+      {
+        "name": "shuffle_choices",
+        "value": "Yes"
+      }
+    ],
+    "subject": [
+      "US History"
+    ],
+    "contentTypeTier2": [
+      "AssignmentItem"
+    ],
+    "contentTypeTier1": "Assessment",
+    "format": [
+      "application/vnd.pearson.sanvan.v1.activity"
+    ],
+    "version": "1.0",
+    "guid": "99ce6403-7bb5-4eef-b633-d606bdf22c2f",
+    "bookAuthor": "H. W. Brands; T. H. Breen; R. Hal Williams; Ariela J. Gros",
+    "title": "POST 11 05",
+    "educationalAlignment": [
+      "http://purl.org/pearson/objectives/183725473384362"
+    ]
+  },
+  "body": {
+    "description": "POST_11_05",
+    "containerConfig": [
+      {
+        "description": "POST_11_05",
+        "containerId": "target1",
+        "brixConfig": [
+          {
+            "bricId": "q1",
+            "bricType": "MultipleChoiceQuestion",
+            "config": {
+              "id": "QUE60994",
+              "question": "How did large cotton planters lower their transportation costs?\n\u003cbr /\u003e",
+              "order": "randomized",
+              "presenterType": "RadioGroup",
+              "presenterConfig": {
+                "numberFormat": "none"
+              },
+              "choices": [
+                {
+                  "answerKey": "answer_1",
+                  "content": "by monopolizing land along the rivers, the South’s natural transportation arteries"
+                },
+                {
+                  "answerKey": "answer_2",
+                  "content": "by owning and operating big railroad companies for overland transport"
+                },
+                {
+                  "answerKey": "answer_3",
+                  "content": "by owning cotton fields all over the South, thus lowering local transportation costs"
+                },
+                {
+                  "answerKey": "answer_4",
+                  "content": "by operating steamboats rather than barges"
+                }
+              ]
+            },
+            "answerKey": {
+              "assessmentType": "multiplechoice",
+              "answers": {
+                "answer_3": {
+                  "score": 0.0,
+                  "response": "Only relatively large operators could afford their own gins or possessed the capital to acquire the fertile bottomlands that brought the highest cotton yields. They also had lower transportation costs because they could monopolize land along rivers and streams that were the South’s natural transportation arteries."
+                },
+                "answer_2": {
+                  "score": 0.0,
+                  "response": "Only relatively large operators could afford their own gins or possessed the capital to acquire the fertile bottomlands that brought the highest cotton yields. They also had lower transportation costs because they could monopolize land along rivers and streams that were the South’s natural transportation arteries."
+                },
+                "answer_1": {
+                  "score": 1.0,
+                  "response": "Only relatively large operators could afford their own gins or possessed the capital to acquire the fertile bottomlands that brought the highest cotton yields. They also had lower transportation costs because they could monopolize land along rivers and streams that were the South’s natural transportation arteries."
+                },
+                "answer_4": {
+                  "score": 0.0,
+                  "response": "Only relatively large operators could afford their own gins or possessed the capital to acquire the fertile bottomlands that brought the highest cotton yields. They also had lower transportation costs because they could monopolize land along rivers and streams that were the South’s natural transportation arteries."
+                }
+              }
+            },
+            "configFixup": [
+              {
+                "name": "questionId",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "sequenceNodeKey",
+                  "type": "ref"
+                }
+              },
+              {
+                "name": "maxAttempts",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "maxAttempts",
+                  "type": "ref"
+                }
+              }
+            ]
+          }
+        ],
+        "hookupActions": [
+          {
+            "description": "Hookup the submit manager to evaluate answers",
+            "methodName": "handleRequestsFrom",
+            "type": "method-call",
+            "args": [
+              {
+                "domain": "brix",
+                "refId": "q1",
+                "type": "ref"
+              }
+            ],
+            "instance": {
+              "type": "submit-manager"
+            }
+          },
+          {
+            "description": "Draw the question",
+            "methodName": "draw",
+            "type": "method-call",
+            "args": [
+              {
+                "selector": "#target1",
+                "type": "d3select"
+              }
+            ],
+            "instance": {
+              "domain": "brix",
+              "refId": "q1",
+              "type": "ref"
+            }
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,191 @@
+{
+  "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope",
+  "@type": "Envelope",
+  "metadata": {
+    "bookTitle": "American Stories: A History of the United States, Combined Volume",
+    "keywords": [
+      "Brands 3e",
+      "Ch23",
+      "Alick"
+    ],
+    "extendedMetadata": [
+      {
+        "name": "ISBN",
+        "value": "013379461X"
+      },
+      {
+        "name": "M",
+        "value": "m04"
+      },
+      {
+        "name": "assessment_title",
+        "value": "Quiz: Roosevelt Progressivism at its Height"
+      },
+      {
+        "name": "Topic",
+        "value": "Roosevelt Progressivism at Its Height"
+      },
+      {
+        "name": "chapterTitle",
+        "value": "From Roosevelt to Wilson in the Age of Progressivism 1900â1920"
+      },
+      {
+        "name": "module",
+        "value": "Roosevelt Progressivism at its Height"
+      },
+      {
+        "name": "item_title",
+        "value": "013379461X_H. W. Brands; T. H. Breen; R. Hal Williams; Ariela J. Gros_ch23_m04_q0004"
+      },
+      {
+        "name": "questionlayout",
+        "value": "1"
+      },
+      {
+        "name": "CH",
+        "value": "23"
+      },
+      {
+        "name": "Objective",
+        "value": "23.4"
+      },
+      {
+        "name": "shuffle_choices",
+        "value": "Yes"
+      }
+    ],
+    "subject": [
+      "US History"
+    ],
+    "contentTypeTier2": [
+      "AssignmentItem"
+    ],
+    "contentTypeTier1": "Assessment",
+    "format": [
+      "application/vnd.pearson.sanvan.v1.activity"
+    ],
+    "version": "1.0",
+    "guid": "38bdedb7-ccba-4eab-97dd-1e543159e49f",
+    "bookAuthor": "H. W. Brands; T. H. Breen; R. Hal Williams; Ariela J. Gros",
+    "title": "POST 23 13",
+    "educationalAlignment": [
+      "http://purl.org/pearson/objectives/183725473384362"
+    ]
+  },
+  "body": {
+    "description": "POST_23_13",
+    "containerConfig": [
+      {
+        "description": "POST_23_13",
+        "containerId": "target1",
+        "brixConfig": [
+          {
+            "bricId": "q1",
+            "bricType": "MultipleChoiceQuestion",
+            "config": {
+              "id": "QUE61330",
+              "question": "What was one important result of Roosevelt’s reclamation efforts?\n\u003cbr /\u003e",
+              "order": "randomized",
+              "presenterType": "RadioGroup",
+              "presenterConfig": {
+                "numberFormat": "none"
+              },
+              "choices": [
+                {
+                  "answerKey": "answer_1",
+                  "content": "More land was set aside for the forest preserve program."
+                },
+                {
+                  "answerKey": "answer_2",
+                  "content": "More land was given to coal mining companies to develop."
+                },
+                {
+                  "answerKey": "answer_3",
+                  "content": "Land owned by railroad companies was placed in the public domain."
+                },
+                {
+                  "answerKey": "answer_4",
+                  "content": "Land set aside for national forests was taken over by utility companies."
+                }
+              ]
+            },
+            "answerKey": {
+              "assessmentType": "multiplechoice",
+              "answers": {
+                "answer_3": {
+                  "score": 0.0,
+                  "response": "Working closely with Gifford Pinchot, chief of the Forest Service, Roosevelt established the first comprehensive national conservation policy. To Roosevelt, conservation meant the wise use of natural resources, not locking them away, so those who thought that wilderness should be preserved rather than developed generally opposed his policies. But when Roosevelt took office in 1901, there were 45 million acres in government preserves. By 1908, there were almost 195 million."
+                },
+                "answer_2": {
+                  "score": 0.0,
+                  "response": "Working closely with Gifford Pinchot, chief of the Forest Service, Roosevelt established the first comprehensive national conservation policy. To Roosevelt, conservation meant the wise use of natural resources, not locking them away, so those who thought that wilderness should be preserved rather than developed generally opposed his policies. But when Roosevelt took office in 1901, there were 45 million acres in government preserves. By 1908, there were almost 195 million."
+                },
+                "answer_1": {
+                  "score": 1.0,
+                  "response": "Working closely with Gifford Pinchot, chief of the Forest Service, Roosevelt established the first comprehensive national conservation policy. To Roosevelt, conservation meant the wise use of natural resources, not locking them away, so those who thought that wilderness should be preserved rather than developed generally opposed his policies. But when Roosevelt took office in 1901, there were 45 million acres in government preserves. By 1908, there were almost 195 million."
+                },
+                "answer_4": {
+                  "score": 0.0,
+                  "response": "Working closely with Gifford Pinchot, chief of the Forest Service, Roosevelt established the first comprehensive national conservation policy. To Roosevelt, conservation meant the wise use of natural resources, not locking them away, so those who thought that wilderness should be preserved rather than developed generally opposed his policies. But when Roosevelt took office in 1901, there were 45 million acres in government preserves. By 1908, there were almost 195 million."
+                }
+              }
+            },
+            "configFixup": [
+              {
+                "name": "questionId",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "sequenceNodeKey",
+                  "type": "ref"
+                }
+              },
+              {
+                "name": "maxAttempts",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "maxAttempts",
+                  "type": "ref"
+                }
+              }
+            ]
+          }
+        ],
+        "hookupActions": [
+          {
+            "description": "Hookup the submit manager to evaluate answers",
+            "methodName": "handleRequestsFrom",
+            "type": "method-call",
+            "args": [
+              {
+                "domain": "brix",
+                "refId": "q1",
+                "type": "ref"
+              }
+            ],
+            "instance": {
+              "type": "submit-manager"
+            }
+          },
+          {
+            "description": "Draw the question",
+            "methodName": "draw",
+            "type": "method-call",
+            "args": [
+              {
+                "selector": "#target1",
+                "type": "d3select"
+              }
+            ],
+            "instance": {
+              "domain": "brix",
+              "refId": "q1",
+              "type": "ref"
+            }
+          }
+        ]
+      }
+    ]
+  }
+}

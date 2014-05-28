@@ -1,0 +1,191 @@
+{
+  "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope",
+  "@type": "Envelope",
+  "metadata": {
+    "bookTitle": "American Stories: A History of the United States, Combined Volume",
+    "keywords": [
+      "Brands 3e",
+      "Ch22",
+      "Alick"
+    ],
+    "extendedMetadata": [
+      {
+        "name": "ISBN",
+        "value": "013379461X"
+      },
+      {
+        "name": "M",
+        "value": "m03"
+      },
+      {
+        "name": "assessment_title",
+        "value": "Quiz: Conflict in the Workplace"
+      },
+      {
+        "name": "Topic",
+        "value": "Conflict in the Workplace"
+      },
+      {
+        "name": "chapterTitle",
+        "value": "The Progressive Era 1895â1917"
+      },
+      {
+        "name": "module",
+        "value": "Conflict in the Workplace"
+      },
+      {
+        "name": "item_title",
+        "value": "013379461X_H. W. Brands; T. H. Breen; R. Hal Williams; Ariela J. Gros_ch22_m03_q0006"
+      },
+      {
+        "name": "questionlayout",
+        "value": "1"
+      },
+      {
+        "name": "CH",
+        "value": "22"
+      },
+      {
+        "name": "Objective",
+        "value": "22.3"
+      },
+      {
+        "name": "shuffle_choices",
+        "value": "Yes"
+      }
+    ],
+    "subject": [
+      "US History"
+    ],
+    "contentTypeTier2": [
+      "AssignmentItem"
+    ],
+    "contentTypeTier1": "Assessment",
+    "format": [
+      "application/vnd.pearson.sanvan.v1.activity"
+    ],
+    "version": "1.0",
+    "guid": "85a22b13-ff55-4aae-b002-335625f6b326",
+    "bookAuthor": "H. W. Brands; T. H. Breen; R. Hal Williams; Ariela J. Gros",
+    "title": "POST 22 17",
+    "educationalAlignment": [
+      "http://purl.org/pearson/objectives/183725473384362"
+    ]
+  },
+  "body": {
+    "description": "POST_22_17",
+    "containerConfig": [
+      {
+        "description": "POST_22_17",
+        "containerId": "target1",
+        "brixConfig": [
+          {
+            "bricId": "q1",
+            "bricType": "MultipleChoiceQuestion",
+            "config": {
+              "id": "QUE61315",
+              "question": "Margaret Dreier Robins was partially responsible for establishing which workers’ organization?\n\u003cbr /\u003e",
+              "order": "randomized",
+              "presenterType": "RadioGroup",
+              "presenterConfig": {
+                "numberFormat": "none"
+              },
+              "choices": [
+                {
+                  "answerKey": "answer_1",
+                  "content": "Women’s Trade Union League"
+                },
+                {
+                  "answerKey": "answer_2",
+                  "content": "American Federation of Labor"
+                },
+                {
+                  "answerKey": "answer_3",
+                  "content": "International Workers of the World"
+                },
+                {
+                  "answerKey": "answer_4",
+                  "content": "NAACP"
+                }
+              ]
+            },
+            "answerKey": {
+              "assessmentType": "multiplechoice",
+              "answers": {
+                "answer_3": {
+                  "score": 0.0,
+                  "response": "Robins helped found the Women’s Trade Union League in 1903. The WTUL led the effort to organize women into trade unions, lobby for legislation protecting female workers, and educate the public on the problems and needs of working women."
+                },
+                "answer_2": {
+                  "score": 0.0,
+                  "response": "Robins helped found the Women’s Trade Union League in 1903. The WTUL led the effort to organize women into trade unions, lobby for legislation protecting female workers, and educate the public on the problems and needs of working women."
+                },
+                "answer_1": {
+                  "score": 1.0,
+                  "response": "Robins helped found the Women’s Trade Union League in 1903. The WTUL led the effort to organize women into trade unions, lobby for legislation protecting female workers, and educate the public on the problems and needs of working women."
+                },
+                "answer_4": {
+                  "score": 0.0,
+                  "response": "Robins helped found the Women’s Trade Union League in 1903. The WTUL led the effort to organize women into trade unions, lobby for legislation protecting female workers, and educate the public on the problems and needs of working women."
+                }
+              }
+            },
+            "configFixup": [
+              {
+                "name": "questionId",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "sequenceNodeKey",
+                  "type": "ref"
+                }
+              },
+              {
+                "name": "maxAttempts",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "maxAttempts",
+                  "type": "ref"
+                }
+              }
+            ]
+          }
+        ],
+        "hookupActions": [
+          {
+            "description": "Hookup the submit manager to evaluate answers",
+            "methodName": "handleRequestsFrom",
+            "type": "method-call",
+            "args": [
+              {
+                "domain": "brix",
+                "refId": "q1",
+                "type": "ref"
+              }
+            ],
+            "instance": {
+              "type": "submit-manager"
+            }
+          },
+          {
+            "description": "Draw the question",
+            "methodName": "draw",
+            "type": "method-call",
+            "args": [
+              {
+                "selector": "#target1",
+                "type": "d3select"
+              }
+            ],
+            "instance": {
+              "domain": "brix",
+              "refId": "q1",
+              "type": "ref"
+            }
+          }
+        ]
+      }
+    ]
+  }
+}

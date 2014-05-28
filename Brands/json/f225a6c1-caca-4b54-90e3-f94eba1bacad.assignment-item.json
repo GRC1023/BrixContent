@@ -1,0 +1,191 @@
+{
+  "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope",
+  "@type": "Envelope",
+  "metadata": {
+    "bookTitle": "American Stories: A History of the United States, Combined Volume",
+    "keywords": [
+      "Brands 3e",
+      "Ch08",
+      "Alick"
+    ],
+    "extendedMetadata": [
+      {
+        "name": "ISBN",
+        "value": "013379461X"
+      },
+      {
+        "name": "M",
+        "value": "m02"
+      },
+      {
+        "name": "assessment_title",
+        "value": "Quiz: Jefferson as President"
+      },
+      {
+        "name": "Topic",
+        "value": "Jefferson as President"
+      },
+      {
+        "name": "chapterTitle",
+        "value": "Republican Ascendancy: The Jeffersonian Vision 1800â1814"
+      },
+      {
+        "name": "module",
+        "value": "Jefferson as President"
+      },
+      {
+        "name": "item_title",
+        "value": "013379461X_H. W. Brands; T. H. Breen; R. Hal Williams; Ariela J. Gros_ch08_m02_q0002"
+      },
+      {
+        "name": "questionlayout",
+        "value": "1"
+      },
+      {
+        "name": "CH",
+        "value": "8"
+      },
+      {
+        "name": "Objective",
+        "value": "LO: 8.2: How did practical politics challenge Jeffersonâs political principles?"
+      },
+      {
+        "name": "shuffle_choices",
+        "value": "Yes"
+      }
+    ],
+    "subject": [
+      "US History"
+    ],
+    "contentTypeTier2": [
+      "AssignmentItem"
+    ],
+    "contentTypeTier1": "Assessment",
+    "format": [
+      "application/vnd.pearson.sanvan.v1.activity"
+    ],
+    "version": "1.0",
+    "guid": "f225a6c1-caca-4b54-90e3-f94eba1bacad",
+    "bookAuthor": "H. W. Brands; T. H. Breen; R. Hal Williams; Ariela J. Gros",
+    "title": "POST 08 02",
+    "educationalAlignment": [
+      "http://purl.org/pearson/objectives/183725473384362"
+    ]
+  },
+  "body": {
+    "description": "POST_08_02",
+    "containerConfig": [
+      {
+        "description": "POST_08_02",
+        "containerId": "target1",
+        "brixConfig": [
+          {
+            "bricId": "q1",
+            "bricType": "MultipleChoiceQuestion",
+            "config": {
+              "id": "QUE60896",
+              "question": "John Adams’s midnight appointees were typical of which of these?\n\u003cbr /\u003e",
+              "order": "randomized",
+              "presenterType": "RadioGroup",
+              "presenterConfig": {
+                "numberFormat": "none"
+              },
+              "choices": [
+                {
+                  "answerKey": "answer_1",
+                  "content": "the spoils system"
+                },
+                {
+                  "answerKey": "answer_2",
+                  "content": "Republican politicians"
+                },
+                {
+                  "answerKey": "answer_3",
+                  "content": "Federalist politicians"
+                },
+                {
+                  "answerKey": "answer_4",
+                  "content": "sectional disputes"
+                }
+              ]
+            },
+            "answerKey": {
+              "assessmentType": "multiplechoice",
+              "answers": {
+                "answer_3": {
+                  "score": 0.0,
+                  "response": "Political patronage was a burden for the new president. Although he controlled several hundred jobs, he refused to dismiss all the Federalists. Nevertheless, he acted quickly to remove the so-called midnight appointees, partisan selections that Adams had made after Jefferson’s election. To transform federal hiring into an undisciplined spoils system, especially at the highest levels of the federal bureaucracy, seemed to Jefferson to be shortsighted."
+                },
+                "answer_2": {
+                  "score": 0.0,
+                  "response": "Political patronage was a burden for the new president. Although he controlled several hundred jobs, he refused to dismiss all the Federalists. Nevertheless, he acted quickly to remove the so-called midnight appointees, partisan selections that Adams had made after Jefferson’s election. To transform federal hiring into an undisciplined spoils system, especially at the highest levels of the federal bureaucracy, seemed to Jefferson to be shortsighted."
+                },
+                "answer_1": {
+                  "score": 1.0,
+                  "response": "Political patronage was a burden for the new president. Although he controlled several hundred jobs, he refused to dismiss all the Federalists. Nevertheless, he acted quickly to remove the so-called midnight appointees, partisan selections that Adams had made after Jefferson’s election. To transform federal hiring into an undisciplined spoils system, especially at the highest levels of the federal bureaucracy, seemed to Jefferson to be shortsighted."
+                },
+                "answer_4": {
+                  "score": 0.0,
+                  "response": "Political patronage was a burden for the new president. Although he controlled several hundred jobs, he refused to dismiss all the Federalists. Nevertheless, he acted quickly to remove the so-called midnight appointees, partisan selections that Adams had made after Jefferson’s election. To transform federal hiring into an undisciplined spoils system, especially at the highest levels of the federal bureaucracy, seemed to Jefferson to be shortsighted."
+                }
+              }
+            },
+            "configFixup": [
+              {
+                "name": "questionId",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "sequenceNodeKey",
+                  "type": "ref"
+                }
+              },
+              {
+                "name": "maxAttempts",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "maxAttempts",
+                  "type": "ref"
+                }
+              }
+            ]
+          }
+        ],
+        "hookupActions": [
+          {
+            "description": "Hookup the submit manager to evaluate answers",
+            "methodName": "handleRequestsFrom",
+            "type": "method-call",
+            "args": [
+              {
+                "domain": "brix",
+                "refId": "q1",
+                "type": "ref"
+              }
+            ],
+            "instance": {
+              "type": "submit-manager"
+            }
+          },
+          {
+            "description": "Draw the question",
+            "methodName": "draw",
+            "type": "method-call",
+            "args": [
+              {
+                "selector": "#target1",
+                "type": "d3select"
+              }
+            ],
+            "instance": {
+              "domain": "brix",
+              "refId": "q1",
+              "type": "ref"
+            }
+          }
+        ]
+      }
+    ]
+  }
+}

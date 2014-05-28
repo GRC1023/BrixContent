@@ -1,0 +1,187 @@
+{
+  "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope",
+  "@type": "Envelope",
+  "metadata": {
+    "bookTitle": "American Stories: A History of the United States, Combined Volume",
+    "keywords": [
+      "Brands 3e",
+      "Ch16",
+      "Alick"
+    ],
+    "extendedMetadata": [
+      {
+        "name": "ISBN",
+        "value": "013379461X"
+      },
+      {
+        "name": "M",
+        "value": "c01"
+      },
+      {
+        "name": "assessment_title",
+        "value": "Chapter Quiz: The Agony of Reconstruction 1865â1877"
+      },
+      {
+        "name": "Topic",
+        "value": "The President Versus Congress"
+      },
+      {
+        "name": "chapterTitle",
+        "value": "The Agony of Reconstruction 1865â1877"
+      },
+      {
+        "name": "item_title",
+        "value": "013379461X_H. W. Brands; T. H. Breen; R. Hal Williams; Ariela J. Gros_ch16_c01_q0008"
+      },
+      {
+        "name": "questionlayout",
+        "value": "1"
+      },
+      {
+        "name": "CH",
+        "value": "16"
+      },
+      {
+        "name": "Objective",
+        "value": "LO: 16.1: What conflicts arose consecutively involving President Lincoln and then President Johnson and Congress during Reconstruction?"
+      },
+      {
+        "name": "shuffle_choices",
+        "value": "Yes"
+      }
+    ],
+    "subject": [
+      "US History"
+    ],
+    "contentTypeTier2": [
+      "AssignmentItem"
+    ],
+    "contentTypeTier1": "Assessment",
+    "format": [
+      "application/vnd.pearson.sanvan.v1.activity"
+    ],
+    "version": "1.0",
+    "guid": "3e5293fb-8fff-4633-8c8a-d21f560dc761",
+    "bookAuthor": "H. W. Brands; T. H. Breen; R. Hal Williams; Ariela J. Gros",
+    "title": "FA Understand 16 02",
+    "educationalAlignment": [
+      "http://purl.org/pearson/objectives/183725473384362"
+    ]
+  },
+  "body": {
+    "description": "FA_Understand_16_02",
+    "containerConfig": [
+      {
+        "description": "FA_Understand_16_02",
+        "containerId": "target1",
+        "brixConfig": [
+          {
+            "bricId": "q1",
+            "bricType": "MultipleChoiceQuestion",
+            "config": {
+              "id": "QUE61110",
+              "question": "Which of the following prompted the impeachment of President Johnson?\n\u003cbr /\u003e",
+              "order": "randomized",
+              "presenterType": "RadioGroup",
+              "presenterConfig": {
+                "numberFormat": "none"
+              },
+              "choices": [
+                {
+                  "answerKey": "answer_1",
+                  "content": "unilateral action by Johnson to reorganize the South into five military districts"
+                },
+                {
+                  "answerKey": "answer_2",
+                  "content": "use of the Fourteenth and Fifteenth Amendments as the basis for readmission to the Union"
+                },
+                {
+                  "answerKey": "answer_3",
+                  "content": "vetoing the Civil Rights Act of 1866"
+                },
+                {
+                  "answerKey": "answer_4",
+                  "content": "removal of Edwin Stanton from the post of head of the War Department"
+                }
+              ]
+            },
+            "answerKey": {
+              "assessmentType": "multiplechoice",
+              "answers": {
+                "answer_3": {
+                  "score": 0.0,
+                  "response": "Consider This: President Johnson objected to the Tenure of Office Act, claiming that the restrictions violated the constitutional doctrine of the separation of powers. In 1867, action taken by President Johnson was considered to have violated that very act. See L.O. 16.1 What conflicts arose consecutively involving President Lincoln and then President Johnson and Congress during Reconstruction?"
+                },
+                "answer_2": {
+                  "score": 0.0,
+                  "response": "Consider This: President Johnson objected to the Tenure of Office Act, claiming that the restrictions violated the constitutional doctrine of the separation of powers. In 1867, action taken by President Johnson was considered to have violated that very act. See L.O. 16.1 What conflicts arose consecutively involving President Lincoln and then President Johnson and Congress during Reconstruction?"
+                },
+                "answer_1": {
+                  "score": 0.0,
+                  "response": "Consider This: President Johnson objected to the Tenure of Office Act, claiming that the restrictions violated the constitutional doctrine of the separation of powers. In 1867, action taken by President Johnson was considered to have violated that very act. See L.O. 16.1 What conflicts arose consecutively involving President Lincoln and then President Johnson and Congress during Reconstruction?"
+                },
+                "answer_4": {
+                  "score": 1.0,
+                  "response": ""
+                }
+              }
+            },
+            "configFixup": [
+              {
+                "name": "questionId",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "sequenceNodeKey",
+                  "type": "ref"
+                }
+              },
+              {
+                "name": "maxAttempts",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "maxAttempts",
+                  "type": "ref"
+                }
+              }
+            ]
+          }
+        ],
+        "hookupActions": [
+          {
+            "description": "Hookup the submit manager to evaluate answers",
+            "methodName": "handleRequestsFrom",
+            "type": "method-call",
+            "args": [
+              {
+                "domain": "brix",
+                "refId": "q1",
+                "type": "ref"
+              }
+            ],
+            "instance": {
+              "type": "submit-manager"
+            }
+          },
+          {
+            "description": "Draw the question",
+            "methodName": "draw",
+            "type": "method-call",
+            "args": [
+              {
+                "selector": "#target1",
+                "type": "d3select"
+              }
+            ],
+            "instance": {
+              "domain": "brix",
+              "refId": "q1",
+              "type": "ref"
+            }
+          }
+        ]
+      }
+    ]
+  }
+}

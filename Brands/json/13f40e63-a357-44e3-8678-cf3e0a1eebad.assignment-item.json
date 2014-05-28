@@ -1,0 +1,187 @@
+{
+  "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope",
+  "@type": "Envelope",
+  "metadata": {
+    "bookTitle": "American Stories: A History of the United States, Combined Volume",
+    "keywords": [
+      "Brands 3e",
+      "Ch14",
+      "Alick"
+    ],
+    "extendedMetadata": [
+      {
+        "name": "ISBN",
+        "value": "013379461X"
+      },
+      {
+        "name": "M",
+        "value": "c01"
+      },
+      {
+        "name": "assessment_title",
+        "value": "Chapter Quiz: The Sectional Crisis 1846â1861"
+      },
+      {
+        "name": "Topic",
+        "value": "The Compromise of 1850"
+      },
+      {
+        "name": "chapterTitle",
+        "value": "The Sectional Crisis 1846â1861"
+      },
+      {
+        "name": "item_title",
+        "value": "013379461X_H. W. Brands; T. H. Breen; R. Hal Williams; Ariela J. Gros_ch14_c01_q0011"
+      },
+      {
+        "name": "questionlayout",
+        "value": "1"
+      },
+      {
+        "name": "CH",
+        "value": "14"
+      },
+      {
+        "name": "Objective",
+        "value": "LO: 14.1: How did territorial expansion intensify the conflict over slave?"
+      },
+      {
+        "name": "shuffle_choices",
+        "value": "Yes"
+      }
+    ],
+    "subject": [
+      "US History"
+    ],
+    "contentTypeTier2": [
+      "AssignmentItem"
+    ],
+    "contentTypeTier1": "Assessment",
+    "format": [
+      "application/vnd.pearson.sanvan.v1.activity"
+    ],
+    "version": "1.0",
+    "guid": "13f40e63-a357-44e3-8678-cf3e0a1eebad",
+    "bookAuthor": "H. W. Brands; T. H. Breen; R. Hal Williams; Ariela J. Gros",
+    "title": "FA Analyze 14 02 ",
+    "educationalAlignment": [
+      "http://purl.org/pearson/objectives/183725473384362"
+    ]
+  },
+  "body": {
+    "description": "FA_Analyze_14_02",
+    "containerConfig": [
+      {
+        "description": "FA_Analyze_14_02",
+        "containerId": "target1",
+        "brixConfig": [
+          {
+            "bricId": "q1",
+            "bricType": "MultipleChoiceQuestion",
+            "config": {
+              "id": "QUE61064",
+              "question": "In what sense was the Compromise of 1850 a compromise?\n\u003cbr /\u003e",
+              "order": "randomized",
+              "presenterType": "RadioGroup",
+              "presenterConfig": {
+                "numberFormat": "none"
+              },
+              "choices": [
+                {
+                  "answerKey": "answer_1",
+                  "content": "Key provisions were supported by both North and South."
+                },
+                {
+                  "answerKey": "answer_2",
+                  "content": "Both North and South received concessions."
+                },
+                {
+                  "answerKey": "answer_3",
+                  "content": "Southerners and Northerners found common ground in minor, though not key provisions."
+                },
+                {
+                  "answerKey": "answer_4",
+                  "content": "Both North and South agreed on principles, though not details."
+                }
+              ]
+            },
+            "answerKey": {
+              "assessmentType": "multiplechoice",
+              "answers": {
+                "answer_3": {
+                  "score": 0.0,
+                  "response": "Consider This: No single bill was backed by a majority of the congressmen from both sections, and few senators or representatives actually voted for the entire package. The Compromise of 1850 did temporarily restore sectional peace. In southern state elections during 1850–1851, moderate coalitions defeated the radicals who viewed the compromise as a sellout to the North. See L.O. 14.1 How did territorial expansion intensify the conflict over slave?"
+                },
+                "answer_2": {
+                  "score": 1.0,
+                  "response": ""
+                },
+                "answer_1": {
+                  "score": 0.0,
+                  "response": "Consider This: No single bill was backed by a majority of the congressmen from both sections, and few senators or representatives actually voted for the entire package. The Compromise of 1850 did temporarily restore sectional peace. In southern state elections during 1850–1851, moderate coalitions defeated the radicals who viewed the compromise as a sellout to the North. See L.O. 14.1 How did territorial expansion intensify the conflict over slave?"
+                },
+                "answer_4": {
+                  "score": 0.0,
+                  "response": "Consider This: No single bill was backed by a majority of the congressmen from both sections, and few senators or representatives actually voted for the entire package. The Compromise of 1850 did temporarily restore sectional peace. In southern state elections during 1850–1851, moderate coalitions defeated the radicals who viewed the compromise as a sellout to the North. See L.O. 14.1 How did territorial expansion intensify the conflict over slave?"
+                }
+              }
+            },
+            "configFixup": [
+              {
+                "name": "questionId",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "sequenceNodeKey",
+                  "type": "ref"
+                }
+              },
+              {
+                "name": "maxAttempts",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "maxAttempts",
+                  "type": "ref"
+                }
+              }
+            ]
+          }
+        ],
+        "hookupActions": [
+          {
+            "description": "Hookup the submit manager to evaluate answers",
+            "methodName": "handleRequestsFrom",
+            "type": "method-call",
+            "args": [
+              {
+                "domain": "brix",
+                "refId": "q1",
+                "type": "ref"
+              }
+            ],
+            "instance": {
+              "type": "submit-manager"
+            }
+          },
+          {
+            "description": "Draw the question",
+            "methodName": "draw",
+            "type": "method-call",
+            "args": [
+              {
+                "selector": "#target1",
+                "type": "d3select"
+              }
+            ],
+            "instance": {
+              "domain": "brix",
+              "refId": "q1",
+              "type": "ref"
+            }
+          }
+        ]
+      }
+    ]
+  }
+}

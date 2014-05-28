@@ -1,0 +1,191 @@
+{
+  "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope",
+  "@type": "Envelope",
+  "metadata": {
+    "bookTitle": "American Stories: A History of the United States, Combined Volume",
+    "keywords": [
+      "Brands 3e",
+      "Ch27",
+      "Alick"
+    ],
+    "extendedMetadata": [
+      {
+        "name": "ISBN",
+        "value": "013379461X"
+      },
+      {
+        "name": "M",
+        "value": "m02"
+      },
+      {
+        "name": "assessment_title",
+        "value": "Quiz: The Road to War"
+      },
+      {
+        "name": "Topic",
+        "value": "The Road to War"
+      },
+      {
+        "name": "chapterTitle",
+        "value": "America and the World 1921â1945"
+      },
+      {
+        "name": "module",
+        "value": "The Road to War"
+      },
+      {
+        "name": "item_title",
+        "value": "013379461X_H. W. Brands; T. H. Breen; R. Hal Williams; Ariela J. Gros_ch27_m02_q0001"
+      },
+      {
+        "name": "questionlayout",
+        "value": "1"
+      },
+      {
+        "name": "CH",
+        "value": "27"
+      },
+      {
+        "name": "Objective",
+        "value": "27.2"
+      },
+      {
+        "name": "shuffle_choices",
+        "value": "Yes"
+      }
+    ],
+    "subject": [
+      "US History"
+    ],
+    "contentTypeTier2": [
+      "AssignmentItem"
+    ],
+    "contentTypeTier1": "Assessment",
+    "format": [
+      "application/vnd.pearson.sanvan.v1.activity"
+    ],
+    "version": "1.0",
+    "guid": "2f652702-c30b-4ebd-b2ff-d907666bc55f",
+    "bookAuthor": "H. W. Brands; T. H. Breen; R. Hal Williams; Ariela J. Gros",
+    "title": "PRE 27 03",
+    "educationalAlignment": [
+      "http://purl.org/pearson/objectives/183725473384362"
+    ]
+  },
+  "body": {
+    "description": "PRE_27_03",
+    "containerConfig": [
+      {
+        "description": "PRE_27_03",
+        "containerId": "target1",
+        "brixConfig": [
+          {
+            "bricId": "q1",
+            "bricType": "MultipleChoiceQuestion",
+            "config": {
+              "id": "QUE61465",
+              "question": "The initial effort to convince Japan to evacuate China was based primarily on __________.\n\u003cbr /\u003e",
+              "order": "randomized",
+              "presenterType": "RadioGroup",
+              "presenterConfig": {
+                "numberFormat": "none"
+              },
+              "choices": [
+                {
+                  "answerKey": "answer_1",
+                  "content": "economic sanctions"
+                },
+                {
+                  "answerKey": "answer_2",
+                  "content": "naval threats and air raids"
+                },
+                {
+                  "answerKey": "answer_3",
+                  "content": "the U.S.-Soviet connection"
+                },
+                {
+                  "answerKey": "answer_4",
+                  "content": "U.S. control of the Philippines"
+                }
+              ]
+            },
+            "answerKey": {
+              "assessmentType": "multiplechoice",
+              "answers": {
+                "answer_3": {
+                  "score": 0.0,
+                  "response": "Japan had taken advantage of the war in Europe to expand farther in Asia. The Roosevelt administration countered with economic pressure."
+                },
+                "answer_2": {
+                  "score": 0.0,
+                  "response": "Japan had taken advantage of the war in Europe to expand farther in Asia. The Roosevelt administration countered with economic pressure."
+                },
+                "answer_1": {
+                  "score": 1.0,
+                  "response": "Japan had taken advantage of the war in Europe to expand farther in Asia. The Roosevelt administration countered with economic pressure."
+                },
+                "answer_4": {
+                  "score": 0.0,
+                  "response": "Japan had taken advantage of the war in Europe to expand farther in Asia. The Roosevelt administration countered with economic pressure."
+                }
+              }
+            },
+            "configFixup": [
+              {
+                "name": "questionId",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "sequenceNodeKey",
+                  "type": "ref"
+                }
+              },
+              {
+                "name": "maxAttempts",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "maxAttempts",
+                  "type": "ref"
+                }
+              }
+            ]
+          }
+        ],
+        "hookupActions": [
+          {
+            "description": "Hookup the submit manager to evaluate answers",
+            "methodName": "handleRequestsFrom",
+            "type": "method-call",
+            "args": [
+              {
+                "domain": "brix",
+                "refId": "q1",
+                "type": "ref"
+              }
+            ],
+            "instance": {
+              "type": "submit-manager"
+            }
+          },
+          {
+            "description": "Draw the question",
+            "methodName": "draw",
+            "type": "method-call",
+            "args": [
+              {
+                "selector": "#target1",
+                "type": "d3select"
+              }
+            ],
+            "instance": {
+              "domain": "brix",
+              "refId": "q1",
+              "type": "ref"
+            }
+          }
+        ]
+      }
+    ]
+  }
+}

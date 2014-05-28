@@ -1,0 +1,191 @@
+{
+  "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope",
+  "@type": "Envelope",
+  "metadata": {
+    "bookTitle": "American Stories: A History of the United States, Combined Volume",
+    "keywords": [
+      "Brands 3e",
+      "Ch20",
+      "Alick"
+    ],
+    "extendedMetadata": [
+      {
+        "name": "ISBN",
+        "value": "013379461X"
+      },
+      {
+        "name": "M",
+        "value": "m03"
+      },
+      {
+        "name": "assessment_title",
+        "value": "Quiz: The Crisis of the Depression"
+      },
+      {
+        "name": "Topic",
+        "value": "The Crisis of the Depression"
+      },
+      {
+        "name": "chapterTitle",
+        "value": "Political Realignments 1876â1901"
+      },
+      {
+        "name": "module",
+        "value": "The Crisis of the Depression"
+      },
+      {
+        "name": "item_title",
+        "value": "013379461X_H. W. Brands; T. H. Breen; R. Hal Williams; Ariela J. Gros_ch20_m03_q0003"
+      },
+      {
+        "name": "questionlayout",
+        "value": "1"
+      },
+      {
+        "name": "CH",
+        "value": "20"
+      },
+      {
+        "name": "Objective",
+        "value": "LO: 20.3: What were the main political and labor effects of the panic and depression of the 1890s?"
+      },
+      {
+        "name": "shuffle_choices",
+        "value": "Yes"
+      }
+    ],
+    "subject": [
+      "US History"
+    ],
+    "contentTypeTier2": [
+      "AssignmentItem"
+    ],
+    "contentTypeTier1": "Assessment",
+    "format": [
+      "application/vnd.pearson.sanvan.v1.activity"
+    ],
+    "version": "1.0",
+    "guid": "348b16ee-58c2-448f-aa37-d2fc9e9f35bf",
+    "bookAuthor": "H. W. Brands; T. H. Breen; R. Hal Williams; Ariela J. Gros",
+    "title": "POST 20 12",
+    "educationalAlignment": [
+      "http://purl.org/pearson/objectives/183725473384362"
+    ]
+  },
+  "body": {
+    "description": "POST_20_12",
+    "containerConfig": [
+      {
+        "description": "POST_20_12",
+        "containerId": "target1",
+        "brixConfig": [
+          {
+            "bricId": "q1",
+            "bricType": "MultipleChoiceQuestion",
+            "config": {
+              "id": "QUE61237",
+              "question": "Which of the following occurred as a consequence of the Panic of 1893?\n\u003cbr /\u003e",
+              "order": "randomized",
+              "presenterType": "RadioGroup",
+              "presenterConfig": {
+                "numberFormat": "none"
+              },
+              "choices": [
+                {
+                  "answerKey": "answer_1",
+                  "content": "The gross national product declined."
+                },
+                {
+                  "answerKey": "answer_2",
+                  "content": "Unemployment rose to one out of four workers."
+                },
+                {
+                  "answerKey": "answer_3",
+                  "content": "There was nationwide demand for a gold standard."
+                },
+                {
+                  "answerKey": "answer_4",
+                  "content": "The Sherman Silver Purchase Act was implemented."
+                }
+              ]
+            },
+            "answerKey": {
+              "assessmentType": "multiplechoice",
+              "answers": {
+                "answer_3": {
+                  "score": 0.0,
+                  "response": "In May of 1893, businesses failed at an average rate of two dozen a day. An estimated 2 million people, or nearly 15 percent of the labor force, were unemployed. The year 1894 was even worse. The gross national product dropped again. By midyear, 3 million workers, one out of every five, were unemployed."
+                },
+                "answer_2": {
+                  "score": 0.0,
+                  "response": "In May of 1893, businesses failed at an average rate of two dozen a day. An estimated 2 million people, or nearly 15 percent of the labor force, were unemployed. The year 1894 was even worse. The gross national product dropped again. By midyear, 3 million workers, one out of every five, were unemployed."
+                },
+                "answer_1": {
+                  "score": 1.0,
+                  "response": "In May of 1893, businesses failed at an average rate of two dozen a day. An estimated 2 million people, or nearly 15 percent of the labor force, were unemployed. The year 1894 was even worse. The gross national product dropped again. By midyear, 3 million workers, one out of every five, were unemployed."
+                },
+                "answer_4": {
+                  "score": 0.0,
+                  "response": "In May of 1893, businesses failed at an average rate of two dozen a day. An estimated 2 million people, or nearly 15 percent of the labor force, were unemployed. The year 1894 was even worse. The gross national product dropped again. By midyear, 3 million workers, one out of every five, were unemployed."
+                }
+              }
+            },
+            "configFixup": [
+              {
+                "name": "questionId",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "sequenceNodeKey",
+                  "type": "ref"
+                }
+              },
+              {
+                "name": "maxAttempts",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "maxAttempts",
+                  "type": "ref"
+                }
+              }
+            ]
+          }
+        ],
+        "hookupActions": [
+          {
+            "description": "Hookup the submit manager to evaluate answers",
+            "methodName": "handleRequestsFrom",
+            "type": "method-call",
+            "args": [
+              {
+                "domain": "brix",
+                "refId": "q1",
+                "type": "ref"
+              }
+            ],
+            "instance": {
+              "type": "submit-manager"
+            }
+          },
+          {
+            "description": "Draw the question",
+            "methodName": "draw",
+            "type": "method-call",
+            "args": [
+              {
+                "selector": "#target1",
+                "type": "d3select"
+              }
+            ],
+            "instance": {
+              "domain": "brix",
+              "refId": "q1",
+              "type": "ref"
+            }
+          }
+        ]
+      }
+    ]
+  }
+}

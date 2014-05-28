@@ -1,0 +1,191 @@
+{
+  "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope",
+  "@type": "Envelope",
+  "metadata": {
+    "bookTitle": "American Stories: A History of the United States, Combined Volume",
+    "keywords": [
+      "Brands 3e",
+      "Ch23",
+      "Alick"
+    ],
+    "extendedMetadata": [
+      {
+        "name": "ISBN",
+        "value": "013379461X"
+      },
+      {
+        "name": "M",
+        "value": "m02"
+      },
+      {
+        "name": "assessment_title",
+        "value": "Quiz: Reform in the Cities and States"
+      },
+      {
+        "name": "Topic",
+        "value": "Reform in the Cities and States"
+      },
+      {
+        "name": "chapterTitle",
+        "value": "From Roosevelt to Wilson in the Age of Progressivism 1900â1920"
+      },
+      {
+        "name": "module",
+        "value": "Reform in the Cities and States"
+      },
+      {
+        "name": "item_title",
+        "value": "013379461X_H. W. Brands; T. H. Breen; R. Hal Williams; Ariela J. Gros_ch23_m02_q0003"
+      },
+      {
+        "name": "questionlayout",
+        "value": "1"
+      },
+      {
+        "name": "CH",
+        "value": "23"
+      },
+      {
+        "name": "Objective",
+        "value": "23.2"
+      },
+      {
+        "name": "shuffle_choices",
+        "value": "Yes"
+      }
+    ],
+    "subject": [
+      "US History"
+    ],
+    "contentTypeTier2": [
+      "AssignmentItem"
+    ],
+    "contentTypeTier1": "Assessment",
+    "format": [
+      "application/vnd.pearson.sanvan.v1.activity"
+    ],
+    "version": "1.0",
+    "guid": "2548d3e9-f946-4abb-bb79-d06440b889dd",
+    "bookAuthor": "H. W. Brands; T. H. Breen; R. Hal Williams; Ariela J. Gros",
+    "title": "POST 23 10",
+    "educationalAlignment": [
+      "http://purl.org/pearson/objectives/183725473384362"
+    ]
+  },
+  "body": {
+    "description": "POST_23_10",
+    "containerConfig": [
+      {
+        "description": "POST_23_10",
+        "containerId": "target1",
+        "brixConfig": [
+          {
+            "bricId": "q1",
+            "bricType": "MultipleChoiceQuestion",
+            "config": {
+              "id": "QUE61308",
+              "question": "Why did voting show a marked decline after the Civil War?\n\u003cbr /\u003e",
+              "order": "randomized",
+              "presenterType": "RadioGroup",
+              "presenterConfig": {
+                "numberFormat": "none"
+              },
+              "choices": [
+                {
+                  "answerKey": "answer_1",
+                  "content": "People found alternate avenues to achieve their objectives."
+                },
+                {
+                  "answerKey": "answer_2",
+                  "content": "People lost faith in the ability of society to undergo change."
+                },
+                {
+                  "answerKey": "answer_3",
+                  "content": "State governments started charging a fee for political participation."
+                },
+                {
+                  "answerKey": "answer_4",
+                  "content": "The federal government made all elections indirect."
+                }
+              ]
+            },
+            "answerKey": {
+              "assessmentType": "multiplechoice",
+              "answers": {
+                "answer_3": {
+                  "score": 0.0,
+                  "response": "As one sign of change, fewer and fewer people were going to the polls. Voter turnout dropped dramatically after 1900, when the intense partisanship of the decades after the Civil War gave way to media-oriented political campaigns based largely on the candidates’ personalities. From 1876 to 1900, the average turnout in presidential elections was 77 percent. From 1900 to 1916, it was 65 percent. In the 1920s, it dropped to 52 percent, close to the average today."
+                },
+                "answer_2": {
+                  "score": 0.0,
+                  "response": "As one sign of change, fewer and fewer people were going to the polls. Voter turnout dropped dramatically after 1900, when the intense partisanship of the decades after the Civil War gave way to media-oriented political campaigns based largely on the candidates’ personalities. From 1876 to 1900, the average turnout in presidential elections was 77 percent. From 1900 to 1916, it was 65 percent. In the 1920s, it dropped to 52 percent, close to the average today."
+                },
+                "answer_1": {
+                  "score": 1.0,
+                  "response": "As one sign of change, fewer and fewer people were going to the polls. Voter turnout dropped dramatically after 1900, when the intense partisanship of the decades after the Civil War gave way to media-oriented political campaigns based largely on the candidates’ personalities. From 1876 to 1900, the average turnout in presidential elections was 77 percent. From 1900 to 1916, it was 65 percent. In the 1920s, it dropped to 52 percent, close to the average today."
+                },
+                "answer_4": {
+                  "score": 0.0,
+                  "response": "As one sign of change, fewer and fewer people were going to the polls. Voter turnout dropped dramatically after 1900, when the intense partisanship of the decades after the Civil War gave way to media-oriented political campaigns based largely on the candidates’ personalities. From 1876 to 1900, the average turnout in presidential elections was 77 percent. From 1900 to 1916, it was 65 percent. In the 1920s, it dropped to 52 percent, close to the average today."
+                }
+              }
+            },
+            "configFixup": [
+              {
+                "name": "questionId",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "sequenceNodeKey",
+                  "type": "ref"
+                }
+              },
+              {
+                "name": "maxAttempts",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "maxAttempts",
+                  "type": "ref"
+                }
+              }
+            ]
+          }
+        ],
+        "hookupActions": [
+          {
+            "description": "Hookup the submit manager to evaluate answers",
+            "methodName": "handleRequestsFrom",
+            "type": "method-call",
+            "args": [
+              {
+                "domain": "brix",
+                "refId": "q1",
+                "type": "ref"
+              }
+            ],
+            "instance": {
+              "type": "submit-manager"
+            }
+          },
+          {
+            "description": "Draw the question",
+            "methodName": "draw",
+            "type": "method-call",
+            "args": [
+              {
+                "selector": "#target1",
+                "type": "d3select"
+              }
+            ],
+            "instance": {
+              "domain": "brix",
+              "refId": "q1",
+              "type": "ref"
+            }
+          }
+        ]
+      }
+    ]
+  }
+}

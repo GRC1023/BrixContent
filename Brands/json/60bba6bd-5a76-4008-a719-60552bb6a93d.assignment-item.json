@@ -1,0 +1,187 @@
+{
+  "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope",
+  "@type": "Envelope",
+  "metadata": {
+    "bookTitle": "American Stories: A History of the United States, Combined Volume",
+    "keywords": [
+      "Brands 3e",
+      "Ch14",
+      "Alick"
+    ],
+    "extendedMetadata": [
+      {
+        "name": "ISBN",
+        "value": "013379461X"
+      },
+      {
+        "name": "M",
+        "value": "c01"
+      },
+      {
+        "name": "assessment_title",
+        "value": "Chapter Quiz: The Sectional Crisis 1846â1861"
+      },
+      {
+        "name": "Topic",
+        "value": "The Compromise of 1850"
+      },
+      {
+        "name": "chapterTitle",
+        "value": "The Sectional Crisis 1846â1861"
+      },
+      {
+        "name": "item_title",
+        "value": "013379461X_H. W. Brands; T. H. Breen; R. Hal Williams; Ariela J. Gros_ch14_c01_q0003"
+      },
+      {
+        "name": "questionlayout",
+        "value": "1"
+      },
+      {
+        "name": "CH",
+        "value": "14"
+      },
+      {
+        "name": "Objective",
+        "value": "LO: 14.1: How did territorial expansion intensify the conflict over slave?"
+      },
+      {
+        "name": "shuffle_choices",
+        "value": "Yes"
+      }
+    ],
+    "subject": [
+      "US History"
+    ],
+    "contentTypeTier2": [
+      "AssignmentItem"
+    ],
+    "contentTypeTier1": "Assessment",
+    "format": [
+      "application/vnd.pearson.sanvan.v1.activity"
+    ],
+    "version": "1.0",
+    "guid": "60bba6bd-5a76-4008-a719-60552bb6a93d",
+    "bookAuthor": "H. W. Brands; T. H. Breen; R. Hal Williams; Ariela J. Gros",
+    "title": "FA Remember 14 01",
+    "educationalAlignment": [
+      "http://purl.org/pearson/objectives/183725473384362"
+    ]
+  },
+  "body": {
+    "description": "FA_Remember_14_01",
+    "containerConfig": [
+      {
+        "description": "FA_Remember_14_01",
+        "containerId": "target1",
+        "brixConfig": [
+          {
+            "bricId": "q1",
+            "bricType": "MultipleChoiceQuestion",
+            "config": {
+              "id": "QUE61054",
+              "question": "During the 1840s, how did the majority of antislavery Northerners feel about abolitionism?\n\u003cbr /\u003e",
+              "order": "randomized",
+              "presenterType": "RadioGroup",
+              "presenterConfig": {
+                "numberFormat": "none"
+              },
+              "choices": [
+                {
+                  "answerKey": "answer_1",
+                  "content": "They saw it as a moral obligation."
+                },
+                {
+                  "answerKey": "answer_2",
+                  "content": "They opposed it."
+                },
+                {
+                  "answerKey": "answer_3",
+                  "content": "They saw it as integral to the American system of equal rights."
+                },
+                {
+                  "answerKey": "answer_4",
+                  "content": "They supported it on principle but not in their voting patterns."
+                }
+              ]
+            },
+            "answerKey": {
+              "assessmentType": "multiplechoice",
+              "answers": {
+                "answer_3": {
+                  "score": 0.0,
+                  "response": "Consider This: Northerners saw no legal or desirable way to bring about emancipation of blacks within the southern states. They were inclined to view slavery as a backward and unwholesome institution, much inferior to their own free-labor system, and could be persuaded that slaveholders were power-hungry aristocrats seeking more than their share of national political influence. See L.O. 14.1 How did territorial expansion intensify the conflict over slave?"
+                },
+                "answer_2": {
+                  "score": 1.0,
+                  "response": ""
+                },
+                "answer_1": {
+                  "score": 0.0,
+                  "response": "Consider This: Northerners saw no legal or desirable way to bring about emancipation of blacks within the southern states. They were inclined to view slavery as a backward and unwholesome institution, much inferior to their own free-labor system, and could be persuaded that slaveholders were power-hungry aristocrats seeking more than their share of national political influence. See L.O. 14.1 How did territorial expansion intensify the conflict over slave?"
+                },
+                "answer_4": {
+                  "score": 0.0,
+                  "response": "Consider This: Northerners saw no legal or desirable way to bring about emancipation of blacks within the southern states. They were inclined to view slavery as a backward and unwholesome institution, much inferior to their own free-labor system, and could be persuaded that slaveholders were power-hungry aristocrats seeking more than their share of national political influence. See L.O. 14.1 How did territorial expansion intensify the conflict over slave?"
+                }
+              }
+            },
+            "configFixup": [
+              {
+                "name": "questionId",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "sequenceNodeKey",
+                  "type": "ref"
+                }
+              },
+              {
+                "name": "maxAttempts",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "maxAttempts",
+                  "type": "ref"
+                }
+              }
+            ]
+          }
+        ],
+        "hookupActions": [
+          {
+            "description": "Hookup the submit manager to evaluate answers",
+            "methodName": "handleRequestsFrom",
+            "type": "method-call",
+            "args": [
+              {
+                "domain": "brix",
+                "refId": "q1",
+                "type": "ref"
+              }
+            ],
+            "instance": {
+              "type": "submit-manager"
+            }
+          },
+          {
+            "description": "Draw the question",
+            "methodName": "draw",
+            "type": "method-call",
+            "args": [
+              {
+                "selector": "#target1",
+                "type": "d3select"
+              }
+            ],
+            "instance": {
+              "domain": "brix",
+              "refId": "q1",
+              "type": "ref"
+            }
+          }
+        ]
+      }
+    ]
+  }
+}

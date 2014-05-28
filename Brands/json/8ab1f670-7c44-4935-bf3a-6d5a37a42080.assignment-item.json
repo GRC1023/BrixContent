@@ -1,0 +1,187 @@
+{
+  "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope",
+  "@type": "Envelope",
+  "metadata": {
+    "bookTitle": "American Stories: A History of the United States, Combined Volume",
+    "keywords": [
+      "Brands 3e",
+      "Ch24",
+      "Alick"
+    ],
+    "extendedMetadata": [
+      {
+        "name": "ISBN",
+        "value": "013379461X"
+      },
+      {
+        "name": "M",
+        "value": "c01"
+      },
+      {
+        "name": "assessment_title",
+        "value": "Chapter Quiz: The Nation at War 1901â1920"
+      },
+      {
+        "name": "Topic",
+        "value": "The Treaty of Versailles"
+      },
+      {
+        "name": "chapterTitle",
+        "value": "The Nation at War 1901â1920"
+      },
+      {
+        "name": "item_title",
+        "value": "013379461X_H. W. Brands; T. H. Breen; R. Hal Williams; Ariela J. Gros_ch24_c01_q0005"
+      },
+      {
+        "name": "questionlayout",
+        "value": "1"
+      },
+      {
+        "name": "CH",
+        "value": "24"
+      },
+      {
+        "name": "Objective",
+        "value": "24.6"
+      },
+      {
+        "name": "shuffle_choices",
+        "value": "Yes"
+      }
+    ],
+    "subject": [
+      "US History"
+    ],
+    "contentTypeTier2": [
+      "AssignmentItem"
+    ],
+    "contentTypeTier1": "Assessment",
+    "format": [
+      "application/vnd.pearson.sanvan.v1.activity"
+    ],
+    "version": "1.0",
+    "guid": "8ab1f670-7c44-4935-bf3a-6d5a37a42080",
+    "bookAuthor": "H. W. Brands; T. H. Breen; R. Hal Williams; Ariela J. Gros",
+    "title": "POST 24 20",
+    "educationalAlignment": [
+      "http://purl.org/pearson/objectives/183725473384362"
+    ]
+  },
+  "body": {
+    "description": "POST_24_20",
+    "containerConfig": [
+      {
+        "description": "POST_24_20",
+        "containerId": "target1",
+        "brixConfig": [
+          {
+            "bricId": "q1",
+            "bricType": "MultipleChoiceQuestion",
+            "config": {
+              "id": "QUE61335",
+              "question": "Why did Wilson bear considerable responsibility for the failure of the United States to join the League of Nations?\n\u003cbr /\u003e",
+              "order": "randomized",
+              "presenterType": "RadioGroup",
+              "presenterConfig": {
+                "numberFormat": "none"
+              },
+              "choices": [
+                {
+                  "answerKey": "answer_1",
+                  "content": "He linked the League too closely to European politics."
+                },
+                {
+                  "answerKey": "answer_2",
+                  "content": "He had agreed that America would pay most of the cost of the League."
+                },
+                {
+                  "answerKey": "answer_3",
+                  "content": "He failed to take the case for the League to the American public."
+                },
+                {
+                  "answerKey": "answer_4",
+                  "content": "He ordered Democratic senators to defeat the pro-League treaty with the Lodge reservations."
+                }
+              ]
+            },
+            "answerKey": {
+              "assessmentType": "multiplechoice",
+              "answers": {
+                "answer_3": {
+                  "score": 0.0,
+                  "response": "Consider This: On November 19, the treaty—with the Lodge reservations—failed, 39 to 55. The defeat brought pleas for compromise, but neither Wilson nor Lodge would back down. See L.O. 24.6 The Treaty of Versailles."
+                },
+                "answer_2": {
+                  "score": 0.0,
+                  "response": "Consider This: On November 19, the treaty—with the Lodge reservations—failed, 39 to 55. The defeat brought pleas for compromise, but neither Wilson nor Lodge would back down. See L.O. 24.6 The Treaty of Versailles."
+                },
+                "answer_1": {
+                  "score": 0.0,
+                  "response": "Consider This: On November 19, the treaty—with the Lodge reservations—failed, 39 to 55. The defeat brought pleas for compromise, but neither Wilson nor Lodge would back down. See L.O. 24.6 The Treaty of Versailles."
+                },
+                "answer_4": {
+                  "score": 1.0,
+                  "response": ""
+                }
+              }
+            },
+            "configFixup": [
+              {
+                "name": "questionId",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "sequenceNodeKey",
+                  "type": "ref"
+                }
+              },
+              {
+                "name": "maxAttempts",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "maxAttempts",
+                  "type": "ref"
+                }
+              }
+            ]
+          }
+        ],
+        "hookupActions": [
+          {
+            "description": "Hookup the submit manager to evaluate answers",
+            "methodName": "handleRequestsFrom",
+            "type": "method-call",
+            "args": [
+              {
+                "domain": "brix",
+                "refId": "q1",
+                "type": "ref"
+              }
+            ],
+            "instance": {
+              "type": "submit-manager"
+            }
+          },
+          {
+            "description": "Draw the question",
+            "methodName": "draw",
+            "type": "method-call",
+            "args": [
+              {
+                "selector": "#target1",
+                "type": "d3select"
+              }
+            ],
+            "instance": {
+              "domain": "brix",
+              "refId": "q1",
+              "type": "ref"
+            }
+          }
+        ]
+      }
+    ]
+  }
+}

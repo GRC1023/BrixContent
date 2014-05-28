@@ -1,0 +1,191 @@
+{
+  "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope",
+  "@type": "Envelope",
+  "metadata": {
+    "bookTitle": "American Stories: A History of the United States, Combined Volume",
+    "keywords": [
+      "Brands 3e",
+      "Ch13",
+      "Alick"
+    ],
+    "extendedMetadata": [
+      {
+        "name": "ISBN",
+        "value": "013379461X"
+      },
+      {
+        "name": "M",
+        "value": "m01"
+      },
+      {
+        "name": "assessment_title",
+        "value": "Quiz: Texas, Manifest Destiny, and the Mexican American War"
+      },
+      {
+        "name": "Topic",
+        "value": "Texas, Manifest Destiny, and the MexicanâAmerican War"
+      },
+      {
+        "name": "chapterTitle",
+        "value": "An Age of Expansionism 1830â1861"
+      },
+      {
+        "name": "module",
+        "value": "Texas, Manifest Destiny, and the Mexican American War"
+      },
+      {
+        "name": "item_title",
+        "value": "013379461X_H. W. Brands; T. H. Breen; R. Hal Williams; Ariela J. Gros_ch13_m01_q0002"
+      },
+      {
+        "name": "questionlayout",
+        "value": "1"
+      },
+      {
+        "name": "CH",
+        "value": "13"
+      },
+      {
+        "name": "Objective",
+        "value": "LO: 13.1: Why did the United States annex Texas and the Southwest?"
+      },
+      {
+        "name": "shuffle_choices",
+        "value": "Yes"
+      }
+    ],
+    "subject": [
+      "US History"
+    ],
+    "contentTypeTier2": [
+      "AssignmentItem"
+    ],
+    "contentTypeTier1": "Assessment",
+    "format": [
+      "application/vnd.pearson.sanvan.v1.activity"
+    ],
+    "version": "1.0",
+    "guid": "1b284017-dd82-426e-bb35-7b869db8923d",
+    "bookAuthor": "H. W. Brands; T. H. Breen; R. Hal Williams; Ariela J. Gros",
+    "title": "PRE 13 07",
+    "educationalAlignment": [
+      "http://purl.org/pearson/objectives/183725473384362"
+    ]
+  },
+  "body": {
+    "description": "PRE_13_07",
+    "containerConfig": [
+      {
+        "description": "PRE_13_07",
+        "containerId": "target1",
+        "brixConfig": [
+          {
+            "bricId": "q1",
+            "bricType": "MultipleChoiceQuestion",
+            "config": {
+              "id": "QUE61704",
+              "question": "What development triggered the 1835 uprising of Texans against their government?\n\u003cbr /\u003e",
+              "order": "randomized",
+              "presenterType": "RadioGroup",
+              "presenterConfig": {
+                "numberFormat": "none"
+              },
+              "choices": [
+                {
+                  "answerKey": "answer_1",
+                  "content": "accession of Santa Anna"
+                },
+                {
+                  "answerKey": "answer_2",
+                  "content": "appointment of a Mexican governor for Texas"
+                },
+                {
+                  "answerKey": "answer_3",
+                  "content": "establishment of four new Mexican garrisons in Texas"
+                },
+                {
+                  "answerKey": "answer_4",
+                  "content": "agreement with Britain to hand over Texas to Britain"
+                }
+              ]
+            },
+            "answerKey": {
+              "assessmentType": "multiplechoice",
+              "answers": {
+                "answer_3": {
+                  "score": 0.0,
+                  "response": "The Texans’ status as “tolerated guests” was threatened in 1834 when General Antonio López de Santa Anna made himself dictator of Mexico and abolished its federal system."
+                },
+                "answer_2": {
+                  "score": 0.0,
+                  "response": "The Texans’ status as “tolerated guests” was threatened in 1834 when General Antonio López de Santa Anna made himself dictator of Mexico and abolished its federal system."
+                },
+                "answer_1": {
+                  "score": 1.0,
+                  "response": "The Texans’ status as “tolerated guests” was threatened in 1834 when General Antonio López de Santa Anna made himself dictator of Mexico and abolished its federal system."
+                },
+                "answer_4": {
+                  "score": 0.0,
+                  "response": "The Texans’ status as “tolerated guests” was threatened in 1834 when General Antonio López de Santa Anna made himself dictator of Mexico and abolished its federal system."
+                }
+              }
+            },
+            "configFixup": [
+              {
+                "name": "questionId",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "sequenceNodeKey",
+                  "type": "ref"
+                }
+              },
+              {
+                "name": "maxAttempts",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "maxAttempts",
+                  "type": "ref"
+                }
+              }
+            ]
+          }
+        ],
+        "hookupActions": [
+          {
+            "description": "Hookup the submit manager to evaluate answers",
+            "methodName": "handleRequestsFrom",
+            "type": "method-call",
+            "args": [
+              {
+                "domain": "brix",
+                "refId": "q1",
+                "type": "ref"
+              }
+            ],
+            "instance": {
+              "type": "submit-manager"
+            }
+          },
+          {
+            "description": "Draw the question",
+            "methodName": "draw",
+            "type": "method-call",
+            "args": [
+              {
+                "selector": "#target1",
+                "type": "d3select"
+              }
+            ],
+            "instance": {
+              "domain": "brix",
+              "refId": "q1",
+              "type": "ref"
+            }
+          }
+        ]
+      }
+    ]
+  }
+}

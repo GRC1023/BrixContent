@@ -1,0 +1,187 @@
+{
+  "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope",
+  "@type": "Envelope",
+  "metadata": {
+    "bookTitle": "American Stories: A History of the United States, Combined Volume",
+    "keywords": [
+      "Brands 3e",
+      "Ch07",
+      "Alick"
+    ],
+    "extendedMetadata": [
+      {
+        "name": "ISBN",
+        "value": "013379461X"
+      },
+      {
+        "name": "M",
+        "value": "c01"
+      },
+      {
+        "name": "assessment_title",
+        "value": "Chapter Quiz: Democracy and Dissent: The Violence of Party Politics 1788â1800"
+      },
+      {
+        "name": "Topic",
+        "value": "Hamiltonâs Plan for Prosperity and Security"
+      },
+      {
+        "name": "chapterTitle",
+        "value": "Democracy and Dissent: The Violence of Party Politics 1788â1800"
+      },
+      {
+        "name": "item_title",
+        "value": "013379461X_H. W. Brands; T. H. Breen; R. Hal Williams; Ariela J. Gros_ch07_c01_q0013"
+      },
+      {
+        "name": "questionlayout",
+        "value": "1"
+      },
+      {
+        "name": "CH",
+        "value": "7"
+      },
+      {
+        "name": "Objective",
+        "value": "LO: 7.2: Why did many Americans oppose Alexander Hamiltonâs blueprint for national prosperity?,"
+      },
+      {
+        "name": "shuffle_choices",
+        "value": "Yes"
+      }
+    ],
+    "subject": [
+      "US History"
+    ],
+    "contentTypeTier2": [
+      "AssignmentItem"
+    ],
+    "contentTypeTier1": "Assessment",
+    "format": [
+      "application/vnd.pearson.sanvan.v1.activity"
+    ],
+    "version": "1.0",
+    "guid": "4a53a746-f2fd-436d-8498-47fa5f3cddb8",
+    "bookAuthor": "H. W. Brands; T. H. Breen; R. Hal Williams; Ariela J. Gros",
+    "title": "FA Remember 07 02",
+    "educationalAlignment": [
+      "http://purl.org/pearson/objectives/183725473384362"
+    ]
+  },
+  "body": {
+    "description": "FA_Remember_07_02",
+    "containerConfig": [
+      {
+        "description": "FA_Remember_07_02",
+        "containerId": "target1",
+        "brixConfig": [
+          {
+            "bricId": "q1",
+            "bricType": "MultipleChoiceQuestion",
+            "config": {
+              "id": "QUE60835",
+              "question": "Who first articulated the doctrine of the implied powers of the federal government?\n\u003cbr /\u003e",
+              "order": "randomized",
+              "presenterType": "RadioGroup",
+              "presenterConfig": {
+                "numberFormat": "none"
+              },
+              "choices": [
+                {
+                  "answerKey": "answer_1",
+                  "content": "George Washington"
+                },
+                {
+                  "answerKey": "answer_2",
+                  "content": "Alexander Hamilton"
+                },
+                {
+                  "answerKey": "answer_3",
+                  "content": "Thomas Jefferson"
+                },
+                {
+                  "answerKey": "answer_4",
+                  "content": "Henry Knox"
+                }
+              ]
+            },
+            "answerKey": {
+              "assessmentType": "multiplechoice",
+              "answers": {
+                "answer_3": {
+                  "score": 0.0,
+                  "response": "Consider This: The idea of implied powers first came up when Washington asked for an opinion on the constitutionality of the national bank. Washington signed the bank act into law after he became convinced that it followed a loose interpretation of the Constitution. See L.O. 7.2 Why did many Americans oppose Alexander Hamilton’s blueprint for national prosperity?"
+                },
+                "answer_2": {
+                  "score": 1.0,
+                  "response": ""
+                },
+                "answer_1": {
+                  "score": 0.0,
+                  "response": "Consider This: The idea of implied powers first came up when Washington asked for an opinion on the constitutionality of the national bank. Washington signed the bank act into law after he became convinced that it followed a loose interpretation of the Constitution. See L.O. 7.2 Why did many Americans oppose Alexander Hamilton’s blueprint for national prosperity?"
+                },
+                "answer_4": {
+                  "score": 0.0,
+                  "response": "Consider This: The idea of implied powers first came up when Washington asked for an opinion on the constitutionality of the national bank. Washington signed the bank act into law after he became convinced that it followed a loose interpretation of the Constitution. See L.O. 7.2 Why did many Americans oppose Alexander Hamilton’s blueprint for national prosperity?"
+                }
+              }
+            },
+            "configFixup": [
+              {
+                "name": "questionId",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "sequenceNodeKey",
+                  "type": "ref"
+                }
+              },
+              {
+                "name": "maxAttempts",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "maxAttempts",
+                  "type": "ref"
+                }
+              }
+            ]
+          }
+        ],
+        "hookupActions": [
+          {
+            "description": "Hookup the submit manager to evaluate answers",
+            "methodName": "handleRequestsFrom",
+            "type": "method-call",
+            "args": [
+              {
+                "domain": "brix",
+                "refId": "q1",
+                "type": "ref"
+              }
+            ],
+            "instance": {
+              "type": "submit-manager"
+            }
+          },
+          {
+            "description": "Draw the question",
+            "methodName": "draw",
+            "type": "method-call",
+            "args": [
+              {
+                "selector": "#target1",
+                "type": "d3select"
+              }
+            ],
+            "instance": {
+              "domain": "brix",
+              "refId": "q1",
+              "type": "ref"
+            }
+          }
+        ]
+      }
+    ]
+  }
+}

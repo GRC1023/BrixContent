@@ -1,0 +1,191 @@
+{
+  "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope",
+  "@type": "Envelope",
+  "metadata": {
+    "bookTitle": "American Stories: A History of the United States, Combined Volume",
+    "keywords": [
+      "Brands 3e",
+      "Ch25",
+      "Alick"
+    ],
+    "extendedMetadata": [
+      {
+        "name": "ISBN",
+        "value": "013379461X"
+      },
+      {
+        "name": "M",
+        "value": "m03"
+      },
+      {
+        "name": "assessment_title",
+        "value": "Quiz: The Conservative Counterattack"
+      },
+      {
+        "name": "Topic",
+        "value": "The Conservative Counterattack"
+      },
+      {
+        "name": "chapterTitle",
+        "value": "Transition to Modern America 1919â1928"
+      },
+      {
+        "name": "module",
+        "value": "The Conservative Counterattack"
+      },
+      {
+        "name": "item_title",
+        "value": "013379461X_H. W. Brands; T. H. Breen; R. Hal Williams; Ariela J. Gros_ch25_m03_q0006"
+      },
+      {
+        "name": "questionlayout",
+        "value": "1"
+      },
+      {
+        "name": "CH",
+        "value": "25"
+      },
+      {
+        "name": "Objective",
+        "value": "LO: 25.3: How did conservatives resist the changes of the decade?"
+      },
+      {
+        "name": "shuffle_choices",
+        "value": "Yes"
+      }
+    ],
+    "subject": [
+      "US History"
+    ],
+    "contentTypeTier2": [
+      "AssignmentItem"
+    ],
+    "contentTypeTier1": "Assessment",
+    "format": [
+      "application/vnd.pearson.sanvan.v1.activity"
+    ],
+    "version": "1.0",
+    "guid": "218acb88-8790-4a89-9236-78f9308872f5",
+    "bookAuthor": "H. W. Brands; T. H. Breen; R. Hal Williams; Ariela J. Gros",
+    "title": "POST 25 13",
+    "educationalAlignment": [
+      "http://purl.org/pearson/objectives/183725473384362"
+    ]
+  },
+  "body": {
+    "description": "POST_25_13",
+    "containerConfig": [
+      {
+        "description": "POST_25_13",
+        "containerId": "target1",
+        "brixConfig": [
+          {
+            "bricId": "q1",
+            "bricType": "MultipleChoiceQuestion",
+            "config": {
+              "id": "QUE61401",
+              "question": "What is the most likely reason for the growth of aggressive fundamentalist churches in America during the early twentieth century?\n\u003cbr /\u003e",
+              "order": "randomized",
+              "presenterType": "RadioGroup",
+              "presenterConfig": {
+                "numberFormat": "none"
+              },
+              "choices": [
+                {
+                  "answerKey": "answer_1",
+                  "content": "A large number of Americans felt alienated by the modernization."
+                },
+                {
+                  "answerKey": "answer_2",
+                  "content": "As Americans became more wealthy, they had more time to spend on religious activities."
+                },
+                {
+                  "answerKey": "answer_3",
+                  "content": "Fundamentalist churches were introduced by the growing number of immigrants from Europe."
+                },
+                {
+                  "answerKey": "answer_4",
+                  "content": "A number of scandals had been brought to light within the traditional churches in urban America."
+                }
+              ]
+            },
+            "answerKey": {
+              "assessmentType": "multiplechoice",
+              "answers": {
+                "answer_3": {
+                  "score": 0.0,
+                  "response": "Another significant—and the longest-lasting—challenge to the new urban culture was rooted in the traditional religious beliefs of millions of Americans who felt alienated from city life, science, and much of what modernization entailed."
+                },
+                "answer_2": {
+                  "score": 0.0,
+                  "response": "Another significant—and the longest-lasting—challenge to the new urban culture was rooted in the traditional religious beliefs of millions of Americans who felt alienated from city life, science, and much of what modernization entailed."
+                },
+                "answer_1": {
+                  "score": 1.0,
+                  "response": "Another significant—and the longest-lasting—challenge to the new urban culture was rooted in the traditional religious beliefs of millions of Americans who felt alienated from city life, science, and much of what modernization entailed."
+                },
+                "answer_4": {
+                  "score": 0.0,
+                  "response": "Another significant—and the longest-lasting—challenge to the new urban culture was rooted in the traditional religious beliefs of millions of Americans who felt alienated from city life, science, and much of what modernization entailed."
+                }
+              }
+            },
+            "configFixup": [
+              {
+                "name": "questionId",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "sequenceNodeKey",
+                  "type": "ref"
+                }
+              },
+              {
+                "name": "maxAttempts",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "maxAttempts",
+                  "type": "ref"
+                }
+              }
+            ]
+          }
+        ],
+        "hookupActions": [
+          {
+            "description": "Hookup the submit manager to evaluate answers",
+            "methodName": "handleRequestsFrom",
+            "type": "method-call",
+            "args": [
+              {
+                "domain": "brix",
+                "refId": "q1",
+                "type": "ref"
+              }
+            ],
+            "instance": {
+              "type": "submit-manager"
+            }
+          },
+          {
+            "description": "Draw the question",
+            "methodName": "draw",
+            "type": "method-call",
+            "args": [
+              {
+                "selector": "#target1",
+                "type": "d3select"
+              }
+            ],
+            "instance": {
+              "domain": "brix",
+              "refId": "q1",
+              "type": "ref"
+            }
+          }
+        ]
+      }
+    ]
+  }
+}

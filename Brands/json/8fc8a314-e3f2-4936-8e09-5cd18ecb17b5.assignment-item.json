@@ -1,0 +1,187 @@
+{
+  "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope",
+  "@type": "Envelope",
+  "metadata": {
+    "bookTitle": "American Stories: A History of the United States, Combined Volume",
+    "keywords": [
+      "Brands 3e",
+      "Ch24",
+      "Alick"
+    ],
+    "extendedMetadata": [
+      {
+        "name": "ISBN",
+        "value": "013379461X"
+      },
+      {
+        "name": "M",
+        "value": "c01"
+      },
+      {
+        "name": "assessment_title",
+        "value": "Chapter Quiz: The Nation at War 1901â1920"
+      },
+      {
+        "name": "Topic",
+        "value": "The Treaty of Versailles"
+      },
+      {
+        "name": "chapterTitle",
+        "value": "The Nation at War 1901â1920"
+      },
+      {
+        "name": "item_title",
+        "value": "013379461X_H. W. Brands; T. H. Breen; R. Hal Williams; Ariela J. Gros_ch24_c01_q0015"
+      },
+      {
+        "name": "questionlayout",
+        "value": "1"
+      },
+      {
+        "name": "CH",
+        "value": "24"
+      },
+      {
+        "name": "Objective",
+        "value": "24.6"
+      },
+      {
+        "name": "shuffle_choices",
+        "value": "Yes"
+      }
+    ],
+    "subject": [
+      "US History"
+    ],
+    "contentTypeTier2": [
+      "AssignmentItem"
+    ],
+    "contentTypeTier1": "Assessment",
+    "format": [
+      "application/vnd.pearson.sanvan.v1.activity"
+    ],
+    "version": "1.0",
+    "guid": "8fc8a314-e3f2-4936-8e09-5cd18ecb17b5",
+    "bookAuthor": "H. W. Brands; T. H. Breen; R. Hal Williams; Ariela J. Gros",
+    "title": "FA Analyze 24 05",
+    "educationalAlignment": [
+      "http://purl.org/pearson/objectives/183725473384362"
+    ]
+  },
+  "body": {
+    "description": "FA_Analyze_24_05",
+    "containerConfig": [
+      {
+        "description": "FA_Analyze_24_05",
+        "containerId": "target1",
+        "brixConfig": [
+          {
+            "bricId": "q1",
+            "bricType": "MultipleChoiceQuestion",
+            "config": {
+              "id": "QUE61350",
+              "question": "The capstone “Fourteenth Point” of Wilson’s declaration of war aims called for __________.\n\u003cbr /\u003e",
+              "order": "randomized",
+              "presenterType": "RadioGroup",
+              "presenterConfig": {
+                "numberFormat": "none"
+              },
+              "choices": [
+                {
+                  "answerKey": "answer_1",
+                  "content": "an international organization to guarantee collective security"
+                },
+                {
+                  "answerKey": "answer_2",
+                  "content": "the establishment of parliamentary democracies throughout Europe"
+                },
+                {
+                  "answerKey": "answer_3",
+                  "content": "freedom of travel without restrictions"
+                },
+                {
+                  "answerKey": "answer_4",
+                  "content": "guarantees of basic human rights for all people in the world"
+                }
+              ]
+            },
+            "answerKey": {
+              "assessmentType": "multiplechoice",
+              "answers": {
+                "answer_3": {
+                  "score": 0.0,
+                  "response": "Consider This: Wilson still had to surrender some important principles. Violating the principle of self-determination, the treaty created two new nations—Poland and Czechoslovakia—with large German-speaking populations. It divided up the German colonies in Asia and Africa. Instead of a peace without victory, it made Germany accept responsibility for the war and demanded enormous reparations. See L.O. 24.6 The Treaty of Versailles."
+                },
+                "answer_2": {
+                  "score": 0.0,
+                  "response": "Consider This: Wilson still had to surrender some important principles. Violating the principle of self-determination, the treaty created two new nations—Poland and Czechoslovakia—with large German-speaking populations. It divided up the German colonies in Asia and Africa. Instead of a peace without victory, it made Germany accept responsibility for the war and demanded enormous reparations. See L.O. 24.6 The Treaty of Versailles."
+                },
+                "answer_1": {
+                  "score": 1.0,
+                  "response": ""
+                },
+                "answer_4": {
+                  "score": 0.0,
+                  "response": "Consider This: Wilson still had to surrender some important principles. Violating the principle of self-determination, the treaty created two new nations—Poland and Czechoslovakia—with large German-speaking populations. It divided up the German colonies in Asia and Africa. Instead of a peace without victory, it made Germany accept responsibility for the war and demanded enormous reparations. See L.O. 24.6 The Treaty of Versailles."
+                }
+              }
+            },
+            "configFixup": [
+              {
+                "name": "questionId",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "sequenceNodeKey",
+                  "type": "ref"
+                }
+              },
+              {
+                "name": "maxAttempts",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "maxAttempts",
+                  "type": "ref"
+                }
+              }
+            ]
+          }
+        ],
+        "hookupActions": [
+          {
+            "description": "Hookup the submit manager to evaluate answers",
+            "methodName": "handleRequestsFrom",
+            "type": "method-call",
+            "args": [
+              {
+                "domain": "brix",
+                "refId": "q1",
+                "type": "ref"
+              }
+            ],
+            "instance": {
+              "type": "submit-manager"
+            }
+          },
+          {
+            "description": "Draw the question",
+            "methodName": "draw",
+            "type": "method-call",
+            "args": [
+              {
+                "selector": "#target1",
+                "type": "d3select"
+              }
+            ],
+            "instance": {
+              "domain": "brix",
+              "refId": "q1",
+              "type": "ref"
+            }
+          }
+        ]
+      }
+    ]
+  }
+}

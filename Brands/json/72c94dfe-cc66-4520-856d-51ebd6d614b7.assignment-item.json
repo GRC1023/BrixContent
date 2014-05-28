@@ -1,0 +1,191 @@
+{
+  "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope",
+  "@type": "Envelope",
+  "metadata": {
+    "bookTitle": "American Stories: A History of the United States, Combined Volume",
+    "keywords": [
+      "Brands 3e",
+      "Ch24",
+      "Alick"
+    ],
+    "extendedMetadata": [
+      {
+        "name": "ISBN",
+        "value": "013379461X"
+      },
+      {
+        "name": "M",
+        "value": "m05"
+      },
+      {
+        "name": "assessment_title",
+        "value": "Quiz: Over Here"
+      },
+      {
+        "name": "Topic",
+        "value": "Over Here"
+      },
+      {
+        "name": "chapterTitle",
+        "value": "The Nation at War 1901â1920"
+      },
+      {
+        "name": "module",
+        "value": "Over Here"
+      },
+      {
+        "name": "item_title",
+        "value": "013379461X_H. W. Brands; T. H. Breen; R. Hal Williams; Ariela J. Gros_ch24_m05_q0005"
+      },
+      {
+        "name": "questionlayout",
+        "value": "1"
+      },
+      {
+        "name": "CH",
+        "value": "24"
+      },
+      {
+        "name": "Objective",
+        "value": "24.5"
+      },
+      {
+        "name": "shuffle_choices",
+        "value": "Yes"
+      }
+    ],
+    "subject": [
+      "US History"
+    ],
+    "contentTypeTier2": [
+      "AssignmentItem"
+    ],
+    "contentTypeTier1": "Assessment",
+    "format": [
+      "application/vnd.pearson.sanvan.v1.activity"
+    ],
+    "version": "1.0",
+    "guid": "72c94dfe-cc66-4520-856d-51ebd6d614b7",
+    "bookAuthor": "H. W. Brands; T. H. Breen; R. Hal Williams; Ariela J. Gros",
+    "title": "POST 24 14",
+    "educationalAlignment": [
+      "http://purl.org/pearson/objectives/183725473384362"
+    ]
+  },
+  "body": {
+    "description": "POST_24_14",
+    "containerConfig": [
+      {
+        "description": "POST_24_14",
+        "containerId": "target1",
+        "brixConfig": [
+          {
+            "bricId": "q1",
+            "bricType": "MultipleChoiceQuestion",
+            "config": {
+              "id": "QUE61412",
+              "question": "What was the impact of the war on U.S. labor?\n\u003cbr /\u003e",
+              "order": "randomized",
+              "presenterType": "RadioGroup",
+              "presenterConfig": {
+                "numberFormat": "none"
+              },
+              "choices": [
+                {
+                  "answerKey": "answer_1",
+                  "content": "Their conditions improved as Wilson adopted reformers’ objectives."
+                },
+                {
+                  "answerKey": "answer_2",
+                  "content": "Laborers were required to work longer hours to speed up production."
+                },
+                {
+                  "answerKey": "answer_3",
+                  "content": "The unions temporarily suspended their rights to organize and enroll members."
+                },
+                {
+                  "answerKey": "answer_4",
+                  "content": "Tens of thousands of new European immigrants joined the labor force."
+                }
+              ]
+            },
+            "answerKey": {
+              "assessmentType": "multiplechoice",
+              "answers": {
+                "answer_3": {
+                  "score": 0.0,
+                  "response": "Hoping to encourage production and avoid strikes, Wilson adopted many of the objectives of the social-justice reformers. He supported an eight-hour day in war-related industries and improved wages and working conditions. In May 1918, he named Felix Frankfurter, a brilliant young law professor, to head a new War Labor Board (WLB). The agency standardized wages and hours, and it protected the right of labor to organize and bargain collectively."
+                },
+                "answer_2": {
+                  "score": 0.0,
+                  "response": "Hoping to encourage production and avoid strikes, Wilson adopted many of the objectives of the social-justice reformers. He supported an eight-hour day in war-related industries and improved wages and working conditions. In May 1918, he named Felix Frankfurter, a brilliant young law professor, to head a new War Labor Board (WLB). The agency standardized wages and hours, and it protected the right of labor to organize and bargain collectively."
+                },
+                "answer_1": {
+                  "score": 1.0,
+                  "response": "Hoping to encourage production and avoid strikes, Wilson adopted many of the objectives of the social-justice reformers. He supported an eight-hour day in war-related industries and improved wages and working conditions. In May 1918, he named Felix Frankfurter, a brilliant young law professor, to head a new War Labor Board (WLB). The agency standardized wages and hours, and it protected the right of labor to organize and bargain collectively."
+                },
+                "answer_4": {
+                  "score": 0.0,
+                  "response": "Hoping to encourage production and avoid strikes, Wilson adopted many of the objectives of the social-justice reformers. He supported an eight-hour day in war-related industries and improved wages and working conditions. In May 1918, he named Felix Frankfurter, a brilliant young law professor, to head a new War Labor Board (WLB). The agency standardized wages and hours, and it protected the right of labor to organize and bargain collectively."
+                }
+              }
+            },
+            "configFixup": [
+              {
+                "name": "questionId",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "sequenceNodeKey",
+                  "type": "ref"
+                }
+              },
+              {
+                "name": "maxAttempts",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "maxAttempts",
+                  "type": "ref"
+                }
+              }
+            ]
+          }
+        ],
+        "hookupActions": [
+          {
+            "description": "Hookup the submit manager to evaluate answers",
+            "methodName": "handleRequestsFrom",
+            "type": "method-call",
+            "args": [
+              {
+                "domain": "brix",
+                "refId": "q1",
+                "type": "ref"
+              }
+            ],
+            "instance": {
+              "type": "submit-manager"
+            }
+          },
+          {
+            "description": "Draw the question",
+            "methodName": "draw",
+            "type": "method-call",
+            "args": [
+              {
+                "selector": "#target1",
+                "type": "d3select"
+              }
+            ],
+            "instance": {
+              "domain": "brix",
+              "refId": "q1",
+              "type": "ref"
+            }
+          }
+        ]
+      }
+    ]
+  }
+}

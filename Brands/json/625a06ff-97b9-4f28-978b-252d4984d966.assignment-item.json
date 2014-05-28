@@ -1,0 +1,191 @@
+{
+  "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope",
+  "@type": "Envelope",
+  "metadata": {
+    "bookTitle": "American Stories: A History of the United States, Combined Volume",
+    "keywords": [
+      "Brands 3e",
+      "Ch10",
+      "Alick"
+    ],
+    "extendedMetadata": [
+      {
+        "name": "ISBN",
+        "value": "013379461X"
+      },
+      {
+        "name": "M",
+        "value": "m01"
+      },
+      {
+        "name": "assessment_title",
+        "value": "Quiz: Democracy in Theory and Practice"
+      },
+      {
+        "name": "Topic",
+        "value": "Democracy in Theory and Practice"
+      },
+      {
+        "name": "chapterTitle",
+        "value": "The Triumph of White Menâs Democracy 1824â1840"
+      },
+      {
+        "name": "module",
+        "value": "module   Native Americans Before the Conquest Conditions of Conquest Europe on the Eve of Conquest Spain in the Americas The French Claim Canada The English Take up the Challenge   Decisions to Move to America A âNewâ England in America Diversity in the Middle Colonies Planting the Southern Colonies   Social Stability New England Colonies of the Seventeenth Century The Challenge of The Chesapeake Environment Race and Freedom in British America Blueprint for an Empire Colonial Political Revolts   Tensions in the Backcountry The Impact of European Ideas on American Culture Religious Revivals in Provincial Societies Clash of Political Cultures Century of Imperial War   Structure of Colonial Society Eroding the Bonds of Empire Steps Toward Independence Fighting for Independence   Defining Republican Culture Stumbling Toward a New National Government Have We Fought for This Whose Constitution Struggle for Ratification   Principle and Pragmatism Establishing Hamiltonâs Plan for Prosper"
+      },
+      {
+        "name": "item_title",
+        "value": "013379461X_H. W. Brands; T. H. Breen; R. Hal Williams; Ariela J. Gros_ch10_m01_q0005"
+      },
+      {
+        "name": "questionlayout",
+        "value": "1"
+      },
+      {
+        "name": "CH",
+        "value": "10"
+      },
+      {
+        "name": "Objective",
+        "value": "LO: 10.1: How did the relationship between the government and the people change during this time?"
+      },
+      {
+        "name": "shuffle_choices",
+        "value": "Yes"
+      }
+    ],
+    "subject": [
+      "US History"
+    ],
+    "contentTypeTier2": [
+      "AssignmentItem"
+    ],
+    "contentTypeTier1": "Assessment",
+    "format": [
+      "application/vnd.pearson.sanvan.v1.activity"
+    ],
+    "version": "1.0",
+    "guid": "625a06ff-97b9-4f28-978b-252d4984d966",
+    "bookAuthor": "H. W. Brands; T. H. Breen; R. Hal Williams; Ariela J. Gros",
+    "title": "PRE 10 08",
+    "educationalAlignment": [
+      "http://purl.org/pearson/objectives/183725473384362"
+    ]
+  },
+  "body": {
+    "description": "PRE_10_08",
+    "containerConfig": [
+      {
+        "description": "PRE_10_08",
+        "containerId": "target1",
+        "brixConfig": [
+          {
+            "bricId": "q1",
+            "bricType": "MultipleChoiceQuestion",
+            "config": {
+              "id": "QUE60972",
+              "question": "What did the small farmers in America think would solve the problems of a market economy?\n\u003cbr /\u003e",
+              "order": "randomized",
+              "presenterType": "RadioGroup",
+              "presenterConfig": {
+                "numberFormat": "none"
+              },
+              "choices": [
+                {
+                  "answerKey": "answer_1",
+                  "content": "return to an economy based on cash transactions"
+                },
+                {
+                  "answerKey": "answer_2",
+                  "content": "introduction of paper money to streamline market operations"
+                },
+                {
+                  "answerKey": "answer_3",
+                  "content": "government aid and protection for venture capital"
+                },
+                {
+                  "answerKey": "answer_4",
+                  "content": "availability of easy credit to the people"
+                }
+              ]
+            },
+            "answerKey": {
+              "assessmentType": "multiplechoice",
+              "answers": {
+                "answer_3": {
+                  "score": 0.0,
+                  "response": "No one really knew how to solve the problems of a market economy that went through cycles of boom and bust, but many still thought they had the answer. Small farmers favored a return to a simpler and more “honest” economy without banks, paper money, and the easy credit that encouraged speculation."
+                },
+                "answer_2": {
+                  "score": 0.0,
+                  "response": "No one really knew how to solve the problems of a market economy that went through cycles of boom and bust, but many still thought they had the answer. Small farmers favored a return to a simpler and more “honest” economy without banks, paper money, and the easy credit that encouraged speculation."
+                },
+                "answer_1": {
+                  "score": 1.0,
+                  "response": "No one really knew how to solve the problems of a market economy that went through cycles of boom and bust, but many still thought they had the answer. Small farmers favored a return to a simpler and more “honest” economy without banks, paper money, and the easy credit that encouraged speculation."
+                },
+                "answer_4": {
+                  "score": 0.0,
+                  "response": "No one really knew how to solve the problems of a market economy that went through cycles of boom and bust, but many still thought they had the answer. Small farmers favored a return to a simpler and more “honest” economy without banks, paper money, and the easy credit that encouraged speculation."
+                }
+              }
+            },
+            "configFixup": [
+              {
+                "name": "questionId",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "sequenceNodeKey",
+                  "type": "ref"
+                }
+              },
+              {
+                "name": "maxAttempts",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "maxAttempts",
+                  "type": "ref"
+                }
+              }
+            ]
+          }
+        ],
+        "hookupActions": [
+          {
+            "description": "Hookup the submit manager to evaluate answers",
+            "methodName": "handleRequestsFrom",
+            "type": "method-call",
+            "args": [
+              {
+                "domain": "brix",
+                "refId": "q1",
+                "type": "ref"
+              }
+            ],
+            "instance": {
+              "type": "submit-manager"
+            }
+          },
+          {
+            "description": "Draw the question",
+            "methodName": "draw",
+            "type": "method-call",
+            "args": [
+              {
+                "selector": "#target1",
+                "type": "d3select"
+              }
+            ],
+            "instance": {
+              "domain": "brix",
+              "refId": "q1",
+              "type": "ref"
+            }
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,191 @@
+{
+  "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope",
+  "@type": "Envelope",
+  "metadata": {
+    "bookTitle": "American Stories: A History of the United States, Combined Volume",
+    "keywords": [
+      "Brands 3e",
+      "Ch13",
+      "Alick"
+    ],
+    "extendedMetadata": [
+      {
+        "name": "ISBN",
+        "value": "013379461X"
+      },
+      {
+        "name": "M",
+        "value": "m01"
+      },
+      {
+        "name": "assessment_title",
+        "value": "Quiz: Texas, Manifest Destiny, and the Mexican American War"
+      },
+      {
+        "name": "Topic",
+        "value": "Texas, Manifest Destiny, and the MexicanâAmerican War"
+      },
+      {
+        "name": "chapterTitle",
+        "value": "An Age of Expansionism 1830â1861"
+      },
+      {
+        "name": "module",
+        "value": "Texas, Manifest Destiny, and the Mexican American War"
+      },
+      {
+        "name": "item_title",
+        "value": "013379461X_H. W. Brands; T. H. Breen; R. Hal Williams; Ariela J. Gros_ch13_m01_q0004"
+      },
+      {
+        "name": "questionlayout",
+        "value": "1"
+      },
+      {
+        "name": "CH",
+        "value": "13"
+      },
+      {
+        "name": "Objective",
+        "value": "LO: 13.1: Why did the United States annex Texas and the Southwest?"
+      },
+      {
+        "name": "shuffle_choices",
+        "value": "Yes"
+      }
+    ],
+    "subject": [
+      "US History"
+    ],
+    "contentTypeTier2": [
+      "AssignmentItem"
+    ],
+    "contentTypeTier1": "Assessment",
+    "format": [
+      "application/vnd.pearson.sanvan.v1.activity"
+    ],
+    "version": "1.0",
+    "guid": "5ee855fc-ca33-4ea8-b218-8b30a3976f4e",
+    "bookAuthor": "H. W. Brands; T. H. Breen; R. Hal Williams; Ariela J. Gros",
+    "title": "POST 13 09",
+    "educationalAlignment": [
+      "http://purl.org/pearson/objectives/183725473384362"
+    ]
+  },
+  "body": {
+    "description": "POST_13_09",
+    "containerConfig": [
+      {
+        "description": "POST_13_09",
+        "containerId": "target1",
+        "brixConfig": [
+          {
+            "bricId": "q1",
+            "bricType": "MultipleChoiceQuestion",
+            "config": {
+              "id": "QUE61706",
+              "question": "Which of these made the battle of the Alamo legendary?\n\u003cbr /\u003e",
+              "order": "randomized",
+              "presenterType": "RadioGroup",
+              "presenterConfig": {
+                "numberFormat": "none"
+              },
+              "choices": [
+                {
+                  "answerKey": "answer_1",
+                  "content": "A small band of Anglo rebels were able to fight off the Mexican army."
+                },
+                {
+                  "answerKey": "answer_2",
+                  "content": "It was the last stand of the Mexican army in Texas."
+                },
+                {
+                  "answerKey": "answer_3",
+                  "content": "The Mexican army butchered hundreds of Texan families."
+                },
+                {
+                  "answerKey": "answer_4",
+                  "content": "It directly resulted in the formation of the Lone Star Republic."
+                }
+              ]
+            },
+            "answerKey": {
+              "assessmentType": "multiplechoice",
+              "answers": {
+                "answer_3": {
+                  "score": 0.0,
+                  "response": "Within days after Texas declared itself a republic, rebels and Mexican troops in San Antonio fought the famous battle of the Alamo. Myths about this battle have magnified the Anglo rebels’ valor at the Mexicans’ expense. The folklore is based on fact—only 187 rebels fought off a far larger number of Mexican soldiers for more than a week before capitulating—but not all rebels fought to the death."
+                },
+                "answer_2": {
+                  "score": 0.0,
+                  "response": "Within days after Texas declared itself a republic, rebels and Mexican troops in San Antonio fought the famous battle of the Alamo. Myths about this battle have magnified the Anglo rebels’ valor at the Mexicans’ expense. The folklore is based on fact—only 187 rebels fought off a far larger number of Mexican soldiers for more than a week before capitulating—but not all rebels fought to the death."
+                },
+                "answer_1": {
+                  "score": 1.0,
+                  "response": "Within days after Texas declared itself a republic, rebels and Mexican troops in San Antonio fought the famous battle of the Alamo. Myths about this battle have magnified the Anglo rebels’ valor at the Mexicans’ expense. The folklore is based on fact—only 187 rebels fought off a far larger number of Mexican soldiers for more than a week before capitulating—but not all rebels fought to the death."
+                },
+                "answer_4": {
+                  "score": 0.0,
+                  "response": "Within days after Texas declared itself a republic, rebels and Mexican troops in San Antonio fought the famous battle of the Alamo. Myths about this battle have magnified the Anglo rebels’ valor at the Mexicans’ expense. The folklore is based on fact—only 187 rebels fought off a far larger number of Mexican soldiers for more than a week before capitulating—but not all rebels fought to the death."
+                }
+              }
+            },
+            "configFixup": [
+              {
+                "name": "questionId",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "sequenceNodeKey",
+                  "type": "ref"
+                }
+              },
+              {
+                "name": "maxAttempts",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "maxAttempts",
+                  "type": "ref"
+                }
+              }
+            ]
+          }
+        ],
+        "hookupActions": [
+          {
+            "description": "Hookup the submit manager to evaluate answers",
+            "methodName": "handleRequestsFrom",
+            "type": "method-call",
+            "args": [
+              {
+                "domain": "brix",
+                "refId": "q1",
+                "type": "ref"
+              }
+            ],
+            "instance": {
+              "type": "submit-manager"
+            }
+          },
+          {
+            "description": "Draw the question",
+            "methodName": "draw",
+            "type": "method-call",
+            "args": [
+              {
+                "selector": "#target1",
+                "type": "d3select"
+              }
+            ],
+            "instance": {
+              "domain": "brix",
+              "refId": "q1",
+              "type": "ref"
+            }
+          }
+        ]
+      }
+    ]
+  }
+}

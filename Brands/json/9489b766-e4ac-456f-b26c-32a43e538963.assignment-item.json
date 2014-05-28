@@ -1,0 +1,187 @@
+{
+  "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope",
+  "@type": "Envelope",
+  "metadata": {
+    "bookTitle": "American Stories: A History of the United States, Combined Volume",
+    "keywords": [
+      "Brands 3e",
+      "Ch07",
+      "Alick"
+    ],
+    "extendedMetadata": [
+      {
+        "name": "ISBN",
+        "value": "013379461X"
+      },
+      {
+        "name": "M",
+        "value": "c01"
+      },
+      {
+        "name": "assessment_title",
+        "value": "Chapter Quiz: Democracy and Dissent: The Violence of Party Politics 1788â1800"
+      },
+      {
+        "name": "Topic",
+        "value": "The Adams Presidency: Politics of Mistrust"
+      },
+      {
+        "name": "chapterTitle",
+        "value": "Democracy and Dissent: The Violence of Party Politics 1788â1800"
+      },
+      {
+        "name": "item_title",
+        "value": "013379461X_H. W. Brands; T. H. Breen; R. Hal Williams; Ariela J. Gros_ch07_c01_q0007"
+      },
+      {
+        "name": "questionlayout",
+        "value": "1"
+      },
+      {
+        "name": "CH",
+        "value": "7"
+      },
+      {
+        "name": "Objective",
+        "value": "LO: 7.5: Why were some Federalists willing to sacrifice political freedoms for party advantage?,"
+      },
+      {
+        "name": "shuffle_choices",
+        "value": "Yes"
+      }
+    ],
+    "subject": [
+      "US History"
+    ],
+    "contentTypeTier2": [
+      "AssignmentItem"
+    ],
+    "contentTypeTier1": "Assessment",
+    "format": [
+      "application/vnd.pearson.sanvan.v1.activity"
+    ],
+    "version": "1.0",
+    "guid": "9489b766-e4ac-456f-b26c-32a43e538963",
+    "bookAuthor": "H. W. Brands; T. H. Breen; R. Hal Williams; Ariela J. Gros",
+    "title": "FA Remember 07 05",
+    "educationalAlignment": [
+      "http://purl.org/pearson/objectives/183725473384362"
+    ]
+  },
+  "body": {
+    "description": "FA_Remember_07_05",
+    "containerConfig": [
+      {
+        "description": "FA_Remember_07_05",
+        "containerId": "target1",
+        "brixConfig": [
+          {
+            "bricId": "q1",
+            "bricType": "MultipleChoiceQuestion",
+            "config": {
+              "id": "QUE60829",
+              "question": "In 1799, President Adams sent a delegation to France, which resulted in the successful agreement known as the __________.\n\u003cbr /\u003e",
+              "order": "randomized",
+              "presenterType": "RadioGroup",
+              "presenterConfig": {
+                "numberFormat": "none"
+              },
+              "choices": [
+                {
+                  "answerKey": "answer_1",
+                  "content": "Convention of Baltimore"
+                },
+                {
+                  "answerKey": "answer_2",
+                  "content": "Convention of Paris"
+                },
+                {
+                  "answerKey": "answer_3",
+                  "content": "Convention of Louisiana"
+                },
+                {
+                  "answerKey": "answer_4",
+                  "content": "Convention of Mortefontaine"
+                }
+              ]
+            },
+            "answerKey": {
+              "assessmentType": "multiplechoice",
+              "answers": {
+                "answer_3": {
+                  "score": 0.0,
+                  "response": "Consider This: The French refused to compensate the Americans for vessels taken during the Quasi-War, but they declared the treaties of 1778 null and void. Moreover, the convention removed annoying French restrictions on U.S. commerce. President Adams was successful in avoiding war with France, and he paved the way for the purchase of the Louisiana Territory. See L.O. 7.5 Why were some Federalists willing to sacrifice political freedoms for party advantage?"
+                },
+                "answer_2": {
+                  "score": 0.0,
+                  "response": "Consider This: The French refused to compensate the Americans for vessels taken during the Quasi-War, but they declared the treaties of 1778 null and void. Moreover, the convention removed annoying French restrictions on U.S. commerce. President Adams was successful in avoiding war with France, and he paved the way for the purchase of the Louisiana Territory. See L.O. 7.5 Why were some Federalists willing to sacrifice political freedoms for party advantage?"
+                },
+                "answer_1": {
+                  "score": 0.0,
+                  "response": "Consider This: The French refused to compensate the Americans for vessels taken during the Quasi-War, but they declared the treaties of 1778 null and void. Moreover, the convention removed annoying French restrictions on U.S. commerce. President Adams was successful in avoiding war with France, and he paved the way for the purchase of the Louisiana Territory. See L.O. 7.5 Why were some Federalists willing to sacrifice political freedoms for party advantage?"
+                },
+                "answer_4": {
+                  "score": 1.0,
+                  "response": ""
+                }
+              }
+            },
+            "configFixup": [
+              {
+                "name": "questionId",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "sequenceNodeKey",
+                  "type": "ref"
+                }
+              },
+              {
+                "name": "maxAttempts",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "maxAttempts",
+                  "type": "ref"
+                }
+              }
+            ]
+          }
+        ],
+        "hookupActions": [
+          {
+            "description": "Hookup the submit manager to evaluate answers",
+            "methodName": "handleRequestsFrom",
+            "type": "method-call",
+            "args": [
+              {
+                "domain": "brix",
+                "refId": "q1",
+                "type": "ref"
+              }
+            ],
+            "instance": {
+              "type": "submit-manager"
+            }
+          },
+          {
+            "description": "Draw the question",
+            "methodName": "draw",
+            "type": "method-call",
+            "args": [
+              {
+                "selector": "#target1",
+                "type": "d3select"
+              }
+            ],
+            "instance": {
+              "domain": "brix",
+              "refId": "q1",
+              "type": "ref"
+            }
+          }
+        ]
+      }
+    ]
+  }
+}

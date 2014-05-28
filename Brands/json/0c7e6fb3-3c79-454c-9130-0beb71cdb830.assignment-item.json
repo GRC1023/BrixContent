@@ -1,0 +1,187 @@
+{
+  "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope",
+  "@type": "Envelope",
+  "metadata": {
+    "bookTitle": "American Stories: A History of the United States, Combined Volume",
+    "keywords": [
+      "Brands 3e",
+      "Ch06",
+      "Alick"
+    ],
+    "extendedMetadata": [
+      {
+        "name": "ISBN",
+        "value": "013379461X"
+      },
+      {
+        "name": "M",
+        "value": "c01"
+      },
+      {
+        "name": "assessment_title",
+        "value": "Chapter Quiz: The Republican Experiment 1783â1788"
+      },
+      {
+        "name": "Topic",
+        "value": "âHave We Fought for This?â"
+      },
+      {
+        "name": "chapterTitle",
+        "value": "The Republican Experiment 1783â1788"
+      },
+      {
+        "name": "item_title",
+        "value": "013379461X_H. W. Brands; T. H. Breen; R. Hal Williams; Ariela J. Gros_ch06_c01_q0001"
+      },
+      {
+        "name": "questionlayout",
+        "value": "1"
+      },
+      {
+        "name": "CH",
+        "value": "6"
+      },
+      {
+        "name": "Objective",
+        "value": "LO: 6.3: Why did Constitutional delegates compromise on representation and slavery?,"
+      },
+      {
+        "name": "shuffle_choices",
+        "value": "Yes"
+      }
+    ],
+    "subject": [
+      "US History"
+    ],
+    "contentTypeTier2": [
+      "AssignmentItem"
+    ],
+    "contentTypeTier1": "Assessment",
+    "format": [
+      "application/vnd.pearson.sanvan.v1.activity"
+    ],
+    "version": "1.0",
+    "guid": "0c7e6fb3-3c79-454c-9130-0beb71cdb830",
+    "bookAuthor": "H. W. Brands; T. H. Breen; R. Hal Williams; Ariela J. Gros",
+    "title": "PRE 06 14",
+    "educationalAlignment": [
+      "http://purl.org/pearson/objectives/183725473384362"
+    ]
+  },
+  "body": {
+    "description": "PRE_06_14",
+    "containerConfig": [
+      {
+        "description": "PRE_06_14",
+        "containerId": "target1",
+        "brixConfig": [
+          {
+            "bricId": "q1",
+            "bricType": "MultipleChoiceQuestion",
+            "config": {
+              "id": "QUE60810",
+              "question": "What impact did Shays’s Rebellion have on constitutional reform?\n\u003cbr /\u003e",
+              "order": "randomized",
+              "presenterType": "RadioGroup",
+              "presenterConfig": {
+                "numberFormat": "none"
+              },
+              "choices": [
+                {
+                  "answerKey": "answer_1",
+                  "content": "The rebellion helped the states unite to form an army and fight the rebellion."
+                },
+                {
+                  "answerKey": "answer_2",
+                  "content": "It helped the poor in the United States gain voting rights and freedom."
+                },
+                {
+                  "answerKey": "answer_3",
+                  "content": "The rebellion was instrumental in reforming debtor law in Congress."
+                },
+                {
+                  "answerKey": "answer_4",
+                  "content": "It gave an indication of the breakdown of law and order across the United States."
+                }
+              ]
+            },
+            "answerKey": {
+              "assessmentType": "multiplechoice",
+              "answers": {
+                "answer_3": {
+                  "score": 0.0,
+                  "response": "Consider This: Shay’s rebellion was significant not necessarily for any specific event that it precipitated, but for the general message that it sent. See L.O. 6.3 Why did Constitutional delegates compromise on representation and slavery? "
+                },
+                "answer_2": {
+                  "score": 0.0,
+                  "response": "Consider This: Shay’s rebellion was significant not necessarily for any specific event that it precipitated, but for the general message that it sent. See L.O. 6.3 Why did Constitutional delegates compromise on representation and slavery? "
+                },
+                "answer_1": {
+                  "score": 0.0,
+                  "response": "Consider This: Shay’s rebellion was significant not necessarily for any specific event that it precipitated, but for the general message that it sent. See L.O. 6.3 Why did Constitutional delegates compromise on representation and slavery? "
+                },
+                "answer_4": {
+                  "score": 1.0,
+                  "response": ""
+                }
+              }
+            },
+            "configFixup": [
+              {
+                "name": "questionId",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "sequenceNodeKey",
+                  "type": "ref"
+                }
+              },
+              {
+                "name": "maxAttempts",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "maxAttempts",
+                  "type": "ref"
+                }
+              }
+            ]
+          }
+        ],
+        "hookupActions": [
+          {
+            "description": "Hookup the submit manager to evaluate answers",
+            "methodName": "handleRequestsFrom",
+            "type": "method-call",
+            "args": [
+              {
+                "domain": "brix",
+                "refId": "q1",
+                "type": "ref"
+              }
+            ],
+            "instance": {
+              "type": "submit-manager"
+            }
+          },
+          {
+            "description": "Draw the question",
+            "methodName": "draw",
+            "type": "method-call",
+            "args": [
+              {
+                "selector": "#target1",
+                "type": "d3select"
+              }
+            ],
+            "instance": {
+              "domain": "brix",
+              "refId": "q1",
+              "type": "ref"
+            }
+          }
+        ]
+      }
+    ]
+  }
+}

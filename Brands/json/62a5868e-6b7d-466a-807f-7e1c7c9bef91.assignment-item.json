@@ -1,0 +1,187 @@
+{
+  "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope",
+  "@type": "Envelope",
+  "metadata": {
+    "bookTitle": "American Stories: A History of the United States, Combined Volume",
+    "keywords": [
+      "Brands 3e",
+      "Ch03",
+      "Alick"
+    ],
+    "extendedMetadata": [
+      {
+        "name": "ISBN",
+        "value": "013379461X"
+      },
+      {
+        "name": "M",
+        "value": "c01"
+      },
+      {
+        "name": "assessment_title",
+        "value": "Chapter Quiz: Putting Down Roots: Opportunity and Oppression in Colonial Society 1619â1692"
+      },
+      {
+        "name": "Topic",
+        "value": "Blueprint for an Empire"
+      },
+      {
+        "name": "chapterTitle",
+        "value": "Putting Down Roots: Opportunity and Oppression in Colonial Society 1619â1692"
+      },
+      {
+        "name": "item_title",
+        "value": "013379461X_H. W. Brands; T. H. Breen; R. Hal Williams; Ariela J. Gros_ch03_c01_q0012"
+      },
+      {
+        "name": "questionlayout",
+        "value": "1"
+      },
+      {
+        "name": "CH",
+        "value": "3"
+      },
+      {
+        "name": "Objective",
+        "value": "LO: 3.4: Why did England discourage free and open trade in colonial America?,"
+      },
+      {
+        "name": "shuffle_choices",
+        "value": "Yes"
+      }
+    ],
+    "subject": [
+      "US History"
+    ],
+    "contentTypeTier2": [
+      "AssignmentItem"
+    ],
+    "contentTypeTier1": "Assessment",
+    "format": [
+      "application/vnd.pearson.sanvan.v1.activity"
+    ],
+    "version": "1.0",
+    "guid": "62a5868e-6b7d-466a-807f-7e1c7c9bef91",
+    "bookAuthor": "H. W. Brands; T. H. Breen; R. Hal Williams; Ariela J. Gros",
+    "title": "FA Analyze 03 02",
+    "educationalAlignment": [
+      "http://purl.org/pearson/objectives/183725473384362"
+    ]
+  },
+  "body": {
+    "description": "FA_Analyze_03_02",
+    "containerConfig": [
+      {
+        "description": "FA_Analyze_03_02",
+        "containerId": "target1",
+        "brixConfig": [
+          {
+            "bricId": "q1",
+            "bricType": "MultipleChoiceQuestion",
+            "config": {
+              "id": "QUE60728",
+              "question": "Which of the following statements, if true, would disprove the mercantilist arguments raised by the dominant commercial powers of Europe?\n\u003cbr /\u003e",
+              "order": "randomized",
+              "presenterType": "RadioGroup",
+              "presenterConfig": {
+                "numberFormat": "none"
+              },
+              "choices": [
+                {
+                  "answerKey": "answer_1",
+                  "content": "Domestic industries will always be at a loss if foreign products are imported."
+                },
+                {
+                  "answerKey": "answer_2",
+                  "content": "The consumer revolution was beneficial for the colonies."
+                },
+                {
+                  "answerKey": "answer_3",
+                  "content": "A nation can be more profitable when the merchants are minimally taxed."
+                },
+                {
+                  "answerKey": "answer_4",
+                  "content": "Nations across the globe will benefit if the trade between them is free."
+                }
+              ]
+            },
+            "answerKey": {
+              "assessmentType": "multiplechoice",
+              "answers": {
+                "answer_3": {
+                  "score": 0.0,
+                  "response": "Consider This: British mercantilists discouraged colonists from trading with other nations. It seemed logical that England would want to protect its markets from France or Holland by passing trade policies discouraging its colonies from trading with other European powers. Free markets made no sense to seventeenth-century planners, who argued that only trade tightly regulated by the central government would increase the nation’s wealth at the expense of competitors. See L.O. 3.4 Why did England discourage free and open trade in colonial America?"
+                },
+                "answer_2": {
+                  "score": 0.0,
+                  "response": "Consider This: British mercantilists discouraged colonists from trading with other nations. It seemed logical that England would want to protect its markets from France or Holland by passing trade policies discouraging its colonies from trading with other European powers. Free markets made no sense to seventeenth-century planners, who argued that only trade tightly regulated by the central government would increase the nation’s wealth at the expense of competitors. See L.O. 3.4 Why did England discourage free and open trade in colonial America?"
+                },
+                "answer_1": {
+                  "score": 0.0,
+                  "response": "Consider This: British mercantilists discouraged colonists from trading with other nations. It seemed logical that England would want to protect its markets from France or Holland by passing trade policies discouraging its colonies from trading with other European powers. Free markets made no sense to seventeenth-century planners, who argued that only trade tightly regulated by the central government would increase the nation’s wealth at the expense of competitors. See L.O. 3.4 Why did England discourage free and open trade in colonial America?"
+                },
+                "answer_4": {
+                  "score": 1.0,
+                  "response": ""
+                }
+              }
+            },
+            "configFixup": [
+              {
+                "name": "questionId",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "sequenceNodeKey",
+                  "type": "ref"
+                }
+              },
+              {
+                "name": "maxAttempts",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "maxAttempts",
+                  "type": "ref"
+                }
+              }
+            ]
+          }
+        ],
+        "hookupActions": [
+          {
+            "description": "Hookup the submit manager to evaluate answers",
+            "methodName": "handleRequestsFrom",
+            "type": "method-call",
+            "args": [
+              {
+                "domain": "brix",
+                "refId": "q1",
+                "type": "ref"
+              }
+            ],
+            "instance": {
+              "type": "submit-manager"
+            }
+          },
+          {
+            "description": "Draw the question",
+            "methodName": "draw",
+            "type": "method-call",
+            "args": [
+              {
+                "selector": "#target1",
+                "type": "d3select"
+              }
+            ],
+            "instance": {
+              "domain": "brix",
+              "refId": "q1",
+              "type": "ref"
+            }
+          }
+        ]
+      }
+    ]
+  }
+}

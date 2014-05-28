@@ -1,0 +1,191 @@
+{
+  "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope",
+  "@type": "Envelope",
+  "metadata": {
+    "bookTitle": "American Stories: A History of the United States, Combined Volume",
+    "keywords": [
+      "Brands 3e",
+      "Ch06",
+      "Alick"
+    ],
+    "extendedMetadata": [
+      {
+        "name": "ISBN",
+        "value": "013379461X"
+      },
+      {
+        "name": "M",
+        "value": "m02"
+      },
+      {
+        "name": "assessment_title",
+        "value": "Quiz: Stumbling Toward a New National Government"
+      },
+      {
+        "name": "Topic",
+        "value": "Stumbling Toward a New National Government"
+      },
+      {
+        "name": "chapterTitle",
+        "value": "The Republican Experiment 1783â1788"
+      },
+      {
+        "name": "module",
+        "value": "Stumbling Toward a New National Government"
+      },
+      {
+        "name": "item_title",
+        "value": "013379461X_H. W. Brands; T. H. Breen; R. Hal Williams; Ariela J. Gros_ch06_m02_q0002"
+      },
+      {
+        "name": "questionlayout",
+        "value": "1"
+      },
+      {
+        "name": "CH",
+        "value": "6"
+      },
+      {
+        "name": "Objective",
+        "value": "LO: 6.2: Why did many Americans regard the Articles of Confederation as inadequate?"
+      },
+      {
+        "name": "shuffle_choices",
+        "value": "Yes"
+      }
+    ],
+    "subject": [
+      "US History"
+    ],
+    "contentTypeTier2": [
+      "AssignmentItem"
+    ],
+    "contentTypeTier1": "Assessment",
+    "format": [
+      "application/vnd.pearson.sanvan.v1.activity"
+    ],
+    "version": "1.0",
+    "guid": "38af0688-e820-40e1-8d26-f00d86f8a58e",
+    "bookAuthor": "H. W. Brands; T. H. Breen; R. Hal Williams; Ariela J. Gros",
+    "title": "POST 06 02",
+    "educationalAlignment": [
+      "http://purl.org/pearson/objectives/183725473384362"
+    ]
+  },
+  "body": {
+    "description": "POST_06_02",
+    "containerConfig": [
+      {
+        "description": "POST_06_02",
+        "containerId": "target1",
+        "brixConfig": [
+          {
+            "bricId": "q1",
+            "bricType": "MultipleChoiceQuestion",
+            "config": {
+              "id": "QUE60847",
+              "question": "Which of the following was proposed in John Dickinson’s plan for states’ representation in Congress?\n\u003cbr /\u003e",
+              "order": "randomized",
+              "presenterType": "RadioGroup",
+              "presenterConfig": {
+                "numberFormat": "none"
+              },
+              "choices": [
+                {
+                  "answerKey": "answer_1",
+                  "content": "equal representation for all states"
+                },
+                {
+                  "answerKey": "answer_2",
+                  "content": "representation based on population"
+                },
+                {
+                  "answerKey": "answer_3",
+                  "content": "representation based on total tax collected"
+                },
+                {
+                  "answerKey": "answer_4",
+                  "content": "representation based on total area"
+                }
+              ]
+            },
+            "answerKey": {
+              "assessmentType": "multiplechoice",
+              "answers": {
+                "answer_3": {
+                  "score": 0.0,
+                  "response": "Dickinson envisioned a strong central government. The report his committee presented on July 12, 1776, shocked delegates who assumed that the constitution would authorize a loose confederation of states. Dickinson’s plan placed the western territories, land the separate states claimed for themselves, under congressional control. His committee also called for equal state representation in Congress."
+                },
+                "answer_2": {
+                  "score": 0.0,
+                  "response": "Dickinson envisioned a strong central government. The report his committee presented on July 12, 1776, shocked delegates who assumed that the constitution would authorize a loose confederation of states. Dickinson’s plan placed the western territories, land the separate states claimed for themselves, under congressional control. His committee also called for equal state representation in Congress."
+                },
+                "answer_1": {
+                  "score": 1.0,
+                  "response": "Dickinson envisioned a strong central government. The report his committee presented on July 12, 1776, shocked delegates who assumed that the constitution would authorize a loose confederation of states. Dickinson’s plan placed the western territories, land the separate states claimed for themselves, under congressional control. His committee also called for equal state representation in Congress."
+                },
+                "answer_4": {
+                  "score": 0.0,
+                  "response": "Dickinson envisioned a strong central government. The report his committee presented on July 12, 1776, shocked delegates who assumed that the constitution would authorize a loose confederation of states. Dickinson’s plan placed the western territories, land the separate states claimed for themselves, under congressional control. His committee also called for equal state representation in Congress."
+                }
+              }
+            },
+            "configFixup": [
+              {
+                "name": "questionId",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "sequenceNodeKey",
+                  "type": "ref"
+                }
+              },
+              {
+                "name": "maxAttempts",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "maxAttempts",
+                  "type": "ref"
+                }
+              }
+            ]
+          }
+        ],
+        "hookupActions": [
+          {
+            "description": "Hookup the submit manager to evaluate answers",
+            "methodName": "handleRequestsFrom",
+            "type": "method-call",
+            "args": [
+              {
+                "domain": "brix",
+                "refId": "q1",
+                "type": "ref"
+              }
+            ],
+            "instance": {
+              "type": "submit-manager"
+            }
+          },
+          {
+            "description": "Draw the question",
+            "methodName": "draw",
+            "type": "method-call",
+            "args": [
+              {
+                "selector": "#target1",
+                "type": "d3select"
+              }
+            ],
+            "instance": {
+              "domain": "brix",
+              "refId": "q1",
+              "type": "ref"
+            }
+          }
+        ]
+      }
+    ]
+  }
+}

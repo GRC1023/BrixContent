@@ -1,0 +1,187 @@
+{
+  "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope",
+  "@type": "Envelope",
+  "metadata": {
+    "bookTitle": "American Stories: A History of the United States, Combined Volume",
+    "keywords": [
+      "Brands 3e",
+      "Ch17",
+      "Alick"
+    ],
+    "extendedMetadata": [
+      {
+        "name": "ISBN",
+        "value": "013379461X"
+      },
+      {
+        "name": "M",
+        "value": "c01"
+      },
+      {
+        "name": "assessment_title",
+        "value": "Chapter Quiz: The West Exploiting an Empire 1849â1902"
+      },
+      {
+        "name": "Topic",
+        "value": "Crushing the Native Americans"
+      },
+      {
+        "name": "chapterTitle",
+        "value": "The West Exploiting an Empire 1849â1902"
+      },
+      {
+        "name": "item_title",
+        "value": "013379461X_H. W. Brands; T. H. Breen; R. Hal Williams; Ariela J. Gros_ch17_c01_q0012"
+      },
+      {
+        "name": "questionlayout",
+        "value": "1"
+      },
+      {
+        "name": "CH",
+        "value": "17"
+      },
+      {
+        "name": "Objective",
+        "value": "LO: 17.2: How did white Americans crush the culture of the Native Americans as they moved west?"
+      },
+      {
+        "name": "shuffle_choices",
+        "value": "Yes"
+      }
+    ],
+    "subject": [
+      "US History"
+    ],
+    "contentTypeTier2": [
+      "AssignmentItem"
+    ],
+    "contentTypeTier1": "Assessment",
+    "format": [
+      "application/vnd.pearson.sanvan.v1.activity"
+    ],
+    "version": "1.0",
+    "guid": "21b6ce80-f4d6-482a-b3f2-21534cc454fd",
+    "bookAuthor": "H. W. Brands; T. H. Breen; R. Hal Williams; Ariela J. Gros",
+    "title": "FA Understand 17 03",
+    "educationalAlignment": [
+      "http://purl.org/pearson/objectives/183725473384362"
+    ]
+  },
+  "body": {
+    "description": "FA_Understand_17_03",
+    "containerConfig": [
+      {
+        "description": "FA_Understand_17_03",
+        "containerId": "target1",
+        "brixConfig": [
+          {
+            "bricId": "q1",
+            "bricType": "MultipleChoiceQuestion",
+            "config": {
+              "id": "QUE61140",
+              "question": "What made the Dawes Severalty Act less successful than the federal government hoped it would be?\n\u003cbr /\u003e",
+              "order": "randomized",
+              "presenterType": "RadioGroup",
+              "presenterConfig": {
+                "numberFormat": "none"
+              },
+              "choices": [
+                {
+                  "answerKey": "answer_1",
+                  "content": "The proceeds from sale of lands previously occupied by Plains Indians were misappropriated by government officials."
+                },
+                {
+                  "answerKey": "answer_2",
+                  "content": "The lands granted by the government to tribal families were remote and too small to farm."
+                },
+                {
+                  "answerKey": "answer_3",
+                  "content": "The extermination of the buffalo led Plains Indians to rebel against white settlers."
+                },
+                {
+                  "answerKey": "answer_4",
+                  "content": "Plains Indian men were unaccustomed to farming and lacked the requisite tools."
+                }
+              ]
+            },
+            "answerKey": {
+              "assessmentType": "multiplechoice",
+              "answers": {
+                "answer_3": {
+                  "score": 0.0,
+                  "response": "Consider This: To end tribal life, the Dawes Act divided tribal lands into small plots for distribution among members of the tribe. Native Americans who owned land, it was thought, would become responsible, self-reliant citizens. See L.O. 17.2 How did white Americans crush the culture of the Native Americans as they moved west?"
+                },
+                "answer_2": {
+                  "score": 0.0,
+                  "response": "Consider This: To end tribal life, the Dawes Act divided tribal lands into small plots for distribution among members of the tribe. Native Americans who owned land, it was thought, would become responsible, self-reliant citizens. See L.O. 17.2 How did white Americans crush the culture of the Native Americans as they moved west?"
+                },
+                "answer_1": {
+                  "score": 0.0,
+                  "response": "Consider This: To end tribal life, the Dawes Act divided tribal lands into small plots for distribution among members of the tribe. Native Americans who owned land, it was thought, would become responsible, self-reliant citizens. See L.O. 17.2 How did white Americans crush the culture of the Native Americans as they moved west?"
+                },
+                "answer_4": {
+                  "score": 1.0,
+                  "response": ""
+                }
+              }
+            },
+            "configFixup": [
+              {
+                "name": "questionId",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "sequenceNodeKey",
+                  "type": "ref"
+                }
+              },
+              {
+                "name": "maxAttempts",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "maxAttempts",
+                  "type": "ref"
+                }
+              }
+            ]
+          }
+        ],
+        "hookupActions": [
+          {
+            "description": "Hookup the submit manager to evaluate answers",
+            "methodName": "handleRequestsFrom",
+            "type": "method-call",
+            "args": [
+              {
+                "domain": "brix",
+                "refId": "q1",
+                "type": "ref"
+              }
+            ],
+            "instance": {
+              "type": "submit-manager"
+            }
+          },
+          {
+            "description": "Draw the question",
+            "methodName": "draw",
+            "type": "method-call",
+            "args": [
+              {
+                "selector": "#target1",
+                "type": "d3select"
+              }
+            ],
+            "instance": {
+              "domain": "brix",
+              "refId": "q1",
+              "type": "ref"
+            }
+          }
+        ]
+      }
+    ]
+  }
+}

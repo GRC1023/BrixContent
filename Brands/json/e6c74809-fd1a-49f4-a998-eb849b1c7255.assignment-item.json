@@ -1,0 +1,191 @@
+{
+  "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope",
+  "@type": "Envelope",
+  "metadata": {
+    "bookTitle": "American Stories: A History of the United States, Combined Volume",
+    "keywords": [
+      "Brands 3e",
+      "Ch29",
+      "Alick"
+    ],
+    "extendedMetadata": [
+      {
+        "name": "ISBN",
+        "value": "013379461X"
+      },
+      {
+        "name": "M",
+        "value": "m02"
+      },
+      {
+        "name": "assessment_title",
+        "value": "Quiz: The Good Life"
+      },
+      {
+        "name": "Topic",
+        "value": "The Good Life?"
+      },
+      {
+        "name": "chapterTitle",
+        "value": "Affluence and Anxiety 1945â1960"
+      },
+      {
+        "name": "module",
+        "value": "The Good Life"
+      },
+      {
+        "name": "item_title",
+        "value": "013379461X_H. W. Brands; T. H. Breen; R. Hal Williams; Ariela J. Gros_ch29_m02_q0002"
+      },
+      {
+        "name": "questionlayout",
+        "value": "1"
+      },
+      {
+        "name": "CH",
+        "value": "29"
+      },
+      {
+        "name": "Objective",
+        "value": "29.2"
+      },
+      {
+        "name": "shuffle_choices",
+        "value": "Yes"
+      }
+    ],
+    "subject": [
+      "US History"
+    ],
+    "contentTypeTier2": [
+      "AssignmentItem"
+    ],
+    "contentTypeTier1": "Assessment",
+    "format": [
+      "application/vnd.pearson.sanvan.v1.activity"
+    ],
+    "version": "1.0",
+    "guid": "e6c74809-fd1a-49f4-a998-eb849b1c7255",
+    "bookAuthor": "H. W. Brands; T. H. Breen; R. Hal Williams; Ariela J. Gros",
+    "title": "POST 29 02",
+    "educationalAlignment": [
+      "http://purl.org/pearson/objectives/183725473384362"
+    ]
+  },
+  "body": {
+    "description": "POST_29_02",
+    "containerConfig": [
+      {
+        "description": "POST_29_02",
+        "containerId": "target1",
+        "brixConfig": [
+          {
+            "bricId": "q1",
+            "bricType": "MultipleChoiceQuestion",
+            "config": {
+              "id": "QUE61552",
+              "question": "Rebellious literary groups from the 1950s were called “beats” because __________.\n\u003cbr /\u003e",
+              "order": "randomized",
+              "presenterType": "RadioGroup",
+              "presenterConfig": {
+                "numberFormat": "none"
+              },
+              "choices": [
+                {
+                  "answerKey": "answer_1",
+                  "content": "of their quest for a state of inner grace"
+                },
+                {
+                  "answerKey": "answer_2",
+                  "content": "they had a penchant for drug experimentation"
+                },
+                {
+                  "answerKey": "answer_3",
+                  "content": "they were conspicuous dropouts from society"
+                },
+                {
+                  "answerKey": "answer_4",
+                  "content": "of their association with jazz musicians"
+                }
+              ]
+            },
+            "answerKey": {
+              "assessmentType": "multiplechoice",
+              "answers": {
+                "answer_3": {
+                  "score": 0.0,
+                  "response": "One striking feature of the 1950s was the disenchantment many authors and artists expressed. This disenchantment reached its most eloquent expression with the beats, literary groups that rebelled against the era’s materialism."
+                },
+                "answer_2": {
+                  "score": 0.0,
+                  "response": "One striking feature of the 1950s was the disenchantment many authors and artists expressed. This disenchantment reached its most eloquent expression with the beats, literary groups that rebelled against the era’s materialism."
+                },
+                "answer_1": {
+                  "score": 1.0,
+                  "response": "One striking feature of the 1950s was the disenchantment many authors and artists expressed. This disenchantment reached its most eloquent expression with the beats, literary groups that rebelled against the era’s materialism."
+                },
+                "answer_4": {
+                  "score": 0.0,
+                  "response": "One striking feature of the 1950s was the disenchantment many authors and artists expressed. This disenchantment reached its most eloquent expression with the beats, literary groups that rebelled against the era’s materialism."
+                }
+              }
+            },
+            "configFixup": [
+              {
+                "name": "questionId",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "sequenceNodeKey",
+                  "type": "ref"
+                }
+              },
+              {
+                "name": "maxAttempts",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "maxAttempts",
+                  "type": "ref"
+                }
+              }
+            ]
+          }
+        ],
+        "hookupActions": [
+          {
+            "description": "Hookup the submit manager to evaluate answers",
+            "methodName": "handleRequestsFrom",
+            "type": "method-call",
+            "args": [
+              {
+                "domain": "brix",
+                "refId": "q1",
+                "type": "ref"
+              }
+            ],
+            "instance": {
+              "type": "submit-manager"
+            }
+          },
+          {
+            "description": "Draw the question",
+            "methodName": "draw",
+            "type": "method-call",
+            "args": [
+              {
+                "selector": "#target1",
+                "type": "d3select"
+              }
+            ],
+            "instance": {
+              "domain": "brix",
+              "refId": "q1",
+              "type": "ref"
+            }
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,187 @@
+{
+  "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope",
+  "@type": "Envelope",
+  "metadata": {
+    "bookTitle": "American Stories: A History of the United States, Combined Volume",
+    "keywords": [
+      "Brands 3e",
+      "Ch16",
+      "Alick"
+    ],
+    "extendedMetadata": [
+      {
+        "name": "ISBN",
+        "value": "013379461X"
+      },
+      {
+        "name": "M",
+        "value": "c01"
+      },
+      {
+        "name": "assessment_title",
+        "value": "Chapter Quiz: The Agony of Reconstruction 1865â1877"
+      },
+      {
+        "name": "Topic",
+        "value": "Reconstructing Southern Society"
+      },
+      {
+        "name": "chapterTitle",
+        "value": "The Agony of Reconstruction 1865â1877"
+      },
+      {
+        "name": "item_title",
+        "value": "013379461X_H. W. Brands; T. H. Breen; R. Hal Williams; Ariela J. Gros_ch16_c01_q0009"
+      },
+      {
+        "name": "questionlayout",
+        "value": "1"
+      },
+      {
+        "name": "CH",
+        "value": "16"
+      },
+      {
+        "name": "Objective",
+        "value": "LO: 16.2: What problems did southern society face during Reconstruction?"
+      },
+      {
+        "name": "shuffle_choices",
+        "value": "Yes"
+      }
+    ],
+    "subject": [
+      "US History"
+    ],
+    "contentTypeTier2": [
+      "AssignmentItem"
+    ],
+    "contentTypeTier1": "Assessment",
+    "format": [
+      "application/vnd.pearson.sanvan.v1.activity"
+    ],
+    "version": "1.0",
+    "guid": "e5337153-0216-4f4d-8593-ddccb8c2ee50",
+    "bookAuthor": "H. W. Brands; T. H. Breen; R. Hal Williams; Ariela J. Gros",
+    "title": "FA Understand 16 03",
+    "educationalAlignment": [
+      "http://purl.org/pearson/objectives/183725473384362"
+    ]
+  },
+  "body": {
+    "description": "FA_Understand_16_03",
+    "containerConfig": [
+      {
+        "description": "FA_Understand_16_03",
+        "containerId": "target1",
+        "brixConfig": [
+          {
+            "bricId": "q1",
+            "bricType": "MultipleChoiceQuestion",
+            "config": {
+              "id": "QUE61111",
+              "question": "Which of the following factors prompted congressional opposition to land reforms?\n\u003cbr /\u003e",
+              "order": "randomized",
+              "presenterType": "RadioGroup",
+              "presenterConfig": {
+                "numberFormat": "none"
+              },
+              "choices": [
+                {
+                  "answerKey": "answer_1",
+                  "content": "concern for property rights"
+                },
+                {
+                  "answerKey": "answer_2",
+                  "content": "absence of a viable alternative to the agricultural labor system of slavery"
+                },
+                {
+                  "answerKey": "answer_3",
+                  "content": "antipathy to the Redeemers who had emerged in the aftermath of the Civil War"
+                },
+                {
+                  "answerKey": "answer_4",
+                  "content": "desire to move from being a cotton-dependent economy to an industrial economy"
+                }
+              ]
+            },
+            "answerKey": {
+              "assessmentType": "multiplechoice",
+              "answers": {
+                "answer_3": {
+                  "score": 0.0,
+                  "response": "Consider This: Most blacks in physical possession of small farms failed to acquire title, and the mass of freedmen did not become landowners. The dream of “40 acres and a mule,” or some other arrangement that would give them control of their own land and labor, was not to be realized. Congress was conflicted over the idea of land redistribution, and President Johnson was pardoning the owners of most of the lands Sherman had once promised. See L.O. 16.2 What problems did southern society face during Reconstruction?"
+                },
+                "answer_2": {
+                  "score": 0.0,
+                  "response": "Consider This: Most blacks in physical possession of small farms failed to acquire title, and the mass of freedmen did not become landowners. The dream of “40 acres and a mule,” or some other arrangement that would give them control of their own land and labor, was not to be realized. Congress was conflicted over the idea of land redistribution, and President Johnson was pardoning the owners of most of the lands Sherman had once promised. See L.O. 16.2 What problems did southern society face during Reconstruction?"
+                },
+                "answer_1": {
+                  "score": 1.0,
+                  "response": ""
+                },
+                "answer_4": {
+                  "score": 0.0,
+                  "response": "Consider This: Most blacks in physical possession of small farms failed to acquire title, and the mass of freedmen did not become landowners. The dream of “40 acres and a mule,” or some other arrangement that would give them control of their own land and labor, was not to be realized. Congress was conflicted over the idea of land redistribution, and President Johnson was pardoning the owners of most of the lands Sherman had once promised. See L.O. 16.2 What problems did southern society face during Reconstruction?"
+                }
+              }
+            },
+            "configFixup": [
+              {
+                "name": "questionId",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "sequenceNodeKey",
+                  "type": "ref"
+                }
+              },
+              {
+                "name": "maxAttempts",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "maxAttempts",
+                  "type": "ref"
+                }
+              }
+            ]
+          }
+        ],
+        "hookupActions": [
+          {
+            "description": "Hookup the submit manager to evaluate answers",
+            "methodName": "handleRequestsFrom",
+            "type": "method-call",
+            "args": [
+              {
+                "domain": "brix",
+                "refId": "q1",
+                "type": "ref"
+              }
+            ],
+            "instance": {
+              "type": "submit-manager"
+            }
+          },
+          {
+            "description": "Draw the question",
+            "methodName": "draw",
+            "type": "method-call",
+            "args": [
+              {
+                "selector": "#target1",
+                "type": "d3select"
+              }
+            ],
+            "instance": {
+              "domain": "brix",
+              "refId": "q1",
+              "type": "ref"
+            }
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,187 @@
+{
+  "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope",
+  "@type": "Envelope",
+  "metadata": {
+    "bookTitle": "American Stories: A History of the United States, Combined Volume",
+    "keywords": [
+      "Brands 3e",
+      "Ch01",
+      "Alick"
+    ],
+    "extendedMetadata": [
+      {
+        "name": "ISBN",
+        "value": "013379461X"
+      },
+      {
+        "name": "M",
+        "value": "c01"
+      },
+      {
+        "name": "assessment_title",
+        "value": "Chapter Quiz: New World Encounters Preconquestâ1608"
+      },
+      {
+        "name": "Topic",
+        "value": "Conditions of Conquest"
+      },
+      {
+        "name": "chapterTitle",
+        "value": "New World Encounters Preconquestâ1608"
+      },
+      {
+        "name": "item_title",
+        "value": "013379461X_H. W. Brands; T. H. Breen; R. Hal Williams; Ariela J. Gros_ch01_c01_q0010"
+      },
+      {
+        "name": "questionlayout",
+        "value": "1"
+      },
+      {
+        "name": "CH",
+        "value": "1"
+      },
+      {
+        "name": "Objective",
+        "value": "LO: 1.2: How did Europeans interact with West Africans and Native Americans during the fifteenth through seventeenth centuries?"
+      },
+      {
+        "name": "shuffle_choices",
+        "value": "Yes"
+      }
+    ],
+    "subject": [
+      "US History"
+    ],
+    "contentTypeTier2": [
+      "AssignmentItem"
+    ],
+    "contentTypeTier1": "Assessment",
+    "format": [
+      "application/vnd.pearson.sanvan.v1.activity"
+    ],
+    "version": "1.0",
+    "guid": "53ee6c19-0a9e-4e33-8d6e-28c3762759b4",
+    "bookAuthor": "H. W. Brands; T. H. Breen; R. Hal Williams; Ariela J. Gros",
+    "title": "FA Analyze 01 02",
+    "educationalAlignment": [
+      "http://purl.org/pearson/objectives/183725473384362"
+    ]
+  },
+  "body": {
+    "description": "FA_Analyze_01_02",
+    "containerConfig": [
+      {
+        "description": "FA_Analyze_01_02",
+        "containerId": "target1",
+        "brixConfig": [
+          {
+            "bricId": "q1",
+            "bricType": "MultipleChoiceQuestion",
+            "config": {
+              "id": "QUE60656",
+              "question": "Which of the following led to Portugal’s lack of interest in Columbus’s plan to find new trade routes by crossing the Atlantic Ocean and increased Spanish interest in the venture?\n\u003cbr /\u003e",
+              "order": "randomized",
+              "presenterType": "RadioGroup",
+              "presenterConfig": {
+                "numberFormat": "none"
+              },
+              "choices": [
+                {
+                  "answerKey": "answer_1",
+                  "content": "greater interaction between the British and the Native Americans"
+                },
+                {
+                  "answerKey": "answer_2",
+                  "content": "Portugal’s established trade routes along the coast of Africa"
+                },
+                {
+                  "answerKey": "answer_3",
+                  "content": "the success of the British in finding a northwest passage to India and China"
+                },
+                {
+                  "answerKey": "answer_4",
+                  "content": "the predominance of Catholicism in Portugal"
+                }
+              ]
+            },
+            "answerKey": {
+              "assessmentType": "multiplechoice",
+              "answers": {
+                "answer_3": {
+                  "score": 0.0,
+                  "response": "Consider This: The first Europeans who reached the West African coast hoped to establish contact with the civilizations of central and eastern Asia. Europeans who sailed around Africa hoped to bypass middlemen in the Middle East who had long dominated control of silks and spices. See L.O. 1.2 How did Europeans interact with West Africans and Native Americans during the fifteenth through seventeenth centuries?"
+                },
+                "answer_2": {
+                  "score": 1.0,
+                  "response": ""
+                },
+                "answer_1": {
+                  "score": 0.0,
+                  "response": "Consider This: The first Europeans who reached the West African coast hoped to establish contact with the civilizations of central and eastern Asia. Europeans who sailed around Africa hoped to bypass middlemen in the Middle East who had long dominated control of silks and spices. See L.O. 1.2 How did Europeans interact with West Africans and Native Americans during the fifteenth through seventeenth centuries?"
+                },
+                "answer_4": {
+                  "score": 0.0,
+                  "response": "Consider This: The first Europeans who reached the West African coast hoped to establish contact with the civilizations of central and eastern Asia. Europeans who sailed around Africa hoped to bypass middlemen in the Middle East who had long dominated control of silks and spices. See L.O. 1.2 How did Europeans interact with West Africans and Native Americans during the fifteenth through seventeenth centuries?"
+                }
+              }
+            },
+            "configFixup": [
+              {
+                "name": "questionId",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "sequenceNodeKey",
+                  "type": "ref"
+                }
+              },
+              {
+                "name": "maxAttempts",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "maxAttempts",
+                  "type": "ref"
+                }
+              }
+            ]
+          }
+        ],
+        "hookupActions": [
+          {
+            "description": "Hookup the submit manager to evaluate answers",
+            "methodName": "handleRequestsFrom",
+            "type": "method-call",
+            "args": [
+              {
+                "domain": "brix",
+                "refId": "q1",
+                "type": "ref"
+              }
+            ],
+            "instance": {
+              "type": "submit-manager"
+            }
+          },
+          {
+            "description": "Draw the question",
+            "methodName": "draw",
+            "type": "method-call",
+            "args": [
+              {
+                "selector": "#target1",
+                "type": "d3select"
+              }
+            ],
+            "instance": {
+              "domain": "brix",
+              "refId": "q1",
+              "type": "ref"
+            }
+          }
+        ]
+      }
+    ]
+  }
+}

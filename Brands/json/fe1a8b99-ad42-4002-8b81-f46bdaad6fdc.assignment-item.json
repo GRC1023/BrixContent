@@ -1,0 +1,191 @@
+{
+  "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope",
+  "@type": "Envelope",
+  "metadata": {
+    "bookTitle": "American Stories: A History of the United States, Combined Volume",
+    "keywords": [
+      "Brands 3e",
+      "Ch15",
+      "Alick"
+    ],
+    "extendedMetadata": [
+      {
+        "name": "ISBN",
+        "value": "013379461X"
+      },
+      {
+        "name": "M",
+        "value": "m03"
+      },
+      {
+        "name": "assessment_title",
+        "value": "Quiz: Fight to the Finish"
+      },
+      {
+        "name": "Topic",
+        "value": "Fight to the Finish"
+      },
+      {
+        "name": "chapterTitle",
+        "value": "Secession and the Civil War 1860â1865"
+      },
+      {
+        "name": "module",
+        "value": "Fight to the Finish"
+      },
+      {
+        "name": "item_title",
+        "value": "013379461X_H. W. Brands; T. H. Breen; R. Hal Williams; Ariela J. Gros_ch15_m03_q0004"
+      },
+      {
+        "name": "questionlayout",
+        "value": "1"
+      },
+      {
+        "name": "CH",
+        "value": "15"
+      },
+      {
+        "name": "Objective",
+        "value": "LO: 15.3: How did the Union finally attain victory, and what role did emancipation play in it?"
+      },
+      {
+        "name": "shuffle_choices",
+        "value": "Yes"
+      }
+    ],
+    "subject": [
+      "US History"
+    ],
+    "contentTypeTier2": [
+      "AssignmentItem"
+    ],
+    "contentTypeTier1": "Assessment",
+    "format": [
+      "application/vnd.pearson.sanvan.v1.activity"
+    ],
+    "version": "1.0",
+    "guid": "fe1a8b99-ad42-4002-8b81-f46bdaad6fdc",
+    "bookAuthor": "H. W. Brands; T. H. Breen; R. Hal Williams; Ariela J. Gros",
+    "title": "POST 15 13 ",
+    "educationalAlignment": [
+      "http://purl.org/pearson/objectives/183725473384362"
+    ]
+  },
+  "body": {
+    "description": "POST_15_13",
+    "containerConfig": [
+      {
+        "description": "POST_15_13",
+        "containerId": "target1",
+        "brixConfig": [
+          {
+            "bricId": "q1",
+            "bricType": "MultipleChoiceQuestion",
+            "config": {
+              "id": "QUE61099",
+              "question": "What was the proclaimed war aim as affirmed by the Congress in the summer of 1861?\n\u003cbr /\u003e",
+              "order": "randomized",
+              "presenterType": "RadioGroup",
+              "presenterConfig": {
+                "numberFormat": "none"
+              },
+              "choices": [
+                {
+                  "answerKey": "answer_1",
+                  "content": "preservation of the Union"
+                },
+                {
+                  "answerKey": "answer_2",
+                  "content": "changing the domestic institutions of the southern states"
+                },
+                {
+                  "answerKey": "answer_3",
+                  "content": "emancipation"
+                },
+                {
+                  "answerKey": "answer_4",
+                  "content": "establishing legal equality among whites and blacks"
+                }
+              ]
+            },
+            "answerKey": {
+              "assessmentType": "multiplechoice",
+              "answers": {
+                "answer_3": {
+                  "score": 0.0,
+                  "response": "In summer 1861, Congress almost unanimously affirmed that the war was being fought only to preserve the Union, not to change the domestic institutions of any state."
+                },
+                "answer_2": {
+                  "score": 0.0,
+                  "response": "In summer 1861, Congress almost unanimously affirmed that the war was being fought only to preserve the Union, not to change the domestic institutions of any state."
+                },
+                "answer_1": {
+                  "score": 1.0,
+                  "response": "In summer 1861, Congress almost unanimously affirmed that the war was being fought only to preserve the Union, not to change the domestic institutions of any state."
+                },
+                "answer_4": {
+                  "score": 0.0,
+                  "response": "In summer 1861, Congress almost unanimously affirmed that the war was being fought only to preserve the Union, not to change the domestic institutions of any state."
+                }
+              }
+            },
+            "configFixup": [
+              {
+                "name": "questionId",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "sequenceNodeKey",
+                  "type": "ref"
+                }
+              },
+              {
+                "name": "maxAttempts",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "maxAttempts",
+                  "type": "ref"
+                }
+              }
+            ]
+          }
+        ],
+        "hookupActions": [
+          {
+            "description": "Hookup the submit manager to evaluate answers",
+            "methodName": "handleRequestsFrom",
+            "type": "method-call",
+            "args": [
+              {
+                "domain": "brix",
+                "refId": "q1",
+                "type": "ref"
+              }
+            ],
+            "instance": {
+              "type": "submit-manager"
+            }
+          },
+          {
+            "description": "Draw the question",
+            "methodName": "draw",
+            "type": "method-call",
+            "args": [
+              {
+                "selector": "#target1",
+                "type": "d3select"
+              }
+            ],
+            "instance": {
+              "domain": "brix",
+              "refId": "q1",
+              "type": "ref"
+            }
+          }
+        ]
+      }
+    ]
+  }
+}

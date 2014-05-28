@@ -1,0 +1,187 @@
+{
+  "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope",
+  "@type": "Envelope",
+  "metadata": {
+    "bookTitle": "American Stories: A History of the United States, Combined Volume",
+    "keywords": [
+      "Brands 3e",
+      "Ch18",
+      "Alick"
+    ],
+    "extendedMetadata": [
+      {
+        "name": "ISBN",
+        "value": "013379461X"
+      },
+      {
+        "name": "M",
+        "value": "c01"
+      },
+      {
+        "name": "assessment_title",
+        "value": "Chapter Quiz: The Industrial Society 1850â1901"
+      },
+      {
+        "name": "Topic",
+        "value": "Culture of Work"
+      },
+      {
+        "name": "chapterTitle",
+        "value": "The Industrial Society 1850â1901"
+      },
+      {
+        "name": "item_title",
+        "value": "013379461X_H. W. Brands; T. H. Breen; R. Hal Williams; Ariela J. Gros_ch18_c01_q0010"
+      },
+      {
+        "name": "questionlayout",
+        "value": "1"
+      },
+      {
+        "name": "CH",
+        "value": "18"
+      },
+      {
+        "name": "Objective",
+        "value": "LO: 18.5: How did wage earners organize in this period, and what demands did they make?"
+      },
+      {
+        "name": "shuffle_choices",
+        "value": "Yes"
+      }
+    ],
+    "subject": [
+      "US History"
+    ],
+    "contentTypeTier2": [
+      "AssignmentItem"
+    ],
+    "contentTypeTier1": "Assessment",
+    "format": [
+      "application/vnd.pearson.sanvan.v1.activity"
+    ],
+    "version": "1.0",
+    "guid": "73eea072-365d-43cf-b23f-94d706bb23a0",
+    "bookAuthor": "H. W. Brands; T. H. Breen; R. Hal Williams; Ariela J. Gros",
+    "title": "FA Understand 18 05",
+    "educationalAlignment": [
+      "http://purl.org/pearson/objectives/183725473384362"
+    ]
+  },
+  "body": {
+    "description": "FA_Understand_18_05",
+    "containerConfig": [
+      {
+        "description": "FA_Understand_18_05",
+        "containerId": "target1",
+        "brixConfig": [
+          {
+            "bricId": "q1",
+            "bricType": "MultipleChoiceQuestion",
+            "config": {
+              "id": "QUE61165",
+              "question": "How was Samuel Gompers’s approach to labor organizations different from that of Terence V. Powderly’s?\n\u003cbr /\u003e",
+              "order": "randomized",
+              "presenterType": "RadioGroup",
+              "presenterConfig": {
+                "numberFormat": "none"
+              },
+              "choices": [
+                {
+                  "answerKey": "answer_1",
+                  "content": "Unlike Powderly’s idealistic views of harmony, Gompers worked to improve the laborers’ practical needs."
+                },
+                {
+                  "answerKey": "answer_2",
+                  "content": "While Powderly wanted to promote socialism, Gompers accepted capitalism."
+                },
+                {
+                  "answerKey": "answer_3",
+                  "content": "Powderly promoted labor strikes as a means to achieving demands, whereas Gompers was against workers striking."
+                },
+                {
+                  "answerKey": "answer_4",
+                  "content": "Unlike Powderly’s hostile treatment of employers, Gompers advocated maintaining friendly relations with them."
+                }
+              ]
+            },
+            "answerKey": {
+              "assessmentType": "multiplechoice",
+              "answers": {
+                "answer_3": {
+                  "score": 0.0,
+                  "response": "Consider This: Gompers did not argue for fundamental changes in the system. For labor, he simply wanted a recognized place within the system and more of the rewards. See L.O. 18.5 How did wage earners organize in this period, and what demands did they make?"
+                },
+                "answer_2": {
+                  "score": 0.0,
+                  "response": "Consider This: Gompers did not argue for fundamental changes in the system. For labor, he simply wanted a recognized place within the system and more of the rewards. See L.O. 18.5 How did wage earners organize in this period, and what demands did they make?"
+                },
+                "answer_1": {
+                  "score": 1.0,
+                  "response": ""
+                },
+                "answer_4": {
+                  "score": 0.0,
+                  "response": "Consider This: Gompers did not argue for fundamental changes in the system. For labor, he simply wanted a recognized place within the system and more of the rewards. See L.O. 18.5 How did wage earners organize in this period, and what demands did they make?"
+                }
+              }
+            },
+            "configFixup": [
+              {
+                "name": "questionId",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "sequenceNodeKey",
+                  "type": "ref"
+                }
+              },
+              {
+                "name": "maxAttempts",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "maxAttempts",
+                  "type": "ref"
+                }
+              }
+            ]
+          }
+        ],
+        "hookupActions": [
+          {
+            "description": "Hookup the submit manager to evaluate answers",
+            "methodName": "handleRequestsFrom",
+            "type": "method-call",
+            "args": [
+              {
+                "domain": "brix",
+                "refId": "q1",
+                "type": "ref"
+              }
+            ],
+            "instance": {
+              "type": "submit-manager"
+            }
+          },
+          {
+            "description": "Draw the question",
+            "methodName": "draw",
+            "type": "method-call",
+            "args": [
+              {
+                "selector": "#target1",
+                "type": "d3select"
+              }
+            ],
+            "instance": {
+              "domain": "brix",
+              "refId": "q1",
+              "type": "ref"
+            }
+          }
+        ]
+      }
+    ]
+  }
+}

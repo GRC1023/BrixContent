@@ -1,0 +1,187 @@
+{
+  "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope",
+  "@type": "Envelope",
+  "metadata": {
+    "bookTitle": "American Stories: A History of the United States, Combined Volume",
+    "keywords": [
+      "Brands 3e",
+      "Ch01",
+      "Alick"
+    ],
+    "extendedMetadata": [
+      {
+        "name": "ISBN",
+        "value": "013379461X"
+      },
+      {
+        "name": "M",
+        "value": "c01"
+      },
+      {
+        "name": "assessment_title",
+        "value": "Chapter Quiz: New World Encounters Preconquestâ1608"
+      },
+      {
+        "name": "Topic",
+        "value": "Native Americans Before the Conquest"
+      },
+      {
+        "name": "chapterTitle",
+        "value": "New World Encounters Preconquestâ1608"
+      },
+      {
+        "name": "item_title",
+        "value": "013379461X_H. W. Brands; T. H. Breen; R. Hal Williams; Ariela J. Gros_ch01_c01_q0007"
+      },
+      {
+        "name": "questionlayout",
+        "value": "1"
+      },
+      {
+        "name": "CH",
+        "value": "1"
+      },
+      {
+        "name": "Objective",
+        "value": "LO: 1.1: What explains cultural differences among Native American groups before European conquest?"
+      },
+      {
+        "name": "shuffle_choices",
+        "value": "Yes"
+      }
+    ],
+    "subject": [
+      "US History"
+    ],
+    "contentTypeTier2": [
+      "AssignmentItem"
+    ],
+    "contentTypeTier1": "Assessment",
+    "format": [
+      "application/vnd.pearson.sanvan.v1.activity"
+    ],
+    "version": "1.0",
+    "guid": "52d67416-cb08-4b7c-9384-94781d799cb0",
+    "bookAuthor": "H. W. Brands; T. H. Breen; R. Hal Williams; Ariela J. Gros",
+    "title": "FA Understand 01 01",
+    "educationalAlignment": [
+      "http://purl.org/pearson/objectives/183725473384362"
+    ]
+  },
+  "body": {
+    "description": "FA_Understand_01_01",
+    "containerConfig": [
+      {
+        "description": "FA_Understand_01_01",
+        "containerId": "target1",
+        "brixConfig": [
+          {
+            "bricId": "q1",
+            "bricType": "MultipleChoiceQuestion",
+            "config": {
+              "id": "QUE60653",
+              "question": "Which of the following lends credence to the fact that the first settlers of America came from Asia?\n\u003cbr /\u003e",
+              "order": "randomized",
+              "presenterType": "RadioGroup",
+              "presenterConfig": {
+                "numberFormat": "none"
+              },
+              "choices": [
+                {
+                  "answerKey": "answer_1",
+                  "content": "A land bridge emerged connecting Asia and the Americas."
+                },
+                {
+                  "answerKey": "answer_2",
+                  "content": "The geography and climate of America resembled that of Asia."
+                },
+                {
+                  "answerKey": "answer_3",
+                  "content": "The Paleo-Indians, like the Asians, had lost their immunity against many diseases."
+                },
+                {
+                  "answerKey": "answer_4",
+                  "content": "The American Indians possessed a social culture that was similar to the Asians’."
+                }
+              ]
+            },
+            "answerKey": {
+              "assessmentType": "multiplechoice",
+              "answers": {
+                "answer_3": {
+                  "score": 0.0,
+                  "response": "Consider This: Even at the height of the last Ice Age, much of the far north remained free of glaciers. Small bands of spear-throwing Paleo-Indians pursued giant mammals across the vast tundra of Beringia. See L.O. 1.1 What explains cultural differences among Native American groups before European conquest?"
+                },
+                "answer_2": {
+                  "score": 0.0,
+                  "response": "Consider This: Even at the height of the last Ice Age, much of the far north remained free of glaciers. Small bands of spear-throwing Paleo-Indians pursued giant mammals across the vast tundra of Beringia. See L.O. 1.1 What explains cultural differences among Native American groups before European conquest?"
+                },
+                "answer_1": {
+                  "score": 1.0,
+                  "response": ""
+                },
+                "answer_4": {
+                  "score": 0.0,
+                  "response": "Consider This: Even at the height of the last Ice Age, much of the far north remained free of glaciers. Small bands of spear-throwing Paleo-Indians pursued giant mammals across the vast tundra of Beringia. See L.O. 1.1 What explains cultural differences among Native American groups before European conquest?"
+                }
+              }
+            },
+            "configFixup": [
+              {
+                "name": "questionId",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "sequenceNodeKey",
+                  "type": "ref"
+                }
+              },
+              {
+                "name": "maxAttempts",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "maxAttempts",
+                  "type": "ref"
+                }
+              }
+            ]
+          }
+        ],
+        "hookupActions": [
+          {
+            "description": "Hookup the submit manager to evaluate answers",
+            "methodName": "handleRequestsFrom",
+            "type": "method-call",
+            "args": [
+              {
+                "domain": "brix",
+                "refId": "q1",
+                "type": "ref"
+              }
+            ],
+            "instance": {
+              "type": "submit-manager"
+            }
+          },
+          {
+            "description": "Draw the question",
+            "methodName": "draw",
+            "type": "method-call",
+            "args": [
+              {
+                "selector": "#target1",
+                "type": "d3select"
+              }
+            ],
+            "instance": {
+              "domain": "brix",
+              "refId": "q1",
+              "type": "ref"
+            }
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,191 @@
+{
+  "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope",
+  "@type": "Envelope",
+  "metadata": {
+    "bookTitle": "American Stories: A History of the United States, Combined Volume",
+    "keywords": [
+      "Brands 3e",
+      "Ch01",
+      "Alick"
+    ],
+    "extendedMetadata": [
+      {
+        "name": "ISBN",
+        "value": "013379461X"
+      },
+      {
+        "name": "M",
+        "value": "m01"
+      },
+      {
+        "name": "assessment_title",
+        "value": "Quiz: Native Americans Before the Conquest"
+      },
+      {
+        "name": "Topic",
+        "value": "Native Americans Before the Conquest"
+      },
+      {
+        "name": "chapterTitle",
+        "value": "New World Encounters Preconquestâ1608"
+      },
+      {
+        "name": "module",
+        "value": "Native Americans Before the Conquest"
+      },
+      {
+        "name": "item_title",
+        "value": "013379461X_H. W. Brands; T. H. Breen; R. Hal Williams; Ariela J. Gros_ch01_m01_q0005"
+      },
+      {
+        "name": "questionlayout",
+        "value": "1"
+      },
+      {
+        "name": "CH",
+        "value": "1"
+      },
+      {
+        "name": "Objective",
+        "value": "LO: 1.1: What explains cultural differences among Native American groups before European conquest?"
+      },
+      {
+        "name": "shuffle_choices",
+        "value": "Yes"
+      }
+    ],
+    "subject": [
+      "US History"
+    ],
+    "contentTypeTier2": [
+      "AssignmentItem"
+    ],
+    "contentTypeTier1": "Assessment",
+    "format": [
+      "application/vnd.pearson.sanvan.v1.activity"
+    ],
+    "version": "1.0",
+    "guid": "155b50be-3ac2-46bb-86bc-91d76c612b2f",
+    "bookAuthor": "H. W. Brands; T. H. Breen; R. Hal Williams; Ariela J. Gros",
+    "title": "FA Remember 01 01",
+    "educationalAlignment": [
+      "http://purl.org/pearson/objectives/183725473384362"
+    ]
+  },
+  "body": {
+    "description": "FA_Remember_01_01",
+    "containerConfig": [
+      {
+        "description": "FA_Remember_01_01",
+        "containerId": "target1",
+        "brixConfig": [
+          {
+            "bricId": "q1",
+            "bricType": "MultipleChoiceQuestion",
+            "config": {
+              "id": "QUE60662",
+              "question": "What induced small bands of Paleo-Indians to cross the vast tundra of Beringia?\n\u003cbr /\u003e",
+              "order": "randomized",
+              "presenterType": "RadioGroup",
+              "presenterConfig": {
+                "numberFormat": "none"
+              },
+              "choices": [
+                {
+                  "answerKey": "answer_1",
+                  "content": "the pursuit of giant mammals"
+                },
+                {
+                  "answerKey": "answer_2",
+                  "content": "inhospitable conditions in Asia"
+                },
+                {
+                  "answerKey": "answer_3",
+                  "content": "constant conflict between rival clans of Paleo-Indians"
+                },
+                {
+                  "answerKey": "answer_4",
+                  "content": "close ties between groups of Indians, causing them to form a network"
+                }
+              ]
+            },
+            "answerKey": {
+              "assessmentType": "multiplechoice",
+              "answers": {
+                "answer_3": {
+                  "score": 0.0,
+                  "response": "Small bands of spear-throwing Paleo-Indians pursued giant mammals (megafauna)—woolly mammoths and mastodons, for example—across the vast tundra of Beringia.\u003e"
+                },
+                "answer_2": {
+                  "score": 0.0,
+                  "response": "Small bands of spear-throwing Paleo-Indians pursued giant mammals (megafauna)—woolly mammoths and mastodons, for example—across the vast tundra of Beringia."
+                },
+                "answer_1": {
+                  "score": 1.0,
+                  "response": "Small bands of spear-throwing Paleo-Indians pursued giant mammals (megafauna)—woolly mammoths and mastodons, for example—across the vast tundra of Beringia."
+                },
+                "answer_4": {
+                  "score": 0.0,
+                  "response": "Small bands of spear-throwing Paleo-Indians pursued giant mammals (megafauna)—woolly mammoths and mastodons, for example—across the vast tundra of Beringia."
+                }
+              }
+            },
+            "configFixup": [
+              {
+                "name": "questionId",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "sequenceNodeKey",
+                  "type": "ref"
+                }
+              },
+              {
+                "name": "maxAttempts",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "maxAttempts",
+                  "type": "ref"
+                }
+              }
+            ]
+          }
+        ],
+        "hookupActions": [
+          {
+            "description": "Hookup the submit manager to evaluate answers",
+            "methodName": "handleRequestsFrom",
+            "type": "method-call",
+            "args": [
+              {
+                "domain": "brix",
+                "refId": "q1",
+                "type": "ref"
+              }
+            ],
+            "instance": {
+              "type": "submit-manager"
+            }
+          },
+          {
+            "description": "Draw the question",
+            "methodName": "draw",
+            "type": "method-call",
+            "args": [
+              {
+                "selector": "#target1",
+                "type": "d3select"
+              }
+            ],
+            "instance": {
+              "domain": "brix",
+              "refId": "q1",
+              "type": "ref"
+            }
+          }
+        ]
+      }
+    ]
+  }
+}

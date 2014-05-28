@@ -1,0 +1,191 @@
+{
+  "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope",
+  "@type": "Envelope",
+  "metadata": {
+    "bookTitle": "American Stories: A History of the United States, Combined Volume",
+    "keywords": [
+      "Brands 3e",
+      "Ch29",
+      "Alick"
+    ],
+    "extendedMetadata": [
+      {
+        "name": "ISBN",
+        "value": "013379461X"
+      },
+      {
+        "name": "M",
+        "value": "m01"
+      },
+      {
+        "name": "assessment_title",
+        "value": "Quiz: The Postwar Boom"
+      },
+      {
+        "name": "Topic",
+        "value": "The Postwar Boom"
+      },
+      {
+        "name": "chapterTitle",
+        "value": "Affluence and Anxiety 1945â1960"
+      },
+      {
+        "name": "module",
+        "value": "The Postwar Boom"
+      },
+      {
+        "name": "item_title",
+        "value": "013379461X_H. W. Brands; T. H. Breen; R. Hal Williams; Ariela J. Gros_ch29_m01_q0001"
+      },
+      {
+        "name": "questionlayout",
+        "value": "1"
+      },
+      {
+        "name": "CH",
+        "value": "29"
+      },
+      {
+        "name": "Objective",
+        "value": "29.1"
+      },
+      {
+        "name": "shuffle_choices",
+        "value": "Yes"
+      }
+    ],
+    "subject": [
+      "US History"
+    ],
+    "contentTypeTier2": [
+      "AssignmentItem"
+    ],
+    "contentTypeTier1": "Assessment",
+    "format": [
+      "application/vnd.pearson.sanvan.v1.activity"
+    ],
+    "version": "1.0",
+    "guid": "0284c1ec-f9b8-41e8-a0cf-7b5494c9109c",
+    "bookAuthor": "H. W. Brands; T. H. Breen; R. Hal Williams; Ariela J. Gros",
+    "title": "PRE 29 07",
+    "educationalAlignment": [
+      "http://purl.org/pearson/objectives/183725473384362"
+    ]
+  },
+  "body": {
+    "description": "PRE_29_07",
+    "containerConfig": [
+      {
+        "description": "PRE_29_07",
+        "containerId": "target1",
+        "brixConfig": [
+          {
+            "bricId": "q1",
+            "bricType": "MultipleChoiceQuestion",
+            "config": {
+              "id": "QUE61540",
+              "question": "Which of the following factors contributed to the booming economy of the 1950s?\n\u003cbr /\u003e",
+              "order": "randomized",
+              "presenterType": "RadioGroup",
+              "presenterConfig": {
+                "numberFormat": "none"
+              },
+              "choices": [
+                {
+                  "answerKey": "answer_1",
+                  "content": "increase in federal spending on national defense"
+                },
+                {
+                  "answerKey": "answer_2",
+                  "content": "rise of New England as the center of the manufacturing"
+                },
+                {
+                  "answerKey": "answer_3",
+                  "content": "oversaturation of the consumer goods market"
+                },
+                {
+                  "answerKey": "answer_4",
+                  "content": "increase in prosperity of farmers in the Plains states"
+                }
+              ]
+            },
+            "answerKey": {
+              "assessmentType": "multiplechoice",
+              "answers": {
+                "answer_3": {
+                  "score": 0.0,
+                  "response": "Heavy government spending during the Cold War added an extra stimulus to the economy, offsetting brief recessions in 1949 and 1953 and moderating a steeper one in 1957−1958."
+                },
+                "answer_2": {
+                  "score": 0.0,
+                  "response": "Heavy government spending during the Cold War added an extra stimulus to the economy, offsetting brief recessions in 1949 and 1953 and moderating a steeper one in 1957−1958."
+                },
+                "answer_1": {
+                  "score": 1.0,
+                  "response": "Heavy government spending during the Cold War added an extra stimulus to the economy, offsetting brief recessions in 1949 and 1953 and moderating a steeper one in 1957−1958."
+                },
+                "answer_4": {
+                  "score": 0.0,
+                  "response": "Heavy government spending during the Cold War added an extra stimulus to the economy, offsetting brief recessions in 1949 and 1953 and moderating a steeper one in 1957−1958."
+                }
+              }
+            },
+            "configFixup": [
+              {
+                "name": "questionId",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "sequenceNodeKey",
+                  "type": "ref"
+                }
+              },
+              {
+                "name": "maxAttempts",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "maxAttempts",
+                  "type": "ref"
+                }
+              }
+            ]
+          }
+        ],
+        "hookupActions": [
+          {
+            "description": "Hookup the submit manager to evaluate answers",
+            "methodName": "handleRequestsFrom",
+            "type": "method-call",
+            "args": [
+              {
+                "domain": "brix",
+                "refId": "q1",
+                "type": "ref"
+              }
+            ],
+            "instance": {
+              "type": "submit-manager"
+            }
+          },
+          {
+            "description": "Draw the question",
+            "methodName": "draw",
+            "type": "method-call",
+            "args": [
+              {
+                "selector": "#target1",
+                "type": "d3select"
+              }
+            ],
+            "instance": {
+              "domain": "brix",
+              "refId": "q1",
+              "type": "ref"
+            }
+          }
+        ]
+      }
+    ]
+  }
+}

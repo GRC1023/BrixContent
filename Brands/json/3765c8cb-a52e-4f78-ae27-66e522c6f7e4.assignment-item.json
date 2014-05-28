@@ -1,0 +1,187 @@
+{
+  "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope",
+  "@type": "Envelope",
+  "metadata": {
+    "bookTitle": "American Stories: A History of the United States, Combined Volume",
+    "keywords": [
+      "Brands 3e",
+      "Ch31",
+      "Alick"
+    ],
+    "extendedMetadata": [
+      {
+        "name": "ISBN",
+        "value": "013379461X"
+      },
+      {
+        "name": "M",
+        "value": "c01"
+      },
+      {
+        "name": "assessment_title",
+        "value": "Chapter Quiz: To a New Conservatism 1969â1988"
+      },
+      {
+        "name": "Topic",
+        "value": "Reagan and the World"
+      },
+      {
+        "name": "chapterTitle",
+        "value": "To a New Conservatism 1969â1988"
+      },
+      {
+        "name": "item_title",
+        "value": "013379461X_H. W. Brands; T. H. Breen; R. Hal Williams; Ariela J. Gros_ch31_c01_q0004"
+      },
+      {
+        "name": "questionlayout",
+        "value": "1"
+      },
+      {
+        "name": "CH",
+        "value": "31"
+      },
+      {
+        "name": "Objective",
+        "value": "31.6"
+      },
+      {
+        "name": "shuffle_choices",
+        "value": "Yes"
+      }
+    ],
+    "subject": [
+      "US History"
+    ],
+    "contentTypeTier2": [
+      "AssignmentItem"
+    ],
+    "contentTypeTier1": "Assessment",
+    "format": [
+      "application/vnd.pearson.sanvan.v1.activity"
+    ],
+    "version": "1.0",
+    "guid": "3765c8cb-a52e-4f78-ae27-66e522c6f7e4",
+    "bookAuthor": "H. W. Brands; T. H. Breen; R. Hal Williams; Ariela J. Gros",
+    "title": "POST 31 19",
+    "educationalAlignment": [
+      "http://purl.org/pearson/objectives/183725473384362"
+    ]
+  },
+  "body": {
+    "description": "POST_31_19",
+    "containerConfig": [
+      {
+        "description": "POST_31_19",
+        "containerId": "target1",
+        "brixConfig": [
+          {
+            "bricId": "q1",
+            "bricType": "MultipleChoiceQuestion",
+            "config": {
+              "id": "QUE61582",
+              "question": "Which of the following statements accurately portrays the federal government’s defense spending under Carter and Reagan?\n\u003cbr /\u003e",
+              "order": "randomized",
+              "presenterType": "RadioGroup",
+              "presenterConfig": {
+                "numberFormat": "none"
+              },
+              "choices": [
+                {
+                  "answerKey": "answer_1",
+                  "content": "Both Carter and Reagan doubled the amount spent on defense when they took office as part of a U.S. plan to intimidate Soviet leadership."
+                },
+                {
+                  "answerKey": "answer_2",
+                  "content": "Both Carter, on moral grounds, and Reagan, on economic principle, drastically reduced federal defense spending."
+                },
+                {
+                  "answerKey": "answer_3",
+                  "content": "Carter’s significant increases in military spending led to the national debt that Reagan sought to erase by slashing defense spending by 50 percent."
+                },
+                {
+                  "answerKey": "answer_4",
+                  "content": "While Carter increased spending by 5 percent after the Soviets invaded Afghanistan, Reagan’s administration doubled defense spending."
+                }
+              ]
+            },
+            "answerKey": {
+              "assessmentType": "multiplechoice",
+              "answers": {
+                "answer_3": {
+                  "score": 0.0,
+                  "response": "Consider This: Reagan, devoted to strengthening America’s defenses and recapturing world supremacy from the Soviet Union, embarked on a major military expansion, which continued efforts launched during Carter’s presidency. See L.O. 31.6 Reagan and the World."
+                },
+                "answer_2": {
+                  "score": 0.0,
+                  "response": "Consider This: Reagan, devoted to strengthening America’s defenses and recapturing world supremacy from the Soviet Union, embarked on a major military expansion, which continued efforts launched during Carter’s presidency. See L.O. 31.6 Reagan and the World."
+                },
+                "answer_1": {
+                  "score": 0.0,
+                  "response": "Consider This: Reagan, devoted to strengthening America’s defenses and recapturing world supremacy from the Soviet Union, embarked on a major military expansion, which continued efforts launched during Carter’s presidency. See L.O. 31.6 Reagan and the World."
+                },
+                "answer_4": {
+                  "score": 1.0,
+                  "response": ""
+                }
+              }
+            },
+            "configFixup": [
+              {
+                "name": "questionId",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "sequenceNodeKey",
+                  "type": "ref"
+                }
+              },
+              {
+                "name": "maxAttempts",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "maxAttempts",
+                  "type": "ref"
+                }
+              }
+            ]
+          }
+        ],
+        "hookupActions": [
+          {
+            "description": "Hookup the submit manager to evaluate answers",
+            "methodName": "handleRequestsFrom",
+            "type": "method-call",
+            "args": [
+              {
+                "domain": "brix",
+                "refId": "q1",
+                "type": "ref"
+              }
+            ],
+            "instance": {
+              "type": "submit-manager"
+            }
+          },
+          {
+            "description": "Draw the question",
+            "methodName": "draw",
+            "type": "method-call",
+            "args": [
+              {
+                "selector": "#target1",
+                "type": "d3select"
+              }
+            ],
+            "instance": {
+              "domain": "brix",
+              "refId": "q1",
+              "type": "ref"
+            }
+          }
+        ]
+      }
+    ]
+  }
+}

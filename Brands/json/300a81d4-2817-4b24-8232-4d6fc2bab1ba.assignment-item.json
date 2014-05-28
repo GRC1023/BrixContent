@@ -1,0 +1,191 @@
+{
+  "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope",
+  "@type": "Envelope",
+  "metadata": {
+    "bookTitle": "American Stories: A History of the United States, Combined Volume",
+    "keywords": [
+      "Brands 3e",
+      "Ch32",
+      "Alick"
+    ],
+    "extendedMetadata": [
+      {
+        "name": "ISBN",
+        "value": "013379461X"
+      },
+      {
+        "name": "M",
+        "value": "m03"
+      },
+      {
+        "name": "assessment_title",
+        "value": "Quiz: The New Democrats"
+      },
+      {
+        "name": "Topic",
+        "value": "The New Democrats"
+      },
+      {
+        "name": "chapterTitle",
+        "value": "Into the Twenty-First Century 1989â2013"
+      },
+      {
+        "name": "module",
+        "value": "The New Democrats"
+      },
+      {
+        "name": "item_title",
+        "value": "013379461X_H. W. Brands; T. H. Breen; R. Hal Williams; Ariela J. Gros_ch32_m03_q0003"
+      },
+      {
+        "name": "questionlayout",
+        "value": "1"
+      },
+      {
+        "name": "CH",
+        "value": "32"
+      },
+      {
+        "name": "Objective",
+        "value": "32.3"
+      },
+      {
+        "name": "shuffle_choices",
+        "value": "Yes"
+      }
+    ],
+    "subject": [
+      "US History"
+    ],
+    "contentTypeTier2": [
+      "AssignmentItem"
+    ],
+    "contentTypeTier1": "Assessment",
+    "format": [
+      "application/vnd.pearson.sanvan.v1.activity"
+    ],
+    "version": "1.0",
+    "guid": "300a81d4-2817-4b24-8232-4d6fc2bab1ba",
+    "bookAuthor": "H. W. Brands; T. H. Breen; R. Hal Williams; Ariela J. Gros",
+    "title": "PRE 32 11",
+    "educationalAlignment": [
+      "http://purl.org/pearson/objectives/183725473384362"
+    ]
+  },
+  "body": {
+    "description": "PRE_32_11",
+    "containerConfig": [
+      {
+        "description": "PRE_32_11",
+        "containerId": "target1",
+        "brixConfig": [
+          {
+            "bricId": "q1",
+            "bricType": "MultipleChoiceQuestion",
+            "config": {
+              "id": "QUE61687",
+              "question": "One way Clinton was able to engineer the economic boom of the later 1990s was by increasing __________.\n\u003cbr /\u003e",
+              "order": "randomized",
+              "presenterType": "RadioGroup",
+              "presenterConfig": {
+                "numberFormat": "none"
+              },
+              "choices": [
+                {
+                  "answerKey": "answer_1",
+                  "content": "taxation"
+                },
+                {
+                  "answerKey": "answer_2",
+                  "content": "trade tariffs"
+                },
+                {
+                  "answerKey": "answer_3",
+                  "content": "public spending"
+                },
+                {
+                  "answerKey": "answer_4",
+                  "content": "the deficit"
+                }
+              ]
+            },
+            "answerKey": {
+              "assessmentType": "multiplechoice",
+              "answers": {
+                "answer_3": {
+                  "score": 0.0,
+                  "response": "Clinton won approval of $241 billion in new taxes and $255 billion in spending cuts, for a total deficit reduction of $496 billion over four years. This earned Clinton the confidence of financial markets and helped fuel the economic boom of the 1990s."
+                },
+                "answer_2": {
+                  "score": 0.0,
+                  "response": "Clinton won approval of $241 billion in new taxes and $255 billion in spending cuts, for a total deficit reduction of $496 billion over four years. This earned Clinton the confidence of financial markets and helped fuel the economic boom of the 1990s."
+                },
+                "answer_1": {
+                  "score": 1.0,
+                  "response": "Clinton won approval of $241 billion in new taxes and $255 billion in spending cuts, for a total deficit reduction of $496 billion over four years. This earned Clinton the confidence of financial markets and helped fuel the economic boom of the 1990s."
+                },
+                "answer_4": {
+                  "score": 0.0,
+                  "response": "Clinton won approval of $241 billion in new taxes and $255 billion in spending cuts, for a total deficit reduction of $496 billion over four years. This earned Clinton the confidence of financial markets and helped fuel the economic boom of the 1990s."
+                }
+              }
+            },
+            "configFixup": [
+              {
+                "name": "questionId",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "sequenceNodeKey",
+                  "type": "ref"
+                }
+              },
+              {
+                "name": "maxAttempts",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "maxAttempts",
+                  "type": "ref"
+                }
+              }
+            ]
+          }
+        ],
+        "hookupActions": [
+          {
+            "description": "Hookup the submit manager to evaluate answers",
+            "methodName": "handleRequestsFrom",
+            "type": "method-call",
+            "args": [
+              {
+                "domain": "brix",
+                "refId": "q1",
+                "type": "ref"
+              }
+            ],
+            "instance": {
+              "type": "submit-manager"
+            }
+          },
+          {
+            "description": "Draw the question",
+            "methodName": "draw",
+            "type": "method-call",
+            "args": [
+              {
+                "selector": "#target1",
+                "type": "d3select"
+              }
+            ],
+            "instance": {
+              "domain": "brix",
+              "refId": "q1",
+              "type": "ref"
+            }
+          }
+        ]
+      }
+    ]
+  }
+}

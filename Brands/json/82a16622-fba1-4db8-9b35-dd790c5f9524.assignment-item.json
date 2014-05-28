@@ -1,0 +1,191 @@
+{
+  "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope",
+  "@type": "Envelope",
+  "metadata": {
+    "bookTitle": "American Stories: A History of the United States, Combined Volume",
+    "keywords": [
+      "Brands 3e",
+      "Ch28",
+      "Alick"
+    ],
+    "extendedMetadata": [
+      {
+        "name": "ISBN",
+        "value": "013379461X"
+      },
+      {
+        "name": "M",
+        "value": "m01"
+      },
+      {
+        "name": "assessment_title",
+        "value": "Quiz: The Cold War Begins"
+      },
+      {
+        "name": "Topic",
+        "value": "The Cold War Begins"
+      },
+      {
+        "name": "chapterTitle",
+        "value": "The Onset of the Cold War 1945â1960"
+      },
+      {
+        "name": "module",
+        "value": "The Cold War Begins"
+      },
+      {
+        "name": "item_title",
+        "value": "013379461X_H. W. Brands; T. H. Breen; R. Hal Williams; Ariela J. Gros_ch28_m01_q0003"
+      },
+      {
+        "name": "questionlayout",
+        "value": "1"
+      },
+      {
+        "name": "CH",
+        "value": "28"
+      },
+      {
+        "name": "Objective",
+        "value": "28.1"
+      },
+      {
+        "name": "shuffle_choices",
+        "value": "Yes"
+      }
+    ],
+    "subject": [
+      "US History"
+    ],
+    "contentTypeTier2": [
+      "AssignmentItem"
+    ],
+    "contentTypeTier1": "Assessment",
+    "format": [
+      "application/vnd.pearson.sanvan.v1.activity"
+    ],
+    "version": "1.0",
+    "guid": "82a16622-fba1-4db8-9b35-dd790c5f9524",
+    "bookAuthor": "H. W. Brands; T. H. Breen; R. Hal Williams; Ariela J. Gros",
+    "title": "POST 28 01",
+    "educationalAlignment": [
+      "http://purl.org/pearson/objectives/183725473384362"
+    ]
+  },
+  "body": {
+    "description": "POST_28_01",
+    "containerConfig": [
+      {
+        "description": "POST_28_01",
+        "containerId": "target1",
+        "brixConfig": [
+          {
+            "bricId": "q1",
+            "bricType": "MultipleChoiceQuestion",
+            "config": {
+              "id": "QUE61514",
+              "question": "Which part of Europe did the Soviets consider to be their area of influence after the end of World War II?\n\u003cbr /\u003e",
+              "order": "randomized",
+              "presenterType": "RadioGroup",
+              "presenterConfig": {
+                "numberFormat": "none"
+              },
+              "choices": [
+                {
+                  "answerKey": "answer_1",
+                  "content": "eastern Europe"
+                },
+                {
+                  "answerKey": "answer_2",
+                  "content": "western Europe"
+                },
+                {
+                  "answerKey": "answer_3",
+                  "content": "central Europe"
+                },
+                {
+                  "answerKey": "answer_4",
+                  "content": "northern Europe"
+                }
+              ]
+            },
+            "answerKey": {
+              "assessmentType": "multiplechoice",
+              "answers": {
+                "answer_3": {
+                  "score": 0.0,
+                  "response": "The fundamental disagreement was over control of postwar Europe. In the east, the Red Army had swept over Poland and most of the Balkans, laying the basis for Soviet domination there."
+                },
+                "answer_2": {
+                  "score": 0.0,
+                  "response": "The fundamental disagreement was over control of postwar Europe. In the east, the Red Army had swept over Poland and most of the Balkans, laying the basis for Soviet domination there."
+                },
+                "answer_1": {
+                  "score": 1.0,
+                  "response": "The fundamental disagreement was over control of postwar Europe. In the east, the Red Army had swept over Poland and most of the Balkans, laying the basis for Soviet domination there."
+                },
+                "answer_4": {
+                  "score": 0.0,
+                  "response": "The fundamental disagreement was over control of postwar Europe. In the east, the Red Army had swept over Poland and most of the Balkans, laying the basis for Soviet domination there."
+                }
+              }
+            },
+            "configFixup": [
+              {
+                "name": "questionId",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "sequenceNodeKey",
+                  "type": "ref"
+                }
+              },
+              {
+                "name": "maxAttempts",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "maxAttempts",
+                  "type": "ref"
+                }
+              }
+            ]
+          }
+        ],
+        "hookupActions": [
+          {
+            "description": "Hookup the submit manager to evaluate answers",
+            "methodName": "handleRequestsFrom",
+            "type": "method-call",
+            "args": [
+              {
+                "domain": "brix",
+                "refId": "q1",
+                "type": "ref"
+              }
+            ],
+            "instance": {
+              "type": "submit-manager"
+            }
+          },
+          {
+            "description": "Draw the question",
+            "methodName": "draw",
+            "type": "method-call",
+            "args": [
+              {
+                "selector": "#target1",
+                "type": "d3select"
+              }
+            ],
+            "instance": {
+              "domain": "brix",
+              "refId": "q1",
+              "type": "ref"
+            }
+          }
+        ]
+      }
+    ]
+  }
+}

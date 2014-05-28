@@ -1,0 +1,191 @@
+{
+  "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope",
+  "@type": "Envelope",
+  "metadata": {
+    "bookTitle": "American Stories: A History of the United States, Combined Volume",
+    "keywords": [
+      "Brands 3e",
+      "Ch23",
+      "Alick"
+    ],
+    "extendedMetadata": [
+      {
+        "name": "ISBN",
+        "value": "013379461X"
+      },
+      {
+        "name": "M",
+        "value": "m03"
+      },
+      {
+        "name": "assessment_title",
+        "value": "Quiz: The Republican Roosevelt"
+      },
+      {
+        "name": "Topic",
+        "value": "The Republican Roosevelt"
+      },
+      {
+        "name": "chapterTitle",
+        "value": "From Roosevelt to Wilson in the Age of Progressivism 1900â1920"
+      },
+      {
+        "name": "module",
+        "value": "The Republican Roosevelt"
+      },
+      {
+        "name": "item_title",
+        "value": "013379461X_H. W. Brands; T. H. Breen; R. Hal Williams; Ariela J. Gros_ch23_m03_q0006"
+      },
+      {
+        "name": "questionlayout",
+        "value": "1"
+      },
+      {
+        "name": "CH",
+        "value": "23"
+      },
+      {
+        "name": "Objective",
+        "value": "23.3"
+      },
+      {
+        "name": "shuffle_choices",
+        "value": "Yes"
+      }
+    ],
+    "subject": [
+      "US History"
+    ],
+    "contentTypeTier2": [
+      "AssignmentItem"
+    ],
+    "contentTypeTier1": "Assessment",
+    "format": [
+      "application/vnd.pearson.sanvan.v1.activity"
+    ],
+    "version": "1.0",
+    "guid": "f6c73ea8-07d5-44f2-b9df-c68510dc10d9",
+    "bookAuthor": "H. W. Brands; T. H. Breen; R. Hal Williams; Ariela J. Gros",
+    "title": "POST 23 11",
+    "educationalAlignment": [
+      "http://purl.org/pearson/objectives/183725473384362"
+    ]
+  },
+  "body": {
+    "description": "POST_23_11",
+    "containerConfig": [
+      {
+        "description": "POST_23_11",
+        "containerId": "target1",
+        "brixConfig": [
+          {
+            "bricId": "q1",
+            "bricType": "MultipleChoiceQuestion",
+            "config": {
+              "id": "QUE61321",
+              "question": "Why did Roosevelt want to build a biracial “black-and-tan” southern Republican party?\n\u003cbr /\u003e",
+              "order": "randomized",
+              "presenterType": "RadioGroup",
+              "presenterConfig": {
+                "numberFormat": "none"
+              },
+              "choices": [
+                {
+                  "answerKey": "answer_1",
+                  "content": "to foster racial progress and his own renomination"
+                },
+                {
+                  "answerKey": "answer_2",
+                  "content": "to marginalize the influence of the South"
+                },
+                {
+                  "answerKey": "answer_3",
+                  "content": "to keep radical African American political parties under control"
+                },
+                {
+                  "answerKey": "answer_4",
+                  "content": "to mock the progressive Democrats"
+                }
+              ]
+            },
+            "answerKey": {
+              "assessmentType": "multiplechoice",
+              "answers": {
+                "answer_3": {
+                  "score": 0.0,
+                  "response": "Roosevelt considered building a biracial “black-and-tan” southern Republican party, thinking it would foster racial progress and his own renomination in 1904."
+                },
+                "answer_2": {
+                  "score": 0.0,
+                  "response": "Roosevelt considered building a biracial “black-and-tan” southern Republican party, thinking it would foster racial progress and his own renomination in 1904."
+                },
+                "answer_1": {
+                  "score": 1.0,
+                  "response": "Roosevelt considered building a biracial “black-and-tan” southern Republican party, thinking it would foster racial progress and his own renomination in 1904."
+                },
+                "answer_4": {
+                  "score": 0.0,
+                  "response": "Roosevelt considered building a biracial “black-and-tan” southern Republican party, thinking it would foster racial progress and his own renomination in 1904."
+                }
+              }
+            },
+            "configFixup": [
+              {
+                "name": "questionId",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "sequenceNodeKey",
+                  "type": "ref"
+                }
+              },
+              {
+                "name": "maxAttempts",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "maxAttempts",
+                  "type": "ref"
+                }
+              }
+            ]
+          }
+        ],
+        "hookupActions": [
+          {
+            "description": "Hookup the submit manager to evaluate answers",
+            "methodName": "handleRequestsFrom",
+            "type": "method-call",
+            "args": [
+              {
+                "domain": "brix",
+                "refId": "q1",
+                "type": "ref"
+              }
+            ],
+            "instance": {
+              "type": "submit-manager"
+            }
+          },
+          {
+            "description": "Draw the question",
+            "methodName": "draw",
+            "type": "method-call",
+            "args": [
+              {
+                "selector": "#target1",
+                "type": "d3select"
+              }
+            ],
+            "instance": {
+              "domain": "brix",
+              "refId": "q1",
+              "type": "ref"
+            }
+          }
+        ]
+      }
+    ]
+  }
+}

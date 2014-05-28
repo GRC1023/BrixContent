@@ -1,0 +1,187 @@
+{
+  "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope",
+  "@type": "Envelope",
+  "metadata": {
+    "bookTitle": "American Stories: A History of the United States, Combined Volume",
+    "keywords": [
+      "Brands 3e",
+      "Ch29",
+      "Alick"
+    ],
+    "extendedMetadata": [
+      {
+        "name": "ISBN",
+        "value": "013379461X"
+      },
+      {
+        "name": "M",
+        "value": "c01"
+      },
+      {
+        "name": "assessment_title",
+        "value": "Chapter Quiz: Affluence and Anxiety 1945â1960"
+      },
+      {
+        "name": "Topic",
+        "value": "The Struggle over Civil Rights"
+      },
+      {
+        "name": "chapterTitle",
+        "value": "Affluence and Anxiety 1945â1960"
+      },
+      {
+        "name": "item_title",
+        "value": "013379461X_H. W. Brands; T. H. Breen; R. Hal Williams; Ariela J. Gros_ch29_c01_q0011"
+      },
+      {
+        "name": "questionlayout",
+        "value": "1"
+      },
+      {
+        "name": "CH",
+        "value": "29"
+      },
+      {
+        "name": "Objective",
+        "value": "29.3"
+      },
+      {
+        "name": "shuffle_choices",
+        "value": "Yes"
+      }
+    ],
+    "subject": [
+      "US History"
+    ],
+    "contentTypeTier2": [
+      "AssignmentItem"
+    ],
+    "contentTypeTier1": "Assessment",
+    "format": [
+      "application/vnd.pearson.sanvan.v1.activity"
+    ],
+    "version": "1.0",
+    "guid": "2ca5b6bb-dd76-4420-8c13-1103d354a48d",
+    "bookAuthor": "H. W. Brands; T. H. Breen; R. Hal Williams; Ariela J. Gros",
+    "title": "FA Understand 29 05",
+    "educationalAlignment": [
+      "http://purl.org/pearson/objectives/183725473384362"
+    ]
+  },
+  "body": {
+    "description": "FA_Understand_29_05",
+    "containerConfig": [
+      {
+        "description": "FA_Understand_29_05",
+        "containerId": "target1",
+        "brixConfig": [
+          {
+            "bricId": "q1",
+            "bricType": "MultipleChoiceQuestion",
+            "config": {
+              "id": "QUE61525",
+              "question": "Why did Chief Justice Earl Warren decide not to set a timeline for the desegregation of public schools?\n\u003cbr /\u003e",
+              "order": "randomized",
+              "presenterType": "RadioGroup",
+              "presenterConfig": {
+                "numberFormat": "none"
+              },
+              "choices": [
+                {
+                  "answerKey": "answer_1",
+                  "content": "He had received no support from President Eisenhower for desegregation."
+                },
+                {
+                  "answerKey": "answer_2",
+                  "content": "He was not convinced of the necessity of desegregation and purposely left loopholes."
+                },
+                {
+                  "answerKey": "answer_3",
+                  "content": "He expected that a change in the deep-rooted ways of society would be difficult."
+                },
+                {
+                  "answerKey": "answer_4",
+                  "content": "He had not considered the opposition from traditional residents of the Deep South."
+                }
+              ]
+            },
+            "answerKey": {
+              "assessmentType": "multiplechoice",
+              "answers": {
+                "answer_3": {
+                  "score": 1.0,
+                  "response": ""
+                },
+                "answer_2": {
+                  "score": 0.0,
+                  "response": "Consider This: In 1955, the Supreme Court ruled that school desegregation should proceed “with all deliberate speed,” but left the details to the lower federal courts. “All deliberate speed” proved to be agonizingly slow. The border states quickly complied with the Court’s ruling, but the Deep South responded with massive resistance. See L.O. 29.3 The Struggle over Civil Rights."
+                },
+                "answer_1": {
+                  "score": 0.0,
+                  "response": "Consider This: In 1955, the Supreme Court ruled that school desegregation should proceed “with all deliberate speed,” but left the details to the lower federal courts. “All deliberate speed” proved to be agonizingly slow. The border states quickly complied with the Court’s ruling, but the Deep South responded with massive resistance. See L.O. 29.3 The Struggle over Civil Rights."
+                },
+                "answer_4": {
+                  "score": 0.0,
+                  "response": "Consider This: In 1955, the Supreme Court ruled that school desegregation should proceed “with all deliberate speed,” but left the details to the lower federal courts. “All deliberate speed” proved to be agonizingly slow. The border states quickly complied with the Court’s ruling, but the Deep South responded with massive resistance. See L.O. 29.3 The Struggle over Civil Rights."
+                }
+              }
+            },
+            "configFixup": [
+              {
+                "name": "questionId",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "sequenceNodeKey",
+                  "type": "ref"
+                }
+              },
+              {
+                "name": "maxAttempts",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "maxAttempts",
+                  "type": "ref"
+                }
+              }
+            ]
+          }
+        ],
+        "hookupActions": [
+          {
+            "description": "Hookup the submit manager to evaluate answers",
+            "methodName": "handleRequestsFrom",
+            "type": "method-call",
+            "args": [
+              {
+                "domain": "brix",
+                "refId": "q1",
+                "type": "ref"
+              }
+            ],
+            "instance": {
+              "type": "submit-manager"
+            }
+          },
+          {
+            "description": "Draw the question",
+            "methodName": "draw",
+            "type": "method-call",
+            "args": [
+              {
+                "selector": "#target1",
+                "type": "d3select"
+              }
+            ],
+            "instance": {
+              "domain": "brix",
+              "refId": "q1",
+              "type": "ref"
+            }
+          }
+        ]
+      }
+    ]
+  }
+}

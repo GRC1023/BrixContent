@@ -1,0 +1,191 @@
+{
+  "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope",
+  "@type": "Envelope",
+  "metadata": {
+    "bookTitle": "American Stories: A History of the United States, Combined Volume",
+    "keywords": [
+      "Brands 3e",
+      "Ch26",
+      "Alick"
+    ],
+    "extendedMetadata": [
+      {
+        "name": "ISBN",
+        "value": "013379461X"
+      },
+      {
+        "name": "M",
+        "value": "m02"
+      },
+      {
+        "name": "assessment_title",
+        "value": "Quiz: Fighting the Depression"
+      },
+      {
+        "name": "Topic",
+        "value": "Fighting the Depression"
+      },
+      {
+        "name": "chapterTitle",
+        "value": "Franklin D. Roosevelt and the New Deal 1929â1939"
+      },
+      {
+        "name": "module",
+        "value": "Fighting the Depression"
+      },
+      {
+        "name": "item_title",
+        "value": "013379461X_H. W. Brands; T. H. Breen; R. Hal Williams; Ariela J. Gros_ch26_m02_q0006"
+      },
+      {
+        "name": "questionlayout",
+        "value": "1"
+      },
+      {
+        "name": "CH",
+        "value": "26"
+      },
+      {
+        "name": "Objective",
+        "value": "26.2"
+      },
+      {
+        "name": "shuffle_choices",
+        "value": "Yes"
+      }
+    ],
+    "subject": [
+      "US History"
+    ],
+    "contentTypeTier2": [
+      "AssignmentItem"
+    ],
+    "contentTypeTier1": "Assessment",
+    "format": [
+      "application/vnd.pearson.sanvan.v1.activity"
+    ],
+    "version": "1.0",
+    "guid": "7e63886b-005e-482e-bd3d-bd7348368d57",
+    "bookAuthor": "H. W. Brands; T. H. Breen; R. Hal Williams; Ariela J. Gros",
+    "title": "POST 26 09",
+    "educationalAlignment": [
+      "http://purl.org/pearson/objectives/183725473384362"
+    ]
+  },
+  "body": {
+    "description": "POST_26_09",
+    "containerConfig": [
+      {
+        "description": "POST_26_09",
+        "containerId": "target1",
+        "brixConfig": [
+          {
+            "bricId": "q1",
+            "bricType": "MultipleChoiceQuestion",
+            "config": {
+              "id": "QUE61459",
+              "question": "Why did the “Bonus Army” come to Washington during the summer of 1932?\n\u003cbr /\u003e",
+              "order": "randomized",
+              "presenterType": "RadioGroup",
+              "presenterConfig": {
+                "numberFormat": "none"
+              },
+              "choices": [
+                {
+                  "answerKey": "answer_1",
+                  "content": "They were demanding immediate payment of a bonus that was not due until 1945."
+                },
+                {
+                  "answerKey": "answer_2",
+                  "content": "They were demanding “bonus pay” for extended tours of duty during World War I."
+                },
+                {
+                  "answerKey": "answer_3",
+                  "content": "They were members of the “bonus” National Guard demanding a pay increase."
+                },
+                {
+                  "answerKey": "answer_4",
+                  "content": "They were members of the military who could not serve but wanted to be paid."
+                }
+              ]
+            },
+            "answerKey": {
+              "assessmentType": "multiplechoice",
+              "answers": {
+                "answer_3": {
+                  "score": 0.0,
+                  "response": "The bonus pay demanded by the “army” was not due, but the soldiers demanded immediate payment because of their desperate circumstances."
+                },
+                "answer_2": {
+                  "score": 0.0,
+                  "response": "The bonus pay demanded by the “army” was not due, but the soldiers demanded immediate payment because of their desperate circumstances."
+                },
+                "answer_1": {
+                  "score": 1.0,
+                  "response": "The bonus pay demanded by the “army” was not due, but the soldiers demanded immediate payment because of their desperate circumstances."
+                },
+                "answer_4": {
+                  "score": 0.0,
+                  "response": "The bonus pay demanded by the “army” was not due, but the soldiers demanded immediate payment because of their desperate circumstances."
+                }
+              }
+            },
+            "configFixup": [
+              {
+                "name": "questionId",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "sequenceNodeKey",
+                  "type": "ref"
+                }
+              },
+              {
+                "name": "maxAttempts",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "maxAttempts",
+                  "type": "ref"
+                }
+              }
+            ]
+          }
+        ],
+        "hookupActions": [
+          {
+            "description": "Hookup the submit manager to evaluate answers",
+            "methodName": "handleRequestsFrom",
+            "type": "method-call",
+            "args": [
+              {
+                "domain": "brix",
+                "refId": "q1",
+                "type": "ref"
+              }
+            ],
+            "instance": {
+              "type": "submit-manager"
+            }
+          },
+          {
+            "description": "Draw the question",
+            "methodName": "draw",
+            "type": "method-call",
+            "args": [
+              {
+                "selector": "#target1",
+                "type": "d3select"
+              }
+            ],
+            "instance": {
+              "domain": "brix",
+              "refId": "q1",
+              "type": "ref"
+            }
+          }
+        ]
+      }
+    ]
+  }
+}

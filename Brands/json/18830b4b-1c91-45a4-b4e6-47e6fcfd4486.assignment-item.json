@@ -1,0 +1,191 @@
+{
+  "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope",
+  "@type": "Envelope",
+  "metadata": {
+    "bookTitle": "American Stories: A History of the United States, Combined Volume",
+    "keywords": [
+      "Brands 3e",
+      "Ch27",
+      "Alick"
+    ],
+    "extendedMetadata": [
+      {
+        "name": "ISBN",
+        "value": "013379461X"
+      },
+      {
+        "name": "M",
+        "value": "m03"
+      },
+      {
+        "name": "assessment_title",
+        "value": "Quiz: Turning the Tide Against the Axis"
+      },
+      {
+        "name": "Topic",
+        "value": "Turning the Tide Against the Axis"
+      },
+      {
+        "name": "chapterTitle",
+        "value": "America and the World 1921â1945"
+      },
+      {
+        "name": "module",
+        "value": "Turning the Tide Against the Axis"
+      },
+      {
+        "name": "item_title",
+        "value": "013379461X_H. W. Brands; T. H. Breen; R. Hal Williams; Ariela J. Gros_ch27_m03_q0005"
+      },
+      {
+        "name": "questionlayout",
+        "value": "1"
+      },
+      {
+        "name": "CH",
+        "value": "27"
+      },
+      {
+        "name": "Objective",
+        "value": "27.3"
+      },
+      {
+        "name": "shuffle_choices",
+        "value": "Yes"
+      }
+    ],
+    "subject": [
+      "US History"
+    ],
+    "contentTypeTier2": [
+      "AssignmentItem"
+    ],
+    "contentTypeTier1": "Assessment",
+    "format": [
+      "application/vnd.pearson.sanvan.v1.activity"
+    ],
+    "version": "1.0",
+    "guid": "18830b4b-1c91-45a4-b4e6-47e6fcfd4486",
+    "bookAuthor": "H. W. Brands; T. H. Breen; R. Hal Williams; Ariela J. Gros",
+    "title": "POST 27 14",
+    "educationalAlignment": [
+      "http://purl.org/pearson/objectives/183725473384362"
+    ]
+  },
+  "body": {
+    "description": "POST_27_14",
+    "containerConfig": [
+      {
+        "description": "POST_27_14",
+        "containerId": "target1",
+        "brixConfig": [
+          {
+            "bricId": "q1",
+            "bricType": "MultipleChoiceQuestion",
+            "config": {
+              "id": "QUE61479",
+              "question": "What is one reason British strategists rejected Eisenhower’s plan for invading Europe in favor of a perimeter approach from the Mediterranean?\n\u003cbr /\u003e",
+              "order": "randomized",
+              "presenterType": "RadioGroup",
+              "presenterConfig": {
+                "numberFormat": "none"
+              },
+              "choices": [
+                {
+                  "answerKey": "answer_1",
+                  "content": "The British hoped to avoid repeating the trench warfare of World War I."
+                },
+                {
+                  "answerKey": "answer_2",
+                  "content": "Britain had strongholds in North Africa from which it could attack."
+                },
+                {
+                  "answerKey": "answer_3",
+                  "content": "The U.S. approach would take too long, and Britain favored a quick attack."
+                },
+                {
+                  "answerKey": "answer_4",
+                  "content": "The U.S. plan did not take into account the need to keep Russia in the war."
+                }
+              ]
+            },
+            "answerKey": {
+              "assessmentType": "multiplechoice",
+              "answers": {
+                "answer_3": {
+                  "score": 0.0,
+                  "response": "Eisenhower’s initial plan called for a full-scale invasion of Europe in the spring of 1943 and a temporary beachhead in France in the fall of 1942 if necessary to keep Russia in the war. But the British, remembering the heavy casualties of trench warfare in World War I, and hoping to protect the route to India, their most important colony, preferred a perimeter approach."
+                },
+                "answer_2": {
+                  "score": 0.0,
+                  "response": "Eisenhower’s initial plan called for a full-scale invasion of Europe in the spring of 1943 and a temporary beachhead in France in the fall of 1942 if necessary to keep Russia in the war. But the British, remembering the heavy casualties of trench warfare in World War I, and hoping to protect the route to India, their most important colony, preferred a perimeter approach."
+                },
+                "answer_1": {
+                  "score": 1.0,
+                  "response": "Eisenhower’s initial plan called for a full-scale invasion of Europe in the spring of 1943 and a temporary beachhead in France in the fall of 1942 if necessary to keep Russia in the war. But the British, remembering the heavy casualties of trench warfare in World War I, and hoping to protect the route to India, their most important colony, preferred a perimeter approach."
+                },
+                "answer_4": {
+                  "score": 0.0,
+                  "response": "Eisenhower’s initial plan called for a full-scale invasion of Europe in the spring of 1943 and a temporary beachhead in France in the fall of 1942 if necessary to keep Russia in the war. But the British, remembering the heavy casualties of trench warfare in World War I, and hoping to protect the route to India, their most important colony, preferred a perimeter approach."
+                }
+              }
+            },
+            "configFixup": [
+              {
+                "name": "questionId",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "sequenceNodeKey",
+                  "type": "ref"
+                }
+              },
+              {
+                "name": "maxAttempts",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "maxAttempts",
+                  "type": "ref"
+                }
+              }
+            ]
+          }
+        ],
+        "hookupActions": [
+          {
+            "description": "Hookup the submit manager to evaluate answers",
+            "methodName": "handleRequestsFrom",
+            "type": "method-call",
+            "args": [
+              {
+                "domain": "brix",
+                "refId": "q1",
+                "type": "ref"
+              }
+            ],
+            "instance": {
+              "type": "submit-manager"
+            }
+          },
+          {
+            "description": "Draw the question",
+            "methodName": "draw",
+            "type": "method-call",
+            "args": [
+              {
+                "selector": "#target1",
+                "type": "d3select"
+              }
+            ],
+            "instance": {
+              "domain": "brix",
+              "refId": "q1",
+              "type": "ref"
+            }
+          }
+        ]
+      }
+    ]
+  }
+}

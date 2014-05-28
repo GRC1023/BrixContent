@@ -1,0 +1,191 @@
+{
+  "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope",
+  "@type": "Envelope",
+  "metadata": {
+    "bookTitle": "American Stories: A History of the United States, Combined Volume",
+    "keywords": [
+      "Brands 3e",
+      "Ch24",
+      "Alick"
+    ],
+    "extendedMetadata": [
+      {
+        "name": "ISBN",
+        "value": "013379461X"
+      },
+      {
+        "name": "M",
+        "value": "m05"
+      },
+      {
+        "name": "assessment_title",
+        "value": "Quiz: Over Here"
+      },
+      {
+        "name": "Topic",
+        "value": "Over Here"
+      },
+      {
+        "name": "chapterTitle",
+        "value": "The Nation at War 1901â1920"
+      },
+      {
+        "name": "module",
+        "value": "Over Here"
+      },
+      {
+        "name": "item_title",
+        "value": "013379461X_H. W. Brands; T. H. Breen; R. Hal Williams; Ariela J. Gros_ch24_m05_q0001"
+      },
+      {
+        "name": "questionlayout",
+        "value": "1"
+      },
+      {
+        "name": "CH",
+        "value": "24"
+      },
+      {
+        "name": "Objective",
+        "value": "24.5"
+      },
+      {
+        "name": "shuffle_choices",
+        "value": "Yes"
+      }
+    ],
+    "subject": [
+      "US History"
+    ],
+    "contentTypeTier2": [
+      "AssignmentItem"
+    ],
+    "contentTypeTier1": "Assessment",
+    "format": [
+      "application/vnd.pearson.sanvan.v1.activity"
+    ],
+    "version": "1.0",
+    "guid": "f1ee41b3-e262-41b0-844f-5b8853b674e6",
+    "bookAuthor": "H. W. Brands; T. H. Breen; R. Hal Williams; Ariela J. Gros",
+    "title": "POST 24 03",
+    "educationalAlignment": [
+      "http://purl.org/pearson/objectives/183725473384362"
+    ]
+  },
+  "body": {
+    "description": "POST_24_03",
+    "containerConfig": [
+      {
+        "description": "POST_24_03",
+        "containerId": "target1",
+        "brixConfig": [
+          {
+            "bricId": "q1",
+            "bricType": "MultipleChoiceQuestion",
+            "config": {
+              "id": "QUE61408",
+              "question": "The Committee on Public Information was formed to __________.\n\u003cbr /\u003e",
+              "order": "randomized",
+              "presenterType": "RadioGroup",
+              "presenterConfig": {
+                "numberFormat": "none"
+              },
+              "choices": [
+                {
+                  "answerKey": "answer_1",
+                  "content": "influence public opinion to support the war"
+                },
+                {
+                  "answerKey": "answer_2",
+                  "content": "ensure that the public had free access to impartial news about the war"
+                },
+                {
+                  "answerKey": "answer_3",
+                  "content": "encourage citizens to report on people suspected of disloyalty"
+                },
+                {
+                  "answerKey": "answer_4",
+                  "content": "contain the anti-German sentiment that was taking root among the public"
+                }
+              ]
+            },
+            "answerKey": {
+              "assessmentType": "multiplechoice",
+              "answers": {
+                "answer_3": {
+                  "score": 0.0,
+                  "response": "A week after war was declared, Wilson formed the Committee on Public Information (CPI) to mobilize support for the war, and asked George Creel, an outspoken progressive journalist, to head it. Creel worked out a system of voluntary censorship with the press, plastered walls with colorful posters, and issued more than 75 million pamphlets."
+                },
+                "answer_2": {
+                  "score": 0.0,
+                  "response": "A week after war was declared, Wilson formed the Committee on Public Information (CPI) to mobilize support for the war, and asked George Creel, an outspoken progressive journalist, to head it. Creel worked out a system of voluntary censorship with the press, plastered walls with colorful posters, and issued more than 75 million pamphlets."
+                },
+                "answer_1": {
+                  "score": 1.0,
+                  "response": "A week after war was declared, Wilson formed the Committee on Public Information (CPI) to mobilize support for the war, and asked George Creel, an outspoken progressive journalist, to head it. Creel worked out a system of voluntary censorship with the press, plastered walls with colorful posters, and issued more than 75 million pamphlets."
+                },
+                "answer_4": {
+                  "score": 0.0,
+                  "response": "A week after war was declared, Wilson formed the Committee on Public Information (CPI) to mobilize support for the war, and asked George Creel, an outspoken progressive journalist, to head it. Creel worked out a system of voluntary censorship with the press, plastered walls with colorful posters, and issued more than 75 million pamphlets."
+                }
+              }
+            },
+            "configFixup": [
+              {
+                "name": "questionId",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "sequenceNodeKey",
+                  "type": "ref"
+                }
+              },
+              {
+                "name": "maxAttempts",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "maxAttempts",
+                  "type": "ref"
+                }
+              }
+            ]
+          }
+        ],
+        "hookupActions": [
+          {
+            "description": "Hookup the submit manager to evaluate answers",
+            "methodName": "handleRequestsFrom",
+            "type": "method-call",
+            "args": [
+              {
+                "domain": "brix",
+                "refId": "q1",
+                "type": "ref"
+              }
+            ],
+            "instance": {
+              "type": "submit-manager"
+            }
+          },
+          {
+            "description": "Draw the question",
+            "methodName": "draw",
+            "type": "method-call",
+            "args": [
+              {
+                "selector": "#target1",
+                "type": "d3select"
+              }
+            ],
+            "instance": {
+              "domain": "brix",
+              "refId": "q1",
+              "type": "ref"
+            }
+          }
+        ]
+      }
+    ]
+  }
+}

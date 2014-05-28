@@ -1,0 +1,187 @@
+{
+  "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope",
+  "@type": "Envelope",
+  "metadata": {
+    "bookTitle": "American Stories: A History of the United States, Combined Volume",
+    "keywords": [
+      "Brands 3e",
+      "Ch11",
+      "Alick"
+    ],
+    "extendedMetadata": [
+      {
+        "name": "ISBN",
+        "value": "013379461X"
+      },
+      {
+        "name": "M",
+        "value": "c01"
+      },
+      {
+        "name": "assessment_title",
+        "value": "Chapter Quiz: Slaves and Masters 1793â1861"
+      },
+      {
+        "name": "Topic",
+        "value": "The World of Southern Blacks"
+      },
+      {
+        "name": "chapterTitle",
+        "value": "Slaves and Masters 1793â1861"
+      },
+      {
+        "name": "item_title",
+        "value": "013379461X_H. W. Brands; T. H. Breen; R. Hal Williams; Ariela J. Gros_ch11_c01_q0011"
+      },
+      {
+        "name": "questionlayout",
+        "value": "1"
+      },
+      {
+        "name": "CH",
+        "value": "11"
+      },
+      {
+        "name": "Objective",
+        "value": "LO: 11.1: What factors made living conditions for southern blacks more or less difficult?"
+      },
+      {
+        "name": "shuffle_choices",
+        "value": "Yes"
+      }
+    ],
+    "subject": [
+      "US History"
+    ],
+    "contentTypeTier2": [
+      "AssignmentItem"
+    ],
+    "contentTypeTier1": "Assessment",
+    "format": [
+      "application/vnd.pearson.sanvan.v1.activity"
+    ],
+    "version": "1.0",
+    "guid": "f5f05cae-131e-4658-9432-469864a31019",
+    "bookAuthor": "H. W. Brands; T. H. Breen; R. Hal Williams; Ariela J. Gros",
+    "title": "FA Remember 11 03",
+    "educationalAlignment": [
+      "http://purl.org/pearson/objectives/183725473384362"
+    ]
+  },
+  "body": {
+    "description": "FA_Remember_11_03",
+    "containerConfig": [
+      {
+        "description": "FA_Remember_11_03",
+        "containerId": "target1",
+        "brixConfig": [
+          {
+            "bricId": "q1",
+            "bricType": "MultipleChoiceQuestion",
+            "config": {
+              "id": "QUE60960",
+              "question": "Why didn’t the slaves generally attempt violent resistance?\n\u003cbr /\u003e",
+              "order": "randomized",
+              "presenterType": "RadioGroup",
+              "presenterConfig": {
+                "numberFormat": "none"
+              },
+              "choices": [
+                {
+                  "answerKey": "answer_1",
+                  "content": "The slaves realized that direct revolts were unlikely to be successful."
+                },
+                {
+                  "answerKey": "answer_2",
+                  "content": "The plantation owners assured them freedom if they shunned violence."
+                },
+                {
+                  "answerKey": "answer_3",
+                  "content": "The slaves were influenced not to do so by a Jesuit priest."
+                },
+                {
+                  "answerKey": "answer_4",
+                  "content": "The slaves were outnumbered by the whites."
+                }
+              ]
+            },
+            "answerKey": {
+              "assessmentType": "multiplechoice",
+              "answers": {
+                "answer_3": {
+                  "score": 0.0,
+                  "response": "Consider This: Brute force was employed to suppress the Turner rebellion of 1831. Neither Denmark Vesey nor Gabriel Prosser’s rebellions were successful. See L.O. 11.1 What factors made living conditions for southern blacks more or less difficult?"
+                },
+                "answer_2": {
+                  "score": 0.0,
+                  "response": "Consider This: Brute force was employed to suppress the Turner rebellion of 1831. Neither Denmark Vesey nor Gabriel Prosser’s rebellions were successful. See L.O. 11.1 What factors made living conditions for southern blacks more or less difficult?"
+                },
+                "answer_1": {
+                  "score": 1.0,
+                  "response": ""
+                },
+                "answer_4": {
+                  "score": 0.0,
+                  "response": "Consider This: Brute force was employed to suppress the Turner rebellion of 1831. Neither Denmark Vesey nor Gabriel Prosser’s rebellions were successful. See L.O. 11.1 What factors made living conditions for southern blacks more or less difficult?"
+                }
+              }
+            },
+            "configFixup": [
+              {
+                "name": "questionId",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "sequenceNodeKey",
+                  "type": "ref"
+                }
+              },
+              {
+                "name": "maxAttempts",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "maxAttempts",
+                  "type": "ref"
+                }
+              }
+            ]
+          }
+        ],
+        "hookupActions": [
+          {
+            "description": "Hookup the submit manager to evaluate answers",
+            "methodName": "handleRequestsFrom",
+            "type": "method-call",
+            "args": [
+              {
+                "domain": "brix",
+                "refId": "q1",
+                "type": "ref"
+              }
+            ],
+            "instance": {
+              "type": "submit-manager"
+            }
+          },
+          {
+            "description": "Draw the question",
+            "methodName": "draw",
+            "type": "method-call",
+            "args": [
+              {
+                "selector": "#target1",
+                "type": "d3select"
+              }
+            ],
+            "instance": {
+              "domain": "brix",
+              "refId": "q1",
+              "type": "ref"
+            }
+          }
+        ]
+      }
+    ]
+  }
+}

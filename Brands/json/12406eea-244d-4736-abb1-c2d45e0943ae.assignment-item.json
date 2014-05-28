@@ -1,0 +1,191 @@
+{
+  "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope",
+  "@type": "Envelope",
+  "metadata": {
+    "bookTitle": "American Stories: A History of the United States, Combined Volume",
+    "keywords": [
+      "Brands 3e",
+      "Ch23",
+      "Alick"
+    ],
+    "extendedMetadata": [
+      {
+        "name": "ISBN",
+        "value": "013379461X"
+      },
+      {
+        "name": "M",
+        "value": "m01"
+      },
+      {
+        "name": "assessment_title",
+        "value": "Quiz: The Spirit of Progressivism"
+      },
+      {
+        "name": "Topic",
+        "value": "The Spirit of Progressivism"
+      },
+      {
+        "name": "chapterTitle",
+        "value": "From Roosevelt to Wilson in the Age of Progressivism 1900â1920"
+      },
+      {
+        "name": "module",
+        "value": "The Spirit of Progressivism"
+      },
+      {
+        "name": "item_title",
+        "value": "013379461X_H. W. Brands; T. H. Breen; R. Hal Williams; Ariela J. Gros_ch23_m01_q0002"
+      },
+      {
+        "name": "questionlayout",
+        "value": "1"
+      },
+      {
+        "name": "CH",
+        "value": "23"
+      },
+      {
+        "name": "Objective",
+        "value": "23.1"
+      },
+      {
+        "name": "shuffle_choices",
+        "value": "Yes"
+      }
+    ],
+    "subject": [
+      "US History"
+    ],
+    "contentTypeTier2": [
+      "AssignmentItem"
+    ],
+    "contentTypeTier1": "Assessment",
+    "format": [
+      "application/vnd.pearson.sanvan.v1.activity"
+    ],
+    "version": "1.0",
+    "guid": "12406eea-244d-4736-abb1-c2d45e0943ae",
+    "bookAuthor": "H. W. Brands; T. H. Breen; R. Hal Williams; Ariela J. Gros",
+    "title": "POST 23 07",
+    "educationalAlignment": [
+      "http://purl.org/pearson/objectives/183725473384362"
+    ]
+  },
+  "body": {
+    "description": "POST_23_07",
+    "containerConfig": [
+      {
+        "description": "POST_23_07",
+        "containerId": "target1",
+        "brixConfig": [
+          {
+            "bricId": "q1",
+            "bricType": "MultipleChoiceQuestion",
+            "config": {
+              "id": "QUE61297",
+              "question": "Who became president of the National American Woman Suffrage Association in 1900 and wanted to use organization and peaceful lobbying to win the vote?\n\u003cbr /\u003e",
+              "order": "randomized",
+              "presenterType": "RadioGroup",
+              "presenterConfig": {
+                "numberFormat": "none"
+              },
+              "choices": [
+                {
+                  "answerKey": "answer_1",
+                  "content": "Carrie Chapman Catt"
+                },
+                {
+                  "answerKey": "answer_2",
+                  "content": "Alice Paul"
+                },
+                {
+                  "answerKey": "answer_3",
+                  "content": "Susan B. Anthony"
+                },
+                {
+                  "answerKey": "answer_4",
+                  "content": "Lucy Burns"
+                }
+              ]
+            },
+            "answerKey": {
+              "assessmentType": "multiplechoice",
+              "answers": {
+                "answer_3": {
+                  "score": 0.0,
+                  "response": "In 1900, Carrie Chapman Catt, a superb organizer, became president of the National American Woman Suffrage Association. By 1920 it had nearly 2 million members. Catt and Anna Howard Shaw, who became the association’s head in 1904, believed in organization and peaceful lobbying to win the vote."
+                },
+                "answer_2": {
+                  "score": 0.0,
+                  "response": "In 1900, Carrie Chapman Catt, a superb organizer, became president of the National American Woman Suffrage Association. By 1920 it had nearly 2 million members. Catt and Anna Howard Shaw, who became the association’s head in 1904, believed in organization and peaceful lobbying to win the vote."
+                },
+                "answer_1": {
+                  "score": 1.0,
+                  "response": "In 1900, Carrie Chapman Catt, a superb organizer, became president of the National American Woman Suffrage Association. By 1920 it had nearly 2 million members. Catt and Anna Howard Shaw, who became the association’s head in 1904, believed in organization and peaceful lobbying to win the vote."
+                },
+                "answer_4": {
+                  "score": 0.0,
+                  "response": "In 1900, Carrie Chapman Catt, a superb organizer, became president of the National American Woman Suffrage Association. By 1920 it had nearly 2 million members. Catt and Anna Howard Shaw, who became the association’s head in 1904, believed in organization and peaceful lobbying to win the vote."
+                }
+              }
+            },
+            "configFixup": [
+              {
+                "name": "questionId",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "sequenceNodeKey",
+                  "type": "ref"
+                }
+              },
+              {
+                "name": "maxAttempts",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "maxAttempts",
+                  "type": "ref"
+                }
+              }
+            ]
+          }
+        ],
+        "hookupActions": [
+          {
+            "description": "Hookup the submit manager to evaluate answers",
+            "methodName": "handleRequestsFrom",
+            "type": "method-call",
+            "args": [
+              {
+                "domain": "brix",
+                "refId": "q1",
+                "type": "ref"
+              }
+            ],
+            "instance": {
+              "type": "submit-manager"
+            }
+          },
+          {
+            "description": "Draw the question",
+            "methodName": "draw",
+            "type": "method-call",
+            "args": [
+              {
+                "selector": "#target1",
+                "type": "d3select"
+              }
+            ],
+            "instance": {
+              "domain": "brix",
+              "refId": "q1",
+              "type": "ref"
+            }
+          }
+        ]
+      }
+    ]
+  }
+}

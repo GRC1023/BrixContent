@@ -1,0 +1,187 @@
+{
+  "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope",
+  "@type": "Envelope",
+  "metadata": {
+    "bookTitle": "American Stories: A History of the United States, Combined Volume",
+    "keywords": [
+      "Brands 3e",
+      "Ch25",
+      "Alick"
+    ],
+    "extendedMetadata": [
+      {
+        "name": "ISBN",
+        "value": "013379461X"
+      },
+      {
+        "name": "M",
+        "value": "c01"
+      },
+      {
+        "name": "assessment_title",
+        "value": "Chapter Quiz: Transition to Modern America 1919â1928"
+      },
+      {
+        "name": "Topic",
+        "value": "The Second Industrial Revolution"
+      },
+      {
+        "name": "chapterTitle",
+        "value": "Transition to Modern America 1919â1928"
+      },
+      {
+        "name": "item_title",
+        "value": "013379461X_H. W. Brands; T. H. Breen; R. Hal Williams; Ariela J. Gros_ch25_c01_q0010"
+      },
+      {
+        "name": "questionlayout",
+        "value": "1"
+      },
+      {
+        "name": "CH",
+        "value": "25"
+      },
+      {
+        "name": "Objective",
+        "value": "LO: 25.1: What was new about the American economy in the 1920s?,"
+      },
+      {
+        "name": "shuffle_choices",
+        "value": "Yes"
+      }
+    ],
+    "subject": [
+      "US History"
+    ],
+    "contentTypeTier2": [
+      "AssignmentItem"
+    ],
+    "contentTypeTier1": "Assessment",
+    "format": [
+      "application/vnd.pearson.sanvan.v1.activity"
+    ],
+    "version": "1.0",
+    "guid": "351aa46d-7ed4-4b5e-b6b1-eb121248a61d",
+    "bookAuthor": "H. W. Brands; T. H. Breen; R. Hal Williams; Ariela J. Gros",
+    "title": "FA Understand 25 02",
+    "educationalAlignment": [
+      "http://purl.org/pearson/objectives/183725473384362"
+    ]
+  },
+  "body": {
+    "description": "FA_Understand_25_02",
+    "containerConfig": [
+      {
+        "description": "FA_Understand_25_02",
+        "containerId": "target1",
+        "brixConfig": [
+          {
+            "bricId": "q1",
+            "bricType": "MultipleChoiceQuestion",
+            "config": {
+              "id": "QUE61362",
+              "question": "How did American marketers’ attitudes toward selling change during the consumer boom of the 1920s?\n\u003cbr /\u003e",
+              "order": "randomized",
+              "presenterType": "RadioGroup",
+              "presenterConfig": {
+                "numberFormat": "none"
+              },
+              "choices": [
+                {
+                  "answerKey": "answer_1",
+                  "content": "Marketers spread their focus equally to rural and urban areas."
+                },
+                {
+                  "answerKey": "answer_2",
+                  "content": "Product customization and differentiation strategies became popular."
+                },
+                {
+                  "answerKey": "answer_3",
+                  "content": "Marketers began to compete with the entertainment industry."
+                },
+                {
+                  "answerKey": "answer_4",
+                  "content": "Advertising and marketing strategies gained importance as selling tools."
+                }
+              ]
+            },
+            "answerKey": {
+              "assessmentType": "multiplechoice",
+              "answers": {
+                "answer_3": {
+                  "score": 0.0,
+                  "response": "Consider This: Advertising earnings rose from $1.3 billion in 1915 to $3.4 billion in 1926. Uniformity and standardization, the characteristics of mass production, now prevailed. See L.O. 25.1 What was new about the American economy in the 1920s?"
+                },
+                "answer_2": {
+                  "score": 0.0,
+                  "response": "Consider This: Advertising earnings rose from $1.3 billion in 1915 to $3.4 billion in 1926. Uniformity and standardization, the characteristics of mass production, now prevailed. See L.O. 25.1 What was new about the American economy in the 1920s?"
+                },
+                "answer_1": {
+                  "score": 0.0,
+                  "response": "Consider This: Advertising earnings rose from $1.3 billion in 1915 to $3.4 billion in 1926. Uniformity and standardization, the characteristics of mass production, now prevailed. See L.O. 25.1 What was new about the American economy in the 1920s?"
+                },
+                "answer_4": {
+                  "score": 1.0,
+                  "response": ""
+                }
+              }
+            },
+            "configFixup": [
+              {
+                "name": "questionId",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "sequenceNodeKey",
+                  "type": "ref"
+                }
+              },
+              {
+                "name": "maxAttempts",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "maxAttempts",
+                  "type": "ref"
+                }
+              }
+            ]
+          }
+        ],
+        "hookupActions": [
+          {
+            "description": "Hookup the submit manager to evaluate answers",
+            "methodName": "handleRequestsFrom",
+            "type": "method-call",
+            "args": [
+              {
+                "domain": "brix",
+                "refId": "q1",
+                "type": "ref"
+              }
+            ],
+            "instance": {
+              "type": "submit-manager"
+            }
+          },
+          {
+            "description": "Draw the question",
+            "methodName": "draw",
+            "type": "method-call",
+            "args": [
+              {
+                "selector": "#target1",
+                "type": "d3select"
+              }
+            ],
+            "instance": {
+              "domain": "brix",
+              "refId": "q1",
+              "type": "ref"
+            }
+          }
+        ]
+      }
+    ]
+  }
+}

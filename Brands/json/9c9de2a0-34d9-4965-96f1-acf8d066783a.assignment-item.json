@@ -1,0 +1,187 @@
+{
+  "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope",
+  "@type": "Envelope",
+  "metadata": {
+    "bookTitle": "American Stories: A History of the United States, Combined Volume",
+    "keywords": [
+      "Brands 3e",
+      "Ch16",
+      "Alick"
+    ],
+    "extendedMetadata": [
+      {
+        "name": "ISBN",
+        "value": "013379461X"
+      },
+      {
+        "name": "M",
+        "value": "c01"
+      },
+      {
+        "name": "assessment_title",
+        "value": "Chapter Quiz: The Agony of Reconstruction 1865â1877"
+      },
+      {
+        "name": "Topic",
+        "value": "Reconstructing Southern Society"
+      },
+      {
+        "name": "chapterTitle",
+        "value": "The Agony of Reconstruction 1865â1877"
+      },
+      {
+        "name": "item_title",
+        "value": "013379461X_H. W. Brands; T. H. Breen; R. Hal Williams; Ariela J. Gros_ch16_c01_q0002"
+      },
+      {
+        "name": "questionlayout",
+        "value": "1"
+      },
+      {
+        "name": "CH",
+        "value": "16"
+      },
+      {
+        "name": "Objective",
+        "value": "LO: 16.2: What problems did southern society face during Reconstruction?"
+      },
+      {
+        "name": "shuffle_choices",
+        "value": "Yes"
+      }
+    ],
+    "subject": [
+      "US History"
+    ],
+    "contentTypeTier2": [
+      "AssignmentItem"
+    ],
+    "contentTypeTier1": "Assessment",
+    "format": [
+      "application/vnd.pearson.sanvan.v1.activity"
+    ],
+    "version": "1.0",
+    "guid": "9c9de2a0-34d9-4965-96f1-acf8d066783a",
+    "bookAuthor": "H. W. Brands; T. H. Breen; R. Hal Williams; Ariela J. Gros",
+    "title": "PRE 16 15",
+    "educationalAlignment": [
+      "http://purl.org/pearson/objectives/183725473384362"
+    ]
+  },
+  "body": {
+    "description": "PRE_16_15",
+    "containerConfig": [
+      {
+        "description": "PRE_16_15",
+        "containerId": "target1",
+        "brixConfig": [
+          {
+            "bricId": "q1",
+            "bricType": "MultipleChoiceQuestion",
+            "config": {
+              "id": "QUE61104",
+              "question": "Which of the following best describes the differences in the ideas about freedom held by former slaves and their northern allies?\n\u003cbr /\u003e",
+              "order": "randomized",
+              "presenterType": "RadioGroup",
+              "presenterConfig": {
+                "numberFormat": "none"
+              },
+              "choices": [
+                {
+                  "answerKey": "answer_1",
+                  "content": "Former slaves attempted to maintain the family task system rather than adopt the individual piecework system northern capitalists pushed."
+                },
+                {
+                  "answerKey": "answer_2",
+                  "content": "Former slaves sought to improve their prospects by migrating to cities, while the federal government hoped to find employment for them in rural areas."
+                },
+                {
+                  "answerKey": "answer_3",
+                  "content": "Former slaves typically hoped to restart their lives as individual farmers rather than continue to work the land that their families had worked for generations."
+                },
+                {
+                  "answerKey": "answer_4",
+                  "content": "Former slaves were more interested in gaining a liberal arts education, rather than the vocational training many northerners wanted to provide."
+                }
+              ]
+            },
+            "answerKey": {
+              "assessmentType": "multiplechoice",
+              "answers": {
+                "answer_3": {
+                  "score": 0.0,
+                  "response": "Consider This: Although they were grateful for federal aid in ending slavery, freed slaves’ ideas about freedom often contradicted the plans of their northern allies. See L.O. 16.2 What problems did southern society face during Reconstruction?"
+                },
+                "answer_2": {
+                  "score": 0.0,
+                  "response": "Consider This: Although they were grateful for federal aid in ending slavery, freed slaves’ ideas about freedom often contradicted the plans of their northern allies. See L.O. 16.2 What problems did southern society face during Reconstruction?"
+                },
+                "answer_1": {
+                  "score": 1.0,
+                  "response": ""
+                },
+                "answer_4": {
+                  "score": 0.0,
+                  "response": "Consider This: Although they were grateful for federal aid in ending slavery, freed slaves’ ideas about freedom often contradicted the plans of their northern allies. See L.O. 16.2 What problems did southern society face during Reconstruction?"
+                }
+              }
+            },
+            "configFixup": [
+              {
+                "name": "questionId",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "sequenceNodeKey",
+                  "type": "ref"
+                }
+              },
+              {
+                "name": "maxAttempts",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "maxAttempts",
+                  "type": "ref"
+                }
+              }
+            ]
+          }
+        ],
+        "hookupActions": [
+          {
+            "description": "Hookup the submit manager to evaluate answers",
+            "methodName": "handleRequestsFrom",
+            "type": "method-call",
+            "args": [
+              {
+                "domain": "brix",
+                "refId": "q1",
+                "type": "ref"
+              }
+            ],
+            "instance": {
+              "type": "submit-manager"
+            }
+          },
+          {
+            "description": "Draw the question",
+            "methodName": "draw",
+            "type": "method-call",
+            "args": [
+              {
+                "selector": "#target1",
+                "type": "d3select"
+              }
+            ],
+            "instance": {
+              "domain": "brix",
+              "refId": "q1",
+              "type": "ref"
+            }
+          }
+        ]
+      }
+    ]
+  }
+}

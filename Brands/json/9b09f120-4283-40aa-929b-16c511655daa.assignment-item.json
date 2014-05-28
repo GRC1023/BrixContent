@@ -1,0 +1,191 @@
+{
+  "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope",
+  "@type": "Envelope",
+  "metadata": {
+    "bookTitle": "American Stories: A History of the United States, Combined Volume",
+    "keywords": [
+      "Brands 3e",
+      "Ch12",
+      "Alick"
+    ],
+    "extendedMetadata": [
+      {
+        "name": "ISBN",
+        "value": "013379461X"
+      },
+      {
+        "name": "M",
+        "value": "m01"
+      },
+      {
+        "name": "assessment_title",
+        "value": "Quiz: The Rise of Evangelicalism"
+      },
+      {
+        "name": "Topic",
+        "value": "The Rise of Evangelicalism"
+      },
+      {
+        "name": "chapterTitle",
+        "value": "The Pursuit of Perfection 1800â1861"
+      },
+      {
+        "name": "module",
+        "value": "The Rise of Evangelicalism"
+      },
+      {
+        "name": "item_title",
+        "value": "013379461X_H. W. Brands; T. H. Breen; R. Hal Williams; Ariela J. Gros_ch12_m01_q0003"
+      },
+      {
+        "name": "questionlayout",
+        "value": "1"
+      },
+      {
+        "name": "CH",
+        "value": "12"
+      },
+      {
+        "name": "Objective",
+        "value": "LO: 12.1: How did the evangelical revivalism of the early nineteenth century spur reform movements?"
+      },
+      {
+        "name": "shuffle_choices",
+        "value": "Yes"
+      }
+    ],
+    "subject": [
+      "US History"
+    ],
+    "contentTypeTier2": [
+      "AssignmentItem"
+    ],
+    "contentTypeTier1": "Assessment",
+    "format": [
+      "application/vnd.pearson.sanvan.v1.activity"
+    ],
+    "version": "1.0",
+    "guid": "9b09f120-4283-40aa-929b-16c511655daa",
+    "bookAuthor": "H. W. Brands; T. H. Breen; R. Hal Williams; Ariela J. Gros",
+    "title": "POST 12 07",
+    "educationalAlignment": [
+      "http://purl.org/pearson/objectives/183725473384362"
+    ]
+  },
+  "body": {
+    "description": "POST_12_07",
+    "containerConfig": [
+      {
+        "description": "POST_12_07",
+        "containerId": "target1",
+        "brixConfig": [
+          {
+            "bricId": "q1",
+            "bricType": "MultipleChoiceQuestion",
+            "config": {
+              "id": "QUE61416",
+              "question": "The __________ movement called for the moderation or abstention in the consumption of alcohol.\n\u003cbr /\u003e",
+              "order": "randomized",
+              "presenterType": "RadioGroup",
+              "presenterConfig": {
+                "numberFormat": "none"
+              },
+              "choices": [
+                {
+                  "answerKey": "answer_1",
+                  "content": "temperance"
+                },
+                {
+                  "answerKey": "answer_2",
+                  "content": "abolitionist"
+                },
+                {
+                  "answerKey": "answer_3",
+                  "content": "perfectionist"
+                },
+                {
+                  "answerKey": "answer_4",
+                  "content": "revivalist"
+                }
+              ]
+            },
+            "answerKey": {
+              "assessmentType": "multiplechoice",
+              "answers": {
+                "answer_3": {
+                  "score": 0.0,
+                  "response": "Temperance—moderation or abstention in the consumption of alcoholic beverages—attracted many advocates in the early nineteenth century."
+                },
+                "answer_2": {
+                  "score": 0.0,
+                  "response": "Temperance—moderation or abstention in the consumption of alcoholic beverages—attracted many advocates in the early nineteenth century."
+                },
+                "answer_1": {
+                  "score": 1.0,
+                  "response": "Temperance—moderation or abstention in the consumption of alcoholic beverages—attracted many advocates in the early nineteenth century."
+                },
+                "answer_4": {
+                  "score": 0.0,
+                  "response": "Temperance—moderation or abstention in the consumption of alcoholic beverages—attracted many advocates in the early nineteenth century."
+                }
+              }
+            },
+            "configFixup": [
+              {
+                "name": "questionId",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "sequenceNodeKey",
+                  "type": "ref"
+                }
+              },
+              {
+                "name": "maxAttempts",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "maxAttempts",
+                  "type": "ref"
+                }
+              }
+            ]
+          }
+        ],
+        "hookupActions": [
+          {
+            "description": "Hookup the submit manager to evaluate answers",
+            "methodName": "handleRequestsFrom",
+            "type": "method-call",
+            "args": [
+              {
+                "domain": "brix",
+                "refId": "q1",
+                "type": "ref"
+              }
+            ],
+            "instance": {
+              "type": "submit-manager"
+            }
+          },
+          {
+            "description": "Draw the question",
+            "methodName": "draw",
+            "type": "method-call",
+            "args": [
+              {
+                "selector": "#target1",
+                "type": "d3select"
+              }
+            ],
+            "instance": {
+              "domain": "brix",
+              "refId": "q1",
+              "type": "ref"
+            }
+          }
+        ]
+      }
+    ]
+  }
+}

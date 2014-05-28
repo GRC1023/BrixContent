@@ -1,0 +1,187 @@
+{
+  "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope",
+  "@type": "Envelope",
+  "metadata": {
+    "bookTitle": "American Stories: A History of the United States, Combined Volume",
+    "keywords": [
+      "Brands 3e",
+      "Ch12",
+      "Alick"
+    ],
+    "extendedMetadata": [
+      {
+        "name": "ISBN",
+        "value": "013379461X"
+      },
+      {
+        "name": "M",
+        "value": "c01"
+      },
+      {
+        "name": "assessment_title",
+        "value": "Chapter Quiz: The Pursuit of Perfection 1800â1861"
+      },
+      {
+        "name": "Topic",
+        "value": "Reform Turns Radical"
+      },
+      {
+        "name": "chapterTitle",
+        "value": "The Pursuit of Perfection 1800â1861"
+      },
+      {
+        "name": "item_title",
+        "value": "013379461X_H. W. Brands; T. H. Breen; R. Hal Williams; Ariela J. Gros_ch12_c01_q0006"
+      },
+      {
+        "name": "questionlayout",
+        "value": "1"
+      },
+      {
+        "name": "CH",
+        "value": "12"
+      },
+      {
+        "name": "Objective",
+        "value": "LO: 12.3: What were the major antebellum reform movements?,"
+      },
+      {
+        "name": "shuffle_choices",
+        "value": "Yes"
+      }
+    ],
+    "subject": [
+      "US History"
+    ],
+    "contentTypeTier2": [
+      "AssignmentItem"
+    ],
+    "contentTypeTier1": "Assessment",
+    "format": [
+      "application/vnd.pearson.sanvan.v1.activity"
+    ],
+    "version": "1.0",
+    "guid": "39a663a5-b254-4471-a9ce-745576e912dd",
+    "bookAuthor": "H. W. Brands; T. H. Breen; R. Hal Williams; Ariela J. Gros",
+    "title": "FA Remember 12 04",
+    "educationalAlignment": [
+      "http://purl.org/pearson/objectives/183725473384362"
+    ]
+  },
+  "body": {
+    "description": "FA_Remember_12_04",
+    "containerConfig": [
+      {
+        "description": "FA_Remember_12_04",
+        "containerId": "target1",
+        "brixConfig": [
+          {
+            "bricId": "q1",
+            "bricType": "MultipleChoiceQuestion",
+            "config": {
+              "id": "QUE61030",
+              "question": "Which of the following movements sponsored national meetings of black leaders beginning in 1830?\n\u003cbr /\u003e",
+              "order": "randomized",
+              "presenterType": "RadioGroup",
+              "presenterConfig": {
+                "numberFormat": "none"
+              },
+              "choices": [
+                {
+                  "answerKey": "answer_1",
+                  "content": "the Black Christian movement"
+                },
+                {
+                  "answerKey": "answer_2",
+                  "content": "the Negro Convention movement"
+                },
+                {
+                  "answerKey": "answer_3",
+                  "content": "the Black Panther movement"
+                },
+                {
+                  "answerKey": "answer_4",
+                  "content": "the Young Black movement"
+                }
+              ]
+            },
+            "answerKey": {
+              "assessmentType": "multiplechoice",
+              "answers": {
+                "answer_3": {
+                  "score": 0.0,
+                  "response": "Consider This: This movement provided an important forum for independent black expression. Its most eloquent statement came in 1854, when black leaders met in Cleveland to declare their faith in a separate identity, proclaiming, “We pledge our integrity to use all honorable means, to unite us, as one people, on this continent.” See L.O. 12.3 What were the major antebellum reform movements?"
+                },
+                "answer_2": {
+                  "score": 1.0,
+                  "response": ""
+                },
+                "answer_1": {
+                  "score": 0.0,
+                  "response": "Consider This: This movement provided an important forum for independent black expression. Its most eloquent statement came in 1854, when black leaders met in Cleveland to declare their faith in a separate identity, proclaiming, “We pledge our integrity to use all honorable means, to unite us, as one people, on this continent.” See L.O. 12.3 What were the major antebellum reform movements?"
+                },
+                "answer_4": {
+                  "score": 0.0,
+                  "response": "Consider This: This movement provided an important forum for independent black expression. Its most eloquent statement came in 1854, when black leaders met in Cleveland to declare their faith in a separate identity, proclaiming, “We pledge our integrity to use all honorable means, to unite us, as one people, on this continent.” See L.O. 12.3 What were the major antebellum reform movements?"
+                }
+              }
+            },
+            "configFixup": [
+              {
+                "name": "questionId",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "sequenceNodeKey",
+                  "type": "ref"
+                }
+              },
+              {
+                "name": "maxAttempts",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "maxAttempts",
+                  "type": "ref"
+                }
+              }
+            ]
+          }
+        ],
+        "hookupActions": [
+          {
+            "description": "Hookup the submit manager to evaluate answers",
+            "methodName": "handleRequestsFrom",
+            "type": "method-call",
+            "args": [
+              {
+                "domain": "brix",
+                "refId": "q1",
+                "type": "ref"
+              }
+            ],
+            "instance": {
+              "type": "submit-manager"
+            }
+          },
+          {
+            "description": "Draw the question",
+            "methodName": "draw",
+            "type": "method-call",
+            "args": [
+              {
+                "selector": "#target1",
+                "type": "d3select"
+              }
+            ],
+            "instance": {
+              "domain": "brix",
+              "refId": "q1",
+              "type": "ref"
+            }
+          }
+        ]
+      }
+    ]
+  }
+}

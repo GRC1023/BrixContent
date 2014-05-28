@@ -1,0 +1,191 @@
+{
+  "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope",
+  "@type": "Envelope",
+  "metadata": {
+    "bookTitle": "American Stories: A History of the United States, Combined Volume",
+    "keywords": [
+      "Brands 3e",
+      "Ch01",
+      "Alick"
+    ],
+    "extendedMetadata": [
+      {
+        "name": "ISBN",
+        "value": "013379461X"
+      },
+      {
+        "name": "M",
+        "value": "m05"
+      },
+      {
+        "name": "assessment_title",
+        "value": "Quiz: The French Claim Canada"
+      },
+      {
+        "name": "Topic",
+        "value": "The French Claim Canada"
+      },
+      {
+        "name": "chapterTitle",
+        "value": "New World Encounters Preconquestâ1608"
+      },
+      {
+        "name": "module",
+        "value": "The French Claim Canada"
+      },
+      {
+        "name": "item_title",
+        "value": "013379461X_H. W. Brands; T. H. Breen; R. Hal Williams; Ariela J. Gros_ch01_m05_q0001"
+      },
+      {
+        "name": "questionlayout",
+        "value": "1"
+      },
+      {
+        "name": "CH",
+        "value": "1"
+      },
+      {
+        "name": "Objective",
+        "value": "LO: 1.5: What was the character of the French empire in Canada?"
+      },
+      {
+        "name": "shuffle_choices",
+        "value": "Yes"
+      }
+    ],
+    "subject": [
+      "US History"
+    ],
+    "contentTypeTier2": [
+      "AssignmentItem"
+    ],
+    "contentTypeTier1": "Assessment",
+    "format": [
+      "application/vnd.pearson.sanvan.v1.activity"
+    ],
+    "version": "1.0",
+    "guid": "99e4a2de-e20c-4ec6-a48d-690e6134f042",
+    "bookAuthor": "H. W. Brands; T. H. Breen; R. Hal Williams; Ariela J. Gros",
+    "title": "PRE 01 05",
+    "educationalAlignment": [
+      "http://purl.org/pearson/objectives/183725473384362"
+    ]
+  },
+  "body": {
+    "description": "PRE_01_05",
+    "containerConfig": [
+      {
+        "description": "PRE_01_05",
+        "containerId": "target1",
+        "brixConfig": [
+          {
+            "bricId": "q1",
+            "bricType": "MultipleChoiceQuestion",
+            "config": {
+              "id": "QUE60681",
+              "question": "The dependence of French traders on Indian trappers and hunters made them view the Indians as __________.\n\u003cbr /\u003e",
+              "order": "randomized",
+              "presenterType": "RadioGroup",
+              "presenterConfig": {
+                "numberFormat": "none"
+              },
+              "choices": [
+                {
+                  "answerKey": "answer_1",
+                  "content": "trade partners"
+                },
+                {
+                  "answerKey": "answer_2",
+                  "content": "obstacles to economic growth"
+                },
+                {
+                  "answerKey": "answer_3",
+                  "content": "necessary evils"
+                },
+                {
+                  "answerKey": "answer_4",
+                  "content": "economic competitors"
+                }
+              ]
+            },
+            "answerKey": {
+              "assessmentType": "multiplechoice",
+              "answers": {
+                "answer_3": {
+                  "score": 0.0,
+                  "response": "In contrast to the English settlers, who established independent farms and regarded the Indians at best as obstacles to civilization, the French viewed the natives as necessary economic partners. Coureurs de bois followed Canada’s great river networks in search of fresh sources of furs."
+                },
+                "answer_2": {
+                  "score": 0.0,
+                  "response": "In contrast to the English settlers, who established independent farms and regarded the Indians at best as obstacles to civilization, the French viewed the natives as necessary economic partners. Coureurs de bois followed Canada’s great river networks in search of fresh sources of furs."
+                },
+                "answer_1": {
+                  "score": 1.0,
+                  "response": "In contrast to the English settlers, who established independent farms and regarded the Indians at best as obstacles to civilization, the French viewed the natives as necessary economic partners. Coureurs de bois followed Canada’s great river networks in search of fresh sources of furs."
+                },
+                "answer_4": {
+                  "score": 0.0,
+                  "response": "In contrast to the English settlers, who established independent farms and regarded the Indians at best as obstacles to civilization, the French viewed the natives as necessary economic partners. Coureurs de bois followed Canada’s great river networks in search of fresh sources of furs."
+                }
+              }
+            },
+            "configFixup": [
+              {
+                "name": "questionId",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "sequenceNodeKey",
+                  "type": "ref"
+                }
+              },
+              {
+                "name": "maxAttempts",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "maxAttempts",
+                  "type": "ref"
+                }
+              }
+            ]
+          }
+        ],
+        "hookupActions": [
+          {
+            "description": "Hookup the submit manager to evaluate answers",
+            "methodName": "handleRequestsFrom",
+            "type": "method-call",
+            "args": [
+              {
+                "domain": "brix",
+                "refId": "q1",
+                "type": "ref"
+              }
+            ],
+            "instance": {
+              "type": "submit-manager"
+            }
+          },
+          {
+            "description": "Draw the question",
+            "methodName": "draw",
+            "type": "method-call",
+            "args": [
+              {
+                "selector": "#target1",
+                "type": "d3select"
+              }
+            ],
+            "instance": {
+              "domain": "brix",
+              "refId": "q1",
+              "type": "ref"
+            }
+          }
+        ]
+      }
+    ]
+  }
+}

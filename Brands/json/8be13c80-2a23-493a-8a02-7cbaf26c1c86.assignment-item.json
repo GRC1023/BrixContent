@@ -1,0 +1,187 @@
+{
+  "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope",
+  "@type": "Envelope",
+  "metadata": {
+    "bookTitle": "American Stories: A History of the United States, Combined Volume",
+    "keywords": [
+      "Brands 3e",
+      "Ch16",
+      "Alick"
+    ],
+    "extendedMetadata": [
+      {
+        "name": "ISBN",
+        "value": "013379461X"
+      },
+      {
+        "name": "M",
+        "value": "c01"
+      },
+      {
+        "name": "assessment_title",
+        "value": "Chapter Quiz: The Agony of Reconstruction 1865â1877"
+      },
+      {
+        "name": "Topic",
+        "value": "Retreat from Reconstruction"
+      },
+      {
+        "name": "chapterTitle",
+        "value": "The Agony of Reconstruction 1865â1877"
+      },
+      {
+        "name": "item_title",
+        "value": "013379461X_H. W. Brands; T. H. Breen; R. Hal Williams; Ariela J. Gros_ch16_c01_q0001"
+      },
+      {
+        "name": "questionlayout",
+        "value": "1"
+      },
+      {
+        "name": "CH",
+        "value": "16"
+      },
+      {
+        "name": "Objective",
+        "value": "LO: 16.3: Why did Reconstruction end?"
+      },
+      {
+        "name": "shuffle_choices",
+        "value": "Yes"
+      }
+    ],
+    "subject": [
+      "US History"
+    ],
+    "contentTypeTier2": [
+      "AssignmentItem"
+    ],
+    "contentTypeTier1": "Assessment",
+    "format": [
+      "application/vnd.pearson.sanvan.v1.activity"
+    ],
+    "version": "1.0",
+    "guid": "8be13c80-2a23-493a-8a02-7cbaf26c1c86",
+    "bookAuthor": "H. W. Brands; T. H. Breen; R. Hal Williams; Ariela J. Gros",
+    "title": "PRE 16 14",
+    "educationalAlignment": [
+      "http://purl.org/pearson/objectives/183725473384362"
+    ]
+  },
+  "body": {
+    "description": "PRE_16_14",
+    "containerConfig": [
+      {
+        "description": "PRE_16_14",
+        "containerId": "target1",
+        "brixConfig": [
+          {
+            "bricId": "q1",
+            "bricType": "MultipleChoiceQuestion",
+            "config": {
+              "id": "QUE61103",
+              "question": "How did the feminists Elizabeth Cady Stanton and Susan B. Anthony react to the passage of the Fifteenth Amendment?\n\u003cbr /\u003e",
+              "order": "randomized",
+              "presenterType": "RadioGroup",
+              "presenterConfig": {
+                "numberFormat": "none"
+              },
+              "choices": [
+                {
+                  "answerKey": "answer_1",
+                  "content": "The two encouraged the nation’s feminists to support the amendment, stating this was the “Negro’s hour” and that women could afford to wait a few years for the vote."
+                },
+                {
+                  "answerKey": "answer_2",
+                  "content": "Although they publicly supported the amendment, private correspondence indicates that both women feared the impact the Negro vote could potentially have on women’s suffrage."
+                },
+                {
+                  "answerKey": "answer_3",
+                  "content": "Angered that the Constitution was being amended to, in effect, make gender a qualification for voting, they campaigned against ratification of the amendment."
+                },
+                {
+                  "answerKey": "answer_4",
+                  "content": "Stanton’s support of the amendment and Anthony’s opposition led to a temporary split in the women’s suffrage movement in the United States."
+                }
+              ]
+            },
+            "answerKey": {
+              "assessmentType": "multiplechoice",
+              "answers": {
+                "answer_3": {
+                  "score": 1.0,
+                  "response": ""
+                },
+                "answer_2": {
+                  "score": 0.0,
+                  "response": "Consider This: They were concerned that their needs were not being addressed. See L.O. 16.3 Why did Reconstruction end?"
+                },
+                "answer_1": {
+                  "score": 0.0,
+                  "response": "Consider This: They were concerned that their needs were not being addressed. See L.O. 16.3 Why did Reconstruction end?"
+                },
+                "answer_4": {
+                  "score": 0.0,
+                  "response": "Consider This: They were concerned that their needs were not being addressed. See L.O. 16.3 Why did Reconstruction end?"
+                }
+              }
+            },
+            "configFixup": [
+              {
+                "name": "questionId",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "sequenceNodeKey",
+                  "type": "ref"
+                }
+              },
+              {
+                "name": "maxAttempts",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "maxAttempts",
+                  "type": "ref"
+                }
+              }
+            ]
+          }
+        ],
+        "hookupActions": [
+          {
+            "description": "Hookup the submit manager to evaluate answers",
+            "methodName": "handleRequestsFrom",
+            "type": "method-call",
+            "args": [
+              {
+                "domain": "brix",
+                "refId": "q1",
+                "type": "ref"
+              }
+            ],
+            "instance": {
+              "type": "submit-manager"
+            }
+          },
+          {
+            "description": "Draw the question",
+            "methodName": "draw",
+            "type": "method-call",
+            "args": [
+              {
+                "selector": "#target1",
+                "type": "d3select"
+              }
+            ],
+            "instance": {
+              "domain": "brix",
+              "refId": "q1",
+              "type": "ref"
+            }
+          }
+        ]
+      }
+    ]
+  }
+}

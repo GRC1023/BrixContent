@@ -1,0 +1,191 @@
+{
+  "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope",
+  "@type": "Envelope",
+  "metadata": {
+    "bookTitle": "American Stories: A History of the United States, Combined Volume",
+    "keywords": [
+      "Brands 3e",
+      "Ch31",
+      "Alick"
+    ],
+    "extendedMetadata": [
+      {
+        "name": "ISBN",
+        "value": "013379461X"
+      },
+      {
+        "name": "M",
+        "value": "m01"
+      },
+      {
+        "name": "assessment_title",
+        "value": "Quiz: The Tempting of Richard Nixon"
+      },
+      {
+        "name": "Topic",
+        "value": "The Tempting of Richard Nixon"
+      },
+      {
+        "name": "chapterTitle",
+        "value": "To a New Conservatism 1969â1988"
+      },
+      {
+        "name": "module",
+        "value": "The Tempting of Richard Nixon"
+      },
+      {
+        "name": "item_title",
+        "value": "013379461X_H. W. Brands; T. H. Breen; R. Hal Williams; Ariela J. Gros_ch31_m01_q0006"
+      },
+      {
+        "name": "questionlayout",
+        "value": "1"
+      },
+      {
+        "name": "CH",
+        "value": "31"
+      },
+      {
+        "name": "Objective",
+        "value": "31.1"
+      },
+      {
+        "name": "shuffle_choices",
+        "value": "Yes"
+      }
+    ],
+    "subject": [
+      "US History"
+    ],
+    "contentTypeTier2": [
+      "AssignmentItem"
+    ],
+    "contentTypeTier1": "Assessment",
+    "format": [
+      "application/vnd.pearson.sanvan.v1.activity"
+    ],
+    "version": "1.0",
+    "guid": "11d132de-ff34-4c34-aaff-6d96cd516390",
+    "bookAuthor": "H. W. Brands; T. H. Breen; R. Hal Williams; Ariela J. Gros",
+    "title": "POST 31 11",
+    "educationalAlignment": [
+      "http://purl.org/pearson/objectives/183725473384362"
+    ]
+  },
+  "body": {
+    "description": "POST_31_11",
+    "containerConfig": [
+      {
+        "description": "POST_31_11",
+        "containerId": "target1",
+        "brixConfig": [
+          {
+            "bricId": "q1",
+            "bricType": "MultipleChoiceQuestion",
+            "config": {
+              "id": "QUE61599",
+              "question": "Which of the following is true of the SALT I agreements?\n\u003cbr /\u003e",
+              "order": "randomized",
+              "presenterType": "RadioGroup",
+              "presenterConfig": {
+                "numberFormat": "none"
+              },
+              "choices": [
+                {
+                  "answerKey": "answer_1",
+                  "content": "They were two arms control pacts between the United States and the Soviet Union."
+                },
+                {
+                  "answerKey": "answer_2",
+                  "content": "They were strategic agreements between China and the United States."
+                },
+                {
+                  "answerKey": "answer_3",
+                  "content": "They were the outcome of negotiations between the United States and Hanoi."
+                },
+                {
+                  "answerKey": "answer_4",
+                  "content": "They were initially signed by the Soviet Union, but were later rejected."
+                }
+              ]
+            },
+            "answerKey": {
+              "assessmentType": "multiplechoice",
+              "answers": {
+                "answer_3": {
+                  "score": 0.0,
+                  "response": "The Strategic Arms Limitation Talks (SALT) had been under way since 1969. During a visit to Moscow in May 1972, Nixon signed two vital documents with Soviet leader Leonid Brezhnev. The first limited the two superpowers to 200 antiballistic missiles (ABMs) apiece; the second froze the number of offensive ballistic missiles for five years."
+                },
+                "answer_2": {
+                  "score": 0.0,
+                  "response": "The Strategic Arms Limitation Talks (SALT) had been under way since 1969. During a visit to Moscow in May 1972, Nixon signed two vital documents with Soviet leader Leonid Brezhnev. The first limited the two superpowers to 200 antiballistic missiles (ABMs) apiece; the second froze the number of offensive ballistic missiles for five years."
+                },
+                "answer_1": {
+                  "score": 1.0,
+                  "response": "The Strategic Arms Limitation Talks (SALT) had been under way since 1969. During a visit to Moscow in May 1972, Nixon signed two vital documents with Soviet leader Leonid Brezhnev. The first limited the two superpowers to 200 antiballistic missiles (ABMs) apiece; the second froze the number of offensive ballistic missiles for five years."
+                },
+                "answer_4": {
+                  "score": 0.0,
+                  "response": "The Strategic Arms Limitation Talks (SALT) had been under way since 1969. During a visit to Moscow in May 1972, Nixon signed two vital documents with Soviet leader Leonid Brezhnev. The first limited the two superpowers to 200 antiballistic missiles (ABMs) apiece; the second froze the number of offensive ballistic missiles for five years."
+                }
+              }
+            },
+            "configFixup": [
+              {
+                "name": "questionId",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "sequenceNodeKey",
+                  "type": "ref"
+                }
+              },
+              {
+                "name": "maxAttempts",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "maxAttempts",
+                  "type": "ref"
+                }
+              }
+            ]
+          }
+        ],
+        "hookupActions": [
+          {
+            "description": "Hookup the submit manager to evaluate answers",
+            "methodName": "handleRequestsFrom",
+            "type": "method-call",
+            "args": [
+              {
+                "domain": "brix",
+                "refId": "q1",
+                "type": "ref"
+              }
+            ],
+            "instance": {
+              "type": "submit-manager"
+            }
+          },
+          {
+            "description": "Draw the question",
+            "methodName": "draw",
+            "type": "method-call",
+            "args": [
+              {
+                "selector": "#target1",
+                "type": "d3select"
+              }
+            ],
+            "instance": {
+              "domain": "brix",
+              "refId": "q1",
+              "type": "ref"
+            }
+          }
+        ]
+      }
+    ]
+  }
+}

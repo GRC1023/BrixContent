@@ -1,0 +1,191 @@
+{
+  "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope",
+  "@type": "Envelope",
+  "metadata": {
+    "bookTitle": "American Stories: A History of the United States, Combined Volume",
+    "keywords": [
+      "Brands 3e",
+      "Ch02",
+      "Alick"
+    ],
+    "extendedMetadata": [
+      {
+        "name": "ISBN",
+        "value": "013379461X"
+      },
+      {
+        "name": "M",
+        "value": "m01"
+      },
+      {
+        "name": "assessment_title",
+        "value": "Quiz: Decisions to Move to America"
+      },
+      {
+        "name": "Topic",
+        "value": "Breaking Away: Decisions to Move to America"
+      },
+      {
+        "name": "chapterTitle",
+        "value": "Englandâs New World Experiments 1607â1732"
+      },
+      {
+        "name": "module",
+        "value": "Decisions to Move to America"
+      },
+      {
+        "name": "item_title",
+        "value": "013379461X_H. W. Brands; T. H. Breen; R. Hal Williams; Ariela J. Gros_ch02_m01_q0004"
+      },
+      {
+        "name": "questionlayout",
+        "value": "1"
+      },
+      {
+        "name": "CH",
+        "value": "2"
+      },
+      {
+        "name": "Objective",
+        "value": "LO: 2.1: Why did the Chesapeake colonies not prosper during the earliest years of settlement?"
+      },
+      {
+        "name": "shuffle_choices",
+        "value": "Yes"
+      }
+    ],
+    "subject": [
+      "US History"
+    ],
+    "contentTypeTier2": [
+      "AssignmentItem"
+    ],
+    "contentTypeTier1": "Assessment",
+    "format": [
+      "application/vnd.pearson.sanvan.v1.activity"
+    ],
+    "version": "1.0",
+    "guid": "46507d04-5c48-4e3d-a21d-bef89ebbda6b",
+    "bookAuthor": "H. W. Brands; T. H. Breen; R. Hal Williams; Ariela J. Gros",
+    "title": "PRE 02 10",
+    "educationalAlignment": [
+      "http://purl.org/pearson/objectives/183725473384362"
+    ]
+  },
+  "body": {
+    "description": "PRE_02_10",
+    "containerConfig": [
+      {
+        "description": "PRE_02_10",
+        "containerId": "target1",
+        "brixConfig": [
+          {
+            "bricId": "q1",
+            "bricType": "MultipleChoiceQuestion",
+            "config": {
+              "id": "QUE60704",
+              "question": "Why did Lord Baltimore’s feudal system fail on Chesapeake soil?\n\u003cbr /\u003e",
+              "order": "randomized",
+              "presenterType": "RadioGroup",
+              "presenterConfig": {
+                "numberFormat": "none"
+              },
+              "choices": [
+                {
+                  "answerKey": "answer_1",
+                  "content": "People refused to play the social roles the lord had assigned them."
+                },
+                {
+                  "answerKey": "answer_2",
+                  "content": "Baltimore did not design a social hierarchy for its members."
+                },
+                {
+                  "answerKey": "answer_3",
+                  "content": "An elected assembly was never formed under his governance."
+                },
+                {
+                  "answerKey": "answer_4",
+                  "content": "Baltimore regularly persecuted people for their religious beliefs."
+                }
+              ]
+            },
+            "answerKey": {
+              "assessmentType": "multiplechoice",
+              "answers": {
+                "answer_3": {
+                  "score": 0.0,
+                  "response": "Baltimore’s feudal system never took root in Chesapeake soil because people refused to play the social roles the lord proprietor had assigned them."
+                },
+                "answer_2": {
+                  "score": 0.0,
+                  "response": "Baltimore’s feudal system never took root in Chesapeake soil because people refused to play the social roles the lord proprietor had assigned them."
+                },
+                "answer_1": {
+                  "score": 1.0,
+                  "response": "Baltimore’s feudal system never took root in Chesapeake soil because people refused to play the social roles the lord proprietor had assigned them."
+                },
+                "answer_4": {
+                  "score": 0.0,
+                  "response": "Baltimore’s feudal system never took root in Chesapeake soil because people refused to play the social roles the lord proprietor had assigned them."
+                }
+              }
+            },
+            "configFixup": [
+              {
+                "name": "questionId",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "sequenceNodeKey",
+                  "type": "ref"
+                }
+              },
+              {
+                "name": "maxAttempts",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "maxAttempts",
+                  "type": "ref"
+                }
+              }
+            ]
+          }
+        ],
+        "hookupActions": [
+          {
+            "description": "Hookup the submit manager to evaluate answers",
+            "methodName": "handleRequestsFrom",
+            "type": "method-call",
+            "args": [
+              {
+                "domain": "brix",
+                "refId": "q1",
+                "type": "ref"
+              }
+            ],
+            "instance": {
+              "type": "submit-manager"
+            }
+          },
+          {
+            "description": "Draw the question",
+            "methodName": "draw",
+            "type": "method-call",
+            "args": [
+              {
+                "selector": "#target1",
+                "type": "d3select"
+              }
+            ],
+            "instance": {
+              "domain": "brix",
+              "refId": "q1",
+              "type": "ref"
+            }
+          }
+        ]
+      }
+    ]
+  }
+}

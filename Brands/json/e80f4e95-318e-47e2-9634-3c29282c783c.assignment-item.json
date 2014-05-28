@@ -1,0 +1,191 @@
+{
+  "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope",
+  "@type": "Envelope",
+  "metadata": {
+    "bookTitle": "American Stories: A History of the United States, Combined Volume",
+    "keywords": [
+      "Brands 3e",
+      "Ch17",
+      "Alick"
+    ],
+    "extendedMetadata": [
+      {
+        "name": "ISBN",
+        "value": "013379461X"
+      },
+      {
+        "name": "M",
+        "value": "m01"
+      },
+      {
+        "name": "assessment_title",
+        "value": "Quiz: Beyond the Fronteir"
+      },
+      {
+        "name": "Topic",
+        "value": "Beyond the Frontier"
+      },
+      {
+        "name": "chapterTitle",
+        "value": "The West Exploiting an Empire 1849â1902"
+      },
+      {
+        "name": "module",
+        "value": "Beyond the Fronteir"
+      },
+      {
+        "name": "item_title",
+        "value": "013379461X_H. W. Brands; T. H. Breen; R. Hal Williams; Ariela J. Gros_ch17_m01_q0002"
+      },
+      {
+        "name": "questionlayout",
+        "value": "1"
+      },
+      {
+        "name": "CH",
+        "value": "17"
+      },
+      {
+        "name": "Objective",
+        "value": "LO: 17.1: What were the challenges of settling the country west of the Mississippi?"
+      },
+      {
+        "name": "shuffle_choices",
+        "value": "Yes"
+      }
+    ],
+    "subject": [
+      "US History"
+    ],
+    "contentTypeTier2": [
+      "AssignmentItem"
+    ],
+    "contentTypeTier1": "Assessment",
+    "format": [
+      "application/vnd.pearson.sanvan.v1.activity"
+    ],
+    "version": "1.0",
+    "guid": "e80f4e95-318e-47e2-9634-3c29282c783c",
+    "bookAuthor": "H. W. Brands; T. H. Breen; R. Hal Williams; Ariela J. Gros",
+    "title": "POST 17 09 ",
+    "educationalAlignment": [
+      "http://purl.org/pearson/objectives/183725473384362"
+    ]
+  },
+  "body": {
+    "description": "POST_17_09",
+    "containerConfig": [
+      {
+        "description": "POST_17_09",
+        "containerId": "target1",
+        "brixConfig": [
+          {
+            "bricId": "q1",
+            "bricType": "MultipleChoiceQuestion",
+            "config": {
+              "id": "QUE61142",
+              "question": "Which of the following geographic features could be found in the Great Plains beyond the Missouri timber country?\n\u003cbr /\u003e",
+              "order": "randomized",
+              "presenterType": "RadioGroup",
+              "presenterConfig": {
+                "numberFormat": "none"
+              },
+              "choices": [
+                {
+                  "answerKey": "answer_1",
+                  "content": "tough and treeless soil"
+                },
+                {
+                  "answerKey": "answer_2",
+                  "content": "heavily flooding rivers"
+                },
+                {
+                  "answerKey": "answer_3",
+                  "content": "abundant seasonal rainfall"
+                },
+                {
+                  "answerKey": "answer_4",
+                  "content": "dense evergreen forests"
+                }
+              ]
+            },
+            "answerKey": {
+              "assessmentType": "multiplechoice",
+              "answers": {
+                "answer_3": {
+                  "score": 0.0,
+                  "response": "Emerging from the timber country, travelers first encountered the Great Plains—treeless, nearly flat, an endless “sea of grassy hillocks” extending from the Mississippi River to the Rocky Mountains. Few rivers cut through the Plains; those that did raged in the winter and trickled in the summer. Rainfall usually did not reach 15 inches a year, and the tools of eastern settlement—the cast-iron plow and the ax—were virtually useless on the tough and treeless Plains soil."
+                },
+                "answer_2": {
+                  "score": 0.0,
+                  "response": "Emerging from the timber country, travelers first encountered the Great Plains—treeless, nearly flat, an endless “sea of grassy hillocks” extending from the Mississippi River to the Rocky Mountains. Few rivers cut through the Plains; those that did raged in the winter and trickled in the summer. Rainfall usually did not reach 15 inches a year, and the tools of eastern settlement—the cast-iron plow and the ax—were virtually useless on the tough and treeless Plains soil."
+                },
+                "answer_1": {
+                  "score": 1.0,
+                  "response": "Emerging from the timber country, travelers first encountered the Great Plains—treeless, nearly flat, an endless “sea of grassy hillocks” extending from the Mississippi River to the Rocky Mountains. Few rivers cut through the Plains; those that did raged in the winter and trickled in the summer. Rainfall usually did not reach 15 inches a year, and the tools of eastern settlement—the cast-iron plow and the ax—were virtually useless on the tough and treeless Plains soil."
+                },
+                "answer_4": {
+                  "score": 0.0,
+                  "response": "Emerging from the timber country, travelers first encountered the Great Plains—treeless, nearly flat, an endless “sea of grassy hillocks” extending from the Mississippi River to the Rocky Mountains. Few rivers cut through the Plains; those that did raged in the winter and trickled in the summer. Rainfall usually did not reach 15 inches a year, and the tools of eastern settlement—the cast-iron plow and the ax—were virtually useless on the tough and treeless Plains soil."
+                }
+              }
+            },
+            "configFixup": [
+              {
+                "name": "questionId",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "sequenceNodeKey",
+                  "type": "ref"
+                }
+              },
+              {
+                "name": "maxAttempts",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "maxAttempts",
+                  "type": "ref"
+                }
+              }
+            ]
+          }
+        ],
+        "hookupActions": [
+          {
+            "description": "Hookup the submit manager to evaluate answers",
+            "methodName": "handleRequestsFrom",
+            "type": "method-call",
+            "args": [
+              {
+                "domain": "brix",
+                "refId": "q1",
+                "type": "ref"
+              }
+            ],
+            "instance": {
+              "type": "submit-manager"
+            }
+          },
+          {
+            "description": "Draw the question",
+            "methodName": "draw",
+            "type": "method-call",
+            "args": [
+              {
+                "selector": "#target1",
+                "type": "d3select"
+              }
+            ],
+            "instance": {
+              "domain": "brix",
+              "refId": "q1",
+              "type": "ref"
+            }
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,187 @@
+{
+  "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope",
+  "@type": "Envelope",
+  "metadata": {
+    "bookTitle": "American Stories: A History of the United States, Combined Volume",
+    "keywords": [
+      "Brands 3e",
+      "Ch16",
+      "Alick"
+    ],
+    "extendedMetadata": [
+      {
+        "name": "ISBN",
+        "value": "013379461X"
+      },
+      {
+        "name": "M",
+        "value": "c01"
+      },
+      {
+        "name": "assessment_title",
+        "value": "Chapter Quiz: The Agony of Reconstruction 1865â1877"
+      },
+      {
+        "name": "Topic",
+        "value": "The President Versus Congress"
+      },
+      {
+        "name": "chapterTitle",
+        "value": "The Agony of Reconstruction 1865â1877"
+      },
+      {
+        "name": "item_title",
+        "value": "013379461X_H. W. Brands; T. H. Breen; R. Hal Williams; Ariela J. Gros_ch16_c01_q0004"
+      },
+      {
+        "name": "questionlayout",
+        "value": "1"
+      },
+      {
+        "name": "CH",
+        "value": "16"
+      },
+      {
+        "name": "Objective",
+        "value": "LO: 16.1: What conflicts arose consecutively involving President Lincoln and then President Johnson and Congress during Reconstruction?"
+      },
+      {
+        "name": "shuffle_choices",
+        "value": "Yes"
+      }
+    ],
+    "subject": [
+      "US History"
+    ],
+    "contentTypeTier2": [
+      "AssignmentItem"
+    ],
+    "contentTypeTier1": "Assessment",
+    "format": [
+      "application/vnd.pearson.sanvan.v1.activity"
+    ],
+    "version": "1.0",
+    "guid": "8b81abce-90bf-4c19-8f2f-15550d047644",
+    "bookAuthor": "H. W. Brands; T. H. Breen; R. Hal Williams; Ariela J. Gros",
+    "title": "FA Remember 16 01",
+    "educationalAlignment": [
+      "http://purl.org/pearson/objectives/183725473384362"
+    ]
+  },
+  "body": {
+    "description": "FA_Remember_16_01",
+    "containerConfig": [
+      {
+        "description": "FA_Remember_16_01",
+        "containerId": "target1",
+        "brixConfig": [
+          {
+            "bricId": "q1",
+            "bricType": "MultipleChoiceQuestion",
+            "config": {
+              "id": "QUE61106",
+              "question": "Which of the following was passed by southern state legislatures immediately after readmission to the Union, restricting the freedom of former slaves in the early Reconstruction era?\n\u003cbr /\u003e",
+              "order": "randomized",
+              "presenterType": "RadioGroup",
+              "presenterConfig": {
+                "numberFormat": "none"
+              },
+              "choices": [
+                {
+                  "answerKey": "answer_1",
+                  "content": "Jim Crow laws"
+                },
+                {
+                  "answerKey": "answer_2",
+                  "content": "Force Acts"
+                },
+                {
+                  "answerKey": "answer_3",
+                  "content": "Blood Quantum laws"
+                },
+                {
+                  "answerKey": "answer_4",
+                  "content": "Black Codes"
+                }
+              ]
+            },
+            "answerKey": {
+              "assessmentType": "multiplechoice",
+              "answers": {
+                "answer_3": {
+                  "score": 0.0,
+                  "response": "Consider This: These laws looked suspiciously like slavery in a new guise. Especially troubling were vagrancy and apprenticeship laws that forced African Americans to work and denied them a free choice of employers. See L.O. 16.1 What conflicts arose consecutively involving President Lincoln and then President Johnson and Congress during Reconstruction?"
+                },
+                "answer_2": {
+                  "score": 0.0,
+                  "response": "Consider This: These laws looked suspiciously like slavery in a new guise. Especially troubling were vagrancy and apprenticeship laws that forced African Americans to work and denied them a free choice of employers. See L.O. 16.1 What conflicts arose consecutively involving President Lincoln and then President Johnson and Congress during Reconstruction?"
+                },
+                "answer_1": {
+                  "score": 0.0,
+                  "response": "Consider This: These laws looked suspiciously like slavery in a new guise. Especially troubling were vagrancy and apprenticeship laws that forced African Americans to work and denied them a free choice of employers. See L.O. 16.1 What conflicts arose consecutively involving President Lincoln and then President Johnson and Congress during Reconstruction?"
+                },
+                "answer_4": {
+                  "score": 1.0,
+                  "response": ""
+                }
+              }
+            },
+            "configFixup": [
+              {
+                "name": "questionId",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "sequenceNodeKey",
+                  "type": "ref"
+                }
+              },
+              {
+                "name": "maxAttempts",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "maxAttempts",
+                  "type": "ref"
+                }
+              }
+            ]
+          }
+        ],
+        "hookupActions": [
+          {
+            "description": "Hookup the submit manager to evaluate answers",
+            "methodName": "handleRequestsFrom",
+            "type": "method-call",
+            "args": [
+              {
+                "domain": "brix",
+                "refId": "q1",
+                "type": "ref"
+              }
+            ],
+            "instance": {
+              "type": "submit-manager"
+            }
+          },
+          {
+            "description": "Draw the question",
+            "methodName": "draw",
+            "type": "method-call",
+            "args": [
+              {
+                "selector": "#target1",
+                "type": "d3select"
+              }
+            ],
+            "instance": {
+              "domain": "brix",
+              "refId": "q1",
+              "type": "ref"
+            }
+          }
+        ]
+      }
+    ]
+  }
+}

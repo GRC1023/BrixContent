@@ -1,0 +1,191 @@
+{
+  "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope",
+  "@type": "Envelope",
+  "metadata": {
+    "bookTitle": "American Stories: A History of the United States, Combined Volume",
+    "keywords": [
+      "Brands 3e",
+      "Ch08",
+      "Alick"
+    ],
+    "extendedMetadata": [
+      {
+        "name": "ISBN",
+        "value": "013379461X"
+      },
+      {
+        "name": "M",
+        "value": "m04"
+      },
+      {
+        "name": "assessment_title",
+        "value": "Quiz: Embarassments Overseas"
+      },
+      {
+        "name": "Topic",
+        "value": "Embarrassments Overseas"
+      },
+      {
+        "name": "chapterTitle",
+        "value": "Republican Ascendancy: The Jeffersonian Vision 1800â1814"
+      },
+      {
+        "name": "module",
+        "value": "Embarassments Overseas"
+      },
+      {
+        "name": "item_title",
+        "value": "013379461X_H. W. Brands; T. H. Breen; R. Hal Williams; Ariela J. Gros_ch08_m04_q0003"
+      },
+      {
+        "name": "questionlayout",
+        "value": "1"
+      },
+      {
+        "name": "CH",
+        "value": "8"
+      },
+      {
+        "name": "Objective",
+        "value": "LO: 8.4: Why did the United States find it difficult to avoid military conflict during this period?"
+      },
+      {
+        "name": "shuffle_choices",
+        "value": "Yes"
+      }
+    ],
+    "subject": [
+      "US History"
+    ],
+    "contentTypeTier2": [
+      "AssignmentItem"
+    ],
+    "contentTypeTier1": "Assessment",
+    "format": [
+      "application/vnd.pearson.sanvan.v1.activity"
+    ],
+    "version": "1.0",
+    "guid": "8baebb4f-914b-4ab1-979e-89a17c08e90e",
+    "bookAuthor": "H. W. Brands; T. H. Breen; R. Hal Williams; Ariela J. Gros",
+    "title": "POST 08 05",
+    "educationalAlignment": [
+      "http://purl.org/pearson/objectives/183725473384362"
+    ]
+  },
+  "body": {
+    "description": "POST_08_05",
+    "containerConfig": [
+      {
+        "description": "POST_08_05",
+        "containerId": "target1",
+        "brixConfig": [
+          {
+            "bricId": "q1",
+            "bricType": "MultipleChoiceQuestion",
+            "config": {
+              "id": "QUE60906",
+              "question": "A crucial foreign policy for many War Hawks in the War of 1812 was __________.\n\u003cbr /\u003e",
+              "order": "randomized",
+              "presenterType": "RadioGroup",
+              "presenterConfig": {
+                "numberFormat": "none"
+              },
+              "choices": [
+                {
+                  "answerKey": "answer_1",
+                  "content": "the capture and annexation of Canada"
+                },
+                {
+                  "answerKey": "answer_2",
+                  "content": "the end of all Spanish colonization in America"
+                },
+                {
+                  "answerKey": "answer_3",
+                  "content": "the conquest and settlement of Texas"
+                },
+                {
+                  "answerKey": "answer_4",
+                  "content": "the destruction of the British navy"
+                }
+              ]
+            },
+            "answerKey": {
+              "assessmentType": "multiplechoice",
+              "answers": {
+                "answer_3": {
+                  "score": 0.0,
+                  "response": "Congressional War Hawks may have had other goals. Some expansionists were probably more concerned about conquering Canada than they were about the impressment of American seamen. For others, the whole affair may have truly been about national pride."
+                },
+                "answer_2": {
+                  "score": 0.0,
+                  "response": "Congressional War Hawks may have had other goals. Some expansionists were probably more concerned about conquering Canada than they were about the impressment of American seamen. For others, the whole affair may have truly been about national pride."
+                },
+                "answer_1": {
+                  "score": 1.0,
+                  "response": "Congressional War Hawks may have had other goals. Some expansionists were probably more concerned about conquering Canada than they were about the impressment of American seamen. For others, the whole affair may have truly been about national pride."
+                },
+                "answer_4": {
+                  "score": 0.0,
+                  "response": "Congressional War Hawks may have had other goals. Some expansionists were probably more concerned about conquering Canada than they were about the impressment of American seamen. For others, the whole affair may have truly been about national pride."
+                }
+              }
+            },
+            "configFixup": [
+              {
+                "name": "questionId",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "sequenceNodeKey",
+                  "type": "ref"
+                }
+              },
+              {
+                "name": "maxAttempts",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "maxAttempts",
+                  "type": "ref"
+                }
+              }
+            ]
+          }
+        ],
+        "hookupActions": [
+          {
+            "description": "Hookup the submit manager to evaluate answers",
+            "methodName": "handleRequestsFrom",
+            "type": "method-call",
+            "args": [
+              {
+                "domain": "brix",
+                "refId": "q1",
+                "type": "ref"
+              }
+            ],
+            "instance": {
+              "type": "submit-manager"
+            }
+          },
+          {
+            "description": "Draw the question",
+            "methodName": "draw",
+            "type": "method-call",
+            "args": [
+              {
+                "selector": "#target1",
+                "type": "d3select"
+              }
+            ],
+            "instance": {
+              "domain": "brix",
+              "refId": "q1",
+              "type": "ref"
+            }
+          }
+        ]
+      }
+    ]
+  }
+}

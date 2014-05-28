@@ -1,0 +1,191 @@
+{
+  "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope",
+  "@type": "Envelope",
+  "metadata": {
+    "bookTitle": "American Stories: A History of the United States, Combined Volume",
+    "keywords": [
+      "Brands 3e",
+      "Ch20",
+      "Alick"
+    ],
+    "extendedMetadata": [
+      {
+        "name": "ISBN",
+        "value": "013379461X"
+      },
+      {
+        "name": "M",
+        "value": "m02"
+      },
+      {
+        "name": "assessment_title",
+        "value": "Quiz: The Rise of the Populist Movement"
+      },
+      {
+        "name": "Topic",
+        "value": "The Rise of the Populist Movement"
+      },
+      {
+        "name": "chapterTitle",
+        "value": "Political Realignments 1876â1901"
+      },
+      {
+        "name": "module",
+        "value": "The Rise of the Populist Movement"
+      },
+      {
+        "name": "item_title",
+        "value": "013379461X_H. W. Brands; T. H. Breen; R. Hal Williams; Ariela J. Gros_ch20_m02_q0002"
+      },
+      {
+        "name": "questionlayout",
+        "value": "1"
+      },
+      {
+        "name": "CH",
+        "value": "20"
+      },
+      {
+        "name": "Objective",
+        "value": "LO: 20.2: What factors led to the formation and growth of the Farmersâ Alliance and Peopleâs party?"
+      },
+      {
+        "name": "shuffle_choices",
+        "value": "Yes"
+      }
+    ],
+    "subject": [
+      "US History"
+    ],
+    "contentTypeTier2": [
+      "AssignmentItem"
+    ],
+    "contentTypeTier1": "Assessment",
+    "format": [
+      "application/vnd.pearson.sanvan.v1.activity"
+    ],
+    "version": "1.0",
+    "guid": "2b8da335-d86c-4ede-af5b-9ca19c6140c4",
+    "bookAuthor": "H. W. Brands; T. H. Breen; R. Hal Williams; Ariela J. Gros",
+    "title": "PRE 20 10",
+    "educationalAlignment": [
+      "http://purl.org/pearson/objectives/183725473384362"
+    ]
+  },
+  "body": {
+    "description": "PRE_20_10",
+    "containerConfig": [
+      {
+        "description": "PRE_20_10",
+        "containerId": "target1",
+        "brixConfig": [
+          {
+            "bricId": "q1",
+            "bricType": "MultipleChoiceQuestion",
+            "config": {
+              "id": "QUE61222",
+              "question": "What role did the Populist party play in strengthening the relationship between blacks and whites?\n\u003cbr /\u003e",
+              "order": "randomized",
+              "presenterType": "RadioGroup",
+              "presenterConfig": {
+                "numberFormat": "none"
+              },
+              "choices": [
+                {
+                  "answerKey": "answer_1",
+                  "content": "In the South, some Populists worked to unite black and white farmers."
+                },
+                {
+                  "answerKey": "answer_2",
+                  "content": "The People’s party was created by blacks but also included white members."
+                },
+                {
+                  "answerKey": "answer_3",
+                  "content": "Populists continually organized protests to support black voting rights."
+                },
+                {
+                  "answerKey": "answer_4",
+                  "content": "Blacks and whites in Kansas and North Dakota united to fight the People’s party."
+                }
+              ]
+            },
+            "answerKey": {
+              "assessmentType": "multiplechoice",
+              "answers": {
+                "answer_3": {
+                  "score": 0.0,
+                  "response": "In the South, some Populists worked for a time to unite black and white farmers. They believed the blacks had problems similar to them."
+                },
+                "answer_2": {
+                  "score": 0.0,
+                  "response": "In the South, some Populists worked for a time to unite black and white farmers. They believed the blacks had problems similar to them."
+                },
+                "answer_1": {
+                  "score": 1.0,
+                  "response": "In the South, some Populists worked for a time to unite black and white farmers. They believed the blacks had problems similar to them."
+                },
+                "answer_4": {
+                  "score": 0.0,
+                  "response": "In the South, some Populists worked for a time to unite black and white farmers. They believed the blacks had problems similar to them."
+                }
+              }
+            },
+            "configFixup": [
+              {
+                "name": "questionId",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "sequenceNodeKey",
+                  "type": "ref"
+                }
+              },
+              {
+                "name": "maxAttempts",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "maxAttempts",
+                  "type": "ref"
+                }
+              }
+            ]
+          }
+        ],
+        "hookupActions": [
+          {
+            "description": "Hookup the submit manager to evaluate answers",
+            "methodName": "handleRequestsFrom",
+            "type": "method-call",
+            "args": [
+              {
+                "domain": "brix",
+                "refId": "q1",
+                "type": "ref"
+              }
+            ],
+            "instance": {
+              "type": "submit-manager"
+            }
+          },
+          {
+            "description": "Draw the question",
+            "methodName": "draw",
+            "type": "method-call",
+            "args": [
+              {
+                "selector": "#target1",
+                "type": "d3select"
+              }
+            ],
+            "instance": {
+              "domain": "brix",
+              "refId": "q1",
+              "type": "ref"
+            }
+          }
+        ]
+      }
+    ]
+  }
+}

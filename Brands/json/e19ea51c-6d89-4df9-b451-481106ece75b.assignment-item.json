@@ -1,0 +1,191 @@
+{
+  "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope",
+  "@type": "Envelope",
+  "metadata": {
+    "bookTitle": "American Stories: A History of the United States, Combined Volume",
+    "keywords": [
+      "Brands 3e",
+      "Ch31",
+      "Alick"
+    ],
+    "extendedMetadata": [
+      {
+        "name": "ISBN",
+        "value": "013379461X"
+      },
+      {
+        "name": "M",
+        "value": "m01"
+      },
+      {
+        "name": "assessment_title",
+        "value": "Quiz: The Tempting of Richard Nixon"
+      },
+      {
+        "name": "Topic",
+        "value": "The Tempting of Richard Nixon"
+      },
+      {
+        "name": "chapterTitle",
+        "value": "To a New Conservatism 1969â1988"
+      },
+      {
+        "name": "module",
+        "value": "The Tempting of Richard Nixon"
+      },
+      {
+        "name": "item_title",
+        "value": "013379461X_H. W. Brands; T. H. Breen; R. Hal Williams; Ariela J. Gros_ch31_m01_q0005"
+      },
+      {
+        "name": "questionlayout",
+        "value": "1"
+      },
+      {
+        "name": "CH",
+        "value": "31"
+      },
+      {
+        "name": "Objective",
+        "value": "31.1"
+      },
+      {
+        "name": "shuffle_choices",
+        "value": "Yes"
+      }
+    ],
+    "subject": [
+      "US History"
+    ],
+    "contentTypeTier2": [
+      "AssignmentItem"
+    ],
+    "contentTypeTier1": "Assessment",
+    "format": [
+      "application/vnd.pearson.sanvan.v1.activity"
+    ],
+    "version": "1.0",
+    "guid": "e19ea51c-6d89-4df9-b451-481106ece75b",
+    "bookAuthor": "H. W. Brands; T. H. Breen; R. Hal Williams; Ariela J. Gros",
+    "title": "POST 31 10",
+    "educationalAlignment": [
+      "http://purl.org/pearson/objectives/183725473384362"
+    ]
+  },
+  "body": {
+    "description": "POST_31_10",
+    "containerConfig": [
+      {
+        "description": "POST_31_10",
+        "containerId": "target1",
+        "brixConfig": [
+          {
+            "bricId": "q1",
+            "bricType": "MultipleChoiceQuestion",
+            "config": {
+              "id": "QUE61598",
+              "question": "The most controversial part of Nixon’s three-part plan to resolving the conflict in Vietnam was __________.\n\u003cbr /\u003e",
+              "order": "randomized",
+              "presenterType": "RadioGroup",
+              "presenterConfig": {
+                "numberFormat": "none"
+              },
+              "choices": [
+                {
+                  "answerKey": "answer_1",
+                  "content": "renewed bombing"
+                },
+                {
+                  "answerKey": "answer_2",
+                  "content": "withdrawal of American forces"
+                },
+                {
+                  "answerKey": "answer_3",
+                  "content": "release of Vietcong prisoners of war"
+                },
+                {
+                  "answerKey": "answer_4",
+                  "content": "resumption of diplomacy with the Vietcong"
+                }
+              ]
+            },
+            "answerKey": {
+              "assessmentType": "multiplechoice",
+              "answers": {
+                "answer_3": {
+                  "score": 0.0,
+                  "response": "Nixon had a three-part plan to end the conflict—gradual withdrawal of American troops, accompanied by training South Vietnamese forces to take over the combat role; renewed bombing; and a hard line in negotiations with Hanoi. Renewed bombing was the most controversial part of the plan, particularly the revelations that he had secretly ordered the bombing of communist supply lines in the neutral country of Cambodia."
+                },
+                "answer_2": {
+                  "score": 0.0,
+                  "response": "Nixon had a three-part plan to end the conflict—gradual withdrawal of American troops, accompanied by training South Vietnamese forces to take over the combat role; renewed bombing; and a hard line in negotiations with Hanoi. Renewed bombing was the most controversial part of the plan, particularly the revelations that he had secretly ordered the bombing of communist supply lines in the neutral country of Cambodia."
+                },
+                "answer_1": {
+                  "score": 1.0,
+                  "response": "Nixon had a three-part plan to end the conflict—gradual withdrawal of American troops, accompanied by training South Vietnamese forces to take over the combat role; renewed bombing; and a hard line in negotiations with Hanoi. Renewed bombing was the most controversial part of the plan, particularly the revelations that he had secretly ordered the bombing of communist supply lines in the neutral country of Cambodia."
+                },
+                "answer_4": {
+                  "score": 0.0,
+                  "response": "Nixon had a three-part plan to end the conflict—gradual withdrawal of American troops, accompanied by training South Vietnamese forces to take over the combat role; renewed bombing; and a hard line in negotiations with Hanoi. Renewed bombing was the most controversial part of the plan, particularly the revelations that he had secretly ordered the bombing of communist supply lines in the neutral country of Cambodia."
+                }
+              }
+            },
+            "configFixup": [
+              {
+                "name": "questionId",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "sequenceNodeKey",
+                  "type": "ref"
+                }
+              },
+              {
+                "name": "maxAttempts",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "maxAttempts",
+                  "type": "ref"
+                }
+              }
+            ]
+          }
+        ],
+        "hookupActions": [
+          {
+            "description": "Hookup the submit manager to evaluate answers",
+            "methodName": "handleRequestsFrom",
+            "type": "method-call",
+            "args": [
+              {
+                "domain": "brix",
+                "refId": "q1",
+                "type": "ref"
+              }
+            ],
+            "instance": {
+              "type": "submit-manager"
+            }
+          },
+          {
+            "description": "Draw the question",
+            "methodName": "draw",
+            "type": "method-call",
+            "args": [
+              {
+                "selector": "#target1",
+                "type": "d3select"
+              }
+            ],
+            "instance": {
+              "domain": "brix",
+              "refId": "q1",
+              "type": "ref"
+            }
+          }
+        ]
+      }
+    ]
+  }
+}

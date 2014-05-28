@@ -1,0 +1,191 @@
+{
+  "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope",
+  "@type": "Envelope",
+  "metadata": {
+    "bookTitle": "American Stories: A History of the United States, Combined Volume",
+    "keywords": [
+      "Brands 3e",
+      "Ch20",
+      "Alick"
+    ],
+    "extendedMetadata": [
+      {
+        "name": "ISBN",
+        "value": "013379461X"
+      },
+      {
+        "name": "M",
+        "value": "m05"
+      },
+      {
+        "name": "assessment_title",
+        "value": "Quiz: The Presidential Election of 1896"
+      },
+      {
+        "name": "Topic",
+        "value": "The Presidential Election of 1896"
+      },
+      {
+        "name": "chapterTitle",
+        "value": "Political Realignments 1876â1901"
+      },
+      {
+        "name": "module",
+        "value": "The Presidential Election of 1896"
+      },
+      {
+        "name": "item_title",
+        "value": "013379461X_H. W. Brands; T. H. Breen; R. Hal Williams; Ariela J. Gros_ch20_m05_q0001"
+      },
+      {
+        "name": "questionlayout",
+        "value": "1"
+      },
+      {
+        "name": "CH",
+        "value": "20"
+      },
+      {
+        "name": "Objective",
+        "value": "LO: 20.5: Why was the presidential election of 1896 so important?"
+      },
+      {
+        "name": "shuffle_choices",
+        "value": "Yes"
+      }
+    ],
+    "subject": [
+      "US History"
+    ],
+    "contentTypeTier2": [
+      "AssignmentItem"
+    ],
+    "contentTypeTier1": "Assessment",
+    "format": [
+      "application/vnd.pearson.sanvan.v1.activity"
+    ],
+    "version": "1.0",
+    "guid": "9c36a0ad-5bc0-4dce-a230-19d329a1b3b8",
+    "bookAuthor": "H. W. Brands; T. H. Breen; R. Hal Williams; Ariela J. Gros",
+    "title": "PRE 20 05",
+    "educationalAlignment": [
+      "http://purl.org/pearson/objectives/183725473384362"
+    ]
+  },
+  "body": {
+    "description": "PRE_20_05",
+    "containerConfig": [
+      {
+        "description": "PRE_20_05",
+        "containerId": "target1",
+        "brixConfig": [
+          {
+            "bricId": "q1",
+            "bricType": "MultipleChoiceQuestion",
+            "config": {
+              "id": "QUE61246",
+              "question": "What did many delegates demand during the 1896 Democratic convention?\n\u003cbr /\u003e",
+              "order": "randomized",
+              "presenterType": "RadioGroup",
+              "presenterConfig": {
+                "numberFormat": "none"
+              },
+              "choices": [
+                {
+                  "answerKey": "answer_1",
+                  "content": "free coinage of silver"
+                },
+                {
+                  "answerKey": "answer_2",
+                  "content": "implementation of protective tariffs"
+                },
+                {
+                  "answerKey": "answer_3",
+                  "content": "nationalization of the banking system"
+                },
+                {
+                  "answerKey": "answer_4",
+                  "content": "the gold standard"
+                }
+              ]
+            },
+            "answerKey": {
+              "assessmentType": "multiplechoice",
+              "answers": {
+                "answer_3": {
+                  "score": 0.0,
+                  "response": "From the outset of the 1896 Democratic convention, the silver Democrats were in charge and they put together a platform that stunned the Cleveland wing of the party. It demanded the free coinage of silver."
+                },
+                "answer_2": {
+                  "score": 0.0,
+                  "response": "From the outset of the 1896 Democratic convention, the silver Democrats were in charge and they put together a platform that stunned the Cleveland wing of the party. It demanded the free coinage of silver."
+                },
+                "answer_1": {
+                  "score": 1.0,
+                  "response": "From the outset of the 1896 Democratic convention, the silver Democrats were in charge and they put together a platform that stunned the Cleveland wing of the party. It demanded the free coinage of silver."
+                },
+                "answer_4": {
+                  "score": 0.0,
+                  "response": "From the outset of the 1896 Democratic convention, the silver Democrats were in charge and they put together a platform that stunned the Cleveland wing of the party. It demanded the free coinage of silver."
+                }
+              }
+            },
+            "configFixup": [
+              {
+                "name": "questionId",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "sequenceNodeKey",
+                  "type": "ref"
+                }
+              },
+              {
+                "name": "maxAttempts",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "maxAttempts",
+                  "type": "ref"
+                }
+              }
+            ]
+          }
+        ],
+        "hookupActions": [
+          {
+            "description": "Hookup the submit manager to evaluate answers",
+            "methodName": "handleRequestsFrom",
+            "type": "method-call",
+            "args": [
+              {
+                "domain": "brix",
+                "refId": "q1",
+                "type": "ref"
+              }
+            ],
+            "instance": {
+              "type": "submit-manager"
+            }
+          },
+          {
+            "description": "Draw the question",
+            "methodName": "draw",
+            "type": "method-call",
+            "args": [
+              {
+                "selector": "#target1",
+                "type": "d3select"
+              }
+            ],
+            "instance": {
+              "domain": "brix",
+              "refId": "q1",
+              "type": "ref"
+            }
+          }
+        ]
+      }
+    ]
+  }
+}

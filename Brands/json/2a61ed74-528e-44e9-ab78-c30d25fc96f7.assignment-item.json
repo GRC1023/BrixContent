@@ -1,0 +1,191 @@
+{
+  "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope",
+  "@type": "Envelope",
+  "metadata": {
+    "bookTitle": "American Stories: A History of the United States, Combined Volume",
+    "keywords": [
+      "Brands 3e",
+      "Ch08",
+      "Alick"
+    ],
+    "extendedMetadata": [
+      {
+        "name": "ISBN",
+        "value": "013379461X"
+      },
+      {
+        "name": "M",
+        "value": "m01"
+      },
+      {
+        "name": "assessment_title",
+        "value": "Quiz: The Republic Expands"
+      },
+      {
+        "name": "Topic",
+        "value": "The Republic Expands"
+      },
+      {
+        "name": "chapterTitle",
+        "value": "Republican Ascendancy: The Jeffersonian Vision 1800â1814"
+      },
+      {
+        "name": "module",
+        "value": "The Republic Expands"
+      },
+      {
+        "name": "item_title",
+        "value": "013379461X_H. W. Brands; T. H. Breen; R. Hal Williams; Ariela J. Gros_ch08_m01_q0003"
+      },
+      {
+        "name": "questionlayout",
+        "value": "1"
+      },
+      {
+        "name": "CH",
+        "value": "8"
+      },
+      {
+        "name": "Objective",
+        "value": "LO: 8.1: How did the Republicâs growth shape the market economy and relations with Native Americans?"
+      },
+      {
+        "name": "shuffle_choices",
+        "value": "Yes"
+      }
+    ],
+    "subject": [
+      "US History"
+    ],
+    "contentTypeTier2": [
+      "AssignmentItem"
+    ],
+    "contentTypeTier1": "Assessment",
+    "format": [
+      "application/vnd.pearson.sanvan.v1.activity"
+    ],
+    "version": "1.0",
+    "guid": "2a61ed74-528e-44e9-ab78-c30d25fc96f7",
+    "bookAuthor": "H. W. Brands; T. H. Breen; R. Hal Williams; Ariela J. Gros",
+    "title": "PRE 08 03",
+    "educationalAlignment": [
+      "http://purl.org/pearson/objectives/183725473384362"
+    ]
+  },
+  "body": {
+    "description": "PRE_08_03",
+    "containerConfig": [
+      {
+        "description": "PRE_08_03",
+        "containerId": "target1",
+        "brixConfig": [
+          {
+            "bricId": "q1",
+            "bricType": "MultipleChoiceQuestion",
+            "config": {
+              "id": "QUE60892",
+              "question": "Which invention eventually resulted in the opening of new markets for American manufacturers during the 1800s?\n\u003cbr /\u003e",
+              "order": "randomized",
+              "presenterType": "RadioGroup",
+              "presenterConfig": {
+                "numberFormat": "none"
+              },
+              "choices": [
+                {
+                  "answerKey": "answer_1",
+                  "content": "steamship"
+                },
+                {
+                  "answerKey": "answer_2",
+                  "content": "flour mill"
+                },
+                {
+                  "answerKey": "answer_3",
+                  "content": "textile mill"
+                },
+                {
+                  "answerKey": "answer_4",
+                  "content": "internal combustion engine"
+                }
+              ]
+            },
+            "answerKey": {
+              "assessmentType": "multiplechoice",
+              "answers": {
+                "answer_3": {
+                  "score": 0.0,
+                  "response": "Robert Fulton sailed the first American steamship up the Hudson River in 1807. In time, this marvelous innovation opened new markets for domestic manufacturers, especially in the West."
+                },
+                "answer_2": {
+                  "score": 0.0,
+                  "response": "Robert Fulton sailed the first American steamship up the Hudson River in 1807. In time, this marvelous innovation opened new markets for domestic manufacturers, especially in the West."
+                },
+                "answer_1": {
+                  "score": 1.0,
+                  "response": "Robert Fulton sailed the first American steamship up the Hudson River in 1807. In time, this marvelous innovation opened new markets for domestic manufacturers, especially in the West."
+                },
+                "answer_4": {
+                  "score": 0.0,
+                  "response": "Robert Fulton sailed the first American steamship up the Hudson River in 1807. In time, this marvelous innovation opened new markets for domestic manufacturers, especially in the West."
+                }
+              }
+            },
+            "configFixup": [
+              {
+                "name": "questionId",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "sequenceNodeKey",
+                  "type": "ref"
+                }
+              },
+              {
+                "name": "maxAttempts",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "maxAttempts",
+                  "type": "ref"
+                }
+              }
+            ]
+          }
+        ],
+        "hookupActions": [
+          {
+            "description": "Hookup the submit manager to evaluate answers",
+            "methodName": "handleRequestsFrom",
+            "type": "method-call",
+            "args": [
+              {
+                "domain": "brix",
+                "refId": "q1",
+                "type": "ref"
+              }
+            ],
+            "instance": {
+              "type": "submit-manager"
+            }
+          },
+          {
+            "description": "Draw the question",
+            "methodName": "draw",
+            "type": "method-call",
+            "args": [
+              {
+                "selector": "#target1",
+                "type": "d3select"
+              }
+            ],
+            "instance": {
+              "domain": "brix",
+              "refId": "q1",
+              "type": "ref"
+            }
+          }
+        ]
+      }
+    ]
+  }
+}

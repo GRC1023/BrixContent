@@ -1,0 +1,191 @@
+{
+  "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope",
+  "@type": "Envelope",
+  "metadata": {
+    "bookTitle": "American Stories: A History of the United States, Combined Volume",
+    "keywords": [
+      "Brands 3e",
+      "Ch14",
+      "Alick"
+    ],
+    "extendedMetadata": [
+      {
+        "name": "ISBN",
+        "value": "013379461X"
+      },
+      {
+        "name": "M",
+        "value": "m02"
+      },
+      {
+        "name": "assessment_title",
+        "value": "Quiz: Political Upheaval 1852â1856"
+      },
+      {
+        "name": "Topic",
+        "value": "Political Upheaval, 1852â1856"
+      },
+      {
+        "name": "chapterTitle",
+        "value": "The Sectional Crisis 1846â1861"
+      },
+      {
+        "name": "module",
+        "value": "Political Upheaval 1852â1856"
+      },
+      {
+        "name": "item_title",
+        "value": "013379461X_H. W. Brands; T. H. Breen; R. Hal Williams; Ariela J. Gros_ch14_m02_q0002"
+      },
+      {
+        "name": "questionlayout",
+        "value": "1"
+      },
+      {
+        "name": "CH",
+        "value": "14"
+      },
+      {
+        "name": "Objective",
+        "value": "LO: 14.2: How did the two-party system change during this period?"
+      },
+      {
+        "name": "shuffle_choices",
+        "value": "Yes"
+      }
+    ],
+    "subject": [
+      "US History"
+    ],
+    "contentTypeTier2": [
+      "AssignmentItem"
+    ],
+    "contentTypeTier1": "Assessment",
+    "format": [
+      "application/vnd.pearson.sanvan.v1.activity"
+    ],
+    "version": "1.0",
+    "guid": "4d629965-76e6-4339-883e-0d5a59cc402f",
+    "bookAuthor": "H. W. Brands; T. H. Breen; R. Hal Williams; Ariela J. Gros",
+    "title": "POST 14 04 ",
+    "educationalAlignment": [
+      "http://purl.org/pearson/objectives/183725473384362"
+    ]
+  },
+  "body": {
+    "description": "POST_14_04",
+    "containerConfig": [
+      {
+        "description": "POST_14_04",
+        "containerId": "target1",
+        "brixConfig": [
+          {
+            "bricId": "q1",
+            "bricType": "MultipleChoiceQuestion",
+            "config": {
+              "id": "QUE61709",
+              "question": "How did the Republicans take a stand on slavery in the election of 1856?\n\u003cbr /\u003e",
+              "order": "randomized",
+              "presenterType": "RadioGroup",
+              "presenterConfig": {
+                "numberFormat": "none"
+              },
+              "choices": [
+                {
+                  "answerKey": "answer_1",
+                  "content": "They wanted congressional prohibition of slavery in all territories."
+                },
+                {
+                  "answerKey": "answer_2",
+                  "content": "They pushed for popular sovereignty in the territories."
+                },
+                {
+                  "answerKey": "answer_3",
+                  "content": "They endorsed the proslavery government in Kansas."
+                },
+                {
+                  "answerKey": "answer_4",
+                  "content": "They proposed reinstating the Missouri Compromise."
+                }
+              ]
+            },
+            "answerKey": {
+              "assessmentType": "multiplechoice",
+              "answers": {
+                "answer_3": {
+                  "score": 0.0,
+                  "response": "The Republican nominating convention revealed the strictly sectional nature of the new party. Only a handful of delegates from the slave states attended, all from the upper South. The platform called for liberating Kansas from the slave power and congressional prohibition of slavery in all territories."
+                },
+                "answer_2": {
+                  "score": 0.0,
+                  "response": "The Republican nominating convention revealed the strictly sectional nature of the new party. Only a handful of delegates from the slave states attended, all from the upper South. The platform called for liberating Kansas from the slave power and congressional prohibition of slavery in all territories."
+                },
+                "answer_1": {
+                  "score": 1.0,
+                  "response": "The Republican nominating convention revealed the strictly sectional nature of the new party. Only a handful of delegates from the slave states attended, all from the upper South. The platform called for liberating Kansas from the slave power and congressional prohibition of slavery in all territories."
+                },
+                "answer_4": {
+                  "score": 0.0,
+                  "response": "The Republican nominating convention revealed the strictly sectional nature of the new party. Only a handful of delegates from the slave states attended, all from the upper South. The platform called for liberating Kansas from the slave power and congressional prohibition of slavery in all territories."
+                }
+              }
+            },
+            "configFixup": [
+              {
+                "name": "questionId",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "sequenceNodeKey",
+                  "type": "ref"
+                }
+              },
+              {
+                "name": "maxAttempts",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "maxAttempts",
+                  "type": "ref"
+                }
+              }
+            ]
+          }
+        ],
+        "hookupActions": [
+          {
+            "description": "Hookup the submit manager to evaluate answers",
+            "methodName": "handleRequestsFrom",
+            "type": "method-call",
+            "args": [
+              {
+                "domain": "brix",
+                "refId": "q1",
+                "type": "ref"
+              }
+            ],
+            "instance": {
+              "type": "submit-manager"
+            }
+          },
+          {
+            "description": "Draw the question",
+            "methodName": "draw",
+            "type": "method-call",
+            "args": [
+              {
+                "selector": "#target1",
+                "type": "d3select"
+              }
+            ],
+            "instance": {
+              "domain": "brix",
+              "refId": "q1",
+              "type": "ref"
+            }
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,191 @@
+{
+  "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope",
+  "@type": "Envelope",
+  "metadata": {
+    "bookTitle": "American Stories: A History of the United States, Combined Volume",
+    "keywords": [
+      "Brands 3e",
+      "Ch03",
+      "Alick"
+    ],
+    "extendedMetadata": [
+      {
+        "name": "ISBN",
+        "value": "013379461X"
+      },
+      {
+        "name": "M",
+        "value": "m01"
+      },
+      {
+        "name": "assessment_title",
+        "value": "Quiz: Social Stability New England Colonies of the Seventeenth Century"
+      },
+      {
+        "name": "Topic",
+        "value": "Social Stability: New England Colonies of the Seventeenth Century"
+      },
+      {
+        "name": "chapterTitle",
+        "value": "Putting Down Roots: Opportunity and Oppression in Colonial Society 1619â1692"
+      },
+      {
+        "name": "module",
+        "value": "Social Stability New England Colonies of the Seventeenth Century"
+      },
+      {
+        "name": "item_title",
+        "value": "013379461X_H. W. Brands; T. H. Breen; R. Hal Williams; Ariela J. Gros_ch03_m01_q0001"
+      },
+      {
+        "name": "questionlayout",
+        "value": "1"
+      },
+      {
+        "name": "CH",
+        "value": "3"
+      },
+      {
+        "name": "Objective",
+        "value": "LO: 3.1: What factors explain the remarkable social stability achieved in early New England?"
+      },
+      {
+        "name": "shuffle_choices",
+        "value": "Yes"
+      }
+    ],
+    "subject": [
+      "US History"
+    ],
+    "contentTypeTier2": [
+      "AssignmentItem"
+    ],
+    "contentTypeTier1": "Assessment",
+    "format": [
+      "application/vnd.pearson.sanvan.v1.activity"
+    ],
+    "version": "1.0",
+    "guid": "9d302fef-58c6-411e-ab5c-c48a2384ab39",
+    "bookAuthor": "H. W. Brands; T. H. Breen; R. Hal Williams; Ariela J. Gros",
+    "title": "PRE 03 01",
+    "educationalAlignment": [
+      "http://purl.org/pearson/objectives/183725473384362"
+    ]
+  },
+  "body": {
+    "description": "PRE_03_01",
+    "containerConfig": [
+      {
+        "description": "PRE_03_01",
+        "containerId": "target1",
+        "brixConfig": [
+          {
+            "bricId": "q1",
+            "bricType": "MultipleChoiceQuestion",
+            "config": {
+              "id": "QUE60732",
+              "question": "Which of these was typically true of New England women in the 1600s and 1700s?\n\u003cbr /\u003e",
+              "order": "randomized",
+              "presenterType": "RadioGroup",
+              "presenterConfig": {
+                "numberFormat": "none"
+              },
+              "choices": [
+                {
+                  "answerKey": "answer_1",
+                  "content": "Women had no property rights."
+                },
+                {
+                  "answerKey": "answer_2",
+                  "content": "Women had low literacy rates for the time."
+                },
+                {
+                  "answerKey": "answer_3",
+                  "content": "Most New England women were slaves."
+                },
+                {
+                  "answerKey": "answer_4",
+                  "content": "Women contributed little to the household economy."
+                }
+              ]
+            },
+            "answerKey": {
+              "assessmentType": "multiplechoice",
+              "answers": {
+                "answer_3": {
+                  "score": 0.0,
+                  "response": "According to English common law, a wife exercised no control over property. She could not, for example, sell land, although her husband could dispose of their holdings without her permission."
+                },
+                "answer_2": {
+                  "score": 0.0,
+                  "response": "According to English common law, a wife exercised no control over property. She could not, for example, sell land, although her husband could dispose of their holdings without her permission."
+                },
+                "answer_1": {
+                  "score": 1.0,
+                  "response": "According to English common law, a wife exercised no control over property. She could not, for example, sell land, although her husband could dispose of their holdings without her permission."
+                },
+                "answer_4": {
+                  "score": 0.0,
+                  "response": "According to English common law, a wife exercised no control over property. She could not, for example, sell land, although her husband could dispose of their holdings without her permission."
+                }
+              }
+            },
+            "configFixup": [
+              {
+                "name": "questionId",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "sequenceNodeKey",
+                  "type": "ref"
+                }
+              },
+              {
+                "name": "maxAttempts",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "maxAttempts",
+                  "type": "ref"
+                }
+              }
+            ]
+          }
+        ],
+        "hookupActions": [
+          {
+            "description": "Hookup the submit manager to evaluate answers",
+            "methodName": "handleRequestsFrom",
+            "type": "method-call",
+            "args": [
+              {
+                "domain": "brix",
+                "refId": "q1",
+                "type": "ref"
+              }
+            ],
+            "instance": {
+              "type": "submit-manager"
+            }
+          },
+          {
+            "description": "Draw the question",
+            "methodName": "draw",
+            "type": "method-call",
+            "args": [
+              {
+                "selector": "#target1",
+                "type": "d3select"
+              }
+            ],
+            "instance": {
+              "domain": "brix",
+              "refId": "q1",
+              "type": "ref"
+            }
+          }
+        ]
+      }
+    ]
+  }
+}

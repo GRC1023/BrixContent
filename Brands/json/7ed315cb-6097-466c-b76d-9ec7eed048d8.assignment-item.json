@@ -1,0 +1,191 @@
+{
+  "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope",
+  "@type": "Envelope",
+  "metadata": {
+    "bookTitle": "American Stories: A History of the United States, Combined Volume",
+    "keywords": [
+      "Brands 3e",
+      "Ch25",
+      "Alick"
+    ],
+    "extendedMetadata": [
+      {
+        "name": "ISBN",
+        "value": "013379461X"
+      },
+      {
+        "name": "M",
+        "value": "m04"
+      },
+      {
+        "name": "assessment_title",
+        "value": "Quiz: Republican Politics"
+      },
+      {
+        "name": "Topic",
+        "value": "Republican Politics"
+      },
+      {
+        "name": "chapterTitle",
+        "value": "Transition to Modern America 1919â1928"
+      },
+      {
+        "name": "module",
+        "value": "Republican Politics"
+      },
+      {
+        "name": "item_title",
+        "value": "013379461X_H. W. Brands; T. H. Breen; R. Hal Williams; Ariela J. Gros_ch25_m04_q0003"
+      },
+      {
+        "name": "questionlayout",
+        "value": "1"
+      },
+      {
+        "name": "CH",
+        "value": "25"
+      },
+      {
+        "name": "Objective",
+        "value": "LO: 25.4: How did the politics of the 1920s reflect changes in the economy and in American society?"
+      },
+      {
+        "name": "shuffle_choices",
+        "value": "Yes"
+      }
+    ],
+    "subject": [
+      "US History"
+    ],
+    "contentTypeTier2": [
+      "AssignmentItem"
+    ],
+    "contentTypeTier1": "Assessment",
+    "format": [
+      "application/vnd.pearson.sanvan.v1.activity"
+    ],
+    "version": "1.0",
+    "guid": "7ed315cb-6097-466c-b76d-9ec7eed048d8",
+    "bookAuthor": "H. W. Brands; T. H. Breen; R. Hal Williams; Ariela J. Gros",
+    "title": "PRE 25 13",
+    "educationalAlignment": [
+      "http://purl.org/pearson/objectives/183725473384362"
+    ]
+  },
+  "body": {
+    "description": "PRE_25_13",
+    "containerConfig": [
+      {
+        "description": "PRE_25_13",
+        "containerId": "target1",
+        "brixConfig": [
+          {
+            "bricId": "q1",
+            "bricType": "MultipleChoiceQuestion",
+            "config": {
+              "id": "QUE61405",
+              "question": "Why did the presidential election of 1928 offer some hope for the Democratic party?\n\u003cbr /\u003e",
+              "order": "randomized",
+              "presenterType": "RadioGroup",
+              "presenterConfig": {
+                "numberFormat": "none"
+              },
+              "choices": [
+                {
+                  "answerKey": "answer_1",
+                  "content": "The Democratic candidate won a majority in the largest cities."
+                },
+                {
+                  "answerKey": "answer_2",
+                  "content": "The Republican party lost the support of its rural constituencies."
+                },
+                {
+                  "answerKey": "answer_3",
+                  "content": "The Democrats had more popular votes but lost on electoral votes."
+                },
+                {
+                  "answerKey": "answer_4",
+                  "content": "The Republican candidate was embroiled in a personal scandal."
+                }
+              ]
+            },
+            "answerKey": {
+              "assessmentType": "multiplechoice",
+              "answers": {
+                "answer_3": {
+                  "score": 0.0,
+                  "response": "The Democrats won the majority of votes in the nation’s twelve largest cities. A new Democratic electorate was emerging, consisting of Catholics and Jews, Irish and Italians, Poles and Greeks."
+                },
+                "answer_2": {
+                  "score": 0.0,
+                  "response": "The Democrats won the majority of votes in the nation’s twelve largest cities. A new Democratic electorate was emerging, consisting of Catholics and Jews, Irish and Italians, Poles and Greeks."
+                },
+                "answer_1": {
+                  "score": 1.0,
+                  "response": "The Democrats won the majority of votes in the nation’s twelve largest cities. A new Democratic electorate was emerging, consisting of Catholics and Jews, Irish and Italians, Poles and Greeks."
+                },
+                "answer_4": {
+                  "score": 0.0,
+                  "response": "The Democrats won the majority of votes in the nation’s twelve largest cities. A new Democratic electorate was emerging, consisting of Catholics and Jews, Irish and Italians, Poles and Greeks."
+                }
+              }
+            },
+            "configFixup": [
+              {
+                "name": "questionId",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "sequenceNodeKey",
+                  "type": "ref"
+                }
+              },
+              {
+                "name": "maxAttempts",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "maxAttempts",
+                  "type": "ref"
+                }
+              }
+            ]
+          }
+        ],
+        "hookupActions": [
+          {
+            "description": "Hookup the submit manager to evaluate answers",
+            "methodName": "handleRequestsFrom",
+            "type": "method-call",
+            "args": [
+              {
+                "domain": "brix",
+                "refId": "q1",
+                "type": "ref"
+              }
+            ],
+            "instance": {
+              "type": "submit-manager"
+            }
+          },
+          {
+            "description": "Draw the question",
+            "methodName": "draw",
+            "type": "method-call",
+            "args": [
+              {
+                "selector": "#target1",
+                "type": "d3select"
+              }
+            ],
+            "instance": {
+              "domain": "brix",
+              "refId": "q1",
+              "type": "ref"
+            }
+          }
+        ]
+      }
+    ]
+  }
+}

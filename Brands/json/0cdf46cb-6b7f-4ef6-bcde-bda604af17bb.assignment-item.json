@@ -1,0 +1,191 @@
+{
+  "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope",
+  "@type": "Envelope",
+  "metadata": {
+    "bookTitle": "American Stories: A History of the United States, Combined Volume",
+    "keywords": [
+      "Brands 3e",
+      "Ch15",
+      "Alick"
+    ],
+    "extendedMetadata": [
+      {
+        "name": "ISBN",
+        "value": "013379461X"
+      },
+      {
+        "name": "M",
+        "value": "m01"
+      },
+      {
+        "name": "assessment_title",
+        "value": "Quiz: Secession and the Civil War 1860-1865"
+      },
+      {
+        "name": "Topic",
+        "value": "The Storm Gathers"
+      },
+      {
+        "name": "chapterTitle",
+        "value": "Secession and the Civil War 1860â1865"
+      },
+      {
+        "name": "module",
+        "value": "Secession and the Civil War 1860-1865"
+      },
+      {
+        "name": "item_title",
+        "value": "013379461X_H. W. Brands; T. H. Breen; R. Hal Williams; Ariela J. Gros_ch15 _m01_q0003"
+      },
+      {
+        "name": "questionlayout",
+        "value": "1"
+      },
+      {
+        "name": "CH",
+        "value": "15"
+      },
+      {
+        "name": "Objective",
+        "value": "LO: 15.1: What developments and events drew the Union toward Civil War?"
+      },
+      {
+        "name": "shuffle_choices",
+        "value": "Yes"
+      }
+    ],
+    "subject": [
+      "US History"
+    ],
+    "contentTypeTier2": [
+      "AssignmentItem"
+    ],
+    "contentTypeTier1": "Assessment",
+    "format": [
+      "application/vnd.pearson.sanvan.v1.activity"
+    ],
+    "version": "1.0",
+    "guid": "0cdf46cb-6b7f-4ef6-bcde-bda604af17bb",
+    "bookAuthor": "H. W. Brands; T. H. Breen; R. Hal Williams; Ariela J. Gros",
+    "title": "PRE 15 08 ",
+    "educationalAlignment": [
+      "http://purl.org/pearson/objectives/183725473384362"
+    ]
+  },
+  "body": {
+    "description": "PRE_15_08",
+    "containerConfig": [
+      {
+        "description": "PRE_15_08",
+        "containerId": "target1",
+        "brixConfig": [
+          {
+            "bricId": "q1",
+            "bricType": "MultipleChoiceQuestion",
+            "config": {
+              "id": "QUE61090",
+              "question": "Why did the states of Virginia, North Carolina, Tennessee, and Arkansas resist calls for immediate secession from the Union?\n\u003cbr /\u003e",
+              "order": "randomized",
+              "presenterType": "RadioGroup",
+              "presenterConfig": {
+                "numberFormat": "none"
+              },
+              "choices": [
+                {
+                  "answerKey": "answer_1",
+                  "content": "Their economies were more strongly tied to those in the North."
+                },
+                {
+                  "answerKey": "answer_2",
+                  "content": "Their reliance on slave labor made them wary of angering the North."
+                },
+                {
+                  "answerKey": "answer_3",
+                  "content": "They were not opposed to the North’s demands for abolition of slavery."
+                },
+                {
+                  "answerKey": "answer_4",
+                  "content": "They intended to ally with either the North or the South, depending on which side emerged victorious from the Civil War."
+                }
+              ]
+            },
+            "answerKey": {
+              "assessmentType": "multiplechoice",
+              "answers": {
+                "answer_3": {
+                  "score": 0.0,
+                  "response": "In the upper South, calls for immediate secession failed; majority opinion in Virginia, North Carolina, Tennessee, and Arkansas did not think that Lincoln’s election was a sufficient reason for breaking up the Union. These states had stronger ties to the northern economy, and moderate leaders were more willing to seek a sectional compromise."
+                },
+                "answer_2": {
+                  "score": 0.0,
+                  "response": "In the upper South, calls for immediate secession failed; majority opinion in Virginia, North Carolina, Tennessee, and Arkansas did not think that Lincoln’s election was a sufficient reason for breaking up the Union. These states had stronger ties to the northern economy, and moderate leaders were more willing to seek a sectional compromise."
+                },
+                "answer_1": {
+                  "score": 1.0,
+                  "response": "In the upper South, calls for immediate secession failed; majority opinion in Virginia, North Carolina, Tennessee, and Arkansas did not think that Lincoln’s election was a sufficient reason for breaking up the Union. These states had stronger ties to the northern economy, and moderate leaders were more willing to seek a sectional compromise."
+                },
+                "answer_4": {
+                  "score": 0.0,
+                  "response": "In the upper South, calls for immediate secession failed; majority opinion in Virginia, North Carolina, Tennessee, and Arkansas did not think that Lincoln’s election was a sufficient reason for breaking up the Union. These states had stronger ties to the northern economy, and moderate leaders were more willing to seek a sectional compromise."
+                }
+              }
+            },
+            "configFixup": [
+              {
+                "name": "questionId",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "sequenceNodeKey",
+                  "type": "ref"
+                }
+              },
+              {
+                "name": "maxAttempts",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "maxAttempts",
+                  "type": "ref"
+                }
+              }
+            ]
+          }
+        ],
+        "hookupActions": [
+          {
+            "description": "Hookup the submit manager to evaluate answers",
+            "methodName": "handleRequestsFrom",
+            "type": "method-call",
+            "args": [
+              {
+                "domain": "brix",
+                "refId": "q1",
+                "type": "ref"
+              }
+            ],
+            "instance": {
+              "type": "submit-manager"
+            }
+          },
+          {
+            "description": "Draw the question",
+            "methodName": "draw",
+            "type": "method-call",
+            "args": [
+              {
+                "selector": "#target1",
+                "type": "d3select"
+              }
+            ],
+            "instance": {
+              "domain": "brix",
+              "refId": "q1",
+              "type": "ref"
+            }
+          }
+        ]
+      }
+    ]
+  }
+}

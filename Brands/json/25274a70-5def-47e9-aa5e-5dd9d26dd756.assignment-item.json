@@ -1,0 +1,191 @@
+{
+  "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope",
+  "@type": "Envelope",
+  "metadata": {
+    "bookTitle": "American Stories: A History of the United States, Combined Volume",
+    "keywords": [
+      "Brands 3e",
+      "Ch01",
+      "Alick"
+    ],
+    "extendedMetadata": [
+      {
+        "name": "ISBN",
+        "value": "013379461X"
+      },
+      {
+        "name": "M",
+        "value": "m01"
+      },
+      {
+        "name": "assessment_title",
+        "value": "Quiz: Native Americans Before the Conquest"
+      },
+      {
+        "name": "Topic",
+        "value": "Native Americans Before the Conquest"
+      },
+      {
+        "name": "chapterTitle",
+        "value": "New World Encounters Preconquestâ1608"
+      },
+      {
+        "name": "module",
+        "value": "Native Americans Before the Conquest"
+      },
+      {
+        "name": "item_title",
+        "value": "013379461X_H. W. Brands; T. H. Breen; R. Hal Williams; Ariela J. Gros_ch01_m01_q0003"
+      },
+      {
+        "name": "questionlayout",
+        "value": "1"
+      },
+      {
+        "name": "CH",
+        "value": "1"
+      },
+      {
+        "name": "Objective",
+        "value": "LO: 1.1: What explains cultural differences among Native American groups before European conquest?"
+      },
+      {
+        "name": "shuffle_choices",
+        "value": "Yes"
+      }
+    ],
+    "subject": [
+      "US History"
+    ],
+    "contentTypeTier2": [
+      "AssignmentItem"
+    ],
+    "contentTypeTier1": "Assessment",
+    "format": [
+      "application/vnd.pearson.sanvan.v1.activity"
+    ],
+    "version": "1.0",
+    "guid": "25274a70-5def-47e9-aa5e-5dd9d26dd756",
+    "bookAuthor": "H. W. Brands; T. H. Breen; R. Hal Williams; Ariela J. Gros",
+    "title": "POST 01 10",
+    "educationalAlignment": [
+      "http://purl.org/pearson/objectives/183725473384362"
+    ]
+  },
+  "body": {
+    "description": "POST_01_10",
+    "containerConfig": [
+      {
+        "description": "POST_01_10",
+        "containerId": "target1",
+        "brixConfig": [
+          {
+            "bricId": "q1",
+            "bricType": "MultipleChoiceQuestion",
+            "config": {
+              "id": "QUE60660",
+              "question": "Which of the following explains the reason for the lack of unity among Paleo-Indians?\n\u003cbr /\u003e",
+              "order": "randomized",
+              "presenterType": "RadioGroup",
+              "presenterConfig": {
+                "numberFormat": "none"
+              },
+              "choices": [
+                {
+                  "answerKey": "answer_1",
+                  "content": "immigration to the Americas occurred in small bands"
+                },
+                {
+                  "answerKey": "answer_2",
+                  "content": "harsh weather conditions during the time of migration"
+                },
+                {
+                  "answerKey": "answer_3",
+                  "content": "the shortage of foods"
+                },
+                {
+                  "answerKey": "answer_4",
+                  "content": "the different origins of the various tribes of Paleo-Indians"
+                }
+              ]
+            },
+            "answerKey": {
+              "assessmentType": "multiplechoice",
+              "answers": {
+                "answer_3": {
+                  "score": 0.0,
+                  "response": "Because these migrations took place over a long time and involved small, independent bands of highly nomadic people, the Paleo- Indians never developed a sense of common identity. Each group focused on its own immediate survival, adjusting to the opportunities presented by various microenvironments."
+                },
+                "answer_2": {
+                  "score": 0.0,
+                  "response": "Because these migrations took place over a long time and involved small, independent bands of highly nomadic people, the Paleo- Indians never developed a sense of common identity. Each group focused on its own immediate survival, adjusting to the opportunities presented by various microenvironments."
+                },
+                "answer_1": {
+                  "score": 1.0,
+                  "response": "Because these migrations took place over a long time and involved small, independent bands of highly nomadic people, the Paleo- Indians never developed a sense of common identity. Each group focused on its own immediate survival, adjusting to the opportunities presented by various microenvironments."
+                },
+                "answer_4": {
+                  "score": 0.0,
+                  "response": "Because these migrations took place over a long time and involved small, independent bands of highly nomadic people, the Paleo- Indians never developed a sense of common identity. Each group focused on its own immediate survival, adjusting to the opportunities presented by various microenvironments."
+                }
+              }
+            },
+            "configFixup": [
+              {
+                "name": "questionId",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "sequenceNodeKey",
+                  "type": "ref"
+                }
+              },
+              {
+                "name": "maxAttempts",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "maxAttempts",
+                  "type": "ref"
+                }
+              }
+            ]
+          }
+        ],
+        "hookupActions": [
+          {
+            "description": "Hookup the submit manager to evaluate answers",
+            "methodName": "handleRequestsFrom",
+            "type": "method-call",
+            "args": [
+              {
+                "domain": "brix",
+                "refId": "q1",
+                "type": "ref"
+              }
+            ],
+            "instance": {
+              "type": "submit-manager"
+            }
+          },
+          {
+            "description": "Draw the question",
+            "methodName": "draw",
+            "type": "method-call",
+            "args": [
+              {
+                "selector": "#target1",
+                "type": "d3select"
+              }
+            ],
+            "instance": {
+              "domain": "brix",
+              "refId": "q1",
+              "type": "ref"
+            }
+          }
+        ]
+      }
+    ]
+  }
+}

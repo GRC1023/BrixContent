@@ -1,0 +1,191 @@
+{
+  "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope",
+  "@type": "Envelope",
+  "metadata": {
+    "bookTitle": "American Stories: A History of the United States, Combined Volume",
+    "keywords": [
+      "Brands 3e",
+      "Ch25",
+      "Alick"
+    ],
+    "extendedMetadata": [
+      {
+        "name": "ISBN",
+        "value": "013379461X"
+      },
+      {
+        "name": "M",
+        "value": "m01"
+      },
+      {
+        "name": "assessment_title",
+        "value": "Quiz: The Second Industrial Revolution"
+      },
+      {
+        "name": "Topic",
+        "value": "The Second Industrial Revolution"
+      },
+      {
+        "name": "chapterTitle",
+        "value": "Transition to Modern America 1919â1928"
+      },
+      {
+        "name": "module",
+        "value": "The Second Industrial Revolution"
+      },
+      {
+        "name": "item_title",
+        "value": "013379461X_H. W. Brands; T. H. Breen; R. Hal Williams; Ariela J. Gros_ch25_m01_q0005"
+      },
+      {
+        "name": "questionlayout",
+        "value": "1"
+      },
+      {
+        "name": "CH",
+        "value": "25"
+      },
+      {
+        "name": "Objective",
+        "value": "LO: 25.1: What was new about the American economy in the 1920s?"
+      },
+      {
+        "name": "shuffle_choices",
+        "value": "Yes"
+      }
+    ],
+    "subject": [
+      "US History"
+    ],
+    "contentTypeTier2": [
+      "AssignmentItem"
+    ],
+    "contentTypeTier1": "Assessment",
+    "format": [
+      "application/vnd.pearson.sanvan.v1.activity"
+    ],
+    "version": "1.0",
+    "guid": "3686ef96-f998-4cd9-b9a2-91406f2c933b",
+    "bookAuthor": "H. W. Brands; T. H. Breen; R. Hal Williams; Ariela J. Gros",
+    "title": "POST 25 09",
+    "educationalAlignment": [
+      "http://purl.org/pearson/objectives/183725473384362"
+    ]
+  },
+  "body": {
+    "description": "POST_25_09",
+    "containerConfig": [
+      {
+        "description": "POST_25_09",
+        "containerId": "target1",
+        "brixConfig": [
+          {
+            "bricId": "q1",
+            "bricType": "MultipleChoiceQuestion",
+            "config": {
+              "id": "QUE61379",
+              "question": "Which of the following factors made advertising essential to increase sales of cars during the automobile boom?\n\u003cbr /\u003e",
+              "order": "randomized",
+              "presenterType": "RadioGroup",
+              "presenterConfig": {
+                "numberFormat": "none"
+              },
+              "choices": [
+                {
+                  "answerKey": "answer_1",
+                  "content": "growing market saturation"
+                },
+                {
+                  "answerKey": "answer_2",
+                  "content": "mechanization of production"
+                },
+                {
+                  "answerKey": "answer_3",
+                  "content": "the availability of credit"
+                },
+                {
+                  "answerKey": "answer_4",
+                  "content": "the growing rural market"
+                }
+              ]
+            },
+            "answerKey": {
+              "assessmentType": "multiplechoice",
+              "answers": {
+                "answer_3": {
+                  "score": 0.0,
+                  "response": "The automobile boom, at its peak from 1922 to 1927, depended on Americans’ apparently insatiable appetite for cars. But the market became saturated as more and more of those who could afford the new luxury became car owners. Marketing became as crucial as production. Automobile makers began to rely heavily on advertising and annual model changes, seeking to make customers dissatisfied with their old vehicles and eager to order new ones."
+                },
+                "answer_2": {
+                  "score": 0.0,
+                  "response": "The automobile boom, at its peak from 1922 to 1927, depended on Americans’ apparently insatiable appetite for cars. But the market became saturated as more and more of those who could afford the new luxury became car owners. Marketing became as crucial as production. Automobile makers began to rely heavily on advertising and annual model changes, seeking to make customers dissatisfied with their old vehicles and eager to order new ones."
+                },
+                "answer_1": {
+                  "score": 1.0,
+                  "response": "The automobile boom, at its peak from 1922 to 1927, depended on Americans’ apparently insatiable appetite for cars. But the market became saturated as more and more of those who could afford the new luxury became car owners. Marketing became as crucial as production. Automobile makers began to rely heavily on advertising and annual model changes, seeking to make customers dissatisfied with their old vehicles and eager to order new ones."
+                },
+                "answer_4": {
+                  "score": 0.0,
+                  "response": "The automobile boom, at its peak from 1922 to 1927, depended on Americans’ apparently insatiable appetite for cars. But the market became saturated as more and more of those who could afford the new luxury became car owners. Marketing became as crucial as production. Automobile makers began to rely heavily on advertising and annual model changes, seeking to make customers dissatisfied with their old vehicles and eager to order new ones."
+                }
+              }
+            },
+            "configFixup": [
+              {
+                "name": "questionId",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "sequenceNodeKey",
+                  "type": "ref"
+                }
+              },
+              {
+                "name": "maxAttempts",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "maxAttempts",
+                  "type": "ref"
+                }
+              }
+            ]
+          }
+        ],
+        "hookupActions": [
+          {
+            "description": "Hookup the submit manager to evaluate answers",
+            "methodName": "handleRequestsFrom",
+            "type": "method-call",
+            "args": [
+              {
+                "domain": "brix",
+                "refId": "q1",
+                "type": "ref"
+              }
+            ],
+            "instance": {
+              "type": "submit-manager"
+            }
+          },
+          {
+            "description": "Draw the question",
+            "methodName": "draw",
+            "type": "method-call",
+            "args": [
+              {
+                "selector": "#target1",
+                "type": "d3select"
+              }
+            ],
+            "instance": {
+              "domain": "brix",
+              "refId": "q1",
+              "type": "ref"
+            }
+          }
+        ]
+      }
+    ]
+  }
+}

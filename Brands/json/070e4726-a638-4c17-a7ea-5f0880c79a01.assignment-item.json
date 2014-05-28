@@ -1,0 +1,187 @@
+{
+  "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope",
+  "@type": "Envelope",
+  "metadata": {
+    "bookTitle": "American Stories: A History of the United States, Combined Volume",
+    "keywords": [
+      "Brands 3e",
+      "Ch05",
+      "Alick"
+    ],
+    "extendedMetadata": [
+      {
+        "name": "ISBN",
+        "value": "013379461X"
+      },
+      {
+        "name": "M",
+        "value": "c01"
+      },
+      {
+        "name": "assessment_title",
+        "value": "Chapter Quiz: The American Revolution: From Elite Protest to Popular Revolt, 1763â1783"
+      },
+      {
+        "name": "Topic",
+        "value": "Eroding the Bonds of Empire"
+      },
+      {
+        "name": "chapterTitle",
+        "value": "The American Revolution: From Elite Protest to Popular Revolt, 1763â1783"
+      },
+      {
+        "name": "item_title",
+        "value": "013379461X_H. W. Brands; T. H. Breen; R. Hal Williams; Ariela J. Gros_ch05_c01_q0002"
+      },
+      {
+        "name": "questionlayout",
+        "value": "1"
+      },
+      {
+        "name": "CH",
+        "value": "5"
+      },
+      {
+        "name": "Objective",
+        "value": "LO: 5.2: What events eroded the bonds of empire during the 1760s?"
+      },
+      {
+        "name": "shuffle_choices",
+        "value": "Yes"
+      }
+    ],
+    "subject": [
+      "US History"
+    ],
+    "contentTypeTier2": [
+      "AssignmentItem"
+    ],
+    "contentTypeTier1": "Assessment",
+    "format": [
+      "application/vnd.pearson.sanvan.v1.activity"
+    ],
+    "version": "1.0",
+    "guid": "070e4726-a638-4c17-a7ea-5f0880c79a01",
+    "bookAuthor": "H. W. Brands; T. H. Breen; R. Hal Williams; Ariela J. Gros",
+    "title": "FA Remember 05 02",
+    "educationalAlignment": [
+      "http://purl.org/pearson/objectives/183725473384362"
+    ]
+  },
+  "body": {
+    "description": "FA_Remember_05_02",
+    "containerConfig": [
+      {
+        "description": "FA_Remember_05_02",
+        "containerId": "target1",
+        "brixConfig": [
+          {
+            "bricId": "q1",
+            "bricType": "MultipleChoiceQuestion",
+            "config": {
+              "id": "QUE60781",
+              "question": "Which statement is true about the Proclamation of 1763?\n\u003cbr /\u003e",
+              "order": "randomized",
+              "presenterType": "RadioGroup",
+              "presenterConfig": {
+                "numberFormat": "none"
+              },
+              "choices": [
+                {
+                  "answerKey": "answer_1",
+                  "content": "It placed a tax on newspapers and printed matter produced in the colonies."
+                },
+                {
+                  "answerKey": "answer_2",
+                  "content": "It was a grab bag of duties on American imports of paper, glass, paint, lead, and tea."
+                },
+                {
+                  "answerKey": "answer_3",
+                  "content": "It declared that the colonists would have to contribute to the maintenance of the army."
+                },
+                {
+                  "answerKey": "answer_4",
+                  "content": "It prohibited governors from granting land beyond the headwaters of rivers flowing into the Atlantic."
+                }
+              ]
+            },
+            "answerKey": {
+              "assessmentType": "multiplechoice",
+              "answers": {
+                "answer_3": {
+                  "score": 0.0,
+                  "response": "Consider This: This legislation frustrated the colonists who intended to settle the fertile region west of the Appalachian Mountains. The Proclamation of 1763 caused them to view the army as an obstruction to legitimate economic development. See L.O. 5.2 What events eroded the bonds of empire during the 1760s?"
+                },
+                "answer_2": {
+                  "score": 0.0,
+                  "response": "Consider This: This legislation frustrated the colonists who intended to settle the fertile region west of the Appalachian Mountains. The Proclamation of 1763 caused them to view the army as an obstruction to legitimate economic development. See L.O. 5.2 What events eroded the bonds of empire during the 1760s?"
+                },
+                "answer_1": {
+                  "score": 0.0,
+                  "response": "Consider This: This legislation frustrated the colonists who intended to settle the fertile region west of the Appalachian Mountains. The Proclamation of 1763 caused them to view the army as an obstruction to legitimate economic development. See L.O. 5.2 What events eroded the bonds of empire during the 1760s?"
+                },
+                "answer_4": {
+                  "score": 1.0,
+                  "response": ""
+                }
+              }
+            },
+            "configFixup": [
+              {
+                "name": "questionId",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "sequenceNodeKey",
+                  "type": "ref"
+                }
+              },
+              {
+                "name": "maxAttempts",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "maxAttempts",
+                  "type": "ref"
+                }
+              }
+            ]
+          }
+        ],
+        "hookupActions": [
+          {
+            "description": "Hookup the submit manager to evaluate answers",
+            "methodName": "handleRequestsFrom",
+            "type": "method-call",
+            "args": [
+              {
+                "domain": "brix",
+                "refId": "q1",
+                "type": "ref"
+              }
+            ],
+            "instance": {
+              "type": "submit-manager"
+            }
+          },
+          {
+            "description": "Draw the question",
+            "methodName": "draw",
+            "type": "method-call",
+            "args": [
+              {
+                "selector": "#target1",
+                "type": "d3select"
+              }
+            ],
+            "instance": {
+              "domain": "brix",
+              "refId": "q1",
+              "type": "ref"
+            }
+          }
+        ]
+      }
+    ]
+  }
+}

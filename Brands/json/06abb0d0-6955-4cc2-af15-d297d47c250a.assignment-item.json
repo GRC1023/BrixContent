@@ -1,0 +1,191 @@
+{
+  "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope",
+  "@type": "Envelope",
+  "metadata": {
+    "bookTitle": "American Stories: A History of the United States, Combined Volume",
+    "keywords": [
+      "Brands 3e",
+      "Ch11",
+      "Alick"
+    ],
+    "extendedMetadata": [
+      {
+        "name": "ISBN",
+        "value": "013379461X"
+      },
+      {
+        "name": "M",
+        "value": "m02"
+      },
+      {
+        "name": "assessment_title",
+        "value": "Quiz: White Society in the Antebellum South"
+      },
+      {
+        "name": "Topic",
+        "value": "White Society in the Antebellum South"
+      },
+      {
+        "name": "chapterTitle",
+        "value": "Slaves and Masters 1793â1861"
+      },
+      {
+        "name": "module",
+        "value": "White Society in the Antebellum South"
+      },
+      {
+        "name": "item_title",
+        "value": "013379461X_H. W. Brands; T. H. Breen; R. Hal Williams; Ariela J. Gros_ch11_m02_q0005"
+      },
+      {
+        "name": "questionlayout",
+        "value": "1"
+      },
+      {
+        "name": "CH",
+        "value": "11"
+      },
+      {
+        "name": "Objective",
+        "value": "LO: 11.2: What divided and united white southern society?"
+      },
+      {
+        "name": "shuffle_choices",
+        "value": "Yes"
+      }
+    ],
+    "subject": [
+      "US History"
+    ],
+    "contentTypeTier2": [
+      "AssignmentItem"
+    ],
+    "contentTypeTier1": "Assessment",
+    "format": [
+      "application/vnd.pearson.sanvan.v1.activity"
+    ],
+    "version": "1.0",
+    "guid": "06abb0d0-6955-4cc2-af15-d297d47c250a",
+    "bookAuthor": "H. W. Brands; T. H. Breen; R. Hal Williams; Ariela J. Gros",
+    "title": "POST 11 12",
+    "educationalAlignment": [
+      "http://purl.org/pearson/objectives/183725473384362"
+    ]
+  },
+  "body": {
+    "description": "POST_11_12",
+    "containerConfig": [
+      {
+        "description": "POST_11_12",
+        "containerId": "target1",
+        "brixConfig": [
+          {
+            "bricId": "q1",
+            "bricType": "MultipleChoiceQuestion",
+            "config": {
+              "id": "QUE60983",
+              "question": "What did Thomas Reade Cobb mean when he wrote “a state of bondage, so far from doing violence to the law of [the African’s] nature, develops and perfects it”?\n\u003cbr /\u003e",
+              "order": "randomized",
+              "presenterType": "RadioGroup",
+              "presenterConfig": {
+                "numberFormat": "none"
+              },
+              "choices": [
+                {
+                  "answerKey": "answer_1",
+                  "content": "Servitude was good for African Americans."
+                },
+                {
+                  "answerKey": "answer_2",
+                  "content": "Slaves had a right to freedom."
+                },
+                {
+                  "answerKey": "answer_3",
+                  "content": "Slaves were physically weaker than whites."
+                },
+                {
+                  "answerKey": "answer_4",
+                  "content": "Africans were gifted with amazing talents by nature."
+                }
+              ]
+            },
+            "answerKey": {
+              "assessmentType": "multiplechoice",
+              "answers": {
+                "answer_3": {
+                  "score": 0.0,
+                  "response": "Paternalism went hand in hand with racism. In a typical proslavery apology, Georgia lawyer Thomas Reade Cobb wrote that “a state of bondage, so far from doing violence to the law of [the African’s] nature, develops and perfects it; and that, in that state, he enjoys the greatest amount of happiness, and arrives at the greatest degree of perfection of which his nature is capable.” The supposed mental and moral inferiority of Africans justified slavery."
+                },
+                "answer_2": {
+                  "score": 0.0,
+                  "response": "Paternalism went hand in hand with racism. In a typical proslavery apology, Georgia lawyer Thomas Reade Cobb wrote that “a state of bondage, so far from doing violence to the law of [the African’s] nature, develops and perfects it; and that, in that state, he enjoys the greatest amount of happiness, and arrives at the greatest degree of perfection of which his nature is capable.” The supposed mental and moral inferiority of Africans justified slavery."
+                },
+                "answer_1": {
+                  "score": 1.0,
+                  "response": "Paternalism went hand in hand with racism. In a typical proslavery apology, Georgia lawyer Thomas Reade Cobb wrote that “a state of bondage, so far from doing violence to the law of [the African’s] nature, develops and perfects it; and that, in that state, he enjoys the greatest amount of happiness, and arrives at the greatest degree of perfection of which his nature is capable.” The supposed mental and moral inferiority of Africans justified slavery."
+                },
+                "answer_4": {
+                  "score": 0.0,
+                  "response": "Paternalism went hand in hand with racism. In a typical proslavery apology, Georgia lawyer Thomas Reade Cobb wrote that “a state of bondage, so far from doing violence to the law of [the African’s] nature, develops and perfects it; and that, in that state, he enjoys the greatest amount of happiness, and arrives at the greatest degree of perfection of which his nature is capable.” The supposed mental and moral inferiority of Africans justified slavery."
+                }
+              }
+            },
+            "configFixup": [
+              {
+                "name": "questionId",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "sequenceNodeKey",
+                  "type": "ref"
+                }
+              },
+              {
+                "name": "maxAttempts",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "maxAttempts",
+                  "type": "ref"
+                }
+              }
+            ]
+          }
+        ],
+        "hookupActions": [
+          {
+            "description": "Hookup the submit manager to evaluate answers",
+            "methodName": "handleRequestsFrom",
+            "type": "method-call",
+            "args": [
+              {
+                "domain": "brix",
+                "refId": "q1",
+                "type": "ref"
+              }
+            ],
+            "instance": {
+              "type": "submit-manager"
+            }
+          },
+          {
+            "description": "Draw the question",
+            "methodName": "draw",
+            "type": "method-call",
+            "args": [
+              {
+                "selector": "#target1",
+                "type": "d3select"
+              }
+            ],
+            "instance": {
+              "domain": "brix",
+              "refId": "q1",
+              "type": "ref"
+            }
+          }
+        ]
+      }
+    ]
+  }
+}

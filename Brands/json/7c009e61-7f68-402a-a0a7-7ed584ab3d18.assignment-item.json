@@ -1,0 +1,191 @@
+{
+  "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope",
+  "@type": "Envelope",
+  "metadata": {
+    "bookTitle": "American Stories: A History of the United States, Combined Volume",
+    "keywords": [
+      "Brands 3e",
+      "Ch30",
+      "Alick"
+    ],
+    "extendedMetadata": [
+      {
+        "name": "ISBN",
+        "value": "013379461X"
+      },
+      {
+        "name": "M",
+        "value": "m05"
+      },
+      {
+        "name": "assessment_title",
+        "value": "Quiz: Years of Turmoil"
+      },
+      {
+        "name": "Topic",
+        "value": "Years of Turmoil"
+      },
+      {
+        "name": "chapterTitle",
+        "value": "The Turbulent Sixties 1960â1968"
+      },
+      {
+        "name": "module",
+        "value": "Years of Turmoil"
+      },
+      {
+        "name": "item_title",
+        "value": "013379461X_H. W. Brands; T. H. Breen; R. Hal Williams; Ariela J. Gros_ch30_m05_q0002"
+      },
+      {
+        "name": "questionlayout",
+        "value": "1"
+      },
+      {
+        "name": "CH",
+        "value": "30"
+      },
+      {
+        "name": "Objective",
+        "value": "30.5"
+      },
+      {
+        "name": "shuffle_choices",
+        "value": "Yes"
+      }
+    ],
+    "subject": [
+      "US History"
+    ],
+    "contentTypeTier2": [
+      "AssignmentItem"
+    ],
+    "contentTypeTier1": "Assessment",
+    "format": [
+      "application/vnd.pearson.sanvan.v1.activity"
+    ],
+    "version": "1.0",
+    "guid": "7c009e61-7f68-402a-a0a7-7ed584ab3d18",
+    "bookAuthor": "H. W. Brands; T. H. Breen; R. Hal Williams; Ariela J. Gros",
+    "title": "PRE 30 06",
+    "educationalAlignment": [
+      "http://purl.org/pearson/objectives/183725473384362"
+    ]
+  },
+  "body": {
+    "description": "PRE_30_06",
+    "containerConfig": [
+      {
+        "description": "PRE_30_06",
+        "containerId": "target1",
+        "brixConfig": [
+          {
+            "bricId": "q1",
+            "bricType": "MultipleChoiceQuestion",
+            "config": {
+              "id": "QUE61668",
+              "question": "\u003ci\u003eThe Feminine Mystique\u003c/i\u003e was written by __________.\n\u003cbr /\u003e",
+              "order": "randomized",
+              "presenterType": "RadioGroup",
+              "presenterConfig": {
+                "numberFormat": "none"
+              },
+              "choices": [
+                {
+                  "answerKey": "answer_1",
+                  "content": "Betty Friedan"
+                },
+                {
+                  "answerKey": "answer_2",
+                  "content": "Susan Brownmiller"
+                },
+                {
+                  "answerKey": "answer_3",
+                  "content": "Ti-Grace Atkinson"
+                },
+                {
+                  "answerKey": "answer_4",
+                  "content": "Jacqueline Kennedy"
+                }
+              ]
+            },
+            "answerKey": {
+              "assessmentType": "multiplechoice",
+              "answers": {
+                "answer_3": {
+                  "score": 0.0,
+                  "response": "In her book \n\u003ci\u003eThe Feminine Mystique\u003c/i\u003e, Betty Friedan called the American home “a comfortable concentration camp” and attacked the prevailing view of women as only housekeepers and mothers."
+                },
+                "answer_2": {
+                  "score": 0.0,
+                  "response": "In her book \n\u003ci\u003eThe Feminine Mystique\u003c/i\u003e, Betty Friedan called the American home “a comfortable concentration camp” and attacked the prevailing view of women as only housekeepers and mothers."
+                },
+                "answer_1": {
+                  "score": 1.0,
+                  "response": "In her book \n\u003ci\u003eThe Feminine Mystique\u003c/i\u003e, Betty Friedan called the American home “a comfortable concentration camp” and attacked the prevailing view of women as only housekeepers and mothers."
+                },
+                "answer_4": {
+                  "score": 0.0,
+                  "response": "In her book \n\u003ci\u003eThe Feminine Mystique\u003c/i\u003e, Betty Friedan called the American home “a comfortable concentration camp” and attacked the prevailing view of women as only housekeepers and mothers."
+                }
+              }
+            },
+            "configFixup": [
+              {
+                "name": "questionId",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "sequenceNodeKey",
+                  "type": "ref"
+                }
+              },
+              {
+                "name": "maxAttempts",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "maxAttempts",
+                  "type": "ref"
+                }
+              }
+            ]
+          }
+        ],
+        "hookupActions": [
+          {
+            "description": "Hookup the submit manager to evaluate answers",
+            "methodName": "handleRequestsFrom",
+            "type": "method-call",
+            "args": [
+              {
+                "domain": "brix",
+                "refId": "q1",
+                "type": "ref"
+              }
+            ],
+            "instance": {
+              "type": "submit-manager"
+            }
+          },
+          {
+            "description": "Draw the question",
+            "methodName": "draw",
+            "type": "method-call",
+            "args": [
+              {
+                "selector": "#target1",
+                "type": "d3select"
+              }
+            ],
+            "instance": {
+              "domain": "brix",
+              "refId": "q1",
+              "type": "ref"
+            }
+          }
+        ]
+      }
+    ]
+  }
+}

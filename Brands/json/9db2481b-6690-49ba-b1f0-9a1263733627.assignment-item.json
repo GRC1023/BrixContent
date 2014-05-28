@@ -1,0 +1,187 @@
+{
+  "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope",
+  "@type": "Envelope",
+  "metadata": {
+    "bookTitle": "American Stories: A History of the United States, Combined Volume",
+    "keywords": [
+      "Brands 3e",
+      "Ch14",
+      "Alick"
+    ],
+    "extendedMetadata": [
+      {
+        "name": "ISBN",
+        "value": "013379461X"
+      },
+      {
+        "name": "M",
+        "value": "c01"
+      },
+      {
+        "name": "assessment_title",
+        "value": "Chapter Quiz: The Sectional Crisis 1846â1861"
+      },
+      {
+        "name": "Topic",
+        "value": "Political Upheaval, 1852â1856"
+      },
+      {
+        "name": "chapterTitle",
+        "value": "The Sectional Crisis 1846â1861"
+      },
+      {
+        "name": "item_title",
+        "value": "013379461X_H. W. Brands; T. H. Breen; R. Hal Williams; Ariela J. Gros_ch14_c01_q0005"
+      },
+      {
+        "name": "questionlayout",
+        "value": "1"
+      },
+      {
+        "name": "CH",
+        "value": "14"
+      },
+      {
+        "name": "Objective",
+        "value": "LO: 14.2: How did the two-party system change during this period?"
+      },
+      {
+        "name": "shuffle_choices",
+        "value": "Yes"
+      }
+    ],
+    "subject": [
+      "US History"
+    ],
+    "contentTypeTier2": [
+      "AssignmentItem"
+    ],
+    "contentTypeTier1": "Assessment",
+    "format": [
+      "application/vnd.pearson.sanvan.v1.activity"
+    ],
+    "version": "1.0",
+    "guid": "9db2481b-6690-49ba-b1f0-9a1263733627",
+    "bookAuthor": "H. W. Brands; T. H. Breen; R. Hal Williams; Ariela J. Gros",
+    "title": "FA Remember 14 04",
+    "educationalAlignment": [
+      "http://purl.org/pearson/objectives/183725473384362"
+    ]
+  },
+  "body": {
+    "description": "FA_Remember_14_04",
+    "containerConfig": [
+      {
+        "description": "FA_Remember_14_04",
+        "containerId": "target1",
+        "brixConfig": [
+          {
+            "bricId": "q1",
+            "bricType": "MultipleChoiceQuestion",
+            "config": {
+              "id": "QUE61056",
+              "question": "What was the intention behind the publication of the Ostend Manifesto according to some Northerners?\n\u003cbr /\u003e",
+              "order": "randomized",
+              "presenterType": "RadioGroup",
+              "presenterConfig": {
+                "numberFormat": "none"
+              },
+              "choices": [
+                {
+                  "answerKey": "answer_1",
+                  "content": "It made clear a scheme to extend slavery under American rule."
+                },
+                {
+                  "answerKey": "answer_2",
+                  "content": "It would strengthen the Fugitive Slave Law."
+                },
+                {
+                  "answerKey": "answer_3",
+                  "content": "It was a plot to rig congressional elections in favor of the South."
+                },
+                {
+                  "answerKey": "answer_4",
+                  "content": "It would make admission of free states impossible."
+                }
+              ]
+            },
+            "answerKey": {
+              "assessmentType": "multiplechoice",
+              "answers": {
+                "answer_3": {
+                  "score": 0.0,
+                  "response": "Consider This: Pierce and Secretary of State William Marcy wanted to acquire Cuba from Spain. The furor following the release of this document forced the Pierce administration to abandon its efforts to revive an expansionist foreign policy. See L.O. 14.2 How did the two-party system change during this period?"
+                },
+                "answer_2": {
+                  "score": 0.0,
+                  "response": "Consider This: Pierce and Secretary of State William Marcy wanted to acquire Cuba from Spain. The furor following the release of this document forced the Pierce administration to abandon its efforts to revive an expansionist foreign policy. See L.O. 14.2 How did the two-party system change during this period?"
+                },
+                "answer_1": {
+                  "score": 1.0,
+                  "response": ""
+                },
+                "answer_4": {
+                  "score": 0.0,
+                  "response": "Consider This: Pierce and Secretary of State William Marcy wanted to acquire Cuba from Spain. The furor following the release of this document forced the Pierce administration to abandon its efforts to revive an expansionist foreign policy. See L.O. 14.2 How did the two-party system change during this period?"
+                }
+              }
+            },
+            "configFixup": [
+              {
+                "name": "questionId",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "sequenceNodeKey",
+                  "type": "ref"
+                }
+              },
+              {
+                "name": "maxAttempts",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "maxAttempts",
+                  "type": "ref"
+                }
+              }
+            ]
+          }
+        ],
+        "hookupActions": [
+          {
+            "description": "Hookup the submit manager to evaluate answers",
+            "methodName": "handleRequestsFrom",
+            "type": "method-call",
+            "args": [
+              {
+                "domain": "brix",
+                "refId": "q1",
+                "type": "ref"
+              }
+            ],
+            "instance": {
+              "type": "submit-manager"
+            }
+          },
+          {
+            "description": "Draw the question",
+            "methodName": "draw",
+            "type": "method-call",
+            "args": [
+              {
+                "selector": "#target1",
+                "type": "d3select"
+              }
+            ],
+            "instance": {
+              "domain": "brix",
+              "refId": "q1",
+              "type": "ref"
+            }
+          }
+        ]
+      }
+    ]
+  }
+}

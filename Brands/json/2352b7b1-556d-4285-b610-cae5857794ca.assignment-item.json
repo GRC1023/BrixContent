@@ -1,0 +1,187 @@
+{
+  "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope",
+  "@type": "Envelope",
+  "metadata": {
+    "bookTitle": "American Stories: A History of the United States, Combined Volume",
+    "keywords": [
+      "Brands 3e",
+      "Ch06",
+      "Alick"
+    ],
+    "extendedMetadata": [
+      {
+        "name": "ISBN",
+        "value": "013379461X"
+      },
+      {
+        "name": "M",
+        "value": "c01"
+      },
+      {
+        "name": "assessment_title",
+        "value": "Chapter Quiz: The Republican Experiment 1783â1788"
+      },
+      {
+        "name": "Topic",
+        "value": "Stumbling Toward a New National Government"
+      },
+      {
+        "name": "chapterTitle",
+        "value": "The Republican Experiment 1783â1788"
+      },
+      {
+        "name": "item_title",
+        "value": "013379461X_H. W. Brands; T. H. Breen; R. Hal Williams; Ariela J. Gros_ch06_c01_q0012"
+      },
+      {
+        "name": "questionlayout",
+        "value": "1"
+      },
+      {
+        "name": "CH",
+        "value": "6"
+      },
+      {
+        "name": "Objective",
+        "value": "LO: 6.2: Why did many Americans regard the Articles of Confederation as inadequate?,"
+      },
+      {
+        "name": "shuffle_choices",
+        "value": "Yes"
+      }
+    ],
+    "subject": [
+      "US History"
+    ],
+    "contentTypeTier2": [
+      "AssignmentItem"
+    ],
+    "contentTypeTier1": "Assessment",
+    "format": [
+      "application/vnd.pearson.sanvan.v1.activity"
+    ],
+    "version": "1.0",
+    "guid": "2352b7b1-556d-4285-b610-cae5857794ca",
+    "bookAuthor": "H. W. Brands; T. H. Breen; R. Hal Williams; Ariela J. Gros",
+    "title": "FA Analyze 06 05",
+    "educationalAlignment": [
+      "http://purl.org/pearson/objectives/183725473384362"
+    ]
+  },
+  "body": {
+    "description": "FA_Analyze_06_05",
+    "containerConfig": [
+      {
+        "description": "FA_Analyze_06_05",
+        "containerId": "target1",
+        "brixConfig": [
+          {
+            "bricId": "q1",
+            "bricType": "MultipleChoiceQuestion",
+            "config": {
+              "id": "QUE60821",
+              "question": "The Northwest Ordinance of 1787 provided that ________.\n\u003cbr /\u003e",
+              "order": "randomized",
+              "presenterType": "RadioGroup",
+              "presenterConfig": {
+                "numberFormat": "none"
+              },
+              "choices": [
+                {
+                  "answerKey": "answer_1",
+                  "content": "after sufficient population growth, western territories could be organized and then join the union as states"
+                },
+                {
+                  "answerKey": "answer_2",
+                  "content": "money from the sale of western lands should be used to promote manufacturing"
+                },
+                {
+                  "answerKey": "answer_3",
+                  "content": "the settlers in the northwest could vote on whether or not they should have slavery"
+                },
+                {
+                  "answerKey": "answer_4",
+                  "content": "the states should retain permanent control of their western lands"
+                }
+              ]
+            },
+            "answerKey": {
+              "assessmentType": "multiplechoice",
+              "answers": {
+                "answer_3": {
+                  "score": 0.0,
+                  "response": "Consider This: The Northwest Ordinance provided a new structure for government of the Northwest Territory. It authorized creating between three and five territories, each to be ruled by a governor, a secretary, and three judges appointed by Congress. This solved the problem of the western lands. See L.O. 6.2 Why did many Americans regard the Articles of Confederation as inadequate?"
+                },
+                "answer_2": {
+                  "score": 0.0,
+                  "response": "Consider This: The Northwest Ordinance provided a new structure for government of the Northwest Territory. It authorized creating between three and five territories, each to be ruled by a governor, a secretary, and three judges appointed by Congress. This solved the problem of the western lands. See L.O. 6.2 Why did many Americans regard the Articles of Confederation as inadequate?"
+                },
+                "answer_1": {
+                  "score": 1.0,
+                  "response": ""
+                },
+                "answer_4": {
+                  "score": 0.0,
+                  "response": "Consider This: The Northwest Ordinance provided a new structure for government of the Northwest Territory. It authorized creating between three and five territories, each to be ruled by a governor, a secretary, and three judges appointed by Congress. This solved the problem of the western lands. See L.O. 6.2 Why did many Americans regard the Articles of Confederation as inadequate?"
+                }
+              }
+            },
+            "configFixup": [
+              {
+                "name": "questionId",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "sequenceNodeKey",
+                  "type": "ref"
+                }
+              },
+              {
+                "name": "maxAttempts",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "maxAttempts",
+                  "type": "ref"
+                }
+              }
+            ]
+          }
+        ],
+        "hookupActions": [
+          {
+            "description": "Hookup the submit manager to evaluate answers",
+            "methodName": "handleRequestsFrom",
+            "type": "method-call",
+            "args": [
+              {
+                "domain": "brix",
+                "refId": "q1",
+                "type": "ref"
+              }
+            ],
+            "instance": {
+              "type": "submit-manager"
+            }
+          },
+          {
+            "description": "Draw the question",
+            "methodName": "draw",
+            "type": "method-call",
+            "args": [
+              {
+                "selector": "#target1",
+                "type": "d3select"
+              }
+            ],
+            "instance": {
+              "domain": "brix",
+              "refId": "q1",
+              "type": "ref"
+            }
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,191 @@
+{
+  "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope",
+  "@type": "Envelope",
+  "metadata": {
+    "bookTitle": "American Stories: A History of the United States, Combined Volume",
+    "keywords": [
+      "Brands 3e",
+      "Ch30",
+      "Alick"
+    ],
+    "extendedMetadata": [
+      {
+        "name": "ISBN",
+        "value": "013379461X"
+      },
+      {
+        "name": "M",
+        "value": "m02"
+      },
+      {
+        "name": "assessment_title",
+        "value": "Quiz: The New Frontier at Home"
+      },
+      {
+        "name": "Topic",
+        "value": "The New Frontier at Home"
+      },
+      {
+        "name": "chapterTitle",
+        "value": "The Turbulent Sixties 1960â1968"
+      },
+      {
+        "name": "module",
+        "value": "LBJ\u0027s Great Society"
+      },
+      {
+        "name": "item_title",
+        "value": "013379461X_H. W. Brands; T. H. Breen; R. Hal Williams; Ariela J. Gros_ch30_m02_q0006"
+      },
+      {
+        "name": "questionlayout",
+        "value": "1"
+      },
+      {
+        "name": "CH",
+        "value": "30"
+      },
+      {
+        "name": "Objective",
+        "value": "30.2"
+      },
+      {
+        "name": "shuffle_choices",
+        "value": "Yes"
+      }
+    ],
+    "subject": [
+      "US History"
+    ],
+    "contentTypeTier2": [
+      "AssignmentItem"
+    ],
+    "contentTypeTier1": "Assessment",
+    "format": [
+      "application/vnd.pearson.sanvan.v1.activity"
+    ],
+    "version": "1.0",
+    "guid": "07fae228-36a0-4d64-a31a-a6bdbd1b39e7",
+    "bookAuthor": "H. W. Brands; T. H. Breen; R. Hal Williams; Ariela J. Gros",
+    "title": "POST 30 11",
+    "educationalAlignment": [
+      "http://purl.org/pearson/objectives/183725473384362"
+    ]
+  },
+  "body": {
+    "description": "POST_30_11",
+    "containerConfig": [
+      {
+        "description": "POST_30_11",
+        "containerId": "target1",
+        "brixConfig": [
+          {
+            "bricId": "q1",
+            "bricType": "MultipleChoiceQuestion",
+            "config": {
+              "id": "QUE61641",
+              "question": "What was the purpose of the freedom ride protest?\n\u003cbr /\u003e",
+              "order": "randomized",
+              "presenterType": "RadioGroup",
+              "presenterConfig": {
+                "numberFormat": "none"
+              },
+              "choices": [
+                {
+                  "answerKey": "answer_1",
+                  "content": "to challenge segregation in interstate transportation"
+                },
+                {
+                  "answerKey": "answer_2",
+                  "content": "to fight segregation in educational institutions"
+                },
+                {
+                  "answerKey": "answer_3",
+                  "content": "to protest violence against African American students"
+                },
+                {
+                  "answerKey": "answer_4",
+                  "content": "to fight violence against civil rights activists"
+                }
+              ]
+            },
+            "answerKey": {
+              "assessmentType": "multiplechoice",
+              "answers": {
+                "answer_3": {
+                  "score": 0.0,
+                  "response": "In May 1961, the Congress of Racial Equality (CORE) sponsored a freedom ride in which a biracial group tested a Supreme Court decision outlawing segregation in all bus and train stations used in interstate commerce."
+                },
+                "answer_2": {
+                  "score": 0.0,
+                  "response": "In May 1961, the Congress of Racial Equality (CORE) sponsored a freedom ride in which a biracial group tested a Supreme Court decision outlawing segregation in all bus and train stations used in interstate commerce."
+                },
+                "answer_1": {
+                  "score": 1.0,
+                  "response": "In May 1961, the Congress of Racial Equality (CORE) sponsored a freedom ride in which a biracial group tested a Supreme Court decision outlawing segregation in all bus and train stations used in interstate commerce."
+                },
+                "answer_4": {
+                  "score": 0.0,
+                  "response": "In May 1961, the Congress of Racial Equality (CORE) sponsored a freedom ride in which a biracial group tested a Supreme Court decision outlawing segregation in all bus and train stations used in interstate commerce."
+                }
+              }
+            },
+            "configFixup": [
+              {
+                "name": "questionId",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "sequenceNodeKey",
+                  "type": "ref"
+                }
+              },
+              {
+                "name": "maxAttempts",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "maxAttempts",
+                  "type": "ref"
+                }
+              }
+            ]
+          }
+        ],
+        "hookupActions": [
+          {
+            "description": "Hookup the submit manager to evaluate answers",
+            "methodName": "handleRequestsFrom",
+            "type": "method-call",
+            "args": [
+              {
+                "domain": "brix",
+                "refId": "q1",
+                "type": "ref"
+              }
+            ],
+            "instance": {
+              "type": "submit-manager"
+            }
+          },
+          {
+            "description": "Draw the question",
+            "methodName": "draw",
+            "type": "method-call",
+            "args": [
+              {
+                "selector": "#target1",
+                "type": "d3select"
+              }
+            ],
+            "instance": {
+              "domain": "brix",
+              "refId": "q1",
+              "type": "ref"
+            }
+          }
+        ]
+      }
+    ]
+  }
+}

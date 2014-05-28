@@ -1,0 +1,191 @@
+{
+  "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope",
+  "@type": "Envelope",
+  "metadata": {
+    "bookTitle": "American Stories: A History of the United States, Combined Volume",
+    "keywords": [
+      "Brands 3e",
+      "Ch06",
+      "Alick"
+    ],
+    "extendedMetadata": [
+      {
+        "name": "ISBN",
+        "value": "013379461X"
+      },
+      {
+        "name": "M",
+        "value": "m03"
+      },
+      {
+        "name": "assessment_title",
+        "value": "Quiz: Have We Fought for This"
+      },
+      {
+        "name": "Topic",
+        "value": "\u003dâHave We Fought for This?â"
+      },
+      {
+        "name": "chapterTitle",
+        "value": "The Republican Experiment 1783â1788"
+      },
+      {
+        "name": "module",
+        "value": "Have We Fought for This"
+      },
+      {
+        "name": "item_title",
+        "value": "013379461X_H. W. Brands; T. H. Breen; R. Hal Williams; Ariela J. Gros_ch06_m03_q0002"
+      },
+      {
+        "name": "questionlayout",
+        "value": "1"
+      },
+      {
+        "name": "CH",
+        "value": "6"
+      },
+      {
+        "name": "Objective",
+        "value": "LO: 6.3: Why did Constitutional delegates compromise on representation and slavery?"
+      },
+      {
+        "name": "shuffle_choices",
+        "value": "Yes"
+      }
+    ],
+    "subject": [
+      "US History"
+    ],
+    "contentTypeTier2": [
+      "AssignmentItem"
+    ],
+    "contentTypeTier1": "Assessment",
+    "format": [
+      "application/vnd.pearson.sanvan.v1.activity"
+    ],
+    "version": "1.0",
+    "guid": "ea818249-5c2d-4fe1-b644-a6c2831f46cf",
+    "bookAuthor": "H. W. Brands; T. H. Breen; R. Hal Williams; Ariela J. Gros",
+    "title": "POST 06 04",
+    "educationalAlignment": [
+      "http://purl.org/pearson/objectives/183725473384362"
+    ]
+  },
+  "body": {
+    "description": "POST_06_04",
+    "containerConfig": [
+      {
+        "description": "POST_06_04",
+        "containerId": "target1",
+        "brixConfig": [
+          {
+            "bricId": "q1",
+            "bricType": "MultipleChoiceQuestion",
+            "config": {
+              "id": "QUE60869",
+              "question": "Which of the following refers to the framework of a federal system that James Madison drew up prior the Philadelphia Convention?\n\u003cbr /\u003e",
+              "order": "randomized",
+              "presenterType": "RadioGroup",
+              "presenterConfig": {
+                "numberFormat": "none"
+              },
+              "choices": [
+                {
+                  "answerKey": "answer_1",
+                  "content": "Virginia Plan"
+                },
+                {
+                  "answerKey": "answer_2",
+                  "content": "New Jersey Plan"
+                },
+                {
+                  "answerKey": "answer_3",
+                  "content": "Dickinson’s Plan"
+                },
+                {
+                  "answerKey": "answer_4",
+                  "content": "Carolina Plan"
+                }
+              ]
+            },
+            "answerKey": {
+              "assessmentType": "multiplechoice",
+              "answers": {
+                "answer_3": {
+                  "score": 0.0,
+                  "response": "Even before all the delegates had arrived, Madison drew up a framework for a new federal system known as the Virginia Plan. It envisioned a national legislature of two houses, one elected directly by the people, the other chosen by the first house from nominations made by the state assemblies."
+                },
+                "answer_2": {
+                  "score": 0.0,
+                  "response": "Even before all the delegates had arrived, Madison drew up a framework for a new federal system known as the Virginia Plan. It envisioned a national legislature of two houses, one elected directly by the people, the other chosen by the first house from nominations made by the state assemblies."
+                },
+                "answer_1": {
+                  "score": 1.0,
+                  "response": "Even before all the delegates had arrived, Madison drew up a framework for a new federal system known as the Virginia Plan. It envisioned a national legislature of two houses, one elected directly by the people, the other chosen by the first house from nominations made by the state assemblies."
+                },
+                "answer_4": {
+                  "score": 0.0,
+                  "response": "Even before all the delegates had arrived, Madison drew up a framework for a new federal system known as the Virginia Plan. It envisioned a national legislature of two houses, one elected directly by the people, the other chosen by the first house from nominations made by the state assemblies."
+                }
+              }
+            },
+            "configFixup": [
+              {
+                "name": "questionId",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "sequenceNodeKey",
+                  "type": "ref"
+                }
+              },
+              {
+                "name": "maxAttempts",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "maxAttempts",
+                  "type": "ref"
+                }
+              }
+            ]
+          }
+        ],
+        "hookupActions": [
+          {
+            "description": "Hookup the submit manager to evaluate answers",
+            "methodName": "handleRequestsFrom",
+            "type": "method-call",
+            "args": [
+              {
+                "domain": "brix",
+                "refId": "q1",
+                "type": "ref"
+              }
+            ],
+            "instance": {
+              "type": "submit-manager"
+            }
+          },
+          {
+            "description": "Draw the question",
+            "methodName": "draw",
+            "type": "method-call",
+            "args": [
+              {
+                "selector": "#target1",
+                "type": "d3select"
+              }
+            ],
+            "instance": {
+              "domain": "brix",
+              "refId": "q1",
+              "type": "ref"
+            }
+          }
+        ]
+      }
+    ]
+  }
+}

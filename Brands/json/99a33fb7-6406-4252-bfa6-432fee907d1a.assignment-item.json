@@ -1,0 +1,191 @@
+{
+  "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope",
+  "@type": "Envelope",
+  "metadata": {
+    "bookTitle": "American Stories: A History of the United States, Combined Volume",
+    "keywords": [
+      "Brands 3e",
+      "Ch01",
+      "Alick"
+    ],
+    "extendedMetadata": [
+      {
+        "name": "ISBN",
+        "value": "013379461X"
+      },
+      {
+        "name": "M",
+        "value": "m01"
+      },
+      {
+        "name": "assessment_title",
+        "value": "Quiz: Native Americans Before the Conquest"
+      },
+      {
+        "name": "Topic",
+        "value": "Native Americans Before the Conquest"
+      },
+      {
+        "name": "chapterTitle",
+        "value": "New World Encounters Preconquestâ1608"
+      },
+      {
+        "name": "module",
+        "value": "Native Americans Before the Conquest"
+      },
+      {
+        "name": "item_title",
+        "value": "013379461X_H. W. Brands; T. H. Breen; R. Hal Williams; Ariela J. Gros_ch01_m01_q0002"
+      },
+      {
+        "name": "questionlayout",
+        "value": "1"
+      },
+      {
+        "name": "CH",
+        "value": "1"
+      },
+      {
+        "name": "Objective",
+        "value": "LO: 1.1: What explains cultural differences among Native American groups before European conquest?"
+      },
+      {
+        "name": "shuffle_choices",
+        "value": "Yes"
+      }
+    ],
+    "subject": [
+      "US History"
+    ],
+    "contentTypeTier2": [
+      "AssignmentItem"
+    ],
+    "contentTypeTier1": "Assessment",
+    "format": [
+      "application/vnd.pearson.sanvan.v1.activity"
+    ],
+    "version": "1.0",
+    "guid": "99a33fb7-6406-4252-bfa6-432fee907d1a",
+    "bookAuthor": "H. W. Brands; T. H. Breen; R. Hal Williams; Ariela J. Gros",
+    "title": "POST 01 05",
+    "educationalAlignment": [
+      "http://purl.org/pearson/objectives/183725473384362"
+    ]
+  },
+  "body": {
+    "description": "POST_01_05",
+    "containerConfig": [
+      {
+        "description": "POST_01_05",
+        "containerId": "target1",
+        "brixConfig": [
+          {
+            "bricId": "q1",
+            "bricType": "MultipleChoiceQuestion",
+            "config": {
+              "id": "QUE60659",
+              "question": "What were the primary staples of Indian agriculture?\n\u003cbr /\u003e",
+              "order": "randomized",
+              "presenterType": "RadioGroup",
+              "presenterConfig": {
+                "numberFormat": "none"
+              },
+              "choices": [
+                {
+                  "answerKey": "answer_1",
+                  "content": "maize, beans, and squash"
+                },
+                {
+                  "answerKey": "answer_2",
+                  "content": "potatoes, beets, and sugar cane"
+                },
+                {
+                  "answerKey": "answer_3",
+                  "content": "rice, manioc, and peanuts"
+                },
+                {
+                  "answerKey": "answer_4",
+                  "content": "wheat, oats, and barley"
+                }
+              ]
+            },
+            "answerKey": {
+              "assessmentType": "multiplechoice",
+              "answers": {
+                "answer_3": {
+                  "score": 0.0,
+                  "response": "About 5,000 years ago, the Indians discovered how to cultivate certain plants. Knowledge of maize (corn), squash, and beans spread north from central Mexico. The peoples living in the Southwest acquired cultivation skills long before the bands living along the Atlantic Coast."
+                },
+                "answer_2": {
+                  "score": 0.0,
+                  "response": "About 5,000 years ago, the Indians discovered how to cultivate certain plants. Knowledge of maize (corn), squash, and beans spread north from central Mexico. The peoples living in the Southwest acquired cultivation skills long before the bands living along the Atlantic Coast."
+                },
+                "answer_1": {
+                  "score": 1.0,
+                  "response": "About 5,000 years ago, the Indians discovered how to cultivate certain plants. Knowledge of maize (corn), squash, and beans spread north from central Mexico. The peoples living in the Southwest acquired cultivation skills long before the bands living along the Atlantic Coast."
+                },
+                "answer_4": {
+                  "score": 0.0,
+                  "response": "About 5,000 years ago, the Indians discovered how to cultivate certain plants. Knowledge of maize (corn), squash, and beans spread north from central Mexico. The peoples living in the Southwest acquired cultivation skills long before the bands living along the Atlantic Coast."
+                }
+              }
+            },
+            "configFixup": [
+              {
+                "name": "questionId",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "sequenceNodeKey",
+                  "type": "ref"
+                }
+              },
+              {
+                "name": "maxAttempts",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "maxAttempts",
+                  "type": "ref"
+                }
+              }
+            ]
+          }
+        ],
+        "hookupActions": [
+          {
+            "description": "Hookup the submit manager to evaluate answers",
+            "methodName": "handleRequestsFrom",
+            "type": "method-call",
+            "args": [
+              {
+                "domain": "brix",
+                "refId": "q1",
+                "type": "ref"
+              }
+            ],
+            "instance": {
+              "type": "submit-manager"
+            }
+          },
+          {
+            "description": "Draw the question",
+            "methodName": "draw",
+            "type": "method-call",
+            "args": [
+              {
+                "selector": "#target1",
+                "type": "d3select"
+              }
+            ],
+            "instance": {
+              "domain": "brix",
+              "refId": "q1",
+              "type": "ref"
+            }
+          }
+        ]
+      }
+    ]
+  }
+}

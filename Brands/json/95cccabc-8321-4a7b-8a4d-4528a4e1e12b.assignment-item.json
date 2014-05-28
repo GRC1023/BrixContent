@@ -1,0 +1,191 @@
+{
+  "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope",
+  "@type": "Envelope",
+  "metadata": {
+    "bookTitle": "American Stories: A History of the United States, Combined Volume",
+    "keywords": [
+      "Brands 3e",
+      "Ch03",
+      "Alick"
+    ],
+    "extendedMetadata": [
+      {
+        "name": "ISBN",
+        "value": "013379461X"
+      },
+      {
+        "name": "M",
+        "value": "m03"
+      },
+      {
+        "name": "assessment_title",
+        "value": "Quiz: Race and Freedom in British America"
+      },
+      {
+        "name": "Topic",
+        "value": "Race and Freedom in British America"
+      },
+      {
+        "name": "chapterTitle",
+        "value": "Putting Down Roots: Opportunity and Oppression in Colonial Society 1619â1692"
+      },
+      {
+        "name": "module",
+        "value": "Race and Freedom in British America"
+      },
+      {
+        "name": "item_title",
+        "value": "013379461X_H. W. Brands; T. H. Breen; R. Hal Williams; Ariela J. Gros_ch03_m03_q0003"
+      },
+      {
+        "name": "questionlayout",
+        "value": "1"
+      },
+      {
+        "name": "CH",
+        "value": "3"
+      },
+      {
+        "name": "Objective",
+        "value": "LO: 3.3: How did African American slaves preserve an independent cultural identity in the New World?"
+      },
+      {
+        "name": "shuffle_choices",
+        "value": "Yes"
+      }
+    ],
+    "subject": [
+      "US History"
+    ],
+    "contentTypeTier2": [
+      "AssignmentItem"
+    ],
+    "contentTypeTier1": "Assessment",
+    "format": [
+      "application/vnd.pearson.sanvan.v1.activity"
+    ],
+    "version": "1.0",
+    "guid": "95cccabc-8321-4a7b-8a4d-4528a4e1e12b",
+    "bookAuthor": "H. W. Brands; T. H. Breen; R. Hal Williams; Ariela J. Gros",
+    "title": "PRE 03 10",
+    "educationalAlignment": [
+      "http://purl.org/pearson/objectives/183725473384362"
+    ]
+  },
+  "body": {
+    "description": "PRE_03_10",
+    "containerConfig": [
+      {
+        "description": "PRE_03_10",
+        "containerId": "target1",
+        "brixConfig": [
+          {
+            "bricId": "q1",
+            "bricType": "MultipleChoiceQuestion",
+            "config": {
+              "id": "QUE60742",
+              "question": "What was distinctive about the Christianity of black slaves?\n\u003cbr /\u003e",
+              "order": "randomized",
+              "presenterType": "RadioGroup",
+              "presenterConfig": {
+                "numberFormat": "none"
+              },
+              "choices": [
+                {
+                  "answerKey": "answer_1",
+                  "content": "The blacks transformed Christianity by retaining some of their African elements."
+                },
+                {
+                  "answerKey": "answer_2",
+                  "content": "Black slaves adopted the theology but not the rituals of Christianity."
+                },
+                {
+                  "answerKey": "answer_3",
+                  "content": "Blacks in the colonies adopted a Christianity that was Catholic in its theology but Puritan in its worship."
+                },
+                {
+                  "answerKey": "answer_4",
+                  "content": "Most black people practiced Christianity publicly but Islam in private."
+                }
+              ]
+            },
+            "answerKey": {
+              "assessmentType": "multiplechoice",
+              "answers": {
+                "answer_3": {
+                  "score": 0.0,
+                  "response": "The slaves accepted Christianity but did so on their own terms. Blacks transformed Christianity into an expression of religious feeling in which an African element remained vibrant."
+                },
+                "answer_2": {
+                  "score": 0.0,
+                  "response": "The slaves accepted Christianity but did so on their own terms. Blacks transformed Christianity into an expression of religious feeling in which an African element remained vibrant."
+                },
+                "answer_1": {
+                  "score": 1.0,
+                  "response": "The slaves accepted Christianity but did so on their own terms. Blacks transformed Christianity into an expression of religious feeling in which an African element remained vibrant."
+                },
+                "answer_4": {
+                  "score": 0.0,
+                  "response": "The slaves accepted Christianity but did so on their own terms. Blacks transformed Christianity into an expression of religious feeling in which an African element remained vibrant."
+                }
+              }
+            },
+            "configFixup": [
+              {
+                "name": "questionId",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "sequenceNodeKey",
+                  "type": "ref"
+                }
+              },
+              {
+                "name": "maxAttempts",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "maxAttempts",
+                  "type": "ref"
+                }
+              }
+            ]
+          }
+        ],
+        "hookupActions": [
+          {
+            "description": "Hookup the submit manager to evaluate answers",
+            "methodName": "handleRequestsFrom",
+            "type": "method-call",
+            "args": [
+              {
+                "domain": "brix",
+                "refId": "q1",
+                "type": "ref"
+              }
+            ],
+            "instance": {
+              "type": "submit-manager"
+            }
+          },
+          {
+            "description": "Draw the question",
+            "methodName": "draw",
+            "type": "method-call",
+            "args": [
+              {
+                "selector": "#target1",
+                "type": "d3select"
+              }
+            ],
+            "instance": {
+              "domain": "brix",
+              "refId": "q1",
+              "type": "ref"
+            }
+          }
+        ]
+      }
+    ]
+  }
+}

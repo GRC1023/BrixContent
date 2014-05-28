@@ -1,0 +1,187 @@
+{
+  "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope",
+  "@type": "Envelope",
+  "metadata": {
+    "bookTitle": "American Stories: A History of the United States, Combined Volume",
+    "keywords": [
+      "Brands 3e",
+      "Ch08",
+      "Alick"
+    ],
+    "extendedMetadata": [
+      {
+        "name": "ISBN",
+        "value": "013379461X"
+      },
+      {
+        "name": "M",
+        "value": "c01"
+      },
+      {
+        "name": "assessment_title",
+        "value": "Chapter Quiz: Republican Ascendancy: The Jeffersonian Vision 1800â1814"
+      },
+      {
+        "name": "Topic",
+        "value": "Race and Dissent Under Jefferson"
+      },
+      {
+        "name": "chapterTitle",
+        "value": "Republican Ascendancy: The Jeffersonian Vision 1800â1814"
+      },
+      {
+        "name": "item_title",
+        "value": "013379461X_H. W. Brands; T. H. Breen; R. Hal Williams; Ariela J. Gros_ch08_c01_q0007"
+      },
+      {
+        "name": "questionlayout",
+        "value": "1"
+      },
+      {
+        "name": "CH",
+        "value": "8"
+      },
+      {
+        "name": "Objective",
+        "value": "LO: 8.3: How did Jeffersonians deal with the difficult problems of party politics and slavery?"
+      },
+      {
+        "name": "shuffle_choices",
+        "value": "Yes"
+      }
+    ],
+    "subject": [
+      "US History"
+    ],
+    "contentTypeTier2": [
+      "AssignmentItem"
+    ],
+    "contentTypeTier1": "Assessment",
+    "format": [
+      "application/vnd.pearson.sanvan.v1.activity"
+    ],
+    "version": "1.0",
+    "guid": "26e06da9-5b46-4cd2-81f9-b714965f5105",
+    "bookAuthor": "H. W. Brands; T. H. Breen; R. Hal Williams; Ariela J. Gros",
+    "title": "FA Remember 08 04",
+    "educationalAlignment": [
+      "http://purl.org/pearson/objectives/183725473384362"
+    ]
+  },
+  "body": {
+    "description": "FA_Remember_08_04",
+    "containerConfig": [
+      {
+        "description": "FA_Remember_08_04",
+        "containerId": "target1",
+        "brixConfig": [
+          {
+            "bricId": "q1",
+            "bricType": "MultipleChoiceQuestion",
+            "config": {
+              "id": "QUE60882",
+              "question": "What action, in addition to the passing of the Judiciary Act of 1801, infuriated the Republicans?\n\u003cbr /\u003e",
+              "order": "randomized",
+              "presenterType": "RadioGroup",
+              "presenterConfig": {
+                "numberFormat": "none"
+              },
+              "choices": [
+                {
+                  "answerKey": "answer_1",
+                  "content": "the appointment of John Marshall as chief justice"
+                },
+                {
+                  "answerKey": "answer_2",
+                  "content": "the withholding of Marbury’s commission"
+                },
+                {
+                  "answerKey": "answer_3",
+                  "content": "the acquittal of John Pickering"
+                },
+                {
+                  "answerKey": "answer_4",
+                  "content": "cuts in military spending"
+                }
+              ]
+            },
+            "answerKey": {
+              "assessmentType": "multiplechoice",
+              "answers": {
+                "answer_3": {
+                  "score": 0.0,
+                  "response": "Consider This: In January 1802, Jefferson’s congressional allies called for repeal of the Judiciary Act. In public debate, they studiously avoided the obvious political issue. The new circuit courts should be closed not only because they were staffed by Federalists but also because they were needlessly expensive. The judges did not hear enough cases to warrant continuance. See L.O. 8.3 How did Jeffersonians deal with the difficult problems of party politics and slavery?"
+                },
+                "answer_2": {
+                  "score": 0.0,
+                  "response": "Consider This: In January 1802, Jefferson’s congressional allies called for repeal of the Judiciary Act. In public debate, they studiously avoided the obvious political issue. The new circuit courts should be closed not only because they were staffed by Federalists but also because they were needlessly expensive. The judges did not hear enough cases to warrant continuance. See L.O. 8.3 How did Jeffersonians deal with the difficult problems of party politics and slavery?"
+                },
+                "answer_1": {
+                  "score": 1.0,
+                  "response": ""
+                },
+                "answer_4": {
+                  "score": 0.0,
+                  "response": "Consider This: In January 1802, Jefferson’s congressional allies called for repeal of the Judiciary Act. In public debate, they studiously avoided the obvious political issue. The new circuit courts should be closed not only because they were staffed by Federalists but also because they were needlessly expensive. The judges did not hear enough cases to warrant continuance. See L.O. 8.3 How did Jeffersonians deal with the difficult problems of party politics and slavery?"
+                }
+              }
+            },
+            "configFixup": [
+              {
+                "name": "questionId",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "sequenceNodeKey",
+                  "type": "ref"
+                }
+              },
+              {
+                "name": "maxAttempts",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "maxAttempts",
+                  "type": "ref"
+                }
+              }
+            ]
+          }
+        ],
+        "hookupActions": [
+          {
+            "description": "Hookup the submit manager to evaluate answers",
+            "methodName": "handleRequestsFrom",
+            "type": "method-call",
+            "args": [
+              {
+                "domain": "brix",
+                "refId": "q1",
+                "type": "ref"
+              }
+            ],
+            "instance": {
+              "type": "submit-manager"
+            }
+          },
+          {
+            "description": "Draw the question",
+            "methodName": "draw",
+            "type": "method-call",
+            "args": [
+              {
+                "selector": "#target1",
+                "type": "d3select"
+              }
+            ],
+            "instance": {
+              "domain": "brix",
+              "refId": "q1",
+              "type": "ref"
+            }
+          }
+        ]
+      }
+    ]
+  }
+}

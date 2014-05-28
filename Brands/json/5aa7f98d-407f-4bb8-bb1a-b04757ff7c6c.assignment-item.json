@@ -1,0 +1,191 @@
+{
+  "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope",
+  "@type": "Envelope",
+  "metadata": {
+    "bookTitle": "American Stories: A History of the United States, Combined Volume",
+    "keywords": [
+      "Brands 3e",
+      "Ch26",
+      "Alick"
+    ],
+    "extendedMetadata": [
+      {
+        "name": "ISBN",
+        "value": "013379461X"
+      },
+      {
+        "name": "M",
+        "value": "m01"
+      },
+      {
+        "name": "assessment_title",
+        "value": "Quiz: The Great Depression"
+      },
+      {
+        "name": "Topic",
+        "value": "The Great Depression"
+      },
+      {
+        "name": "chapterTitle",
+        "value": "Franklin D. Roosevelt and the New Deal 1929â1939"
+      },
+      {
+        "name": "module",
+        "value": "The Great Depression"
+      },
+      {
+        "name": "item_title",
+        "value": "013379461X_H. W. Brands; T. H. Breen; R. Hal Williams; Ariela J. Gros_ch26_m01_q0002"
+      },
+      {
+        "name": "questionlayout",
+        "value": "1"
+      },
+      {
+        "name": "CH",
+        "value": "26"
+      },
+      {
+        "name": "Objective",
+        "value": "26.1"
+      },
+      {
+        "name": "shuffle_choices",
+        "value": "Yes"
+      }
+    ],
+    "subject": [
+      "US History"
+    ],
+    "contentTypeTier2": [
+      "AssignmentItem"
+    ],
+    "contentTypeTier1": "Assessment",
+    "format": [
+      "application/vnd.pearson.sanvan.v1.activity"
+    ],
+    "version": "1.0",
+    "guid": "5aa7f98d-407f-4bb8-bb1a-b04757ff7c6c",
+    "bookAuthor": "H. W. Brands; T. H. Breen; R. Hal Williams; Ariela J. Gros",
+    "title": "POST 26 08",
+    "educationalAlignment": [
+      "http://purl.org/pearson/objectives/183725473384362"
+    ]
+  },
+  "body": {
+    "description": "POST_26_08",
+    "containerConfig": [
+      {
+        "description": "POST_26_08",
+        "containerId": "target1",
+        "brixConfig": [
+          {
+            "bricId": "q1",
+            "bricType": "MultipleChoiceQuestion",
+            "config": {
+              "id": "QUE61451",
+              "question": "At the height of the Great Depression, unemployment ran at about __________ percent.\n\u003cbr /\u003e",
+              "order": "randomized",
+              "presenterType": "RadioGroup",
+              "presenterConfig": {
+                "numberFormat": "none"
+              },
+              "choices": [
+                {
+                  "answerKey": "answer_1",
+                  "content": "25"
+                },
+                {
+                  "answerKey": "answer_2",
+                  "content": "35"
+                },
+                {
+                  "answerKey": "answer_3",
+                  "content": "15"
+                },
+                {
+                  "answerKey": "answer_4",
+                  "content": "5"
+                }
+              ]
+            },
+            "answerKey": {
+              "assessmentType": "multiplechoice",
+              "answers": {
+                "answer_3": {
+                  "score": 0.0,
+                  "response": "Unemployment peaked in 1933 at 25 percent, and dropped steadily until it moved up again during the “Roosevelt recession.”"
+                },
+                "answer_2": {
+                  "score": 0.0,
+                  "response": "Unemployment peaked in 1933 at 25 percent, and dropped steadily until it moved up again during the “Roosevelt recession.”"
+                },
+                "answer_1": {
+                  "score": 1.0,
+                  "response": "Unemployment peaked in 1933 at 25 percent, and dropped steadily until it moved up again during the “Roosevelt recession.”"
+                },
+                "answer_4": {
+                  "score": 0.0,
+                  "response": "Unemployment peaked in 1933 at 25 percent, and dropped steadily until it moved up again during the “Roosevelt recession.”"
+                }
+              }
+            },
+            "configFixup": [
+              {
+                "name": "questionId",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "sequenceNodeKey",
+                  "type": "ref"
+                }
+              },
+              {
+                "name": "maxAttempts",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "maxAttempts",
+                  "type": "ref"
+                }
+              }
+            ]
+          }
+        ],
+        "hookupActions": [
+          {
+            "description": "Hookup the submit manager to evaluate answers",
+            "methodName": "handleRequestsFrom",
+            "type": "method-call",
+            "args": [
+              {
+                "domain": "brix",
+                "refId": "q1",
+                "type": "ref"
+              }
+            ],
+            "instance": {
+              "type": "submit-manager"
+            }
+          },
+          {
+            "description": "Draw the question",
+            "methodName": "draw",
+            "type": "method-call",
+            "args": [
+              {
+                "selector": "#target1",
+                "type": "d3select"
+              }
+            ],
+            "instance": {
+              "domain": "brix",
+              "refId": "q1",
+              "type": "ref"
+            }
+          }
+        ]
+      }
+    ]
+  }
+}

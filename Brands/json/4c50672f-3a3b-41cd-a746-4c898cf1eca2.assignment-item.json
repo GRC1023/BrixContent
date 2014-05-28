@@ -1,0 +1,187 @@
+{
+  "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope",
+  "@type": "Envelope",
+  "metadata": {
+    "bookTitle": "American Stories: A History of the United States, Combined Volume",
+    "keywords": [
+      "Brands 3e",
+      "Ch21",
+      "Alick"
+    ],
+    "extendedMetadata": [
+      {
+        "name": "ISBN",
+        "value": "013379461X"
+      },
+      {
+        "name": "M",
+        "value": "c01"
+      },
+      {
+        "name": "assessment_title",
+        "value": "Chapter Quiz: Toward Empire 1865â1902"
+      },
+      {
+        "name": "Topic",
+        "value": "Acquisition of Empire"
+      },
+      {
+        "name": "chapterTitle",
+        "value": "Toward Empire 1865â1902"
+      },
+      {
+        "name": "item_title",
+        "value": "013379461X_H. W. Brands; T. H. Breen; R. Hal Williams; Ariela J. Gros_ch21_c01_q0009"
+      },
+      {
+        "name": "questionlayout",
+        "value": "1"
+      },
+      {
+        "name": "CH",
+        "value": "21"
+      },
+      {
+        "name": "Objective",
+        "value": "21.3"
+      },
+      {
+        "name": "shuffle_choices",
+        "value": "Yes"
+      }
+    ],
+    "subject": [
+      "US History"
+    ],
+    "contentTypeTier2": [
+      "AssignmentItem"
+    ],
+    "contentTypeTier1": "Assessment",
+    "format": [
+      "application/vnd.pearson.sanvan.v1.activity"
+    ],
+    "version": "1.0",
+    "guid": "4c50672f-3a3b-41cd-a746-4c898cf1eca2",
+    "bookAuthor": "H. W. Brands; T. H. Breen; R. Hal Williams; Ariela J. Gros",
+    "title": "FA Understand 21 05",
+    "educationalAlignment": [
+      "http://purl.org/pearson/objectives/183725473384362"
+    ]
+  },
+  "body": {
+    "description": "FA_Understand_21_05",
+    "containerConfig": [
+      {
+        "description": "FA_Understand_21_05",
+        "containerId": "target1",
+        "brixConfig": [
+          {
+            "bricId": "q1",
+            "bricType": "MultipleChoiceQuestion",
+            "config": {
+              "id": "QUE61232",
+              "question": "How did annexation by the United States ultimately benefit the people of the Philippines?\n\u003cbr /\u003e",
+              "order": "randomized",
+              "presenterType": "RadioGroup",
+              "presenterConfig": {
+                "numberFormat": "none"
+              },
+              "choices": [
+                {
+                  "answerKey": "answer_1",
+                  "content": "Open door policies adopted by the United States increased Philippine trade."
+                },
+                {
+                  "answerKey": "answer_2",
+                  "content": "The Filipinos built a strong navy in the wake of the Philippine-American War."
+                },
+                {
+                  "answerKey": "answer_3",
+                  "content": "The U.S. government created a sense of unity among the Filipinos."
+                },
+                {
+                  "answerKey": "answer_4",
+                  "content": "The Americans built new schools, roads, and bridges for the Filipino people."
+                }
+              ]
+            },
+            "answerKey": {
+              "assessmentType": "multiplechoice",
+              "answers": {
+                "answer_3": {
+                  "score": 0.0,
+                  "response": "Consider This: In 1900, McKinley sent a special commission to the islands under William Howard Taft. McKinley eventually decided that the Philippines were not ready for independence. See L.O. 21.3 Acquisition of Empire."
+                },
+                "answer_2": {
+                  "score": 0.0,
+                  "response": "Consider This: In 1900, McKinley sent a special commission to the islands under William Howard Taft. McKinley eventually decided that the Philippines were not ready for independence. See L.O. 21.3 Acquisition of Empire."
+                },
+                "answer_1": {
+                  "score": 0.0,
+                  "response": "Consider This: In 1900, McKinley sent a special commission to the islands under William Howard Taft. McKinley eventually decided that the Philippines were not ready for independence. See L.O. 21.3 Acquisition of Empire."
+                },
+                "answer_4": {
+                  "score": 1.0,
+                  "response": ""
+                }
+              }
+            },
+            "configFixup": [
+              {
+                "name": "questionId",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "sequenceNodeKey",
+                  "type": "ref"
+                }
+              },
+              {
+                "name": "maxAttempts",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "maxAttempts",
+                  "type": "ref"
+                }
+              }
+            ]
+          }
+        ],
+        "hookupActions": [
+          {
+            "description": "Hookup the submit manager to evaluate answers",
+            "methodName": "handleRequestsFrom",
+            "type": "method-call",
+            "args": [
+              {
+                "domain": "brix",
+                "refId": "q1",
+                "type": "ref"
+              }
+            ],
+            "instance": {
+              "type": "submit-manager"
+            }
+          },
+          {
+            "description": "Draw the question",
+            "methodName": "draw",
+            "type": "method-call",
+            "args": [
+              {
+                "selector": "#target1",
+                "type": "d3select"
+              }
+            ],
+            "instance": {
+              "domain": "brix",
+              "refId": "q1",
+              "type": "ref"
+            }
+          }
+        ]
+      }
+    ]
+  }
+}

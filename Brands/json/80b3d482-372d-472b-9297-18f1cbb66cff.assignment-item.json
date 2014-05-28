@@ -1,0 +1,191 @@
+{
+  "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope",
+  "@type": "Envelope",
+  "metadata": {
+    "bookTitle": "American Stories: A History of the United States, Combined Volume",
+    "keywords": [
+      "Brands 3e",
+      "Ch10",
+      "Alick"
+    ],
+    "extendedMetadata": [
+      {
+        "name": "ISBN",
+        "value": "013379461X"
+      },
+      {
+        "name": "M",
+        "value": "m03"
+      },
+      {
+        "name": "assessment_title",
+        "value": "Quiz: The Politics of Nation Building After the War of 1812"
+      },
+      {
+        "name": "Topic",
+        "value": "The Politics of Nation Building After the War of 1812"
+      },
+      {
+        "name": "chapterTitle",
+        "value": "Nation Building and Nationalism1815â1825"
+      },
+      {
+        "name": "module",
+        "value": "The Politics of Nation Building After the War of 1812"
+      },
+      {
+        "name": "item_title",
+        "value": "013379461X_H. W. Brands; T. H. Breen; R. Hal Williams; Ariela J. Gros_ch09_m03_q0005"
+      },
+      {
+        "name": "questionlayout",
+        "value": "1"
+      },
+      {
+        "name": "CH",
+        "value": "9"
+      },
+      {
+        "name": "Objective",
+        "value": "LO: 9.3: What decisions did the federal government face as the country expanded?"
+      },
+      {
+        "name": "shuffle_choices",
+        "value": "Yes"
+      }
+    ],
+    "subject": [
+      "US History"
+    ],
+    "contentTypeTier2": [
+      "AssignmentItem"
+    ],
+    "contentTypeTier1": "Assessment",
+    "format": [
+      "application/vnd.pearson.sanvan.v1.activity"
+    ],
+    "version": "1.0",
+    "guid": "80b3d482-372d-472b-9297-18f1cbb66cff",
+    "bookAuthor": "H. W. Brands; T. H. Breen; R. Hal Williams; Ariela J. Gros",
+    "title": "POST 09 14 ",
+    "educationalAlignment": [
+      "http://purl.org/pearson/objectives/183725473384362"
+    ]
+  },
+  "body": {
+    "description": "POST_09_14",
+    "containerConfig": [
+      {
+        "description": "POST_09_14",
+        "containerId": "target1",
+        "brixConfig": [
+          {
+            "bricId": "q1",
+            "bricType": "MultipleChoiceQuestion",
+            "config": {
+              "id": "QUE60941",
+              "question": "Which of the following can be inferred about the nature of the House of Representatives during the Missouri debate?\n\u003cbr /\u003e",
+              "order": "randomized",
+              "presenterType": "RadioGroup",
+              "presenterConfig": {
+                "numberFormat": "none"
+              },
+              "choices": [
+                {
+                  "answerKey": "answer_1",
+                  "content": "It was divided firmly along sectional lines."
+                },
+                {
+                  "answerKey": "answer_2",
+                  "content": "It supported the slave trade."
+                },
+                {
+                  "answerKey": "answer_3",
+                  "content": "It echoed the sentiments of the Senate."
+                },
+                {
+                  "answerKey": "answer_4",
+                  "content": "It did not believe in the admission of any more states."
+                }
+              ]
+            },
+            "answerKey": {
+              "assessmentType": "multiplechoice",
+              "answers": {
+                "answer_3": {
+                  "score": 0.0,
+                  "response": "When the Missouri question came before Congress in early 1819, sectional fears and anxieties bubbled to the surface. Many northerners resented southern control of the presidency and the fact that the three-fifths clause of the Constitution, by which every five slaves were counted as three persons in figuring the state’s population, gave the South’s free population added weight in the House of Representatives and the electoral college. The South, on the other hand, feared for the future of what it regarded as a necessary balance of power between the sections."
+                },
+                "answer_2": {
+                  "score": 0.0,
+                  "response": "When the Missouri question came before Congress in early 1819, sectional fears and anxieties bubbled to the surface. Many northerners resented southern control of the presidency and the fact that the three-fifths clause of the Constitution, by which every five slaves were counted as three persons in figuring the state’s population, gave the South’s free population added weight in the House of Representatives and the electoral college. The South, on the other hand, feared for the future of what it regarded as a necessary balance of power between the sections."
+                },
+                "answer_1": {
+                  "score": 1.0,
+                  "response": "When the Missouri question came before Congress in early 1819, sectional fears and anxieties bubbled to the surface. Many northerners resented southern control of the presidency and the fact that the three-fifths clause of the Constitution, by which every five slaves were counted as three persons in figuring the state’s population, gave the South’s free population added weight in the House of Representatives and the electoral college. The South, on the other hand, feared for the future of what it regarded as a necessary balance of power between the sections."
+                },
+                "answer_4": {
+                  "score": 0.0,
+                  "response": "When the Missouri question came before Congress in early 1819, sectional fears and anxieties bubbled to the surface. Many northerners resented southern control of the presidency and the fact that the three-fifths clause of the Constitution, by which every five slaves were counted as three persons in figuring the state’s population, gave the South’s free population added weight in the House of Representatives and the electoral college. The South, on the other hand, feared for the future of what it regarded as a necessary balance of power between the sections."
+                }
+              }
+            },
+            "configFixup": [
+              {
+                "name": "questionId",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "sequenceNodeKey",
+                  "type": "ref"
+                }
+              },
+              {
+                "name": "maxAttempts",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "maxAttempts",
+                  "type": "ref"
+                }
+              }
+            ]
+          }
+        ],
+        "hookupActions": [
+          {
+            "description": "Hookup the submit manager to evaluate answers",
+            "methodName": "handleRequestsFrom",
+            "type": "method-call",
+            "args": [
+              {
+                "domain": "brix",
+                "refId": "q1",
+                "type": "ref"
+              }
+            ],
+            "instance": {
+              "type": "submit-manager"
+            }
+          },
+          {
+            "description": "Draw the question",
+            "methodName": "draw",
+            "type": "method-call",
+            "args": [
+              {
+                "selector": "#target1",
+                "type": "d3select"
+              }
+            ],
+            "instance": {
+              "domain": "brix",
+              "refId": "q1",
+              "type": "ref"
+            }
+          }
+        ]
+      }
+    ]
+  }
+}

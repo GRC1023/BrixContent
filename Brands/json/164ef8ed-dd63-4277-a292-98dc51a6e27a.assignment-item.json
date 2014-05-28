@@ -1,0 +1,187 @@
+{
+  "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope",
+  "@type": "Envelope",
+  "metadata": {
+    "bookTitle": "American Stories: A History of the United States, Combined Volume",
+    "keywords": [
+      "Brands 3e",
+      "Ch13",
+      "Alick"
+    ],
+    "extendedMetadata": [
+      {
+        "name": "ISBN",
+        "value": "013379461X"
+      },
+      {
+        "name": "M",
+        "value": "c01"
+      },
+      {
+        "name": "assessment_title",
+        "value": "Chapter Quiz: An Age of Expansionism 1830â1861"
+      },
+      {
+        "name": "Topic",
+        "value": "Internal Expansionism and the Industrial Revolution"
+      },
+      {
+        "name": "chapterTitle",
+        "value": "An Age of Expansionism 1830â1861"
+      },
+      {
+        "name": "item_title",
+        "value": "013379461X_H. W. Brands; T. H. Breen; R. Hal Williams; Ariela J. Gros_ch13_c01_q0001"
+      },
+      {
+        "name": "questionlayout",
+        "value": "1"
+      },
+      {
+        "name": "CH",
+        "value": "13"
+      },
+      {
+        "name": "Objective",
+        "value": "LO: 13.2: How did developments in transportation foster industrialization and encourage immigration?"
+      },
+      {
+        "name": "shuffle_choices",
+        "value": "Yes"
+      }
+    ],
+    "subject": [
+      "US History"
+    ],
+    "contentTypeTier2": [
+      "AssignmentItem"
+    ],
+    "contentTypeTier1": "Assessment",
+    "format": [
+      "application/vnd.pearson.sanvan.v1.activity"
+    ],
+    "version": "1.0",
+    "guid": "164ef8ed-dd63-4277-a292-98dc51a6e27a",
+    "bookAuthor": "H. W. Brands; T. H. Breen; R. Hal Williams; Ariela J. Gros",
+    "title": "PRE 13 15",
+    "educationalAlignment": [
+      "http://purl.org/pearson/objectives/183725473384362"
+    ]
+  },
+  "body": {
+    "description": "PRE_13_15",
+    "containerConfig": [
+      {
+        "description": "PRE_13_15",
+        "containerId": "target1",
+        "brixConfig": [
+          {
+            "bricId": "q1",
+            "bricType": "MultipleChoiceQuestion",
+            "config": {
+              "id": "QUE61014",
+              "question": "Which of the following helps to explain the differing attitudes of native-born Americans toward Irish and German immigrants?\n\u003cbr /\u003e",
+              "order": "randomized",
+              "presenterType": "RadioGroup",
+              "presenterConfig": {
+                "numberFormat": "none"
+              },
+              "choices": [
+                {
+                  "answerKey": "answer_1",
+                  "content": "immigrants’ religious beliefs"
+                },
+                {
+                  "answerKey": "answer_2",
+                  "content": "predominance of Irish peasants who immigrated"
+                },
+                {
+                  "answerKey": "answer_3",
+                  "content": "dislikes learned from the English"
+                },
+                {
+                  "answerKey": "answer_4",
+                  "content": "larger numbers of Germans who immigrated"
+                }
+              ]
+            },
+            "answerKey": {
+              "assessmentType": "multiplechoice",
+              "answers": {
+                "answer_3": {
+                  "score": 1.0,
+                  "response": ""
+                },
+                "answer_2": {
+                  "score": 0.0,
+                  "response": "Consider This: Germans normally escaped the scorn heaped on the Irish, perhaps because they were less poverty-stricken and were not members of an ethnic group Anglo-Americans had learned to despise. See L.O. 13.2 How did developments in transportation foster industrialization and encourage immigration?"
+                },
+                "answer_1": {
+                  "score": 0.0,
+                  "response": "Consider This: Germans normally escaped the scorn heaped on the Irish, perhaps because they were less poverty-stricken and were not members of an ethnic group Anglo-Americans had learned to despise. See L.O. 13.2 How did developments in transportation foster industrialization and encourage immigration?"
+                },
+                "answer_4": {
+                  "score": 0.0,
+                  "response": "Consider This: Germans normally escaped the scorn heaped on the Irish, perhaps because they were less poverty-stricken and were not members of an ethnic group Anglo-Americans had learned to despise. See L.O. 13.2 How did developments in transportation foster industrialization and encourage immigration?"
+                }
+              }
+            },
+            "configFixup": [
+              {
+                "name": "questionId",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "sequenceNodeKey",
+                  "type": "ref"
+                }
+              },
+              {
+                "name": "maxAttempts",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "maxAttempts",
+                  "type": "ref"
+                }
+              }
+            ]
+          }
+        ],
+        "hookupActions": [
+          {
+            "description": "Hookup the submit manager to evaluate answers",
+            "methodName": "handleRequestsFrom",
+            "type": "method-call",
+            "args": [
+              {
+                "domain": "brix",
+                "refId": "q1",
+                "type": "ref"
+              }
+            ],
+            "instance": {
+              "type": "submit-manager"
+            }
+          },
+          {
+            "description": "Draw the question",
+            "methodName": "draw",
+            "type": "method-call",
+            "args": [
+              {
+                "selector": "#target1",
+                "type": "d3select"
+              }
+            ],
+            "instance": {
+              "domain": "brix",
+              "refId": "q1",
+              "type": "ref"
+            }
+          }
+        ]
+      }
+    ]
+  }
+}

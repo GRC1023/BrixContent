@@ -1,0 +1,191 @@
+{
+  "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope",
+  "@type": "Envelope",
+  "metadata": {
+    "bookTitle": "American Stories: A History of the United States, Combined Volume",
+    "keywords": [
+      "Brands 3e",
+      "Ch10",
+      "Alick"
+    ],
+    "extendedMetadata": [
+      {
+        "name": "ISBN",
+        "value": "013379461X"
+      },
+      {
+        "name": "M",
+        "value": "m04"
+      },
+      {
+        "name": "assessment_title",
+        "value": "Quiz: Heyday of the Second-Party System"
+      },
+      {
+        "name": "Topic",
+        "value": "Heyday of the Second-Party System"
+      },
+      {
+        "name": "chapterTitle",
+        "value": "The Triumph of White Menâs Democracy 1824â1840"
+      },
+      {
+        "name": "module",
+        "value": "Heyday of the Second-Party System"
+      },
+      {
+        "name": "item_title",
+        "value": "013379461X_H. W. Brands; T. H. Breen; R. Hal Williams; Ariela J. Gros_ch10_m04_q0004"
+      },
+      {
+        "name": "questionlayout",
+        "value": "1"
+      },
+      {
+        "name": "CH",
+        "value": "10"
+      },
+      {
+        "name": "Objective",
+        "value": "LO: 10.4: What was the two-party system, and how were the parties different?"
+      },
+      {
+        "name": "shuffle_choices",
+        "value": "Yes"
+      }
+    ],
+    "subject": [
+      "US History"
+    ],
+    "contentTypeTier2": [
+      "AssignmentItem"
+    ],
+    "contentTypeTier1": "Assessment",
+    "format": [
+      "application/vnd.pearson.sanvan.v1.activity"
+    ],
+    "version": "1.0",
+    "guid": "70ce433e-6c09-43cc-9517-6c47da4a7534",
+    "bookAuthor": "H. W. Brands; T. H. Breen; R. Hal Williams; Ariela J. Gros",
+    "title": "POST 10 15",
+    "educationalAlignment": [
+      "http://purl.org/pearson/objectives/183725473384362"
+    ]
+  },
+  "body": {
+    "description": "POST_10_15",
+    "containerConfig": [
+      {
+        "description": "POST_10_15",
+        "containerId": "target1",
+        "brixConfig": [
+          {
+            "bricId": "q1",
+            "bricType": "MultipleChoiceQuestion",
+            "config": {
+              "id": "QUE61001",
+              "question": "In its first decade, the two-party system centered on the opposition between __________ and __________.\n\u003cbr /\u003e",
+              "order": "randomized",
+              "presenterType": "RadioGroup",
+              "presenterConfig": {
+                "numberFormat": "none"
+              },
+              "choices": [
+                {
+                  "answerKey": "answer_1",
+                  "content": "a developing market economy, states’ rights"
+                },
+                {
+                  "answerKey": "answer_2",
+                  "content": "tariffs, a national bank"
+                },
+                {
+                  "answerKey": "answer_3",
+                  "content": "states’ rights, strict construction"
+                },
+                {
+                  "answerKey": "answer_4",
+                  "content": "loose construction, expanding federal power"
+                }
+              ]
+            },
+            "answerKey": {
+              "assessmentType": "multiplechoice",
+              "answers": {
+                "answer_3": {
+                  "score": 0.0,
+                  "response": "The two-party system of the 1840s focused on economic issues, pitting a national market economy, federal intervention in the economy, and loose construction against a more traditional, local economy, states’ rights, and strict construction."
+                },
+                "answer_2": {
+                  "score": 0.0,
+                  "response": "The two-party system of the 1840s focused on economic issues, pitting a national market economy, federal intervention in the economy, and loose construction against a more traditional, local economy, states’ rights, and strict construction."
+                },
+                "answer_1": {
+                  "score": 1.0,
+                  "response": "The two-party system of the 1840s focused on economic issues, pitting a national market economy, federal intervention in the economy, and loose construction against a more traditional, local economy, states’ rights, and strict construction."
+                },
+                "answer_4": {
+                  "score": 0.0,
+                  "response": "The two-party system of the 1840s focused on economic issues, pitting a national market economy, federal intervention in the economy, and loose construction against a more traditional, local economy, states’ rights, and strict construction."
+                }
+              }
+            },
+            "configFixup": [
+              {
+                "name": "questionId",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "sequenceNodeKey",
+                  "type": "ref"
+                }
+              },
+              {
+                "name": "maxAttempts",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "maxAttempts",
+                  "type": "ref"
+                }
+              }
+            ]
+          }
+        ],
+        "hookupActions": [
+          {
+            "description": "Hookup the submit manager to evaluate answers",
+            "methodName": "handleRequestsFrom",
+            "type": "method-call",
+            "args": [
+              {
+                "domain": "brix",
+                "refId": "q1",
+                "type": "ref"
+              }
+            ],
+            "instance": {
+              "type": "submit-manager"
+            }
+          },
+          {
+            "description": "Draw the question",
+            "methodName": "draw",
+            "type": "method-call",
+            "args": [
+              {
+                "selector": "#target1",
+                "type": "d3select"
+              }
+            ],
+            "instance": {
+              "domain": "brix",
+              "refId": "q1",
+              "type": "ref"
+            }
+          }
+        ]
+      }
+    ]
+  }
+}

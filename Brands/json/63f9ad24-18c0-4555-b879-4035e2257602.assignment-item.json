@@ -1,0 +1,191 @@
+{
+  "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope",
+  "@type": "Envelope",
+  "metadata": {
+    "bookTitle": "American Stories: A History of the United States, Combined Volume",
+    "keywords": [
+      "Brands 3e",
+      "Ch15",
+      "Alick"
+    ],
+    "extendedMetadata": [
+      {
+        "name": "ISBN",
+        "value": "013379461X"
+      },
+      {
+        "name": "M",
+        "value": "m01"
+      },
+      {
+        "name": "assessment_title",
+        "value": "Quiz: Secession and the Civil War 1860-1865"
+      },
+      {
+        "name": "Topic",
+        "value": "The Storm Gathers"
+      },
+      {
+        "name": "chapterTitle",
+        "value": "Secession and the Civil War 1860â1865"
+      },
+      {
+        "name": "module",
+        "value": "Secession and the Civil War 1860-1865"
+      },
+      {
+        "name": "item_title",
+        "value": "013379461X_H. W. Brands; T. H. Breen; R. Hal Williams; Ariela J. Gros_ch15 _m01_q0004"
+      },
+      {
+        "name": "questionlayout",
+        "value": "1"
+      },
+      {
+        "name": "CH",
+        "value": "15"
+      },
+      {
+        "name": "Objective",
+        "value": "LO: 15.1: What developments and events drew the Union toward Civil War?"
+      },
+      {
+        "name": "shuffle_choices",
+        "value": "Yes"
+      }
+    ],
+    "subject": [
+      "US History"
+    ],
+    "contentTypeTier2": [
+      "AssignmentItem"
+    ],
+    "contentTypeTier1": "Assessment",
+    "format": [
+      "application/vnd.pearson.sanvan.v1.activity"
+    ],
+    "version": "1.0",
+    "guid": "63f9ad24-18c0-4555-b879-4035e2257602",
+    "bookAuthor": "H. W. Brands; T. H. Breen; R. Hal Williams; Ariela J. Gros",
+    "title": "PRE 15 11 ",
+    "educationalAlignment": [
+      "http://purl.org/pearson/objectives/183725473384362"
+    ]
+  },
+  "body": {
+    "description": "PRE_15_11",
+    "containerConfig": [
+      {
+        "description": "PRE_15_11",
+        "containerId": "target1",
+        "brixConfig": [
+          {
+            "bricId": "q1",
+            "bricType": "MultipleChoiceQuestion",
+            "config": {
+              "id": "QUE61091",
+              "question": "Why did senators and congressmen from the seceding states not support the Crittenden proposal?\n\u003cbr /\u003e",
+              "order": "randomized",
+              "presenterType": "RadioGroup",
+              "presenterConfig": {
+                "numberFormat": "none"
+              },
+              "choices": [
+                {
+                  "answerKey": "answer_1",
+                  "content": "Lincoln rejected the compromise."
+                },
+                {
+                  "answerKey": "answer_2",
+                  "content": "The proposal did not specify the degree of the extension of the Missouri Compromise line."
+                },
+                {
+                  "answerKey": "answer_3",
+                  "content": "The proposal was Lincoln’s brainchild, and the secessionists were opposed to anything that found favor with Lincoln."
+                },
+                {
+                  "answerKey": "answer_4",
+                  "content": "The proposal had no provision for making the federal government liable for compensation to owners of slaves who ran away."
+                }
+              ]
+            },
+            "answerKey": {
+              "assessmentType": "multiplechoice",
+              "answers": {
+                "answer_3": {
+                  "score": 0.0,
+                  "response": "News that Lincoln, who was then president-elect, would not support the plan turned Republicans in Congress against the plan, thus losing southern support."
+                },
+                "answer_2": {
+                  "score": 0.0,
+                  "response": "News that Lincoln, who was then president-elect, would not support the plan turned Republicans in Congress against the plan, thus losing southern support."
+                },
+                "answer_1": {
+                  "score": 1.0,
+                  "response": "News that Lincoln, who was then president-elect, would not support the plan turned Republicans in Congress against the plan, thus losing southern support."
+                },
+                "answer_4": {
+                  "score": 0.0,
+                  "response": "News that Lincoln, who was then president-elect, would not support the plan turned Republicans in Congress against the plan, thus losing southern support."
+                }
+              }
+            },
+            "configFixup": [
+              {
+                "name": "questionId",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "sequenceNodeKey",
+                  "type": "ref"
+                }
+              },
+              {
+                "name": "maxAttempts",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "maxAttempts",
+                  "type": "ref"
+                }
+              }
+            ]
+          }
+        ],
+        "hookupActions": [
+          {
+            "description": "Hookup the submit manager to evaluate answers",
+            "methodName": "handleRequestsFrom",
+            "type": "method-call",
+            "args": [
+              {
+                "domain": "brix",
+                "refId": "q1",
+                "type": "ref"
+              }
+            ],
+            "instance": {
+              "type": "submit-manager"
+            }
+          },
+          {
+            "description": "Draw the question",
+            "methodName": "draw",
+            "type": "method-call",
+            "args": [
+              {
+                "selector": "#target1",
+                "type": "d3select"
+              }
+            ],
+            "instance": {
+              "domain": "brix",
+              "refId": "q1",
+              "type": "ref"
+            }
+          }
+        ]
+      }
+    ]
+  }
+}

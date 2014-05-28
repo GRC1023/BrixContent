@@ -1,0 +1,191 @@
+{
+  "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope",
+  "@type": "Envelope",
+  "metadata": {
+    "bookTitle": "American Stories: A History of the United States, Combined Volume",
+    "keywords": [
+      "Brands 3e",
+      "Ch11",
+      "Alick"
+    ],
+    "extendedMetadata": [
+      {
+        "name": "ISBN",
+        "value": "013379461X"
+      },
+      {
+        "name": "M",
+        "value": "m02"
+      },
+      {
+        "name": "assessment_title",
+        "value": "Quiz: White Society in the Antebellum South"
+      },
+      {
+        "name": "Topic",
+        "value": "White Society in the Antebellum South"
+      },
+      {
+        "name": "chapterTitle",
+        "value": "Slaves and Masters 1793â1861"
+      },
+      {
+        "name": "module",
+        "value": "White Society in the Antebellum South"
+      },
+      {
+        "name": "item_title",
+        "value": "013379461X_H. W. Brands; T. H. Breen; R. Hal Williams; Ariela J. Gros_ch11_m02_q0001"
+      },
+      {
+        "name": "questionlayout",
+        "value": "1"
+      },
+      {
+        "name": "CH",
+        "value": "11"
+      },
+      {
+        "name": "Objective",
+        "value": "LO: 11.2: What divided and united white southern society?"
+      },
+      {
+        "name": "shuffle_choices",
+        "value": "Yes"
+      }
+    ],
+    "subject": [
+      "US History"
+    ],
+    "contentTypeTier2": [
+      "AssignmentItem"
+    ],
+    "contentTypeTier1": "Assessment",
+    "format": [
+      "application/vnd.pearson.sanvan.v1.activity"
+    ],
+    "version": "1.0",
+    "guid": "4a09e0d4-b61d-430a-af69-8e2cdee2028c",
+    "bookAuthor": "H. W. Brands; T. H. Breen; R. Hal Williams; Ariela J. Gros",
+    "title": "PRE 11 05",
+    "educationalAlignment": [
+      "http://purl.org/pearson/objectives/183725473384362"
+    ]
+  },
+  "body": {
+    "description": "PRE_11_05",
+    "containerConfig": [
+      {
+        "description": "PRE_11_05",
+        "containerId": "target1",
+        "brixConfig": [
+          {
+            "bricId": "q1",
+            "bricType": "MultipleChoiceQuestion",
+            "config": {
+              "id": "QUE60979",
+              "question": "Most of the great planters of the pre–Civil War period were __________.\n\u003cbr /\u003e",
+              "order": "randomized",
+              "presenterType": "RadioGroup",
+              "presenterConfig": {
+                "numberFormat": "none"
+              },
+              "choices": [
+                {
+                  "answerKey": "answer_1",
+                  "content": "self-made men"
+                },
+                {
+                  "answerKey": "answer_2",
+                  "content": "descendants of the old colonial gentry"
+                },
+                {
+                  "answerKey": "answer_3",
+                  "content": "slave drivers who had earned enough to buy plantations"
+                },
+                {
+                  "answerKey": "answer_4",
+                  "content": "overseers who had earned enough to buy plantations"
+                }
+              ]
+            },
+            "answerKey": {
+              "assessmentType": "multiplechoice",
+              "answers": {
+                "answer_3": {
+                  "score": 0.0,
+                  "response": "Contrary to legend, most of the great planters of the pre–Civil War period were self-made rather than descendants of the old colonial gentry. Some were ambitious young men who married planters’ daughters. Others started as lawyers and used their fees and connections to acquire plantations."
+                },
+                "answer_2": {
+                  "score": 0.0,
+                  "response": "Contrary to legend, most of the great planters of the pre–Civil War period were self-made rather than descendants of the old colonial gentry. Some were ambitious young men who married planters’ daughters. Others started as lawyers and used their fees and connections to acquire plantations."
+                },
+                "answer_1": {
+                  "score": 1.0,
+                  "response": "Contrary to legend, most of the great planters of the pre–Civil War period were self-made rather than descendants of the old colonial gentry. Some were ambitious young men who married planters’ daughters. Others started as lawyers and used their fees and connections to acquire plantations."
+                },
+                "answer_4": {
+                  "score": 0.0,
+                  "response": "Contrary to legend, most of the great planters of the pre–Civil War period were self-made rather than descendants of the old colonial gentry. Some were ambitious young men who married planters’ daughters. Others started as lawyers and used their fees and connections to acquire plantations."
+                }
+              }
+            },
+            "configFixup": [
+              {
+                "name": "questionId",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "sequenceNodeKey",
+                  "type": "ref"
+                }
+              },
+              {
+                "name": "maxAttempts",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "maxAttempts",
+                  "type": "ref"
+                }
+              }
+            ]
+          }
+        ],
+        "hookupActions": [
+          {
+            "description": "Hookup the submit manager to evaluate answers",
+            "methodName": "handleRequestsFrom",
+            "type": "method-call",
+            "args": [
+              {
+                "domain": "brix",
+                "refId": "q1",
+                "type": "ref"
+              }
+            ],
+            "instance": {
+              "type": "submit-manager"
+            }
+          },
+          {
+            "description": "Draw the question",
+            "methodName": "draw",
+            "type": "method-call",
+            "args": [
+              {
+                "selector": "#target1",
+                "type": "d3select"
+              }
+            ],
+            "instance": {
+              "domain": "brix",
+              "refId": "q1",
+              "type": "ref"
+            }
+          }
+        ]
+      }
+    ]
+  }
+}

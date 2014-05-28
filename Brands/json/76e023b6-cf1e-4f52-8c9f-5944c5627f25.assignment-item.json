@@ -1,0 +1,191 @@
+{
+  "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope",
+  "@type": "Envelope",
+  "metadata": {
+    "bookTitle": "American Stories: A History of the United States, Combined Volume",
+    "keywords": [
+      "Brands 3e",
+      "Ch01",
+      "Alick"
+    ],
+    "extendedMetadata": [
+      {
+        "name": "ISBN",
+        "value": "013379461X"
+      },
+      {
+        "name": "M",
+        "value": "m05"
+      },
+      {
+        "name": "assessment_title",
+        "value": "Quiz: The French Claim Canada"
+      },
+      {
+        "name": "Topic",
+        "value": "The French Claim Canada"
+      },
+      {
+        "name": "chapterTitle",
+        "value": "New World Encounters Preconquestâ1608"
+      },
+      {
+        "name": "module",
+        "value": "The French Claim Canada"
+      },
+      {
+        "name": "item_title",
+        "value": "013379461X_H. W. Brands; T. H. Breen; R. Hal Williams; Ariela J. Gros_ch01_m05_q0002"
+      },
+      {
+        "name": "questionlayout",
+        "value": "1"
+      },
+      {
+        "name": "CH",
+        "value": "1"
+      },
+      {
+        "name": "Objective",
+        "value": "LO: 1.5: What was the character of the French empire in Canada?"
+      },
+      {
+        "name": "shuffle_choices",
+        "value": "Yes"
+      }
+    ],
+    "subject": [
+      "US History"
+    ],
+    "contentTypeTier2": [
+      "AssignmentItem"
+    ],
+    "contentTypeTier1": "Assessment",
+    "format": [
+      "application/vnd.pearson.sanvan.v1.activity"
+    ],
+    "version": "1.0",
+    "guid": "76e023b6-cf1e-4f52-8c9f-5944c5627f25",
+    "bookAuthor": "H. W. Brands; T. H. Breen; R. Hal Williams; Ariela J. Gros",
+    "title": "POST 01 06",
+    "educationalAlignment": [
+      "http://purl.org/pearson/objectives/183725473384362"
+    ]
+  },
+  "body": {
+    "description": "POST_01_06",
+    "containerConfig": [
+      {
+        "description": "POST_01_06",
+        "containerId": "target1",
+        "brixConfig": [
+          {
+            "bricId": "q1",
+            "bricType": "MultipleChoiceQuestion",
+            "config": {
+              "id": "QUE60682",
+              "question": "What river did Jacques Cartier explore for France in the 1530s?\n\u003cbr /\u003e",
+              "order": "randomized",
+              "presenterType": "RadioGroup",
+              "presenterConfig": {
+                "numberFormat": "none"
+              },
+              "choices": [
+                {
+                  "answerKey": "answer_1",
+                  "content": "the St. Lawrence"
+                },
+                {
+                  "answerKey": "answer_2",
+                  "content": "the Mississippi"
+                },
+                {
+                  "answerKey": "answer_3",
+                  "content": "the Missouri"
+                },
+                {
+                  "answerKey": "answer_4",
+                  "content": "the Ohio"
+                }
+              ]
+            },
+            "answerKey": {
+              "assessmentType": "multiplechoice",
+              "answers": {
+                "answer_3": {
+                  "score": 0.0,
+                  "response": "After a large, promising waterway was discovered in 1535, Cartier reconnoitered the Gulf of Saint Lawrence, traveling up the magnificent river as far as modern Montreal. But he got no closer to China (his original goal), and, becoming discouraged by the harsh winters, he headed home in 1542."
+                },
+                "answer_2": {
+                  "score": 0.0,
+                  "response": "After a large, promising waterway was discovered in 1535, Cartier reconnoitered the Gulf of Saint Lawrence, traveling up the magnificent river as far as modern Montreal. But he got no closer to China (his original goal), and, becoming discouraged by the harsh winters, he headed home in 1542."
+                },
+                "answer_1": {
+                  "score": 1.0,
+                  "response": "After a large, promising waterway was discovered in 1535, Cartier reconnoitered the Gulf of Saint Lawrence, traveling up the magnificent river as far as modern Montreal. But he got no closer to China (his original goal), and, becoming discouraged by the harsh winters, he headed home in 1542."
+                },
+                "answer_4": {
+                  "score": 0.0,
+                  "response": "After a large, promising waterway was discovered in 1535, Cartier reconnoitered the Gulf of Saint Lawrence, traveling up the magnificent river as far as modern Montreal. But he got no closer to China (his original goal), and, becoming discouraged by the harsh winters, he headed home in 1542."
+                }
+              }
+            },
+            "configFixup": [
+              {
+                "name": "questionId",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "sequenceNodeKey",
+                  "type": "ref"
+                }
+              },
+              {
+                "name": "maxAttempts",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "maxAttempts",
+                  "type": "ref"
+                }
+              }
+            ]
+          }
+        ],
+        "hookupActions": [
+          {
+            "description": "Hookup the submit manager to evaluate answers",
+            "methodName": "handleRequestsFrom",
+            "type": "method-call",
+            "args": [
+              {
+                "domain": "brix",
+                "refId": "q1",
+                "type": "ref"
+              }
+            ],
+            "instance": {
+              "type": "submit-manager"
+            }
+          },
+          {
+            "description": "Draw the question",
+            "methodName": "draw",
+            "type": "method-call",
+            "args": [
+              {
+                "selector": "#target1",
+                "type": "d3select"
+              }
+            ],
+            "instance": {
+              "domain": "brix",
+              "refId": "q1",
+              "type": "ref"
+            }
+          }
+        ]
+      }
+    ]
+  }
+}

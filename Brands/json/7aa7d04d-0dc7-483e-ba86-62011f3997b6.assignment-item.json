@@ -1,0 +1,191 @@
+{
+  "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope",
+  "@type": "Envelope",
+  "metadata": {
+    "bookTitle": "American Stories: A History of the United States, Combined Volume",
+    "keywords": [
+      "Brands 3e",
+      "Ch12",
+      "Alick"
+    ],
+    "extendedMetadata": [
+      {
+        "name": "ISBN",
+        "value": "013379461X"
+      },
+      {
+        "name": "M",
+        "value": "m03"
+      },
+      {
+        "name": "assessment_title",
+        "value": "Quiz: Reform Turns Radical"
+      },
+      {
+        "name": "Topic",
+        "value": "Reform Turns Radical"
+      },
+      {
+        "name": "chapterTitle",
+        "value": "The Pursuit of Perfection 1800â1861"
+      },
+      {
+        "name": "module",
+        "value": "Reform Turns Radical"
+      },
+      {
+        "name": "item_title",
+        "value": "013379461X_H. W. Brands; T. H. Breen; R. Hal Williams; Ariela J. Gros_ch12_m03_q0003"
+      },
+      {
+        "name": "questionlayout",
+        "value": "1"
+      },
+      {
+        "name": "CH",
+        "value": "12"
+      },
+      {
+        "name": "Objective",
+        "value": "LO: 12.3: What were the major antebellum reform movements?"
+      },
+      {
+        "name": "shuffle_choices",
+        "value": "Yes"
+      }
+    ],
+    "subject": [
+      "US History"
+    ],
+    "contentTypeTier2": [
+      "AssignmentItem"
+    ],
+    "contentTypeTier1": "Assessment",
+    "format": [
+      "application/vnd.pearson.sanvan.v1.activity"
+    ],
+    "version": "1.0",
+    "guid": "7aa7d04d-0dc7-483e-ba86-62011f3997b6",
+    "bookAuthor": "H. W. Brands; T. H. Breen; R. Hal Williams; Ariela J. Gros",
+    "title": "POST 12 13",
+    "educationalAlignment": [
+      "http://purl.org/pearson/objectives/183725473384362"
+    ]
+  },
+  "body": {
+    "description": "POST_12_13",
+    "containerConfig": [
+      {
+        "description": "POST_12_13",
+        "containerId": "target1",
+        "brixConfig": [
+          {
+            "bricId": "q1",
+            "bricType": "MultipleChoiceQuestion",
+            "config": {
+              "id": "QUE61065",
+              "question": "Working-class whites tended to oppose abolition because they feared __________.\n\u003cbr /\u003e",
+              "order": "randomized",
+              "presenterType": "RadioGroup",
+              "presenterConfig": {
+                "numberFormat": "none"
+              },
+              "choices": [
+                {
+                  "answerKey": "answer_1",
+                  "content": "increased economic competition from blacks"
+                },
+                {
+                  "answerKey": "answer_2",
+                  "content": "an increase in the crime rate"
+                },
+                {
+                  "answerKey": "answer_3",
+                  "content": "being overrun by the black population"
+                },
+                {
+                  "answerKey": "answer_4",
+                  "content": "the outbreak of a civil war"
+                }
+              ]
+            },
+            "answerKey": {
+              "assessmentType": "multiplechoice",
+              "answers": {
+                "answer_3": {
+                  "score": 0.0,
+                  "response": "Working-class whites tended to fear that economic and social competition with blacks would increase if abolitionists freed the slaves and made them citizens. But “gentlemen of property and standing” dominated many of the mobs."
+                },
+                "answer_2": {
+                  "score": 0.0,
+                  "response": "Working-class whites tended to fear that economic and social competition with blacks would increase if abolitionists freed the slaves and made them citizens. But “gentlemen of property and standing” dominated many of the mobs."
+                },
+                "answer_1": {
+                  "score": 1.0,
+                  "response": "Working-class whites tended to fear that economic and social competition with blacks would increase if abolitionists freed the slaves and made them citizens. But “gentlemen of property and standing” dominated many of the mobs."
+                },
+                "answer_4": {
+                  "score": 0.0,
+                  "response": "Working-class whites tended to fear that economic and social competition with blacks would increase if abolitionists freed the slaves and made them citizens. But “gentlemen of property and standing” dominated many of the mobs."
+                }
+              }
+            },
+            "configFixup": [
+              {
+                "name": "questionId",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "sequenceNodeKey",
+                  "type": "ref"
+                }
+              },
+              {
+                "name": "maxAttempts",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "maxAttempts",
+                  "type": "ref"
+                }
+              }
+            ]
+          }
+        ],
+        "hookupActions": [
+          {
+            "description": "Hookup the submit manager to evaluate answers",
+            "methodName": "handleRequestsFrom",
+            "type": "method-call",
+            "args": [
+              {
+                "domain": "brix",
+                "refId": "q1",
+                "type": "ref"
+              }
+            ],
+            "instance": {
+              "type": "submit-manager"
+            }
+          },
+          {
+            "description": "Draw the question",
+            "methodName": "draw",
+            "type": "method-call",
+            "args": [
+              {
+                "selector": "#target1",
+                "type": "d3select"
+              }
+            ],
+            "instance": {
+              "domain": "brix",
+              "refId": "q1",
+              "type": "ref"
+            }
+          }
+        ]
+      }
+    ]
+  }
+}

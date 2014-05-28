@@ -1,0 +1,191 @@
+{
+  "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope",
+  "@type": "Envelope",
+  "metadata": {
+    "bookTitle": "American Stories: A History of the United States, Combined Volume",
+    "keywords": [
+      "Brands 3e",
+      "Ch07",
+      "Alick"
+    ],
+    "extendedMetadata": [
+      {
+        "name": "ISBN",
+        "value": "013379461X"
+      },
+      {
+        "name": "M",
+        "value": "m01"
+      },
+      {
+        "name": "assessment_title",
+        "value": "Quiz: Principle and Pragmatism Establishing"
+      },
+      {
+        "name": "Topic",
+        "value": "Principle and Pragmatism: Establishing a New Government"
+      },
+      {
+        "name": "chapterTitle",
+        "value": "Democracy and Dissent: The Violence of Party Politics 1788â1800"
+      },
+      {
+        "name": "module",
+        "value": "Principle and Pragmatism Establishing"
+      },
+      {
+        "name": "item_title",
+        "value": "013379461X_H. W. Brands; T. H. Breen; R. Hal Williams; Ariela J. Gros_ch07_m01_q0003"
+      },
+      {
+        "name": "questionlayout",
+        "value": "1"
+      },
+      {
+        "name": "CH",
+        "value": "7"
+      },
+      {
+        "name": "Objective",
+        "value": "LO: 7.1: Why was George Washington unable to overcome division within the new government?"
+      },
+      {
+        "name": "shuffle_choices",
+        "value": "Yes"
+      }
+    ],
+    "subject": [
+      "US History"
+    ],
+    "contentTypeTier2": [
+      "AssignmentItem"
+    ],
+    "contentTypeTier1": "Assessment",
+    "format": [
+      "application/vnd.pearson.sanvan.v1.activity"
+    ],
+    "version": "1.0",
+    "guid": "278d8f69-fc4d-41d5-8ae7-1137e8dfa947",
+    "bookAuthor": "H. W. Brands; T. H. Breen; R. Hal Williams; Ariela J. Gros",
+    "title": "PRE 07 07",
+    "educationalAlignment": [
+      "http://purl.org/pearson/objectives/183725473384362"
+    ]
+  },
+  "body": {
+    "description": "PRE_07_07",
+    "containerConfig": [
+      {
+        "description": "PRE_07_07",
+        "containerId": "target1",
+        "brixConfig": [
+          {
+            "bricId": "q1",
+            "bricType": "MultipleChoiceQuestion",
+            "config": {
+              "id": "QUE60843",
+              "question": "Why was the tariff of 1789 considered to be controversial?\n\u003cbr /\u003e",
+              "order": "randomized",
+              "presenterType": "RadioGroup",
+              "presenterConfig": {
+                "numberFormat": "none"
+              },
+              "choices": [
+                {
+                  "answerKey": "answer_1",
+                  "content": "It discriminated against southern farmers in favor of northern merchants."
+                },
+                {
+                  "answerKey": "answer_2",
+                  "content": "It failed to generate any revenue for the federal government."
+                },
+                {
+                  "answerKey": "answer_3",
+                  "content": "It discriminated against northern merchants in favor of southern farmers."
+                },
+                {
+                  "answerKey": "answer_4",
+                  "content": "It put a heavy tax on distilled whiskey, which threatened to put many farmers out of business."
+                }
+              ]
+            },
+            "answerKey": {
+              "assessmentType": "multiplechoice",
+              "answers": {
+                "answer_3": {
+                  "score": 0.0,
+                  "response": "The new Congress passed the tariff of 1789, a tax of approximately 5 percent on imports. Southern planters, who relied heavily on European imports and the northern shippers who could control the flow of imports into the South, claimed that the tariff discriminated against southern interests in favor of those of northern merchants."
+                },
+                "answer_2": {
+                  "score": 0.0,
+                  "response": "The new Congress passed the tariff of 1789, a tax of approximately 5 percent on imports. Southern planters, who relied heavily on European imports and the northern shippers who could control the flow of imports into the South, claimed that the tariff discriminated against southern interests in favor of those of northern merchants."
+                },
+                "answer_1": {
+                  "score": 1.0,
+                  "response": "The new Congress passed the tariff of 1789, a tax of approximately 5 percent on imports. Southern planters, who relied heavily on European imports and the northern shippers who could control the flow of imports into the South, claimed that the tariff discriminated against southern interests in favor of those of northern merchants."
+                },
+                "answer_4": {
+                  "score": 0.0,
+                  "response": "The new Congress passed the tariff of 1789, a tax of approximately 5 percent on imports. Southern planters, who relied heavily on European imports and the northern shippers who could control the flow of imports into the South, claimed that the tariff discriminated against southern interests in favor of those of northern merchants."
+                }
+              }
+            },
+            "configFixup": [
+              {
+                "name": "questionId",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "sequenceNodeKey",
+                  "type": "ref"
+                }
+              },
+              {
+                "name": "maxAttempts",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "maxAttempts",
+                  "type": "ref"
+                }
+              }
+            ]
+          }
+        ],
+        "hookupActions": [
+          {
+            "description": "Hookup the submit manager to evaluate answers",
+            "methodName": "handleRequestsFrom",
+            "type": "method-call",
+            "args": [
+              {
+                "domain": "brix",
+                "refId": "q1",
+                "type": "ref"
+              }
+            ],
+            "instance": {
+              "type": "submit-manager"
+            }
+          },
+          {
+            "description": "Draw the question",
+            "methodName": "draw",
+            "type": "method-call",
+            "args": [
+              {
+                "selector": "#target1",
+                "type": "d3select"
+              }
+            ],
+            "instance": {
+              "domain": "brix",
+              "refId": "q1",
+              "type": "ref"
+            }
+          }
+        ]
+      }
+    ]
+  }
+}

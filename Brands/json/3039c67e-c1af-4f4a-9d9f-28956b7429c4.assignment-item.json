@@ -1,0 +1,191 @@
+{
+  "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope",
+  "@type": "Envelope",
+  "metadata": {
+    "bookTitle": "American Stories: A History of the United States, Combined Volume",
+    "keywords": [
+      "Brands 3e",
+      "Ch12",
+      "Alick"
+    ],
+    "extendedMetadata": [
+      {
+        "name": "ISBN",
+        "value": "013379461X"
+      },
+      {
+        "name": "M",
+        "value": "m02"
+      },
+      {
+        "name": "assessment_title",
+        "value": "Quiz: Domesticity and Changes in the American Family"
+      },
+      {
+        "name": "Topic",
+        "value": "Domesticity and Changes in the American Family"
+      },
+      {
+        "name": "chapterTitle",
+        "value": "The Pursuit of Perfection 1800â1861"
+      },
+      {
+        "name": "module",
+        "value": "Domesticity and Changes in the American Family"
+      },
+      {
+        "name": "item_title",
+        "value": "013379461X_H. W. Brands; T. H. Breen; R. Hal Williams; Ariela J. Gros_ch12_m02_q0003"
+      },
+      {
+        "name": "questionlayout",
+        "value": "1"
+      },
+      {
+        "name": "CH",
+        "value": "12"
+      },
+      {
+        "name": "Objective",
+        "value": "LO: 12.2: What was the doctrine of âseparate spheres,â and how did it change family life?"
+      },
+      {
+        "name": "shuffle_choices",
+        "value": "Yes"
+      }
+    ],
+    "subject": [
+      "US History"
+    ],
+    "contentTypeTier2": [
+      "AssignmentItem"
+    ],
+    "contentTypeTier1": "Assessment",
+    "format": [
+      "application/vnd.pearson.sanvan.v1.activity"
+    ],
+    "version": "1.0",
+    "guid": "3039c67e-c1af-4f4a-9d9f-28956b7429c4",
+    "bookAuthor": "H. W. Brands; T. H. Breen; R. Hal Williams; Ariela J. Gros",
+    "title": "POST 12 03",
+    "educationalAlignment": [
+      "http://purl.org/pearson/objectives/183725473384362"
+    ]
+  },
+  "body": {
+    "description": "POST_12_03",
+    "containerConfig": [
+      {
+        "description": "POST_12_03",
+        "containerId": "target1",
+        "brixConfig": [
+          {
+            "bricId": "q1",
+            "bricType": "MultipleChoiceQuestion",
+            "config": {
+              "id": "QUE61049",
+              "question": "Which idea influenced the parenting activities of American families during the early nineteenth century?\n\u003cbr /\u003e",
+              "order": "randomized",
+              "presenterType": "RadioGroup",
+              "presenterConfig": {
+                "numberFormat": "none"
+              },
+              "choices": [
+                {
+                  "answerKey": "answer_1",
+                  "content": "Each child is a separate, unique individual."
+                },
+                {
+                  "answerKey": "answer_2",
+                  "content": "Children are gifts from God to their parents."
+                },
+                {
+                  "answerKey": "answer_3",
+                  "content": "Corporal punishment is necessary for discipline."
+                },
+                {
+                  "answerKey": "answer_4",
+                  "content": "Children learn best when away from their parents."
+                }
+              ]
+            },
+            "answerKey": {
+              "assessmentType": "multiplechoice",
+              "answers": {
+                "answer_3": {
+                  "score": 0.0,
+                  "response": "The colonial custom of naming a child after a sibling who had died in infancy became much less common. Each child was now seen as a unique, irreplaceable individual."
+                },
+                "answer_2": {
+                  "score": 0.0,
+                  "response": "The colonial custom of naming a child after a sibling who had died in infancy became much less common. Each child was now seen as a unique, irreplaceable individual."
+                },
+                "answer_1": {
+                  "score": 1.0,
+                  "response": "The colonial custom of naming a child after a sibling who had died in infancy became much less common. Each child was now seen as a unique, irreplaceable individual."
+                },
+                "answer_4": {
+                  "score": 0.0,
+                  "response": "The colonial custom of naming a child after a sibling who had died in infancy became much less common. Each child was now seen as a unique, irreplaceable individual."
+                }
+              }
+            },
+            "configFixup": [
+              {
+                "name": "questionId",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "sequenceNodeKey",
+                  "type": "ref"
+                }
+              },
+              {
+                "name": "maxAttempts",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "maxAttempts",
+                  "type": "ref"
+                }
+              }
+            ]
+          }
+        ],
+        "hookupActions": [
+          {
+            "description": "Hookup the submit manager to evaluate answers",
+            "methodName": "handleRequestsFrom",
+            "type": "method-call",
+            "args": [
+              {
+                "domain": "brix",
+                "refId": "q1",
+                "type": "ref"
+              }
+            ],
+            "instance": {
+              "type": "submit-manager"
+            }
+          },
+          {
+            "description": "Draw the question",
+            "methodName": "draw",
+            "type": "method-call",
+            "args": [
+              {
+                "selector": "#target1",
+                "type": "d3select"
+              }
+            ],
+            "instance": {
+              "domain": "brix",
+              "refId": "q1",
+              "type": "ref"
+            }
+          }
+        ]
+      }
+    ]
+  }
+}

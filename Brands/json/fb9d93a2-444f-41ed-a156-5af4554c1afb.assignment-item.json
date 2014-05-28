@@ -1,0 +1,187 @@
+{
+  "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope",
+  "@type": "Envelope",
+  "metadata": {
+    "bookTitle": "American Stories: A History of the United States, Combined Volume",
+    "keywords": [
+      "Brands 3e",
+      "Ch29",
+      "Alick"
+    ],
+    "extendedMetadata": [
+      {
+        "name": "ISBN",
+        "value": "013379461X"
+      },
+      {
+        "name": "M",
+        "value": "c01"
+      },
+      {
+        "name": "assessment_title",
+        "value": "Chapter Quiz: Affluence and Anxiety 1945â1960"
+      },
+      {
+        "name": "Topic",
+        "value": "The Struggle over Civil Rights"
+      },
+      {
+        "name": "chapterTitle",
+        "value": "Affluence and Anxiety 1945â1960"
+      },
+      {
+        "name": "item_title",
+        "value": "013379461X_H. W. Brands; T. H. Breen; R. Hal Williams; Ariela J. Gros_ch29_c01_q0004"
+      },
+      {
+        "name": "questionlayout",
+        "value": "1"
+      },
+      {
+        "name": "CH",
+        "value": "29"
+      },
+      {
+        "name": "Objective",
+        "value": "29.3"
+      },
+      {
+        "name": "shuffle_choices",
+        "value": "Yes"
+      }
+    ],
+    "subject": [
+      "US History"
+    ],
+    "contentTypeTier2": [
+      "AssignmentItem"
+    ],
+    "contentTypeTier1": "Assessment",
+    "format": [
+      "application/vnd.pearson.sanvan.v1.activity"
+    ],
+    "version": "1.0",
+    "guid": "fb9d93a2-444f-41ed-a156-5af4554c1afb",
+    "bookAuthor": "H. W. Brands; T. H. Breen; R. Hal Williams; Ariela J. Gros",
+    "title": "POST 29 20",
+    "educationalAlignment": [
+      "http://purl.org/pearson/objectives/183725473384362"
+    ]
+  },
+  "body": {
+    "description": "POST_29_20",
+    "containerConfig": [
+      {
+        "description": "POST_29_20",
+        "containerId": "target1",
+        "brixConfig": [
+          {
+            "bricId": "q1",
+            "bricType": "MultipleChoiceQuestion",
+            "config": {
+              "id": "QUE61517",
+              "question": "Following the Supreme Court’s decision in \n\u003ci\u003eBrown v. Board of Education of Topeka\u003c/i\u003e, why might some segregationists have been surprised by President Eisenhower’s actions in response to the attempts by the governor of Arkansas to prevent integration of Little Rock’s Central High School?\n\u003cbr /\u003e",
+              "order": "randomized",
+              "presenterType": "RadioGroup",
+              "presenterConfig": {
+                "numberFormat": "none"
+              },
+              "choices": [
+                {
+                  "answerKey": "answer_1",
+                  "content": "Eisenhower had been emphatic in his inaugural address that his administration would not support a repeal of \n\u003ci\u003ePlessy v. Ferguson\u003c/i\u003e."
+                },
+                {
+                  "answerKey": "answer_2",
+                  "content": "Eisenhower’s silence and conspicuous lack of presidential support appeared to weaken the desegregation effort and indicate his support of segregation."
+                },
+                {
+                  "answerKey": "answer_3",
+                  "content": "Eisenhower’s arrest order for the governor of Arkansas and members of that state’s legislature indicated the rise of a dictatorial regime, challenging the democratic process."
+                },
+                {
+                  "answerKey": "answer_4",
+                  "content": "No sitting U.S. president had ever ordered the U.S. military to take action in opposition to state leadership prior to this occasion."
+                }
+              ]
+            },
+            "answerKey": {
+              "assessmentType": "multiplechoice",
+              "answers": {
+                "answer_3": {
+                  "score": 0.0,
+                  "response": "Consider This: Eisenhower believed that “cold law making” could not alter people’s attitudes. Change could only come “by appealing to reason, by prayer, and by constantly working at it through our own efforts.” See L.O. 29.3 The Struggle over Civil Rights."
+                },
+                "answer_2": {
+                  "score": 1.0,
+                  "response": ""
+                },
+                "answer_1": {
+                  "score": 0.0,
+                  "response": "Consider This: Eisenhower believed that “cold law making” could not alter people’s attitudes. Change could only come “by appealing to reason, by prayer, and by constantly working at it through our own efforts.” See L.O. 29.3 The Struggle over Civil Rights."
+                },
+                "answer_4": {
+                  "score": 0.0,
+                  "response": "Consider This: Eisenhower believed that “cold law making” could not alter people’s attitudes. Change could only come “by appealing to reason, by prayer, and by constantly working at it through our own efforts.” See L.O. 29.3 The Struggle over Civil Rights."
+                }
+              }
+            },
+            "configFixup": [
+              {
+                "name": "questionId",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "sequenceNodeKey",
+                  "type": "ref"
+                }
+              },
+              {
+                "name": "maxAttempts",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "maxAttempts",
+                  "type": "ref"
+                }
+              }
+            ]
+          }
+        ],
+        "hookupActions": [
+          {
+            "description": "Hookup the submit manager to evaluate answers",
+            "methodName": "handleRequestsFrom",
+            "type": "method-call",
+            "args": [
+              {
+                "domain": "brix",
+                "refId": "q1",
+                "type": "ref"
+              }
+            ],
+            "instance": {
+              "type": "submit-manager"
+            }
+          },
+          {
+            "description": "Draw the question",
+            "methodName": "draw",
+            "type": "method-call",
+            "args": [
+              {
+                "selector": "#target1",
+                "type": "d3select"
+              }
+            ],
+            "instance": {
+              "domain": "brix",
+              "refId": "q1",
+              "type": "ref"
+            }
+          }
+        ]
+      }
+    ]
+  }
+}

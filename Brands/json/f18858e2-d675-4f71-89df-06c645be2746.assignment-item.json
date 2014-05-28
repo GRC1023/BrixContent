@@ -1,0 +1,187 @@
+{
+  "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope",
+  "@type": "Envelope",
+  "metadata": {
+    "bookTitle": "American Stories: A History of the United States, Combined Volume",
+    "keywords": [
+      "Brands 3e",
+      "Ch14",
+      "Alick"
+    ],
+    "extendedMetadata": [
+      {
+        "name": "ISBN",
+        "value": "013379461X"
+      },
+      {
+        "name": "M",
+        "value": "c01"
+      },
+      {
+        "name": "assessment_title",
+        "value": "Chapter Quiz: The Sectional Crisis 1846â1861"
+      },
+      {
+        "name": "Topic",
+        "value": "The Compromise of 1850"
+      },
+      {
+        "name": "chapterTitle",
+        "value": "The Sectional Crisis 1846â1861"
+      },
+      {
+        "name": "item_title",
+        "value": "013379461X_H. W. Brands; T. H. Breen; R. Hal Williams; Ariela J. Gros_ch14_c01_q0013"
+      },
+      {
+        "name": "questionlayout",
+        "value": "1"
+      },
+      {
+        "name": "CH",
+        "value": "14"
+      },
+      {
+        "name": "Objective",
+        "value": "LO: 14.1: How did territorial expansion intensify the conflict over slave?"
+      },
+      {
+        "name": "shuffle_choices",
+        "value": "Yes"
+      }
+    ],
+    "subject": [
+      "US History"
+    ],
+    "contentTypeTier2": [
+      "AssignmentItem"
+    ],
+    "contentTypeTier1": "Assessment",
+    "format": [
+      "application/vnd.pearson.sanvan.v1.activity"
+    ],
+    "version": "1.0",
+    "guid": "f18858e2-d675-4f71-89df-06c645be2746",
+    "bookAuthor": "H. W. Brands; T. H. Breen; R. Hal Williams; Ariela J. Gros",
+    "title": "FA Analyze 14 05 ",
+    "educationalAlignment": [
+      "http://purl.org/pearson/objectives/183725473384362"
+    ]
+  },
+  "body": {
+    "description": "FA_Analyze_14_05",
+    "containerConfig": [
+      {
+        "description": "FA_Analyze_14_05",
+        "containerId": "target1",
+        "brixConfig": [
+          {
+            "bricId": "q1",
+            "bricType": "MultipleChoiceQuestion",
+            "config": {
+              "id": "QUE61068",
+              "question": "Why was the proposed admission of California directly into the Union was controversial?\n\u003cbr /\u003e",
+              "order": "randomized",
+              "presenterType": "RadioGroup",
+              "presenterConfig": {
+                "numberFormat": "none"
+              },
+              "choices": [
+                {
+                  "answerKey": "answer_1",
+                  "content": "The Mexicans were threatening renewed warfare if California joined the Union."
+                },
+                {
+                  "answerKey": "answer_2",
+                  "content": "The territory was in a condition of complete lawlessness and anarchy."
+                },
+                {
+                  "answerKey": "answer_3",
+                  "content": "California’s admission as a free state would destroy the equal balance of slave and free states."
+                },
+                {
+                  "answerKey": "answer_4",
+                  "content": "There was a growing movement to declare California an independent republic."
+                }
+              ]
+            },
+            "answerKey": {
+              "assessmentType": "multiplechoice",
+              "answers": {
+                "answer_3": {
+                  "score": 1.0,
+                  "response": ""
+                },
+                "answer_2": {
+                  "score": 0.0,
+                  "response": "Consider This: After Taylor won the election, he sought to bypass congressional debate by admitting California and New Mexico immediately as states, skipping the territorial stage. This triggered such strong southern opposition that others stepped in to seek a compromise. See L.O. 14.1 How did territorial expansion intensify the conflict over slave?"
+                },
+                "answer_1": {
+                  "score": 0.0,
+                  "response": "Consider This: After Taylor won the election, he sought to bypass congressional debate by admitting California and New Mexico immediately as states, skipping the territorial stage. This triggered such strong southern opposition that others stepped in to seek a compromise. See L.O. 14.1 How did territorial expansion intensify the conflict over slave?"
+                },
+                "answer_4": {
+                  "score": 0.0,
+                  "response": "Consider This: After Taylor won the election, he sought to bypass congressional debate by admitting California and New Mexico immediately as states, skipping the territorial stage. This triggered such strong southern opposition that others stepped in to seek a compromise. See L.O. 14.1 How did territorial expansion intensify the conflict over slave?"
+                }
+              }
+            },
+            "configFixup": [
+              {
+                "name": "questionId",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "sequenceNodeKey",
+                  "type": "ref"
+                }
+              },
+              {
+                "name": "maxAttempts",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "maxAttempts",
+                  "type": "ref"
+                }
+              }
+            ]
+          }
+        ],
+        "hookupActions": [
+          {
+            "description": "Hookup the submit manager to evaluate answers",
+            "methodName": "handleRequestsFrom",
+            "type": "method-call",
+            "args": [
+              {
+                "domain": "brix",
+                "refId": "q1",
+                "type": "ref"
+              }
+            ],
+            "instance": {
+              "type": "submit-manager"
+            }
+          },
+          {
+            "description": "Draw the question",
+            "methodName": "draw",
+            "type": "method-call",
+            "args": [
+              {
+                "selector": "#target1",
+                "type": "d3select"
+              }
+            ],
+            "instance": {
+              "domain": "brix",
+              "refId": "q1",
+              "type": "ref"
+            }
+          }
+        ]
+      }
+    ]
+  }
+}

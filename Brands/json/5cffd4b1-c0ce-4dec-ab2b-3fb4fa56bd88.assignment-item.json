@@ -1,0 +1,191 @@
+{
+  "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope",
+  "@type": "Envelope",
+  "metadata": {
+    "bookTitle": "American Stories: A History of the United States, Combined Volume",
+    "keywords": [
+      "Brands 3e",
+      "Ch21",
+      "Alick"
+    ],
+    "extendedMetadata": [
+      {
+        "name": "ISBN",
+        "value": "013379461X"
+      },
+      {
+        "name": "M",
+        "value": "m01"
+      },
+      {
+        "name": "assessment_title",
+        "value": "Quiz: America Looks Outward"
+      },
+      {
+        "name": "Topic",
+        "value": "America Looks Outward"
+      },
+      {
+        "name": "chapterTitle",
+        "value": "Toward Empire 1865â1902"
+      },
+      {
+        "name": "module",
+        "value": "America Looks Outward"
+      },
+      {
+        "name": "item_title",
+        "value": "013379461X_H. W. Brands; T. H. Breen; R. Hal Williams; Ariela J. Gros_ch21_m01_q0004"
+      },
+      {
+        "name": "questionlayout",
+        "value": "1"
+      },
+      {
+        "name": "CH",
+        "value": "21"
+      },
+      {
+        "name": "Objective",
+        "value": "21.1"
+      },
+      {
+        "name": "shuffle_choices",
+        "value": "Yes"
+      }
+    ],
+    "subject": [
+      "US History"
+    ],
+    "contentTypeTier2": [
+      "AssignmentItem"
+    ],
+    "contentTypeTier1": "Assessment",
+    "format": [
+      "application/vnd.pearson.sanvan.v1.activity"
+    ],
+    "version": "1.0",
+    "guid": "5cffd4b1-c0ce-4dec-ab2b-3fb4fa56bd88",
+    "bookAuthor": "H. W. Brands; T. H. Breen; R. Hal Williams; Ariela J. Gros",
+    "title": "PRE 21 07",
+    "educationalAlignment": [
+      "http://purl.org/pearson/objectives/183725473384362"
+    ]
+  },
+  "body": {
+    "description": "PRE_21_07",
+    "containerConfig": [
+      {
+        "description": "PRE_21_07",
+        "containerId": "target1",
+        "brixConfig": [
+          {
+            "bricId": "q1",
+            "bricType": "MultipleChoiceQuestion",
+            "config": {
+              "id": "QUE61241",
+              "question": "How did the expansion of the 1890s differ from earlier efforts to expand?\n\u003cbr /\u003e",
+              "order": "randomized",
+              "presenterType": "RadioGroup",
+              "presenterConfig": {
+                "numberFormat": "none"
+              },
+              "choices": [
+                {
+                  "answerKey": "answer_1",
+                  "content": "The expansion of the 1890s involved territories that were intended less for settlement, like earlier expansions, than for use as naval bases, trading outposts, or commercial centers."
+                },
+                {
+                  "answerKey": "answer_2",
+                  "content": "Earlier expansions did not involve exploitation of native residents, whereas the expansion of the 1890s was a form of exploitation."
+                },
+                {
+                  "answerKey": "answer_3",
+                  "content": "Earlier expansions were mostly intended for settlement, whereas the expansion of the 1890s was intended for agricultural development."
+                },
+                {
+                  "answerKey": "answer_4",
+                  "content": "Unlike the earlier expansions, the expansion of the 1890s did not have the support of the U.S. government."
+                }
+              ]
+            },
+            "answerKey": {
+              "assessmentType": "multiplechoice",
+              "answers": {
+                "answer_3": {
+                  "score": 0.0,
+                  "response": "The expansion of the 1890s was different from the earlier expansions. It involved new territories that were intended less for settlement than for use as naval bases, trading outposts, or commercial centers on major trade routes."
+                },
+                "answer_2": {
+                  "score": 0.0,
+                  "response": "The expansion of the 1890s was different from the earlier expansions. It involved new territories that were intended less for settlement than for use as naval bases, trading outposts, or commercial centers on major trade routes."
+                },
+                "answer_1": {
+                  "score": 1.0,
+                  "response": "The expansion of the 1890s was different from the earlier expansions. It involved new territories that were intended less for settlement than for use as naval bases, trading outposts, or commercial centers on major trade routes."
+                },
+                "answer_4": {
+                  "score": 0.0,
+                  "response": "The expansion of the 1890s was different from the earlier expansions. It involved new territories that were intended less for settlement than for use as naval bases, trading outposts, or commercial centers on major trade routes."
+                }
+              }
+            },
+            "configFixup": [
+              {
+                "name": "questionId",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "sequenceNodeKey",
+                  "type": "ref"
+                }
+              },
+              {
+                "name": "maxAttempts",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "maxAttempts",
+                  "type": "ref"
+                }
+              }
+            ]
+          }
+        ],
+        "hookupActions": [
+          {
+            "description": "Hookup the submit manager to evaluate answers",
+            "methodName": "handleRequestsFrom",
+            "type": "method-call",
+            "args": [
+              {
+                "domain": "brix",
+                "refId": "q1",
+                "type": "ref"
+              }
+            ],
+            "instance": {
+              "type": "submit-manager"
+            }
+          },
+          {
+            "description": "Draw the question",
+            "methodName": "draw",
+            "type": "method-call",
+            "args": [
+              {
+                "selector": "#target1",
+                "type": "d3select"
+              }
+            ],
+            "instance": {
+              "domain": "brix",
+              "refId": "q1",
+              "type": "ref"
+            }
+          }
+        ]
+      }
+    ]
+  }
+}
