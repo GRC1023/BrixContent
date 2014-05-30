@@ -5,6 +5,10 @@ Onan is used to provide item-level seed data to DAALT via SubPub
 
 It is run as a command-line script as follows...
 
+$ NODE_ENV=staging node onan.js dirname
+or
+$ NODE_ENV=prod node onan.js dirname
+
 
 ===
 SubPub node module
