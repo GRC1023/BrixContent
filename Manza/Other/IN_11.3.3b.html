@@ -5,8 +5,8 @@
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta content="Template for Multiple Choice Question Brix" name="description">
    
-    <!-- widgets.css contains styling for the interactive brix -->
-    <link href="css/widgets.css" rel="stylesheet">
+    <!-- brix.css contains styling for the interactive brix -->
+    <link href="css/brix.css" rel="stylesheet">
 </head>
 <body>
     <div id="b1414d633f78446ddaa597a2fd737e70d"></div>
@@ -24,392 +24,445 @@
 	a.config =
 		{
 			"description": "Graph carousel on Post-Civil Rights Era Racial Attitudes on Inequality Due to Group Characteristics",
-			"containerConfig":
-				[
-					{
-						"description": "container for the graph and labels",
-						"containerId": "b1414d633f78446ddaa597a2fd737e70d",
-						"brixConfig":
-							[
-								{
-									"bricId": "swapGraph",
-									"bricType": "LineGraph",
-									"config":
-										{
-											"id": "graph1",
-											"type": "lines",
-											"xAxisFormat":
-												{ 
-													"type": "linear", 
-													"ticks": [1970,1980,1990,2000,2010,2020],
-													"format": "0f",
-													"orientation": "bottom",
-													"label": "Year"
-												},
-											"yAxisFormat":
-												{
-													"type": "linear",
-													"orientation": "left",
-													"ticks": [0, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100],
-													"label": "Percentage (%)"
-												}
-										},
-                                    "configFixup":
-                                        [
-                                            {
-                                                "type": "set-property",
-                                                "name": "Data",
-                                                "value": { "type": "ref", "domain": "data", "refId": "effort" }
-                                            }
-                                        ]
-								},
-								{
-									"bricId": "legend1",
-									"bricType": "Legend",
-									"config":
-										{
-											"id": "legendSchools",
-											"type": "line",
-											"xPos": "right",
-											"yPos": "top"
-										},
-									 "configFixup":
-                                        [
-                                            {
-                                                "type": "set-property",
-                                                "name": "labels",
-                                                "value": { "type": "ref", "domain": "data", "refId": "effortLegend" }
-                                            }
-                                        ]
-								},
-                                {
-                                    "bricId": "labelSelector1",
-                                    "bricType": "LabelSelector",
-                                    "config":
-                                        {
-                                            "id": "dataLabels",
-                                            "labels": ["Motivation","Effort","Favors"],
-                                            "layout": "vertical",
-                                            "itemMargin": {"top": 5, "bottom": 5, "left": 0, "right": 0}
-                                        }
-                                },
-								{
-									"bricId": "cntr1",
-									"bricType": "SvgContainer",
-									"config":
-										{
-											"maxSize": {"height": 400, "width": 579}
-										},
-									"configFixup":
-                                        [
-                                            {
-                                                "type": "set-property",
-                                                "name": "node",
-                                                "value":
-                                                    {
-                                                        "type": "d3select",
-                                                        "selector": "#b1414d633f78446ddaa597a2fd737e70d"
-                                                    }
-                                            }
-                                        ]
-								}
-							],
-                            "mortarConfig":
-                            [
-                                {
-                                    "mortarId": "dataswap1",
-                                    "mortarType": "Dataswap",
-                                    "config":
-                                        {
-                                            "eventDetailsProperty": "index",
-                                            "dataPropertySetter": "setData"
-                                        },
-                                    "configFixup":
-                                        [
-                                            {
-                                                "type": "set-property",
-                                                "name": "topic",
-                                                "value":
-                                                    {
-                                                        "type": "brix-topic",
-                                                        "bricType": "LabelSelector",
-                                                        "instanceId": "dataLabels",
-                                                        "eventName": "selected"
-                                                    }
-                                            },
-                                            {
-                                                "type": "set-property",
-                                                "name": "sourceDataArray",
-                                                "value": 
-                                                    {
-                                                        "type": "array", 
-                                                        "elements": 
-                                                            [
-                                                                { "type": "ref", "domain": "data", "refId": "effort" },
-                                                                { "type": "ref", "domain": "data", "refId": "motivation" },
-                                                                { "type": "ref", "domain": "data", "refId": "favors" }
-                                                            ]
-                                                    } 
-                                            },
-                                            {
-                                                "type": "set-property",
-                                                "name": "targetBric",
-                                                "value": { "type": "ref", "domain": "brix", "refId": "swapGraph" }
-                                            }
-                                        ]
-                                },
-                                {
-                                    "mortarId": "dataswap2",
-                                    "mortarType": "Dataswap",
-                                    "config":
-                                        {
-                                            "eventDetailsProperty": "index",
-                                            "dataPropertySetter": "setLabels"
-                                        },
-                                    "configFixup":
-                                        [
-                                            {
-                                                "type": "set-property",
-                                                "name": "topic",
-                                                "value":
-                                                    {
-                                                        "type": "brix-topic",
-                                                        "bricType": "LabelSelector",
-                                                        "instanceId": "dataLabels",
-                                                        "eventName": "selected"
-                                                    }
-                                            },
-                                            {
-                                                "type": "set-property",
-                                                "name": "sourceDataArray",
-                                                "value": 
-                                                    {
-                                                        "type": "array", 
-                                                        "elements": 
-                                                            [
-                                                                { "type": "ref", "domain": "data", "refId": "effortLegend" },
-                                                                { "type": "ref", "domain": "data", "refId": "motivationLegend" },
-                                                                { "type": "ref", "domain": "data", "refId": "favorsLegend" }
-                                                            ]
-                                                    } 
-                                            },
-                                            {
-                                                "type": "set-property",
-                                                "name": "targetBric",
-                                                "value": { "type": "ref", "domain": "brix", "refId": "legend1" }
-                                            }
-                                        ]
-                                },
-                                {
-                                    "mortarId": "hilite3",
-                                    "mortarType": "Hilite",
-                                    "config":
-                                        {
-                                            "eventDetailsProperty": "selectKey"
-                                        },
-                                    "configFixup":
-                                        [
-                                            {
-                                                "type": "set-property",
-                                                "name": "topic",
-                                                "value":
-                                                    {
-                                                        "type": "brix-topic",
-                                                        "bricType": "Legend",
-                                                        "instanceId": "legendSchools",
-                                                        "eventName": "selected"
-                                                    }
-                                            },
-                                            {
-                                                "type": "set-property",
-                                                "name": "targetBric",
-                                                "value": { "type": "ref", "domain": "brix", "refId": "swapGraph" }
-                                            }
-                                        ]
-                                },
-                                {
-                                    "mortarId": "hilite2",
-                                    "mortarType": "Hilite",
-                                    "config":
-                                        {
-                                            "eventDetailsProperty": "selectKey"
-                                        },
-                                    "configFixup":
-                                        [
-                                            {
-                                                "type": "set-property",
-                                                "name": "topic",
-                                                "value":
-                                                    {
-                                                        "type": "brix-topic",
-                                                        "bricType": "LineGraph",
-                                                        "instanceId": "graph1",
-                                                        "eventName": "selected"
-                                                    }
-                                            },
-                                            {
-                                                "type": "set-property",
-                                                "name": "targetBric",
-                                                "value": { "type": "ref", "domain": "brix", "refId": "legend1" }
-                                            }
-                                        ]
-                                }
-                            ],
-						"hookupActions":
-							[
-								{
-									"description": "Append the swap graph to the svg container",
-									"type": "method-call",
-									"instance": {"type": "ref", "domain": "brix", "refId": "cntr1"},
-									"methodName": "append",
-									"args":
-										[
-											{ "type": "ref", "domain": "brix", "refId": "swapGraph" },
-                                            { "type": "constant", 
-                                              "value": {"topPercentOffset": 0.15, "leftPercentOffset": 0, "heightPercent": 0.85, "widthPercent": 1}
-                                            }
-										]
-								},
-								{
-									"description": "Append the legend to the svg container",
-									"type": "method-call",
-									"instance": {"type": "ref", "domain": "brix", "refId": "swapGraph"},
-									"methodName": "append",
-									"args":
-										[
-											{ "type": "ref", "domain": "brix", "refId": "legend1" }
-										]
-								},
-                                {
-                                    "description": "Append the labels to the svg container",
-                                    "type": "method-call",
-                                    "instance": {"type": "ref", "domain": "brix", "refId": "cntr1"},
-                                    "methodName": "append",
-                                    "args":
-                                        [
-                                            { "type": "ref", "domain": "brix", "refId": "labelSelector1" },
-                                            { "type": "constant", 
-                                              "value": {"topPercentOffset": 0.0, "leftPercentOffset": 0, "heightPercent": 0.2, "widthPercent": 1}
-                                            }
-                                        ]
-                                },
-                                {
-                                    "description": "Initial condition: select 1st label",
-                                    "type": "method-call",
-                                    "instance": {"type": "ref", "domain": "brix", "refId": "labelSelector1"},
-                                    "methodName": "lite",
-                                    "args":
-                                        [
-                                            { "type": "constant", "value": "0" }
-                                        ]
-                                },
-                                {
-                                    "description": "Initial condition: select 1st legend",
-                                    "type": "method-call",
-                                    "instance": {"type": "ref", "domain": "brix", "refId": "legend1"},
-                                    "methodName": "lite",
-                                    "args":
-                                        [
-                                            { "type": "constant", "value": "0" }
-                                        ]
-                                },
-                                 {
-                                    "description": "Initial condition: select 1st graph trace",
-                                    "type": "method-call",
-                                    "instance": {"type": "ref", "domain": "brix", "refId": "swapGraph"},
-                                    "methodName": "lite",
-                                    "args":
-                                        [
-                                            { "type": "constant", "value": "0" }
-                                        ]
-                                }
-							]
-					},
-					{
-                        "description": "The 'b1414d633f78446ddaa597a2fd737e70d' container contains the swappable callouts",
-                        "containerId": "b1414d633f78446ddaa597a2fd737e70d",
-                        "brixConfig":
-                            [
-                                {
-                                    "bricId": "lbltbl1",
-                                    "bricType": "Callouts",
-                                    "config":
-                                        {
-                                            "id": "callme",
-                                            "textBits":
-                                                [
-                                                    {"cols": ["<b>Survey Question Asked:</b><br /> On the average, (Negroes/blacks/African Americans) have worse jobs, income, and housing than white people. Do you think these differences are...because most (Negroes/blacks/African Americans) just don't have the motivation or will power to pull themselves out of poverty?"]},
-                                                    {"cols": ["<b>Survey Question Asked:</b><br />Do you agree or disagree with the statement: It's really a matter of some people not trying hard enough; if blacks would only try harder they could be just as well off as white."]},
-                                                    {"cols": ["<b>Survey Question Asked:</b><br />Do you agree or disagree with the statement: Irish, Italians, Jewish and many other minorities overcame prejudice and worked their way up. Blacks should do the same without any special favors."]}
-                                                ]
-                                        }
-                                }
-                            ],
-                        "mortarConfig":
-                            [
-                                {
-                                    "mortarId": "hilite1",
-                                    "mortarType": "Hilite",
-                                    "config":
-                                        {
-                                            "eventDetailsProperty": "selectKey"
-                                        },
-                                    "configFixup":
-                                        [
-                                            {
-                                                "type": "set-property",
-                                                "name": "topic",
-                                                "value":
-                                                    {
-                                                        "type": "brix-topic",
-                                                        "bricType": "LabelSelector",
-                                                        "instanceId": "dataLabels",
-                                                        "eventName": "selected"
-                                                    }
-                                            },
-                                            {
-                                                "type": "set-property",
-                                                "name": "targetBric",
-                                                "value": { "type": "ref", "domain": "brix", "refId": "lbltbl1" }
-                                            }
-                                        ]
-                                }
-                            ],
-                        "hookupActions":
-                            [
-                                {
-                                    "description": "draw the label table",
-                                    "type": "method-call",
-                                    "instance": {"type": "ref", "domain": "brix", "refId": "lbltbl1"},
-                                    "methodName": "draw",
-                                    "args":
-                                        [
-                                            { "type": "d3select", "selector": "#b1414d633f78446ddaa597a2fd737e70d" }
-                                        ]
-                                },
-                                {
-                                    "description": "Initial condition: select 1st table row (note that we may want to use the state field to do this later)",
-                                    "type": "method-call",
-                                    "instance": {"type": "ref", "domain": "brix", "refId": "lbltbl1"},
-                                    "methodName": "lite",
-                                    "args":
-                                        [
-                                            { "type": "constant", "value": "0" }
-                                        ]
-                                }
-
-                            ]
+			"containerConfig": [
+      {
+        "brixConfig": [
+          {
+            "bricId": "swapGraph", 
+            "bricType": "LineGraph", 
+            "config": {
+              "id": "graph2", 
+              "tracePoints": [], 
+                  "showLegend": true,
+                  "legendVerticalPosition": "top",
+                  "legendHorizontalPosition": "right",
+              "traceAttributes": 
+                    [
+                      { "traceIndex": 0, "legendContent": "First Trace"},
+                      { "traceIndex": 1, "legendContent": "Second Trace"}
+                    ],
+              "xAxis": 
+              {
+                "label": "Year", 
+                "position": "bottom", 
+                "tickmarkSettings": 
+                {
+                    "ticks": [ 1970, 1980, 1990, 2000, 2010, 2020],
+                    "format": "0f"
+                }
+              }, 
+              "yAxis": 
+              {
+                "label": "Percentage (%)", 
+                "position": "left", 
+                "tickmarkSettings":
+                {
+                "ticks": [0, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100]
+                }
+              }
+            }, 
+            "configFixup": 
+            [
+              {
+                "name": "tracePoints", 
+                "type": "set-property", 
+                "value": 
+                {
+                "domain": "data", 
+                "refId": "effort", 
+                "type": "ref"
+                }
+              },
+              {
+                "name": "traceAttributes", 
+                "type": "set-property", 
+                "value": 
+                {
+                "domain": "data", 
+                "refId": "effortLegend", 
+                "type": "ref"
+                }
+              }
+            ]
+          }, 
+          /*{
+            "bricId": "legend1", 
+            "bricType": "Legend", 
+            "config": {
+              "id": "legendSchools2", 
+              "type": "line", 
+              "xPos": "right", 
+              "yPos": "top"
+            }, 
+            "configFixup": [
+              {
+                "name": "labels", 
+                "type": "set-property", 
+                "value": {
+                  "domain": "data", 
+                  "refId": "effortLegend", 
+                  "type": "ref"
+                }
+              }
+            ]
+          }, */
+          {
+            "bricId": "labelSelector1", 
+            "bricType": "LabelSelector", 
+            "config": {
+              "id": "dataLabels2", 
+              "itemMargin": {
+                "bottom": 5, 
+                "left": 0, 
+                "right": 0, 
+                "top": 5
+              }, 
+              "labels": [
+                "Motivation", 
+                "Effort", 
+                "Favors"
+              ], 
+              "layout": "vertical"
+            }
+          }, 
+          {
+            "bricId": "cntr2", 
+            "bricType": "SvgContainer", 
+            "config": {
+              "maxSize": {
+                "height": 400, 
+                "width": 579
+              }
+            }
+          }
+        ], 
+        "containerId": "b1414d633f78446ddaa597a2fd737e70d", 
+        "description": "container for the graph and labels", 
+        "hookupActions": [
+          {
+            "args": [
+              {
+                "selector": "#b1414d633f78446ddaa597a2fd737e70d", 
+                "type": "d3select"
+              }
+            ], 
+            "description": "Draw the svg container", 
+            "instance": {
+              "domain": "brix", 
+              "refId": "cntr2", 
+              "type": "ref"
+            }, 
+            "methodName": "draw", 
+            "type": "method-call"
+          }, 
+          {
+            "args": [
+              {
+                "domain": "brix", 
+                "refId": "swapGraph", 
+                "type": "ref"
+              }, 
+              {
+                "type": "constant", 
+                "value": {
+                  "heightPercent": 0.85, 
+                  "leftPercentOffset": 0, 
+                  "topPercentOffset": 0.15, 
+                  "widthPercent": 1
+                }
+              }
+            ], 
+            "description": "Append the swap graph to the svg container", 
+            "instance": {
+              "domain": "brix", 
+              "refId": "cntr2", 
+              "type": "ref"
+            }, 
+            "methodName": "append", 
+            "type": "method-call"
+          }, 
+          {
+            "args": [
+              {
+                "domain": "brix", 
+                "refId": "labelSelector1", 
+                "type": "ref"
+              }, 
+              {
+                "type": "constant", 
+                "value": {
+                  "heightPercent": 0.2, 
+                  "leftPercentOffset": 0, 
+                  "topPercentOffset": 0.0, 
+                  "widthPercent": 1
+                }
+              }
+            ], 
+            "description": "Append the labels to the svg container", 
+            "instance": {
+              "domain": "brix", 
+              "refId": "cntr2", 
+              "type": "ref"
+            }, 
+            "methodName": "append", 
+            "type": "method-call"
+          }, 
+          {
+            "args": [
+              {
+                "type": "constant", 
+                "value": "0"
+              }
+            ], 
+            "description": "Initial condition: select 1st label", 
+            "instance": {
+              "domain": "brix", 
+              "refId": "labelSelector1", 
+              "type": "ref"
+            }, 
+            "methodName": "lite", 
+            "type": "method-call"
+          }
+        ], 
+        "mortarConfig": [
+          {
+            "config": {
+              "dataPropertySetter": "setData", 
+              "eventDetailsProperty": "index"
+            }, 
+            "configFixup": [
+              {
+                "name": "topic", 
+                "type": "set-property", 
+                "value": {
+                  "bricType": "LabelSelector", 
+                  "eventName": "selected", 
+                  "instanceId": "dataLabels", 
+                  "type": "brix-topic"
+                }
+              }, 
+              {
+                "name": "sourceDataArray", 
+                "type": "set-property", 
+                "value": {
+                  "elements": [
+                    {
+                      "domain": "data", 
+                      "refId": "effort", 
+                      "type": "ref"
+                    }, 
+                    {
+                      "domain": "data", 
+                      "refId": "motivation", 
+                      "type": "ref"
+                    }, 
+                    {
+                      "domain": "data", 
+                      "refId": "favors", 
+                      "type": "ref"
                     }
-				],
+                  ], 
+                  "type": "array"
+                }
+              }, 
+              {
+                "name": "targetBric", 
+                "type": "set-property", 
+                "value": {
+                  "domain": "brix", 
+                  "refId": "swapGraph", 
+                  "type": "ref"
+                }
+              }
+            ], 
+            "mortarId": "dataswap10", 
+            "mortarType": "Dataswap"
+          }, 
+          /*{
+            "config": {
+              "dataPropertySetter": "setLabels", 
+              "eventDetailsProperty": "index"
+                }, 
+                "configFixup": [
+              {
+                "name": "topic", 
+                "type": "set-property", 
+                "value": {
+                  "bricType": "LabelSelector", 
+                  "eventName": "selected", 
+                  "instanceId": "dataLabels", 
+                  "type": "brix-topic"
+                    }
+               }, 
+               {
+                "name": "sourceDataArray", 
+                "type": "set-property", 
+                "value": {
+                  "elements": [
+                    {
+                      "domain": "data", 
+                      "refId": "effortLegend", 
+                      "type": "ref"
+                    }, 
+                    {
+                      "domain": "data", 
+                      "refId": "motivationLegend", 
+                      "type": "ref"
+                    }, 
+                    {
+                      "domain": "data", 
+                      "refId": "favorsLegend", 
+                      "type": "ref"
+                    }
+                    ], 
+                  "type": "array"
+                  }
+                }, 
+                {
+                    "name": "targetBric", 
+                    "type": "set-property", 
+                    "value": {
+                      "domain": "brix", 
+                      "refId": "legend1", 
+                      "type": "ref"
+                        }
+                }
+                ], 
+            "mortarId": "dataswap2", 
+            "mortarType": "Dataswap"
+          }, */
+          /*{
+            "config": {
+              "eventDetailsProperty": "selectKey"
+            }, 
+            "configFixup": [
+              {
+                "name": "topic", 
+                "type": "set-property", 
+                "value": {
+                  "bricType": "Legend", 
+                  "eventName": "selected", 
+                  "instanceId": "legendSchools", 
+                  "type": "brix-topic"
+                }
+              }, 
+              {
+                "name": "targetBric", 
+                "type": "set-property", 
+                "value": {
+                  "domain": "brix", 
+                  "refId": "swapGraph", 
+                  "type": "ref"
+                }
+              }
+            ], 
+            "mortarId": "hilite3", 
+            "mortarType": "Hilite"
+          }, */
+        ]
+      }, 
+      {
+        "brixConfig": [
+          {
+            "bricId": "lbltbl1", 
+            "bricType": "Callouts", 
+            "config": {
+              "id": "callme2", 
+              "textBits": [
+                {
+                  "cols": [
+                    "<b>Survey Question Asked:</b><br /> On the average, (Negroes/blacks/African Americans) have worse jobs, income, and housing than white people. Do you think these differences are...because most (Negroes/blacks/African Americans) just don't have the motivation or will power to pull themselves out of poverty?"
+                  ]
+                }, 
+                {
+                  "cols": [
+                    "<b>Survey Question Asked:</b><br />Do you agree or disagree with the statement: It's really a matter of some people not trying hard enough; if blacks would only try harder they could be just as well off as white."
+                  ]
+                }, 
+                {
+                  "cols": [
+                    "<b>Survey Question Asked:</b><br />Do you agree or disagree with the statement: Irish, Italians, Jewish and many other minorities overcame prejudice and worked their way up. Blacks should do the same without any special favors."
+                  ]
+                }
+              ]
+            }
+          }
+        ], 
+        "containerId": "b1414d633f78446ddaa597a2fd737e70d", 
+        "description": "The 'b1414d633f78446ddaa597a2fd737e70d' container contains the swappable callouts", 
+        "hookupActions": [
+          {
+            "args": [
+              {
+                "selector": "#b1414d633f78446ddaa597a2fd737e70d", 
+                "type": "d3select"
+              }
+            ], 
+            "description": "draw the label table", 
+            "instance": {
+              "domain": "brix", 
+              "refId": "lbltbl1", 
+              "type": "ref"
+            }, 
+            "methodName": "draw", 
+            "type": "method-call"
+          }, 
+          {
+            "args": [
+              {
+                "type": "constant", 
+                "value": "0"
+              }
+            ], 
+            "description": "Initial condition: select 1st table row (note that we may want to use the state field to do this later)", 
+            "instance": {
+              "domain": "brix", 
+              "refId": "lbltbl1", 
+              "type": "ref"
+            }, 
+            "methodName": "lite", 
+            "type": "method-call"
+          }
+        ], 
+        "mortarConfig": [
+          {
+            "config": {
+              "eventDetailsProperty": "selectKey"
+            }, 
+            "configFixup": [
+              {
+                "name": "topic", 
+                "type": "set-property", 
+                "value": {
+                  "bricType": "LabelSelector", 
+                  "eventName": "selected", 
+                  "instanceId": "dataLabels", 
+                  "type": "brix-topic"
+                }
+              }, 
+              {
+                "name": "targetBric", 
+                "type": "set-property", 
+                "value": {
+                  "domain": "brix", 
+                  "refId": "lbltbl1", 
+                  "type": "ref"
+                }
+              }
+            ], 
+            "mortarId": "hilite1", 
+            "mortarType": "Hilite"
+          }
+        ]
+      }
+    ],
 			"data":
                 {
                     "effortLegend":
                         [
-                            
-                                {"content":"No"},
-                                {"content": "Yes"}           
-                                
-                        ],
+                            { "traceIndex": 0, "legendContent": "No"},
+                            { "traceIndex": 1, "legendContent": "Yes"}
+                        ], 
 					"effort": 
                         [
     					    [
@@ -427,11 +480,10 @@
                         ],
                     "motivationLegend":
                         [
-                            {"content": "Disagree"}, 
-                            {"content": "Agree"},
-                            {"content": "Neutral"}
-                            
-                        ],
+                            { "traceIndex": 0, "legendContent": "Disagree"},
+                            { "traceIndex": 1, "legendContent": "Agree"},
+                            { "traceIndex": 2, "legendContent": "Neutral"}
+                        ], 
 					"motivation":
                         [
     						[
@@ -455,12 +507,10 @@
                         ],
                      "favorsLegend":
                         [
-                            
-                            {"content":"Disagree"},
-                            {"content": "Agree"},
-                            {"content": "Neutral"}
-                            
-                        ],
+                            { "traceIndex": 0, "legendContent": "Disagree"},
+                            { "traceIndex": 1, "legendContent": "Agree"},
+                            { "traceIndex": 2, "legendContent": "Neutral"}
+                        ], 
 					"favors":
                         [
     						
@@ -492,7 +542,7 @@
 	a.answerMan = new pearson.brix.utils.LocalAnswerMan();
 	a.submitManager = new pearson.brix.utils.SubmitManager(a.eventManager, a.answerMan);
 
-	a.bricLayer = new pearson.brix.BricLayer(null, a.eventManager, a.submitManager);
+	a.bricLayer = new pearson.brix.utils.BricLayer(null, a.eventManager, a.submitManager);
 
 	pearson.utils.logToConsole(true, "FINER");
 

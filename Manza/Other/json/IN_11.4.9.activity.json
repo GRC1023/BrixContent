@@ -5,28 +5,32 @@
     "containerConfig": [
       {
         "brixConfig": [
-          {
+                 {
             "bricId": "swapGraph", 
-            "bricType": "ProtoBarChart", 
-            "config": {
+            "bricType": "BarChart", 
+            "config": 
+             {
               "id": "graph1", 
-              "xAxisFormat": {
-                "format": "0f", 
+              "xAxis": 
+              {
                 "label": "Mortality Rate (deaths per 100,000/year)", 
-                "orientation": "bottom", 
-                "ticks": 4, 
-                "type": "linear"
+                "position": "bottom", 
+                "tickmarkSettings":
+                {
+                    "ticks": 4, 
+                    "format": "0f"
+                }
               }, 
-              "yAxisFormat": {
-                "orientation": "left", 
-                "type": "ordinal"
+              "yAxis": {
+                "position": "left"
               }
             }, 
             "configFixup": [
               {
-                "name": "Data", 
+                "name": "seriesData", 
                 "type": "set-property", 
-                "value": {
+                "value": 
+                {
                   "domain": "data", 
                   "refId": "coronary", 
                   "type": "ref"

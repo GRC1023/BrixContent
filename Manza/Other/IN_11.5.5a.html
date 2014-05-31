@@ -5,8 +5,8 @@
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta content="Template for Label Selector Image Carousel Brix" name="description">
     
-    <!-- widgets.css contains styling for the interactive brix -->
-    <link href="css/widgets.css" rel="stylesheet">
+    <!-- brix.css contains styling for the interactive brix -->
+    <link href="css/brix.css" rel="stylesheet">
 </head>
 <body>
     <div id="b505755410bd34a3b90183598b39d6a55"></div>
@@ -31,152 +31,191 @@
 			"description": "Becoming a Majority-Minority Nation [Map]",
             //"imgBaseUrl": "http://localhost:8088/images/",
             "imgBaseUrl": "",
-            "containerConfig":
-                [
+              "containerConfig": [
+      {
+        "brixConfig": [
+          {
+            "bricId": "lblCarousel1", 
+            "bricType": "LabelCarousel", 
+            "config": {
+              "displayWidth": 579, 
+              "id": "lblCrsl1", 
+              "imagesActualSize": {
+                "height": 287, 
+                "width": 400
+              }, 
+              "type": "textLabels"
+            }, 
+            "configFixup": [
+              {
+                "name": "images", 
+                "type": "set-property", 
+                "value": {
+                  "elements": [
                     {
-                        "description": "Container for the LabelCarousel",
-                        "containerId": "b505755410bd34a3b90183598b39d6a55",
-                        "brixConfig":
-                            [
-                                {
-                                    "bricId": "lblCarousel1",
-                                    "bricType": "LabelCarousel",
-                                    "config":
-                                        {
-                                            "id": "lblCrsl1",
-                                            "type": "textLabels",
-                                            "imagesActualSize": { "height": 287, "width": 400 },
-                                            "displayWidth": 579
-                                        },
-                                    "configFixup":
-                                        [
-                                            {
-                                                "type": "set-property",
-                                                "name": "images",
-                                                "value":
-                                                    {
-                                                        "type": "array",
-                                                        "elements":
-                                                            [
-                                                                {
-                                                                    "type": "object",
-                                                                    "properties":
-                                                                        [
-                                                                            {
-                                                                                "name": "URI",
-                                                                                "value":
-                                                                                    {
-                                                                                        "type": "join",
-                                                                                        "parts":
-                                                                                        [
-                                                                                            { "type": "ref", "domain": "info", "refId": "imgBaseUrl" },
-                                                                                            { "type": "constant", "value": "img/IN_11.5.5aa.png" }
-                                                                                        ]
-                                                                                    }
-                                                                            },
-                                                                            {
-                                                                                "name": "caption",
-                                                                                "value": { "type": "constant", "value": "In 1910, 89 percent of the U.S. population consisted of non-Hispanic whites. Explore this map of the United States to see where the highest concentration of non-Hispanic whites were located at this time.<br /><br /><br /><br />" }
-                                                                            },
-                                                                            {
-                                                                                "name": "selectorLabel",
-                                                                                "value": { "type": "constant", "value": "1910" }
-                                                                            }
-                                                                        ]
-                                                                },
-                                                                {
-                                                                    "type": "object",
-                                                                    "properties":
-                                                                        [
-                                                                            {
-                                                                                "name": "URI",
-                                                                                "value":
-                                                                                    {
-                                                                                        "type": "join",
-                                                                                        "parts":
-                                                                                        [
-                                                                                            { "type": "ref", "domain": "info", "refId": "imgBaseUrl" },
-                                                                                            { "type": "constant", "value": "img/IN_11.5.5ab.png"}
-                                                                                        ]
-                                                                                    }
-                                                                            },
-                                                                            {
-                                                                                "name": "caption",
-                                                                                "value": { "type": "constant", "value": "By 2010, the percentage of non-Hispanic whites in the United States had shrunk from 89 percent to 69.1 percent. Explore this map to see which areas of the United States experienced the most dramatic changes in racial composition." }
-                                                                            },
-                                                                            {
-                                                                                "name": "selectorLabel",
-                                                                                "value": { "type": "constant", "value": "2010" }
-                                                                            }
-                                                                        ]
-                                                                },
-                                                                {
-                                                                    "type": "object",
-                                                                    "properties":
-                                                                        [
-                                                                            {
-                                                                                "name": "URI",
-                                                                                "value":
-                                                                                    {
-                                                                                        "type": "join",
-                                                                                        "parts":
-                                                                                        [
-                                                                                            { "type": "ref", "domain": "info", "refId": "imgBaseUrl" },
-                                                                                            { "type": "constant", "value": "img/IN_11.5.5ac.png"}
-                                                                                        ]
-                                                                                    }
-                                                                            },
-                                                                            {
-                                                                                "name": "caption",
-                                                                                "value": { "type": "constant", "value": "The U.S. Census Bureau has forecast that before mid-century, the non-Hispanic white population of the United States will shrink to less than half of the total. Current Bureau projections for 2050 put the white share of the U.S. population at 46 percent, Hispanics at 30 percent, blacks at 12 percent, Asians at 8 percent, American Indians and Alaska Natives at 1 percent, and multiracial people at 3 percent." }
-                                                                            },
-                                                                            {
-                                                                                "name": "selectorLabel",
-                                                                                "value": { "type": "constant", "value": "2050" }
-                                                                            }
-                                                                        ]
-                                                                }
-                                                            ]
-                                                    }
-                                            }
-                                        ]
-                                },
-                                {
-                                    "bricId": "cntr1",
-                                    "bricType": "SvgContainer",
-                                    "config":
-                                        {
-                                            "maxSize": { "height": 600, "width": 579 },
-                                        },
-                                    "configFixup":
-                                        [
-                                            {
-                                                "type": "set-property",
-                                                "name": "node",
-                                                "value":
-                                                    {
-                                                        "type": "d3select",
-                                                        "selector": "#b505755410bd34a3b90183598b39d6a55"
-                                                    }
-                                            }
-                                        ]
-                                }
-                            ],
-                        "hookupActions":
-                            [
-                                {
-                                    "description": "Append the label image carousel to the svg container",
-                                    "type": "method-call",
-                                    "instance": {"type": "ref", "domain": "brix", "refId": "cntr1"},
-                                    "methodName": "append",
-                                    "args":
-                                        [
-                                            { "type": "ref", "domain": "brix", "refId": "lblCarousel1" }
-                                        ]
-                                }
-                            ]
+                      "properties": [
+                        {
+                          "name": "URI", 
+                          "value": {
+                            "parts": [
+                              {
+                                "domain": "info", 
+                                "refId": "imgBaseUrl", 
+                                "type": "ref"
+                              }, 
+                              {
+                                "type": "constant", 
+                                "value": "img/IN_11.5.5aa.png"
+                              }
+                            ], 
+                            "type": "join"
+                          }
+                        }, 
+                        {
+                          "name": "caption", 
+                          "value": {
+                            "type": "constant", 
+                            "value": "In 1910, 89 percent of the U.S. population consisted of non-Hispanic whites. Explore this map of the United States to see where the highest concentration of non-Hispanic whites were located at this time.<br /><br /><br /><br />"
+                          }
+                        }, 
+                        {
+                          "name": "selectorLabel", 
+                          "value": {
+                            "type": "constant", 
+                            "value": "1910"
+                          }
+                        }
+                      ], 
+                      "type": "object"
+                    }, 
+                    {
+                      "properties": [
+                        {
+                          "name": "URI", 
+                          "value": {
+                            "parts": [
+                              {
+                                "domain": "info", 
+                                "refId": "imgBaseUrl", 
+                                "type": "ref"
+                              }, 
+                              {
+                                "type": "constant", 
+                                "value": "img/IN_11.5.5ab.png"
+                              }
+                            ], 
+                            "type": "join"
+                          }
+                        }, 
+                        {
+                          "name": "caption", 
+                          "value": {
+                            "type": "constant", 
+                            "value": "By 2010, the percentage of non-Hispanic whites in the United States had shrunk from 89 percent to 69.1 percent. Explore this map to see which areas of the United States experienced the most dramatic changes in racial composition."
+                          }
+                        }, 
+                        {
+                          "name": "selectorLabel", 
+                          "value": {
+                            "type": "constant", 
+                            "value": "2010"
+                          }
+                        }
+                      ], 
+                      "type": "object"
+                    }, 
+                    {
+                      "properties": [
+                        {
+                          "name": "URI", 
+                          "value": {
+                            "parts": [
+                              {
+                                "domain": "info", 
+                                "refId": "imgBaseUrl", 
+                                "type": "ref"
+                              }, 
+                              {
+                                "type": "constant", 
+                                "value": "img/IN_11.5.5ac.png"
+                              }
+                            ], 
+                            "type": "join"
+                          }
+                        }, 
+                        {
+                          "name": "caption", 
+                          "value": {
+                            "type": "constant", 
+                            "value": "The U.S. Census Bureau has forecast that before mid-century, the non-Hispanic white population of the United States will shrink to less than half of the total. Current Bureau projections for 2050 put the white share of the U.S. population at 46 percent, Hispanics at 30 percent, blacks at 12 percent, Asians at 8 percent, American Indians and Alaska Natives at 1 percent, and multiracial people at 3 percent."
+                          }
+                        }, 
+                        {
+                          "name": "selectorLabel", 
+                          "value": {
+                            "type": "constant", 
+                            "value": "2050"
+                          }
+                        }
+                      ], 
+                      "type": "object"
                     }
+                  ], 
+                  "type": "array"
+                }
+              }
             ]
+          }, 
+          {
+            "bricId": "cntr1", 
+            "bricType": "SvgContainer", 
+            "config": {
+              "maxSize": {
+                "height": 600, 
+                "width": 579
+              }
+            }
+          }
+        ], 
+        "containerId": "b505755410bd34a3b90183598b39d6a55", 
+        "description": "Container for the LabelCarousel", 
+        "hookupActions": [
+          {
+            "args": [
+              {
+                "selector": "#b505755410bd34a3b90183598b39d6a55", 
+                "type": "d3select"
+              }
+            ], 
+            "description": "Draw the svg container", 
+            "instance": {
+              "domain": "brix", 
+              "refId": "cntr1", 
+              "type": "ref"
+            }, 
+            "methodName": "draw", 
+            "type": "method-call"
+          }, 
+          {
+            "args": [
+              {
+                "domain": "brix", 
+                "refId": "lblCarousel1", 
+                "type": "ref"
+              }
+            ], 
+            "description": "Append the label image carousel to the svg container", 
+            "instance": {
+              "domain": "brix", 
+              "refId": "cntr1", 
+              "type": "ref"
+            }, 
+            "methodName": "append", 
+            "type": "method-call"
+          }
+        ]
+      }
+    ]
         };
 
     // create the eventmanager to be used by the created brix, and the
@@ -185,7 +224,7 @@
     a.answerMan = new pearson.brix.utils.LocalAnswerMan();
     a.submitManager = new pearson.brix.utils.SubmitManager(a.eventManager, a.answerMan);
 
-    a.bricLayer = new pearson.brix.BricLayer(null, a.eventManager, a.submitManager);
+    a.bricLayer = new pearson.brix.utils.BricLayer(null, a.eventManager, a.submitManager);
 
     a.building = a.bricLayer.build(a.config);
 

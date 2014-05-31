@@ -5,8 +5,8 @@
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta content="Template for Label Selector Image Carousel Brix" name="description">
     
-    <!-- widgets.css contains styling for the interactive brix -->
-    <link href="css/widgets.css" rel="stylesheet">
+    <!-- brix.css contains styling for the interactive brix -->
+    <link href="css/brix.css" rel="stylesheet">
 </head>
 <body>
     <div id="bcb3d0c942a9f491086b3d248b4c4f0f4"></div>
@@ -31,116 +31,139 @@
         {
 			"description": "Photo carousel on cultural assimilation",
             "imgBaseUrl": "",
-            "containerConfig":
-                [
+             "containerConfig": [
+      {
+        "brixConfig": [
+          {
+            "bricId": "lblCarousel1", 
+            "bricType": "LabelCarousel", 
+            "config": {
+              "id": "lblCrsl1", 
+              "imagesActualSize": {
+                "height": 400, 
+                "width": 600
+              }
+            }, 
+            "configFixup": [
+              {
+                "name": "images", 
+                "type": "set-property", 
+                "value": {
+                  "elements": [
                     {
-                        "description": "Container for the LabelCarousel",
-                        "containerId": "bcb3d0c942a9f491086b3d248b4c4f0f4",
-                        "brixConfig":
-                            [
-                                {
-                                    "bricId": "lblCarousel1",
-                                    "bricType": "LabelCarousel",
-                                    "config":
-                                        {
-                                            "id": "lblCrsl1",
-                                            "imagesActualSize": { "height": 400, "width": 600 }
-                                        },
-                                    "configFixup":
-                                        [
-                                            {
-                                                "type": "set-property",
-                                                "name": "images",
-                                                "value":
-                                                    {
-                                                        "type": "array",
-                                                        "elements":
-                                                            [
-                                                                {
-                                                                    "type": "object",
-                                                                    "properties":
-                                                                        [
-                                                                            {
-                                                                                "name": "URI",
-                                                                                "value":
-                                                                                    {
-                                                                                        "type": "join",
-                                                                                        "parts":
-                                                                                        [
-                                                                                            { "type": "ref", "domain": "info", "refId": "imgBaseUrl" },
-                                                                                            { "type": "constant", "value": "img/11.12a_NEW_BE041372.jpg" }
-                                                                                        ]
-                                                                                    }
-                                                                            },
-                                                                            {
-                                                                                "name": "caption",
-                                                                                "value": { "type": "constant", "value": "Polish immigrant women arriving in America in 1910. At this time, Polish-Americans were not considered ethnically similar to more established European groups." }
-                                                                            }
-                                                                        ]
-                                                                },
-                                                                {
-                                                                    "type": "object",
-                                                                    "properties":
-                                                                        [
-                                                                            {
-                                                                                "name": "URI",
-                                                                                "value":
-                                                                                    {
-                                                                                        "type": "join",
-                                                                                        "parts":
-                                                                                        [
-                                                                                            { "type": "ref", "domain": "info", "refId": "imgBaseUrl" },
-                                                                                            { "type": "constant", "value": "img/11.12b_NEW_B3NN1P.jpg" }
-                                                                                        ]
-                                                                                    }
-                                                                            },
-                                                                            {
-                                                                                "name": "caption",
-                                                                                "value": { "type": "constant", "value": "A Polish-American family today. Later generations of Polish-Americans now appear indistinct from other European groups, as the category \"white\" has come to include Poles." }
-                                                                            }
-                                                                        ]
-                                                                }
-                                                            ]
-                                                    }
-                                            }
-                                        ]
-                                },
-                                {
-                                    "bricId": "cntr1",
-                                    "bricType": "SvgContainer",
-                                    "config":
-                                        {
-                                            "maxSize": { "height": 450, "width": 579 },
-                                        },
-                                    "configFixup":
-                                        [
-                                            {
-                                                "type": "set-property",
-                                                "name": "node",
-                                                "value":
-                                                    {
-                                                        "type": "d3select",
-                                                        "selector": "#bcb3d0c942a9f491086b3d248b4c4f0f4"
-                                                    }
-                                            }
-                                        ]
-                                }
-                            ],
-                        "hookupActions":
-                            [
-                                {
-                                    "description": "Append the label image carousel to the svg container",
-                                    "type": "method-call",
-                                    "instance": {"type": "ref", "domain": "brix", "refId": "cntr1"},
-                                    "methodName": "append",
-                                    "args":
-                                        [
-                                            { "type": "ref", "domain": "brix", "refId": "lblCarousel1" }
-                                        ]
-                                }
-                            ]
+                      "properties": [
+                        {
+                          "name": "URI", 
+                          "value": {
+                            "parts": [
+                              {
+                                "domain": "info", 
+                                "refId": "imgBaseUrl", 
+                                "type": "ref"
+                              }, 
+                              {
+                                "type": "constant", 
+                                "value": "img/11.12a_NEW_BE041372.jpg"
+                              }
+                            ], 
+                            "type": "join"
+                          }
+                        }, 
+                        {
+                          "name": "caption", 
+                          "value": {
+                            "type": "constant", 
+                            "value": "Polish immigrant women arriving in America in 1910. At this time, Polish-Americans were not considered ethnically similar to more established European groups."
+                          }
+                        }
+                      ], 
+                      "type": "object"
+                    }, 
+                    {
+                      "properties": [
+                        {
+                          "name": "URI", 
+                          "value": {
+                            "parts": [
+                              {
+                                "domain": "info", 
+                                "refId": "imgBaseUrl", 
+                                "type": "ref"
+                              }, 
+                              {
+                                "type": "constant", 
+                                "value": "img/11.12b_NEW_B3NN1P.jpg"
+                              }
+                            ], 
+                            "type": "join"
+                          }
+                        }, 
+                        {
+                          "name": "caption", 
+                          "value": {
+                            "type": "constant", 
+                            "value": "A Polish-American family today. Later generations of Polish-Americans now appear indistinct from other European groups, as the category \"white\" has come to include Poles."
+                          }
+                        }
+                      ], 
+                      "type": "object"
                     }
+                  ], 
+                  "type": "array"
+                }
+              }
             ]
+          }, 
+          {
+            "bricId": "cntr1", 
+            "bricType": "SvgContainer", 
+            "config": {
+              "maxSize": {
+                "height": 450, 
+                "width": 579
+              }
+            }
+          }
+        ], 
+        "containerId": "bcb3d0c942a9f491086b3d248b4c4f0f4", 
+        "description": "Container for the LabelCarousel", 
+        "hookupActions": [
+          {
+            "args": [
+              {
+                "selector": "#bcb3d0c942a9f491086b3d248b4c4f0f4", 
+                "type": "d3select"
+              }
+            ], 
+            "description": "Draw the svg container", 
+            "instance": {
+              "domain": "brix", 
+              "refId": "cntr1", 
+              "type": "ref"
+            }, 
+            "methodName": "draw", 
+            "type": "method-call"
+          }, 
+          {
+            "args": [
+              {
+                "domain": "brix", 
+                "refId": "lblCarousel1", 
+                "type": "ref"
+              }
+            ], 
+            "description": "Append the label image carousel to the svg container", 
+            "instance": {
+              "domain": "brix", 
+              "refId": "cntr1", 
+              "type": "ref"
+            }, 
+            "methodName": "append", 
+            "type": "method-call"
+          }
+        ]
+      }
+    ]
         };
 
     // create the eventmanager to be used by the created brix, and the
@@ -149,7 +172,7 @@
     a.answerMan = new pearson.brix.utils.LocalAnswerMan();
     a.submitManager = new pearson.brix.utils.SubmitManager(a.eventManager, a.answerMan);
 
-    a.bricLayer = new pearson.brix.BricLayer(null, a.eventManager, a.submitManager);
+    a.bricLayer = new pearson.brix.utils.BricLayer(null, a.eventManager, a.submitManager);
 
     a.building = a.bricLayer.build(a.config);
 

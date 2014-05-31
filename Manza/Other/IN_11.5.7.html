@@ -5,8 +5,8 @@
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta content="Template for Thumbnail Image Carousel Brix" name="description">
     
-    <!-- widgets.css contains styling for the interactive brix -->
-    <link href="css/widgets.css" rel="stylesheet">
+    <!-- brix.css contains styling for the interactive brix -->
+    <link href="css/brix.css" rel="stylesheet">
 </head>
 <body>
     <div id="b97a1be5f607944a3bdccc6f152bc1b8f"></div>
@@ -30,159 +30,192 @@
 		{
 			"description": "Image carousel showing people of different nationalities",
 			"imgBaseUrl": "",
-			"containerConfig":
-				[
-					{
-						"description": "Container for the ImageViewer bric",
-						"containerId": "b97a1be5f607944a3bdccc6f152bc1b8f",
-						"brixConfig":
-							[
-								{
-									"bricId": "image1",
-									"bricType": "Image",
-									"config":
-										{
-											"id": "img1",
-											"actualSize": { "height": 379, "width": 570 },
-											"caption":  "The rate of interracial marriage overall has grown considerably in recent years, although faster between some racial and ethnic groups than others.<br /> <br /> <br />",
-											"captionPosition": "below"
-										},
-									"configFixup":
-										[
-											{
-												"type": "set-property",
-												"name": "URI",
-												"value":
-													{
-														"type": "join",
-														"parts":
-														[
-															{ "type": "ref", "domain": "info", "refId": "imgBaseUrl" },
-															{ "type": "constant", "value": "img/P10-17.jpg" }
-														]
-													}
-											}
-										]
-													   
-								},
-								{
-									"bricId": "image2",
-									"bricType": "Image",
-									"config":
-										{
-											"id": "img2",
-											"actualSize": { "height": 379, "width": 570 },
-											"caption":  "However, it is important to note that Asian and Hispanic newlyweds are more likely than blacks to have spouses of a different race (Wang 2012).",
-											"captionPosition": "below"
-										},
-									"configFixup":
-										[
-											{
-												"type": "set-property",
-												"name": "URI",
-												"value":
-													{
-														"type": "join",
-														"parts":
-														[
-															{ "type": "ref", "domain": "info", "refId": "imgBaseUrl" },
-															{ "type": "constant", "value": "img/11.26b _COU701JG_120_001_SuperRes.jpg" }
-														]
-													}
-											}
-										]
-													   
-								},
-								{
-									"bricId": "image3",
-									"bricType": "Image",
-									"config":
-										{
-											"id": "img3",
-											"actualSize": { "height": 379, "width": 570 },
-											"caption":  "In addition, individuals of mixed-race ancestry are more likely to identify themselves (or be identified) as multiracial if they have Asian ancestry, but to be assigned to a single race—black—if they have African ancestry (Gullickson and Morning 2011).",
-											"captionPosition": "below"
-										},
-									"configFixup":
-										[
-											{
-												"type": "set-property",
-												"name": "URI",
-												"value":
-													{
-														"type": "join",
-														"parts":
-														[
-															{ "type": "ref", "domain": "info", "refId": "imgBaseUrl" },
-															{ "type": "constant", "value": "img/11.26c_YNG081CK_001_001_SuperRes.jpg" }
-														]
-													}
-											}
-										]
-													   
-								},
-								{
-									"bricId": "carousel1",
-									"bricType": "ImageViewer",
-									"config":
-										{
-											"id": "csel1",
-											"displayWidth": 579
-										},
-									"configFixup":
-										[
-											{
-												"type": "set-property",
-												"name": "items",
-												"value":
-													{
-														"type": "array",
-														"elements":
-																[
-																   { "type": "ref", "domain": "brix", "refId": "image1" },
-																   { "type": "ref", "domain": "brix", "refId": "image2" },
-																   { "type": "ref", "domain": "brix", "refId": "image3" }
-																]
-													}
-											}
-										]
-								},
-								{
-									"bricId": "cntr1",
-									"bricType": "SvgContainer",
-									"config":
-										{
-											"maxSize": {"height": "650", "width": "579"},
-										},
-									"configFixup":
-										[
-											{
-												"type": "set-property",
-												"name": "node",
-												"value":
-													{
-														"type": "d3select",
-														"selector": "#b97a1be5f607944a3bdccc6f152bc1b8f"
-													}
-											}
-										]
-								}
-							],
-						"hookupActions":
-							[
-								{
-									"description": "Append the captioned image to the svg container",
-									"type": "method-call",
-									"instance": {"type": "ref", "domain": "brix", "refId": "cntr1"},
-									"methodName": "append",
-									"args":
-										[
-											{ "type": "ref", "domain": "brix", "refId": "carousel1" }
-										]
-								}
-							]
-					}
-				]
+			"containerConfig": [
+      {
+        "brixConfig": [
+          {
+            "bricId": "image1", 
+            "bricType": "Image", 
+            "config": {
+              "actualSize": {
+                "height": 379, 
+                "width": 570
+              }, 
+              "caption": "The rate of interracial marriage overall has grown considerably in recent years, although faster between some racial and ethnic groups than others.<br /> <br /> <br />", 
+              "captionPosition": "below", 
+              "id": "img1"
+            }, 
+            "configFixup": [
+              {
+                "name": "URI", 
+                "type": "set-property", 
+                "value": {
+                  "parts": [
+                    {
+                      "domain": "info", 
+                      "refId": "imgBaseUrl", 
+                      "type": "ref"
+                    }, 
+                    {
+                      "type": "constant", 
+                      "value": "img/P10-17.jpg"
+                    }
+                  ], 
+                  "type": "join"
+                }
+              }
+            ]
+          }, 
+          {
+            "bricId": "image2", 
+            "bricType": "Image", 
+            "config": {
+              "actualSize": {
+                "height": 379, 
+                "width": 570
+              }, 
+              "caption": "However, it is important to note that Asian and Hispanic newlyweds are more likely than blacks to have spouses of a different race (Wang 2012).", 
+              "captionPosition": "below", 
+              "id": "img2"
+            }, 
+            "configFixup": [
+              {
+                "name": "URI", 
+                "type": "set-property", 
+                "value": {
+                  "parts": [
+                    {
+                      "domain": "info", 
+                      "refId": "imgBaseUrl", 
+                      "type": "ref"
+                    }, 
+                    {
+                      "type": "constant", 
+                      "value": "img/11.26b _COU701JG_120_001_SuperRes.jpg"
+                    }
+                  ], 
+                  "type": "join"
+                }
+              }
+            ]
+          }, 
+          {
+            "bricId": "image3", 
+            "bricType": "Image", 
+            "config": {
+              "actualSize": {
+                "height": 379, 
+                "width": 570
+              }, 
+              "caption": "In addition, individuals of mixed-race ancestry are more likely to identify themselves (or be identified) as multiracial if they have Asian ancestry, but to be assigned to a single race\u2014black\u2014if they have African ancestry (Gullickson and Morning 2011).", 
+              "captionPosition": "below", 
+              "id": "img3"
+            }, 
+            "configFixup": [
+              {
+                "name": "URI", 
+                "type": "set-property", 
+                "value": {
+                  "parts": [
+                    {
+                      "domain": "info", 
+                      "refId": "imgBaseUrl", 
+                      "type": "ref"
+                    }, 
+                    {
+                      "type": "constant", 
+                      "value": "img/11.26c_YNG081CK_001_001_SuperRes.jpg"
+                    }
+                  ], 
+                  "type": "join"
+                }
+              }
+            ]
+          }, 
+          {
+            "bricId": "carousel1", 
+            "bricType": "ImageViewer", 
+            "config": {
+              "displayWidth": 579, 
+              "id": "csel1"
+            }, 
+            "configFixup": [
+              {
+                "name": "items", 
+                "type": "set-property", 
+                "value": {
+                  "elements": [
+                    {
+                      "domain": "brix", 
+                      "refId": "image1", 
+                      "type": "ref"
+                    }, 
+                    {
+                      "domain": "brix", 
+                      "refId": "image2", 
+                      "type": "ref"
+                    }, 
+                    {
+                      "domain": "brix", 
+                      "refId": "image3", 
+                      "type": "ref"
+                    }
+                  ], 
+                  "type": "array"
+                }
+              }
+            ]
+          }, 
+          {
+            "bricId": "cntr1", 
+            "bricType": "SvgContainer", 
+            "config": {
+              "maxSize": {
+                "height": "650", 
+                "width": "579"
+              }
+            }
+          }
+        ], 
+        "containerId": "b97a1be5f607944a3bdccc6f152bc1b8f", 
+        "description": "Container for the ImageViewer bric", 
+        "hookupActions": [
+          {
+            "args": [
+              {
+                "selector": "#b97a1be5f607944a3bdccc6f152bc1b8f", 
+                "type": "d3select"
+              }
+            ], 
+            "description": "Draw the svg container", 
+            "instance": {
+              "domain": "brix", 
+              "refId": "cntr1", 
+              "type": "ref"
+            }, 
+            "methodName": "draw", 
+            "type": "method-call"
+          }, 
+          {
+            "args": [
+              {
+                "domain": "brix", 
+                "refId": "carousel1", 
+                "type": "ref"
+              }
+            ], 
+            "description": "Append the captioned image to the svg container", 
+            "instance": {
+              "domain": "brix", 
+              "refId": "cntr1", 
+              "type": "ref"
+            }, 
+            "methodName": "append", 
+            "type": "method-call"
+          }
+        ]
+      }
+    ]
 			};
 
     // create the eventmanager to be used by the created brix, and the
@@ -191,7 +224,7 @@
     a.answerMan = new pearson.brix.utils.LocalAnswerMan();
     a.submitManager = new pearson.brix.utils.SubmitManager(a.eventManager, a.answerMan);
 
-    a.bricLayer = new pearson.brix.BricLayer(null, a.eventManager, a.submitManager);
+    a.bricLayer = new pearson.brix.utils.BricLayer(null, a.eventManager, a.submitManager);
 
     a.building = a.bricLayer.build(a.config);
 

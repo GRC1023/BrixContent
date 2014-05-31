@@ -5,8 +5,8 @@
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta content="Template for Thumbnail Image Carousel Brix" name="description">
     
-    <!-- widgets.css contains styling for the interactive brix -->
-    <link href="css/widgets.css" rel="stylesheet">
+    <!-- brix.css contains styling for the interactive brix -->
+    <link href="css/brix.css" rel="stylesheet">
 </head>
 <body>
     <div id="bbf82730c109748b4b39a4280af3bbe1c"></div>
@@ -30,246 +30,306 @@
 		{
 			"description": "Image carousel on Observing Surface Biological Traits",
 			"imgBaseUrl": "",
-			"containerConfig":
-				[
-					{
-						"description": "Photo carousel includes photos of a Norwegian person, an Italian person, a Nigerian person, an Ethiopian person, an Indian person, and a Korean person",
-						"containerId": "bbf82730c109748b4b39a4280af3bbe1c",
-						"brixConfig":
-							[
-								{
-									"bricId": "image1",
-									"bricType": "Image",
-									"config":
-										{
-											"id": "img1",
-											"actualSize": { "height": 400, "width": 600 },
-											"caption":  "A Norwegian woman",
-											"captionPosition": "below"
-										},
-									"configFixup":
-										[
-											{
-												"type": "set-property",
-												"name": "URI",
-												"value":
-													{
-														"type": "join",
-														"parts":
-														[
-															{ "type": "ref", "domain": "info", "refId": "imgBaseUrl" },
-															{ "type": "constant", "value": "img/11.14a _42-33307447.jpg" }
-														]
-													}
-											}
-										]
-													   
-								},
-								{
-									"bricId": "image2",
-									"bricType": "Image",
-									"config":
-										{
-											"id": "img2",
-											"actualSize": { "height": 400, "width": 600 },
-											"caption":  "An Italian woman",
-											"captionPosition": "below"
-										},
-									"configFixup":
-										[
-											{
-												"type": "set-property",
-												"name": "URI",
-												"value":
-													{
-														"type": "join",
-														"parts":
-														[
-															{ "type": "ref", "domain": "info", "refId": "imgBaseUrl" },
-															{ "type": "constant", "value": "img/11.14b _C18ARF.jpg" }
-														]
-													}
-											}
-										]
-													   
-								},
-								{
-									"bricId": "image3",
-									"bricType": "Image",
-									"config":
-										{
-											"id": "img3",
-											"actualSize": { "height": 400, "width": 600 },
-											"caption":  "A Nigerian woman",
-											"captionPosition": "below"
-										},
-									"configFixup":
-										[
-											{
-												"type": "set-property",
-												"name": "URI",
-												"value":
-													{
-														"type": "join",
-														"parts":
-														[
-															{ "type": "ref", "domain": "info", "refId": "imgBaseUrl" },
-															{ "type": "constant", "value": "img/11.14c _AA85ED.jpg" }
-														]
-													}
-											}
-										]
-													   
-								},
-								{
-									"bricId": "image4",
-									"bricType": "Image",
-									"config":
-										{
-											"id": "img3",
-											"actualSize": { "height": 400, "width": 600 },
-											"caption":  "An Ethiopian man",
-											"captionPosition": "below"
-										},
-									"configFixup":
-										[
-											{
-												"type": "set-property",
-												"name": "URI",
-												"value":
-													{
-														"type": "join",
-														"parts":
-														[
-															{ "type": "ref", "domain": "info", "refId": "imgBaseUrl" },
-															{ "type": "constant", "value": "img/11.14d _B7A8N9.jpg" }
-														]
-													}
-											}
-										]
-													   
-								},
-								{
-									"bricId": "image5",
-									"bricType": "Image",
-									"config":
-										{
-											"id": "img3",
-											"actualSize": { "height": 400, "width": 600 },
-											"caption":  "An Asian Indian man",
-											"captionPosition": "below"
-										},
-									"configFixup":
-										[
-											{
-												"type": "set-property",
-												"name": "URI",
-												"value":
-													{
-														"type": "join",
-														"parts":
-														[
-															{ "type": "ref", "domain": "info", "refId": "imgBaseUrl" },
-															{ "type": "constant", "value": "img/11.14e _BF9C75.jpg" }
-														]
-													}
-											}
-										]
-													   
-								},
-								{
-									"bricId": "image6",
-									"bricType": "Image",
-									"config":
-										{
-											"id": "img3",
-											"actualSize": { "height": 400, "width": 600 },
-											"caption":  "A Korean man",
-											"captionPosition": "below"
-										},
-									"configFixup":
-										[
-											{
-												"type": "set-property",
-												"name": "URI",
-												"value":
-													{
-														"type": "join",
-														"parts":
-														[
-															{ "type": "ref", "domain": "info", "refId": "imgBaseUrl" },
-															{ "type": "constant", "value": "img/11.14f _D1KYJ4.jpg" }
-														]
-													}
-											}
-										]
-													   
-								},
-								{
-									"bricId": "carousel1",
-									"bricType": "ImageViewer",
-									"config":
-										{
-											"id": "csel1",
-											"displayWidth": 579
-										},
-									"configFixup":
-										[
-											{
-												"type": "set-property",
-												"name": "items",
-												"value":
-													{
-														"type": "array",
-														"elements":
-																[
-																   { "type": "ref", "domain": "brix", "refId": "image1" },
-																   { "type": "ref", "domain": "brix", "refId": "image2" },
-																   { "type": "ref", "domain": "brix", "refId": "image3" },
-																   { "type": "ref", "domain": "brix", "refId": "image4" },
-																   { "type": "ref", "domain": "brix", "refId": "image5" },
-																   { "type": "ref", "domain": "brix", "refId": "image6" }
-																]
-													}
-											}
-										]
-								},
-								{
-									"bricId": "cntr1",
-									"bricType": "SvgContainer",
-									"config":
-										{
-											"maxSize": {"height": "570", "width": "579"},
-										},
-									"configFixup":
-										[
-											{
-												"type": "set-property",
-												"name": "node",
-												"value":
-													{
-														"type": "d3select",
-														"selector": "#bbf82730c109748b4b39a4280af3bbe1c"
-													}
-											}
-										]
-								}
-							],
-						"hookupActions":
-							[
-								{
-									"description": "Append the captioned image to the svg container",
-									"type": "method-call",
-									"instance": {"type": "ref", "domain": "brix", "refId": "cntr1"},
-									"methodName": "append",
-									"args":
-										[
-											{ "type": "ref", "domain": "brix", "refId": "carousel1" }
-										]
-								}
-							]
-					}
-				]
+			 "containerConfig": [
+      {
+        "brixConfig": [
+          {
+            "bricId": "image1", 
+            "bricType": "Image", 
+            "config": {
+              "actualSize": {
+                "height": 400, 
+                "width": 600
+              }, 
+              "caption": "A Norwegian woman", 
+              "captionPosition": "below", 
+              "id": "img1"
+            }, 
+            "configFixup": [
+              {
+                "name": "URI", 
+                "type": "set-property", 
+                "value": {
+                  "parts": [
+                    {
+                      "domain": "info", 
+                      "refId": "imgBaseUrl", 
+                      "type": "ref"
+                    }, 
+                    {
+                      "type": "constant", 
+                      "value": "img/11.14a _42-33307447.jpg"
+                    }
+                  ], 
+                  "type": "join"
+                }
+              }
+            ]
+          }, 
+          {
+            "bricId": "image2", 
+            "bricType": "Image", 
+            "config": {
+              "actualSize": {
+                "height": 400, 
+                "width": 600
+              }, 
+              "caption": "An Italian woman", 
+              "captionPosition": "below", 
+              "id": "img2"
+            }, 
+            "configFixup": [
+              {
+                "name": "URI", 
+                "type": "set-property", 
+                "value": {
+                  "parts": [
+                    {
+                      "domain": "info", 
+                      "refId": "imgBaseUrl", 
+                      "type": "ref"
+                    }, 
+                    {
+                      "type": "constant", 
+                      "value": "img/11.14b _C18ARF.jpg"
+                    }
+                  ], 
+                  "type": "join"
+                }
+              }
+            ]
+          }, 
+          {
+            "bricId": "image3", 
+            "bricType": "Image", 
+            "config": {
+              "actualSize": {
+                "height": 400, 
+                "width": 600
+              }, 
+              "caption": "A Nigerian woman", 
+              "captionPosition": "below", 
+              "id": "img3"
+            }, 
+            "configFixup": [
+              {
+                "name": "URI", 
+                "type": "set-property", 
+                "value": {
+                  "parts": [
+                    {
+                      "domain": "info", 
+                      "refId": "imgBaseUrl", 
+                      "type": "ref"
+                    }, 
+                    {
+                      "type": "constant", 
+                      "value": "img/11.14c _AA85ED.jpg"
+                    }
+                  ], 
+                  "type": "join"
+                }
+              }
+            ]
+          }, 
+          {
+            "bricId": "image4", 
+            "bricType": "Image", 
+            "config": {
+              "actualSize": {
+                "height": 400, 
+                "width": 600
+              }, 
+              "caption": "An Ethiopian man", 
+              "captionPosition": "below", 
+              "id": "img3"
+            }, 
+            "configFixup": [
+              {
+                "name": "URI", 
+                "type": "set-property", 
+                "value": {
+                  "parts": [
+                    {
+                      "domain": "info", 
+                      "refId": "imgBaseUrl", 
+                      "type": "ref"
+                    }, 
+                    {
+                      "type": "constant", 
+                      "value": "img/11.14d _B7A8N9.jpg"
+                    }
+                  ], 
+                  "type": "join"
+                }
+              }
+            ]
+          }, 
+          {
+            "bricId": "image5", 
+            "bricType": "Image", 
+            "config": {
+              "actualSize": {
+                "height": 400, 
+                "width": 600
+              }, 
+              "caption": "An Asian Indian man", 
+              "captionPosition": "below", 
+              "id": "img3"
+            }, 
+            "configFixup": [
+              {
+                "name": "URI", 
+                "type": "set-property", 
+                "value": {
+                  "parts": [
+                    {
+                      "domain": "info", 
+                      "refId": "imgBaseUrl", 
+                      "type": "ref"
+                    }, 
+                    {
+                      "type": "constant", 
+                      "value": "img/11.14e _BF9C75.jpg"
+                    }
+                  ], 
+                  "type": "join"
+                }
+              }
+            ]
+          }, 
+          {
+            "bricId": "image6", 
+            "bricType": "Image", 
+            "config": {
+              "actualSize": {
+                "height": 400, 
+                "width": 600
+              }, 
+              "caption": "A Korean man", 
+              "captionPosition": "below", 
+              "id": "img3"
+            }, 
+            "configFixup": [
+              {
+                "name": "URI", 
+                "type": "set-property", 
+                "value": {
+                  "parts": [
+                    {
+                      "domain": "info", 
+                      "refId": "imgBaseUrl", 
+                      "type": "ref"
+                    }, 
+                    {
+                      "type": "constant", 
+                      "value": "img/11.14f _D1KYJ4.jpg"
+                    }
+                  ], 
+                  "type": "join"
+                }
+              }
+            ]
+          }, 
+          {
+            "bricId": "carousel1", 
+            "bricType": "ImageViewer", 
+            "config": {
+              "displayWidth": 579, 
+              "id": "csel1"
+            }, 
+            "configFixup": [
+              {
+                "name": "items", 
+                "type": "set-property", 
+                "value": {
+                  "elements": [
+                    {
+                      "domain": "brix", 
+                      "refId": "image1", 
+                      "type": "ref"
+                    }, 
+                    {
+                      "domain": "brix", 
+                      "refId": "image2", 
+                      "type": "ref"
+                    }, 
+                    {
+                      "domain": "brix", 
+                      "refId": "image3", 
+                      "type": "ref"
+                    }, 
+                    {
+                      "domain": "brix", 
+                      "refId": "image4", 
+                      "type": "ref"
+                    }, 
+                    {
+                      "domain": "brix", 
+                      "refId": "image5", 
+                      "type": "ref"
+                    }, 
+                    {
+                      "domain": "brix", 
+                      "refId": "image6", 
+                      "type": "ref"
+                    }
+                  ], 
+                  "type": "array"
+                }
+              }
+            ]
+          }, 
+          {
+            "bricId": "cntr1", 
+            "bricType": "SvgContainer", 
+            "config": {
+              "maxSize": {
+                "height": "570", 
+                "width": "579"
+              }
+            }
+          }
+        ], 
+        "containerId": "bbf82730c109748b4b39a4280af3bbe1c", 
+        "description": "Photo carousel includes photos of a Norwegian person, an Italian person, a Nigerian person, an Ethiopian person, an Indian person, and a Korean person", 
+        "hookupActions": [
+          {
+            "args": [
+              {
+                "selector": "#bbf82730c109748b4b39a4280af3bbe1c", 
+                "type": "d3select"
+              }
+            ], 
+            "description": "Draw the svg container", 
+            "instance": {
+              "domain": "brix", 
+              "refId": "cntr1", 
+              "type": "ref"
+            }, 
+            "methodName": "draw", 
+            "type": "method-call"
+          }, 
+          {
+            "args": [
+              {
+                "domain": "brix", 
+                "refId": "carousel1", 
+                "type": "ref"
+              }
+            ], 
+            "description": "Append the captioned image to the svg container", 
+            "instance": {
+              "domain": "brix", 
+              "refId": "cntr1", 
+              "type": "ref"
+            }, 
+            "methodName": "append", 
+            "type": "method-call"
+          }
+        ]
+      }
+    ]
 			};
 
     // create the eventmanager to be used by the created brix, and the
@@ -278,7 +338,7 @@
     a.answerMan = new pearson.brix.utils.LocalAnswerMan();
     a.submitManager = new pearson.brix.utils.SubmitManager(a.eventManager, a.answerMan);
 
-    a.bricLayer = new pearson.brix.BricLayer(null, a.eventManager, a.submitManager);
+    a.bricLayer = new pearson.brix.utils.BricLayer(null, a.eventManager, a.submitManager);
 
     a.building = a.bricLayer.build(a.config);
 

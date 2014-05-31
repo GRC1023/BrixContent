@@ -5,8 +5,8 @@
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta content="Template for Thumbnail Image Carousel Brix" name="description">
     
-    <!-- widgets.css contains styling for the interactive brix -->
-    <link href="css/widgets.css" rel="stylesheet">
+    <!-- brix.css contains styling for the interactive brix -->
+    <link href="css/brix.css" rel="stylesheet">
 </head>
 <body>
     <div id="b978828fb060a4ef693c7a53a9726a69a"></div>
@@ -30,159 +30,192 @@
 		{
 			"description": "Image carousel showing people of different nationalities",
 			"imgBaseUrl": "",
-			"containerConfig":
-				[
-					{
-						"description": "Container for the ImageViewer bric",
-						"containerId": "b978828fb060a4ef693c7a53a9726a69a",
-						"brixConfig":
-							[
-								{
-									"bricId": "image1",
-									"bricType": "Image",
-									"config":
-										{
-											"id": "img1",
-											"actualSize": { "height": 379, "width": 570 },
-											"caption":  "The 1810 census listed the following categories: Free White Males; Free White Females; All Other Free Persons, Except Indians Not Taxed; Slaves <br /> <br /><br /> ",
-											"captionPosition": "below"
-										},
-									"configFixup":
-										[
-											{
-												"type": "set-property",
-												"name": "URI",
-												"value":
-													{
-														"type": "join",
-														"parts":
-														[
-															{ "type": "ref", "domain": "info", "refId": "imgBaseUrl" },
-															{ "type": "constant", "value": "img/P11.25a.jpg" }
-														]
-													}
-											}
-										]
-													   
-								},
-								{
-									"bricId": "image2",
-									"bricType": "Image",
-									"config":
-										{
-											"id": "img2",
-											"actualSize": { "height": 379, "width": 570 },
-											"caption":  "The 1910 census listed the following categories: white; black; mulatto; quadroon; octoroon; Chinese; Japanese; Indian",
-											"captionPosition": "below"
-										},
-									"configFixup":
-										[
-											{
-												"type": "set-property",
-												"name": "URI",
-												"value":
-													{
-														"type": "join",
-														"parts":
-														[
-															{ "type": "ref", "domain": "info", "refId": "imgBaseUrl" },
-															{ "type": "constant", "value": "img/1890_questionnaire_Page_1.jpg" }
-														]
-													}
-											}
-										]
-													   
-								},
-								{
-									"bricId": "image3",
-									"bricType": "Image",
-									"config":
-										{
-											"id": "img3",
-											"actualSize": { "height": 379, "width": 570 },
-											"caption":  "The 2010 census listed the following categories: White; Black, African Am., or Negro; American Indian or Alaska Native; Asian Indian; Chinese; Filipino; Japanese; Korean; Vietnamese; Native Hawaiian; Guamanian or Chamorro; Samoan; Other Asian; Other Pacific Islander; Some other race",
-											"captionPosition": "below"
-										},
-									"configFixup":
-										[
-											{
-												"type": "set-property",
-												"name": "URI",
-												"value":
-													{
-														"type": "join",
-														"parts":
-														[
-															{ "type": "ref", "domain": "info", "refId": "imgBaseUrl" },
-															{ "type": "constant", "value": "img/P11.25c.jpg" }
-														]
-													}
-											}
-										]
-													   
-								},
-								{
-									"bricId": "carousel1",
-									"bricType": "ImageViewer",
-									"config":
-										{
-											"id": "csel1",
-											"displayWidth": 579
-										},
-									"configFixup":
-										[
-											{
-												"type": "set-property",
-												"name": "items",
-												"value":
-													{
-														"type": "array",
-														"elements":
-																[
-																   { "type": "ref", "domain": "brix", "refId": "image1" },
-																   { "type": "ref", "domain": "brix", "refId": "image2" },
-																   { "type": "ref", "domain": "brix", "refId": "image3" }
-																]
-													}
-											}
-										]
-								},
-								{
-									"bricId": "cntr1",
-									"bricType": "SvgContainer",
-									"config":
-										{
-											"maxSize": {"height": "650", "width": "579"},
-										},
-									"configFixup":
-										[
-											{
-												"type": "set-property",
-												"name": "node",
-												"value":
-													{
-														"type": "d3select",
-														"selector": "#b978828fb060a4ef693c7a53a9726a69a"
-													}
-											}
-										]
-								}
-							],
-						"hookupActions":
-							[
-								{
-									"description": "Append the captioned image to the svg container",
-									"type": "method-call",
-									"instance": {"type": "ref", "domain": "brix", "refId": "cntr1"},
-									"methodName": "append",
-									"args":
-										[
-											{ "type": "ref", "domain": "brix", "refId": "carousel1" }
-										]
-								}
-							]
-					}
-				]
+			 "containerConfig": [
+      {
+        "brixConfig": [
+          {
+            "bricId": "image1", 
+            "bricType": "Image", 
+            "config": {
+              "actualSize": {
+                "height": 379, 
+                "width": 570
+              }, 
+              "caption": "The 1810 census listed the following categories: Free White Males; Free White Females; All Other Free Persons, Except Indians Not Taxed; Slaves <br /> <br /><br /> ", 
+              "captionPosition": "below", 
+              "id": "img1"
+            }, 
+            "configFixup": [
+              {
+                "name": "URI", 
+                "type": "set-property", 
+                "value": {
+                  "parts": [
+                    {
+                      "domain": "info", 
+                      "refId": "imgBaseUrl", 
+                      "type": "ref"
+                    }, 
+                    {
+                      "type": "constant", 
+                      "value": "img/P11.25a.jpg"
+                    }
+                  ], 
+                  "type": "join"
+                }
+              }
+            ]
+          }, 
+          {
+            "bricId": "image2", 
+            "bricType": "Image", 
+            "config": {
+              "actualSize": {
+                "height": 379, 
+                "width": 570
+              }, 
+              "caption": "The 1910 census listed the following categories: white; black; mulatto; quadroon; octoroon; Chinese; Japanese; Indian", 
+              "captionPosition": "below", 
+              "id": "img2"
+            }, 
+            "configFixup": [
+              {
+                "name": "URI", 
+                "type": "set-property", 
+                "value": {
+                  "parts": [
+                    {
+                      "domain": "info", 
+                      "refId": "imgBaseUrl", 
+                      "type": "ref"
+                    }, 
+                    {
+                      "type": "constant", 
+                      "value": "img/1890_questionnaire_Page_1.jpg"
+                    }
+                  ], 
+                  "type": "join"
+                }
+              }
+            ]
+          }, 
+          {
+            "bricId": "image3", 
+            "bricType": "Image", 
+            "config": {
+              "actualSize": {
+                "height": 379, 
+                "width": 570
+              }, 
+              "caption": "The 2010 census listed the following categories: White; Black, African Am., or Negro; American Indian or Alaska Native; Asian Indian; Chinese; Filipino; Japanese; Korean; Vietnamese; Native Hawaiian; Guamanian or Chamorro; Samoan; Other Asian; Other Pacific Islander; Some other race", 
+              "captionPosition": "below", 
+              "id": "img3"
+            }, 
+            "configFixup": [
+              {
+                "name": "URI", 
+                "type": "set-property", 
+                "value": {
+                  "parts": [
+                    {
+                      "domain": "info", 
+                      "refId": "imgBaseUrl", 
+                      "type": "ref"
+                    }, 
+                    {
+                      "type": "constant", 
+                      "value": "img/P11.25c.jpg"
+                    }
+                  ], 
+                  "type": "join"
+                }
+              }
+            ]
+          }, 
+          {
+            "bricId": "carousel1", 
+            "bricType": "ImageViewer", 
+            "config": {
+              "displayWidth": 579, 
+              "id": "csel1"
+            }, 
+            "configFixup": [
+              {
+                "name": "items", 
+                "type": "set-property", 
+                "value": {
+                  "elements": [
+                    {
+                      "domain": "brix", 
+                      "refId": "image1", 
+                      "type": "ref"
+                    }, 
+                    {
+                      "domain": "brix", 
+                      "refId": "image2", 
+                      "type": "ref"
+                    }, 
+                    {
+                      "domain": "brix", 
+                      "refId": "image3", 
+                      "type": "ref"
+                    }
+                  ], 
+                  "type": "array"
+                }
+              }
+            ]
+          }, 
+          {
+            "bricId": "cntr1", 
+            "bricType": "SvgContainer", 
+            "config": {
+              "maxSize": {
+                "height": "650", 
+                "width": "579"
+              }
+            }
+          }
+        ], 
+        "containerId": "b978828fb060a4ef693c7a53a9726a69a", 
+        "description": "Container for the ImageViewer bric", 
+        "hookupActions": [
+          {
+            "args": [
+              {
+                "selector": "#b978828fb060a4ef693c7a53a9726a69a", 
+                "type": "d3select"
+              }
+            ], 
+            "description": "Draw the svg container", 
+            "instance": {
+              "domain": "brix", 
+              "refId": "cntr1", 
+              "type": "ref"
+            }, 
+            "methodName": "draw", 
+            "type": "method-call"
+          }, 
+          {
+            "args": [
+              {
+                "domain": "brix", 
+                "refId": "carousel1", 
+                "type": "ref"
+              }
+            ], 
+            "description": "Append the captioned image to the svg container", 
+            "instance": {
+              "domain": "brix", 
+              "refId": "cntr1", 
+              "type": "ref"
+            }, 
+            "methodName": "append", 
+            "type": "method-call"
+          }
+        ]
+      }
+    ]
 			};
 
     // create the eventmanager to be used by the created brix, and the
@@ -191,7 +224,7 @@
     a.answerMan = new pearson.brix.utils.LocalAnswerMan();
     a.submitManager = new pearson.brix.utils.SubmitManager(a.eventManager, a.answerMan);
 
-    a.bricLayer = new pearson.brix.BricLayer(null, a.eventManager, a.submitManager);
+    a.bricLayer = new pearson.brix.utils.BricLayer(null, a.eventManager, a.submitManager);
 
     a.building = a.bricLayer.build(a.config);
 

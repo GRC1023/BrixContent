@@ -5,8 +5,8 @@
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta content="Template for Multiple Choice Question Brix" name="description">
    
-    <!-- widgets.css contains styling for the interactive brix -->
-    <link href="css/widgets.css" rel="stylesheet">
+    <!-- brix.css contains styling for the interactive brix -->
+    <link href="css/brix.css" rel="stylesheet">
 </head>
 <body>
     <div id="b44e9c12d59d0400788b9367db1b2a6fb"></div>
@@ -24,238 +24,326 @@
 	a.config =
 		{
 			"description": "Various Health-Related Indicators",
-			"containerConfig":
-				[
-					{
-						"description": "container for the graph and labels",
-						"containerId": "b44e9c12d59d0400788b9367db1b2a6fb",
-						"brixConfig":
-							[
-								{
-									"bricId": "swapGraph",
-									"bricType": "BarChart",
-									"config":
-										{
-											"id": "graph1",
-											"xAxisFormat":
-												{ 
-													"type": "linear", 
-													"ticks": 4,
-													"format": "0f",
-													"orientation": "bottom",
-													"label": "Mortality Rate (deaths per 100,000/year)"
-												},
-											"yAxisFormat":
-												{
-													"type": "ordinal",
-													"orientation": "left"
-												}
-										},
-                                    "configFixup":
-                                        [
-                                            {
-                                                "type": "set-property",
-                                                "name": "Data",
-                                                "value": { "type": "ref", "domain": "data", "refId": "coronary" }
-                                            }
-                                        ]
-								},
-                                {
-                                    "bricId": "labelSelector1",
-                                    "bricType": "LabelSelector",
-                                    "config":
-                                        {
-                                            "id": "dataLabels",
-                                            "labels": ["Coronary Deaths", "HIV Deaths", "Infant Mortality", "Homicide"],
-                                            "layout": "vertical",
-                                            "itemMargin": {"top": 5, "bottom": 5, "left": 0, "right": 0}
-                                        }
-                                },
-								{
-									"bricId": "cntr1",
-									"bricType": "SvgContainer",
-									"config":
-										{
-											"maxSize": {"height": 400, "width": 579}
-										},
-									"configFixup":
-                                        [
-                                            {
-                                                "type": "set-property",
-                                                "name": "node",
-                                                "value":
-                                                    {
-                                                        "type": "d3select",
-                                                        "selector": "#b44e9c12d59d0400788b9367db1b2a6fb"
-                                                    }
-                                            }
-                                        ]
-								}
-							],
-                            "mortarConfig":
-                            [
-                                {
-                                    "mortarId": "dataswap1",
-                                    "mortarType": "Dataswap",
-                                    "config":
-                                        {
-                                            "eventDetailsProperty": "index",
-                                            "dataPropertySetter": "setData"
-                                        },
-                                    "configFixup":
-                                        [
-                                            {
-                                                "type": "set-property",
-                                                "name": "topic",
-                                                "value":
-                                                    {
-                                                        "type": "brix-topic",
-                                                        "bricType": "LabelSelector",
-                                                        "instanceId": "dataLabels",
-                                                        "eventName": "selected"
-                                                    }
-                                            },
-                                            {
-                                                "type": "set-property",
-                                                "name": "sourceDataArray",
-                                                "value": 
-                                                    {
-                                                        "type": "array", 
-                                                        "elements": 
-                                                            [
-                                                                { "type": "ref", "domain": "data", "refId": "coronary" },
-                                                                { "type": "ref", "domain": "data", "refId": "hiv" },
-                                                                { "type": "ref", "domain": "data", "refId": "infant" },
-                                                                { "type": "ref", "domain": "data", "refId": "homicide" }
-                                                            ]
-                                                    } 
-                                            },
-                                            {
-                                                "type": "set-property",
-                                                "name": "targetBric",
-                                                "value": { "type": "ref", "domain": "brix", "refId": "swapGraph" }
-                                            }
-                                        ]
-                                }
-                            ],
-						"hookupActions":
-							[
-								{
-									"description": "Append the swap graph to the svg container",
-									"type": "method-call",
-									"instance": {"type": "ref", "domain": "brix", "refId": "cntr1"},
-									"methodName": "append",
-									"args":
-										[
-											{ "type": "ref", "domain": "brix", "refId": "swapGraph" },
-                                            { "type": "constant", 
-                                              "value": {"topPercentOffset": 0.15, "leftPercentOffset": 0, "heightPercent": 0.85, "widthPercent": 1}
-                                            }
-										]
-								},
-                                {
-                                    "description": "Append the labels to the svg container",
-                                    "type": "method-call",
-                                    "instance": {"type": "ref", "domain": "brix", "refId": "cntr1"},
-                                    "methodName": "append",
-                                    "args":
-                                        [
-                                            { "type": "ref", "domain": "brix", "refId": "labelSelector1" },
-                                            { "type": "constant", 
-                                              "value": {"topPercentOffset": 0.0, "leftPercentOffset": 0, "heightPercent": 0.2, "widthPercent": 1}
-                                            }
-                                        ]
-                                },
-                                {
-                                    "description": "Initial condition: select 1st label",
-                                    "type": "method-call",
-                                    "instance": {"type": "ref", "domain": "brix", "refId": "labelSelector1"},
-                                    "methodName": "lite",
-                                    "args":
-                                        [
-                                            { "type": "constant", "value": "0" }
-                                        ]
-                                }
-							]
-					},
-					{
-                        "description": "The 'b1414d633f78446ddaa597a2fd737e70d' container contains the swappable callouts",
-                        "containerId": "b1414d633f78446ddaa597a2fd737e70d",
-                        "brixConfig":
-                            [
-                                {
-                                    "bricId": "lbltbl1",
-                                    "bricType": "Callouts",
-                                    "config":
-                                        {
-                                            "id": "callme",
-                                            "textBits":
-                                                [
-                                                    {"cols": ["<strong>Death Rates for Coronary Heart Disease in 2008</strong>", "Coronary heart disease is the leading cause of death in the United States, but African Americans are much more likely to die from this condition than any other racial group (Centers for Disease Control and Prevention 2011)."]},
-                                                    {"cols":["<strong>Rates of HIV Infection of Persons Over 13 Years of Age per 100,000 in 2008</strong>", 
-                                                        "Blacks have by far the highest rates of HIV infection among any racial or ethnic group in the United States. The rate of HIV infection among African Americans is about 10 times the rate for whites and Asians and about 3 times the rate for Hispanics. "]},
-                                                    {"cols": ["<strong>Rates of Infant Mortality per 100,000 in 2006</strong>", "African Americans have the highest rate of infant mortality in the United States, a rate that is more than double that of whites, Asians, and Hispanics."]},
-                                                    {"cols": ["<strong>Homicide Rates per 100,000 in 2007</strong>", "One of the most striking disparities in mortality is in the area of homicide. For example, in 2007 the homicide rate for black males was over 10 times the rate for white and Asian males and about 4 times the rate for Latinos and Native Americans."]}
-                                                ]
-                                        }
-                                }
-                            ],
-                        "mortarConfig":
-                            [
-                                {
-                                    "mortarId": "hilite1",
-                                    "mortarType": "Hilite",
-                                    "config":
-                                        {
-                                            "eventDetailsProperty": "selectKey"
-                                        },
-                                    "configFixup":
-                                        [
-                                            {
-                                                "type": "set-property",
-                                                "name": "topic",
-                                                "value":
-                                                    {
-                                                        "type": "brix-topic",
-                                                        "bricType": "LabelSelector",
-                                                        "instanceId": "dataLabels",
-                                                        "eventName": "selected"
-                                                    }
-                                            },
-                                            {
-                                                "type": "set-property",
-                                                "name": "targetBric",
-                                                "value": { "type": "ref", "domain": "brix", "refId": "lbltbl1" }
-                                            }
-                                        ]
-                                }
-                            ],
-                        "hookupActions":
-                            [
-                                {
-                                    "description": "draw the label table",
-                                    "type": "method-call",
-                                    "instance": {"type": "ref", "domain": "brix", "refId": "lbltbl1"},
-                                    "methodName": "draw",
-                                    "args":
-                                        [
-                                            { "type": "d3select", "selector": "#b44e9c12d59d0400788b9367db1b2a6fb" }
-                                        ]
-                                },
-                                {
-                                    "description": "Initial condition: select 1st table row (note that we may want to use the state field to do this later)",
-                                    "type": "method-call",
-                                    "instance": {"type": "ref", "domain": "brix", "refId": "lbltbl1"},
-                                    "methodName": "lite",
-                                    "args":
-                                        [
-                                            { "type": "constant", "value": "0" }
-                                        ]
-                                }
-
-                            ]
+			"containerConfig": [
+      {
+        "brixConfig": [
+          {
+            "bricId": "swapGraph", 
+            "bricType": "BarChart", 
+            "config": 
+             {
+              "id": "graph1", 
+              "xAxis": 
+              {
+                "label": "Mortality Rate (deaths per 100,000/year)", 
+                "position": "bottom", 
+                "tickmarkSettings":
+                {
+                    "ticks": 4, 
+                    "format": "0f"
+                }
+              }, 
+              "yAxis": {
+                "position": "left"
+              }
+            }, 
+            "configFixup": [
+              {
+                "name": "seriesData", 
+                "type": "set-property", 
+                "value": 
+                {
+                  "domain": "data", 
+                  "refId": "coronary", 
+                  "type": "ref"
+                }
+              }
+            ]
+          }, 
+          {
+            "bricId": "labelSelector1", 
+            "bricType": "LabelSelector", 
+            "config": {
+              "id": "dataLabels", 
+              "itemMargin": {
+                "bottom": 5, 
+                "left": 0, 
+                "right": 0, 
+                "top": 5
+              }, 
+              "labels": [
+                "Coronary Deaths", 
+                "HIV Deaths", 
+                "Infant Mortality", 
+                "Homicide"
+              ], 
+              "layout": "vertical"
+            }
+          }, 
+          {
+            "bricId": "cntr1", 
+            "bricType": "SvgContainer", 
+            "config": {
+              "maxSize": {
+                "height": 400, 
+                "width": 579
+              }
+            }
+          }
+        ], 
+        "containerId": "b44e9c12d59d0400788b9367db1b2a6fb", 
+        "description": "container for the graph and labels", 
+        "hookupActions": [
+          {
+            "args": [
+              {
+                "selector": "#b44e9c12d59d0400788b9367db1b2a6fb", 
+                "type": "d3select"
+              }
+            ], 
+            "description": "Draw the svg container", 
+            "instance": {
+              "domain": "brix", 
+              "refId": "cntr1", 
+              "type": "ref"
+            }, 
+            "methodName": "draw", 
+            "type": "method-call"
+          }, 
+          {
+            "args": [
+              {
+                "domain": "brix", 
+                "refId": "swapGraph", 
+                "type": "ref"
+              }, 
+              {
+                "type": "constant", 
+                "value": {
+                  "heightPercent": 0.85, 
+                  "leftPercentOffset": 0, 
+                  "topPercentOffset": 0.15, 
+                  "widthPercent": 1
+                }
+              }
+            ], 
+            "description": "Append the swap graph to the svg container", 
+            "instance": {
+              "domain": "brix", 
+              "refId": "cntr1", 
+              "type": "ref"
+            }, 
+            "methodName": "append", 
+            "type": "method-call"
+          }, 
+          {
+            "args": [
+              {
+                "domain": "brix", 
+                "refId": "labelSelector1", 
+                "type": "ref"
+              }, 
+              {
+                "type": "constant", 
+                "value": {
+                  "heightPercent": 0.2, 
+                  "leftPercentOffset": 0, 
+                  "topPercentOffset": 0.0, 
+                  "widthPercent": 1
+                }
+              }
+            ], 
+            "description": "Append the labels to the svg container", 
+            "instance": {
+              "domain": "brix", 
+              "refId": "cntr1", 
+              "type": "ref"
+            }, 
+            "methodName": "append", 
+            "type": "method-call"
+          }, 
+          {
+            "args": [
+              {
+                "type": "constant", 
+                "value": "0"
+              }
+            ], 
+            "description": "Initial condition: select 1st label", 
+            "instance": {
+              "domain": "brix", 
+              "refId": "labelSelector1", 
+              "type": "ref"
+            }, 
+            "methodName": "lite", 
+            "type": "method-call"
+          }
+        ], 
+        "mortarConfig": [
+          {
+            "config": {
+              "dataPropertySetter": "setData", 
+              "eventDetailsProperty": "index"
+            }, 
+            "configFixup": [
+              {
+                "name": "topic", 
+                "type": "set-property", 
+                "value": {
+                  "bricType": "LabelSelector", 
+                  "eventName": "selected", 
+                  "instanceId": "dataLabels", 
+                  "type": "brix-topic"
+                }
+              }, 
+              {
+                "name": "sourceDataArray", 
+                "type": "set-property", 
+                "value": {
+                  "elements": [
+                    {
+                      "domain": "data", 
+                      "refId": "coronary", 
+                      "type": "ref"
+                    }, 
+                    {
+                      "domain": "data", 
+                      "refId": "hiv", 
+                      "type": "ref"
+                    }, 
+                    {
+                      "domain": "data", 
+                      "refId": "infant", 
+                      "type": "ref"
+                    }, 
+                    {
+                      "domain": "data", 
+                      "refId": "homicide", 
+                      "type": "ref"
                     }
-				],
+                  ], 
+                  "type": "array"
+                }
+              }, 
+              {
+                "name": "targetBric", 
+                "type": "set-property", 
+                "value": {
+                  "domain": "brix", 
+                  "refId": "swapGraph", 
+                  "type": "ref"
+                }
+              }
+            ], 
+            "mortarId": "dataswap1", 
+            "mortarType": "Dataswap"
+          }
+        ]
+      }, 
+      {
+        "brixConfig": [
+          {
+            "bricId": "lbltbl1", 
+            "bricType": "Callouts", 
+            "config": {
+              "id": "callme", 
+              "textBits": [
+                {
+                  "cols": [
+                    "<strong>Death Rates for Coronary Heart Disease in 2008</strong>", 
+                    "Coronary heart disease is the leading cause of death in the United States, but African Americans are much more likely to die from this condition than any other racial group (Centers for Disease Control and Prevention 2011)."
+                  ]
+                }, 
+                {
+                  "cols": [
+                    "<strong>Rates of HIV Infection of Persons Over 13 Years of Age per 100,000 in 2008</strong>", 
+                    "Blacks have by far the highest rates of HIV infection among any racial or ethnic group in the United States. The rate of HIV infection among African Americans is about 10 times the rate for whites and Asians and about 3 times the rate for Hispanics. "
+                  ]
+                }, 
+                {
+                  "cols": [
+                    "<strong>Rates of Infant Mortality per 100,000 in 2006</strong>", 
+                    "African Americans have the highest rate of infant mortality in the United States, a rate that is more than double that of whites, Asians, and Hispanics."
+                  ]
+                }, 
+                {
+                  "cols": [
+                    "<strong>Homicide Rates per 100,000 in 2007</strong>", 
+                    "One of the most striking disparities in mortality is in the area of homicide. For example, in 2007 the homicide rate for black males was over 10 times the rate for white and Asian males and about 4 times the rate for Latinos and Native Americans."
+                  ]
+                }
+              ]
+            }
+          }
+        ], 
+        "containerId": "b1414d633f78446ddaa597a2fd737e70d", 
+        "description": "The 'b1414d633f78446ddaa597a2fd737e70d' container contains the swappable callouts", 
+        "hookupActions": [
+          {
+            "args": [
+              {
+                "selector": "#b44e9c12d59d0400788b9367db1b2a6fb", 
+                "type": "d3select"
+              }
+            ], 
+            "description": "draw the label table", 
+            "instance": {
+              "domain": "brix", 
+              "refId": "lbltbl1", 
+              "type": "ref"
+            }, 
+            "methodName": "draw", 
+            "type": "method-call"
+          }, 
+          {
+            "args": [
+              {
+                "type": "constant", 
+                "value": "0"
+              }
+            ], 
+            "description": "Initial condition: select 1st table row (note that we may want to use the state field to do this later)", 
+            "instance": {
+              "domain": "brix", 
+              "refId": "lbltbl1", 
+              "type": "ref"
+            }, 
+            "methodName": "lite", 
+            "type": "method-call"
+          }
+        ], 
+        "mortarConfig": [
+          {
+            "config": {
+              "eventDetailsProperty": "selectKey"
+            }, 
+            "configFixup": [
+              {
+                "name": "topic", 
+                "type": "set-property", 
+                "value": {
+                  "bricType": "LabelSelector", 
+                  "eventName": "selected", 
+                  "instanceId": "dataLabels", 
+                  "type": "brix-topic"
+                }
+              }, 
+              {
+                "name": "targetBric", 
+                "type": "set-property", 
+                "value": {
+                  "domain": "brix", 
+                  "refId": "lbltbl1", 
+                  "type": "ref"
+                }
+              }
+            ], 
+            "mortarId": "hilite1", 
+            "mortarType": "Hilite"
+          }
+        ]
+      }
+    ], 
 			"data":
                 {
                    
@@ -306,7 +394,7 @@
 	a.answerMan = new pearson.brix.utils.LocalAnswerMan();
 	a.submitManager = new pearson.brix.utils.SubmitManager(a.eventManager, a.answerMan);
 
-	a.bricLayer = new pearson.brix.BricLayer(null, a.eventManager, a.submitManager);
+	a.bricLayer = new pearson.brix.utils.BricLayer(null, a.eventManager, a.submitManager);
 
 	pearson.utils.logToConsole(true, "FINER");
 
