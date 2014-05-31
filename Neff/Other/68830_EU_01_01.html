@@ -5,8 +5,8 @@
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta content="Template for Multiple Choice Question Brix" name="description">
    
-    <!-- widgets.css contains styling for the interactive brix -->
-    <link href="css/widgets.css" rel="stylesheet">
+    <!-- brix.css contains styling for the interactive brix -->
+    <link href="css/brix.css" rel="stylesheet">
 </head>
 <body>
     <div id="bb689ee6c8a4143feab39daa527951ae5"></div>
@@ -23,213 +23,283 @@
 	// The activity config that defines the brix and mortar for this page
 	a.config =
 		{
-			"description": "Global energy use, 1800–2000",
-			"containerConfig":
-				[
-					{
-						"description": "container for the graph and labels",
-						"containerId": "bb689ee6c8a4143feab39daa527951ae5",
-						"brixConfig":
-							[
-								{
-									"bricId": "imageGraph",
-									"bricType": "Image",
-									"config":
-										{
-											"id": "image1",
-                                            "caption": "Global energy use, 1800–2000",
-                                            "actualSize": {"height": 599, "width": 425}
-										},
-                                    "configFixup":
-                                        [
-                                            {
-                                                "type": "set-property",
-                                                "name": "URI",
-                                                "value":
-                                                    {
-                                                        "type": "join",
-                                                        "parts":
-                                                        [
-                                                            { "type": "ref", "domain": "info", "refId": "imgBaseUrl" },
-                                                            { "type": "constant", "value": "img/68830_EU_01_01.png" }
-                                                        ]
-                                                    }
-                                            }
-                                        ]
-								},
-                                {
-                                    "bricId": "labelGroup1",
-                                    "bricType": "LabelGroup",
-                                    "config":
-                                        {
-                                            "id": "dataLabels",
-                                            "type": "numbered",
-                                            "labels": [
-                                                {"content": "1", "xyPos": [0.235, 0.13], "width": 0},
-                                                {"content": "2", "xyPos": [0.43, 0.13], "width": 0},
-                                                {"content": "3", "xyPos": [0.61, 0.13], "width": 0}
-                                                    ]
-                                        }
-                                },
-								{
-									"bricId": "cntr1",
-									"bricType": "SvgContainer",
-									"config":
-										{
-											"maxSize": {"height": 445, "width": 557}
-										},
-									"configFixup":
-                                        [
-                                            {
-                                                "type": "set-property",
-                                                "name": "node",
-                                                "value":
-                                                    {
-                                                        "type": "d3select",
-                                                        "selector": "#bb689ee6c8a4143feab39daa527951ae5"
-                                                    }
-                                            }
-                                        ]
-								}
-							],
-						"hookupActions":
-							[
-								{
-									"description": "Append the image to the svg container",
-									"type": "method-call",
-									"instance": {"type": "ref", "domain": "brix", "refId": "cntr1"},
-									"methodName": "append",
-									"args":
-										[
-											{ "type": "ref", "domain": "brix", "refId": "imageGraph" }
-										]
-								},
-                                {
-                                    "description": "Append the labels to the svg container",
-                                    "type": "method-call",
-                                    "instance": {"type": "ref", "domain": "brix", "refId": "cntr1"},
-                                    "methodName": "append",
-                                    "args":
-                                        [
-                                            { "type": "ref", "domain": "brix", "refId": "labelGroup1" }
-                                        ]
-                                },
-                                {
-                                    "description": "Initial condition: select 1st label",
-                                    "type": "method-call",
-                                    "instance": {"type": "ref", "domain": "brix", "refId": "labelGroup1"},
-                                    "methodName": "lite",
-                                    "args":
-                                        [
-                                            { "type": "constant", "value": "0" }
-                                        ]
-                                }
-							]
-					},
-					{
-                        "description": "The container contains the liteable callouts",
-                        "containerId": "bb689ee6c8a4143feab39daa527951ae5",
-                        "brixConfig":
-                            [
-                                {
-                                    "bricId": "lbltbl1",
-                                    "bricType": "Callouts",
-                                    "config":
-                                        {
-                                            "id": "callme",
-                                            "show": "all",
-                                            "textBits":
-                                                [    
-                                                    {"cols": ["Phase 1 (1850-1920): Coal begins to replace wood as the primary fuel for home heating, industry, and steam-powered transportation."]},
-                                                    {"cols": ["Phase 2 (1920-1950): Liquid fuels made from oil become the foundation of transportation systems."]},
-                                                    {"cols": ["Phase 3 (after 1950): A new series of power plants fueled by coal, natural gas, and nuclear energy generate electricity that is distributed to homes and businesses through the electric power grid."]},
-                                                ]
-                                        }
-                                }
-                            ],
-                       "mortarConfig":
-                            [
-                                {
-                                    "mortarId": "hilite1",
-                                    "mortarType": "Hilite",
-                                    "config":
-                                        {
-                                            "eventDetailsProperty": "selectKey"
-                                        },
-                                    "configFixup":
-                                        [
-                                            {
-                                                "type": "set-property",
-                                                "name": "topic",
-                                                "value":
-                                                    {
-                                                        "type": "brix-topic",
-                                                        "bricType": "LabelGroup",
-                                                        "instanceId": "dataLabels",
-                                                        "eventName": "selected"
-                                                    }
-                                            },
-                                            {
-                                                "type": "set-property",
-                                                "name": "targetBric",
-                                                "value": { "type": "ref", "domain": "brix", "refId": "lbltbl1" }
-                                            }
-                                        ]
-                                }, 
-                                {
-                                    "mortarId": "hilite2",
-                                    "mortarType": "Hilite",
-                                    "config":
-                                        {
-                                            "eventDetailsProperty": "selectKey"
-                                        },
-                                    "configFixup":
-                                        [
-                                            {
-                                                "type": "set-property",
-                                                "name": "topic",
-                                                "value":
-                                                    {
-                                                        "type": "brix-topic",
-                                                        "bricType": "Callouts",
-                                                        "instanceId": "callme",
-                                                        "eventName": "selected"
-                                                    }
-                                            },
-                                            {
-                                                "type": "set-property",
-                                                "name": "targetBric",
-                                                "value": { "type": "ref", "domain": "brix", "refId": "labelGroup1" }
-                                            }
-                                        ]
-                                }
-                            ], 
-                        "hookupActions":
-                            [
-                                {
-                                    "description": "draw the label table",
-                                    "type": "method-call",
-                                    "instance": {"type": "ref", "domain": "brix", "refId": "lbltbl1"},
-                                    "methodName": "draw",
-                                    "args":
-                                        [
-                                            { "type": "d3select", "selector": "#bb689ee6c8a4143feab39daa527951ae5" }
-                                        ]
-                                },
-                                {
-                                    "description": "Initial condition: select 1st table row",
-                                    "type": "method-call",
-                                    "instance": {"type": "ref", "domain": "brix", "refId": "lbltbl1"},
-                                    "methodName": "lite",
-                                    "args":
-                                        [
-                                            { "type": "constant", "value": "0" }
-                                        ]
-                                }
-
-                            ]
+			
+    "containerConfig": [
+      {
+        "brixConfig": [
+          {
+            "bricId": "imageGraph", 
+            "bricType": "Image", 
+            "config": {
+              "actualSize": {
+                "height": 599, 
+                "width": 425
+              }, 
+              "caption": "Global energy use, 1800\u20132000", 
+              "id": "image1"
+            }, 
+            "configFixup": [
+              {
+                "name": "URI", 
+                "type": "set-property", 
+                "value": {
+                  "parts": [
+                    {
+                      "domain": "info", 
+                      "refId": "imgBaseUrl", 
+                      "type": "ref"
+                    }, 
+                    {
+                      "type": "constant", 
+                      "value": "img/68830_EU_01_01.png"
                     }
-				]
+                  ], 
+                  "type": "join"
+                }
+              }
+            ]
+          }, 
+          {
+            "bricId": "labelGroup1", 
+            "bricType": "LabelGroup", 
+            "config": {
+              "id": "dataLabels", 
+              "labels": [
+                {
+                  "content": "1", 
+                  "width": 0, 
+                  "xyPos": [
+                    0.235, 
+                    0.13
+                  ]
+                }, 
+                {
+                  "content": "2", 
+                  "width": 0, 
+                  "xyPos": [
+                    0.43, 
+                    0.13
+                  ]
+                }, 
+                {
+                  "content": "3", 
+                  "width": 0, 
+                  "xyPos": [
+                    0.61, 
+                    0.13
+                  ]
+                }
+              ], 
+              "type": "numbered"
+            }
+          }, 
+          {
+            "bricId": "cntr1", 
+            "bricType": "SvgContainer", 
+            "config": {
+              "maxSize": {
+                "height": 445, 
+                "width": 557
+              }
+            }
+          }
+        ], 
+        "containerId": "bb689ee6c8a4143feab39daa527951ae5", 
+        "description": "container for the graph and labels", 
+        "hookupActions": [
+          {
+            "args": [
+              {
+                "selector": "#bb689ee6c8a4143feab39daa527951ae5", 
+                "type": "d3select"
+              }
+            ], 
+            "description": "Draw the svg container", 
+            "instance": {
+              "domain": "brix", 
+              "refId": "cntr1", 
+              "type": "ref"
+            }, 
+            "methodName": "draw", 
+            "type": "method-call"
+          }, 
+          {
+            "args": [
+              {
+                "domain": "brix", 
+                "refId": "imageGraph", 
+                "type": "ref"
+              }
+            ], 
+            "description": "Append the image to the svg container", 
+            "instance": {
+              "domain": "brix", 
+              "refId": "cntr1", 
+              "type": "ref"
+            }, 
+            "methodName": "append", 
+            "type": "method-call"
+          }, 
+          {
+            "args": [
+              {
+                "domain": "brix", 
+                "refId": "labelGroup1", 
+                "type": "ref"
+              }
+            ], 
+            "description": "Append the labels to the svg container", 
+            "instance": {
+              "domain": "brix", 
+              "refId": "cntr1", 
+              "type": "ref"
+            }, 
+            "methodName": "append", 
+            "type": "method-call"
+          }, 
+          {
+            "args": [
+              {
+                "type": "constant", 
+                "value": "0"
+              }
+            ], 
+            "description": "Initial condition: select 1st label", 
+            "instance": {
+              "domain": "brix", 
+              "refId": "labelGroup1", 
+              "type": "ref"
+            }, 
+            "methodName": "lite", 
+            "type": "method-call"
+          }
+        ]
+      }, 
+      {
+        "brixConfig": [
+          {
+            "bricId": "lbltbl1", 
+            "bricType": "Callouts", 
+            "config": {
+              "id": "callme", 
+              "show": "all", 
+              "textBits": [
+                {
+                  "cols": [
+                    "Phase 1 (1850-1920): Coal begins to replace wood as the primary fuel for home heating, industry, and steam-powered transportation."
+                  ]
+                }, 
+                {
+                  "cols": [
+                    "Phase 2 (1920-1950): Liquid fuels made from oil become the foundation of transportation systems."
+                  ]
+                }, 
+                {
+                  "cols": [
+                    "Phase 3 (after 1950): A new series of power plants fueled by coal, natural gas, and nuclear energy generate electricity that is distributed to homes and businesses through the electric power grid."
+                  ]
+                }
+              ]
+            }
+          }
+        ], 
+        "containerId": "bb689ee6c8a4143feab39daa527951ae5", 
+        "description": "The container contains the liteable callouts", 
+        "hookupActions": [
+          {
+            "args": [
+              {
+                "selector": "#bb689ee6c8a4143feab39daa527951ae5", 
+                "type": "d3select"
+              }
+            ], 
+            "description": "draw the label table", 
+            "instance": {
+              "domain": "brix", 
+              "refId": "lbltbl1", 
+              "type": "ref"
+            }, 
+            "methodName": "draw", 
+            "type": "method-call"
+          }, 
+          {
+            "args": [
+              {
+                "type": "constant", 
+                "value": "0"
+              }
+            ], 
+            "description": "Initial condition: select 1st table row", 
+            "instance": {
+              "domain": "brix", 
+              "refId": "lbltbl1", 
+              "type": "ref"
+            }, 
+            "methodName": "lite", 
+            "type": "method-call"
+          }
+        ], 
+        "mortarConfig": [
+          {
+            "config": {
+              "eventDetailsProperty": "selectKey"
+            }, 
+            "configFixup": [
+              {
+                "name": "topic", 
+                "type": "set-property", 
+                "value": {
+                  "bricType": "LabelGroup", 
+                  "eventName": "selected", 
+                  "instanceId": "dataLabels", 
+                  "type": "brix-topic"
+                }
+              }, 
+              {
+                "name": "targetBric", 
+                "type": "set-property", 
+                "value": {
+                  "domain": "brix", 
+                  "refId": "lbltbl1", 
+                  "type": "ref"
+                }
+              }
+            ], 
+            "mortarId": "hilite1", 
+            "mortarType": "Hilite"
+          }, 
+          {
+            "config": {
+              "eventDetailsProperty": "selectKey"
+            }, 
+            "configFixup": [
+              {
+                "name": "topic", 
+                "type": "set-property", 
+                "value": {
+                  "bricType": "Callouts", 
+                  "eventName": "selected", 
+                  "instanceId": "callme", 
+                  "type": "brix-topic"
+                }
+              }, 
+              {
+                "name": "targetBric", 
+                "type": "set-property", 
+                "value": {
+                  "domain": "brix", 
+                  "refId": "labelGroup1", 
+                  "type": "ref"
+                }
+              }
+            ], 
+            "mortarId": "hilite2", 
+            "mortarType": "Hilite"
+          }
+        ]
+      }
+    ], 
+    "description": "Global energy use, 1800\u20132000"
 		};
 
 	// create the eventmanager to be used by the created brix, and the
