@@ -148,7 +148,7 @@
         "brixConfig": [
           {
             "bricId": "graph1", 
-            "bricType": "BarChart", 
+            "bricType": "ProtoBarChart", 
             "config": {
               "Data": [
                 []
@@ -175,7 +175,7 @@
           }, 
           {
             "bricId": "graph2", 
-            "bricType": "BarChart", 
+            "bricType": "ProtoBarChart", 
             "config": {
               "Data": [
                 [], 
@@ -208,22 +208,28 @@
                 "height": 450, 
                 "width": 577
               }
-            }, 
-            "configFixup": [
-              {
-                "name": "node", 
-                "type": "set-property", 
-                "value": {
-                  "selector": "#b80d4cb5294d8411894be965d7984e0c4", 
-                  "type": "d3select"
-                }
-              }
-            ]
+            }
           }
         ], 
         "containerId": "b80d4cb5294d8411894be965d7984e0c4", 
         "description": "container for interactive graph based on slider value", 
         "hookupActions": [
+          {
+            "args": [
+              {
+                "selector": "#b80d4cb5294d8411894be965d7984e0c4", 
+                "type": "d3select"
+              }
+            ], 
+            "description": "Draw the svg container", 
+            "instance": {
+              "domain": "brix", 
+              "refId": "cntr2", 
+              "type": "ref"
+            }, 
+            "methodName": "draw", 
+            "type": "method-call"
+          }, 
           {
             "args": [
               {
