@@ -4,14 +4,14 @@
     <meta charset="UTF-8">
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta content="Template for Multiple Choice Question Brix" name="description">
-   
+
     <!-- brix.css contains styling for the interactive brix -->
     <link href="css/brix.css" rel="stylesheet">
 </head>
 <body>
     <div id="ba32da54f454548448a665159d090a2d9"></div>
     <script src="js/d3.v3.min.js"></script>
-    
+
     <!-- Local directory copy of built brixlib -->
     <script src="js/brixlib-compiled.js"></script>
 
@@ -43,586 +43,474 @@
     <script type="text/javascript">
     //<![CDATA[
 
-	// Create an object that will contain the objects needed for the activities
-	// on this page.
-	pearson.brix.activity = {};
-	var a = pearson.brix.activity;
+    // Create an object that will contain the objects needed for the activities
+    // on this page.
+    pearson.brix.activity = {};
+    var a = pearson.brix.activity;
 
-	// The activity config that defines the brix and mortar for this page
-    // original config replaced by config in converted json file (less legible than original)
-	a.config =
+    // The activity config that defines the brix and mortar for this page
+    a.config =
       {
-        "containerConfig": [
-      {
-        "brixConfig": [
+        "description": "Graph Carousel on Post-Civil Rights Era Racial Attitudes on Marriage, Schools, & Residential Choice",
+        "containerConfig":
+        [
           {
-            "bricId": "swapGraph", 
-            "bricType": "LineGraph", 
-              "config": {
-                  "id": "graph1", 
-                  "tracePoints": [], 
-                  "showLegend": true,
-                  "legendVerticalPosition": "top",
-                  "legendHorizontalPosition": "right",
-                  "xAxis": {
-                    "label": "Year", 
-                    "location": "bottom", 
-                    "tickmarkSettings": {
-                      "ticks": [ 1940, 1955, 1970, 1985, 2000, 2015],
-                      "format": "0f", 
-                      }
-                    }, 
-                  "yAxis": {
-                    "label": "Percentage (%)", 
-                    "position": "left", 
-                    "tickmarkSettings": {
-                    "ticks": [ 0, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100]}
-                    },
-                  "traceAttributes": 
-                    [
-                      { "traceIndex": 0, "legendContent": "First Trace"},
-                      { "traceIndex": 1, "legendContent": "Second Trace"}
-                    ]
-            }, 
-            "configFixup": [
+            "description": "container for the graph and labels",
+            "containerId": "graphNlabelCntr",
+            "brixConfig":
+            [
               {
-                "name": "tracePoints", 
-                "type": "set-property", 
-                "value": {
-                  "domain": "data", 
-                  "refId": "intermarriage", 
-                  "type": "ref"
+                "bricId": "swapGraph",
+                "bricType": "LineGraph",
+                "config":
+                {
+                  "id": "graph1",
+                  "type": "lines",
+                  "xAxisFormat":
+                  {
+                    "format": "0f",
+                    "label": "Year",
+                    "orientation": "bottom",
+                    "ticks": [ 1940, 1955, 1970, 1985, 2000, 2015 ],
+                    "type": "linear"
+                  },
+                  "yAxisFormat":
+                  {
+                    "label": "Percentage (%)",
+                    "orientation": "left",
+                    "ticks": [ 0, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100 ],
+                    "type": "linear"
+                  }
+                },
+                "configFixup":
+                [
+                  {
+                    "name": "Data",
+                    "type": "set-property",
+                    "value": { "type": "ref", "domain": "data", "refId": "intermarriage" }
+                  }
+                ]
+              },
+              {
+                "bricId": "legend1",
+                "bricType": "ProtoLegend",
+                "config":
+                {
+                  "id": "legendSchools",
+                  "type": "line",
+                  "xPos": "right",
+                  "yPos": "top"
+                },
+                "configFixup":
+                [
+                  {
+                    "name": "labels",
+                    "type": "set-property",
+                    "value": { "type": "ref", "domain": "data", "refId": "intermarriageLegend" }
+                  }
+                ]
+              },
+              {
+                "bricId": "labelSelector1",
+                "bricType": "LabelSelector",
+                "config":
+                {
+                  "id": "dataLabels",
+                  "itemMargin": { "top": 5, "bottom": 5, "left": 0, "right": 0 },
+                  "labels":
+                  [
+                    "Intermarriage",
+                    "Schools",
+                    "Neighborhoods"
+                  ],
+                  "layout": "vertical"
                 }
               },
               {
-                "name": "traceAttributes", 
-                "type": "set-property", 
-                "value": {
-                  "domain": "data", 
-                  "refId": "intermarriageLegend", 
-                  "type": "ref"
-                }
-              }
-            ]
-          }, 
-          {
-            "bricId": "labelSelector1", 
-            "bricType": "LabelSelector", 
-            "config": {
-              "id": "dataLabels", 
-              "itemMargin": {
-                "bottom": 5, 
-                "left": 0, 
-                "right": 0, 
-                "top": 5
-              }, 
-              "labels": [
-                "Intermarriage", 
-                "Schools", 
-                "Neighborhoods"
-              ], 
-              "layout": "vertical"
-            }
-          }, 
-          {
-            "bricId": "cntr1", 
-            "bricType": "SvgContainer", 
-            "config": {
-              "maxSize": {
-                "height": 400, 
-                "width": 600
-              }
-            }
-          }
-        ], 
-        "containerId": "target1", 
-        "description": "container for the graph and labels", 
-        "hookupActions": [
-          {
-            "description": "Draw the svg container", 
-            "instance": {
-              "domain": "brix", 
-              "refId": "cntr1", 
-              "type": "ref"
-            }, 
-            "methodName": "draw", 
-            "type": "method-call",
-            "args": [
-              {
-                "selector": "#ba32da54f454548448a665159d090a2d9", 
-                "type": "d3select"
-              }
-            ]
-          }, 
-          {
-            "args": [
-              {
-                "domain": "brix", 
-                "refId": "swapGraph", 
-                "type": "ref"
-              }, 
-              {
-                "type": "constant", 
-                "value": {
-                  "heightPercent": 0.85, 
-                  "leftPercentOffset": 0, 
-                  "topPercentOffset": 0.15, 
-                  "widthPercent": 1
-                }
-              }
-            ], 
-            "description": "Append the swap graph to the svg container", 
-            "instance": {
-              "domain": "brix", 
-              "refId": "cntr1", 
-              "type": "ref"
-            }, 
-            "methodName": "append", 
-            "type": "method-call"
-          }, 
-          {
-            "args": [
-              {
-                "domain": "brix", 
-                "refId": "labelSelector1", 
-                "type": "ref"
-              }, 
-              {
-                "type": "constant", 
-                "value": {
-                  "heightPercent": 0.2, 
-                  "leftPercentOffset": 0, 
-                  "topPercentOffset": 0.0, 
-                  "widthPercent": 1
-                }
-              }
-            ], 
-            "description": "Append the labels to the svg container", 
-            "instance": {
-              "domain": "brix", 
-              "refId": "cntr1", 
-              "type": "ref"
-            }, 
-            "methodName": "append", 
-            "type": "method-call"
-          }, 
-          {
-            "args": [
-              {
-                "type": "constant", 
-                "value": "0"
-              }
-            ], 
-            "description": "Initial condition: select 1st label", 
-            "instance": {
-              "domain": "brix", 
-              "refId": "labelSelector1", 
-              "type": "ref"
-            }, 
-            "methodName": "lite", 
-            "type": "method-call"
-          }
-        ], 
-        "mortarConfig": [
-          {
-            "config": {
-              "dataPropertySetter": "setData", 
-              "eventDetailsProperty": "index"
-            }, 
-            "configFixup": [
-              {
-                "name": "topic", 
-                "type": "set-property", 
-                "value": {
-                  "bricType": "LabelSelector", 
-                  "eventName": "selected", 
-                  "instanceId": "dataLabels", 
-                  "type": "brix-topic"
-                }
-              }, 
-              {
-                "name": "sourceDataArray", 
-                "type": "set-property", 
-                "value": {
-                  "elements": [
-                    {
-                      "domain": "data", 
-                      "refId": "intermarriage", 
-                      "type": "ref"
-                    }, 
-                    {
-                      "domain": "data", 
-                      "refId": "schools", 
-                      "type": "ref"
-                    }, 
-                    {
-                      "domain": "data", 
-                      "refId": "neighborhoods", 
-                      "type": "ref"
-                    }
-                  ], 
-                  "type": "array"
-                }
-              }, 
-              {
-                "name": "targetBric", 
-                "type": "set-property", 
-                "value": {
-                  "domain": "brix", 
-                  "refId": "swapGraph", 
-                  "type": "ref"
-                }
-              }
-            ], 
-            "mortarId": "dataswap1", 
-            "mortarType": "Dataswap"
-          }, 
-          {
-            "config": {
-              "dataPropertySetter": "setTraceAttributes", 
-              "eventDetailsProperty": "index"
-            }, 
-            "configFixup": [
-              {
-                "name": "topic", 
-                "type": "set-property", 
-                "value": {
-                  "bricType": "LabelSelector", 
-                  "eventName": "selected", 
-                  "instanceId": "dataLabels", 
-                  "type": "brix-topic"
-                }
-              }, 
-              {
-                "name": "sourceDataArray", 
-                "type": "set-property", 
-                "value": {
-                  "elements": [
-                    {
-                      "domain": "data", 
-                      "refId": "intermarriageLegend", 
-                      "type": "ref"
-                    }, 
-                    {
-                      "domain": "data", 
-                      "refId": "schoolsLegend", 
-                      "type": "ref"
-                    }, 
-                    {
-                      "domain": "data", 
-                      "refId": "neighborhoodsLegend", 
-                      "type": "ref"
-                    }
-                  ], 
-                  "type": "array"
-                }
-              }, {
-                "name": "targetBric", 
-                "type": "set-property", 
-                "value": {
-                  "domain": "brix", 
-                  "refId": "swapGraph", 
-                  "type": "ref"
-                }
-              }
-            ], 
-            "mortarId": "dataswap2", 
-            "mortarType": "Dataswap"
-          }, 
-         /*{
-            "config": {
-              "eventDetailsProperty": "selectKey"
-            }, 
-            "configFixup": [
-             {
-                "name": "topic", 
-                "type": "set-property", 
-                "value": {
-                  "bricType": "Legend", 
-                  "eventName": "selected", 
-                  "instanceId": "legendSchools", 
-                  "type": "brix-topic"
-                }
-              }, 
-              {
-                "name": "targetBric", 
-                "type": "set-property", 
-                "value": {
-                  "domain": "brix", 
-                  "refId": "swapGraph", 
-                  "type": "ref"
-                }
-              }
-            ], 
-            "mortarId": "hilite3", 
-            "mortarType": "Hilite"
-          },   
-          {
-            "config": {
-              "eventDetailsProperty": "selectKey"
-            }, 
-            "configFixup": [
-              {
-                "name": "topic", 
-                "type": "set-property", 
-                "value": {
-                  "bricType": "LineGraph", 
-                  "eventName": "selected", 
-                  "instanceId": "graph1", 
-                  "type": "brix-topic"
-                }
-              }, 
-              {
-                "name": "targetBric", 
-                "type": "set-property", 
-                "value": {
-                  "domain": "brix", 
-                  "refId": "legend1", 
-                  "type": "ref"
-                }
-              }
-            ], 
-            "mortarId": "hilite2", 
-            "mortarType": "Hilite"
-          }*/
-        ]
-      }, 
-      {
-        "brixConfig": [
-          {
-            "bricId": "lbltbl1", 
-            "bricType": "Callouts", 
-            "config": {
-              "id": "callme", 
-              "textBits": [
+                "bricId": "cntr1",
+                "bricType": "SvgContainer",
+                "config":
                 {
-                  "cols": [
-                    "<b>Survey Question Asked:</b><br />Do you approve or disapprove of racial intermarriage?"
-                  ]
-                }, 
-                {
-                  "cols": [
-                    "<b>Survey Question Asked:</b><br />Do you think white people and black/negroes should go to the same schools or separate schools?"
-                  ]
-                }, 
-                {
-                  "cols": [
-                    "<b>Survey Question Asked:</b><br />Do you agree or disagree with the statement: White people have a right to keep (Negroes/blacks/African Americans) out of their neighborhoods if they want to, and (Negroes/blacks/African Americans) should respect that right."
-                  ]
-                }
-              ]
-            }
-          }
-        ], 
-        "containerId": "target1", 
-        "description": "The 'target1' container contains the swappable callouts", 
-        "hookupActions": [
-          {
-            "args": [
-              {
-                "selector": "#ba32da54f454548448a665159d090a2d9", 
-                "type": "d3select"
-              }
-            ], 
-            "description": "draw the label table", 
-            "instance": {
-              "domain": "brix", 
-              "refId": "lbltbl1", 
-              "type": "ref"
-            }, 
-            "methodName": "draw", 
-            "type": "method-call"
-          }, 
-          {
-            "args": [
-              {
-                "type": "constant", 
-                "value": "0"
-              }
-            ], 
-            "description": "Initial condition: select 1st table row (note that we may want to use the state field to do this later)", 
-            "instance": {
-              "domain": "brix", 
-              "refId": "lbltbl1", 
-              "type": "ref"
-            }, 
-            "methodName": "lite", 
-            "type": "method-call"
-          }
-        ], 
-        "mortarConfig": [
-          {
-            "config": {
-              "eventDetailsProperty": "selectKey"
-            }, 
-            "configFixup": [
-              {
-                "name": "topic", 
-                "type": "set-property", 
-                "value": {
-                  "bricType": "LabelSelector", 
-                  "eventName": "selected", 
-                  "instanceId": "dataLabels", 
-                  "type": "brix-topic"
-                }
-              }, 
-              {
-                "name": "targetBric", 
-                "type": "set-property", 
-                "value": {
-                  "domain": "brix", 
-                  "refId": "lbltbl1", 
-                  "type": "ref"
+                  "maxSize": { "height": 400, "width": 600 }
                 }
               }
-            ], 
-            "mortarId": "hilite1", 
-            "mortarType": "Hilite"
-          }
-        ]
-      }
-    ], 
-        "data": {
-          "intermarriage": [
+            ],
+            "mortarConfig":
             [
               {
-                "x": 1958, 
-                "y": 4
-              }, 
+                "mortarId": "dataswap1",
+                "mortarType": "Dataswap",
+                "config":
+                {
+                  "dataPropertySetter": "setData",
+                  "eventDetailsProperty": "index"
+                },
+                "configFixup":
+                [
+                  {
+                    "type": "set-property",
+                    "name": "topic",
+                    "value":
+                    {
+                      "type": "brix-topic",
+                      "bricType": "LabelSelector",
+                      "eventName": "selected",
+                      "instanceId": "dataLabels"
+                    }
+                  },
+                  {
+                    "type": "set-property",
+                    "name": "sourceDataArray",
+                    "value":
+                    {
+                      "type": "array",
+                      "elements":
+                      [
+                        { "type": "ref", "domain": "data", "refId": "intermarriage" },
+                        { "type": "ref", "domain": "data", "refId": "schools" },
+                        { "type": "ref", "domain": "data", "refId": "neighborhoods" }
+                      ]
+                    }
+                  },
+                  {
+                    "type": "set-property",
+                    "name": "targetBric",
+                    "value": { "type": "ref", "domain": "brix", "refId": "swapGraph" }
+                  }
+                ]
+              },
               {
-                "x": 1972, 
-                "y": 27
-              }, 
+                "mortarId": "dataswap2",
+                "mortarType": "Dataswap",
+                "config":
+                {
+                  "dataPropertySetter": "setLabels",
+                  "eventDetailsProperty": "index"
+                },
+                "configFixup":
+                [
+                  {
+                    "name": "topic",
+                    "type": "set-property",
+                    "value":
+                    {
+                      "bricType": "LabelSelector",
+                      "eventName": "selected",
+                      "instanceId": "dataLabels",
+                      "type": "brix-topic"
+                    }
+                  },
+                  {
+                    "name": "sourceDataArray",
+                    "type": "set-property",
+                    "value":
+                    {
+                      "type": "array",
+                      "elements":
+                      [
+                        { "type": "ref", "domain": "data", "refId": "intermarriageLegend" },
+                        { "type": "ref", "domain": "data", "refId": "schoolsLegend" },
+                        { "type": "ref", "domain": "data", "refId": "neighborhoodsLegend" }
+                      ]
+                    }
+                  },
+                  {
+                    "type": "set-property",
+                    "name": "targetBric",
+                    "value": { "type": "ref", "domain": "brix", "refId": "legend1" }
+                  }
+                ]
+              },
               {
-                "x": 1991, 
-                "y": 51
-              }, 
+                "mortarId": "hilite3",
+                "mortarType": "Hilite",
+                "config":
+                {
+                  "eventDetailsProperty": "selectKey"
+                },
+                "configFixup":
+                [
+                  {
+                    "type": "set-property",
+                    "name": "topic",
+                    "value":
+                    {
+                      "type": "brix-topic",
+                      "bricType": "ProtoLegend",
+                      "eventName": "selected",
+                      "instanceId": "legendSchools"
+                    }
+                  },
+                  {
+                    "type": "set-property",
+                    "name": "targetBric",
+                    "value": { "type": "ref", "domain": "brix", "refId": "swapGraph" }
+                  }
+                ]
+              },
               {
-                "x": 2011, 
-                "y": 84
+                "mortarId": "hilite2",
+                "mortarType": "Hilite",
+                "config":
+                {
+                  "eventDetailsProperty": "selectKey"
+                },
+                "configFixup":
+                [
+                  {
+                    "type": "set-property",
+                    "name": "topic",
+                    "value":
+                    {
+                      "type": "brix-topic",
+                      "bricType": "ProtoLineGraph",
+                      "eventName": "selected",
+                      "instanceId": "graph1"
+                    }
+                  },
+                  {
+                    "type": "set-property",
+                    "name": "targetBric",
+                    "value": { "type": "ref", "domain": "brix", "refId": "legend1" }
+                  }
+                ]
               }
-            ], 
+            ],
+            "hookupActions":
             [
               {
-                "x": 1958, 
-                "y": 96
-              }, 
+                "description": "Draw the svg container",
+                "type": "method-call",
+                "instance": { "type": "ref", "domain": "brix", "refId": "cntr1" },
+                "methodName": "draw",
+                "args":
+                [
+                  { "type": "d3select", "selector": "#ba32da54f454548448a665159d090a2d9" }
+                ]
+              },
               {
-                "x": 1972, 
-                "y": 73
-              }, 
+                "description": "Append the swap graph to the svg container",
+                "type": "method-call",
+                "instance": { "type": "ref", "domain": "brix", "refId": "cntr1" },
+                "methodName": "append",
+                "args":
+                [
+                  { "type": "ref", "domain": "brix", "refId": "swapGraph", },
+                  { "type": "constant", "value": { "topPercentOffset": 0.15, "leftPercentOffset": 0, "heightPercent": 0.85, "widthPercent": 1 } }
+                ],
+              },
               {
-                "x": 1991, 
-                "y": 49
-              }, 
+                "description": "Append the legend to the svg container",
+                "type": "method-call",
+                "instance": { "type": "ref", "domain": "brix", "refId": "swapGraph" },
+                "methodName": "append",
+                "args":
+                [
+                  { "type": "ref", "domain": "brix", "refId": "legend1" }
+                ],
+              },
               {
-                "x": 2011, 
-                "y": 16
+                "description": "Append the labels to the svg container",
+                "type": "method-call",
+                "instance": { "type": "ref", "domain": "brix", "refId": "cntr1" },
+                "methodName": "append",
+                "args":
+                [
+                  { "type": "ref", "domain": "brix", "refId": "labelSelector1" },
+                  {
+                    "type": "constant",
+                    "value": { "topPercentOffset": 0.0, "leftPercentOffset": 0, "heightPercent": 0.2, "widthPercent": 1 }
+                  }
+                ],
+              },
+              {
+                "description": "Initial condition: select 1st label",
+                "type": "method-call",
+                "instance": { "type": "ref", "domain": "brix", "refId": "labelSelector1" },
+                "methodName": "lite",
+                "args":
+                [
+                  { "type": "constant", "value": "0" }
+                ]
+              },
+              {
+                "description": "Initial condition: select 1st legend",
+                "type": "method-call",
+                "instance": { "type": "ref", "domain": "brix", "refId": "legend1" },
+                "methodName": "lite",
+                "args":
+                [
+                  { "type": "constant", "value": "0" }
+                ]
+              },
+              {
+                "description": "Initial condition: select 1st graph trace",
+                "instance": { "type": "ref", "domain": "brix", "refId": "swapGraph" },
+                "methodName": "lite",
+                "type": "method-call",
+                "args":
+                [
+                  { "type": "constant", "value": "0" }
+                ]
               }
             ]
-          ], 
-          "intermarriageLegend": 
+          },
+          {
+            "description": "The 'target1' container contains the swappable callouts",
+            "containerId": "calloutCntr",
+            "brixConfig":
+            [
+              {
+                "bricId": "lbltbl1",
+                "bricType": "Callouts",
+                "config":
+                {
+                  "id": "callme",
+                  "textBits":
+                  [
+                    { "cols": [ "<b>Survey Question Asked:</b><br />Do you approve or disapprove of racial intermarriage?" ] },
+                    { "cols": [ "<b>Survey Question Asked:</b><br />Do you think white people and black/negroes should go to the same schools or separate schools?" ] },
+                    { "cols": [ "<b>Survey Question Asked:</b><br />Do you agree or disagree with the statement: White people have a right to keep (Negroes/blacks/African Americans) out of their neighborhoods if they want to, and (Negroes/blacks/African Americans) should respect that right." ] }
+                  ]
+                }
+              }
+            ],
+            "mortarConfig":
+            [
+              {
+                "mortarId": "hilite1",
+                "mortarType": "Hilite",
+                "config":
+                {
+                  "eventDetailsProperty": "selectKey"
+                },
+                "configFixup":
+                [
+                  {
+                    "type": "set-property",
+                    "name": "topic",
+                    "value":
+                    {
+                      "bricType": "LabelSelector",
+                      "eventName": "selected",
+                      "instanceId": "dataLabels",
+                      "type": "brix-topic"
+                    }
+                  },
+                  {
+                    "type": "set-property",
+                    "name": "targetBric",
+                    "value": { "type": "ref", "domain": "brix", "refId": "lbltbl1" }
+                  }
+                ]
+              }
+            ],
+            "hookupActions":
+            [
+              {
+                "description": "draw the label table",
+                "type": "method-call",
+                "instance": { "type": "ref", "domain": "brix", "refId": "lbltbl1" },
+                "methodName": "draw",
+                "args":
+                [
+                  { "type": "d3select", "selector": "#ba32da54f454548448a665159d090a2d9" }
+                ]
+              },
+              {
+                "description": "Initial condition: select 1st table row (note that we may want to use the state field to do this later)",
+                "type": "method-call",
+                "instance": { "type": "ref", "domain": "brix", "refId": "lbltbl1" },
+                "methodName": "lite",
+                "args":
+                [
+                  { "type": "constant", "value": "0" }
+                ]
+              }
+            ]
+          }
+        ],
+        "data":
+        {
+          "intermarriage":
           [
-            { "traceIndex": 0, "legendContent": "Approve"},
-            { "traceIndex": 1, "legendContent": "Disapprove"}
-          ], 
-          "neighborhoods": [
             [
-              {
-                "x": 1963, 
-                "y": 39
-              }, 
-              {
-                "x": 1976, 
-                "y": 60
-              }, 
-              {
-                "x": 1990, 
-                "y": 76
-              }, 
-              {
-                "x": 1996, 
-                "y": 86
-              }
-            ], 
+              { "x": 1958, "y":  4 },
+              { "x": 1972, "y": 27 },
+              { "x": 1991, "y": 51 },
+              { "x": 2011, "y": 84 }
+            ],
             [
-              {
-                "x": 1963, 
-                "y": 60
-              }, 
-              {
-                "x": 1976, 
-                "y": 40
-              }, 
-              {
-                "x": 1990, 
-                "y": 24
-              }, 
-              {
-                "x": 1996, 
-                "y": 13
-              }
+              { "x": 1958, "y": 96 },
+              { "x": 1972, "y": 73 },
+              { "x": 1991, "y": 49 },
+              { "x": 2011, "y": 16 }
             ]
-          ], 
-          "neighborhoodsLegend": [
-            { "traceIndex": 0, "legendContent": "Disagree"},
-            { "traceIndex": 1, "legendContent": "Agree"}
-          ], 
-          "schools": [
+          ],
+          "intermarriageLegend":
+          [
+            { "content": "Approve" },
+            { "content": "Disapprove" }
+          ],
+          "neighborhoods":
+          [
             [
-              {
-                "x": 1942, 
-                "y": 32
-              }, 
-              {
-                "x": 1964, 
-                "y": 63
-              }, 
-              {
-                "x": 1984, 
-                "y": 92
-              }, 
-              {
-                "x": 1995, 
-                "y": 96
-              }
-            ], 
+              { "x": 1963, "y": 39 },
+              { "x": 1976, "y": 60 },
+              { "x": 1990, "y": 76 },
+              { "x": 1996, "y": 86 }
+            ],
             [
-              {
-                "x": 1942, 
-                "y": 68
-              }, 
-              {
-                "x": 1964, 
-                "y": 37
-              }, 
-              {
-                "x": 1984, 
-                "y": 8
-              }, 
-              {
-                "x": 1995, 
-                "y": 4
-              }
+              { "x": 1963, "y": 60 },
+              { "x": 1976, "y": 40 },
+              { "x": 1990, "y": 24 },
+              { "x": 1996, "y": 13 }
             ]
-          ], 
-          "schoolsLegend": [
-            { "traceIndex": 0, "legendContent": "Same"},
-            { "traceIndex": 1, "legendContent": "Separate"}
+          ],
+          "neighborhoodsLegend":
+          [
+            { "content": "Disagree" },
+            { "content": "Agree" }
+          ],
+          "schools":
+          [
+            [
+              { "x": 1942, "y": 32 },
+              { "x": 1964, "y": 63 },
+              { "x": 1984, "y": 92 },
+              { "x": 1995, "y": 96 }
+            ],
+            [
+              { "x": 1942, "y": 68 },
+              { "x": 1964, "y": 37 },
+              { "x": 1984, "y": 8 },
+              { "x": 1995, "y": 4 }
+            ]
+          ],
+          "schoolsLegend":
+          [
+            { "content": "Same" },
+            { "content": "Separate" }
           ]
-        }, 
-        "description": "Graph Carousel on Post-Civil Rights Era Racial Attitudes on Marriage, Schools, & Residential Choice"
+        }
       };
 
-	// create the eventmanager to be used by the created brix, and the
-	// bricLayer which will create them, and then tell the bricLayer to build.
-	a.eventManager = new pearson.utils.EventManager();
-	a.answerMan = new pearson.brix.utils.LocalAnswerMan();
-	a.submitManager = new pearson.brix.utils.SubmitManager(a.eventManager, a.answerMan);
+    // create the eventmanager to be used by the created brix, and the
+    // bricLayer which will create them, and then tell the bricLayer to build.
+    a.eventManager = new pearson.utils.EventManager();
+    a.answerMan = new pearson.brix.utils.LocalAnswerMan();
+    a.submitManager = new pearson.brix.utils.SubmitManager(a.eventManager, a.answerMan);
 
-	a.bricLayer = new pearson.brix.utils.BricLayer(null, a.eventManager, a.submitManager);
+    a.bricLayer = new pearson.brix.utils.BricLayer(null, a.eventManager, a.submitManager);
 
-	a.building = a.bricLayer.build(a.config);
+    a.building = a.bricLayer.build(a.config);
+
+
+    /*
+    a.answerMan.setMaxAttempts(a.config.maxAttempts);
+    a.answerMan.registerAnswerKey(a.config.sequenceNodeKey,
+                                  a.config.containerConfig[0].brixConfig[0].answerKey);
+    */
 
     //]]>
     </script>
