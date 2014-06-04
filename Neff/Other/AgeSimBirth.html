@@ -9,8 +9,8 @@
 	<meta content="Carmen Santiago, Demo Book" name="description" />
 	<title class="setTitle"></title>
 	
-  	<!-- widgets.css contains styling for the interactive brix -->
-	<link href="css/widgets.css" rel="stylesheet">
+  	<!-- brix.css contains styling for the interactive brix -->
+	<link href="css/brix.css" rel="stylesheet">
     </head>
 <body>
 <!-- Body Content -->
@@ -30,7 +30,7 @@
 
 	<script src="js/brixlib-deps.js"></script>
 	<script>
-		goog.require('pearson.brix.BricLayer');
+		goog.require('pearson.brix.utils.BricLayer');
 	</script>
 	 -->
 
@@ -193,21 +193,28 @@
 									"config":
 										{
 											"id": "bar-left",
-											"Data": [[]],
-											"xAxisFormat":
-												{ 
-													"type": "linear", 
-													"mode": "reverse",
-													"ticks": [0,150,300],
-													"orientation": "bottom",
-													"label": "Male population"
+											"barOrientation": "horizontal",
+											"useHiddenSeriesToDetermineDataDomains": false,
+											"seriesData": [[{x: 50, y: "0-10"}]],
+											"xAxis":
+												{  
+													"location": "bottom",
+													"label": "Male population",
+													"reverse": true,
+													"tickmarkSettings": 
+														{
+															"ticks": [0, 150, 300]
+														}
 												},
-											"yAxisFormat":
+											"yAxis":
 												{
-													"type": "ordinal",
-													"orientation": "right",
-                                                    "ticks": 10,
-													"label": ""
+													"location": "right",
+													"label": "Age",
+                                                    "tickmarkSettings": 
+														{
+															"ticks": 10
+														}
+													 
 												}
 										}
 								},
@@ -217,21 +224,34 @@
 									"config":
 										{
 											"id": "bar-right",
-											"Data": [[],[]],
-											"xAxisFormat":
-												{ 
-													"type": "linear", 
-													"ticks": [0,150,300],
-													"orientation": "bottom",
-													"label": "Female population"
+											"barOrientation": "horizontal",
+											"useHiddenSeriesToDetermineDataDomains": false,
+											"seriesData": [[{x: 60, y: "0-10"}]],
+											"seriesAttributes":
+												[
+													{
+														"seriesIndex": 0,
+														"colorIndex": 1
+													}
+												],
+											"xAxis":
+												{  
+													"location": "bottom",
+													"label": "Female population",
+													"tickmarkSettings": 
+														{
+															"ticks": [0, 150, 300],
+														}
 												},
-											"yAxisFormat":
+											"yAxis":
 												{
-													"type": "ordinal",
-													"orientation": "left",
-                                                    "ticks": 10,
-													"label": "Age"
+													"location": "left",
+                                                    "tickmarkSettings": 
+														{
+															"ticks": 10
+														}
 												}
+										
 										}
 								},
 								{
@@ -239,20 +259,8 @@
 									"bricType": "SvgContainer",
 									"config":
 										{
-											"maxSize": {"height": 450, "width": 577}
-										},
-									"configFixup":
-                                        [
-                                            {
-                                                "type": "set-property",
-                                                "name": "node",
-                                                "value":
-                                                    {
-                                                        "type": "d3select",
-                                                        "selector": "#b80d4cb5294d8411894be965d7984e0c4"
-                                                    }
-                                            }
-                                        ]
+											"maxSize": {"height": 380, "width": 577}
+										}
 								}
 							],
 						"mortarConfig":
@@ -321,6 +329,16 @@
 						"hookupActions":
 							[
 								{
+									"description": "Draw the svg container",
+									"type": "method-call",
+									"instance": {"type": "ref", "domain": "brix", "refId": "cntr2"},
+									"methodName": "draw",
+									"args":
+										[
+											{ "type": "d3select", "selector": "#b80d4cb5294d8411894be965d7984e0c4" }
+										]
+								},
+								{
 									"description": "Append the graph to the svg container",
 									"type": "method-call",
 									"instance": {"type": "ref", "domain": "brix", "refId": "cntr2"},
@@ -328,7 +346,7 @@
 									"args":
 										[
 											{ "type": "ref", "domain": "brix", "refId": "graph1" },
-											{ "type": "constant", "value": {"topPercentOffset": 0, "leftPercentOffset": 0.05, "heightPercent": 1, "widthPercent": 0.45} }
+											{ "type": "constant", "value": {"topPercentOffset": 0, "leftPercentOffset": 0, "heightPercent": 1, "widthPercent": 0.48} }
 										]
 								},
 								{
@@ -339,7 +357,7 @@
 									"args":
 										[
 											{ "type": "ref", "domain": "brix", "refId": "graph2" },
-											{ "type": "constant", "value": {"topPercentOffset": 0, "leftPercentOffset": 0.45, "heightPercent": 1, "widthPercent": 0.55} }
+											{ "type": "constant", "value": {"topPercentOffset": 0, "leftPercentOffset": 0.5, "heightPercent": 1, "widthPercent": 0.48} }
 										]
 								}
 							]
@@ -351,7 +369,7 @@
 	// create the eventmanager to be used by the created brix, and the
 	// bricLayer which will create them, and then tell the bricLayer to build.
 	a.eventManager = new pearson.utils.EventManager();
-	a.bricLayer = new pearson.brix.BricLayer(null, a.eventManager);
+	a.bricLayer = new pearson.brix.utils.BricLayer(null, a.eventManager);
 
 	a.building = a.bricLayer.build(a.config);
 

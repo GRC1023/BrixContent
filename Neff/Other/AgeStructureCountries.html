@@ -9,8 +9,8 @@
 	<meta content="Carmen Santiago, Demo Book" name="description" />
 	<title class="setTitle"></title>
 	
-  	<!-- widgets.css contains styling for the interactive brix -->
-	<link href="css/widgets.css" rel="stylesheet">
+  	<!-- brix.css contains styling for the interactive brix -->
+	<link href="css/brix.css" rel="stylesheet">
     </head>
 <body>
 <!-- Body Content -->
@@ -22,7 +22,13 @@
     
 	<script src="js/d3.v3.min.js"></script>
 	<script src="js/brixlib-compiled.js"></script>
+	<!--<script src="../closure/closure-library/closure/goog/base.js"></script>
 
+	<script src="js/brixlib-deps.js"></script>
+	<script>
+		goog.require('pearson.brix.utils.BricLayer');
+	</script>
+	-->
 
 <script>
 	// Create an object that will contain the objects needed for the activities
@@ -112,50 +118,54 @@
 					"brixConfig":
 							[
 								{
-								"bricId": "bar5",
-								"bricType": "BarChart",
-								"config":
+									"bricId": "bar5",
+									"bricType": "BarChart",
+									"config":
 										{
-										"id": "pyramid-left",
-										"xAxisFormat":
-												{ 
-												"type": "linear", 
-												"mode": "reverse",
-												"ticks": [0, 4, 8, 12],
-												"orientation": "bottom",
-												"label": "Male population (millions)"
+											"id": "bar-left",
+											"barOrientation": "horizontal",
+											"useHiddenSeriesToDetermineDataDomains": false,
+											"seriesData": [[{"x": 50, "y": "0-10"}]],
+											"xAxis":
+												{  
+													"location": "bottom",
+													"label": "Male population (millions)",
+													"reverse": true,
+													"tickmarkSettings": 
+														{
+															"ticks": [12, 8, 4, 0]
+														}
 												},
-										"yAxisFormat":
+											"yAxis":
 												{
-												"type": "ordinal",
-												"orientation": "right",
-												"label": "Age group"
+													"location": "right",
+													"label": "Age group"
+													 
 												}
 										},
-                                    "configFixup":
+										 "configFixup":
                                         [
                                             {
                                                 "type": "set-property",
-                                                "name": "Data",
+                                                "name": "seriesData",
                                                 "value":
                                                     {
                                                         "type": "array",
                                                         "elements":
                                                         [
 															{
-															"type": "array-element",
-															"array":
+																"type": "array-element",
+																"array":
 																	{
-																	"type": "ref",
-																	"domain": "data",
-																	"refId": "menUS"
+																		"type": "ref",
+																		"domain": "data",
+																		"refId": "menUS"
 																	},
-															"index": 0
+																"index": 0
 															}
                                                         ]
                                                     }
 											}
-
                                         ]
 								},
 								{
@@ -164,24 +174,25 @@
 								"config":
 										{
 										"id": "pyramid-right",
-										"xAxisFormat":
+										"xAxis":
 												{ 
-												"type": "linear", 
-												"ticks": [0, 4, 8, 12],
-												"orientation": "bottom",
+												"tickmarkSettings": 
+												{
+													"ticks": [0, 4, 8, 12]
+												},
+												"location": "bottom",
 												"label": "Female population (millions)"
 												},
-										"yAxisFormat":
+										"yAxis":
 												{
-												"type": "ordinal",
-												"orientation": "left"
+												"location": "left"
 												}
 										},
                                     "configFixup":
                                         [
                                             {
                                                 "type": "set-property",
-                                                "name": "Data",
+                                                "name": "seriesData",
                                                 "value":
                                                     {
                                                         "type": "array",
@@ -210,19 +221,7 @@
 								"config":
 										{
 										"maxSize": {"height": 500, "width": 577}
-										},
-								"configFixup":
-                                        [
-                                            {
-                                                "type": "set-property",
-                                                "name": "node",
-                                                "value":
-                                                    {
-                                                        "type": "d3select",
-                                                        "selector": "#b709beaea284b4d1f91902621422fee1b"
-                                                    }
-                                            }
-                                        ]
+										}
 								}
 							],
 					"mortarConfig":
@@ -235,7 +234,7 @@
                                             "eventDetailsProperty": "newValue",
 										"valueBase": 1950,
 										"valueStep": 5,
-										"dataPropertySetter": "setSeries",
+										"dataPropertySetter": "setSeriesPoints",
 										"initialSetterArgs": [0]
 										},
 								"configFixup":
@@ -314,7 +313,7 @@
                                             "eventDetailsProperty": "newValue",
 										"valueBase": 1950,
 										"valueStep": 5,
-										"dataPropertySetter": "setSeries",
+										"dataPropertySetter": "setSeriesPoints",
 										"initialSetterArgs": [1]
 										},
 								"configFixup":
@@ -390,6 +389,16 @@
 					"hookupActions":
 							[
 								{
+									"description": "Draw the svg container",
+									"type": "method-call",
+									"instance": {"type": "ref", "domain": "brix", "refId": "cntr2"},
+									"methodName": "draw",
+									"args":
+										[
+											{ "type": "d3select", "selector": "#b709beaea284b4d1f91902621422fee1b" }
+										]
+								},
+								{
 								"description": "Append the left of pyramid chart 3 to the svg container",
 								"type": "method-call",
 								"instance": {"type": "ref", "domain": "brix", "refId": "cntr2"},
@@ -397,7 +406,7 @@
 								"args":
 										[
 											{ "type": "ref", "domain": "brix", "refId": "bar5" },
-											{ "type": "constant", "value": {"topPercentOffset": 0, "leftPercentOffset": 0, "heightPercent": 1, "widthPercent": 0.55} }
+											{ "type": "constant", "value": {"topPercentOffset": 0, "leftPercentOffset": 0, "heightPercent": 1, "widthPercent": 0.48} }
 										]
 								},
 								{
@@ -408,7 +417,7 @@
 								"args":
 										[
 											{ "type": "ref", "domain": "brix", "refId": "bar6" },
-											{ "type": "constant", "value": {"topPercentOffset": 0, "leftPercentOffset": 0.53 , "heightPercent": 1, "widthPercent": 0.48} }
+											{ "type": "constant", "value": {"topPercentOffset": 0, "leftPercentOffset": 0.5 , "heightPercent": 1, "widthPercent": 0.45} }
 										]
 								}
 							]
@@ -4191,7 +4200,7 @@
 	// create the eventmanager to be used by the created brix, and the
 	// bricLayer which will create them, and then tell the bricLayer to build.
 	a.eventManager = new pearson.utils.EventManager();
-	a.bricLayer = new pearson.brix.BricLayer(null, a.eventManager);
+	a.bricLayer = new pearson.brix.utils.BricLayer(null, a.eventManager);
 
 	a.building = a.bricLayer.build(a.config);
 

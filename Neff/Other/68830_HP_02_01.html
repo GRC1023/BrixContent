@@ -31,154 +31,190 @@
 			"description": "Examples of simplified population age structures",
             //"imgBaseUrl": "http://localhost:8088/images/",
             "imgBaseUrl": "",
-            "containerConfig":
-                [
+             "containerConfig": [
+      {
+        "brixConfig": [
+          {
+            "bricId": "lblCarousel1", 
+            "bricType": "LabelCarousel", 
+            "config": {
+              "id": "lblCrsl1", 
+              "imagesActualSize": {
+                "height": 401, 
+                "width": 476
+              }, 
+              "type": "textLabels"
+            }, 
+            "configFixup": [
+              {
+                "name": "images", 
+                "type": "set-property", 
+                "value": {
+                  "elements": [
                     {
-                        "description": "Container for the LabelCarousel",
-                        "containerId": "b8c42f914a2614384b276f7ce9bc11586",
-                        "brixConfig":
-                            [
-                                {
-                                    "bricId": "lblCarousel1",
-                                    "bricType": "LabelCarousel",
-                                    "config":
-                                        {
-                                            "id": "lblCrsl1",
-                                            "imagesActualSize": { "height": 401, "width": 476 },
-                                            "type": "textLabels"
-                                        },
-                                    "configFixup":
-                                        [
-                                            {
-                                                "type": "set-property",
-                                                "name": "images",
-                                                "value":
-                                                    {
-                                                        "type": "array",
-                                                        "elements":
-                                                            [
-                                                                {
-                                                                    "type": "object",
-                                                                    "properties":
-                                                                        [
-                                                                            {
-                                                                                "name": "URI",
-                                                                                "value":
-                                                                                    {
-                                                                                        "type": "join",
-                                                                                        "parts":
-                                                                                        [
-                                                                                            { "type": "ref", "domain": "info", "refId": "imgBaseUrl" },
-                                                                                            { "type": "constant", "value": "img/68830_HP_02_01_S1.png" }
-                                                                                        ]
-                                                                                    }
-                                                                            },
-                                                                            {
-                                                                                "name": "caption",
-                                                                                "value": { "type": "constant", "value": "This age structure leads to a fast growth rate and increasing population." }
-                                                                            },
-                                                                            { 
-                                                                                "name": "selectorLabel", 
-                                                                                "value": { "type": "constant", "value": "More young people&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"}
-                                                                            }
-                                                                        ]
-                                                                },
-                                                                {
-                                                                    "type": "object",
-                                                                    "properties":
-                                                                        [
-                                                                            {
-                                                                                "name": "URI",
-                                                                                "value":
-                                                                                    {
-                                                                                        "type": "join",
-                                                                                        "parts":
-                                                                                        [
-                                                                                            { "type": "ref", "domain": "info", "refId": "imgBaseUrl" },
-                                                                                            { "type": "constant", "value": "img/68830_HP_02_01_S2.png" }
-                                                                                        ]
-                                                                                    }
-                                                                            },
-                                                                            {
-                                                                                "name": "caption",
-                                                                                "value": { "type": "constant", "value": "This age structure leads to a negative growth rate and decreasing population." }
-                                                                            },
-                                                                            { 
-                                                                                "name": "selectorLabel", 
-                                                                                 "value": { "type": "constant", "value": "More middle-aged people" }
-                                                                            }
-                                                                            
-                                                                        ]
-                                                                },
-                         										{
-                                                                    "type": "object",
-                                                                    "properties":
-                                                                        [
-                                                                            {
-                                                                                "name": "URI",
-                                                                                "value":
-                                                                                    {
-                                                                                        "type": "join",
-                                                                                        "parts":
-                                                                                        [
-                                                                                            { "type": "ref", "domain": "info", "refId": "imgBaseUrl" },
-                                                                                            { "type": "constant", "value": "img/68830_HP_02_01_S3.png" }
-                                                                                        ]
-                                                                                    }
-                                                                            },
-                                                                            {
-                                                                                "name": "caption",
-                                                                                "value": { "type": "constant", "value": "This age structure leads to a steady growth rate and stable population." }
-                                                                            },
-                                                                            { 
-                                                                                "name": "selectorLabel", 
-                                                                                 "value": { "type": "constant", "value": "Balanced age structure" }
-                                                                            }
-                                                                            
-                                                                        ]
-                                                                }
-                                       
-                                                        ]
-                                                    }
-                                            }
-                                        ]
-                                },
-                                {
-                                    "bricId": "cntr1",
-                                    "bricType": "SvgContainer",
-                                    "config":
-                                        {
-                                            "maxSize": { "height": 500, "width": 457 }
-                                        },
-                                    "configFixup":
-                                        [
-                                            {
-                                                "type": "set-property",
-                                                "name": "node",
-                                                "value":
-                                                    {
-                                                        "type": "d3select",
-                                                        "selector": "#b8c42f914a2614384b276f7ce9bc11586"
-                                                    }
-                                            }
-                                        ]
-                                }
-                            ],
-                        "hookupActions":
-                            [
-                                {
-                                    "description": "Append the label image carousel to the svg container",
-                                    "type": "method-call",
-                                    "instance": {"type": "ref", "domain": "brix", "refId": "cntr1"},
-                                    "methodName": "append",
-                                    "args":
-                                        [
-                                            { "type": "ref", "domain": "brix", "refId": "lblCarousel1" }
-                                        ]
-                                }
-                            ]
+                      "properties": [
+                        {
+                          "name": "URI", 
+                          "value": {
+                            "parts": [
+                              {
+                                "domain": "info", 
+                                "refId": "imgBaseUrl", 
+                                "type": "ref"
+                              }, 
+                              {
+                                "type": "constant", 
+                                "value": "img/68830_HP_02_01_S1.png"
+                              }
+                            ], 
+                            "type": "join"
+                          }
+                        }, 
+                        {
+                          "name": "caption", 
+                          "value": {
+                            "type": "constant", 
+                            "value": "This age structure leads to a fast growth rate and increasing population."
+                          }
+                        }, 
+                        {
+                          "name": "selectorLabel", 
+                          "value": {
+                            "type": "constant", 
+                            "value": "More young people<br />&#160;"
+                          }
+                        }
+                      ], 
+                      "type": "object"
+                    }, 
+                    {
+                      "properties": [
+                        {
+                          "name": "URI", 
+                          "value": {
+                            "parts": [
+                              {
+                                "domain": "info", 
+                                "refId": "imgBaseUrl", 
+                                "type": "ref"
+                              }, 
+                              {
+                                "type": "constant", 
+                                "value": "img/68830_HP_02_01_S2.png"
+                              }
+                            ], 
+                            "type": "join"
+                          }
+                        }, 
+                        {
+                          "name": "caption", 
+                          "value": {
+                            "type": "constant", 
+                            "value": "This age structure leads to a negative growth rate and decreasing population."
+                          }
+                        }, 
+                        {
+                          "name": "selectorLabel", 
+                          "value": {
+                            "type": "constant", 
+                            "value": "More middle-aged people"
+                          }
+                        }
+                      ], 
+                      "type": "object"
+                    }, 
+                    {
+                      "properties": [
+                        {
+                          "name": "URI", 
+                          "value": {
+                            "parts": [
+                              {
+                                "domain": "info", 
+                                "refId": "imgBaseUrl", 
+                                "type": "ref"
+                              }, 
+                              {
+                                "type": "constant", 
+                                "value": "img/68830_HP_02_01_S3.png"
+                              }
+                            ], 
+                            "type": "join"
+                          }
+                        }, 
+                        {
+                          "name": "caption", 
+                          "value": {
+                            "type": "constant", 
+                            "value": "This age structure leads to a steady growth rate and stable population."
+                          }
+                        }, 
+                        {
+                          "name": "selectorLabel", 
+                          "value": {
+                            "type": "constant", 
+                            "value": "Balanced age structure"
+                          }
+                        }
+                      ], 
+                      "type": "object"
                     }
+                  ], 
+                  "type": "array"
+                }
+              }
             ]
+          }, 
+          {
+            "bricId": "cntr1", 
+            "bricType": "SvgContainer", 
+            "config": {
+              "maxSize": {
+                "height": 500, 
+                "width": 457
+              }
+            }
+          }
+        ], 
+        "containerId": "b8c42f914a2614384b276f7ce9bc11586", 
+        "description": "Container for the LabelCarousel", 
+        "hookupActions": [
+          {
+            "args": [
+              {
+                "selector": "#b8c42f914a2614384b276f7ce9bc11586", 
+                "type": "d3select"
+              }
+            ], 
+            "description": "Draw the svg container", 
+            "instance": {
+              "domain": "brix", 
+              "refId": "cntr1", 
+              "type": "ref"
+            }, 
+            "methodName": "draw", 
+            "type": "method-call"
+          }, 
+          {
+            "args": [
+              {
+                "domain": "brix", 
+                "refId": "lblCarousel1", 
+                "type": "ref"
+              }
+            ], 
+            "description": "Append the label image carousel to the svg container", 
+            "instance": {
+              "domain": "brix", 
+              "refId": "cntr1", 
+              "type": "ref"
+            }, 
+            "methodName": "append", 
+            "type": "method-call"
+          }
+        ]
+      }
+    ]
         };
 
     // create the eventmanager to be used by the created brix, and the
@@ -187,7 +223,7 @@
     a.answerMan = new pearson.brix.utils.LocalAnswerMan();
     a.submitManager = new pearson.brix.utils.SubmitManager(a.eventManager, a.answerMan);
 
-    a.bricLayer = new pearson.brix.BricLayer(null, a.eventManager, a.submitManager);
+    a.bricLayer = new pearson.brix.utils.BricLayer(null, a.eventManager, a.submitManager);
 
     a.building = a.bricLayer.build(a.config);
 
