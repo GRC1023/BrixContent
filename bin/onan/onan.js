@@ -5,11 +5,34 @@
  * @fileoverview Seeding script for item-level details
  *
  *
+ * Onan is used to provide item-level seed data to DAALT via SubPub
  *
+ * It is run as a command-line script from the brixContent/bin/onan directory as follows...
+ * 
+ * $ NODE_ENV=staging node onan.js <dirname>
+ * or
+ * $ NODE_ENV=prod node onan.js <dirname>
  *
+ * It will look for all the files in <dirname> that have either a 
+ * .assignment-item.js or .activity.json suffix and process only those 'items'.  
+ * It will ignore all other files in the directory.
+ * It will recurse down sub-directories.
+ * If you give it just a file it will process that or a wildcard file it will
+ * process just those but they still have to have the proper suffix.
  *
+ * If you need to add another suffix, add it to the pipe delimited 'fileSuffix' string in the
+ * brixConfig/bin/onan/config/default.json file.  This string goes into a regex, just fyi.
+ * 
+ * You should specify NODE_ENV as either staging or prod, which corresponds to the SubPub
+ * environment to which you want to send your message, if you want your messages to go anywhere.
+ * If you do NOT specify NODE_ENV the script will do everything except publish, logging to the 'dev'
+ * database (so don't worry about sullying staging/prod data), and writing the SubPub message
+ * payload to the screen. 
  *
+ * EXAMPLES:
  *
+ * Post all the ciccerelli items to Production:
+ *  NODE_ENV=prod node onan.js ../../Ciccerelli/json/
  *
  * 
  *
@@ -19,9 +42,6 @@
  * With samples here:
  * https://devops-tools.pearson.com/stash/projects/DAALT_REF/repos/schemas/browse/subpub/docs/sanvan_10_context_messages
  *
- * You should be able to pass it a file or a directory, which it will iterate over.  It'll probably
- * even dig into child directories.
- * It's looking for files with a '.assignment-item.json' suffix (see the fileSuffix var below)
  *
  * Eventually this script functionality can be turned into a service or
  * somesuch.
