@@ -1,0 +1,196 @@
+{
+  "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope",
+  "@type": "Envelope",
+  "metadata": {
+    "bookTitle": "Sociology",
+    "keywords": [
+      "Macionis 15e",
+      "Ch09",
+      "Alick"
+    ],
+    "extendedMetadata": [
+      {
+        "name": "ISBN",
+        "value": "0133795012"
+      },
+      {
+        "name": "M",
+        "value": "m07"
+      },
+      {
+        "name": "assessment_title",
+        "value": "Quiz: The U.S. Criminal Justice System"
+      },
+      {
+        "name": "Topic",
+        "value": "The U.S. Criminal Justice System"
+      },
+      {
+        "name": "chapterTitle",
+        "value": "Deviance"
+      },
+      {
+        "name": "module",
+        "value": "The U.S. Criminal Justice System"
+      },
+      {
+        "name": "item_title",
+        "value": "0133795012_John J. Macionis_ch09_m07_q0004"
+      },
+      {
+        "name": "questionlayout",
+        "value": "1"
+      },
+      {
+        "name": "CH",
+        "value": "9"
+      },
+      {
+        "name": "Difficulty",
+        "value": "Moderate"
+      },
+      {
+        "name": "Objective",
+        "value": "L.O. 9.7: Analyze the operation of the criminal justice system."
+      },
+      {
+        "name": "shuffle_choices",
+        "value": "Yes"
+      }
+    ],
+    "subject": [
+      "Sociology"
+    ],
+    "contentTypeTier2": [
+      "AssessmentItem"
+    ],
+    "contentTypeTier1": "Assessment",
+    "format": [
+      "application/vnd.pearson.sanvan.v1.activity"
+    ],
+    "version": "1.0",
+    "guid": "f884bfff-c53c-4747-aa0c-f5853bc28916",
+    "bookAuthor": "John J. Macionis",
+    "title": "Post.09.15 The U.S. Criminal Justice System Remember L.O. 9.7",
+    "educationalAlignment": [
+      "http://purl.org/pearson/objectives/183725473384362"
+    ]
+  },
+  "body": {
+    "description": "Post.09.15, The U.S. Criminal Justice System, Remember, L.O. 9.7",
+    "containerConfig": [
+      {
+        "description": "Post.09.15, The U.S. Criminal Justice System, Remember, L.O. 9.7",
+        "containerId": "target1",
+        "brixConfig": [
+          {
+            "bricId": "q1",
+            "bricType": "MultipleChoiceQuestion",
+            "config": {
+              "id": "QUE57846",
+              "question": "Due process is especially important as it provides a check on the power of\n\u003cbr /\u003e",
+              "order": "randomized",
+              "presenterType": "RadioGroup",
+              "presenterConfig": {
+                "numberFormat": "none"
+              },
+              "choices": [
+                {
+                  "answerKey": "answer_1",
+                  "content": "attorneys."
+                },
+                {
+                  "answerKey": "answer_2",
+                  "content": "victims."
+                },
+                {
+                  "answerKey": "answer_3",
+                  "content": "the accused."
+                },
+                {
+                  "answerKey": "answer_4",
+                  "content": "government."
+                }
+              ]
+            },
+            "answerKey": {
+              "assessmentType": "multiplechoice",
+              "answers": {
+                "answer_3": {
+                  "score": 0.0,
+                  "response": ""
+                },
+                "answer_2": {
+                  "score": 0.0,
+                  "response": ""
+                },
+                "answer_1": {
+                  "score": 0.0,
+                  "response": ""
+                },
+                "answer_4": {
+                  "score": 1.0,
+                  "response": ""
+                }
+              }
+            },
+            "configFixup": [
+              {
+                "name": "questionId",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "sequenceNodeKey",
+                  "type": "ref"
+                }
+              },
+              {
+                "name": "maxAttempts",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "maxAttempts",
+                  "type": "ref"
+                }
+              }
+            ]
+          }
+        ],
+        "hookupActions": [
+          {
+            "description": "Hookup the submit manager to evaluate answers",
+            "methodName": "handleRequestsFrom",
+            "type": "method-call",
+            "args": [
+              {
+                "domain": "brix",
+                "refId": "q1",
+                "type": "ref"
+              }
+            ],
+            "instance": {
+              "type": "submit-manager"
+            }
+          },
+          {
+            "description": "Draw the question",
+            "methodName": "draw",
+            "type": "method-call",
+            "args": [
+              {
+                "selector": "#target1",
+                "type": "d3select"
+              }
+            ],
+            "instance": {
+              "domain": "brix",
+              "refId": "q1",
+              "type": "ref"
+            }
+          }
+        ]
+      }
+    ],
+    "title": "Post.09.15 The U.S. Criminal Justice System Remember L.O. 9.7"
+  }
+}

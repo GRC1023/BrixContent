@@ -1,0 +1,196 @@
+{
+  "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope",
+  "@type": "Envelope",
+  "metadata": {
+    "bookTitle": "Sociology",
+    "keywords": [
+      "Macionis 15e",
+      "Ch08",
+      "Alick"
+    ],
+    "extendedMetadata": [
+      {
+        "name": "ISBN",
+        "value": "0133795012"
+      },
+      {
+        "name": "M",
+        "value": "m05"
+      },
+      {
+        "name": "assessment_title",
+        "value": "Quiz: Theories of Sexuality"
+      },
+      {
+        "name": "Topic",
+        "value": "Theories of Sexuality"
+      },
+      {
+        "name": "chapterTitle",
+        "value": "Sexuality and Society"
+      },
+      {
+        "name": "module",
+        "value": "Theories of Sexuality"
+      },
+      {
+        "name": "item_title",
+        "value": "0133795012_John J. Macionis_ch08_m05_q0004"
+      },
+      {
+        "name": "questionlayout",
+        "value": "1"
+      },
+      {
+        "name": "CH",
+        "value": "8"
+      },
+      {
+        "name": "Difficulty",
+        "value": "Easy"
+      },
+      {
+        "name": "Objective",
+        "value": "L.O. 8.5: Apply sociology\u0026rsquo;ssociologyâs major theories to the topic of sexuality."
+      },
+      {
+        "name": "shuffle_choices",
+        "value": "Yes"
+      }
+    ],
+    "subject": [
+      "Sociology"
+    ],
+    "contentTypeTier2": [
+      "AssessmentItem"
+    ],
+    "contentTypeTier1": "Assessment",
+    "format": [
+      "application/vnd.pearson.sanvan.v1.activity"
+    ],
+    "version": "1.0",
+    "guid": "d5410b58-1f03-4a65-8ad7-3c483dac4d94",
+    "bookAuthor": "John J. Macionis",
+    "title": "Post.08.32 Theories Of Sexuality Apply L.O. 8.5",
+    "educationalAlignment": [
+      "http://purl.org/pearson/objectives/183725473384362"
+    ]
+  },
+  "body": {
+    "description": "Post.08.32, Theories of Sexuality, Apply, L.O. 8.5",
+    "containerConfig": [
+      {
+        "description": "Post.08.32, Theories of Sexuality, Apply, L.O. 8.5",
+        "containerId": "target1",
+        "brixConfig": [
+          {
+            "bricId": "q1",
+            "bricType": "MultipleChoiceQuestion",
+            "config": {
+              "id": "QUE57766",
+              "question": "Regarding heterosexuality, most feminists claim that _________.\n\u003cbr /\u003e",
+              "order": "randomized",
+              "presenterType": "RadioGroup",
+              "presenterConfig": {
+                "numberFormat": "none"
+              },
+              "choices": [
+                {
+                  "answerKey": "answer_1",
+                  "content": "the element of power is a necessary element of heterosexual relations"
+                },
+                {
+                  "answerKey": "answer_2",
+                  "content": "the way our culture constructs sexuality can and does degrade men"
+                },
+                {
+                  "answerKey": "answer_3",
+                  "content": "the way our culture constructs sexuality can and does degrade women"
+                },
+                {
+                  "answerKey": "answer_4",
+                  "content": "homosexuality is clearly superior to heterosexuality"
+                }
+              ]
+            },
+            "answerKey": {
+              "assessmentType": "multiplechoice",
+              "answers": {
+                "answer_3": {
+                  "score": 1.0,
+                  "response": ""
+                },
+                "answer_2": {
+                  "score": 0.0,
+                  "response": ""
+                },
+                "answer_1": {
+                  "score": 0.0,
+                  "response": ""
+                },
+                "answer_4": {
+                  "score": 0.0,
+                  "response": ""
+                }
+              }
+            },
+            "configFixup": [
+              {
+                "name": "questionId",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "sequenceNodeKey",
+                  "type": "ref"
+                }
+              },
+              {
+                "name": "maxAttempts",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "maxAttempts",
+                  "type": "ref"
+                }
+              }
+            ]
+          }
+        ],
+        "hookupActions": [
+          {
+            "description": "Hookup the submit manager to evaluate answers",
+            "methodName": "handleRequestsFrom",
+            "type": "method-call",
+            "args": [
+              {
+                "domain": "brix",
+                "refId": "q1",
+                "type": "ref"
+              }
+            ],
+            "instance": {
+              "type": "submit-manager"
+            }
+          },
+          {
+            "description": "Draw the question",
+            "methodName": "draw",
+            "type": "method-call",
+            "args": [
+              {
+                "selector": "#target1",
+                "type": "d3select"
+              }
+            ],
+            "instance": {
+              "domain": "brix",
+              "refId": "q1",
+              "type": "ref"
+            }
+          }
+        ]
+      }
+    ],
+    "title": "Post.08.32 Theories Of Sexuality Apply L.O. 8.5"
+  }
+}

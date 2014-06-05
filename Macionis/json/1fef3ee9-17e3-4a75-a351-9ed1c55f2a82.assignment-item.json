@@ -1,0 +1,192 @@
+{
+  "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope",
+  "@type": "Envelope",
+  "metadata": {
+    "bookTitle": "Sociology",
+    "keywords": [
+      "Macionis 15e",
+      "ch16",
+      "Rudowski"
+    ],
+    "extendedMetadata": [
+      {
+        "name": "ISBN",
+        "value": "0133795012"
+      },
+      {
+        "name": "M",
+        "value": "c01"
+      },
+      {
+        "name": "assessment_title",
+        "value": "Chapter Quiz: The Economy and Work"
+      },
+      {
+        "name": "Topic",
+        "value": "The Economy: Historical Overview"
+      },
+      {
+        "name": "chapterTitle",
+        "value": "The Economy and Work"
+      },
+      {
+        "name": "item_title",
+        "value": "0133795012_John J. Macionis_ch16_c01_q0003"
+      },
+      {
+        "name": "questionlayout",
+        "value": "1"
+      },
+      {
+        "name": "CH",
+        "value": "16"
+      },
+      {
+        "name": "Difficulty",
+        "value": "Difficult"
+      },
+      {
+        "name": "Objective",
+        "value": "L.O. 16.1: Summarize historical changes to the economy."
+      },
+      {
+        "name": "shuffle_choices",
+        "value": "Yes"
+      }
+    ],
+    "subject": [
+      "Sociology"
+    ],
+    "contentTypeTier2": [
+      "AssessmentItem"
+    ],
+    "contentTypeTier1": "Assessment",
+    "format": [
+      "application/vnd.pearson.sanvan.v1.activity"
+    ],
+    "version": "1.0",
+    "guid": "1fef3ee9-17e3-4a75-a351-9ed1c55f2a82",
+    "bookAuthor": "John J. Macionis",
+    "title": "CE.16.07 The Economy Historical Overview Apply L.O. 16.1",
+    "educationalAlignment": [
+      "http://purl.org/pearson/objectives/183725473384362"
+    ]
+  },
+  "body": {
+    "description": "CE.16.07, The Economy: Historical Overview, Apply, L.O. 16.1",
+    "containerConfig": [
+      {
+        "description": "CE.16.07, The Economy: Historical Overview, Apply, L.O. 16.1",
+        "containerId": "target1",
+        "brixConfig": [
+          {
+            "bricId": "q1",
+            "bricType": "MultipleChoiceQuestion",
+            "config": {
+              "id": "QUE57946",
+              "question": "A person who works in an automotive factory is part of the ____________ sector of the economy.\n\u003cbr /\u003e",
+              "order": "randomized",
+              "presenterType": "RadioGroup",
+              "presenterConfig": {
+                "numberFormat": "none"
+              },
+              "choices": [
+                {
+                  "answerKey": "answer_1",
+                  "content": "primary"
+                },
+                {
+                  "answerKey": "answer_2",
+                  "content": "secondary"
+                },
+                {
+                  "answerKey": "answer_3",
+                  "content": "tertiary"
+                },
+                {
+                  "answerKey": "answer_4",
+                  "content": "service"
+                }
+              ]
+            },
+            "answerKey": {
+              "assessmentType": "multiplechoice",
+              "answers": {
+                "answer_3": {
+                  "score": 0.0,
+                  "response": "Consider this: The primary sector involves agriculture, the secondary sector involves manufacturing, and the tertiary sector involves the service industry.\n\u003cbr /\u003eRefer to Learning Objective 16.1 : Summarize historical changes to the economy."
+                },
+                "answer_2": {
+                  "score": 1.0,
+                  "response": ""
+                },
+                "answer_1": {
+                  "score": 0.0,
+                  "response": "Consider this: The primary sector involves agriculture, the secondary sector involves manufacturing, and the tertiary sector involves the service industry.\n\u003cbr /\u003eRefer to Learning Objective 16.1 : Summarize historical changes to the economy."
+                },
+                "answer_4": {
+                  "score": 0.0,
+                  "response": "Consider this: The primary sector involves agriculture, the secondary sector involves manufacturing, and the tertiary sector involves the service industry.\n\u003cbr /\u003eRefer to Learning Objective 16.1 : Summarize historical changes to the economy."
+                }
+              }
+            },
+            "configFixup": [
+              {
+                "name": "questionId",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "sequenceNodeKey",
+                  "type": "ref"
+                }
+              },
+              {
+                "name": "maxAttempts",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "maxAttempts",
+                  "type": "ref"
+                }
+              }
+            ]
+          }
+        ],
+        "hookupActions": [
+          {
+            "description": "Hookup the submit manager to evaluate answers",
+            "methodName": "handleRequestsFrom",
+            "type": "method-call",
+            "args": [
+              {
+                "domain": "brix",
+                "refId": "q1",
+                "type": "ref"
+              }
+            ],
+            "instance": {
+              "type": "submit-manager"
+            }
+          },
+          {
+            "description": "Draw the question",
+            "methodName": "draw",
+            "type": "method-call",
+            "args": [
+              {
+                "selector": "#target1",
+                "type": "d3select"
+              }
+            ],
+            "instance": {
+              "domain": "brix",
+              "refId": "q1",
+              "type": "ref"
+            }
+          }
+        ]
+      }
+    ],
+    "title": "CE.16.07 The Economy Historical Overview Apply L.O. 16.1"
+  }
+}

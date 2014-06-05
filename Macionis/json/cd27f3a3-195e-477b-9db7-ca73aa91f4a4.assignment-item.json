@@ -1,0 +1,192 @@
+{
+  "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope",
+  "@type": "Envelope",
+  "metadata": {
+    "bookTitle": "Sociology",
+    "keywords": [
+      "Macionis 15e",
+      "ch13",
+      "Rudowski"
+    ],
+    "extendedMetadata": [
+      {
+        "name": "ISBN",
+        "value": "0133795012"
+      },
+      {
+        "name": "M",
+        "value": "c01"
+      },
+      {
+        "name": "assessment_title",
+        "value": "Chapter Quiz: Gender Stratification"
+      },
+      {
+        "name": "Topic",
+        "value": "Theories of Gender"
+      },
+      {
+        "name": "chapterTitle",
+        "value": "Gender Stratification"
+      },
+      {
+        "name": "item_title",
+        "value": "0133795012_John J. Macionis_ch13_c01_q0008"
+      },
+      {
+        "name": "questionlayout",
+        "value": "1"
+      },
+      {
+        "name": "CH",
+        "value": "13"
+      },
+      {
+        "name": "Difficulty",
+        "value": "Easy"
+      },
+      {
+        "name": "Objective",
+        "value": "L.O. 13.4: Apply sociologyâs major theories to gender stratification."
+      },
+      {
+        "name": "shuffle_choices",
+        "value": "Yes"
+      }
+    ],
+    "subject": [
+      "Sociology"
+    ],
+    "contentTypeTier2": [
+      "AssessmentItem"
+    ],
+    "contentTypeTier1": "Assessment",
+    "format": [
+      "application/vnd.pearson.sanvan.v1.activity"
+    ],
+    "version": "1.0",
+    "guid": "cd27f3a3-195e-477b-9db7-ca73aa91f4a4",
+    "bookAuthor": "John J. Macionis",
+    "title": "CE.13.46 Theories Of Gender Remember L.O. 13.4",
+    "educationalAlignment": [
+      "http://purl.org/pearson/objectives/183725473384362"
+    ]
+  },
+  "body": {
+    "description": "CE.13.46, Theories of Gender, Remember, L.O. 13.4",
+    "containerConfig": [
+      {
+        "description": "CE.13.46, Theories of Gender, Remember, L.O. 13.4",
+        "containerId": "target1",
+        "brixConfig": [
+          {
+            "bricId": "q1",
+            "bricType": "MultipleChoiceQuestion",
+            "config": {
+              "id": "QUE57775",
+              "question": "Sociologists characterize most of the places we go and activities we engage in as ___________, meaning that they are defined as either masculine or feminine.\n\u003cbr /\u003e",
+              "order": "randomized",
+              "presenterType": "RadioGroup",
+              "presenterConfig": {
+                "numberFormat": "none"
+              },
+              "choices": [
+                {
+                  "answerKey": "answer_1",
+                  "content": "gendered"
+                },
+                {
+                  "answerKey": "answer_2",
+                  "content": "sexed"
+                },
+                {
+                  "answerKey": "answer_3",
+                  "content": "stratified"
+                },
+                {
+                  "answerKey": "answer_4",
+                  "content": "roled"
+                }
+              ]
+            },
+            "answerKey": {
+              "assessmentType": "multiplechoice",
+              "answers": {
+                "answer_3": {
+                  "score": 0.0,
+                  "response": "Consider this: According to this chapter, what is one of the main organizing principles in all of our lives?\n\u003cbr /\u003eRefer to Learning Objective 13.4: Apply sociology’s major theories to gender stratification."
+                },
+                "answer_2": {
+                  "score": 0.0,
+                  "response": "Consider this: According to this chapter, what is one of the main organizing principles in all of our lives?\n\u003cbr /\u003eRefer to Learning Objective 13.4: Apply sociology’s major theories to gender stratification."
+                },
+                "answer_1": {
+                  "score": 1.0,
+                  "response": ""
+                },
+                "answer_4": {
+                  "score": 0.0,
+                  "response": "Consider this: According to this chapter, what is one of the main organizing principles in all of our lives?\n\u003cbr /\u003eRefer to Learning Objective 13.4: Apply sociology’s major theories to gender stratification."
+                }
+              }
+            },
+            "configFixup": [
+              {
+                "name": "questionId",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "sequenceNodeKey",
+                  "type": "ref"
+                }
+              },
+              {
+                "name": "maxAttempts",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "maxAttempts",
+                  "type": "ref"
+                }
+              }
+            ]
+          }
+        ],
+        "hookupActions": [
+          {
+            "description": "Hookup the submit manager to evaluate answers",
+            "methodName": "handleRequestsFrom",
+            "type": "method-call",
+            "args": [
+              {
+                "domain": "brix",
+                "refId": "q1",
+                "type": "ref"
+              }
+            ],
+            "instance": {
+              "type": "submit-manager"
+            }
+          },
+          {
+            "description": "Draw the question",
+            "methodName": "draw",
+            "type": "method-call",
+            "args": [
+              {
+                "selector": "#target1",
+                "type": "d3select"
+              }
+            ],
+            "instance": {
+              "domain": "brix",
+              "refId": "q1",
+              "type": "ref"
+            }
+          }
+        ]
+      }
+    ],
+    "title": "CE.13.46 Theories Of Gender Remember L.O. 13.4"
+  }
+}

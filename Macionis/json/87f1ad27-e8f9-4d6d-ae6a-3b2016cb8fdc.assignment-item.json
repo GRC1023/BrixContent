@@ -1,0 +1,192 @@
+{
+  "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope",
+  "@type": "Envelope",
+  "metadata": {
+    "bookTitle": "Sociology",
+    "keywords": [
+      "Macionis 15e",
+      "ch21",
+      "Rudowski"
+    ],
+    "extendedMetadata": [
+      {
+        "name": "ISBN",
+        "value": "0133795012"
+      },
+      {
+        "name": "M",
+        "value": "c01"
+      },
+      {
+        "name": "assessment_title",
+        "value": "Chapter Quiz: Health and Medicine"
+      },
+      {
+        "name": "Topic",
+        "value": "Health: A Global Survey"
+      },
+      {
+        "name": "chapterTitle",
+        "value": "Health and Medicine"
+      },
+      {
+        "name": "item_title",
+        "value": "0133795012_John J. Macionis_ch22_c01_q0002"
+      },
+      {
+        "name": "questionlayout",
+        "value": "1"
+      },
+      {
+        "name": "CH",
+        "value": "22"
+      },
+      {
+        "name": "Difficulty",
+        "value": "Difficult"
+      },
+      {
+        "name": "Objective",
+        "value": "L.O. 21.2: Contrast patterns of health in low- and high-income countries."
+      },
+      {
+        "name": "shuffle_choices",
+        "value": "Yes"
+      }
+    ],
+    "subject": [
+      "Sociology"
+    ],
+    "contentTypeTier2": [
+      "AssessmentItem"
+    ],
+    "contentTypeTier1": "Assessment",
+    "format": [
+      "application/vnd.pearson.sanvan.v1.activity"
+    ],
+    "version": "1.0",
+    "guid": "87f1ad27-e8f9-4d6d-ae6a-3b2016cb8fdc",
+    "bookAuthor": "John J. Macionis",
+    "title": "CE.21.02 Health A Global Survey Apply L.O. 21.2",
+    "educationalAlignment": [
+      "http://purl.org/pearson/objectives/183725473384362"
+    ]
+  },
+  "body": {
+    "description": "CE.21.02, Health: A Global Survey, Apply, L.O. 21.2",
+    "containerConfig": [
+      {
+        "description": "CE.21.02, Health: A Global Survey, Apply, L.O. 21.2",
+        "containerId": "target1",
+        "brixConfig": [
+          {
+            "bricId": "q1",
+            "bricType": "MultipleChoiceQuestion",
+            "config": {
+              "id": "QUE57905",
+              "question": "Contrasting the leading causes of U.S. deaths today with those from a century ago best illustrates the fact that\n\u003cbr /\u003e",
+              "order": "randomized",
+              "presenterType": "RadioGroup",
+              "presenterConfig": {
+                "numberFormat": "none"
+              },
+              "choices": [
+                {
+                  "answerKey": "answer_1",
+                  "content": "cultural standards of health change over time."
+                },
+                {
+                  "answerKey": "answer_2",
+                  "content": "a society’s standard of living and level of technology affects people’s health."
+                },
+                {
+                  "answerKey": "answer_3",
+                  "content": "social inequality affects people’s health."
+                },
+                {
+                  "answerKey": "answer_4",
+                  "content": "cultural patterns define health."
+                }
+              ]
+            },
+            "answerKey": {
+              "assessmentType": "multiplechoice",
+              "answers": {
+                "answer_3": {
+                  "score": 0.0,
+                  "response": "Consider this: Recall the information on leading causes of U.S. deaths provided in Table 21-1. How would you explain the differences between 1900 and 2011?\n\u003cbr /\u003eRefer to Learning Objective 21.2: Contrast patterns of health in low- and high-income countries."
+                },
+                "answer_2": {
+                  "score": 1.0,
+                  "response": ""
+                },
+                "answer_1": {
+                  "score": 0.0,
+                  "response": "Consider this: Recall the information on leading causes of U.S. deaths provided in Table 21-1. How would you explain the differences between 1900 and 2011?\n\u003cbr /\u003eRefer to Learning Objective 21.2: Contrast patterns of health in low- and high-income countries."
+                },
+                "answer_4": {
+                  "score": 0.0,
+                  "response": "Consider this: Recall the information on leading causes of U.S. deaths provided in Table 21-1. How would you explain the differences between 1900 and 2011?\n\u003cbr /\u003eRefer to Learning Objective 21.2: Contrast patterns of health in low- and high-income countries."
+                }
+              }
+            },
+            "configFixup": [
+              {
+                "name": "questionId",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "sequenceNodeKey",
+                  "type": "ref"
+                }
+              },
+              {
+                "name": "maxAttempts",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "maxAttempts",
+                  "type": "ref"
+                }
+              }
+            ]
+          }
+        ],
+        "hookupActions": [
+          {
+            "description": "Hookup the submit manager to evaluate answers",
+            "methodName": "handleRequestsFrom",
+            "type": "method-call",
+            "args": [
+              {
+                "domain": "brix",
+                "refId": "q1",
+                "type": "ref"
+              }
+            ],
+            "instance": {
+              "type": "submit-manager"
+            }
+          },
+          {
+            "description": "Draw the question",
+            "methodName": "draw",
+            "type": "method-call",
+            "args": [
+              {
+                "selector": "#target1",
+                "type": "d3select"
+              }
+            ],
+            "instance": {
+              "domain": "brix",
+              "refId": "q1",
+              "type": "ref"
+            }
+          }
+        ]
+      }
+    ],
+    "title": "CE.21.02 Health A Global Survey Apply L.O. 21.2"
+  }
+}

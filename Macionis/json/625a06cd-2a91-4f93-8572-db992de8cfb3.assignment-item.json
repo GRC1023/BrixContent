@@ -1,0 +1,192 @@
+{
+  "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope",
+  "@type": "Envelope",
+  "metadata": {
+    "bookTitle": "Sociology",
+    "keywords": [
+      "Macionis 15e",
+      "ch 23",
+      "Rudowski"
+    ],
+    "extendedMetadata": [
+      {
+        "name": "ISBN",
+        "value": "0133795012"
+      },
+      {
+        "name": "M",
+        "value": "c01"
+      },
+      {
+        "name": "assessment_title",
+        "value": "Chapter Quiz: Collective Behavior and Social Movements"
+      },
+      {
+        "name": "Topic",
+        "value": "Dispersed Collectivities: Mass Behavior"
+      },
+      {
+        "name": "chapterTitle",
+        "value": "Collective Behavior and Social Movements"
+      },
+      {
+        "name": "item_title",
+        "value": "0133795012_John J. Macionis_ch23_c01_q0007"
+      },
+      {
+        "name": "questionlayout",
+        "value": "1"
+      },
+      {
+        "name": "CH",
+        "value": "23"
+      },
+      {
+        "name": "Difficulty",
+        "value": "Easy"
+      },
+      {
+        "name": "Objective",
+        "value": "L.O. 23.3: Describe rumor, disasters, and other types of mass behavior."
+      },
+      {
+        "name": "shuffle_choices",
+        "value": "Yes"
+      }
+    ],
+    "subject": [
+      "Sociology"
+    ],
+    "contentTypeTier2": [
+      "AssessmentItem"
+    ],
+    "contentTypeTier1": "Assessment",
+    "format": [
+      "application/vnd.pearson.sanvan.v1.activity"
+    ],
+    "version": "1.0",
+    "guid": "625a06cd-2a91-4f93-8572-db992de8cfb3",
+    "bookAuthor": "John J. Macionis",
+    "title": "CE.23.17 Dispersed Collectivities Mass Behavior Analyze L.O. 23.3",
+    "educationalAlignment": [
+      "http://purl.org/pearson/objectives/183725473384362"
+    ]
+  },
+  "body": {
+    "description": "CE.23.17, Dispersed Collectivities: Mass Behavior, Analyze, L.O. 23.3",
+    "containerConfig": [
+      {
+        "description": "CE.23.17, Dispersed Collectivities: Mass Behavior, Analyze, L.O. 23.3",
+        "containerId": "target1",
+        "brixConfig": [
+          {
+            "bricId": "q1",
+            "bricType": "MultipleChoiceQuestion",
+            "config": {
+              "id": "QUE58190",
+              "question": "Some communities put up with a certain amount of gossip, but at the same time they find ways to “reprimand” anyone who “gossips” too much. What purpose is served by allowing gossip but controlling it?\n\u003cbr /\u003e",
+              "order": "randomized",
+              "presenterType": "RadioGroup",
+              "presenterConfig": {
+                "numberFormat": "none"
+              },
+              "choices": [
+                {
+                  "answerKey": "answer_1",
+                  "content": "Communities use a limited amount of gossip as a means of social control."
+                },
+                {
+                  "answerKey": "answer_2",
+                  "content": "People clarify individuals’ standing as social “insiders” by rating their ability to gossip."
+                },
+                {
+                  "answerKey": "answer_3",
+                  "content": "Only gossip that involves some issue that many people care about is allowed."
+                },
+                {
+                  "answerKey": "answer_4",
+                  "content": "Gossip that is too localized turns into rumor and becomes unacceptably destructive."
+                }
+              ]
+            },
+            "answerKey": {
+              "assessmentType": "multiplechoice",
+              "answers": {
+                "answer_3": {
+                  "score": 0.0,
+                  "response": "Consider this: Only a certain amount of gossip is permissible.\n\u003cbr /\u003eRefer to Learning Objective 23.3: Identify four types of crowds and three explanations of crowd behavior."
+                },
+                "answer_2": {
+                  "score": 0.0,
+                  "response": "Consider this: Only a certain amount of gossip is permissible.\n\u003cbr /\u003eRefer to Learning Objective 23.3: Identify four types of crowds and three explanations of crowd behavior."
+                },
+                "answer_1": {
+                  "score": 1.0,
+                  "response": ""
+                },
+                "answer_4": {
+                  "score": 0.0,
+                  "response": "Consider this: Only a certain amount of gossip is permissible.\n\u003cbr /\u003eRefer to Learning Objective 23.3: Identify four types of crowds and three explanations of crowd behavior."
+                }
+              }
+            },
+            "configFixup": [
+              {
+                "name": "questionId",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "sequenceNodeKey",
+                  "type": "ref"
+                }
+              },
+              {
+                "name": "maxAttempts",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "maxAttempts",
+                  "type": "ref"
+                }
+              }
+            ]
+          }
+        ],
+        "hookupActions": [
+          {
+            "description": "Hookup the submit manager to evaluate answers",
+            "methodName": "handleRequestsFrom",
+            "type": "method-call",
+            "args": [
+              {
+                "domain": "brix",
+                "refId": "q1",
+                "type": "ref"
+              }
+            ],
+            "instance": {
+              "type": "submit-manager"
+            }
+          },
+          {
+            "description": "Draw the question",
+            "methodName": "draw",
+            "type": "method-call",
+            "args": [
+              {
+                "selector": "#target1",
+                "type": "d3select"
+              }
+            ],
+            "instance": {
+              "domain": "brix",
+              "refId": "q1",
+              "type": "ref"
+            }
+          }
+        ]
+      }
+    ],
+    "title": "CE.23.17 Dispersed Collectivities Mass Behavior Analyze L.O. 23.3"
+  }
+}

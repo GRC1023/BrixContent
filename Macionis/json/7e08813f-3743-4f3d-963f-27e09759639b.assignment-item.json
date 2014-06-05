@@ -1,0 +1,192 @@
+{
+  "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope",
+  "@type": "Envelope",
+  "metadata": {
+    "bookTitle": "Sociology",
+    "keywords": [
+      "Macionis 15e",
+      "Ch12",
+      "Alick"
+    ],
+    "extendedMetadata": [
+      {
+        "name": "ISBN",
+        "value": "0133795012"
+      },
+      {
+        "name": "M",
+        "value": "c01"
+      },
+      {
+        "name": "assessment_title",
+        "value": "Chapter Quiz: Global Stratification"
+      },
+      {
+        "name": "Topic",
+        "value": "Theories of Global Stratification"
+      },
+      {
+        "name": "chapterTitle",
+        "value": "Global Stratification"
+      },
+      {
+        "name": "item_title",
+        "value": "0133795012_John J. Macionis_ch12_c01_q0009"
+      },
+      {
+        "name": "questionlayout",
+        "value": "1"
+      },
+      {
+        "name": "CH",
+        "value": "12"
+      },
+      {
+        "name": "Difficulty",
+        "value": "Difficult"
+      },
+      {
+        "name": "Objective",
+        "value": "L.O. 12.3: Apply sociological theories to the topic of global inequality."
+      },
+      {
+        "name": "shuffle_choices",
+        "value": "Yes"
+      }
+    ],
+    "subject": [
+      "Sociology"
+    ],
+    "contentTypeTier2": [
+      "AssessmentItem"
+    ],
+    "contentTypeTier1": "Assessment",
+    "format": [
+      "application/vnd.pearson.sanvan.v1.activity"
+    ],
+    "version": "1.0",
+    "guid": "7e08813f-3743-4f3d-963f-27e09759639b",
+    "bookAuthor": "John J. Macionis",
+    "title": "CE.12.04 Theories Of Global Stratification Analyze L.O. 12.3",
+    "educationalAlignment": [
+      "http://purl.org/pearson/objectives/183725473384362"
+    ]
+  },
+  "body": {
+    "description": "CE.12.04, Theories of Global Stratification, Analyze, L.O. 12.3",
+    "containerConfig": [
+      {
+        "description": "CE.12.04, Theories of Global Stratification, Analyze, L.O. 12.3",
+        "containerId": "target1",
+        "brixConfig": [
+          {
+            "bricId": "q1",
+            "bricType": "MultipleChoiceQuestion",
+            "config": {
+              "id": "QUE60639",
+              "question": "Why does poverty in some of the most traditional places in India not lead to anger and violence as often as it does in the United States?\n\u003cbr /\u003e",
+              "order": "randomized",
+              "presenterType": "RadioGroup",
+              "presenterConfig": {
+                "numberFormat": "none"
+              },
+              "choices": [
+                {
+                  "answerKey": "answer_1",
+                  "content": "The poor in India are too poor to afford guns or drugs, which are major contributors to \"angry poverty\" in the United States."
+                },
+                {
+                  "answerKey": "answer_2",
+                  "content": "The pain of poverty in India is eased by the strength and support of families and traditional communities."
+                },
+                {
+                  "answerKey": "answer_3",
+                  "content": "The poor in the United States are close to absolute poverty, whereas in India relative poverty is common."
+                },
+                {
+                  "answerKey": "answer_4",
+                  "content": "India\u0027s unemployment rate is extremely low; even the poorest people in India have access to some kind of regular employment."
+                }
+              ]
+            },
+            "answerKey": {
+              "assessmentType": "multiplechoice",
+              "answers": {
+                "answer_3": {
+                  "score": 0.0,
+                  "response": "Consider this: In India, even shantytowns are organized around strong families.\n\u003cbr /\u003eRefer to Learning Objective 12.3: Apply sociological theories to the topic of global inequality."
+                },
+                "answer_2": {
+                  "score": 1.0,
+                  "response": ""
+                },
+                "answer_1": {
+                  "score": 0.0,
+                  "response": "Consider this: In India, even shantytowns are organized around strong families.\n\u003cbr /\u003eRefer to Learning Objective 12.3: Apply sociological theories to the topic of global inequality."
+                },
+                "answer_4": {
+                  "score": 0.0,
+                  "response": "Consider this: In India, even shantytowns are organized around strong families.\n\u003cbr /\u003eRefer to Learning Objective 12.3: Apply sociological theories to the topic of global inequality."
+                }
+              }
+            },
+            "configFixup": [
+              {
+                "name": "questionId",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "sequenceNodeKey",
+                  "type": "ref"
+                }
+              },
+              {
+                "name": "maxAttempts",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "maxAttempts",
+                  "type": "ref"
+                }
+              }
+            ]
+          }
+        ],
+        "hookupActions": [
+          {
+            "description": "Hookup the submit manager to evaluate answers",
+            "methodName": "handleRequestsFrom",
+            "type": "method-call",
+            "args": [
+              {
+                "domain": "brix",
+                "refId": "q1",
+                "type": "ref"
+              }
+            ],
+            "instance": {
+              "type": "submit-manager"
+            }
+          },
+          {
+            "description": "Draw the question",
+            "methodName": "draw",
+            "type": "method-call",
+            "args": [
+              {
+                "selector": "#target1",
+                "type": "d3select"
+              }
+            ],
+            "instance": {
+              "domain": "brix",
+              "refId": "q1",
+              "type": "ref"
+            }
+          }
+        ]
+      }
+    ],
+    "title": "CE.12.04 Theories Of Global Stratification Analyze L.O. 12.3"
+  }
+}

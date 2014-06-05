@@ -1,0 +1,196 @@
+{
+  "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope",
+  "@type": "Envelope",
+  "metadata": {
+    "bookTitle": "Sociology",
+    "keywords": [
+      "Macionis 15e",
+      "Ch03",
+      "Alick"
+    ],
+    "extendedMetadata": [
+      {
+        "name": "ISBN",
+        "value": "0133795012"
+      },
+      {
+        "name": "M",
+        "value": "m03"
+      },
+      {
+        "name": "assessment_title",
+        "value": "Quiz: Cultural Diversity"
+      },
+      {
+        "name": "Topic",
+        "value": "Cultural Diversity: Many Ways of Life in One World"
+      },
+      {
+        "name": "chapterTitle",
+        "value": "Culture"
+      },
+      {
+        "name": "module",
+        "value": "Cultural Diversity"
+      },
+      {
+        "name": "item_title",
+        "value": "0133795012_John J. Macionis_ch03_m03_q0004"
+      },
+      {
+        "name": "questionlayout",
+        "value": "1"
+      },
+      {
+        "name": "CH",
+        "value": "3"
+      },
+      {
+        "name": "Difficulty",
+        "value": "Easy"
+      },
+      {
+        "name": "Objective",
+        "value": "L.O. 3.3: Discuss dimensions of cultural difference and cultural change."
+      },
+      {
+        "name": "shuffle_choices",
+        "value": "Yes"
+      }
+    ],
+    "subject": [
+      "Sociology"
+    ],
+    "contentTypeTier2": [
+      "AssessmentItem"
+    ],
+    "contentTypeTier1": "Assessment",
+    "format": [
+      "application/vnd.pearson.sanvan.v1.activity"
+    ],
+    "version": "1.0",
+    "guid": "7d3f5b46-42e1-4b8a-9e7c-bb5d987465a5",
+    "bookAuthor": "John J. Macionis",
+    "title": "Post.03.15 Cultural Diversity Many Ways Of Life In One World Remember L.O. 3.3",
+    "educationalAlignment": [
+      "http://purl.org/pearson/objectives/183725473384362"
+    ]
+  },
+  "body": {
+    "description": "Post.03.15, Cultural Diversity: Many Ways of Life in One World, Remember, L.O. 3.3",
+    "containerConfig": [
+      {
+        "description": "Post.03.15, Cultural Diversity: Many Ways of Life in One World, Remember, L.O. 3.3",
+        "containerId": "target1",
+        "brixConfig": [
+          {
+            "bricId": "q1",
+            "bricType": "MultipleChoiceQuestion",
+            "config": {
+              "id": "QUE57537",
+              "question": "One way that cultural changes are set in motion is through diffusion, which refers to __________.\n\u003cbr /\u003e",
+              "order": "randomized",
+              "presenterType": "RadioGroup",
+              "presenterConfig": {
+                "numberFormat": "none"
+              },
+              "choices": [
+                {
+                  "answerKey": "answer_1",
+                  "content": "a culture’s set of rewards and punishments used to encourage conformity to norms"
+                },
+                {
+                  "answerKey": "answer_2",
+                  "content": "a deeper recognition and understanding of things that already exist"
+                },
+                {
+                  "answerKey": "answer_3",
+                  "content": "the creation of new cultural elements"
+                },
+                {
+                  "answerKey": "answer_4",
+                  "content": "the spread of objects and ideas from one society to another"
+                }
+              ]
+            },
+            "answerKey": {
+              "assessmentType": "multiplechoice",
+              "answers": {
+                "answer_3": {
+                  "score": 0.0,
+                  "response": ""
+                },
+                "answer_2": {
+                  "score": 0.0,
+                  "response": ""
+                },
+                "answer_1": {
+                  "score": 0.0,
+                  "response": ""
+                },
+                "answer_4": {
+                  "score": 1.0,
+                  "response": ""
+                }
+              }
+            },
+            "configFixup": [
+              {
+                "name": "questionId",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "sequenceNodeKey",
+                  "type": "ref"
+                }
+              },
+              {
+                "name": "maxAttempts",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "maxAttempts",
+                  "type": "ref"
+                }
+              }
+            ]
+          }
+        ],
+        "hookupActions": [
+          {
+            "description": "Hookup the submit manager to evaluate answers",
+            "methodName": "handleRequestsFrom",
+            "type": "method-call",
+            "args": [
+              {
+                "domain": "brix",
+                "refId": "q1",
+                "type": "ref"
+              }
+            ],
+            "instance": {
+              "type": "submit-manager"
+            }
+          },
+          {
+            "description": "Draw the question",
+            "methodName": "draw",
+            "type": "method-call",
+            "args": [
+              {
+                "selector": "#target1",
+                "type": "d3select"
+              }
+            ],
+            "instance": {
+              "domain": "brix",
+              "refId": "q1",
+              "type": "ref"
+            }
+          }
+        ]
+      }
+    ],
+    "title": "Post.03.15 Cultural Diversity Many Ways Of Life In One World Remember L.O. 3.3"
+  }
+}

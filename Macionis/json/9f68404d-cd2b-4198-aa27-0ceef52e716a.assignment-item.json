@@ -1,0 +1,192 @@
+{
+  "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope",
+  "@type": "Envelope",
+  "metadata": {
+    "bookTitle": "Sociology",
+    "keywords": [
+      "Macionis 15e",
+      "Ch12",
+      "Alick"
+    ],
+    "extendedMetadata": [
+      {
+        "name": "ISBN",
+        "value": "0133795012"
+      },
+      {
+        "name": "M",
+        "value": "c01"
+      },
+      {
+        "name": "assessment_title",
+        "value": "Chapter Quiz: Global Stratification"
+      },
+      {
+        "name": "Topic",
+        "value": "Global Wealth and Poverty"
+      },
+      {
+        "name": "chapterTitle",
+        "value": "Global Stratification"
+      },
+      {
+        "name": "item_title",
+        "value": "0133795012_John J. Macionis_ch12_c01_q0007"
+      },
+      {
+        "name": "questionlayout",
+        "value": "1"
+      },
+      {
+        "name": "CH",
+        "value": "12"
+      },
+      {
+        "name": "Difficulty",
+        "value": "Moderate"
+      },
+      {
+        "name": "Objective",
+        "value": "L.O. 12.2: Discuss patterns and explanations of poverty around the world."
+      },
+      {
+        "name": "shuffle_choices",
+        "value": "Yes"
+      }
+    ],
+    "subject": [
+      "Sociology"
+    ],
+    "contentTypeTier2": [
+      "AssessmentItem"
+    ],
+    "contentTypeTier1": "Assessment",
+    "format": [
+      "application/vnd.pearson.sanvan.v1.activity"
+    ],
+    "version": "1.0",
+    "guid": "9f68404d-cd2b-4198-aa27-0ceef52e716a",
+    "bookAuthor": "John J. Macionis",
+    "title": "CE.12.18 Global Wealth And Poverty Understand L.O. 12.2",
+    "educationalAlignment": [
+      "http://purl.org/pearson/objectives/183725473384362"
+    ]
+  },
+  "body": {
+    "description": "CE.12.18, Global Wealth and Poverty, Understand, L.O. 12.2",
+    "containerConfig": [
+      {
+        "description": "CE.12.18, Global Wealth and Poverty, Understand, L.O. 12.2",
+        "containerId": "target1",
+        "brixConfig": [
+          {
+            "bricId": "q1",
+            "bricType": "MultipleChoiceQuestion",
+            "config": {
+              "id": "QUE60637",
+              "question": "What is one of the biggest barriers preventing women in low-income countries from attaining higher standards of living?\n\u003cbr /\u003e",
+              "order": "randomized",
+              "presenterType": "RadioGroup",
+              "presenterConfig": {
+                "numberFormat": "none"
+              },
+              "choices": [
+                {
+                  "answerKey": "answer_1",
+                  "content": "lack of birth control"
+                },
+                {
+                  "answerKey": "answer_2",
+                  "content": "having to work two jobs"
+                },
+                {
+                  "answerKey": "answer_3",
+                  "content": "religious oppression"
+                },
+                {
+                  "answerKey": "answer_4",
+                  "content": "lack of housing"
+                }
+              ]
+            },
+            "answerKey": {
+              "assessmentType": "multiplechoice",
+              "answers": {
+                "answer_3": {
+                  "score": 0.0,
+                  "response": "Consider this: Women in low-income countries are generally expected to stay home and take care of the children. \n\u003cbr /\u003eRefer to Learning Objective 12.2: Discuss patterns and explanations of poverty around the world."
+                },
+                "answer_2": {
+                  "score": 0.0,
+                  "response": "Consider this: Women in low-income countries are generally expected to stay home and take care of the children. \n\u003cbr /\u003eRefer to Learning Objective 12.2: Discuss patterns and explanations of poverty around the world."
+                },
+                "answer_1": {
+                  "score": 1.0,
+                  "response": ""
+                },
+                "answer_4": {
+                  "score": 0.0,
+                  "response": "Consider this: Women in low-income countries are generally expected to stay home and take care of the children. \n\u003cbr /\u003eRefer to Learning Objective 12.2: Discuss patterns and explanations of poverty around the world."
+                }
+              }
+            },
+            "configFixup": [
+              {
+                "name": "questionId",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "sequenceNodeKey",
+                  "type": "ref"
+                }
+              },
+              {
+                "name": "maxAttempts",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "maxAttempts",
+                  "type": "ref"
+                }
+              }
+            ]
+          }
+        ],
+        "hookupActions": [
+          {
+            "description": "Hookup the submit manager to evaluate answers",
+            "methodName": "handleRequestsFrom",
+            "type": "method-call",
+            "args": [
+              {
+                "domain": "brix",
+                "refId": "q1",
+                "type": "ref"
+              }
+            ],
+            "instance": {
+              "type": "submit-manager"
+            }
+          },
+          {
+            "description": "Draw the question",
+            "methodName": "draw",
+            "type": "method-call",
+            "args": [
+              {
+                "selector": "#target1",
+                "type": "d3select"
+              }
+            ],
+            "instance": {
+              "domain": "brix",
+              "refId": "q1",
+              "type": "ref"
+            }
+          }
+        ]
+      }
+    ],
+    "title": "CE.12.18 Global Wealth And Poverty Understand L.O. 12.2"
+  }
+}

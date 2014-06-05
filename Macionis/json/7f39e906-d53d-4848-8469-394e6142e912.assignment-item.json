@@ -1,0 +1,192 @@
+{
+  "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope",
+  "@type": "Envelope",
+  "metadata": {
+    "bookTitle": "Sociology",
+    "keywords": [
+      "Macionis 15e",
+      "ch20",
+      "Rudowski"
+    ],
+    "extendedMetadata": [
+      {
+        "name": "ISBN",
+        "value": "0133795012"
+      },
+      {
+        "name": "M",
+        "value": "c01"
+      },
+      {
+        "name": "assessment_title",
+        "value": "Chapter Quiz: Education"
+      },
+      {
+        "name": "Topic",
+        "value": "Problems in the Schools"
+      },
+      {
+        "name": "chapterTitle",
+        "value": "Education"
+      },
+      {
+        "name": "item_title",
+        "value": "0133795012_John J. Macionis_ch20_c01_q0006"
+      },
+      {
+        "name": "questionlayout",
+        "value": "1"
+      },
+      {
+        "name": "CH",
+        "value": "20"
+      },
+      {
+        "name": "Difficulty",
+        "value": "Difficult"
+      },
+      {
+        "name": "Objective",
+        "value": ".O. 20.5: Discuss dropping out, violence, and other problems facing todayâs schools."
+      },
+      {
+        "name": "shuffle_choices",
+        "value": "Yes"
+      }
+    ],
+    "subject": [
+      "Sociology"
+    ],
+    "contentTypeTier2": [
+      "AssessmentItem"
+    ],
+    "contentTypeTier1": "Assessment",
+    "format": [
+      "application/vnd.pearson.sanvan.v1.activity"
+    ],
+    "version": "1.0",
+    "guid": "7f39e906-d53d-4848-8469-394e6142e912",
+    "bookAuthor": "John J. Macionis",
+    "title": "CE.20.32 Problems In The Schools Apply L.O. 20.5",
+    "educationalAlignment": [
+      "http://purl.org/pearson/objectives/183725473384362"
+    ]
+  },
+  "body": {
+    "description": "CE.20.32, Problems in the Schools, Apply, L.O. 20.5",
+    "containerConfig": [
+      {
+        "description": "CE.20.32, Problems in the Schools, Apply, L.O. 20.5",
+        "containerId": "target1",
+        "brixConfig": [
+          {
+            "bricId": "q1",
+            "bricType": "MultipleChoiceQuestion",
+            "config": {
+              "id": "QUE58384",
+              "question": "In Frank’s math class, the students take proficiency tests every week in order to assess their progress in meeting “basic math milestones.” Teachers adjust their plans to make sure that all students are able to pass these tests at a certain level by a certain date. This type of orientation is known as\n\u003cbr /\u003e",
+              "order": "randomized",
+              "presenterType": "RadioGroup",
+              "presenterConfig": {
+                "numberFormat": "none"
+              },
+              "choices": [
+                {
+                  "answerKey": "answer_1",
+                  "content": "zero-tolerance policy."
+                },
+                {
+                  "answerKey": "answer_2",
+                  "content": "teaching to the test."
+                },
+                {
+                  "answerKey": "answer_3",
+                  "content": "tracking."
+                },
+                {
+                  "answerKey": "answer_4",
+                  "content": "student passivity."
+                }
+              ]
+            },
+            "answerKey": {
+              "assessmentType": "multiplechoice",
+              "answers": {
+                "answer_3": {
+                  "score": 0.0,
+                  "response": "Consider this: School officials define success in terms of achievement test scores.\n\u003cbr /\u003eRefer to Learning Objective 20.5: Discuss dropping out, violence, and other problems facing today’s schools."
+                },
+                "answer_2": {
+                  "score": 1.0,
+                  "response": ""
+                },
+                "answer_1": {
+                  "score": 0.0,
+                  "response": "Consider this: School officials define success in terms of achievement test scores.\n\u003cbr /\u003eRefer to Learning Objective 20.5: Discuss dropping out, violence, and other problems facing today’s schools."
+                },
+                "answer_4": {
+                  "score": 0.0,
+                  "response": "Consider this: School officials define success in terms of achievement test scores.\n\u003cbr /\u003eRefer to Learning Objective 20.5: Discuss dropping out, violence, and other problems facing today’s schools."
+                }
+              }
+            },
+            "configFixup": [
+              {
+                "name": "questionId",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "sequenceNodeKey",
+                  "type": "ref"
+                }
+              },
+              {
+                "name": "maxAttempts",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "maxAttempts",
+                  "type": "ref"
+                }
+              }
+            ]
+          }
+        ],
+        "hookupActions": [
+          {
+            "description": "Hookup the submit manager to evaluate answers",
+            "methodName": "handleRequestsFrom",
+            "type": "method-call",
+            "args": [
+              {
+                "domain": "brix",
+                "refId": "q1",
+                "type": "ref"
+              }
+            ],
+            "instance": {
+              "type": "submit-manager"
+            }
+          },
+          {
+            "description": "Draw the question",
+            "methodName": "draw",
+            "type": "method-call",
+            "args": [
+              {
+                "selector": "#target1",
+                "type": "d3select"
+              }
+            ],
+            "instance": {
+              "domain": "brix",
+              "refId": "q1",
+              "type": "ref"
+            }
+          }
+        ]
+      }
+    ],
+    "title": "CE.20.32 Problems In The Schools Apply L.O. 20.5"
+  }
+}

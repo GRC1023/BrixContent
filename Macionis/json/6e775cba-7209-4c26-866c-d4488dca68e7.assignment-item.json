@@ -1,0 +1,192 @@
+{
+  "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope",
+  "@type": "Envelope",
+  "metadata": {
+    "bookTitle": "Sociology",
+    "keywords": [
+      "Macionis 15e",
+      "Ch10",
+      "Alick"
+    ],
+    "extendedMetadata": [
+      {
+        "name": "ISBN",
+        "value": "0133795012"
+      },
+      {
+        "name": "M",
+        "value": "c01"
+      },
+      {
+        "name": "assessment_title",
+        "value": "Chapter Quiz: Social Stratification"
+      },
+      {
+        "name": "Topic",
+        "value": "Explaining Stratification: Structural-Functional Theory"
+      },
+      {
+        "name": "chapterTitle",
+        "value": "Social Stratification"
+      },
+      {
+        "name": "item_title",
+        "value": "0133795012_John J. Macionis_ch10_c01_q0005"
+      },
+      {
+        "name": "questionlayout",
+        "value": "1"
+      },
+      {
+        "name": "CH",
+        "value": "10"
+      },
+      {
+        "name": "Difficulty",
+        "value": "Moderate"
+      },
+      {
+        "name": "Objective",
+        "value": "L.O. 10.4: Apply structural-functional theory to the topic of social inequality."
+      },
+      {
+        "name": "shuffle_choices",
+        "value": "Yes"
+      }
+    ],
+    "subject": [
+      "Sociology"
+    ],
+    "contentTypeTier2": [
+      "AssessmentItem"
+    ],
+    "contentTypeTier1": "Assessment",
+    "format": [
+      "application/vnd.pearson.sanvan.v1.activity"
+    ],
+    "version": "1.0",
+    "guid": "6e775cba-7209-4c26-866c-d4488dca68e7",
+    "bookAuthor": "John J. Macionis",
+    "title": "CE.10.42 Explaining Stratification Structural Functional Theory Understand L.O. 10.4",
+    "educationalAlignment": [
+      "http://purl.org/pearson/objectives/183725473384362"
+    ]
+  },
+  "body": {
+    "description": "CE.10.42, Explaining Stratification: Structural-Functional Theory, Understand, L.O. 10.4",
+    "containerConfig": [
+      {
+        "description": "CE.10.42, Explaining Stratification: Structural-Functional Theory, Understand, L.O. 10.4",
+        "containerId": "target1",
+        "brixConfig": [
+          {
+            "bricId": "q1",
+            "bricType": "MultipleChoiceQuestion",
+            "config": {
+              "id": "QUE57866",
+              "question": "What argument did Kingsley Davis and Wilbert Moore present to support their beliefs that social inequality has beneficial consequences for the operation of society?\n\u003cbr /\u003e",
+              "order": "randomized",
+              "presenterType": "RadioGroup",
+              "presenterConfig": {
+                "numberFormat": "none"
+              },
+              "choices": [
+                {
+                  "answerKey": "answer_1",
+                  "content": "Later generations always progress further toward equality than earlier generations."
+                },
+                {
+                  "answerKey": "answer_2",
+                  "content": "It always takes time for nonmaterial culture to catch up with material culture."
+                },
+                {
+                  "answerKey": "answer_3",
+                  "content": "Some form of social stratification has been found in every known society."
+                },
+                {
+                  "answerKey": "answer_4",
+                  "content": "All people in a society have a psychological need to judge themselves better than those around them."
+                }
+              ]
+            },
+            "answerKey": {
+              "assessmentType": "multiplechoice",
+              "answers": {
+                "answer_3": {
+                  "score": 1.0,
+                  "response": ""
+                },
+                "answer_2": {
+                  "score": 0.0,
+                  "response": "Consider this: Social stratification, like marriage and funeral rites, is a cultural universal.\n\u003cbr /\u003eRefer to Learning Objective 10.4: Apply structural-functional theory to the topic of social inequality."
+                },
+                "answer_1": {
+                  "score": 0.0,
+                  "response": "Consider this: Social stratification, like marriage and funeral rites, is a cultural universal.\n\u003cbr /\u003eRefer to Learning Objective 10.4: Apply structural-functional theory to the topic of social inequality."
+                },
+                "answer_4": {
+                  "score": 0.0,
+                  "response": "Consider this: Social stratification, like marriage and funeral rites, is a cultural universal.\n\u003cbr /\u003eRefer to Learning Objective 10.4: Apply structural-functional theory to the topic of social inequality."
+                }
+              }
+            },
+            "configFixup": [
+              {
+                "name": "questionId",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "sequenceNodeKey",
+                  "type": "ref"
+                }
+              },
+              {
+                "name": "maxAttempts",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "maxAttempts",
+                  "type": "ref"
+                }
+              }
+            ]
+          }
+        ],
+        "hookupActions": [
+          {
+            "description": "Hookup the submit manager to evaluate answers",
+            "methodName": "handleRequestsFrom",
+            "type": "method-call",
+            "args": [
+              {
+                "domain": "brix",
+                "refId": "q1",
+                "type": "ref"
+              }
+            ],
+            "instance": {
+              "type": "submit-manager"
+            }
+          },
+          {
+            "description": "Draw the question",
+            "methodName": "draw",
+            "type": "method-call",
+            "args": [
+              {
+                "selector": "#target1",
+                "type": "d3select"
+              }
+            ],
+            "instance": {
+              "domain": "brix",
+              "refId": "q1",
+              "type": "ref"
+            }
+          }
+        ]
+      }
+    ],
+    "title": "CE.10.42 Explaining Stratification Structural Functional Theory Understand L.O. 10.4"
+  }
+}

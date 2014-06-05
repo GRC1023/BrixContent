@@ -1,0 +1,192 @@
+{
+  "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope",
+  "@type": "Envelope",
+  "metadata": {
+    "bookTitle": "Sociology",
+    "keywords": [
+      "Macionis 15e",
+      "Ch01",
+      "Alick"
+    ],
+    "extendedMetadata": [
+      {
+        "name": "ISBN",
+        "value": "0133795012"
+      },
+      {
+        "name": "M",
+        "value": "c01"
+      },
+      {
+        "name": "assessment_title",
+        "value": "Chapter Quiz: The Sociological Perspective"
+      },
+      {
+        "name": "Topic",
+        "value": "The Importance of a Global Perspective"
+      },
+      {
+        "name": "chapterTitle",
+        "value": "The Sociological Perspective"
+      },
+      {
+        "name": "item_title",
+        "value": "0133795012_John J. Macionis_ch01_c01_q0005"
+      },
+      {
+        "name": "questionlayout",
+        "value": "1"
+      },
+      {
+        "name": "CH",
+        "value": "1"
+      },
+      {
+        "name": "Difficulty",
+        "value": "Easy"
+      },
+      {
+        "name": "Objective",
+        "value": "L.O. 1.2: State several reasons that a global perspective is important in today\u0026amp;rsquo;s world."
+      },
+      {
+        "name": "shuffle_choices",
+        "value": "Yes"
+      }
+    ],
+    "subject": [
+      "Sociology"
+    ],
+    "contentTypeTier2": [
+      "AssessmentItem"
+    ],
+    "contentTypeTier1": "Assessment",
+    "format": [
+      "application/vnd.pearson.sanvan.v1.activity"
+    ],
+    "version": "1.0",
+    "guid": "0ebbfdf3-3908-4044-872b-89667e375f2b",
+    "bookAuthor": "John J. Macionis",
+    "title": "CE.01.13 The Importance Of A Global Perspective Understand L.O. 1.2",
+    "educationalAlignment": [
+      "http://purl.org/pearson/objectives/183725473384362"
+    ]
+  },
+  "body": {
+    "description": "CE.01.13, The Importance of a Global Perspective, Understand, L.O. 1.2",
+    "containerConfig": [
+      {
+        "description": "CE.01.13, The Importance of a Global Perspective, Understand, L.O. 1.2",
+        "containerId": "target1",
+        "brixConfig": [
+          {
+            "bricId": "q1",
+            "bricType": "MultipleChoiceQuestion",
+            "config": {
+              "id": "QUE58289",
+              "question": "Which of the following characteristics do middle- and low-income countries have in common?\n\u003cbr /\u003e",
+              "order": "randomized",
+              "presenterType": "RadioGroup",
+              "presenterConfig": {
+                "numberFormat": "none"
+              },
+              "choices": [
+                {
+                  "answerKey": "answer_1",
+                  "content": "All of the people living there have an extremely low standard of living."
+                },
+                {
+                  "answerKey": "answer_2",
+                  "content": "Both kinds of countries have considerable social inequality, with a few rich but many poor."
+                },
+                {
+                  "answerKey": "answer_3",
+                  "content": "Most of the people in these countries have no educational opportunities."
+                },
+                {
+                  "answerKey": "answer_4",
+                  "content": "Both of these kinds of countries have little warfare."
+                }
+              ]
+            },
+            "answerKey": {
+              "assessmentType": "multiplechoice",
+              "answers": {
+                "answer_3": {
+                  "score": 0.0,
+                  "response": "Consider this: People living in high-income countries are economically well off.\n\u003cbr /\u003eRefer to Learning Objective 1.2: State several reasons that a global perspective is important in today’s world."
+                },
+                "answer_2": {
+                  "score": 1.0,
+                  "response": "Incorrect: Incorrect. Consider this: People living in high-income countries are economically well off.\n\u003cbr /\u003eRefer to Learning Objective 1.2: State several reasons that a global perspective is important in today’s world."
+                },
+                "answer_1": {
+                  "score": 0.0,
+                  "response": "Consider this: People living in high-income countries are economically well off.\n\u003cbr /\u003eRefer to Learning Objective 1.2: State several reasons that a global perspective is important in today’s world."
+                },
+                "answer_4": {
+                  "score": 0.0,
+                  "response": "Consider this: People living in high-income countries are economically well off. \n\u003cbr /\u003eRefer to Learning Objective 1.2: State several reasons that a global perspective is important in today’s world."
+                }
+              }
+            },
+            "configFixup": [
+              {
+                "name": "questionId",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "sequenceNodeKey",
+                  "type": "ref"
+                }
+              },
+              {
+                "name": "maxAttempts",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "maxAttempts",
+                  "type": "ref"
+                }
+              }
+            ]
+          }
+        ],
+        "hookupActions": [
+          {
+            "description": "Hookup the submit manager to evaluate answers",
+            "methodName": "handleRequestsFrom",
+            "type": "method-call",
+            "args": [
+              {
+                "domain": "brix",
+                "refId": "q1",
+                "type": "ref"
+              }
+            ],
+            "instance": {
+              "type": "submit-manager"
+            }
+          },
+          {
+            "description": "Draw the question",
+            "methodName": "draw",
+            "type": "method-call",
+            "args": [
+              {
+                "selector": "#target1",
+                "type": "d3select"
+              }
+            ],
+            "instance": {
+              "domain": "brix",
+              "refId": "q1",
+              "type": "ref"
+            }
+          }
+        ]
+      }
+    ],
+    "title": "CE.01.13 The Importance Of A Global Perspective Understand L.O. 1.2"
+  }
+}

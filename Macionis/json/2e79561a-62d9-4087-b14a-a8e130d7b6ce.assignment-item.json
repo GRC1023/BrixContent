@@ -1,0 +1,192 @@
+{
+  "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope",
+  "@type": "Envelope",
+  "metadata": {
+    "bookTitle": "Sociology",
+    "keywords": [
+      "Macionis 15e",
+      "Ch01",
+      "Alick"
+    ],
+    "extendedMetadata": [
+      {
+        "name": "ISBN",
+        "value": "0133795012"
+      },
+      {
+        "name": "M",
+        "value": "c01"
+      },
+      {
+        "name": "assessment_title",
+        "value": "Chapter Quiz: The Sociological Perspective"
+      },
+      {
+        "name": "Topic",
+        "value": "The Sociological Perspective"
+      },
+      {
+        "name": "chapterTitle",
+        "value": "The Sociological Perspective"
+      },
+      {
+        "name": "item_title",
+        "value": "0133795012_John J. Macionis_ch01_c01_q0001"
+      },
+      {
+        "name": "questionlayout",
+        "value": "1"
+      },
+      {
+        "name": "CH",
+        "value": "1"
+      },
+      {
+        "name": "Difficulty",
+        "value": "Easy"
+      },
+      {
+        "name": "Objective",
+        "value": "L.O. 1.1: Explain how the sociological perspective differs from common sense."
+      },
+      {
+        "name": "shuffle_choices",
+        "value": "Yes"
+      }
+    ],
+    "subject": [
+      "Sociology"
+    ],
+    "contentTypeTier2": [
+      "AssessmentItem"
+    ],
+    "contentTypeTier1": "Assessment",
+    "format": [
+      "application/vnd.pearson.sanvan.v1.activity"
+    ],
+    "version": "1.0",
+    "guid": "2e79561a-62d9-4087-b14a-a8e130d7b6ce",
+    "bookAuthor": "John J. Macionis",
+    "title": "Post.01.17 The Sociological Perspective Understand L.O. 1.1",
+    "educationalAlignment": [
+      "http://purl.org/pearson/objectives/183725473384362"
+    ]
+  },
+  "body": {
+    "description": "Post.01.17, The Sociological Perspective, Understand, L.O. 1.1",
+    "containerConfig": [
+      {
+        "description": "Post.01.17, The Sociological Perspective, Understand, L.O. 1.1",
+        "containerId": "target1",
+        "brixConfig": [
+          {
+            "bricId": "q1",
+            "bricType": "MultipleChoiceQuestion",
+            "config": {
+              "id": "QUE58285",
+              "question": "If asked, “Why do couples marry?” most people in the United States without a sociological perspective would answer, “Because of _________.”\n\u003cbr /\u003e",
+              "order": "randomized",
+              "presenterType": "RadioGroup",
+              "presenterConfig": {
+                "numberFormat": "none"
+              },
+              "choices": [
+                {
+                  "answerKey": "answer_1",
+                  "content": "personal feelings"
+                },
+                {
+                  "answerKey": "answer_2",
+                  "content": "state and federal laws"
+                },
+                {
+                  "answerKey": "answer_3",
+                  "content": "societal rules and patterns"
+                },
+                {
+                  "answerKey": "answer_4",
+                  "content": "love"
+                }
+              ]
+            },
+            "answerKey": {
+              "assessmentType": "multiplechoice",
+              "answers": {
+                "answer_3": {
+                  "score": 0.0,
+                  "response": "Consider this: Most Americans discount the role that society plays in determining one’s mate.\n\u003cbr /\u003eRefer to Learning Objective 1.1: Explain how the sociological perspective differs from common sense."
+                },
+                "answer_2": {
+                  "score": 0.0,
+                  "response": "Consider this: Most Americans discount the role that society plays in determining one’s mate.\n\u003cbr /\u003eRefer to Learning Objective 1.1: Explain how the sociological perspective differs from common sense."
+                },
+                "answer_1": {
+                  "score": 0.0,
+                  "response": "Consider this: Most Americans discount the role that society plays in determining one’s mate.\n\u003cbr /\u003e Refer to Learning Objective 1.1: Explain how the sociological perspective differs from common sense."
+                },
+                "answer_4": {
+                  "score": 1.0,
+                  "response": ""
+                }
+              }
+            },
+            "configFixup": [
+              {
+                "name": "questionId",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "sequenceNodeKey",
+                  "type": "ref"
+                }
+              },
+              {
+                "name": "maxAttempts",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "maxAttempts",
+                  "type": "ref"
+                }
+              }
+            ]
+          }
+        ],
+        "hookupActions": [
+          {
+            "description": "Hookup the submit manager to evaluate answers",
+            "methodName": "handleRequestsFrom",
+            "type": "method-call",
+            "args": [
+              {
+                "domain": "brix",
+                "refId": "q1",
+                "type": "ref"
+              }
+            ],
+            "instance": {
+              "type": "submit-manager"
+            }
+          },
+          {
+            "description": "Draw the question",
+            "methodName": "draw",
+            "type": "method-call",
+            "args": [
+              {
+                "selector": "#target1",
+                "type": "d3select"
+              }
+            ],
+            "instance": {
+              "domain": "brix",
+              "refId": "q1",
+              "type": "ref"
+            }
+          }
+        ]
+      }
+    ],
+    "title": "Post.01.17 The Sociological Perspective Understand L.O. 1.1"
+  }
+}

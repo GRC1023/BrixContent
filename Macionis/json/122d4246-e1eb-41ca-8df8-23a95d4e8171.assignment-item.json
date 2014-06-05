@@ -1,0 +1,192 @@
+{
+  "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope",
+  "@type": "Envelope",
+  "metadata": {
+    "bookTitle": "Sociology",
+    "keywords": [
+      "Macionis 15e",
+      "Ch04",
+      "Alick"
+    ],
+    "extendedMetadata": [
+      {
+        "name": "ISBN",
+        "value": "0133795012"
+      },
+      {
+        "name": "M",
+        "value": "c01"
+      },
+      {
+        "name": "assessment_title",
+        "value": "Chapter Quiz: Society"
+      },
+      {
+        "name": "Topic",
+        "value": "Max Weber: The Rationalization of Society"
+      },
+      {
+        "name": "chapterTitle",
+        "value": "Society"
+      },
+      {
+        "name": "item_title",
+        "value": "0133795012_John J. Macionis_ch04_c01_q0007"
+      },
+      {
+        "name": "questionlayout",
+        "value": "1"
+      },
+      {
+        "name": "CH",
+        "value": "4"
+      },
+      {
+        "name": "Difficulty",
+        "value": "Easy"
+      },
+      {
+        "name": "Objective",
+        "value": "L.O. 4.3: Demonstrate the importance of ideas to the development of human societies."
+      },
+      {
+        "name": "shuffle_choices",
+        "value": "Yes"
+      }
+    ],
+    "subject": [
+      "Sociology"
+    ],
+    "contentTypeTier2": [
+      "AssessmentItem"
+    ],
+    "contentTypeTier1": "Assessment",
+    "format": [
+      "application/vnd.pearson.sanvan.v1.activity"
+    ],
+    "version": "1.0",
+    "guid": "122d4246-e1eb-41ca-8df8-23a95d4e8171",
+    "bookAuthor": "John J. Macionis",
+    "title": "CE.04.41 Max Weber The Rationalization Of Society Understand L.O. 4.3",
+    "educationalAlignment": [
+      "http://purl.org/pearson/objectives/183725473384362"
+    ]
+  },
+  "body": {
+    "description": "CE.04.41, Max Weber: The Rationalization of Society, Understand, L.O. 4.3",
+    "containerConfig": [
+      {
+        "description": "CE.04.41, Max Weber: The Rationalization of Society, Understand, L.O. 4.3",
+        "containerId": "target1",
+        "brixConfig": [
+          {
+            "bricId": "q1",
+            "bricType": "MultipleChoiceQuestion",
+            "config": {
+              "id": "QUE57545",
+              "question": "Weber’s main argument is that people in preindustrial societies are bound by __________, whereas people in industrial-capitalist societies are guided by __________.\n\u003cbr /\u003e",
+              "order": "randomized",
+              "presenterType": "RadioGroup",
+              "presenterConfig": {
+                "numberFormat": "none"
+              },
+              "choices": [
+                {
+                  "answerKey": "answer_1",
+                  "content": "religion; naked self-interest"
+                },
+                {
+                  "answerKey": "answer_2",
+                  "content": "family; greed"
+                },
+                {
+                  "answerKey": "answer_3",
+                  "content": "needs; wants"
+                },
+                {
+                  "answerKey": "answer_4",
+                  "content": "tradition; rationality"
+                }
+              ]
+            },
+            "answerKey": {
+              "assessmentType": "multiplechoice",
+              "answers": {
+                "answer_3": {
+                  "score": 0.0,
+                  "response": "Consider this: At what time did people do things as they had always been done?\n\u003cbr /\u003eRefer to Learning Objective 4.3: Demonstrate the importance of ideas to the development of human societies."
+                },
+                "answer_2": {
+                  "score": 0.0,
+                  "response": "Consider this: At what time did people do things as they had always been done?\n\u003cbr /\u003eRefer to Learning Objective 4.3: Demonstrate the importance of ideas to the development of human societies."
+                },
+                "answer_1": {
+                  "score": 0.0,
+                  "response": "Consider this: At what time did people do things as they had always been done?\n\u003cbr /\u003eRefer to Learning Objective 4.3: Demonstrate the importance of ideas to the development of human societies."
+                },
+                "answer_4": {
+                  "score": 1.0,
+                  "response": ""
+                }
+              }
+            },
+            "configFixup": [
+              {
+                "name": "questionId",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "sequenceNodeKey",
+                  "type": "ref"
+                }
+              },
+              {
+                "name": "maxAttempts",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "maxAttempts",
+                  "type": "ref"
+                }
+              }
+            ]
+          }
+        ],
+        "hookupActions": [
+          {
+            "description": "Hookup the submit manager to evaluate answers",
+            "methodName": "handleRequestsFrom",
+            "type": "method-call",
+            "args": [
+              {
+                "domain": "brix",
+                "refId": "q1",
+                "type": "ref"
+              }
+            ],
+            "instance": {
+              "type": "submit-manager"
+            }
+          },
+          {
+            "description": "Draw the question",
+            "methodName": "draw",
+            "type": "method-call",
+            "args": [
+              {
+                "selector": "#target1",
+                "type": "d3select"
+              }
+            ],
+            "instance": {
+              "domain": "brix",
+              "refId": "q1",
+              "type": "ref"
+            }
+          }
+        ]
+      }
+    ],
+    "title": "CE.04.41 Max Weber The Rationalization Of Society Understand L.O. 4.3"
+  }
+}

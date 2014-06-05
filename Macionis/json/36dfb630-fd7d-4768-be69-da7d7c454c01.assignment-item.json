@@ -1,0 +1,196 @@
+{
+  "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope",
+  "@type": "Envelope",
+  "metadata": {
+    "bookTitle": "Sociology",
+    "keywords": [
+      "Macionis 15e",
+      "ch16",
+      "Rudowski"
+    ],
+    "extendedMetadata": [
+      {
+        "name": "ISBN",
+        "value": "0133795012"
+      },
+      {
+        "name": "M",
+        "value": "m03"
+      },
+      {
+        "name": "assessment_title",
+        "value": "Quiz: Work in the Postindustrial U.S. Economy"
+      },
+      {
+        "name": "Topic",
+        "value": "Work in the Postindustrial U.S. Economy"
+      },
+      {
+        "name": "chapterTitle",
+        "value": "The Economy and Work"
+      },
+      {
+        "name": "module",
+        "value": "Work in the Postindustrial U.S. Economy"
+      },
+      {
+        "name": "item_title",
+        "value": "0133795012_John J. Macionis_ch16_m03_q0004"
+      },
+      {
+        "name": "questionlayout",
+        "value": "1"
+      },
+      {
+        "name": "CH",
+        "value": "16"
+      },
+      {
+        "name": "Difficulty",
+        "value": "Moderate"
+      },
+      {
+        "name": "Objective",
+        "value": "L.O. 16.3: Analyze patterns of employment and unemployment in the United States."
+      },
+      {
+        "name": "shuffle_choices",
+        "value": "Yes"
+      }
+    ],
+    "subject": [
+      "Sociology"
+    ],
+    "contentTypeTier2": [
+      "AssessmentItem"
+    ],
+    "contentTypeTier1": "Assessment",
+    "format": [
+      "application/vnd.pearson.sanvan.v1.activity"
+    ],
+    "version": "1.0",
+    "guid": "36dfb630-fd7d-4768-be69-da7d7c454c01",
+    "bookAuthor": "John J. Macionis",
+    "title": "Pre.16.17 Work In The Postindustrial U.S. Economy Understand L.O. 16.3",
+    "educationalAlignment": [
+      "http://purl.org/pearson/objectives/183725473384362"
+    ]
+  },
+  "body": {
+    "description": "Pre.16.17, Work in the Postindustrial U.S. Economy, Understand, L.O. 16.3",
+    "containerConfig": [
+      {
+        "description": "Pre.16.17, Work in the Postindustrial U.S. Economy, Understand, L.O. 16.3",
+        "containerId": "target1",
+        "brixConfig": [
+          {
+            "bricId": "q1",
+            "bricType": "MultipleChoiceQuestion",
+            "config": {
+              "id": "QUE57997",
+              "question": "Which of the following is a result of the Information Revolution?\n\u003cbr /\u003e",
+              "order": "randomized",
+              "presenterType": "RadioGroup",
+              "presenterConfig": {
+                "numberFormat": "none"
+              },
+              "choices": [
+                {
+                  "answerKey": "answer_1",
+                  "content": "More business operations are based on executive decisions."
+                },
+                {
+                  "answerKey": "answer_2",
+                  "content": "Many jobs are outsourced to places where wages may be lower."
+                },
+                {
+                  "answerKey": "answer_3",
+                  "content": "Workers spend more time interacting with each other."
+                },
+                {
+                  "answerKey": "answer_4",
+                  "content": "Computers are making work less abstract."
+                }
+              ]
+            },
+            "answerKey": {
+              "assessmentType": "multiplechoice",
+              "answers": {
+                "answer_3": {
+                  "score": 0.0,
+                  "response": ""
+                },
+                "answer_2": {
+                  "score": 1.0,
+                  "response": ""
+                },
+                "answer_1": {
+                  "score": 0.0,
+                  "response": ""
+                },
+                "answer_4": {
+                  "score": 0.0,
+                  "response": ""
+                }
+              }
+            },
+            "configFixup": [
+              {
+                "name": "questionId",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "sequenceNodeKey",
+                  "type": "ref"
+                }
+              },
+              {
+                "name": "maxAttempts",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "maxAttempts",
+                  "type": "ref"
+                }
+              }
+            ]
+          }
+        ],
+        "hookupActions": [
+          {
+            "description": "Hookup the submit manager to evaluate answers",
+            "methodName": "handleRequestsFrom",
+            "type": "method-call",
+            "args": [
+              {
+                "domain": "brix",
+                "refId": "q1",
+                "type": "ref"
+              }
+            ],
+            "instance": {
+              "type": "submit-manager"
+            }
+          },
+          {
+            "description": "Draw the question",
+            "methodName": "draw",
+            "type": "method-call",
+            "args": [
+              {
+                "selector": "#target1",
+                "type": "d3select"
+              }
+            ],
+            "instance": {
+              "domain": "brix",
+              "refId": "q1",
+              "type": "ref"
+            }
+          }
+        ]
+      }
+    ],
+    "title": "Pre.16.17 Work In The Postindustrial U.S. Economy Understand L.O. 16.3"
+  }
+}

@@ -1,0 +1,142 @@
+{
+  "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope",
+  "@type": "Envelope",
+  "metadata": {
+    "guid": "4f23899f-e550-4982-b61b-7ce6348bc231",
+    "title": "Pre.01.10 Applying The Sociological Perspective Understand L.O. 1.3",
+    "keywords": [
+      "Macionis 15e",
+      "Ch01",
+      "Alick"
+    ],
+    "extendedMetadata": [],
+    "contentTypeTier2": [
+      "AssessmentItem"
+    ],
+    "contentTypeTier1": "Assessment",
+    "format": [
+      "application/vnd.pearson.sanvan.v1.activity"
+    ],
+    "educationalAlignment": [
+      "http://purl.org/pearson/objectives/183725473384362"
+    ],
+    "version": "1.0"
+  },
+  "body": {
+    "description": "Pre.01.10, Applying the Sociological Perspective, Understand, L.O. 1.3",
+    "containerConfig": [
+      {
+        "description": "Pre.01.10, Applying the Sociological Perspective, Understand, L.O. 1.3",
+        "containerId": "target1",
+        "brixConfig": [
+          {
+            "bricId": "q1",
+            "bricType": "MultipleChoiceQuestion",
+            "config": {
+              "id": "QUE58310",
+              "question": "Which of the following statements is an example of sociological research shaping public policy?\n\u003cbr /\u003e",
+              "order": "randomized",
+              "presenterType": "RadioGroup",
+              "presenterConfig": {
+                "numberFormat": "none"
+              },
+              "choices": [
+                {
+                  "answerKey": "answer_1",
+                  "content": "Many states have passed laws that increase women’s claims to marital property and enforce fathers’ obligations to provide support for women raising their children."
+                },
+                {
+                  "answerKey": "answer_2",
+                  "content": "People, especially when they are young, are likely to marry someone similar in age, race, social background, and physical attractiveness."
+                },
+                {
+                  "answerKey": "answer_3",
+                  "content": "Because poor countries provide women with less schooling and fewer economic opportunities, women in poor countries are less likely to use contraception."
+                },
+                {
+                  "answerKey": "answer_4",
+                  "content": "In recent years, there has been an increase in electronic technology that transmits pictures, sounds, and written documents around the globe."
+                }
+              ]
+            },
+            "answerKey": {
+              "assessmentType": "multiplechoice",
+              "answers": {
+                "answer_3": {
+                  "score": 0.0,
+                  "response": "Incorrect."
+                },
+                "answer_2": {
+                  "score": 0.0,
+                  "response": "Incorrect."
+                },
+                "answer_1": {
+                  "score": 1.0,
+                  "response": "Correct!"
+                },
+                "answer_4": {
+                  "score": 0.0,
+                  "response": "Incorrect."
+                }
+              }
+            },
+            "configFixup": [
+              {
+                "name": "questionId",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "sequenceNodeKey",
+                  "type": "ref"
+                }
+              },
+              {
+                "name": "maxAttempts",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "maxAttempts",
+                  "type": "ref"
+                }
+              }
+            ]
+          }
+        ],
+        "hookupActions": [
+          {
+            "description": "Hookup the submit manager to evaluate answers",
+            "methodName": "handleRequestsFrom",
+            "type": "method-call",
+            "args": [
+              {
+                "domain": "brix",
+                "refId": "q1",
+                "type": "ref"
+              }
+            ],
+            "instance": {
+              "type": "submit-manager"
+            }
+          },
+          {
+            "description": "Draw the question",
+            "methodName": "draw",
+            "type": "method-call",
+            "args": [
+              {
+                "selector": "#target1",
+                "type": "d3select"
+              }
+            ],
+            "instance": {
+              "domain": "brix",
+              "refId": "q1",
+              "type": "ref"
+            }
+          }
+        ]
+      }
+    ],
+    "title": "Pre.01.10 Applying The Sociological Perspective Understand L.O. 1.3"
+  }
+}

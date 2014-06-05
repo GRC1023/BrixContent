@@ -1,0 +1,191 @@
+{
+  "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope",
+  "@type": "Envelope",
+  "metadata": {
+    "bookTitle": "Sociology",
+    "keywords": [
+      "Macionis 15e",
+      "Ch02"
+    ],
+    "extendedMetadata": [
+      {
+        "name": "ISBN",
+        "value": "0133795012"
+      },
+      {
+        "name": "M",
+        "value": "c01"
+      },
+      {
+        "name": "assessment_title",
+        "value": "Chapter Quiz: Sociological Investigation"
+      },
+      {
+        "name": "Topic",
+        "value": "Basics of Sociological Investigation"
+      },
+      {
+        "name": "chapterTitle",
+        "value": "Sociological Investigation"
+      },
+      {
+        "name": "item_title",
+        "value": "0133795012_John J. Macionis_ch02_c01_q0002"
+      },
+      {
+        "name": "questionlayout",
+        "value": "1"
+      },
+      {
+        "name": "CH",
+        "value": "2"
+      },
+      {
+        "name": "Difficulty",
+        "value": "Easy"
+      },
+      {
+        "name": "Objective",
+        "value": "L.O. 2.1: Explain how scientific evidence often challenges common sense."
+      },
+      {
+        "name": "shuffle_choices",
+        "value": "Yes"
+      }
+    ],
+    "subject": [
+      "Sociology"
+    ],
+    "contentTypeTier2": [
+      "AssessmentItem"
+    ],
+    "contentTypeTier1": "Assessment",
+    "format": [
+      "application/vnd.pearson.sanvan.v1.activity"
+    ],
+    "version": "1.0",
+    "guid": "6357dfe2-ff18-4b20-af50-72b0ce82aeb5",
+    "bookAuthor": "John J. Macionis",
+    "title": "CE.02.02 Basics Of Sociological Investigation Apply L.O. 2.1",
+    "educationalAlignment": [
+      "http://purl.org/pearson/objectives/183725473384362"
+    ]
+  },
+  "body": {
+    "description": "CE.02.02, Basics of Sociological Investigation, Apply, L.O. 2.1",
+    "containerConfig": [
+      {
+        "description": "CE.02.02, Basics of Sociological Investigation, Apply, L.O. 2.1",
+        "containerId": "target1",
+        "brixConfig": [
+          {
+            "bricId": "q1",
+            "bricType": "MultipleChoiceQuestion",
+            "config": {
+              "id": "QUE57481",
+              "question": "Which of the following is an example of a scientific truth?\n\u003cbr /\u003e",
+              "order": "randomized",
+              "presenterType": "RadioGroup",
+              "presenterConfig": {
+                "numberFormat": "none"
+              },
+              "choices": [
+                {
+                  "answerKey": "answer_1",
+                  "content": "belief in God"
+                },
+                {
+                  "answerKey": "answer_2",
+                  "content": "consulting a lawyer for a legal problem"
+                },
+                {
+                  "answerKey": "answer_3",
+                  "content": "knowing that stealing is wrong"
+                },
+                {
+                  "answerKey": "answer_4",
+                  "content": "a theory that is supported by empirical evidence"
+                }
+              ]
+            },
+            "answerKey": {
+              "assessmentType": "multiplechoice",
+              "answers": {
+                "answer_3": {
+                  "score": 0.0,
+                  "response": "Consider this: Science bases knowledge on direct, systematic observation.\n\u003cbr /\u003eRefer to Learning Objective 2.1: Explain how scientific evidence often challenges common sense."
+                },
+                "answer_2": {
+                  "score": 0.0,
+                  "response": "Consider this: Science bases knowledge on direct, systematic observation.\n\u003cbr /\u003eRefer to Learning Objective 2.1: Explain how scientific evidence often challenges common sense."
+                },
+                "answer_1": {
+                  "score": 0.0,
+                  "response": "Consider this: Science bases knowledge on direct, systematic observation.\n\u003cbr /\u003eRefer to Learning Objective 2.1: Explain how scientific evidence often challenges common sense."
+                },
+                "answer_4": {
+                  "score": 1.0,
+                  "response": ""
+                }
+              }
+            },
+            "configFixup": [
+              {
+                "name": "questionId",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "sequenceNodeKey",
+                  "type": "ref"
+                }
+              },
+              {
+                "name": "maxAttempts",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "maxAttempts",
+                  "type": "ref"
+                }
+              }
+            ]
+          }
+        ],
+        "hookupActions": [
+          {
+            "description": "Hookup the submit manager to evaluate answers",
+            "methodName": "handleRequestsFrom",
+            "type": "method-call",
+            "args": [
+              {
+                "domain": "brix",
+                "refId": "q1",
+                "type": "ref"
+              }
+            ],
+            "instance": {
+              "type": "submit-manager"
+            }
+          },
+          {
+            "description": "Draw the question",
+            "methodName": "draw",
+            "type": "method-call",
+            "args": [
+              {
+                "selector": "#target1",
+                "type": "d3select"
+              }
+            ],
+            "instance": {
+              "domain": "brix",
+              "refId": "q1",
+              "type": "ref"
+            }
+          }
+        ]
+      }
+    ],
+    "title": "CE.02.02 Basics Of Sociological Investigation Apply L.O. 2.1"
+  }
+}

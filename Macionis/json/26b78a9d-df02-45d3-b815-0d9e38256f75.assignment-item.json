@@ -1,0 +1,192 @@
+{
+  "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope",
+  "@type": "Envelope",
+  "metadata": {
+    "bookTitle": "Sociology",
+    "keywords": [
+      "Macionis 15e",
+      "Ch10",
+      "Alick"
+    ],
+    "extendedMetadata": [
+      {
+        "name": "ISBN",
+        "value": "0133795012"
+      },
+      {
+        "name": "M",
+        "value": "c01"
+      },
+      {
+        "name": "assessment_title",
+        "value": "Chapter Quiz: Social Stratification"
+      },
+      {
+        "name": "Topic",
+        "value": "Explaining Stratification: Social-Conflict Theories"
+      },
+      {
+        "name": "chapterTitle",
+        "value": "Social Stratification"
+      },
+      {
+        "name": "item_title",
+        "value": "0133795012_John J. Macionis_ch10_c01_q0007"
+      },
+      {
+        "name": "questionlayout",
+        "value": "1"
+      },
+      {
+        "name": "CH",
+        "value": "10"
+      },
+      {
+        "name": "Difficulty",
+        "value": "Difficult"
+      },
+      {
+        "name": "Objective",
+        "value": "L.O. 10.5: Apply social-conflict theories to the topic of social inequality."
+      },
+      {
+        "name": "shuffle_choices",
+        "value": "Yes"
+      }
+    ],
+    "subject": [
+      "Sociology"
+    ],
+    "contentTypeTier2": [
+      "AssessmentItem"
+    ],
+    "contentTypeTier1": "Assessment",
+    "format": [
+      "application/vnd.pearson.sanvan.v1.activity"
+    ],
+    "version": "1.0",
+    "guid": "26b78a9d-df02-45d3-b815-0d9e38256f75",
+    "bookAuthor": "John J. Macionis",
+    "title": "CE.10.48 Explaining Stratification Social Conflict Theories Analyze L.O. 10.5",
+    "educationalAlignment": [
+      "http://purl.org/pearson/objectives/183725473384362"
+    ]
+  },
+  "body": {
+    "description": "CE.10.48, Explaining Stratification: Social-Conflict Theories, Analyze, L.O. 10.5",
+    "containerConfig": [
+      {
+        "description": "CE.10.48, Explaining Stratification: Social-Conflict Theories, Analyze, L.O. 10.5",
+        "containerId": "target1",
+        "brixConfig": [
+          {
+            "bricId": "q1",
+            "bricType": "MultipleChoiceQuestion",
+            "config": {
+              "id": "QUE57868",
+              "question": "What evidence exists to contradict Karl Marx’s claims concerning the inevitable overthrow of capitalism?\n\u003cbr /\u003e",
+              "order": "randomized",
+              "presenterType": "RadioGroup",
+              "presenterConfig": {
+                "numberFormat": "none"
+              },
+              "choices": [
+                {
+                  "answerKey": "answer_1",
+                  "content": "The vast difference in wealth held by the rich and the poor in capitalist societies is increasing."
+                },
+                {
+                  "answerKey": "answer_2",
+                  "content": "The rewards received by many white-collar workers in capitalist societies are no different from those received by factory workers in Marx’s time."
+                },
+                {
+                  "answerKey": "answer_3",
+                  "content": "No advanced capitalist society has ever experienced a class revolution by the workers."
+                },
+                {
+                  "answerKey": "answer_4",
+                  "content": "Many of the benefits enjoyed by workers in capitalist societies today came about as a result of class conflict."
+                }
+              ]
+            },
+            "answerKey": {
+              "assessmentType": "multiplechoice",
+              "answers": {
+                "answer_3": {
+                  "score": 1.0,
+                  "response": ""
+                },
+                "answer_2": {
+                  "score": 0.0,
+                  "response": "Consider this: Marx (along with his collaborator, Friedrich Engels) once wrote: “The proletarians have nothing to lose but their chains. They have a world to win.”\n\u003cbr /\u003eRefer to Learning Objective 10.5: Apply social-conflict theories to the topic of social inequality."
+                },
+                "answer_1": {
+                  "score": 0.0,
+                  "response": "Consider this: Marx (along with his collaborator, Friedrich Engels) once wrote: “The proletarians have nothing to lose but their chains. They have a world to win.”\n\u003cbr /\u003eRefer to Learning Objective 10.5: Apply social-conflict theories to the topic of social inequality."
+                },
+                "answer_4": {
+                  "score": 0.0,
+                  "response": "Consider this: Marx (along with his collaborator, Friedrich Engels) once wrote: “The proletarians have nothing to lose but their chains. They have a world to win.”\n\u003cbr /\u003eRefer to Learning Objective 10.5: Apply social-conflict theories to the topic of social inequality."
+                }
+              }
+            },
+            "configFixup": [
+              {
+                "name": "questionId",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "sequenceNodeKey",
+                  "type": "ref"
+                }
+              },
+              {
+                "name": "maxAttempts",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "maxAttempts",
+                  "type": "ref"
+                }
+              }
+            ]
+          }
+        ],
+        "hookupActions": [
+          {
+            "description": "Hookup the submit manager to evaluate answers",
+            "methodName": "handleRequestsFrom",
+            "type": "method-call",
+            "args": [
+              {
+                "domain": "brix",
+                "refId": "q1",
+                "type": "ref"
+              }
+            ],
+            "instance": {
+              "type": "submit-manager"
+            }
+          },
+          {
+            "description": "Draw the question",
+            "methodName": "draw",
+            "type": "method-call",
+            "args": [
+              {
+                "selector": "#target1",
+                "type": "d3select"
+              }
+            ],
+            "instance": {
+              "domain": "brix",
+              "refId": "q1",
+              "type": "ref"
+            }
+          }
+        ]
+      }
+    ],
+    "title": "CE.10.48 Explaining Stratification Social Conflict Theories Analyze L.O. 10.5"
+  }
+}

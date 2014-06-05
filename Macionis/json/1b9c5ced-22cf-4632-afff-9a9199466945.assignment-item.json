@@ -1,0 +1,142 @@
+{
+  "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope",
+  "@type": "Envelope",
+  "metadata": {
+    "guid": "1b9c5ced-22cf-4632-afff-9a9199466945",
+    "title": "Post.01.31 Applying The Sociological Perspective Understand L.O. 1.3",
+    "keywords": [
+      "Macionis 15e",
+      "Ch01",
+      "Alick"
+    ],
+    "extendedMetadata": [],
+    "contentTypeTier2": [
+      "AssessmentItem"
+    ],
+    "contentTypeTier1": "Assessment",
+    "format": [
+      "application/vnd.pearson.sanvan.v1.activity"
+    ],
+    "educationalAlignment": [
+      "http://purl.org/pearson/objectives/183725473384362"
+    ],
+    "version": "1.0"
+  },
+  "body": {
+    "description": "Post.01.31, Applying the Sociological Perspective, Understand, L.O. 1.3",
+    "containerConfig": [
+      {
+        "description": "Post.01.31, Applying the Sociological Perspective, Understand, L.O. 1.3",
+        "containerId": "target1",
+        "brixConfig": [
+          {
+            "bricId": "q1",
+            "bricType": "MultipleChoiceQuestion",
+            "config": {
+              "id": "QUE58313",
+              "question": "A basic difference between clinical psychologists and clinical sociologists is that clinical sociologists focus on difficulties ________.\n\u003cbr /\u003e",
+              "order": "randomized",
+              "presenterType": "RadioGroup",
+              "presenterConfig": {
+                "numberFormat": "none"
+              },
+              "choices": [
+                {
+                  "answerKey": "answer_1",
+                  "content": "with an individual\u0027s personality"
+                },
+                {
+                  "answerKey": "answer_2",
+                  "content": "related to a person\u0027s development"
+                },
+                {
+                  "answerKey": "answer_3",
+                  "content": "in the individual\u0027s social relationships"
+                },
+                {
+                  "answerKey": "answer_4",
+                  "content": "in the political arena"
+                }
+              ]
+            },
+            "answerKey": {
+              "assessmentType": "multiplechoice",
+              "answers": {
+                "answer_3": {
+                  "score": 1.0,
+                  "response": "Correct!"
+                },
+                "answer_2": {
+                  "score": 0.0,
+                  "response": "Incorrect."
+                },
+                "answer_1": {
+                  "score": 0.0,
+                  "response": "Incorrect."
+                },
+                "answer_4": {
+                  "score": 0.0,
+                  "response": "Incorrect."
+                }
+              }
+            },
+            "configFixup": [
+              {
+                "name": "questionId",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "sequenceNodeKey",
+                  "type": "ref"
+                }
+              },
+              {
+                "name": "maxAttempts",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "maxAttempts",
+                  "type": "ref"
+                }
+              }
+            ]
+          }
+        ],
+        "hookupActions": [
+          {
+            "description": "Hookup the submit manager to evaluate answers",
+            "methodName": "handleRequestsFrom",
+            "type": "method-call",
+            "args": [
+              {
+                "domain": "brix",
+                "refId": "q1",
+                "type": "ref"
+              }
+            ],
+            "instance": {
+              "type": "submit-manager"
+            }
+          },
+          {
+            "description": "Draw the question",
+            "methodName": "draw",
+            "type": "method-call",
+            "args": [
+              {
+                "selector": "#target1",
+                "type": "d3select"
+              }
+            ],
+            "instance": {
+              "domain": "brix",
+              "refId": "q1",
+              "type": "ref"
+            }
+          }
+        ]
+      }
+    ],
+    "title": "Post.01.31 Applying The Sociological Perspective Understand L.O. 1.3"
+  }
+}

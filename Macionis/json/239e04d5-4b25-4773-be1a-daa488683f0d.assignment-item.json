@@ -1,0 +1,192 @@
+{
+  "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope",
+  "@type": "Envelope",
+  "metadata": {
+    "bookTitle": "Sociology",
+    "keywords": [
+      "Macionis 15e",
+      "ch21",
+      "Rudowski"
+    ],
+    "extendedMetadata": [
+      {
+        "name": "ISBN",
+        "value": "0133795012"
+      },
+      {
+        "name": "M",
+        "value": "c01"
+      },
+      {
+        "name": "assessment_title",
+        "value": "Chapter Quiz: Health and Medicine"
+      },
+      {
+        "name": "Topic",
+        "value": "Health and Medicine: Looking Ahead"
+      },
+      {
+        "name": "chapterTitle",
+        "value": "Health and Medicine"
+      },
+      {
+        "name": "item_title",
+        "value": "0133795012_John J. Macionis_ch22_c01_q0009"
+      },
+      {
+        "name": "questionlayout",
+        "value": "1"
+      },
+      {
+        "name": "CH",
+        "value": "22"
+      },
+      {
+        "name": "Difficulty",
+        "value": "Easy"
+      },
+      {
+        "name": "Objective",
+        "value": "L.O. 21.5: Apply sociology\u0026amp;rsquo;s major theories to health and medicine."
+      },
+      {
+        "name": "shuffle_choices",
+        "value": "Yes"
+      }
+    ],
+    "subject": [
+      "Sociology"
+    ],
+    "contentTypeTier2": [
+      "AssessmentItem"
+    ],
+    "contentTypeTier1": "Assessment",
+    "format": [
+      "application/vnd.pearson.sanvan.v1.activity"
+    ],
+    "version": "1.0",
+    "guid": "239e04d5-4b25-4773-be1a-daa488683f0d",
+    "bookAuthor": "John J. Macionis",
+    "title": "CE.21.20 Health And Medicine Looking Ahead Understand L.O. 21.5",
+    "educationalAlignment": [
+      "http://purl.org/pearson/objectives/183725473384362"
+    ]
+  },
+  "body": {
+    "description": "CE.21.20, Health and Medicine: Looking Ahead, Understand, L.O. 21.5",
+    "containerConfig": [
+      {
+        "description": "CE.21.20, Health and Medicine: Looking Ahead, Understand, L.O. 21.5",
+        "containerId": "target1",
+        "brixConfig": [
+          {
+            "bricId": "q1",
+            "bricType": "MultipleChoiceQuestion",
+            "config": {
+              "id": "QUE57912",
+              "question": "For the world as a whole, life expectancy has increased from 48 years in 1950 to __________ years today.\n\u003cbr /\u003e",
+              "order": "randomized",
+              "presenterType": "RadioGroup",
+              "presenterConfig": {
+                "numberFormat": "none"
+              },
+              "choices": [
+                {
+                  "answerKey": "answer_1",
+                  "content": "50"
+                },
+                {
+                  "answerKey": "answer_2",
+                  "content": "70"
+                },
+                {
+                  "answerKey": "answer_3",
+                  "content": "60"
+                },
+                {
+                  "answerKey": "answer_4",
+                  "content": "80"
+                }
+              ]
+            },
+            "answerKey": {
+              "assessmentType": "multiplechoice",
+              "answers": {
+                "answer_3": {
+                  "score": 0.0,
+                  "response": "Consider this: The largest gains in life expectancy since 1950 have been in poor countries.\n\u003cbr /\u003eRefer to Learning Objective 21.5: Apply sociology’s major theories to health and medicine."
+                },
+                "answer_2": {
+                  "score": 1.0,
+                  "response": ""
+                },
+                "answer_1": {
+                  "score": 0.0,
+                  "response": "Consider this: The largest gains in life expectancy since 1950 have been in poor countries.\n\u003cbr /\u003eRefer to Learning Objective 21.5: Apply sociology’s major theories to health and medicine."
+                },
+                "answer_4": {
+                  "score": 0.0,
+                  "response": "Consider this: The largest gains in life expectancy since 1950 have been in poor countries.\n\u003cbr /\u003eRefer to Learning Objective 21.5: Apply sociology’s major theories to health and medicine."
+                }
+              }
+            },
+            "configFixup": [
+              {
+                "name": "questionId",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "sequenceNodeKey",
+                  "type": "ref"
+                }
+              },
+              {
+                "name": "maxAttempts",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "maxAttempts",
+                  "type": "ref"
+                }
+              }
+            ]
+          }
+        ],
+        "hookupActions": [
+          {
+            "description": "Hookup the submit manager to evaluate answers",
+            "methodName": "handleRequestsFrom",
+            "type": "method-call",
+            "args": [
+              {
+                "domain": "brix",
+                "refId": "q1",
+                "type": "ref"
+              }
+            ],
+            "instance": {
+              "type": "submit-manager"
+            }
+          },
+          {
+            "description": "Draw the question",
+            "methodName": "draw",
+            "type": "method-call",
+            "args": [
+              {
+                "selector": "#target1",
+                "type": "d3select"
+              }
+            ],
+            "instance": {
+              "domain": "brix",
+              "refId": "q1",
+              "type": "ref"
+            }
+          }
+        ]
+      }
+    ],
+    "title": "CE.21.20 Health And Medicine Looking Ahead Understand L.O. 21.5"
+  }
+}

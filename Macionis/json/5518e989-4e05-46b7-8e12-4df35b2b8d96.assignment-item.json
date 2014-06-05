@@ -1,0 +1,192 @@
+{
+  "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope",
+  "@type": "Envelope",
+  "metadata": {
+    "bookTitle": "Sociology",
+    "keywords": [
+      "Macionis 15e",
+      "Ch08",
+      "Alick"
+    ],
+    "extendedMetadata": [
+      {
+        "name": "ISBN",
+        "value": "0133795012"
+      },
+      {
+        "name": "M",
+        "value": "c01"
+      },
+      {
+        "name": "assessment_title",
+        "value": "Chapter Quiz: Sexuality and Society"
+      },
+      {
+        "name": "Topic",
+        "value": "Theories of Sexuality"
+      },
+      {
+        "name": "chapterTitle",
+        "value": "Sexuality and Society"
+      },
+      {
+        "name": "item_title",
+        "value": "0133795012_John J. Macionis_ch08_c01_q0009"
+      },
+      {
+        "name": "questionlayout",
+        "value": "1"
+      },
+      {
+        "name": "CH",
+        "value": "8"
+      },
+      {
+        "name": "Difficulty",
+        "value": "Easy"
+      },
+      {
+        "name": "Objective",
+        "value": "L.O. 8.5: Apply sociologyâs major theories to the topic of sexuality."
+      },
+      {
+        "name": "shuffle_choices",
+        "value": "Yes"
+      }
+    ],
+    "subject": [
+      "Sociology"
+    ],
+    "contentTypeTier2": [
+      "AssessmentItem"
+    ],
+    "contentTypeTier1": "Assessment",
+    "format": [
+      "application/vnd.pearson.sanvan.v1.activity"
+    ],
+    "version": "1.0",
+    "guid": "5518e989-4e05-46b7-8e12-4df35b2b8d96",
+    "bookAuthor": "John J. Macionis",
+    "title": "CE.08.22 Theories Of Sexuality Apply L.O. 8.5",
+    "educationalAlignment": [
+      "http://purl.org/pearson/objectives/183725473384362"
+    ]
+  },
+  "body": {
+    "description": "CE.08.22, Theories of Sexuality, Apply, L.O. 8.5",
+    "containerConfig": [
+      {
+        "description": "CE.08.22, Theories of Sexuality, Apply, L.O. 8.5",
+        "containerId": "target1",
+        "brixConfig": [
+          {
+            "bricId": "q1",
+            "bricType": "MultipleChoiceQuestion",
+            "config": {
+              "id": "QUE57719",
+              "question": "The symbolic-interaction approach views sexuality as ______.\n\u003cbr /\u003e",
+              "order": "randomized",
+              "presenterType": "RadioGroup",
+              "presenterConfig": {
+                "numberFormat": "none"
+              },
+              "choices": [
+                {
+                  "answerKey": "answer_1",
+                  "content": "socially constructed meanings"
+                },
+                {
+                  "answerKey": "answer_2",
+                  "content": "biological"
+                },
+                {
+                  "answerKey": "answer_3",
+                  "content": "the same in every period of history"
+                },
+                {
+                  "answerKey": "answer_4",
+                  "content": "the same across cultures"
+                }
+              ]
+            },
+            "answerKey": {
+              "assessmentType": "multiplechoice",
+              "answers": {
+                "answer_3": {
+                  "score": 0.0,
+                  "response": "Consider this: Remember that the symbolic-interaction theory is a micro-level analysis.\n\u003cbr /\u003eRefer to Learning Objective 8.5: Apply sociology’s major theories to the topic of sexuality."
+                },
+                "answer_2": {
+                  "score": 0.0,
+                  "response": "Consider this: Remember that the symbolic-interaction theory is a micro-level analysis.\n\u003cbr /\u003eRefer to Learning Objective 8.5: Apply sociology’s major theories to the topic of sexuality."
+                },
+                "answer_1": {
+                  "score": 1.0,
+                  "response": ""
+                },
+                "answer_4": {
+                  "score": 0.0,
+                  "response": "Consider this: Remember that the symbolic-interaction theory is a micro-level analysis.\n\u003cbr /\u003eRefer to Learning Objective 8.5: Apply sociology’s major theories to the topic of sexuality."
+                }
+              }
+            },
+            "configFixup": [
+              {
+                "name": "questionId",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "sequenceNodeKey",
+                  "type": "ref"
+                }
+              },
+              {
+                "name": "maxAttempts",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "maxAttempts",
+                  "type": "ref"
+                }
+              }
+            ]
+          }
+        ],
+        "hookupActions": [
+          {
+            "description": "Hookup the submit manager to evaluate answers",
+            "methodName": "handleRequestsFrom",
+            "type": "method-call",
+            "args": [
+              {
+                "domain": "brix",
+                "refId": "q1",
+                "type": "ref"
+              }
+            ],
+            "instance": {
+              "type": "submit-manager"
+            }
+          },
+          {
+            "description": "Draw the question",
+            "methodName": "draw",
+            "type": "method-call",
+            "args": [
+              {
+                "selector": "#target1",
+                "type": "d3select"
+              }
+            ],
+            "instance": {
+              "domain": "brix",
+              "refId": "q1",
+              "type": "ref"
+            }
+          }
+        ]
+      }
+    ],
+    "title": "CE.08.22 Theories Of Sexuality Apply L.O. 8.5"
+  }
+}

@@ -1,0 +1,195 @@
+{
+  "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope",
+  "@type": "Envelope",
+  "metadata": {
+    "bookTitle": "Sociology",
+    "keywords": [
+      "Macionis 15e",
+      "Ch02"
+    ],
+    "extendedMetadata": [
+      {
+        "name": "ISBN",
+        "value": "0133795012"
+      },
+      {
+        "name": "M",
+        "value": "m04"
+      },
+      {
+        "name": "assessment_title",
+        "value": "Quiz: Research Methods"
+      },
+      {
+        "name": "Topic",
+        "value": "Research Ethics"
+      },
+      {
+        "name": "chapterTitle",
+        "value": "Sociological Investigation"
+      },
+      {
+        "name": "module",
+        "value": "Research Methods"
+      },
+      {
+        "name": "item_title",
+        "value": "0133795012_John J. Macionis_ch02_m04_q0003"
+      },
+      {
+        "name": "questionlayout",
+        "value": "1"
+      },
+      {
+        "name": "CH",
+        "value": "2"
+      },
+      {
+        "name": "Difficulty",
+        "value": "Easy"
+      },
+      {
+        "name": "Objective",
+        "value": "L.O. 2.4: Discuss the importance of ethics to sociological research"
+      },
+      {
+        "name": "shuffle_choices",
+        "value": "Yes"
+      }
+    ],
+    "subject": [
+      "Sociology"
+    ],
+    "contentTypeTier2": [
+      "AssessmentItem"
+    ],
+    "contentTypeTier1": "Assessment",
+    "format": [
+      "application/vnd.pearson.sanvan.v1.activity"
+    ],
+    "version": "1.0",
+    "guid": "1864b2a4-0b63-438e-b40b-c46b38cd15f7",
+    "bookAuthor": "John J. Macionis",
+    "title": "Pre.02.24 Research Ethics Analyze L.O. 2.4",
+    "educationalAlignment": [
+      "http://purl.org/pearson/objectives/183725473384362"
+    ]
+  },
+  "body": {
+    "description": "Pre.02.24, Research Ethics, Analyze, L.O. 2.4",
+    "containerConfig": [
+      {
+        "description": "Pre.02.24, Research Ethics, Analyze, L.O. 2.4",
+        "containerId": "target1",
+        "brixConfig": [
+          {
+            "bricId": "q1",
+            "bricType": "MultipleChoiceQuestion",
+            "config": {
+              "id": "QUE57510",
+              "question": "Jeremy wants to study the effects of neighborhood gentrification on the local Hispanic population. Which of the following should he keep in mind when interviewing residents?\n\u003cbr /\u003e",
+              "order": "randomized",
+              "presenterType": "RadioGroup",
+              "presenterConfig": {
+                "numberFormat": "none"
+              },
+              "choices": [
+                {
+                  "answerKey": "answer_1",
+                  "content": "The term “Hispanic” is an umbrella term most Spanish-speaking people in the United States use to describe themselves; as such, it is difficult to make specific claims from collected data."
+                },
+                {
+                  "answerKey": "answer_2",
+                  "content": "The Hispanic community generally emphasizes individuality and competition, which an outside researcher might view as coldness or distrust."
+                },
+                {
+                  "answerKey": "answer_3",
+                  "content": "Hispanic cultures have strong family loyalties, and individuals may be uncomfortable revealing information about another family member."
+                },
+                {
+                  "answerKey": "answer_4",
+                  "content": "Hispanic people tend to encourage less physical contact than non-Hispanics; a researcher who sits too close may come off as pushy or rude."
+                }
+              ]
+            },
+            "answerKey": {
+              "assessmentType": "multiplechoice",
+              "answers": {
+                "answer_3": {
+                  "score": 1.0,
+                  "response": ""
+                },
+                "answer_2": {
+                  "score": 0.0,
+                  "response": ""
+                },
+                "answer_1": {
+                  "score": 0.0,
+                  "response": ""
+                },
+                "answer_4": {
+                  "score": 0.0,
+                  "response": ""
+                }
+              }
+            },
+            "configFixup": [
+              {
+                "name": "questionId",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "sequenceNodeKey",
+                  "type": "ref"
+                }
+              },
+              {
+                "name": "maxAttempts",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "maxAttempts",
+                  "type": "ref"
+                }
+              }
+            ]
+          }
+        ],
+        "hookupActions": [
+          {
+            "description": "Hookup the submit manager to evaluate answers",
+            "methodName": "handleRequestsFrom",
+            "type": "method-call",
+            "args": [
+              {
+                "domain": "brix",
+                "refId": "q1",
+                "type": "ref"
+              }
+            ],
+            "instance": {
+              "type": "submit-manager"
+            }
+          },
+          {
+            "description": "Draw the question",
+            "methodName": "draw",
+            "type": "method-call",
+            "args": [
+              {
+                "selector": "#target1",
+                "type": "d3select"
+              }
+            ],
+            "instance": {
+              "domain": "brix",
+              "refId": "q1",
+              "type": "ref"
+            }
+          }
+        ]
+      }
+    ],
+    "title": "Pre.02.24 Research Ethics Analyze L.O. 2.4"
+  }
+}

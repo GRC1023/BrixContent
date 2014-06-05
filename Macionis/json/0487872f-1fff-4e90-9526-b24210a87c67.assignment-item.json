@@ -1,0 +1,196 @@
+{
+  "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope",
+  "@type": "Envelope",
+  "metadata": {
+    "bookTitle": "Sociology",
+    "keywords": [
+      "Macionis 15e",
+      "ch 22",
+      "Rudowski"
+    ],
+    "extendedMetadata": [
+      {
+        "name": "ISBN",
+        "value": "0133795012"
+      },
+      {
+        "name": "M",
+        "value": "m07"
+      },
+      {
+        "name": "assessment_title",
+        "value": "Quiz: Toward a Sustainable Society and World"
+      },
+      {
+        "name": "Topic",
+        "value": "Toward a Sustainable Society and World"
+      },
+      {
+        "name": "chapterTitle",
+        "value": "Population Urbanization and Environment"
+      },
+      {
+        "name": "module",
+        "value": "Toward a Sustainable Society and World"
+      },
+      {
+        "name": "item_title",
+        "value": "0133795012_John J. Macionis_ch22_m07_q0001"
+      },
+      {
+        "name": "questionlayout",
+        "value": "1"
+      },
+      {
+        "name": "CH",
+        "value": "22"
+      },
+      {
+        "name": "Difficulty",
+        "value": "Difficult"
+      },
+      {
+        "name": "Objective",
+        "value": "L.O. 22.7: Evaluate progress toward creating an ecologically sustainable culture."
+      },
+      {
+        "name": "shuffle_choices",
+        "value": "Yes"
+      }
+    ],
+    "subject": [
+      "Sociology"
+    ],
+    "contentTypeTier2": [
+      "AssessmentItem"
+    ],
+    "contentTypeTier1": "Assessment",
+    "format": [
+      "application/vnd.pearson.sanvan.v1.activity"
+    ],
+    "version": "1.0",
+    "guid": "0487872f-1fff-4e90-9526-b24210a87c67",
+    "bookAuthor": "John J. Macionis",
+    "title": "Pre.22.25 Toward A Sustainable Society And World Apply L.O. 22.7",
+    "educationalAlignment": [
+      "http://purl.org/pearson/objectives/183725473384362"
+    ]
+  },
+  "body": {
+    "description": "Pre.22.25, Toward a Sustainable Society and World, Apply, L.O. 22.7",
+    "containerConfig": [
+      {
+        "description": "Pre.22.25, Toward a Sustainable Society and World, Apply, L.O. 22.7",
+        "containerId": "target1",
+        "brixConfig": [
+          {
+            "bricId": "q1",
+            "bricType": "MultipleChoiceQuestion",
+            "config": {
+              "id": "QUE58167",
+              "question": "What scenario best demonstrates the three strategies of sustainable living?\n\u003cbr /\u003e",
+              "order": "randomized",
+              "presenterType": "RadioGroup",
+              "presenterConfig": {
+                "numberFormat": "none"
+              },
+              "choices": [
+                {
+                  "answerKey": "answer_1",
+                  "content": "A couple lives in a solar-powered home and chooses to have only one child. They buy recycled items and reuse materials whenever possible."
+                },
+                {
+                  "answerKey": "answer_2",
+                  "content": "A family with four children lives on a large farm where they grow their own food."
+                },
+                {
+                  "answerKey": "answer_3",
+                  "content": "A family with one child lives in a high-rise apartment in the city with old plumbing and heating mechanisms. They participate in the city\u0027s recycling program."
+                },
+                {
+                  "answerKey": "answer_4",
+                  "content": "An unmarried woman lives in a small house in a rural village. She installs a water-saving device on her showerhead."
+                }
+              ]
+            },
+            "answerKey": {
+              "assessmentType": "multiplechoice",
+              "answers": {
+                "answer_3": {
+                  "score": 0.0,
+                  "response": ""
+                },
+                "answer_2": {
+                  "score": 0.0,
+                  "response": ""
+                },
+                "answer_1": {
+                  "score": 1.0,
+                  "response": ""
+                },
+                "answer_4": {
+                  "score": 0.0,
+                  "response": ""
+                }
+              }
+            },
+            "configFixup": [
+              {
+                "name": "questionId",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "sequenceNodeKey",
+                  "type": "ref"
+                }
+              },
+              {
+                "name": "maxAttempts",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "maxAttempts",
+                  "type": "ref"
+                }
+              }
+            ]
+          }
+        ],
+        "hookupActions": [
+          {
+            "description": "Hookup the submit manager to evaluate answers",
+            "methodName": "handleRequestsFrom",
+            "type": "method-call",
+            "args": [
+              {
+                "domain": "brix",
+                "refId": "q1",
+                "type": "ref"
+              }
+            ],
+            "instance": {
+              "type": "submit-manager"
+            }
+          },
+          {
+            "description": "Draw the question",
+            "methodName": "draw",
+            "type": "method-call",
+            "args": [
+              {
+                "selector": "#target1",
+                "type": "d3select"
+              }
+            ],
+            "instance": {
+              "domain": "brix",
+              "refId": "q1",
+              "type": "ref"
+            }
+          }
+        ]
+      }
+    ],
+    "title": "Pre.22.25 Toward A Sustainable Society And World Apply L.O. 22.7"
+  }
+}

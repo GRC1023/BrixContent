@@ -1,0 +1,192 @@
+{
+  "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope",
+  "@type": "Envelope",
+  "metadata": {
+    "bookTitle": "Sociology",
+    "keywords": [
+      "Macionis 15e",
+      "Ch11",
+      "Alick"
+    ],
+    "extendedMetadata": [
+      {
+        "name": "ISBN",
+        "value": "0133795012"
+      },
+      {
+        "name": "M",
+        "value": "c01"
+      },
+      {
+        "name": "assessment_title",
+        "value": "Chapter Quiz: Social Class in the United States"
+      },
+      {
+        "name": "Topic",
+        "value": "Dimensions of Social Inequality"
+      },
+      {
+        "name": "chapterTitle",
+        "value": "Social Class in the United States"
+      },
+      {
+        "name": "item_title",
+        "value": "0133795012_John J. Macionis_ch11_c01_q0001"
+      },
+      {
+        "name": "questionlayout",
+        "value": "1"
+      },
+      {
+        "name": "CH",
+        "value": "11"
+      },
+      {
+        "name": "Difficulty",
+        "value": "Difficult"
+      },
+      {
+        "name": "Objective",
+        "value": "L.O. 11.1: Describe the distribution of income and wealth in the United States."
+      },
+      {
+        "name": "shuffle_choices",
+        "value": "Yes"
+      }
+    ],
+    "subject": [
+      "Sociology"
+    ],
+    "contentTypeTier2": [
+      "AssessmentItem"
+    ],
+    "contentTypeTier1": "Assessment",
+    "format": [
+      "application/vnd.pearson.sanvan.v1.activity"
+    ],
+    "version": "1.0",
+    "guid": "3e130c0a-39df-4c4b-b54a-30dcc1beb3a6",
+    "bookAuthor": "John J. Macionis",
+    "title": "CE.11.16 Dimensions Of Social Inequality Analyze L.O. 11.1",
+    "educationalAlignment": [
+      "http://purl.org/pearson/objectives/183725473384362"
+    ]
+  },
+  "body": {
+    "description": "CE.11.16, Dimensions of Social Inequality, Analyze, L.O. 11.1",
+    "containerConfig": [
+      {
+        "description": "CE.11.16, Dimensions of Social Inequality, Analyze, L.O. 11.1",
+        "containerId": "target1",
+        "brixConfig": [
+          {
+            "bricId": "q1",
+            "bricType": "MultipleChoiceQuestion",
+            "config": {
+              "id": "QUE60621",
+              "question": "What evidence exists to indicate that wealth is distributed more unequally in the United States than income?\n\u003cbr /\u003e",
+              "order": "randomized",
+              "presenterType": "RadioGroup",
+              "presenterConfig": {
+                "numberFormat": "none"
+              },
+              "choices": [
+                {
+                  "answerKey": "answer_1",
+                  "content": "The richest 20 percent of U.S. families own a much smaller percentage of the nation\u0027s wealth than the percentage they earn of the nation\u0027s income."
+                },
+                {
+                  "answerKey": "answer_2",
+                  "content": "The percentages of wealth and income attributable to the richest 20 percent of U.S. families are far lower than the percentages attributable to the remaining 80 percent of U.S. families."
+                },
+                {
+                  "answerKey": "answer_3",
+                  "content": "The richest 20 percent of U.S. families own a much larger percentage of the nation\u0027s wealth than they earn of the nation\u0027s income."
+                },
+                {
+                  "answerKey": "answer_4",
+                  "content": "The percentage of wealth owned by the poorest 20 percent of families is roughly equivalent to the percentage of all U.S. income earned by this group."
+                }
+              ]
+            },
+            "answerKey": {
+              "assessmentType": "multiplechoice",
+              "answers": {
+                "answer_3": {
+                  "score": 1.0,
+                  "response": ""
+                },
+                "answer_2": {
+                  "score": 0.0,
+                  "response": "Consider this: Recall the information provided in Figure 11–1 regarding the distribution of wealth and income in the United States.\n\u003cbr /\u003eRefer to Learning Objective 11.1: Describe the distribution of income and wealth in the United States."
+                },
+                "answer_1": {
+                  "score": 0.0,
+                  "response": "Consider this: Recall the information provided in Figure 11–1 regarding the distribution of wealth and income in the United States.\n\u003cbr /\u003eRefer to Learning Objective 11.1: Describe the distribution of income and wealth in the United States."
+                },
+                "answer_4": {
+                  "score": 0.0,
+                  "response": "Consider this: Recall the information provided in Figure 11–1 regarding the distribution of wealth and income in the United States.\n\u003cbr /\u003eRefer to Learning Objective 11.1: Describe the distribution of income and wealth in the United States."
+                }
+              }
+            },
+            "configFixup": [
+              {
+                "name": "questionId",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "sequenceNodeKey",
+                  "type": "ref"
+                }
+              },
+              {
+                "name": "maxAttempts",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "maxAttempts",
+                  "type": "ref"
+                }
+              }
+            ]
+          }
+        ],
+        "hookupActions": [
+          {
+            "description": "Hookup the submit manager to evaluate answers",
+            "methodName": "handleRequestsFrom",
+            "type": "method-call",
+            "args": [
+              {
+                "domain": "brix",
+                "refId": "q1",
+                "type": "ref"
+              }
+            ],
+            "instance": {
+              "type": "submit-manager"
+            }
+          },
+          {
+            "description": "Draw the question",
+            "methodName": "draw",
+            "type": "method-call",
+            "args": [
+              {
+                "selector": "#target1",
+                "type": "d3select"
+              }
+            ],
+            "instance": {
+              "domain": "brix",
+              "refId": "q1",
+              "type": "ref"
+            }
+          }
+        ]
+      }
+    ],
+    "title": "CE.11.16 Dimensions Of Social Inequality Analyze L.O. 11.1"
+  }
+}

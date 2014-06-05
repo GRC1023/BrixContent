@@ -1,0 +1,192 @@
+{
+  "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope",
+  "@type": "Envelope",
+  "metadata": {
+    "bookTitle": "Sociology",
+    "keywords": [
+      "Macionis 15e",
+      "ch 22",
+      "Rudowski"
+    ],
+    "extendedMetadata": [
+      {
+        "name": "ISBN",
+        "value": "0133795012"
+      },
+      {
+        "name": "M",
+        "value": "c01"
+      },
+      {
+        "name": "assessment_title",
+        "value": "Chapter Quiz: Population Urbanization and Environment"
+      },
+      {
+        "name": "Topic",
+        "value": "Demography: The Study of Population"
+      },
+      {
+        "name": "chapterTitle",
+        "value": "Population Urbanization and Environment"
+      },
+      {
+        "name": "item_title",
+        "value": "0133795012_John J. Macionis_ch22_c01_q0010"
+      },
+      {
+        "name": "questionlayout",
+        "value": "1"
+      },
+      {
+        "name": "CH",
+        "value": "22"
+      },
+      {
+        "name": "Difficulty",
+        "value": "Easy"
+      },
+      {
+        "name": "Objective",
+        "value": "L.O. 22.1: Explain the concepts of fertility, mortality, and migration, and how they affect population size."
+      },
+      {
+        "name": "shuffle_choices",
+        "value": "Yes"
+      }
+    ],
+    "subject": [
+      "Sociology"
+    ],
+    "contentTypeTier2": [
+      "AssessmentItem"
+    ],
+    "contentTypeTier1": "Assessment",
+    "format": [
+      "application/vnd.pearson.sanvan.v1.activity"
+    ],
+    "version": "1.0",
+    "guid": "3ff2e1b9-fc6b-482a-a3f9-5bdc57639782",
+    "bookAuthor": "John J. Macionis",
+    "title": "CE.22.01 Demography The Study Of Population Remember L.O. 22.1",
+    "educationalAlignment": [
+      "http://purl.org/pearson/objectives/183725473384362"
+    ]
+  },
+  "body": {
+    "description": "CE.22.01, Demography: The Study of Population, Remember, L.O. 22.1",
+    "containerConfig": [
+      {
+        "description": "CE.22.01, Demography: The Study of Population, Remember, L.O. 22.1",
+        "containerId": "target1",
+        "brixConfig": [
+          {
+            "bricId": "q1",
+            "bricType": "MultipleChoiceQuestion",
+            "config": {
+              "id": "QUE58084",
+              "question": "When did world population start to spike upward?\n\u003cbr /\u003e",
+              "order": "randomized",
+              "presenterType": "RadioGroup",
+              "presenterConfig": {
+                "numberFormat": "none"
+              },
+              "choices": [
+                {
+                  "answerKey": "answer_1",
+                  "content": "around 1750"
+                },
+                {
+                  "answerKey": "answer_2",
+                  "content": "during the 19th century"
+                },
+                {
+                  "answerKey": "answer_3",
+                  "content": "in the early 1900s"
+                },
+                {
+                  "answerKey": "answer_4",
+                  "content": "in the 1950s"
+                }
+              ]
+            },
+            "answerKey": {
+              "assessmentType": "multiplechoice",
+              "answers": {
+                "answer_3": {
+                  "score": 0.0,
+                  "response": "Consider this: We are currently adding more than 84 million people to the planet each year.\n\u003cbr /\u003eRefer to Learning Objective 22.1 : Explain the concepts of fertility, mortality, and migration, and how they affect population size."
+                },
+                "answer_2": {
+                  "score": 0.0,
+                  "response": "Consider this: We are currently adding more than 84 million people to the planet each year.\n\u003cbr /\u003eRefer to Learning Objective 22.1 : Explain the concepts of fertility, mortality, and migration, and how they affect population size."
+                },
+                "answer_1": {
+                  "score": 1.0,
+                  "response": ""
+                },
+                "answer_4": {
+                  "score": 0.0,
+                  "response": "Consider this: We are currently adding more than 84 million people to the planet each year.\n\u003cbr /\u003eRefer to Learning Objective 22.1 : Explain the concepts of fertility, mortality, and migration, and how they affect population size."
+                }
+              }
+            },
+            "configFixup": [
+              {
+                "name": "questionId",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "sequenceNodeKey",
+                  "type": "ref"
+                }
+              },
+              {
+                "name": "maxAttempts",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "maxAttempts",
+                  "type": "ref"
+                }
+              }
+            ]
+          }
+        ],
+        "hookupActions": [
+          {
+            "description": "Hookup the submit manager to evaluate answers",
+            "methodName": "handleRequestsFrom",
+            "type": "method-call",
+            "args": [
+              {
+                "domain": "brix",
+                "refId": "q1",
+                "type": "ref"
+              }
+            ],
+            "instance": {
+              "type": "submit-manager"
+            }
+          },
+          {
+            "description": "Draw the question",
+            "methodName": "draw",
+            "type": "method-call",
+            "args": [
+              {
+                "selector": "#target1",
+                "type": "d3select"
+              }
+            ],
+            "instance": {
+              "domain": "brix",
+              "refId": "q1",
+              "type": "ref"
+            }
+          }
+        ]
+      }
+    ],
+    "title": "CE.22.01 Demography The Study Of Population Remember L.O. 22.1"
+  }
+}

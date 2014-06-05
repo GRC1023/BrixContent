@@ -1,0 +1,192 @@
+{
+  "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope",
+  "@type": "Envelope",
+  "metadata": {
+    "bookTitle": "Sociology",
+    "keywords": [
+      "Macionis 15e",
+      "ch14",
+      "Rudowski"
+    ],
+    "extendedMetadata": [
+      {
+        "name": "ISBN",
+        "value": "0133795012"
+      },
+      {
+        "name": "M",
+        "value": "c01"
+      },
+      {
+        "name": "assessment_title",
+        "value": "Chapter Quiz: Race and Ethnicity"
+      },
+      {
+        "name": "Topic",
+        "value": "Race and Ethnicity in the United States"
+      },
+      {
+        "name": "chapterTitle",
+        "value": "Race and Ethnicity"
+      },
+      {
+        "name": "item_title",
+        "value": "0133795012_John J. Macionis_ch14_c01_q0010"
+      },
+      {
+        "name": "questionlayout",
+        "value": "1"
+      },
+      {
+        "name": "CH",
+        "value": "14"
+      },
+      {
+        "name": "Difficulty",
+        "value": "Difficult"
+      },
+      {
+        "name": "Objective",
+        "value": "L.O. 14.5: Assess the social standing of racial and ethnic categories of U.S. society."
+      },
+      {
+        "name": "shuffle_choices",
+        "value": "Yes"
+      }
+    ],
+    "subject": [
+      "Sociology"
+    ],
+    "contentTypeTier2": [
+      "AssessmentItem"
+    ],
+    "contentTypeTier1": "Assessment",
+    "format": [
+      "application/vnd.pearson.sanvan.v1.activity"
+    ],
+    "version": "1.0",
+    "guid": "ad4065e4-383d-4c0e-8b91-fe46cfe1c8ef",
+    "bookAuthor": "John J. Macionis",
+    "title": "CE.14.44 Race And Ethnicity In The United States Analyze L.O. 14.5",
+    "educationalAlignment": [
+      "http://purl.org/pearson/objectives/183725473384362"
+    ]
+  },
+  "body": {
+    "description": "CE.14.44, Race and Ethnicity in the United States, Analyze, L.O. 14.5",
+    "containerConfig": [
+      {
+        "description": "CE.14.44, Race and Ethnicity in the United States, Analyze, L.O. 14.5",
+        "containerId": "target1",
+        "brixConfig": [
+          {
+            "bricId": "q1",
+            "bricType": "MultipleChoiceQuestion",
+            "config": {
+              "id": "QUE57842",
+              "question": "Why does the \n\u003cem\u003eDred Scott\u003c/em\u003e case exemplify the “American dilemma”?\n\u003cbr /\u003e",
+              "order": "randomized",
+              "presenterType": "RadioGroup",
+              "presenterConfig": {
+                "numberFormat": "none"
+              },
+              "choices": [
+                {
+                  "answerKey": "answer_1",
+                  "content": "It represented the Asian American struggle against prejudice and discrimination."
+                },
+                {
+                  "answerKey": "answer_2",
+                  "content": "The Supreme Court ruled against white slave owners, denying them the social dominance to which they were accustomed."
+                },
+                {
+                  "answerKey": "answer_3",
+                  "content": "The ruling denied an entire category of people--African American slaves--basic rights and freedoms given to U.S. citizens."
+                },
+                {
+                  "answerKey": "answer_4",
+                  "content": "The ruling banned white ethnic Americans from well-paid industry jobs, denying them the privileges given to other ethnic groups."
+                }
+              ]
+            },
+            "answerKey": {
+              "assessmentType": "multiplechoice",
+              "answers": {
+                "answer_3": {
+                  "score": 1.0,
+                  "response": ""
+                },
+                "answer_2": {
+                  "score": 0.0,
+                  "response": "Consider this: Sociologist Gunnar Myrdal defined the American dilemma as a democratic society’s denial of basic rights and freedoms to one category of people. How does this play into the decision of the \n\u003cem\u003eDred Scott\u003c/em\u003e case?\n\u003cbr /\u003eRefer to Learning Objective 14.5: Assess the social standing of racial and ethnic categories of U.S. society."
+                },
+                "answer_1": {
+                  "score": 0.0,
+                  "response": "Consider this: Sociologist Gunnar Myrdal defined the American dilemma as a democratic society’s denial of basic rights and freedoms to one category of people. How does this play into the decision of the \n\u003cem\u003eDred Scott\u003c/em\u003e case?\n\u003cbr /\u003eRefer to Learning Objective 14.5: Assess the social standing of racial and ethnic categories of U.S. society."
+                },
+                "answer_4": {
+                  "score": 0.0,
+                  "response": "Consider this: Sociologist Gunnar Myrdal defined the American dilemma as a democratic society’s denial of basic rights and freedoms to one category of people. How does this play into the decision of the \n\u003cem\u003eDred Scott\u003c/em\u003e case?\n\u003cbr /\u003eRefer to Learning Objective 14.5: Assess the social standing of racial and ethnic categories of U.S. society."
+                }
+              }
+            },
+            "configFixup": [
+              {
+                "name": "questionId",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "sequenceNodeKey",
+                  "type": "ref"
+                }
+              },
+              {
+                "name": "maxAttempts",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "maxAttempts",
+                  "type": "ref"
+                }
+              }
+            ]
+          }
+        ],
+        "hookupActions": [
+          {
+            "description": "Hookup the submit manager to evaluate answers",
+            "methodName": "handleRequestsFrom",
+            "type": "method-call",
+            "args": [
+              {
+                "domain": "brix",
+                "refId": "q1",
+                "type": "ref"
+              }
+            ],
+            "instance": {
+              "type": "submit-manager"
+            }
+          },
+          {
+            "description": "Draw the question",
+            "methodName": "draw",
+            "type": "method-call",
+            "args": [
+              {
+                "selector": "#target1",
+                "type": "d3select"
+              }
+            ],
+            "instance": {
+              "domain": "brix",
+              "refId": "q1",
+              "type": "ref"
+            }
+          }
+        ]
+      }
+    ],
+    "title": "CE.14.44 Race And Ethnicity In The United States Analyze L.O. 14.5"
+  }
+}

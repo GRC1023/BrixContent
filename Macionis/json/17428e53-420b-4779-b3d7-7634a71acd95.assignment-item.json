@@ -1,0 +1,192 @@
+{
+  "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope",
+  "@type": "Envelope",
+  "metadata": {
+    "bookTitle": "Sociology",
+    "keywords": [
+      "Macionis 15e",
+      "Ch05",
+      "Alick"
+    ],
+    "extendedMetadata": [
+      {
+        "name": "ISBN",
+        "value": "0133795012"
+      },
+      {
+        "name": "M",
+        "value": "c01"
+      },
+      {
+        "name": "assessment_title",
+        "value": "Chapter Quiz: Socialization"
+      },
+      {
+        "name": "Topic",
+        "value": "Socialization and the Life Course"
+      },
+      {
+        "name": "chapterTitle",
+        "value": "Socialization"
+      },
+      {
+        "name": "item_title",
+        "value": "0133795012_John J. Macionis_ch05_c01_q0010"
+      },
+      {
+        "name": "questionlayout",
+        "value": "1"
+      },
+      {
+        "name": "CH",
+        "value": "5"
+      },
+      {
+        "name": "Difficulty",
+        "value": "Easy"
+      },
+      {
+        "name": "Objective",
+        "value": "L.O. 5.4: Discuss how our society organizes human experience into distinctive stages of life."
+      },
+      {
+        "name": "shuffle_choices",
+        "value": "Yes"
+      }
+    ],
+    "subject": [
+      "Sociology"
+    ],
+    "contentTypeTier2": [
+      "AssessmentItem"
+    ],
+    "contentTypeTier1": "Assessment",
+    "format": [
+      "application/vnd.pearson.sanvan.v1.activity"
+    ],
+    "version": "1.0",
+    "guid": "17428e53-420b-4779-b3d7-7634a71acd95",
+    "bookAuthor": "John J. Macionis",
+    "title": "CE.05.31 Socialization And The Life Course Apply L.O. 5.4",
+    "educationalAlignment": [
+      "http://purl.org/pearson/objectives/183725473384362"
+    ]
+  },
+  "body": {
+    "description": "CE.05.31, Socialization and the Life Course, Apply, L.O. 5.4",
+    "containerConfig": [
+      {
+        "description": "CE.05.31, Socialization and the Life Course, Apply, L.O. 5.4",
+        "containerId": "target1",
+        "brixConfig": [
+          {
+            "bricId": "q1",
+            "bricType": "MultipleChoiceQuestion",
+            "config": {
+              "id": "QUE57587",
+              "question": "What affect will the increasing aging population have on society?\n\u003cbr /\u003e",
+              "order": "randomized",
+              "presenterType": "RadioGroup",
+              "presenterConfig": {
+                "numberFormat": "none"
+              },
+              "choices": [
+                {
+                  "answerKey": "answer_1",
+                  "content": "The elderly will not be as evident in everyday life."
+                },
+                {
+                  "answerKey": "answer_2",
+                  "content": "The younger generations will be forced to interact more with the elderly."
+                },
+                {
+                  "answerKey": "answer_3",
+                  "content": "Most people will never wish to retire."
+                },
+                {
+                  "answerKey": "answer_4",
+                  "content": "There will be a decreased demand for social services, since modern people are healthier."
+                }
+              ]
+            },
+            "answerKey": {
+              "assessmentType": "multiplechoice",
+              "answers": {
+                "answer_3": {
+                  "score": 0.0,
+                  "response": "Consider this: The elderly now outnumber teenagers.\n\u003cbr /\u003eRefer to Learning Objective 5.4: Discuss how our society organizes human experience into distinctive stages of life."
+                },
+                "answer_2": {
+                  "score": 1.0,
+                  "response": ""
+                },
+                "answer_1": {
+                  "score": 0.0,
+                  "response": "Consider this: The elderly now outnumber teenagers.\n\u003cbr /\u003eRefer to Learning Objective 5.4: Discuss how our society organizes human experience into distinctive stages of life."
+                },
+                "answer_4": {
+                  "score": 0.0,
+                  "response": "Consider this: The elderly now outnumber teenagers.\n\u003cbr /\u003eRefer to Learning Objective 5.4: Discuss how our society organizes human experience into distinctive stages of life."
+                }
+              }
+            },
+            "configFixup": [
+              {
+                "name": "questionId",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "sequenceNodeKey",
+                  "type": "ref"
+                }
+              },
+              {
+                "name": "maxAttempts",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "maxAttempts",
+                  "type": "ref"
+                }
+              }
+            ]
+          }
+        ],
+        "hookupActions": [
+          {
+            "description": "Hookup the submit manager to evaluate answers",
+            "methodName": "handleRequestsFrom",
+            "type": "method-call",
+            "args": [
+              {
+                "domain": "brix",
+                "refId": "q1",
+                "type": "ref"
+              }
+            ],
+            "instance": {
+              "type": "submit-manager"
+            }
+          },
+          {
+            "description": "Draw the question",
+            "methodName": "draw",
+            "type": "method-call",
+            "args": [
+              {
+                "selector": "#target1",
+                "type": "d3select"
+              }
+            ],
+            "instance": {
+              "domain": "brix",
+              "refId": "q1",
+              "type": "ref"
+            }
+          }
+        ]
+      }
+    ],
+    "title": "CE.05.31 Socialization And The Life Course Apply L.O. 5.4"
+  }
+}

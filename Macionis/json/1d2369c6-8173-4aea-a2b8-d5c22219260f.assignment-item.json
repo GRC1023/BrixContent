@@ -1,0 +1,196 @@
+{
+  "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope",
+  "@type": "Envelope",
+  "metadata": {
+    "bookTitle": "Sociology",
+    "keywords": [
+      "Macionis 15e",
+      "ch 22",
+      "Rudowski"
+    ],
+    "extendedMetadata": [
+      {
+        "name": "ISBN",
+        "value": "0133795012"
+      },
+      {
+        "name": "M",
+        "value": "m07"
+      },
+      {
+        "name": "assessment_title",
+        "value": "Quiz: Toward a Sustainable Society and World"
+      },
+      {
+        "name": "Topic",
+        "value": "Toward a Sustainable Society and World"
+      },
+      {
+        "name": "chapterTitle",
+        "value": "Population Urbanization and Environment"
+      },
+      {
+        "name": "module",
+        "value": "Toward a Sustainable Society and World"
+      },
+      {
+        "name": "item_title",
+        "value": "0133795012_John J. Macionis_ch22_m07_q0002"
+      },
+      {
+        "name": "questionlayout",
+        "value": "1"
+      },
+      {
+        "name": "CH",
+        "value": "22"
+      },
+      {
+        "name": "Difficulty",
+        "value": "Difficult"
+      },
+      {
+        "name": "Objective",
+        "value": "L.O. 22.7: Evaluate progress toward creating an ecologically sustainable culture."
+      },
+      {
+        "name": "shuffle_choices",
+        "value": "Yes"
+      }
+    ],
+    "subject": [
+      "Sociology"
+    ],
+    "contentTypeTier2": [
+      "AssessmentItem"
+    ],
+    "contentTypeTier1": "Assessment",
+    "format": [
+      "application/vnd.pearson.sanvan.v1.activity"
+    ],
+    "version": "1.0",
+    "guid": "1d2369c6-8173-4aea-a2b8-d5c22219260f",
+    "bookAuthor": "John J. Macionis",
+    "title": "Post.22.50 Toward A Sustainable Society And World Apply L.O. 22.7",
+    "educationalAlignment": [
+      "http://purl.org/pearson/objectives/183725473384362"
+    ]
+  },
+  "body": {
+    "description": "Post.22.50, Toward a Sustainable Society and World, Apply, L.O. 22.7",
+    "containerConfig": [
+      {
+        "description": "Post.22.50, Toward a Sustainable Society and World, Apply, L.O. 22.7",
+        "containerId": "target1",
+        "brixConfig": [
+          {
+            "bricId": "q1",
+            "bricType": "MultipleChoiceQuestion",
+            "config": {
+              "id": "QUE58168",
+              "question": "How does the act of recycling relate to having an ecocentric outlook?\n\u003cbr /\u003e",
+              "order": "randomized",
+              "presenterType": "RadioGroup",
+              "presenterConfig": {
+                "numberFormat": "none"
+              },
+              "choices": [
+                {
+                  "answerKey": "answer_1",
+                  "content": "Recycling helps reduce the garbage that will pollute our planet for future generations."
+                },
+                {
+                  "answerKey": "answer_2",
+                  "content": "Recycling is a way to show that you care about the investment you made in a material object."
+                },
+                {
+                  "answerKey": "answer_3",
+                  "content": "Recycling shows that you are a part of the modern culture, which is considered an ecocentric cultural model."
+                },
+                {
+                  "answerKey": "answer_4",
+                  "content": "Although recycling helps the planet, it is viewed as more of an egocentric activity than an ecocentric one."
+                }
+              ]
+            },
+            "answerKey": {
+              "assessmentType": "multiplechoice",
+              "answers": {
+                "answer_3": {
+                  "score": 0.0,
+                  "response": ""
+                },
+                "answer_2": {
+                  "score": 0.0,
+                  "response": ""
+                },
+                "answer_1": {
+                  "score": 1.0,
+                  "response": ""
+                },
+                "answer_4": {
+                  "score": 0.0,
+                  "response": ""
+                }
+              }
+            },
+            "configFixup": [
+              {
+                "name": "questionId",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "sequenceNodeKey",
+                  "type": "ref"
+                }
+              },
+              {
+                "name": "maxAttempts",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "maxAttempts",
+                  "type": "ref"
+                }
+              }
+            ]
+          }
+        ],
+        "hookupActions": [
+          {
+            "description": "Hookup the submit manager to evaluate answers",
+            "methodName": "handleRequestsFrom",
+            "type": "method-call",
+            "args": [
+              {
+                "domain": "brix",
+                "refId": "q1",
+                "type": "ref"
+              }
+            ],
+            "instance": {
+              "type": "submit-manager"
+            }
+          },
+          {
+            "description": "Draw the question",
+            "methodName": "draw",
+            "type": "method-call",
+            "args": [
+              {
+                "selector": "#target1",
+                "type": "d3select"
+              }
+            ],
+            "instance": {
+              "domain": "brix",
+              "refId": "q1",
+              "type": "ref"
+            }
+          }
+        ]
+      }
+    ],
+    "title": "Post.22.50 Toward A Sustainable Society And World Apply L.O. 22.7"
+  }
+}

@@ -1,0 +1,196 @@
+{
+  "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope",
+  "@type": "Envelope",
+  "metadata": {
+    "bookTitle": "Sociology",
+    "keywords": [
+      "Macionis 15e",
+      "Ch08",
+      "Alick"
+    ],
+    "extendedMetadata": [
+      {
+        "name": "ISBN",
+        "value": "0133795012"
+      },
+      {
+        "name": "M",
+        "value": "m05"
+      },
+      {
+        "name": "assessment_title",
+        "value": "Quiz: Theories of Sexuality"
+      },
+      {
+        "name": "Topic",
+        "value": "Theories of Sexuality"
+      },
+      {
+        "name": "chapterTitle",
+        "value": "Sexuality and Society"
+      },
+      {
+        "name": "module",
+        "value": "Theories of Sexuality"
+      },
+      {
+        "name": "item_title",
+        "value": "0133795012_John J. Macionis_ch08_m05_q0005"
+      },
+      {
+        "name": "questionlayout",
+        "value": "1"
+      },
+      {
+        "name": "CH",
+        "value": "8"
+      },
+      {
+        "name": "Difficulty",
+        "value": "Easy"
+      },
+      {
+        "name": "Objective",
+        "value": "L.O. 8.5: Apply sociology\u0026rsquo;ssociologyâs major theories to the topic of sexuality."
+      },
+      {
+        "name": "shuffle_choices",
+        "value": "Yes"
+      }
+    ],
+    "subject": [
+      "Sociology"
+    ],
+    "contentTypeTier2": [
+      "AssessmentItem"
+    ],
+    "contentTypeTier1": "Assessment",
+    "format": [
+      "application/vnd.pearson.sanvan.v1.activity"
+    ],
+    "version": "1.0",
+    "guid": "f5f03e64-3574-4e39-b7ec-55da739ad937",
+    "bookAuthor": "John J. Macionis",
+    "title": "Post.08.36 Theories Of Sexuality Understand L.O. 8.5",
+    "educationalAlignment": [
+      "http://purl.org/pearson/objectives/183725473384362"
+    ]
+  },
+  "body": {
+    "description": "Post.08.36, Theories of Sexuality, Understand, L.O. 8.5",
+    "containerConfig": [
+      {
+        "description": "Post.08.36, Theories of Sexuality, Understand, L.O. 8.5",
+        "containerId": "target1",
+        "brixConfig": [
+          {
+            "bricId": "q1",
+            "bricType": "MultipleChoiceQuestion",
+            "config": {
+              "id": "QUE57767",
+              "question": "How have attitudes toward abortion changed over time?\n\u003cbr /\u003e",
+              "order": "randomized",
+              "presenterType": "RadioGroup",
+              "presenterConfig": {
+                "numberFormat": "none"
+              },
+              "choices": [
+                {
+                  "answerKey": "answer_1",
+                  "content": "Before the 1800s, abortion was rarely opposed; by the 1900s, all states in the United States had banned abortion; in 1973, women were given the national right to have an abortion."
+                },
+                {
+                  "answerKey": "answer_2",
+                  "content": "Until the late 1800s, abortions were relatively unheard of; the popularity of abortions spiked after \n\u003cem\u003eRoe v. Wade\u003c/em\u003e struck down national abortion laws in 1973."
+                },
+                {
+                  "answerKey": "answer_3",
+                  "content": "The first laws preventing abortion were enacted in the 1800s; from then on, public opinion of abortion has grown increasingly negative."
+                },
+                {
+                  "answerKey": "answer_4",
+                  "content": "Abortions were rare in the early 1900s, but increased in frequency through the century; now abortions are legal in all states and supported by 95 percent of the United States population."
+                }
+              ]
+            },
+            "answerKey": {
+              "assessmentType": "multiplechoice",
+              "answers": {
+                "answer_3": {
+                  "score": 0.0,
+                  "response": ""
+                },
+                "answer_2": {
+                  "score": 0.0,
+                  "response": ""
+                },
+                "answer_1": {
+                  "score": 1.0,
+                  "response": ""
+                },
+                "answer_4": {
+                  "score": 0.0,
+                  "response": ""
+                }
+              }
+            },
+            "configFixup": [
+              {
+                "name": "questionId",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "sequenceNodeKey",
+                  "type": "ref"
+                }
+              },
+              {
+                "name": "maxAttempts",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "maxAttempts",
+                  "type": "ref"
+                }
+              }
+            ]
+          }
+        ],
+        "hookupActions": [
+          {
+            "description": "Hookup the submit manager to evaluate answers",
+            "methodName": "handleRequestsFrom",
+            "type": "method-call",
+            "args": [
+              {
+                "domain": "brix",
+                "refId": "q1",
+                "type": "ref"
+              }
+            ],
+            "instance": {
+              "type": "submit-manager"
+            }
+          },
+          {
+            "description": "Draw the question",
+            "methodName": "draw",
+            "type": "method-call",
+            "args": [
+              {
+                "selector": "#target1",
+                "type": "d3select"
+              }
+            ],
+            "instance": {
+              "domain": "brix",
+              "refId": "q1",
+              "type": "ref"
+            }
+          }
+        ]
+      }
+    ],
+    "title": "Post.08.36 Theories Of Sexuality Understand L.O. 8.5"
+  }
+}

@@ -1,0 +1,192 @@
+{
+  "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope",
+  "@type": "Envelope",
+  "metadata": {
+    "bookTitle": "Sociology",
+    "keywords": [
+      "Macionis 15e",
+      "Ch11",
+      "Alick"
+    ],
+    "extendedMetadata": [
+      {
+        "name": "ISBN",
+        "value": "0133795012"
+      },
+      {
+        "name": "M",
+        "value": "c01"
+      },
+      {
+        "name": "assessment_title",
+        "value": "Chapter Quiz: Social Class in the United States"
+      },
+      {
+        "name": "Topic",
+        "value": "Social Classes in the United States"
+      },
+      {
+        "name": "chapterTitle",
+        "value": "Social Class in the United States"
+      },
+      {
+        "name": "item_title",
+        "value": "0133795012_John J. Macionis_ch11_c01_q0004"
+      },
+      {
+        "name": "questionlayout",
+        "value": "1"
+      },
+      {
+        "name": "CH",
+        "value": "11"
+      },
+      {
+        "name": "Difficulty",
+        "value": "Easy"
+      },
+      {
+        "name": "Objective",
+        "value": "L.O. 11.3: Describe the various social class positions in U.S. society."
+      },
+      {
+        "name": "shuffle_choices",
+        "value": "Yes"
+      }
+    ],
+    "subject": [
+      "Sociology"
+    ],
+    "contentTypeTier2": [
+      "AssessmentItem"
+    ],
+    "contentTypeTier1": "Assessment",
+    "format": [
+      "application/vnd.pearson.sanvan.v1.activity"
+    ],
+    "version": "1.0",
+    "guid": "520af824-f91a-4c23-95c8-24d38ce71359",
+    "bookAuthor": "John J. Macionis",
+    "title": "CE.11.11 Social Classes In The United States Analyze L.O. 11.3",
+    "educationalAlignment": [
+      "http://purl.org/pearson/objectives/183725473384362"
+    ]
+  },
+  "body": {
+    "description": "CE.11.11, Social Classes in the United States, Analyze, L.O. 11.3",
+    "containerConfig": [
+      {
+        "description": "CE.11.11, Social Classes in the United States, Analyze, L.O. 11.3",
+        "containerId": "target1",
+        "brixConfig": [
+          {
+            "bricId": "q1",
+            "bricType": "MultipleChoiceQuestion",
+            "config": {
+              "id": "QUE60624",
+              "question": "Defining social categories in fluid class systems is much more difficult than the rankings in a rigid caste system. Why is this so?\n\u003cbr /\u003e",
+              "order": "randomized",
+              "presenterType": "RadioGroup",
+              "presenterConfig": {
+                "numberFormat": "none"
+              },
+              "choices": [
+                {
+                  "answerKey": "answer_1",
+                  "content": "Caste systems have only two levels, whereas a class system has infinite levels."
+                },
+                {
+                  "answerKey": "answer_2",
+                  "content": "The inequality in income levels is much less pronounced in a caste system than in a class system."
+                },
+                {
+                  "answerKey": "answer_3",
+                  "content": "A person\u0027s standing on one dimension may differ from other dimensions within a class system, making class boundaries unclear."
+                },
+                {
+                  "answerKey": "answer_4",
+                  "content": "Social status within a class system is unchangeable during a person\u0027s life, whereas a person\u0027s status may vary throughout life in a caste system."
+                }
+              ]
+            },
+            "answerKey": {
+              "assessmentType": "multiplechoice",
+              "answers": {
+                "answer_3": {
+                  "score": 1.0,
+                  "response": ""
+                },
+                "answer_2": {
+                  "score": 0.0,
+                  "response": "Consider this: Open class systems have a relatively low level of status consistency.\n\u003cbr /\u003eRefer to Learning Objective 11.3: Describe the various social class positions in U.S. society."
+                },
+                "answer_1": {
+                  "score": 0.0,
+                  "response": "Consider this: Open class systems have a relatively low level of status consistency.\n\u003cbr /\u003eRefer to Learning Objective 11.3: Describe the various social class positions in U.S. society."
+                },
+                "answer_4": {
+                  "score": 0.0,
+                  "response": "Consider this: Open class systems have a relatively low level of status consistency.\n\u003cbr /\u003eRefer to Learning Objective 11.3: Describe the various social class positions in U.S. society."
+                }
+              }
+            },
+            "configFixup": [
+              {
+                "name": "questionId",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "sequenceNodeKey",
+                  "type": "ref"
+                }
+              },
+              {
+                "name": "maxAttempts",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "maxAttempts",
+                  "type": "ref"
+                }
+              }
+            ]
+          }
+        ],
+        "hookupActions": [
+          {
+            "description": "Hookup the submit manager to evaluate answers",
+            "methodName": "handleRequestsFrom",
+            "type": "method-call",
+            "args": [
+              {
+                "domain": "brix",
+                "refId": "q1",
+                "type": "ref"
+              }
+            ],
+            "instance": {
+              "type": "submit-manager"
+            }
+          },
+          {
+            "description": "Draw the question",
+            "methodName": "draw",
+            "type": "method-call",
+            "args": [
+              {
+                "selector": "#target1",
+                "type": "d3select"
+              }
+            ],
+            "instance": {
+              "domain": "brix",
+              "refId": "q1",
+              "type": "ref"
+            }
+          }
+        ]
+      }
+    ],
+    "title": "CE.11.11 Social Classes In The United States Analyze L.O. 11.3"
+  }
+}

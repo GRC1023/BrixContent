@@ -1,0 +1,196 @@
+{
+  "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope",
+  "@type": "Envelope",
+  "metadata": {
+    "bookTitle": "Sociology",
+    "keywords": [
+      "Macionis 15e",
+      "Ch11",
+      "Alick"
+    ],
+    "extendedMetadata": [
+      {
+        "name": "ISBN",
+        "value": "0133795012"
+      },
+      {
+        "name": "M",
+        "value": "m02"
+      },
+      {
+        "name": "assessment_title",
+        "value": "Quiz: U.S. Stratification Merit and Caste"
+      },
+      {
+        "name": "Topic",
+        "value": "U.S. Stratification: Merit and Caste"
+      },
+      {
+        "name": "chapterTitle",
+        "value": "Social Class in the United States"
+      },
+      {
+        "name": "module",
+        "value": "U.S. Stratification Merit and Caste"
+      },
+      {
+        "name": "item_title",
+        "value": "0133795012_John J. Macionis_ch11_m02_q0002"
+      },
+      {
+        "name": "questionlayout",
+        "value": "1"
+      },
+      {
+        "name": "CH",
+        "value": "11"
+      },
+      {
+        "name": "Difficulty",
+        "value": "Difficult"
+      },
+      {
+        "name": "Objective",
+        "value": "L.O. 11.2: Explain how someoneâs position at birth affects social standing later in life."
+      },
+      {
+        "name": "shuffle_choices",
+        "value": "Yes"
+      }
+    ],
+    "subject": [
+      "Sociology"
+    ],
+    "contentTypeTier2": [
+      "AssessmentItem"
+    ],
+    "contentTypeTier1": "Assessment",
+    "format": [
+      "application/vnd.pearson.sanvan.v1.activity"
+    ],
+    "version": "1.0",
+    "guid": "52cc43c4-17e6-40a3-8933-dcbd5dbb76e2",
+    "bookAuthor": "John J. Macionis",
+    "title": "Pre.11.18 U.S. Stratification Merit And Caste Apply L.O. 11.2",
+    "educationalAlignment": [
+      "http://purl.org/pearson/objectives/183725473384362"
+    ]
+  },
+  "body": {
+    "description": "Pre.11.18, U.S. Stratification: Merit and Caste, Apply, L.O. 11.2",
+    "containerConfig": [
+      {
+        "description": "Pre.11.18, U.S. Stratification: Merit and Caste, Apply, L.O. 11.2",
+        "containerId": "target1",
+        "brixConfig": [
+          {
+            "bricId": "q1",
+            "bricType": "MultipleChoiceQuestion",
+            "config": {
+              "id": "QUE57701",
+              "question": "According to recent data from the U.S. Census Bureau, __________.\n\u003cbr /\u003e",
+              "order": "randomized",
+              "presenterType": "RadioGroup",
+              "presenterConfig": {
+                "numberFormat": "none"
+              },
+              "choices": [
+                {
+                  "answerKey": "answer_1",
+                  "content": "non-Hispanic white families and African American families are equally as likely to own their own homes"
+                },
+                {
+                  "answerKey": "answer_2",
+                  "content": "the median income of African American families is slightly more than half that of non-Hispanic white families"
+                },
+                {
+                  "answerKey": "answer_3",
+                  "content": "the median income of Hispanic families is approximately 90 percent of that of non-Hispanic white families"
+                },
+                {
+                  "answerKey": "answer_4",
+                  "content": "single-parent families headed by a man are more than twice as likely to be poor as those headed by a woman"
+                }
+              ]
+            },
+            "answerKey": {
+              "assessmentType": "multiplechoice",
+              "answers": {
+                "answer_3": {
+                  "score": 0.0,
+                  "response": ""
+                },
+                "answer_2": {
+                  "score": 1.0,
+                  "response": ""
+                },
+                "answer_1": {
+                  "score": 0.0,
+                  "response": ""
+                },
+                "answer_4": {
+                  "score": 0.0,
+                  "response": ""
+                }
+              }
+            },
+            "configFixup": [
+              {
+                "name": "questionId",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "sequenceNodeKey",
+                  "type": "ref"
+                }
+              },
+              {
+                "name": "maxAttempts",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "maxAttempts",
+                  "type": "ref"
+                }
+              }
+            ]
+          }
+        ],
+        "hookupActions": [
+          {
+            "description": "Hookup the submit manager to evaluate answers",
+            "methodName": "handleRequestsFrom",
+            "type": "method-call",
+            "args": [
+              {
+                "domain": "brix",
+                "refId": "q1",
+                "type": "ref"
+              }
+            ],
+            "instance": {
+              "type": "submit-manager"
+            }
+          },
+          {
+            "description": "Draw the question",
+            "methodName": "draw",
+            "type": "method-call",
+            "args": [
+              {
+                "selector": "#target1",
+                "type": "d3select"
+              }
+            ],
+            "instance": {
+              "domain": "brix",
+              "refId": "q1",
+              "type": "ref"
+            }
+          }
+        ]
+      }
+    ],
+    "title": "Pre.11.18 U.S. Stratification Merit And Caste Apply L.O. 11.2"
+  }
+}

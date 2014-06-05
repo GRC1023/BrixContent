@@ -1,0 +1,192 @@
+{
+  "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope",
+  "@type": "Envelope",
+  "metadata": {
+    "bookTitle": "Sociology",
+    "keywords": [
+      "Macionis 15e",
+      "Ch01",
+      "Alick"
+    ],
+    "extendedMetadata": [
+      {
+        "name": "ISBN",
+        "value": "0133795012"
+      },
+      {
+        "name": "M",
+        "value": "c01"
+      },
+      {
+        "name": "assessment_title",
+        "value": "Chapter Quiz: The Sociological Perspective"
+      },
+      {
+        "name": "Topic",
+        "value": "Sociological Theory"
+      },
+      {
+        "name": "chapterTitle",
+        "value": "The Sociological Perspective"
+      },
+      {
+        "name": "item_title",
+        "value": "0133795012_John J. Macionis_ch01_c01_q0013"
+      },
+      {
+        "name": "questionlayout",
+        "value": "1"
+      },
+      {
+        "name": "CH",
+        "value": "1"
+      },
+      {
+        "name": "Difficulty",
+        "value": "Easy"
+      },
+      {
+        "name": "Objective",
+        "value": "L.O. 1.5: Summarize sociology\u0026amp;rsquo;s major theoretical approaches."
+      },
+      {
+        "name": "shuffle_choices",
+        "value": "Yes"
+      }
+    ],
+    "subject": [
+      "Sociology"
+    ],
+    "contentTypeTier2": [
+      "AssessmentItem"
+    ],
+    "contentTypeTier1": "Assessment",
+    "format": [
+      "application/vnd.pearson.sanvan.v1.activity"
+    ],
+    "version": "1.0",
+    "guid": "762aefe2-7b90-4500-8fc2-8350d26962d5",
+    "bookAuthor": "John J. Macionis",
+    "title": "CE.01.44 Sociological Theory Understand L.O. 1.5",
+    "educationalAlignment": [
+      "http://purl.org/pearson/objectives/183725473384362"
+    ]
+  },
+  "body": {
+    "description": "CE.01.44, Sociological Theory, Understand, L.O. 1.5",
+    "containerConfig": [
+      {
+        "description": "CE.01.44, Sociological Theory, Understand, L.O. 1.5",
+        "containerId": "target1",
+        "brixConfig": [
+          {
+            "bricId": "q1",
+            "bricType": "MultipleChoiceQuestion",
+            "config": {
+              "id": "QUE58297",
+              "question": "Which of the following contributes most to the higher rate of suicide in the western part of the United States?\n\u003cbr /\u003e",
+              "order": "randomized",
+              "presenterType": "RadioGroup",
+              "presenterConfig": {
+                "numberFormat": "none"
+              },
+              "choices": [
+                {
+                  "answerKey": "answer_1",
+                  "content": "low population density"
+                },
+                {
+                  "answerKey": "answer_2",
+                  "content": "few industrialized jobs"
+                },
+                {
+                  "answerKey": "answer_3",
+                  "content": "higher levels of education"
+                },
+                {
+                  "answerKey": "answer_4",
+                  "content": "greater differences between women and men"
+                }
+              ]
+            },
+            "answerKey": {
+              "assessmentType": "multiplechoice",
+              "answers": {
+                "answer_3": {
+                  "score": 0.0,
+                  "response": "Consider this: Durkheim found that categories of people with strong social ties had low suicide rates.\n\u003cbr /\u003eRefer to Learning Objective 1.5: Summarize sociology’s major theoretical approaches."
+                },
+                "answer_2": {
+                  "score": 0.0,
+                  "response": "Consider this: Durkheim found that categories of people with strong social ties had low suicide rates.\n\u003cbr /\u003eRefer to Learning Objective 1.5: Summarize sociology’s major theoretical approaches."
+                },
+                "answer_1": {
+                  "score": 1.0,
+                  "response": ""
+                },
+                "answer_4": {
+                  "score": 0.0,
+                  "response": "Consider this: Durkheim found that categories of people with strong social ties had low suicide rates.\n\u003cbr /\u003eRefer to Learning Objective 1.5: Summarize sociology’s major theoretical approaches."
+                }
+              }
+            },
+            "configFixup": [
+              {
+                "name": "questionId",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "sequenceNodeKey",
+                  "type": "ref"
+                }
+              },
+              {
+                "name": "maxAttempts",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "maxAttempts",
+                  "type": "ref"
+                }
+              }
+            ]
+          }
+        ],
+        "hookupActions": [
+          {
+            "description": "Hookup the submit manager to evaluate answers",
+            "methodName": "handleRequestsFrom",
+            "type": "method-call",
+            "args": [
+              {
+                "domain": "brix",
+                "refId": "q1",
+                "type": "ref"
+              }
+            ],
+            "instance": {
+              "type": "submit-manager"
+            }
+          },
+          {
+            "description": "Draw the question",
+            "methodName": "draw",
+            "type": "method-call",
+            "args": [
+              {
+                "selector": "#target1",
+                "type": "d3select"
+              }
+            ],
+            "instance": {
+              "domain": "brix",
+              "refId": "q1",
+              "type": "ref"
+            }
+          }
+        ]
+      }
+    ],
+    "title": "CE.01.44 Sociological Theory Understand L.O. 1.5"
+  }
+}
