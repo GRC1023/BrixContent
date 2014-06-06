@@ -20,6 +20,9 @@
  * If you give it just a file it will process that or a wildcard file it will
  * process just those but they still have to have the proper suffix.
  *
+ * It may tell you it's done before it finishes outputting to the screen; such is
+ * the magic of asynchronousness...asynchronicity...something.
+ *
  * If you need to add another suffix, add it to the pipe delimited 'fileSuffix' string in the
  * brixConfig/bin/onan/config/default.json file.  This string goes into a regex, just fyi.
  * 
@@ -32,7 +35,15 @@
  * EXAMPLES:
  *
  * Post all the ciccerelli items to Production:
+ *  NODE_ENV=prod node onan.js ../../Ciccerelli/
+ *
+ * Post all the ciccerelli items to Production:
  *  NODE_ENV=prod node onan.js ../../Ciccerelli/json/
+ *
+ * Post all the ciccerelli items to Production:
+ *  NODE_ENV=prod node onan.js ../../Ciccerelli/json/*.item.json
+ *
+ * 
  *
  * 
  *
