@@ -1,0 +1,91 @@
+{
+  "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope", 
+  "@type": "Envelope", 
+  "body": {
+    "containerConfig": [
+      {
+        "brixConfig": [
+          {
+            "answerKey": {
+              "assessmentType": "alwayscorrect"
+            }, 
+            "bricId": "J1", 
+            "bricType": "Journal", 
+            "config": {
+              "id": "sampleJ1", 
+              "title": "What evidence do psychologists have to suggest that people from different cultural groups may differ in their perceptions?"
+            }, 
+            "configFixup": [
+              {
+                "name": "journalId", 
+                "type": "set-property", 
+                "value": {
+                  "domain": "info", 
+                  "refId": "sequenceNodeKey", 
+                  "type": "ref"
+                }
+              }
+            ]
+          }
+        ], 
+        "containerId": "b937d401a7e9a46f491e37edd4af14de9", 
+        "description": "What evidence do psychologists have to suggest that people from different cultural groups may differ in their perceptions?", 
+        "hookupActions": [
+          {
+            "args": [
+              {
+                "domain": "brix", 
+                "refId": "J1", 
+                "type": "ref"
+              }
+            ], 
+            "description": "Hookup the submit manager to evaluate answers", 
+            "instance": {
+              "type": "submit-manager"
+            }, 
+            "methodName": "handleRequestsFrom", 
+            "type": "method-call"
+          }, 
+          {
+            "args": [
+              {
+                "selector": "#b937d401a7e9a46f491e37edd4af14de9", 
+                "type": "d3select"
+              }
+            ], 
+            "description": "Draw the journal", 
+            "instance": {
+              "domain": "brix", 
+              "refId": "J1", 
+              "type": "ref"
+            }, 
+            "methodName": "draw", 
+            "type": "method-call"
+          }
+        ]
+      }
+    ], 
+    "description": "Culture and Perception"
+  }, 
+  "metadata": {
+    "contentTypeTier1": "Activity", 
+    "contentTypeTier2": [
+      "Exercise"
+    ], 
+    "created": "2014-01-31T13:51:34.742527", 
+    "description": "What evidence do psychologists have to suggest that people from different cultural groups may differ in their perceptions?", 
+    "format": [
+      "application/vnd.pearson.sanvan.v1.activity"
+    ], 
+    "guid": "1b94e612-d133-4e82-9c3d-052937b9485f", 
+    "intendedEndUserRole": [
+      "Student"
+    ], 
+    "owner": "Brix", 
+    "subject": [
+      "Psychology"
+    ], 
+    "timeRequired": "PT20S", 
+    "title": "What evidence do psychologists have to suggest that people from different cultural groups may differ in their perceptions?"
+  }
+}
