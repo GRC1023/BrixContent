@@ -1,0 +1,200 @@
+{
+  "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope",
+  "@type": "Envelope",
+  "metadata": {
+    "bookTitle": "Public Speaking: An Audience-Centered Approach",
+    "keywords": [
+      "Beebe 9e",
+      "ch 02",
+      "Rudowski"
+    ],
+    "extendedMetadata": [
+      {
+        "name": "Page-Reference",
+        "value": "27"
+      },
+      {
+        "name": "ISBN",
+        "value": "0133859703"
+      },
+      {
+        "name": "M",
+        "value": "m05"
+      },
+      {
+        "name": "assessment_title",
+        "value": "Quiz: Generate the Main Ideas"
+      },
+      {
+        "name": "Topic",
+        "value": "Generate the Main Ideas"
+      },
+      {
+        "name": "chapterTitle",
+        "value": "Presenting Your First Speech"
+      },
+      {
+        "name": "module",
+        "value": "Generate the Main Ideas"
+      },
+      {
+        "name": "item_title",
+        "value": "0133859703_Steven A. Beebe; Susan J. Beebe_ch02_m05_q0002"
+      },
+      {
+        "name": "questionlayout",
+        "value": "1"
+      },
+      {
+        "name": "CH",
+        "value": "2"
+      },
+      {
+        "name": "Difficulty",
+        "value": "Moderate"
+      },
+      {
+        "name": "Objective",
+        "value": "2.5 Identify three strategies for generating the main ideas for a speech."
+      },
+      {
+        "name": "shuffle_choices",
+        "value": "Yes"
+      }
+    ],
+    "subject": [
+      "Communication"
+    ],
+    "contentTypeTier2": [
+      "AssessmentItem"
+    ],
+    "contentTypeTier1": "Assessment",
+    "format": [
+      "application/vnd.pearson.sanvan.v1.activity"
+    ],
+    "version": "1.0",
+    "guid": "10906dcf-5d7f-4714-b0f1-f6586cf997d4",
+    "bookAuthor": "Steven A. Beebe; Susan J. Beebe",
+    "title": "Post.02.13 Generate The Main Ideas Understand LO 2.5",
+    "educationalAlignment": [
+      "http://purl.org/pearson/objectives/183725473384362"
+    ]
+  },
+  "body": {
+    "description": "Post.02.13 Generate the Main Ideas, Understand, LO 2.5",
+    "containerConfig": [
+      {
+        "description": "Post.02.13 Generate the Main Ideas, Understand, LO 2.5",
+        "containerId": "target1",
+        "brixConfig": [
+          {
+            "bricId": "q1",
+            "bricType": "MultipleChoiceQuestion",
+            "config": {
+              "id": "QUE60048",
+              "question": "While ancient Romans referred to this specific speech skill as invention, today we would say we were _______.\n\u003cbr /\u003e",
+              "order": "randomized",
+              "presenterType": "RadioGroup",
+              "presenterConfig": {
+                "numberFormat": "none"
+              },
+              "choices": [
+                {
+                  "answerKey": "answer_1",
+                  "content": "developing a central idea"
+                },
+                {
+                  "answerKey": "answer_2",
+                  "content": "generating main ideas"
+                },
+                {
+                  "answerKey": "answer_3",
+                  "content": "gathering support material"
+                },
+                {
+                  "answerKey": "answer_4",
+                  "content": "rehearsing the speech"
+                }
+              ]
+            },
+            "answerKey": {
+              "assessmentType": "multiplechoice",
+              "answers": {
+                "answer_3": {
+                  "score": 0.0,
+                  "response": ""
+                },
+                "answer_2": {
+                  "score": 1.0,
+                  "response": ""
+                },
+                "answer_1": {
+                  "score": 0.0,
+                  "response": ""
+                },
+                "answer_4": {
+                  "score": 0.0,
+                  "response": ""
+                }
+              }
+            },
+            "configFixup": [
+              {
+                "name": "questionId",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "sequenceNodeKey",
+                  "type": "ref"
+                }
+              },
+              {
+                "name": "maxAttempts",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "maxAttempts",
+                  "type": "ref"
+                }
+              }
+            ]
+          }
+        ],
+        "hookupActions": [
+          {
+            "description": "Hookup the submit manager to evaluate answers",
+            "methodName": "handleRequestsFrom",
+            "type": "method-call",
+            "args": [
+              {
+                "domain": "brix",
+                "refId": "q1",
+                "type": "ref"
+              }
+            ],
+            "instance": {
+              "type": "submit-manager"
+            }
+          },
+          {
+            "description": "Draw the question",
+            "methodName": "draw",
+            "type": "method-call",
+            "args": [
+              {
+                "selector": "#target1",
+                "type": "d3select"
+              }
+            ],
+            "instance": {
+              "domain": "brix",
+              "refId": "q1",
+              "type": "ref"
+            }
+          }
+        ]
+      }
+    ],
+    "title": "Post.02.13 Generate The Main Ideas Understand LO 2.5"
+  }
+}

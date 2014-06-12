@@ -1,0 +1,196 @@
+{
+  "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope",
+  "@type": "Envelope",
+  "metadata": {
+    "bookTitle": "Public Speaking: An Audience-Centered Approach",
+    "keywords": [
+      "Beebe 9e",
+      "ch 13",
+      "Rudowski"
+    ],
+    "extendedMetadata": [
+      {
+        "name": "Page-Reference",
+        "value": "276"
+      },
+      {
+        "name": "ISBN",
+        "value": "0133859703"
+      },
+      {
+        "name": "M",
+        "value": "c01"
+      },
+      {
+        "name": "assessment_title",
+        "value": "Chapter Quiz: Speaking to Inform"
+      },
+      {
+        "name": "Topic",
+        "value": "Strategies to Enhance Audience Recall"
+      },
+      {
+        "name": "chapterTitle",
+        "value": "Speaking to Inform"
+      },
+      {
+        "name": "item_title",
+        "value": "0133859703_Steven A. Beebe; Susan J. Beebe_ch13_c01_q0013"
+      },
+      {
+        "name": "questionlayout",
+        "value": "1"
+      },
+      {
+        "name": "CH",
+        "value": "13"
+      },
+      {
+        "name": "Difficulty",
+        "value": "Easy"
+      },
+      {
+        "name": "Objective",
+        "value": "13.4 Effectively and appropriately use four strategies to enhance audience recall of information pre"
+      },
+      {
+        "name": "shuffle_choices",
+        "value": "Yes"
+      }
+    ],
+    "subject": [
+      "Communication"
+    ],
+    "contentTypeTier2": [
+      "AssessmentItem"
+    ],
+    "contentTypeTier1": "Assessment",
+    "format": [
+      "application/vnd.pearson.sanvan.v1.activity"
+    ],
+    "version": "1.0",
+    "guid": "df7a560e-bb4c-4fc3-9f73-c545f51f80e3",
+    "bookAuthor": "Steven A. Beebe; Susan J. Beebe",
+    "title": "Exam.13.19 Strategies To Enhance Audience Recall Remember LO 13.4",
+    "educationalAlignment": [
+      "http://purl.org/pearson/objectives/183725473384362"
+    ]
+  },
+  "body": {
+    "description": "Exam.13.19 Strategies to Enhance Audience Recall, Remember, LO 13.4",
+    "containerConfig": [
+      {
+        "description": "Exam.13.19 Strategies to Enhance Audience Recall, Remember, LO 13.4",
+        "containerId": "target1",
+        "brixConfig": [
+          {
+            "bricId": "q1",
+            "bricType": "MultipleChoiceQuestion",
+            "config": {
+              "id": "QUE60442",
+              "question": "A clear preview at the beginning of a talk and a summary statement in the conclusion are two techniques a speaker can use to _________.\n\u003cbr /\u003e",
+              "order": "randomized",
+              "presenterType": "RadioGroup",
+              "presenterConfig": {
+                "numberFormat": "none"
+              },
+              "choices": [
+                {
+                  "answerKey": "answer_1",
+                  "content": "maintain audience interest"
+                },
+                {
+                  "answerKey": "answer_2",
+                  "content": "enhance audience recall"
+                },
+                {
+                  "answerKey": "answer_3",
+                  "content": "incorporate signposts and transitions"
+                },
+                {
+                  "answerKey": "answer_4",
+                  "content": "review a difficult procedure"
+                }
+              ]
+            },
+            "answerKey": {
+              "assessmentType": "multiplechoice",
+              "answers": {
+                "answer_3": {
+                  "score": 0.0,
+                  "response": "Consider this: In what way is a preview similar to a summary? Learning Objective 13.4: Effectively and appropriately use four strategies to enhance audience recall of information presented in an informative speech."
+                },
+                "answer_2": {
+                  "score": 1.0,
+                  "response": ""
+                },
+                "answer_1": {
+                  "score": 0.0,
+                  "response": "Consider this: In what way is a preview similar to a summary? Learning Objective 13.4: Effectively and appropriately use four strategies to enhance audience recall of information presented in an informative speech."
+                },
+                "answer_4": {
+                  "score": 0.0,
+                  "response": "Consider this: In what way is a preview similar to a summary? Learning Objective 13.4: Effectively and appropriately use four strategies to enhance audience recall of information presented in an informative speech."
+                }
+              }
+            },
+            "configFixup": [
+              {
+                "name": "questionId",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "sequenceNodeKey",
+                  "type": "ref"
+                }
+              },
+              {
+                "name": "maxAttempts",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "maxAttempts",
+                  "type": "ref"
+                }
+              }
+            ]
+          }
+        ],
+        "hookupActions": [
+          {
+            "description": "Hookup the submit manager to evaluate answers",
+            "methodName": "handleRequestsFrom",
+            "type": "method-call",
+            "args": [
+              {
+                "domain": "brix",
+                "refId": "q1",
+                "type": "ref"
+              }
+            ],
+            "instance": {
+              "type": "submit-manager"
+            }
+          },
+          {
+            "description": "Draw the question",
+            "methodName": "draw",
+            "type": "method-call",
+            "args": [
+              {
+                "selector": "#target1",
+                "type": "d3select"
+              }
+            ],
+            "instance": {
+              "domain": "brix",
+              "refId": "q1",
+              "type": "ref"
+            }
+          }
+        ]
+      }
+    ],
+    "title": "Exam.13.19 Strategies To Enhance Audience Recall Remember LO 13.4"
+  }
+}

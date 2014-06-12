@@ -1,0 +1,196 @@
+{
+  "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope",
+  "@type": "Envelope",
+  "metadata": {
+    "bookTitle": "Public Speaking: An Audience-Centered Approach",
+    "keywords": [
+      "Beebe 9e",
+      "ch 08",
+      "Rudowski"
+    ],
+    "extendedMetadata": [
+      {
+        "name": "Page-Reference",
+        "value": "170"
+      },
+      {
+        "name": "ISBN",
+        "value": "0133859703"
+      },
+      {
+        "name": "M",
+        "value": "c01"
+      },
+      {
+        "name": "assessment_title",
+        "value": "Chapter Quiz: Organizing and Outlining Your Speech"
+      },
+      {
+        "name": "Topic",
+        "value": "Outlining Your Speech"
+      },
+      {
+        "name": "chapterTitle",
+        "value": "Organizing and Outlining Your Speech"
+      },
+      {
+        "name": "item_title",
+        "value": "0133859703_Steven A. Beebe; Susan J. Beebe_ch08_c01_q0017"
+      },
+      {
+        "name": "questionlayout",
+        "value": "1"
+      },
+      {
+        "name": "CH",
+        "value": "8"
+      },
+      {
+        "name": "Difficulty",
+        "value": "Easy"
+      },
+      {
+        "name": "Objective",
+        "value": "8.4 Develop a preparation outline and speaking notes for a speech."
+      },
+      {
+        "name": "shuffle_choices",
+        "value": "Yes"
+      }
+    ],
+    "subject": [
+      "Communication"
+    ],
+    "contentTypeTier2": [
+      "AssessmentItem"
+    ],
+    "contentTypeTier1": "Assessment",
+    "format": [
+      "application/vnd.pearson.sanvan.v1.activity"
+    ],
+    "version": "1.0",
+    "guid": "e2f89c35-002f-43a9-a268-995398465fb1",
+    "bookAuthor": "Steven A. Beebe; Susan J. Beebe",
+    "title": "Exam.08.23 Outlining Your Speech Remember LO 8.4",
+    "educationalAlignment": [
+      "http://purl.org/pearson/objectives/183725473384362"
+    ]
+  },
+  "body": {
+    "description": "Exam.08.23 Outlining Your Speech, Remember, LO 8.4",
+    "containerConfig": [
+      {
+        "description": "Exam.08.23 Outlining Your Speech, Remember, LO 8.4",
+        "containerId": "target1",
+        "brixConfig": [
+          {
+            "bricId": "q1",
+            "bricType": "MultipleChoiceQuestion",
+            "config": {
+              "id": "QUE60245",
+              "question": "Where in your preparation outline should you put your specific purpose?\n\u003cbr /\u003e",
+              "order": "randomized",
+              "presenterType": "RadioGroup",
+              "presenterConfig": {
+                "numberFormat": "none"
+              },
+              "choices": [
+                {
+                  "answerKey": "answer_1",
+                  "content": "at the bottom of the outline"
+                },
+                {
+                  "answerKey": "answer_2",
+                  "content": "You should not include your specific purpose in your preparation outline."
+                },
+                {
+                  "answerKey": "answer_3",
+                  "content": "at the top of the outline"
+                },
+                {
+                  "answerKey": "answer_4",
+                  "content": "in the body of the outline"
+                }
+              ]
+            },
+            "answerKey": {
+              "assessmentType": "multiplechoice",
+              "answers": {
+                "answer_3": {
+                  "score": 1.0,
+                  "response": ""
+                },
+                "answer_2": {
+                  "score": 0.0,
+                  "response": "Consider this: Review the advice for how to incorporate the specific ideas. Learning Objective 8.4: Develop a preparation outline and speaking notes for a speech."
+                },
+                "answer_1": {
+                  "score": 0.0,
+                  "response": "Consider this: Review the advice for how to incorporate the specific ideas. Learning Objective 8.4: Develop a preparation outline and speaking notes for a speech."
+                },
+                "answer_4": {
+                  "score": 0.0,
+                  "response": "Consider this: Review the advice for how to incorporate the specific ideas. Learning Objective 8.4: Develop a preparation outline and speaking notes for a speech."
+                }
+              }
+            },
+            "configFixup": [
+              {
+                "name": "questionId",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "sequenceNodeKey",
+                  "type": "ref"
+                }
+              },
+              {
+                "name": "maxAttempts",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "maxAttempts",
+                  "type": "ref"
+                }
+              }
+            ]
+          }
+        ],
+        "hookupActions": [
+          {
+            "description": "Hookup the submit manager to evaluate answers",
+            "methodName": "handleRequestsFrom",
+            "type": "method-call",
+            "args": [
+              {
+                "domain": "brix",
+                "refId": "q1",
+                "type": "ref"
+              }
+            ],
+            "instance": {
+              "type": "submit-manager"
+            }
+          },
+          {
+            "description": "Draw the question",
+            "methodName": "draw",
+            "type": "method-call",
+            "args": [
+              {
+                "selector": "#target1",
+                "type": "d3select"
+              }
+            ],
+            "instance": {
+              "domain": "brix",
+              "refId": "q1",
+              "type": "ref"
+            }
+          }
+        ]
+      }
+    ],
+    "title": "Exam.08.23 Outlining Your Speech Remember LO 8.4"
+  }
+}

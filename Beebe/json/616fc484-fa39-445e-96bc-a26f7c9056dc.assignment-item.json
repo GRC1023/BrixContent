@@ -1,0 +1,200 @@
+{
+  "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope",
+  "@type": "Envelope",
+  "metadata": {
+    "bookTitle": "Public Speaking: An Audience-Centered Approach",
+    "keywords": [
+      "Beebe 9e",
+      "ch 15",
+      "Rudowski"
+    ],
+    "extendedMetadata": [
+      {
+        "name": "Page-Reference",
+        "value": "317"
+      },
+      {
+        "name": "ISBN",
+        "value": "0133859703"
+      },
+      {
+        "name": "M",
+        "value": "m02"
+      },
+      {
+        "name": "assessment_title",
+        "value": "Quiz: Using Logic and Evidence to Persuade"
+      },
+      {
+        "name": "Topic",
+        "value": "Using Logic and Evidence to Persuade"
+      },
+      {
+        "name": "chapterTitle",
+        "value": "Using Persuasive Strategies"
+      },
+      {
+        "name": "module",
+        "value": "Using Logic and Evidence to Persuade"
+      },
+      {
+        "name": "item_title",
+        "value": "0133859703_Steven A. Beebe; Susan J. Beebe_ch15_m02_q0006"
+      },
+      {
+        "name": "questionlayout",
+        "value": "1"
+      },
+      {
+        "name": "CH",
+        "value": "15"
+      },
+      {
+        "name": "Difficulty",
+        "value": "Moderate"
+      },
+      {
+        "name": "Objective",
+        "value": "15.2 Use principles of effective logic and evidence to develop a persuasive message."
+      },
+      {
+        "name": "shuffle_choices",
+        "value": "Yes"
+      }
+    ],
+    "subject": [
+      "Communication"
+    ],
+    "contentTypeTier2": [
+      "AssessmentItem"
+    ],
+    "contentTypeTier1": "Assessment",
+    "format": [
+      "application/vnd.pearson.sanvan.v1.activity"
+    ],
+    "version": "1.0",
+    "guid": "616fc484-fa39-445e-96bc-a26f7c9056dc",
+    "bookAuthor": "Steven A. Beebe; Susan J. Beebe",
+    "title": "Pre.15.11 Using Logic And Evidence To Persuade Apply LO 15.2",
+    "educationalAlignment": [
+      "http://purl.org/pearson/objectives/183725473384362"
+    ]
+  },
+  "body": {
+    "description": "Pre.15.11 Using Logic and Evidence to Persuade, Apply, LO 15.2",
+    "containerConfig": [
+      {
+        "description": "Pre.15.11 Using Logic and Evidence to Persuade, Apply, LO 15.2",
+        "containerId": "target1",
+        "brixConfig": [
+          {
+            "bricId": "q1",
+            "bricType": "MultipleChoiceQuestion",
+            "config": {
+              "id": "QUE60547",
+              "question": "Which of the following represents the idea of the causal fallacy?\n\u003cbr /\u003e",
+              "order": "randomized",
+              "presenterType": "RadioGroup",
+              "presenterConfig": {
+                "numberFormat": "none"
+              },
+              "choices": [
+                {
+                  "answerKey": "answer_1",
+                  "content": "Jeff told his listeners that they had better hurry up and join because everyone else already had done so."
+                },
+                {
+                  "answerKey": "answer_2",
+                  "content": "According to the politician, the choice was either to vote for higher taxes or close the local schools."
+                },
+                {
+                  "answerKey": "answer_3",
+                  "content": "Tina knew that her school’s basketball team had won the last three games because she had worn the same outfit to each game and sat in the same seat."
+                },
+                {
+                  "answerKey": "answer_4",
+                  "content": "The famous football quarterback starred in the commercial and told the audience why his new truck was the only make and model of truck to drive."
+                }
+              ]
+            },
+            "answerKey": {
+              "assessmentType": "multiplechoice",
+              "answers": {
+                "answer_3": {
+                  "score": 1.0,
+                  "response": ""
+                },
+                "answer_2": {
+                  "score": 0.0,
+                  "response": ""
+                },
+                "answer_1": {
+                  "score": 0.0,
+                  "response": ""
+                },
+                "answer_4": {
+                  "score": 0.0,
+                  "response": ""
+                }
+              }
+            },
+            "configFixup": [
+              {
+                "name": "questionId",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "sequenceNodeKey",
+                  "type": "ref"
+                }
+              },
+              {
+                "name": "maxAttempts",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "maxAttempts",
+                  "type": "ref"
+                }
+              }
+            ]
+          }
+        ],
+        "hookupActions": [
+          {
+            "description": "Hookup the submit manager to evaluate answers",
+            "methodName": "handleRequestsFrom",
+            "type": "method-call",
+            "args": [
+              {
+                "domain": "brix",
+                "refId": "q1",
+                "type": "ref"
+              }
+            ],
+            "instance": {
+              "type": "submit-manager"
+            }
+          },
+          {
+            "description": "Draw the question",
+            "methodName": "draw",
+            "type": "method-call",
+            "args": [
+              {
+                "selector": "#target1",
+                "type": "d3select"
+              }
+            ],
+            "instance": {
+              "domain": "brix",
+              "refId": "q1",
+              "type": "ref"
+            }
+          }
+        ]
+      }
+    ],
+    "title": "Pre.15.11 Using Logic And Evidence To Persuade Apply LO 15.2"
+  }
+}

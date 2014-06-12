@@ -1,0 +1,200 @@
+{
+  "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope",
+  "@type": "Envelope",
+  "metadata": {
+    "bookTitle": "Public Speaking: An Audience-Centered Approach",
+    "keywords": [
+      "Beebe 9e",
+      "ch 02",
+      "Rudowski"
+    ],
+    "extendedMetadata": [
+      {
+        "name": "Page-Reference",
+        "value": "24"
+      },
+      {
+        "name": "ISBN",
+        "value": "0133859703"
+      },
+      {
+        "name": "M",
+        "value": "m02"
+      },
+      {
+        "name": "assessment_title",
+        "value": "Quiz: Select and Narrow Your Topic"
+      },
+      {
+        "name": "Topic",
+        "value": "Select and Narrow Your Topic"
+      },
+      {
+        "name": "chapterTitle",
+        "value": "Presenting Your First Speech"
+      },
+      {
+        "name": "module",
+        "value": "Select and Narrow Your Topic"
+      },
+      {
+        "name": "item_title",
+        "value": "0133859703_Steven A. Beebe; Susan J. Beebe_ch02_m02_q0003"
+      },
+      {
+        "name": "questionlayout",
+        "value": "1"
+      },
+      {
+        "name": "CH",
+        "value": "2"
+      },
+      {
+        "name": "Difficulty",
+        "value": "Moderate"
+      },
+      {
+        "name": "Objective",
+        "value": "2.2 Select and narrow an appropriate topic for a speech."
+      },
+      {
+        "name": "shuffle_choices",
+        "value": "Yes"
+      }
+    ],
+    "subject": [
+      "Communication"
+    ],
+    "contentTypeTier2": [
+      "AssessmentItem"
+    ],
+    "contentTypeTier1": "Assessment",
+    "format": [
+      "application/vnd.pearson.sanvan.v1.activity"
+    ],
+    "version": "1.0",
+    "guid": "ea076579-8303-4373-8778-fbcc7ff01471",
+    "bookAuthor": "Steven A. Beebe; Susan J. Beebe",
+    "title": "Pre.02.06 Select And Narrow Your Topic Understand LO 2.2",
+    "educationalAlignment": [
+      "http://purl.org/pearson/objectives/183725473384362"
+    ]
+  },
+  "body": {
+    "description": "Pre.02.06 Select and Narrow Your Topic, Understand, LO 2.2",
+    "containerConfig": [
+      {
+        "description": "Pre.02.06 Select and Narrow Your Topic, Understand, LO 2.2",
+        "containerId": "target1",
+        "brixConfig": [
+          {
+            "bricId": "q1",
+            "bricType": "MultipleChoiceQuestion",
+            "config": {
+              "id": "QUE60041",
+              "question": "As a student in a speech class, you should know that one of the \n\u003ci\u003ebest\u003c/i\u003e predictors of how well you will do on a speech is ______.\n\u003cbr /\u003e",
+              "order": "randomized",
+              "presenterType": "RadioGroup",
+              "presenterConfig": {
+                "numberFormat": "none"
+              },
+              "choices": [
+                {
+                  "answerKey": "answer_1",
+                  "content": "how well you know your topic without researching it"
+                },
+                {
+                  "answerKey": "answer_2",
+                  "content": "how educated your audience is"
+                },
+                {
+                  "answerKey": "answer_3",
+                  "content": "how much time you spend preparing your speech"
+                },
+                {
+                  "answerKey": "answer_4",
+                  "content": "how well you prepare your formal outline"
+                }
+              ]
+            },
+            "answerKey": {
+              "assessmentType": "multiplechoice",
+              "answers": {
+                "answer_3": {
+                  "score": 1.0,
+                  "response": ""
+                },
+                "answer_2": {
+                  "score": 0.0,
+                  "response": ""
+                },
+                "answer_1": {
+                  "score": 0.0,
+                  "response": ""
+                },
+                "answer_4": {
+                  "score": 0.0,
+                  "response": ""
+                }
+              }
+            },
+            "configFixup": [
+              {
+                "name": "questionId",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "sequenceNodeKey",
+                  "type": "ref"
+                }
+              },
+              {
+                "name": "maxAttempts",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "maxAttempts",
+                  "type": "ref"
+                }
+              }
+            ]
+          }
+        ],
+        "hookupActions": [
+          {
+            "description": "Hookup the submit manager to evaluate answers",
+            "methodName": "handleRequestsFrom",
+            "type": "method-call",
+            "args": [
+              {
+                "domain": "brix",
+                "refId": "q1",
+                "type": "ref"
+              }
+            ],
+            "instance": {
+              "type": "submit-manager"
+            }
+          },
+          {
+            "description": "Draw the question",
+            "methodName": "draw",
+            "type": "method-call",
+            "args": [
+              {
+                "selector": "#target1",
+                "type": "d3select"
+              }
+            ],
+            "instance": {
+              "domain": "brix",
+              "refId": "q1",
+              "type": "ref"
+            }
+          }
+        ]
+      }
+    ],
+    "title": "Pre.02.06 Select And Narrow Your Topic Understand LO 2.2"
+  }
+}

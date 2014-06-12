@@ -1,0 +1,196 @@
+{
+  "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope",
+  "@type": "Envelope",
+  "metadata": {
+    "bookTitle": "Public Speaking: An Audience-Centered Approach",
+    "keywords": [
+      "Beebe 9e",
+      "ch 13",
+      "Rudowski"
+    ],
+    "extendedMetadata": [
+      {
+        "name": "Page-Reference",
+        "value": "270"
+      },
+      {
+        "name": "ISBN",
+        "value": "0133859703"
+      },
+      {
+        "name": "M",
+        "value": "c01"
+      },
+      {
+        "name": "assessment_title",
+        "value": "Chapter Quiz: Speaking to Inform"
+      },
+      {
+        "name": "Topic",
+        "value": "Strategies to Enhance Audience Understanding"
+      },
+      {
+        "name": "chapterTitle",
+        "value": "Speaking to Inform"
+      },
+      {
+        "name": "item_title",
+        "value": "0133859703_Steven A. Beebe; Susan J. Beebe_ch13_c01_q0007"
+      },
+      {
+        "name": "questionlayout",
+        "value": "1"
+      },
+      {
+        "name": "CH",
+        "value": "13"
+      },
+      {
+        "name": "Difficulty",
+        "value": "Easy"
+      },
+      {
+        "name": "Objective",
+        "value": "13.2 Effectively and appropriately use four strategies to enhance audience understanding."
+      },
+      {
+        "name": "shuffle_choices",
+        "value": "Yes"
+      }
+    ],
+    "subject": [
+      "Communication"
+    ],
+    "contentTypeTier2": [
+      "AssessmentItem"
+    ],
+    "contentTypeTier1": "Assessment",
+    "format": [
+      "application/vnd.pearson.sanvan.v1.activity"
+    ],
+    "version": "1.0",
+    "guid": "b0b44a7f-f541-4b37-a48b-d50223d4c39e",
+    "bookAuthor": "Steven A. Beebe; Susan J. Beebe",
+    "title": "Exam.13.11 Strategies To Enhance Audience Understanding Remember LO 13.2",
+    "educationalAlignment": [
+      "http://purl.org/pearson/objectives/183725473384362"
+    ]
+  },
+  "body": {
+    "description": "Exam.13.11 Strategies to Enhance Audience Understanding, Remember, LO 13.2",
+    "containerConfig": [
+      {
+        "description": "Exam.13.11 Strategies to Enhance Audience Understanding, Remember, LO 13.2",
+        "containerId": "target1",
+        "brixConfig": [
+          {
+            "bricId": "q1",
+            "bricType": "MultipleChoiceQuestion",
+            "config": {
+              "id": "QUE60436",
+              "question": "The text describes a study in which people were given 15 seconds to memorize a group of random letters. According to the experts, the people could remember about half of the letters. What did the experts do to increase the participants’ ability to memorize the letters?\n\u003cbr /\u003e",
+              "order": "randomized",
+              "presenterType": "RadioGroup",
+              "presenterConfig": {
+                "numberFormat": "none"
+              },
+              "choices": [
+                {
+                  "answerKey": "answer_1",
+                  "content": "created a song based on the letters"
+                },
+                {
+                  "answerKey": "answer_2",
+                  "content": "suggested a rhyme for each letter"
+                },
+                {
+                  "answerKey": "answer_3",
+                  "content": "completely separated each letter from the next"
+                },
+                {
+                  "answerKey": "answer_4",
+                  "content": "regrouped the letters into acronyms"
+                }
+              ]
+            },
+            "answerKey": {
+              "assessmentType": "multiplechoice",
+              "answers": {
+                "answer_3": {
+                  "score": 0.0,
+                  "response": "Consider this: This illustrates the concept that listeners can more easily learn something new when they can relate it to something familiar. Learning Objective 13.2: Effectively and appropriately use four strategies to enhance audience understanding."
+                },
+                "answer_2": {
+                  "score": 0.0,
+                  "response": "Consider this: This illustrates the concept that listeners can more easily learn something new when they can relate it to something familiar. Learning Objective 13.2: Effectively and appropriately use four strategies to enhance audience understanding."
+                },
+                "answer_1": {
+                  "score": 0.0,
+                  "response": "Consider this: This illustrates the concept that listeners can more easily learn something new when they can relate it to something familiar. Learning Objective 13.2: Effectively and appropriately use four strategies to enhance audience understanding."
+                },
+                "answer_4": {
+                  "score": 1.0,
+                  "response": ""
+                }
+              }
+            },
+            "configFixup": [
+              {
+                "name": "questionId",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "sequenceNodeKey",
+                  "type": "ref"
+                }
+              },
+              {
+                "name": "maxAttempts",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "maxAttempts",
+                  "type": "ref"
+                }
+              }
+            ]
+          }
+        ],
+        "hookupActions": [
+          {
+            "description": "Hookup the submit manager to evaluate answers",
+            "methodName": "handleRequestsFrom",
+            "type": "method-call",
+            "args": [
+              {
+                "domain": "brix",
+                "refId": "q1",
+                "type": "ref"
+              }
+            ],
+            "instance": {
+              "type": "submit-manager"
+            }
+          },
+          {
+            "description": "Draw the question",
+            "methodName": "draw",
+            "type": "method-call",
+            "args": [
+              {
+                "selector": "#target1",
+                "type": "d3select"
+              }
+            ],
+            "instance": {
+              "domain": "brix",
+              "refId": "q1",
+              "type": "ref"
+            }
+          }
+        ]
+      }
+    ],
+    "title": "Exam.13.11 Strategies To Enhance Audience Understanding Remember LO 13.2"
+  }
+}

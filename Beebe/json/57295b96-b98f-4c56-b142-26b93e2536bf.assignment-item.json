@@ -1,0 +1,196 @@
+{
+  "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope",
+  "@type": "Envelope",
+  "metadata": {
+    "bookTitle": "Public Speaking: An Audience-Centered Approach",
+    "keywords": [
+      "Beebe 9e",
+      "ch 14",
+      "Rudowski"
+    ],
+    "extendedMetadata": [
+      {
+        "name": "Page-Reference",
+        "value": "300"
+      },
+      {
+        "name": "ISBN",
+        "value": "0133859703"
+      },
+      {
+        "name": "M",
+        "value": "c01"
+      },
+      {
+        "name": "assessment_title",
+        "value": "Chapter Quiz: Understanding Principles of Persuasive Speaking"
+      },
+      {
+        "name": "Topic",
+        "value": "How to Develop Your Audience-Centered Persuasive Speech"
+      },
+      {
+        "name": "chapterTitle",
+        "value": "Understanding Principles of Persuasive Speaking"
+      },
+      {
+        "name": "item_title",
+        "value": "0133859703_Steven A. Beebe; Susan J. Beebe_ch14_c01_q0009"
+      },
+      {
+        "name": "questionlayout",
+        "value": "1"
+      },
+      {
+        "name": "CH",
+        "value": "14"
+      },
+      {
+        "name": "Difficulty",
+        "value": "Moderate"
+      },
+      {
+        "name": "Objective",
+        "value": "14.4 Prepare and present an audience-centered persuasive speech."
+      },
+      {
+        "name": "shuffle_choices",
+        "value": "Yes"
+      }
+    ],
+    "subject": [
+      "Communication"
+    ],
+    "contentTypeTier2": [
+      "AssessmentItem"
+    ],
+    "contentTypeTier1": "Assessment",
+    "format": [
+      "application/vnd.pearson.sanvan.v1.activity"
+    ],
+    "version": "1.0",
+    "guid": "57295b96-b98f-4c56-b142-26b93e2536bf",
+    "bookAuthor": "Steven A. Beebe; Susan J. Beebe",
+    "title": "Exam.14.24 How To Develop Your Audience Centered Persuasive Speech Apply LO 14.4",
+    "educationalAlignment": [
+      "http://purl.org/pearson/objectives/183725473384362"
+    ]
+  },
+  "body": {
+    "description": "Exam.14.24 How to Develop Your Audience-Centered Persuasive Speech, Apply, LO 14.4",
+    "containerConfig": [
+      {
+        "description": "Exam.14.24 How to Develop Your Audience-Centered Persuasive Speech, Apply, LO 14.4",
+        "containerId": "target1",
+        "brixConfig": [
+          {
+            "bricId": "q1",
+            "bricType": "MultipleChoiceQuestion",
+            "config": {
+              "id": "QUE60481",
+              "question": "Which of the following can be classified as a proposition of value?\n\u003cbr /\u003e",
+              "order": "randomized",
+              "presenterType": "RadioGroup",
+              "presenterConfig": {
+                "numberFormat": "none"
+              },
+              "choices": [
+                {
+                  "answerKey": "answer_1",
+                  "content": "When more women joined the work force, employers were forced to give them fair wages."
+                },
+                {
+                  "answerKey": "answer_2",
+                  "content": "Finance is a better major than accounting."
+                },
+                {
+                  "answerKey": "answer_3",
+                  "content": "Our village should set aside one day each year as “Village Involvement Day.”"
+                },
+                {
+                  "answerKey": "answer_4",
+                  "content": "Senior citizens should pay less for their medical care."
+                }
+              ]
+            },
+            "answerKey": {
+              "assessmentType": "multiplechoice",
+              "answers": {
+                "answer_3": {
+                  "score": 0.0,
+                  "response": "Consider this: Review the definition of proposition. Learning Objective 14.4: Prepare and present an audience-centered persuasive speech."
+                },
+                "answer_2": {
+                  "score": 1.0,
+                  "response": ""
+                },
+                "answer_1": {
+                  "score": 0.0,
+                  "response": "Consider this: Review the definition of proposition. Learning Objective 14.4: Prepare and present an audience-centered persuasive speech."
+                },
+                "answer_4": {
+                  "score": 0.0,
+                  "response": "Consider this: Review the definition of proposition. Learning Objective 14.4: Prepare and present an audience-centered persuasive speech."
+                }
+              }
+            },
+            "configFixup": [
+              {
+                "name": "questionId",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "sequenceNodeKey",
+                  "type": "ref"
+                }
+              },
+              {
+                "name": "maxAttempts",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "maxAttempts",
+                  "type": "ref"
+                }
+              }
+            ]
+          }
+        ],
+        "hookupActions": [
+          {
+            "description": "Hookup the submit manager to evaluate answers",
+            "methodName": "handleRequestsFrom",
+            "type": "method-call",
+            "args": [
+              {
+                "domain": "brix",
+                "refId": "q1",
+                "type": "ref"
+              }
+            ],
+            "instance": {
+              "type": "submit-manager"
+            }
+          },
+          {
+            "description": "Draw the question",
+            "methodName": "draw",
+            "type": "method-call",
+            "args": [
+              {
+                "selector": "#target1",
+                "type": "d3select"
+              }
+            ],
+            "instance": {
+              "domain": "brix",
+              "refId": "q1",
+              "type": "ref"
+            }
+          }
+        ]
+      }
+    ],
+    "title": "Exam.14.24 How To Develop Your Audience Centered Persuasive Speech Apply LO 14.4"
+  }
+}

@@ -1,0 +1,196 @@
+{
+  "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope",
+  "@type": "Envelope",
+  "metadata": {
+    "bookTitle": "Public Speaking: An Audience-Centered Approach",
+    "keywords": [
+      "Beebe 9e",
+      "ch 11",
+      "Rudowski"
+    ],
+    "extendedMetadata": [
+      {
+        "name": "Page-Reference",
+        "value": "211"
+      },
+      {
+        "name": "ISBN",
+        "value": "0133859703"
+      },
+      {
+        "name": "M",
+        "value": "c01"
+      },
+      {
+        "name": "assessment_title",
+        "value": "Chapter Quiz: Delivering Your Speech"
+      },
+      {
+        "name": "Topic",
+        "value": "The Power of Speech Delivery"
+      },
+      {
+        "name": "chapterTitle",
+        "value": "Delivering Your Speech"
+      },
+      {
+        "name": "item_title",
+        "value": "0133859703_Steven A. Beebe; Susan J. Beebe_ch11_c01_q0001"
+      },
+      {
+        "name": "questionlayout",
+        "value": "1"
+      },
+      {
+        "name": "CH",
+        "value": "11"
+      },
+      {
+        "name": "Difficulty",
+        "value": "Easy"
+      },
+      {
+        "name": "Objective",
+        "value": "11.1 Identify three reasons delivery is important to a public speaker."
+      },
+      {
+        "name": "shuffle_choices",
+        "value": "Yes"
+      }
+    ],
+    "subject": [
+      "Communication"
+    ],
+    "contentTypeTier2": [
+      "AssessmentItem"
+    ],
+    "contentTypeTier1": "Assessment",
+    "format": [
+      "application/vnd.pearson.sanvan.v1.activity"
+    ],
+    "version": "1.0",
+    "guid": "a8305867-5051-44f5-80b2-42239784250c",
+    "bookAuthor": "Steven A. Beebe; Susan J. Beebe",
+    "title": "Exam.11.01 The Power Of Speech Delivery Remember LO 11.1",
+    "educationalAlignment": [
+      "http://purl.org/pearson/objectives/183725473384362"
+    ]
+  },
+  "body": {
+    "description": "Exam.11.01 The Power of Speech Delivery, Remember, LO 11.1",
+    "containerConfig": [
+      {
+        "description": "Exam.11.01 The Power of Speech Delivery, Remember, LO 11.1",
+        "containerId": "target1",
+        "brixConfig": [
+          {
+            "bricId": "q1",
+            "bricType": "MultipleChoiceQuestion",
+            "config": {
+              "id": "QUE60343",
+              "question": "Which theory of communication says that if listeners’ expectations about how something should be expressed are violated, then they will feel less favorable toward the communicator of the message?\n\u003cbr /\u003e",
+              "order": "randomized",
+              "presenterType": "RadioGroup",
+              "presenterConfig": {
+                "numberFormat": "none"
+              },
+              "choices": [
+                {
+                  "answerKey": "answer_1",
+                  "content": "nonverbal expectancy"
+                },
+                {
+                  "answerKey": "answer_2",
+                  "content": "verbal contagion"
+                },
+                {
+                  "answerKey": "answer_3",
+                  "content": "emotional contagion"
+                },
+                {
+                  "answerKey": "answer_4",
+                  "content": "nonverbal relief"
+                }
+              ]
+            },
+            "answerKey": {
+              "assessmentType": "multiplechoice",
+              "answers": {
+                "answer_3": {
+                  "score": 0.0,
+                  "response": "\u003cem\u003eIncorrect. Consider this: Review the section that covers communication theory. Learning Objective 11.1: Identify three reasons delivery is important to a public speaker.\u003c/em\u003e"
+                },
+                "answer_2": {
+                  "score": 0.0,
+                  "response": "\u003cem\u003eIncorrect. Consider this: Review the section that covers communication theory. Learning Objective 11.1: Identify three reasons delivery is important to a public speaker.\u003c/em\u003e"
+                },
+                "answer_1": {
+                  "score": 1.0,
+                  "response": "\u003cem\u003eCorrect!\u003c/em\u003e"
+                },
+                "answer_4": {
+                  "score": 0.0,
+                  "response": "\u003cem\u003eIncorrect. Consider this: Review the section that covers communication theory. Learning Objective 11.1: Identify three reasons delivery is important to a public speaker.\u003c/em\u003e"
+                }
+              }
+            },
+            "configFixup": [
+              {
+                "name": "questionId",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "sequenceNodeKey",
+                  "type": "ref"
+                }
+              },
+              {
+                "name": "maxAttempts",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "maxAttempts",
+                  "type": "ref"
+                }
+              }
+            ]
+          }
+        ],
+        "hookupActions": [
+          {
+            "description": "Hookup the submit manager to evaluate answers",
+            "methodName": "handleRequestsFrom",
+            "type": "method-call",
+            "args": [
+              {
+                "domain": "brix",
+                "refId": "q1",
+                "type": "ref"
+              }
+            ],
+            "instance": {
+              "type": "submit-manager"
+            }
+          },
+          {
+            "description": "Draw the question",
+            "methodName": "draw",
+            "type": "method-call",
+            "args": [
+              {
+                "selector": "#target1",
+                "type": "d3select"
+              }
+            ],
+            "instance": {
+              "domain": "brix",
+              "refId": "q1",
+              "type": "ref"
+            }
+          }
+        ]
+      }
+    ],
+    "title": "Exam.11.01 The Power Of Speech Delivery Remember LO 11.1"
+  }
+}

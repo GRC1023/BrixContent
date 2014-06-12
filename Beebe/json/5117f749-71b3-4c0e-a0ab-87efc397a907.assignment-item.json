@@ -1,0 +1,196 @@
+{
+  "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope",
+  "@type": "Envelope",
+  "metadata": {
+    "bookTitle": "Public Speaking: An Audience-Centered Approach",
+    "keywords": [
+      "Beebe 9e",
+      "ch 15",
+      "Rudowski"
+    ],
+    "extendedMetadata": [
+      {
+        "name": "Page-Reference",
+        "value": "322"
+      },
+      {
+        "name": "ISBN",
+        "value": "0133859703"
+      },
+      {
+        "name": "M",
+        "value": "c01"
+      },
+      {
+        "name": "assessment_title",
+        "value": "Chapter Quiz: Using Persuasive Strategies"
+      },
+      {
+        "name": "Topic",
+        "value": "Using Emotion to Persuade"
+      },
+      {
+        "name": "chapterTitle",
+        "value": "Using Persuasive Strategies"
+      },
+      {
+        "name": "item_title",
+        "value": "0133859703_Steven A. Beebe; Susan J. Beebe_ch15_c01_q0015"
+      },
+      {
+        "name": "questionlayout",
+        "value": "1"
+      },
+      {
+        "name": "CH",
+        "value": "15"
+      },
+      {
+        "name": "Difficulty",
+        "value": "Moderate"
+      },
+      {
+        "name": "Objective",
+        "value": "15.3 Employ effective techniques of using emotional appeal in a persuasive speech."
+      },
+      {
+        "name": "shuffle_choices",
+        "value": "Yes"
+      }
+    ],
+    "subject": [
+      "Communication"
+    ],
+    "contentTypeTier2": [
+      "AssessmentItem"
+    ],
+    "contentTypeTier1": "Assessment",
+    "format": [
+      "application/vnd.pearson.sanvan.v1.activity"
+    ],
+    "version": "1.0",
+    "guid": "5117f749-71b3-4c0e-a0ab-87efc397a907",
+    "bookAuthor": "Steven A. Beebe; Susan J. Beebe",
+    "title": "Exam.15.18 Using Emotion To Persuade Apply LO 15.3",
+    "educationalAlignment": [
+      "http://purl.org/pearson/objectives/183725473384362"
+    ]
+  },
+  "body": {
+    "description": "Exam.15.18 Using Emotion to Persuade, Apply, LO 15.3",
+    "containerConfig": [
+      {
+        "description": "Exam.15.18 Using Emotion to Persuade, Apply, LO 15.3",
+        "containerId": "target1",
+        "brixConfig": [
+          {
+            "bricId": "q1",
+            "bricType": "MultipleChoiceQuestion",
+            "config": {
+              "id": "QUE60531",
+              "question": "Kevin wanted his audience to see the benefits of hard work. He referred to the pioneers of yesteryear who worked tirelessly to create a better life in the wilds of the unknown. His story about the pioneers is an example of _______.\n\u003cbr /\u003e",
+              "order": "randomized",
+              "presenterType": "RadioGroup",
+              "presenterConfig": {
+                "numberFormat": "none"
+              },
+              "choices": [
+                {
+                  "answerKey": "answer_1",
+                  "content": "self-actualization"
+                },
+                {
+                  "answerKey": "answer_2",
+                  "content": "rhetoric"
+                },
+                {
+                  "answerKey": "answer_3",
+                  "content": "a non sequitur"
+                },
+                {
+                  "answerKey": "answer_4",
+                  "content": "a shared myth"
+                }
+              ]
+            },
+            "answerKey": {
+              "assessmentType": "multiplechoice",
+              "answers": {
+                "answer_3": {
+                  "score": 0.0,
+                  "response": "Consider this: Review the tips for using emotion to persuade. Learning Objective 15.3: Employ effective techniques of using emotional appeal in a persuasive speech."
+                },
+                "answer_2": {
+                  "score": 0.0,
+                  "response": "Consider this: Review the tips for using emotion to persuade. Learning Objective 15.3: Employ effective techniques of using emotional appeal in a persuasive speech."
+                },
+                "answer_1": {
+                  "score": 0.0,
+                  "response": "Consider this: Review the tips for using emotion to persuade. Learning Objective 15.3: Employ effective techniques of using emotional appeal in a persuasive speech."
+                },
+                "answer_4": {
+                  "score": 1.0,
+                  "response": ""
+                }
+              }
+            },
+            "configFixup": [
+              {
+                "name": "questionId",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "sequenceNodeKey",
+                  "type": "ref"
+                }
+              },
+              {
+                "name": "maxAttempts",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "maxAttempts",
+                  "type": "ref"
+                }
+              }
+            ]
+          }
+        ],
+        "hookupActions": [
+          {
+            "description": "Hookup the submit manager to evaluate answers",
+            "methodName": "handleRequestsFrom",
+            "type": "method-call",
+            "args": [
+              {
+                "domain": "brix",
+                "refId": "q1",
+                "type": "ref"
+              }
+            ],
+            "instance": {
+              "type": "submit-manager"
+            }
+          },
+          {
+            "description": "Draw the question",
+            "methodName": "draw",
+            "type": "method-call",
+            "args": [
+              {
+                "selector": "#target1",
+                "type": "d3select"
+              }
+            ],
+            "instance": {
+              "domain": "brix",
+              "refId": "q1",
+              "type": "ref"
+            }
+          }
+        ]
+      }
+    ],
+    "title": "Exam.15.18 Using Emotion To Persuade Apply LO 15.3"
+  }
+}

@@ -1,0 +1,196 @@
+{
+  "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope",
+  "@type": "Envelope",
+  "metadata": {
+    "bookTitle": "Public Speaking: An Audience-Centered Approach",
+    "keywords": [
+      "Beebe 9e",
+      "ch 12",
+      "Rudowski"
+    ],
+    "extendedMetadata": [
+      {
+        "name": "Page-Reference",
+        "value": "255"
+      },
+      {
+        "name": "ISBN",
+        "value": "0133859703"
+      },
+      {
+        "name": "M",
+        "value": "c01"
+      },
+      {
+        "name": "assessment_title",
+        "value": "Chapter Quiz: Using Presentation Aids"
+      },
+      {
+        "name": "Topic",
+        "value": "Guidelines for Developing Presentation Aids"
+      },
+      {
+        "name": "chapterTitle",
+        "value": "Using Presentation Aids"
+      },
+      {
+        "name": "item_title",
+        "value": "0133859703_Steven A. Beebe; Susan J. Beebe_ch12_c01_q0015"
+      },
+      {
+        "name": "questionlayout",
+        "value": "1"
+      },
+      {
+        "name": "CH",
+        "value": "12"
+      },
+      {
+        "name": "Difficulty",
+        "value": "Moderate"
+      },
+      {
+        "name": "Objective",
+        "value": "12.3 Identify guidelines for developing effective presentation aids."
+      },
+      {
+        "name": "shuffle_choices",
+        "value": "Yes"
+      }
+    ],
+    "subject": [
+      "Communication"
+    ],
+    "contentTypeTier2": [
+      "AssessmentItem"
+    ],
+    "contentTypeTier1": "Assessment",
+    "format": [
+      "application/vnd.pearson.sanvan.v1.activity"
+    ],
+    "version": "1.0",
+    "guid": "f6233cff-94b7-420a-9d1d-4091f7eb6e52",
+    "bookAuthor": "Steven A. Beebe; Susan J. Beebe",
+    "title": "Exam.12.20 Guidelines For Developing Presentation Aids Apply LO 12.3",
+    "educationalAlignment": [
+      "http://purl.org/pearson/objectives/183725473384362"
+    ]
+  },
+  "body": {
+    "description": "Exam.12.20 Guidelines for Developing Presentation Aids, Apply, LO 12.3",
+    "containerConfig": [
+      {
+        "description": "Exam.12.20 Guidelines for Developing Presentation Aids, Apply, LO 12.3",
+        "containerId": "target1",
+        "brixConfig": [
+          {
+            "bricId": "q1",
+            "bricType": "MultipleChoiceQuestion",
+            "config": {
+              "id": "QUE60403",
+              "question": "When the speaker pointed a bow and arrow directly at the audience of boy scouts and their families, all of the parents in the group became nervous and lost focus on the topic. What guideline did this speaker fail to follow?\n\u003cbr /\u003e",
+              "order": "randomized",
+              "presenterType": "RadioGroup",
+              "presenterConfig": {
+                "numberFormat": "none"
+              },
+              "choices": [
+                {
+                  "answerKey": "answer_1",
+                  "content": "make them easy to see"
+                },
+                {
+                  "answerKey": "answer_2",
+                  "content": "never use dangerous presentation aids"
+                },
+                {
+                  "answerKey": "answer_3",
+                  "content": "keep them simple"
+                },
+                {
+                  "answerKey": "answer_4",
+                  "content": "never point a presentation aid directly at the audience"
+                }
+              ]
+            },
+            "answerKey": {
+              "assessmentType": "multiplechoice",
+              "answers": {
+                "answer_3": {
+                  "score": 0.0,
+                  "response": "Consider this: Review the guidelines for developing presentation aids. Learning Objective 12.3: Identify guidelines for developing effective presentation aids."
+                },
+                "answer_2": {
+                  "score": 1.0,
+                  "response": ""
+                },
+                "answer_1": {
+                  "score": 0.0,
+                  "response": "Consider this: Review the guidelines for developing presentation aids. Learning Objective 12.3: Identify guidelines for developing effective presentation aids."
+                },
+                "answer_4": {
+                  "score": 0.0,
+                  "response": "Consider this: Review the guidelines for developing presentation aids. Learning Objective 12.3: Identify guidelines for developing effective presentation aids."
+                }
+              }
+            },
+            "configFixup": [
+              {
+                "name": "questionId",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "sequenceNodeKey",
+                  "type": "ref"
+                }
+              },
+              {
+                "name": "maxAttempts",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "maxAttempts",
+                  "type": "ref"
+                }
+              }
+            ]
+          }
+        ],
+        "hookupActions": [
+          {
+            "description": "Hookup the submit manager to evaluate answers",
+            "methodName": "handleRequestsFrom",
+            "type": "method-call",
+            "args": [
+              {
+                "domain": "brix",
+                "refId": "q1",
+                "type": "ref"
+              }
+            ],
+            "instance": {
+              "type": "submit-manager"
+            }
+          },
+          {
+            "description": "Draw the question",
+            "methodName": "draw",
+            "type": "method-call",
+            "args": [
+              {
+                "selector": "#target1",
+                "type": "d3select"
+              }
+            ],
+            "instance": {
+              "domain": "brix",
+              "refId": "q1",
+              "type": "ref"
+            }
+          }
+        ]
+      }
+    ],
+    "title": "Exam.12.20 Guidelines For Developing Presentation Aids Apply LO 12.3"
+  }
+}

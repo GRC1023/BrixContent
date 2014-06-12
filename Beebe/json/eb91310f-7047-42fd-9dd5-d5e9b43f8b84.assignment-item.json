@@ -1,0 +1,196 @@
+{
+  "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope",
+  "@type": "Envelope",
+  "metadata": {
+    "bookTitle": "Public Speaking: An Audience-Centered Approach",
+    "keywords": [
+      "Beebe 9e",
+      "ch 10",
+      "Rudowski"
+    ],
+    "extendedMetadata": [
+      {
+        "name": "Page-Reference",
+        "value": "199"
+      },
+      {
+        "name": "ISBN",
+        "value": "0133859703"
+      },
+      {
+        "name": "M",
+        "value": "c01"
+      },
+      {
+        "name": "assessment_title",
+        "value": "Chapter Quiz: Using Words Well"
+      },
+      {
+        "name": "Topic",
+        "value": "Adapting Your Language Style to Diverse Listeners"
+      },
+      {
+        "name": "chapterTitle",
+        "value": "Using Words Well"
+      },
+      {
+        "name": "item_title",
+        "value": "0133859703_Steven A. Beebe; Susan J. Beebe_ch10_c01_q0010"
+      },
+      {
+        "name": "questionlayout",
+        "value": "1"
+      },
+      {
+        "name": "CH",
+        "value": "10"
+      },
+      {
+        "name": "Difficulty",
+        "value": "Moderate"
+      },
+      {
+        "name": "Objective",
+        "value": "10.3 Discuss how to adapt your language style to diverse listeners."
+      },
+      {
+        "name": "shuffle_choices",
+        "value": "Yes"
+      }
+    ],
+    "subject": [
+      "Communication"
+    ],
+    "contentTypeTier2": [
+      "AssessmentItem"
+    ],
+    "contentTypeTier1": "Assessment",
+    "format": [
+      "application/vnd.pearson.sanvan.v1.activity"
+    ],
+    "version": "1.0",
+    "guid": "eb91310f-7047-42fd-9dd5-d5e9b43f8b84",
+    "bookAuthor": "Steven A. Beebe; Susan J. Beebe",
+    "title": "Exam.10.13 Adapting Your Language Style To Diverse Listeners Apply LO 10.3",
+    "educationalAlignment": [
+      "http://purl.org/pearson/objectives/183725473384362"
+    ]
+  },
+  "body": {
+    "description": "Exam.10.13 Adapting Your Language Style to Diverse Listeners, Apply, LO 10.3",
+    "containerConfig": [
+      {
+        "description": "Exam.10.13 Adapting Your Language Style to Diverse Listeners, Apply, LO 10.3",
+        "containerId": "target1",
+        "brixConfig": [
+          {
+            "bricId": "q1",
+            "bricType": "MultipleChoiceQuestion",
+            "config": {
+              "id": "QUE60311",
+              "question": "In her speech on the history of public libraries, Lori used the terminology she’d learned while working in a library like “OPAC,” “periodicals,” and “Boolean logic.” This type of language which is specialized to a certain profession is known as _____.\n\u003cbr /\u003e",
+              "order": "randomized",
+              "presenterType": "RadioGroup",
+              "presenterConfig": {
+                "numberFormat": "none"
+              },
+              "choices": [
+                {
+                  "answerKey": "answer_1",
+                  "content": "regionalisms"
+                },
+                {
+                  "answerKey": "answer_2",
+                  "content": "a vernacular"
+                },
+                {
+                  "answerKey": "answer_3",
+                  "content": "jargon"
+                },
+                {
+                  "answerKey": "answer_4",
+                  "content": "concrete language"
+                }
+              ]
+            },
+            "answerKey": {
+              "assessmentType": "multiplechoice",
+              "answers": {
+                "answer_3": {
+                  "score": 1.0,
+                  "response": ""
+                },
+                "answer_2": {
+                  "score": 0.0,
+                  "response": "Consider this: Review the section on using language your audience can understand. Learning Objective 10.3: Discuss how to adapt your language style to diverse listeners."
+                },
+                "answer_1": {
+                  "score": 0.0,
+                  "response": "Consider this: Review the section on using language your audience can understand. Learning Objective 10.3: Discuss how to adapt your language style to diverse listeners."
+                },
+                "answer_4": {
+                  "score": 0.0,
+                  "response": "Consider this: Review the section on using language your audience can understand. Learning Objective 10.3: Discuss how to adapt your language style to diverse listeners."
+                }
+              }
+            },
+            "configFixup": [
+              {
+                "name": "questionId",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "sequenceNodeKey",
+                  "type": "ref"
+                }
+              },
+              {
+                "name": "maxAttempts",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "maxAttempts",
+                  "type": "ref"
+                }
+              }
+            ]
+          }
+        ],
+        "hookupActions": [
+          {
+            "description": "Hookup the submit manager to evaluate answers",
+            "methodName": "handleRequestsFrom",
+            "type": "method-call",
+            "args": [
+              {
+                "domain": "brix",
+                "refId": "q1",
+                "type": "ref"
+              }
+            ],
+            "instance": {
+              "type": "submit-manager"
+            }
+          },
+          {
+            "description": "Draw the question",
+            "methodName": "draw",
+            "type": "method-call",
+            "args": [
+              {
+                "selector": "#target1",
+                "type": "d3select"
+              }
+            ],
+            "instance": {
+              "domain": "brix",
+              "refId": "q1",
+              "type": "ref"
+            }
+          }
+        ]
+      }
+    ],
+    "title": "Exam.10.13 Adapting Your Language Style To Diverse Listeners Apply LO 10.3"
+  }
+}

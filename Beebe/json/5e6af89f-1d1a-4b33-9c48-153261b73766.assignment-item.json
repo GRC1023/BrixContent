@@ -1,0 +1,196 @@
+{
+  "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope",
+  "@type": "Envelope",
+  "metadata": {
+    "bookTitle": "Listen To This",
+    "keywords": [
+      "Bonds 3e",
+      "ch 18",
+      "Rudowski"
+    ],
+    "extendedMetadata": [
+      {
+        "name": "Page-Reference",
+        "value": "156"
+      },
+      {
+        "name": "ISBN",
+        "value": "0133794636"
+      },
+      {
+        "name": "M",
+        "value": "m01"
+      },
+      {
+        "name": "assessment_title",
+        "value": "Quiz: George Frideric Handel, Messiah, selections"
+      },
+      {
+        "name": "Topic",
+        "value": "Historical Context: Why Stand?"
+      },
+      {
+        "name": "chapterTitle",
+        "value": "The Baroque Era: 1600â1750"
+      },
+      {
+        "name": "module",
+        "value": "George Frideric Handel, Messiah, selections"
+      },
+      {
+        "name": "item_title",
+        "value": "0133794636_Mark Evan Bonds_ch18_m01_q0004"
+      },
+      {
+        "name": "questionlayout",
+        "value": "1"
+      },
+      {
+        "name": "CH",
+        "value": "18"
+      },
+      {
+        "name": "Objective",
+        "value": "18.6"
+      },
+      {
+        "name": "shuffle_choices",
+        "value": "Yes"
+      }
+    ],
+    "subject": [
+      "Music"
+    ],
+    "contentTypeTier2": [
+      "AssessmentItem"
+    ],
+    "contentTypeTier1": "Assessment",
+    "format": [
+      "application/vnd.pearson.sanvan.v1.activity"
+    ],
+    "version": "1.0",
+    "guid": "5e6af89f-1d1a-4b33-9c48-153261b73766",
+    "bookAuthor": "Mark Evan Bonds",
+    "title": "Ch18 Post Fact 02",
+    "educationalAlignment": [
+      "http://purl.org/pearson/objectives/183725473384362"
+    ]
+  },
+  "body": {
+    "description": "ch18_post_fact_02",
+    "containerConfig": [
+      {
+        "description": "ch18_post_fact_02",
+        "containerId": "target1",
+        "brixConfig": [
+          {
+            "bricId": "q1",
+            "bricType": "MultipleChoiceQuestion",
+            "config": {
+              "id": "QUE63813",
+              "question": "What custom was allegedly begun by King George II at the London premiere of \n\u003ci\u003eMessiah\u003c/i\u003e?\n\u003cbr /\u003e",
+              "order": "randomized",
+              "presenterType": "RadioGroup",
+              "presenterConfig": {
+                "numberFormat": "none"
+              },
+              "choices": [
+                {
+                  "answerKey": "answer_1",
+                  "content": "The audience rises when the \"Hallelujah\" chorus begins."
+                },
+                {
+                  "answerKey": "answer_2",
+                  "content": "The audience does not clap when the work is finished, out of reverence."
+                },
+                {
+                  "answerKey": "answer_3",
+                  "content": "Audience members join the singers on the stage to sing along with the \"Hallelujah\" chorus."
+                },
+                {
+                  "answerKey": "answer_4",
+                  "content": "The audience shouts \"Hallelujah!\" at the end of the chorus."
+                }
+              ]
+            },
+            "answerKey": {
+              "assessmentType": "multiplechoice",
+              "answers": {
+                "answer_3": {
+                  "score": 0.0,
+                  "response": "Please refer to the section entitled \n\u003cb\u003eHistorical Context: Why Stand?\u003c/b\u003e on page 156 in your textbook."
+                },
+                "answer_2": {
+                  "score": 0.0,
+                  "response": "Please refer to the section entitled \n\u003cb\u003eHistorical Context: Why Stand?\u003c/b\u003e on page 156 in your textbook."
+                },
+                "answer_1": {
+                  "score": 1.0,
+                  "response": ""
+                },
+                "answer_4": {
+                  "score": 0.0,
+                  "response": "Please refer to the section entitled \n\u003cb\u003eHistorical Context: Why Stand?\u003c/b\u003e on page 156 in your textbook."
+                }
+              }
+            },
+            "configFixup": [
+              {
+                "name": "questionId",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "sequenceNodeKey",
+                  "type": "ref"
+                }
+              },
+              {
+                "name": "maxAttempts",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "maxAttempts",
+                  "type": "ref"
+                }
+              }
+            ]
+          }
+        ],
+        "hookupActions": [
+          {
+            "description": "Hookup the submit manager to evaluate answers",
+            "methodName": "handleRequestsFrom",
+            "type": "method-call",
+            "args": [
+              {
+                "domain": "brix",
+                "refId": "q1",
+                "type": "ref"
+              }
+            ],
+            "instance": {
+              "type": "submit-manager"
+            }
+          },
+          {
+            "description": "Draw the question",
+            "methodName": "draw",
+            "type": "method-call",
+            "args": [
+              {
+                "selector": "#target1",
+                "type": "d3select"
+              }
+            ],
+            "instance": {
+              "domain": "brix",
+              "refId": "q1",
+              "type": "ref"
+            }
+          }
+        ]
+      }
+    ],
+    "title": "Ch18 Post Fact 02"
+  }
+}

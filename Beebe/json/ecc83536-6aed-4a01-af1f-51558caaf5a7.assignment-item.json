@@ -1,0 +1,196 @@
+{
+  "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope",
+  "@type": "Envelope",
+  "metadata": {
+    "bookTitle": "Public Speaking: An Audience-Centered Approach",
+    "keywords": [
+      "Beebe 9e",
+      "ch 04",
+      "Rudowski"
+    ],
+    "extendedMetadata": [
+      {
+        "name": "Page-Reference",
+        "value": "63"
+      },
+      {
+        "name": "ISBN",
+        "value": "0133859703"
+      },
+      {
+        "name": "M",
+        "value": "c01"
+      },
+      {
+        "name": "assessment_title",
+        "value": "Chapter Quiz: Listening to Speeches"
+      },
+      {
+        "name": "Topic",
+        "value": "How to Become a Better Listener"
+      },
+      {
+        "name": "chapterTitle",
+        "value": "Listening to Speeches"
+      },
+      {
+        "name": "item_title",
+        "value": "0133859703_Steven A. Beebe; Susan J. Beebe_ch04_c01_q0011"
+      },
+      {
+        "name": "questionlayout",
+        "value": "1"
+      },
+      {
+        "name": "CH",
+        "value": "4"
+      },
+      {
+        "name": "Difficulty",
+        "value": "Moderate"
+      },
+      {
+        "name": "Objective",
+        "value": "4.2 Identify and implement strategies for becoming a better listener."
+      },
+      {
+        "name": "shuffle_choices",
+        "value": "Yes"
+      }
+    ],
+    "subject": [
+      "Communication"
+    ],
+    "contentTypeTier2": [
+      "AssessmentItem"
+    ],
+    "contentTypeTier1": "Assessment",
+    "format": [
+      "application/vnd.pearson.sanvan.v1.activity"
+    ],
+    "version": "1.0",
+    "guid": "ecc83536-6aed-4a01-af1f-51558caaf5a7",
+    "bookAuthor": "Steven A. Beebe; Susan J. Beebe",
+    "title": "Exam.04.16 How To Become A Better Listener Understand LO 4.2",
+    "educationalAlignment": [
+      "http://purl.org/pearson/objectives/183725473384362"
+    ]
+  },
+  "body": {
+    "description": "Exam.04.16 How to Become a Better Listener, Understand, LO 4.2",
+    "containerConfig": [
+      {
+        "description": "Exam.04.16 How to Become a Better Listener, Understand, LO 4.2",
+        "containerId": "target1",
+        "brixConfig": [
+          {
+            "bricId": "q1",
+            "bricType": "MultipleChoiceQuestion",
+            "config": {
+              "id": "QUE60096",
+              "question": "A(n) _______-oriented listener will make a good judge or lawyer because he or she enjoys listening to debates and hearing arguments for and against ideas.\n\u003cbr /\u003e",
+              "order": "randomized",
+              "presenterType": "RadioGroup",
+              "presenterConfig": {
+                "numberFormat": "none"
+              },
+              "choices": [
+                {
+                  "answerKey": "answer_1",
+                  "content": "task"
+                },
+                {
+                  "answerKey": "answer_2",
+                  "content": "critical"
+                },
+                {
+                  "answerKey": "answer_3",
+                  "content": "relational"
+                },
+                {
+                  "answerKey": "answer_4",
+                  "content": "analytical"
+                }
+              ]
+            },
+            "answerKey": {
+              "assessmentType": "multiplechoice",
+              "answers": {
+                "answer_3": {
+                  "score": 0.0,
+                  "response": "Consider this: Review the various listening styles. Learning Objective 4.2: Identify and implement strategies for becoming a better listener."
+                },
+                "answer_2": {
+                  "score": 0.0,
+                  "response": "Consider this: Review the various listening styles. Learning Objective 4.2: Identify and implement strategies for becoming a better listener."
+                },
+                "answer_1": {
+                  "score": 0.0,
+                  "response": "Consider this: Review the various listening styles. Learning Objective 4.2: Identify and implement strategies for becoming a better listener."
+                },
+                "answer_4": {
+                  "score": 1.0,
+                  "response": ""
+                }
+              }
+            },
+            "configFixup": [
+              {
+                "name": "questionId",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "sequenceNodeKey",
+                  "type": "ref"
+                }
+              },
+              {
+                "name": "maxAttempts",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "maxAttempts",
+                  "type": "ref"
+                }
+              }
+            ]
+          }
+        ],
+        "hookupActions": [
+          {
+            "description": "Hookup the submit manager to evaluate answers",
+            "methodName": "handleRequestsFrom",
+            "type": "method-call",
+            "args": [
+              {
+                "domain": "brix",
+                "refId": "q1",
+                "type": "ref"
+              }
+            ],
+            "instance": {
+              "type": "submit-manager"
+            }
+          },
+          {
+            "description": "Draw the question",
+            "methodName": "draw",
+            "type": "method-call",
+            "args": [
+              {
+                "selector": "#target1",
+                "type": "d3select"
+              }
+            ],
+            "instance": {
+              "domain": "brix",
+              "refId": "q1",
+              "type": "ref"
+            }
+          }
+        ]
+      }
+    ],
+    "title": "Exam.04.16 How To Become A Better Listener Understand LO 4.2"
+  }
+}

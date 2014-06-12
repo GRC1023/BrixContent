@@ -1,0 +1,196 @@
+{
+  "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope",
+  "@type": "Envelope",
+  "metadata": {
+    "bookTitle": "Listen To This",
+    "keywords": [
+      "Bonds 3e",
+      "P1EBC1",
+      "Rudowski"
+    ],
+    "extendedMetadata": [
+      {
+        "name": "Page-Reference",
+        "value": "EB1-2"
+      },
+      {
+        "name": "ISBN",
+        "value": "0133794636"
+      },
+      {
+        "name": "M",
+        "value": "m01"
+      },
+      {
+        "name": "assessment_title",
+        "value": "Quiz: Plainchant Alleluia âCaro meaâ from the Mass for the Feast of Corpus Christi"
+      },
+      {
+        "name": "Topic",
+        "value": "Melody"
+      },
+      {
+        "name": "chapterTitle",
+        "value": "The Middle Ages: 476 CE â Early Fifteenth Century"
+      },
+      {
+        "name": "module",
+        "value": "Plainchant Alleluia âCaro meaâ from the Mass for the Feast of Corpus Christi"
+      },
+      {
+        "name": "item_title",
+        "value": "0133794636_Mark Evan Bonds_ch0EBC-1_m01_q0006"
+      },
+      {
+        "name": "questionlayout",
+        "value": "1"
+      },
+      {
+        "name": "CH",
+        "value": "EBC-1"
+      },
+      {
+        "name": "Objective",
+        "value": "Incorrect. LO EB 1.5  Explain the use of contrast in the performance of \"Caro mea.\","
+      },
+      {
+        "name": "shuffle_choices",
+        "value": "Yes"
+      }
+    ],
+    "subject": [
+      "Music"
+    ],
+    "contentTypeTier2": [
+      "AssessmentItem"
+    ],
+    "contentTypeTier1": "Assessment",
+    "format": [
+      "application/vnd.pearson.sanvan.v1.activity"
+    ],
+    "version": "1.0",
+    "guid": "68b22e7d-e8e7-4085-9c36-15ed159b4b7c",
+    "bookAuthor": "Mark Evan Bonds",
+    "title": "ChEB 1 Post Concept 03",
+    "educationalAlignment": [
+      "http://purl.org/pearson/objectives/183725473384362"
+    ]
+  },
+  "body": {
+    "description": "chEB-1_post_concept_03",
+    "containerConfig": [
+      {
+        "description": "chEB-1_post_concept_03",
+        "containerId": "target1",
+        "brixConfig": [
+          {
+            "bricId": "q1",
+            "bricType": "MultipleChoiceQuestion",
+            "config": {
+              "id": "QUE62988",
+              "question": "How many times is the music to the opening word “Alleluia” sung?\n\u003cbr /\u003e",
+              "order": "randomized",
+              "presenterType": "RadioGroup",
+              "presenterConfig": {
+                "numberFormat": "none"
+              },
+              "choices": [
+                {
+                  "answerKey": "answer_1",
+                  "content": "four"
+                },
+                {
+                  "answerKey": "answer_2",
+                  "content": "three"
+                },
+                {
+                  "answerKey": "answer_3",
+                  "content": "two"
+                },
+                {
+                  "answerKey": "answer_4",
+                  "content": "one"
+                }
+              ]
+            },
+            "answerKey": {
+              "assessmentType": "multiplechoice",
+              "answers": {
+                "answer_3": {
+                  "score": 0.0,
+                  "response": " LO EB 1.5  Explain the use of contrast in the performance of \"Caro mea.\""
+                },
+                "answer_2": {
+                  "score": 0.0,
+                  "response": "LO EB 1.5  Explain the use of contrast in the performance of \"Caro mea.\""
+                },
+                "answer_1": {
+                  "score": 1.0,
+                  "response": ""
+                },
+                "answer_4": {
+                  "score": 0.0,
+                  "response": " LO EB 1.5  Explain the use of contrast in the performance of \"Caro mea.\""
+                }
+              }
+            },
+            "configFixup": [
+              {
+                "name": "questionId",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "sequenceNodeKey",
+                  "type": "ref"
+                }
+              },
+              {
+                "name": "maxAttempts",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "maxAttempts",
+                  "type": "ref"
+                }
+              }
+            ]
+          }
+        ],
+        "hookupActions": [
+          {
+            "description": "Hookup the submit manager to evaluate answers",
+            "methodName": "handleRequestsFrom",
+            "type": "method-call",
+            "args": [
+              {
+                "domain": "brix",
+                "refId": "q1",
+                "type": "ref"
+              }
+            ],
+            "instance": {
+              "type": "submit-manager"
+            }
+          },
+          {
+            "description": "Draw the question",
+            "methodName": "draw",
+            "type": "method-call",
+            "args": [
+              {
+                "selector": "#target1",
+                "type": "d3select"
+              }
+            ],
+            "instance": {
+              "domain": "brix",
+              "refId": "q1",
+              "type": "ref"
+            }
+          }
+        ]
+      }
+    ],
+    "title": "ChEB 1 Post Concept 03"
+  }
+}

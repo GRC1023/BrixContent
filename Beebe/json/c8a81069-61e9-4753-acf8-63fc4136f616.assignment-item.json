@@ -1,0 +1,196 @@
+{
+  "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope",
+  "@type": "Envelope",
+  "metadata": {
+    "bookTitle": "Public Speaking: An Audience-Centered Approach",
+    "keywords": [
+      "Beebe 9e",
+      "ch 16",
+      "Rudowski"
+    ],
+    "extendedMetadata": [
+      {
+        "name": "Page-Reference",
+        "value": "348"
+      },
+      {
+        "name": "ISBN",
+        "value": "0133859703"
+      },
+      {
+        "name": "M",
+        "value": "c01"
+      },
+      {
+        "name": "assessment_title",
+        "value": "Chapter Quiz: Speaking for Special Occasions and Purposes"
+      },
+      {
+        "name": "Topic",
+        "value": "Ceremonial Speaking"
+      },
+      {
+        "name": "chapterTitle",
+        "value": "Speaking for Special Occasions and Purposes"
+      },
+      {
+        "name": "item_title",
+        "value": "0133859703_Steven A. Beebe; Susan J. Beebe_ch16_c01_q0010"
+      },
+      {
+        "name": "questionlayout",
+        "value": "1"
+      },
+      {
+        "name": "CH",
+        "value": "16"
+      },
+      {
+        "name": "Difficulty",
+        "value": "Moderate"
+      },
+      {
+        "name": "Objective",
+        "value": "16.2 List and describe nine types of ceremonial speeches."
+      },
+      {
+        "name": "shuffle_choices",
+        "value": "Yes"
+      }
+    ],
+    "subject": [
+      "Communication"
+    ],
+    "contentTypeTier2": [
+      "AssessmentItem"
+    ],
+    "contentTypeTier1": "Assessment",
+    "format": [
+      "application/vnd.pearson.sanvan.v1.activity"
+    ],
+    "version": "1.0",
+    "guid": "c8a81069-61e9-4753-acf8-63fc4136f616",
+    "bookAuthor": "Steven A. Beebe; Susan J. Beebe",
+    "title": "Exam.16.12 Ceremonial Speaking Understand LO 16.2",
+    "educationalAlignment": [
+      "http://purl.org/pearson/objectives/183725473384362"
+    ]
+  },
+  "body": {
+    "description": "Exam.16.12 Ceremonial Speaking, Understand, LO 16.2",
+    "containerConfig": [
+      {
+        "description": "Exam.16.12 Ceremonial Speaking, Understand, LO 16.2",
+        "containerId": "target1",
+        "brixConfig": [
+          {
+            "bricId": "q1",
+            "bricType": "MultipleChoiceQuestion",
+            "config": {
+              "id": "QUE60574",
+              "question": "A(n) ________ sets the theme and tone for a meeting or conference.\n\u003cbr /\u003e",
+              "order": "randomized",
+              "presenterType": "RadioGroup",
+              "presenterConfig": {
+                "numberFormat": "none"
+              },
+              "choices": [
+                {
+                  "answerKey": "answer_1",
+                  "content": "eulogy"
+                },
+                {
+                  "answerKey": "answer_2",
+                  "content": "commencement address"
+                },
+                {
+                  "answerKey": "answer_3",
+                  "content": "keynote address"
+                },
+                {
+                  "answerKey": "answer_4",
+                  "content": "acceptance speech"
+                }
+              ]
+            },
+            "answerKey": {
+              "assessmentType": "multiplechoice",
+              "answers": {
+                "answer_3": {
+                  "score": 1.0,
+                  "response": ""
+                },
+                "answer_2": {
+                  "score": 0.0,
+                  "response": "Consider this: Review the types of ceremonial speaking. Learning Objective 16.2: List and describe nine types of ceremonial speeches."
+                },
+                "answer_1": {
+                  "score": 0.0,
+                  "response": "Consider this: Review the types of ceremonial speaking. Learning Objective 16.2: List and describe nine types of ceremonial speeches."
+                },
+                "answer_4": {
+                  "score": 0.0,
+                  "response": "Consider this: Review the types of ceremonial speaking. Learning Objective 16.2: List and describe nine types of ceremonial speeches."
+                }
+              }
+            },
+            "configFixup": [
+              {
+                "name": "questionId",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "sequenceNodeKey",
+                  "type": "ref"
+                }
+              },
+              {
+                "name": "maxAttempts",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "maxAttempts",
+                  "type": "ref"
+                }
+              }
+            ]
+          }
+        ],
+        "hookupActions": [
+          {
+            "description": "Hookup the submit manager to evaluate answers",
+            "methodName": "handleRequestsFrom",
+            "type": "method-call",
+            "args": [
+              {
+                "domain": "brix",
+                "refId": "q1",
+                "type": "ref"
+              }
+            ],
+            "instance": {
+              "type": "submit-manager"
+            }
+          },
+          {
+            "description": "Draw the question",
+            "methodName": "draw",
+            "type": "method-call",
+            "args": [
+              {
+                "selector": "#target1",
+                "type": "d3select"
+              }
+            ],
+            "instance": {
+              "domain": "brix",
+              "refId": "q1",
+              "type": "ref"
+            }
+          }
+        ]
+      }
+    ],
+    "title": "Exam.16.12 Ceremonial Speaking Understand LO 16.2"
+  }
+}

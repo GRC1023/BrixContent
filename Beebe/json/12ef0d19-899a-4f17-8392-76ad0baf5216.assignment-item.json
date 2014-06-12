@@ -1,0 +1,196 @@
+{
+  "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope",
+  "@type": "Envelope",
+  "metadata": {
+    "bookTitle": "Public Speaking: An Audience-Centered Approach",
+    "keywords": [
+      "Beebe 9e",
+      "ch 09",
+      "Rudowski"
+    ],
+    "extendedMetadata": [
+      {
+        "name": "Page-Reference",
+        "value": "190"
+      },
+      {
+        "name": "ISBN",
+        "value": "0133859703"
+      },
+      {
+        "name": "M",
+        "value": "c01"
+      },
+      {
+        "name": "assessment_title",
+        "value": "Chapter Quiz: Introducing and Concluding Your Speech"
+      },
+      {
+        "name": "Topic",
+        "value": "Purposes of Conclusions"
+      },
+      {
+        "name": "chapterTitle",
+        "value": "Introducing and Concluding Your Speech"
+      },
+      {
+        "name": "item_title",
+        "value": "0133859703_Steven A. Beebe; Susan J. Beebe_ch09_c01_q0013"
+      },
+      {
+        "name": "questionlayout",
+        "value": "1"
+      },
+      {
+        "name": "CH",
+        "value": "9"
+      },
+      {
+        "name": "Difficulty",
+        "value": "Moderate"
+      },
+      {
+        "name": "Objective",
+        "value": "9.3 Explain the functions of a speech conclusion."
+      },
+      {
+        "name": "shuffle_choices",
+        "value": "Yes"
+      }
+    ],
+    "subject": [
+      "Communication"
+    ],
+    "contentTypeTier2": [
+      "AssessmentItem"
+    ],
+    "contentTypeTier1": "Assessment",
+    "format": [
+      "application/vnd.pearson.sanvan.v1.activity"
+    ],
+    "version": "1.0",
+    "guid": "12ef0d19-899a-4f17-8392-76ad0baf5216",
+    "bookAuthor": "Steven A. Beebe; Susan J. Beebe",
+    "title": "Exam.09.18 Purposes Of Conclusions Apply LO 9.3",
+    "educationalAlignment": [
+      "http://purl.org/pearson/objectives/183725473384362"
+    ]
+  },
+  "body": {
+    "description": "Exam.09.18 Purposes of Conclusions, Apply, LO 9.3",
+    "containerConfig": [
+      {
+        "description": "Exam.09.18 Purposes of Conclusions, Apply, LO 9.3",
+        "containerId": "target1",
+        "brixConfig": [
+          {
+            "bricId": "q1",
+            "bricType": "MultipleChoiceQuestion",
+            "config": {
+              "id": "QUE60281",
+              "question": "At the end of her speech on fracking, Roxanne urged her audience to call and write their state representatives to express their opposition to fracking in their state. Roxanne is attempting to provide closure by ______.\n\u003cbr /\u003e",
+              "order": "randomized",
+              "presenterType": "RadioGroup",
+              "presenterConfig": {
+                "numberFormat": "none"
+              },
+              "choices": [
+                {
+                  "answerKey": "answer_1",
+                  "content": "motivating her audience to respond"
+                },
+                {
+                  "answerKey": "answer_2",
+                  "content": "using nonverbal cues"
+                },
+                {
+                  "answerKey": "answer_3",
+                  "content": "restating the main ideas"
+                },
+                {
+                  "answerKey": "answer_4",
+                  "content": "reemphasizing the central idea"
+                }
+              ]
+            },
+            "answerKey": {
+              "assessmentType": "multiplechoice",
+              "answers": {
+                "answer_3": {
+                  "score": 0.0,
+                  "response": "Consider this: Review the ways to provide closure. Learning Objective 9.3: Explain the functions of a speech conclusion."
+                },
+                "answer_2": {
+                  "score": 0.0,
+                  "response": "Consider this: Review the ways to provide closure. Learning Objective 9.3: Explain the functions of a speech conclusion."
+                },
+                "answer_1": {
+                  "score": 1.0,
+                  "response": ""
+                },
+                "answer_4": {
+                  "score": 0.0,
+                  "response": "Consider this: Review the ways to provide closure. Learning Objective 9.3: Explain the functions of a speech conclusion."
+                }
+              }
+            },
+            "configFixup": [
+              {
+                "name": "questionId",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "sequenceNodeKey",
+                  "type": "ref"
+                }
+              },
+              {
+                "name": "maxAttempts",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "maxAttempts",
+                  "type": "ref"
+                }
+              }
+            ]
+          }
+        ],
+        "hookupActions": [
+          {
+            "description": "Hookup the submit manager to evaluate answers",
+            "methodName": "handleRequestsFrom",
+            "type": "method-call",
+            "args": [
+              {
+                "domain": "brix",
+                "refId": "q1",
+                "type": "ref"
+              }
+            ],
+            "instance": {
+              "type": "submit-manager"
+            }
+          },
+          {
+            "description": "Draw the question",
+            "methodName": "draw",
+            "type": "method-call",
+            "args": [
+              {
+                "selector": "#target1",
+                "type": "d3select"
+              }
+            ],
+            "instance": {
+              "domain": "brix",
+              "refId": "q1",
+              "type": "ref"
+            }
+          }
+        ]
+      }
+    ],
+    "title": "Exam.09.18 Purposes Of Conclusions Apply LO 9.3"
+  }
+}

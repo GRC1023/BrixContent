@@ -1,0 +1,196 @@
+{
+  "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope",
+  "@type": "Envelope",
+  "metadata": {
+    "bookTitle": "Public Speaking: An Audience-Centered Approach",
+    "keywords": [
+      "Beebe 9e",
+      "ch 15",
+      "Rudowski"
+    ],
+    "extendedMetadata": [
+      {
+        "name": "Page-Reference",
+        "value": "307"
+      },
+      {
+        "name": "ISBN",
+        "value": "0133859703"
+      },
+      {
+        "name": "M",
+        "value": "c01"
+      },
+      {
+        "name": "assessment_title",
+        "value": "Chapter Quiz: Using Persuasive Strategies"
+      },
+      {
+        "name": "Topic",
+        "value": "Enhancing Your Credibility"
+      },
+      {
+        "name": "chapterTitle",
+        "value": "Using Persuasive Strategies"
+      },
+      {
+        "name": "item_title",
+        "value": "0133859703_Steven A. Beebe; Susan J. Beebe_ch15_c01_q0001"
+      },
+      {
+        "name": "questionlayout",
+        "value": "1"
+      },
+      {
+        "name": "CH",
+        "value": "15"
+      },
+      {
+        "name": "Difficulty",
+        "value": "Moderate"
+      },
+      {
+        "name": "Objective",
+        "value": "15.1 Identify and use strategies to improve your initial, derived, and terminal credibility."
+      },
+      {
+        "name": "shuffle_choices",
+        "value": "Yes"
+      }
+    ],
+    "subject": [
+      "Communication"
+    ],
+    "contentTypeTier2": [
+      "AssessmentItem"
+    ],
+    "contentTypeTier1": "Assessment",
+    "format": [
+      "application/vnd.pearson.sanvan.v1.activity"
+    ],
+    "version": "1.0",
+    "guid": "70c6ac8b-0b34-4941-a4bf-5d475a7b35ed",
+    "bookAuthor": "Steven A. Beebe; Susan J. Beebe",
+    "title": "Exam.15.02 Enhancing Your Credibility Apply LO 15.1",
+    "educationalAlignment": [
+      "http://purl.org/pearson/objectives/183725473384362"
+    ]
+  },
+  "body": {
+    "description": "Exam.15.02 Enhancing Your Credibility, Apply, LO 15.1",
+    "containerConfig": [
+      {
+        "description": "Exam.15.02 Enhancing Your Credibility, Apply, LO 15.1",
+        "containerId": "target1",
+        "brixConfig": [
+          {
+            "bricId": "q1",
+            "bricType": "MultipleChoiceQuestion",
+            "config": {
+              "id": "QUE60517",
+              "question": "Natalie wasn’t sure how she felt about the information she was receiving from the car salesman. She knew his real goal was to get his commission. Natalie is concerned with the salesman’s ________.\n\u003cbr /\u003e",
+              "order": "randomized",
+              "presenterType": "RadioGroup",
+              "presenterConfig": {
+                "numberFormat": "none"
+              },
+              "choices": [
+                {
+                  "answerKey": "answer_1",
+                  "content": "dynamism"
+                },
+                {
+                  "answerKey": "answer_2",
+                  "content": "trustworthiness"
+                },
+                {
+                  "answerKey": "answer_3",
+                  "content": "charisma"
+                },
+                {
+                  "answerKey": "answer_4",
+                  "content": "demagoguery"
+                }
+              ]
+            },
+            "answerKey": {
+              "assessmentType": "multiplechoice",
+              "answers": {
+                "answer_3": {
+                  "score": 0.0,
+                  "response": "Consider this: This is one of the factors that makes up credibility. Learning Objective 15.1: Identify and use strategies to improve your initial, derived, and terminal credibility."
+                },
+                "answer_2": {
+                  "score": 1.0,
+                  "response": ""
+                },
+                "answer_1": {
+                  "score": 0.0,
+                  "response": "Consider this: This is one of the factors that makes up credibility. Learning Objective 15.1: Identify and use strategies to improve your initial, derived, and terminal credibility."
+                },
+                "answer_4": {
+                  "score": 0.0,
+                  "response": "Consider this: This is one of the factors that makes up credibility. Learning Objective 15.1: Identify and use strategies to improve your initial, derived, and terminal credibility."
+                }
+              }
+            },
+            "configFixup": [
+              {
+                "name": "questionId",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "sequenceNodeKey",
+                  "type": "ref"
+                }
+              },
+              {
+                "name": "maxAttempts",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "maxAttempts",
+                  "type": "ref"
+                }
+              }
+            ]
+          }
+        ],
+        "hookupActions": [
+          {
+            "description": "Hookup the submit manager to evaluate answers",
+            "methodName": "handleRequestsFrom",
+            "type": "method-call",
+            "args": [
+              {
+                "domain": "brix",
+                "refId": "q1",
+                "type": "ref"
+              }
+            ],
+            "instance": {
+              "type": "submit-manager"
+            }
+          },
+          {
+            "description": "Draw the question",
+            "methodName": "draw",
+            "type": "method-call",
+            "args": [
+              {
+                "selector": "#target1",
+                "type": "d3select"
+              }
+            ],
+            "instance": {
+              "domain": "brix",
+              "refId": "q1",
+              "type": "ref"
+            }
+          }
+        ]
+      }
+    ],
+    "title": "Exam.15.02 Enhancing Your Credibility Apply LO 15.1"
+  }
+}

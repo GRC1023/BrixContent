@@ -1,0 +1,196 @@
+{
+  "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope",
+  "@type": "Envelope",
+  "metadata": {
+    "bookTitle": "Public Speaking: An Audience-Centered Approach",
+    "keywords": [
+      "Beebe 9e",
+      "ch 06",
+      "Rudowski"
+    ],
+    "extendedMetadata": [
+      {
+        "name": "Page-Reference",
+        "value": "112"
+      },
+      {
+        "name": "ISBN",
+        "value": "0133859703"
+      },
+      {
+        "name": "M",
+        "value": "c01"
+      },
+      {
+        "name": "assessment_title",
+        "value": "Chapter Quiz: Developing Your Speech"
+      },
+      {
+        "name": "Topic",
+        "value": "Select and Narrow Your Topic"
+      },
+      {
+        "name": "chapterTitle",
+        "value": "Developing Your Speech"
+      },
+      {
+        "name": "item_title",
+        "value": "0133859703_Steven A. Beebe; Susan J. Beebe_ch06_c01_q0002"
+      },
+      {
+        "name": "questionlayout",
+        "value": "1"
+      },
+      {
+        "name": "CH",
+        "value": "6"
+      },
+      {
+        "name": "Difficulty",
+        "value": "Moderate"
+      },
+      {
+        "name": "Objective",
+        "value": "6.1 Select and narrow a topic for a speech that is appropriate to the audience, the occasion, the ti"
+      },
+      {
+        "name": "shuffle_choices",
+        "value": "Yes"
+      }
+    ],
+    "subject": [
+      "Communication"
+    ],
+    "contentTypeTier2": [
+      "AssessmentItem"
+    ],
+    "contentTypeTier1": "Assessment",
+    "format": [
+      "application/vnd.pearson.sanvan.v1.activity"
+    ],
+    "version": "1.0",
+    "guid": "3bf5e6bd-36ed-4e08-a14a-3b692e989789",
+    "bookAuthor": "Steven A. Beebe; Susan J. Beebe",
+    "title": "Exam.06.04 Select And Narrow Your Topic Apply LO 6.1",
+    "educationalAlignment": [
+      "http://purl.org/pearson/objectives/183725473384362"
+    ]
+  },
+  "body": {
+    "description": "Exam.06.04 Select and Narrow Your Topic, Apply, LO 6.1",
+    "containerConfig": [
+      {
+        "description": "Exam.06.04 Select and Narrow Your Topic, Apply, LO 6.1",
+        "containerId": "target1",
+        "brixConfig": [
+          {
+            "bricId": "q1",
+            "bricType": "MultipleChoiceQuestion",
+            "config": {
+              "id": "QUE60160",
+              "question": "Kyle will be speaking to a local philanthropic organization. He wants to be sure to consider his audience when selecting his topic. Based on this, which of the following is a logical topic for him to consider?\n\u003cbr /\u003e",
+              "order": "randomized",
+              "presenterType": "RadioGroup",
+              "presenterConfig": {
+                "numberFormat": "none"
+              },
+              "choices": [
+                {
+                  "answerKey": "answer_1",
+                  "content": "service opportunities"
+                },
+                {
+                  "answerKey": "answer_2",
+                  "content": "prescription drug benefits"
+                },
+                {
+                  "answerKey": "answer_3",
+                  "content": "banking practices"
+                },
+                {
+                  "answerKey": "answer_4",
+                  "content": "teacher retirement programs"
+                }
+              ]
+            },
+            "answerKey": {
+              "assessmentType": "multiplechoice",
+              "answers": {
+                "answer_3": {
+                  "score": 0.0,
+                  "response": "Consider this: What common topic would you expect a philanthropist might embrace? Learning Objective 6.1: Select and narrow a topic for a speech that is appropriate to the audience, the occasion, the time limits, and yourself."
+                },
+                "answer_2": {
+                  "score": 0.0,
+                  "response": "Consider this: What common topic would you expect a philanthropist might embrace? Learning Objective 6.1: Select and narrow a topic for a speech that is appropriate to the audience, the occasion, the time limits, and yourself."
+                },
+                "answer_1": {
+                  "score": 1.0,
+                  "response": ""
+                },
+                "answer_4": {
+                  "score": 0.0,
+                  "response": "Consider this: What common topic would you expect a philanthropist might embrace? Learning Objective 6.1: Select and narrow a topic for a speech that is appropriate to the audience, the occasion, the time limits, and yourself."
+                }
+              }
+            },
+            "configFixup": [
+              {
+                "name": "questionId",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "sequenceNodeKey",
+                  "type": "ref"
+                }
+              },
+              {
+                "name": "maxAttempts",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "maxAttempts",
+                  "type": "ref"
+                }
+              }
+            ]
+          }
+        ],
+        "hookupActions": [
+          {
+            "description": "Hookup the submit manager to evaluate answers",
+            "methodName": "handleRequestsFrom",
+            "type": "method-call",
+            "args": [
+              {
+                "domain": "brix",
+                "refId": "q1",
+                "type": "ref"
+              }
+            ],
+            "instance": {
+              "type": "submit-manager"
+            }
+          },
+          {
+            "description": "Draw the question",
+            "methodName": "draw",
+            "type": "method-call",
+            "args": [
+              {
+                "selector": "#target1",
+                "type": "d3select"
+              }
+            ],
+            "instance": {
+              "domain": "brix",
+              "refId": "q1",
+              "type": "ref"
+            }
+          }
+        ]
+      }
+    ],
+    "title": "Exam.06.04 Select And Narrow Your Topic Apply LO 6.1"
+  }
+}

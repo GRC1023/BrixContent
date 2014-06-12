@@ -1,0 +1,196 @@
+{
+  "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope",
+  "@type": "Envelope",
+  "metadata": {
+    "bookTitle": "Public Speaking: An Audience-Centered Approach",
+    "keywords": [
+      "Beebe 9e",
+      "ch 08",
+      "Rudowski"
+    ],
+    "extendedMetadata": [
+      {
+        "name": "Page-Reference",
+        "value": "158-159"
+      },
+      {
+        "name": "ISBN",
+        "value": "0133859703"
+      },
+      {
+        "name": "M",
+        "value": "c01"
+      },
+      {
+        "name": "assessment_title",
+        "value": "Chapter Quiz: Organizing and Outlining Your Speech"
+      },
+      {
+        "name": "Topic",
+        "value": "Organizing Your Main Ideas"
+      },
+      {
+        "name": "chapterTitle",
+        "value": "Organizing and Outlining Your Speech"
+      },
+      {
+        "name": "item_title",
+        "value": "0133859703_Steven A. Beebe; Susan J. Beebe_ch08_c01_q0005"
+      },
+      {
+        "name": "questionlayout",
+        "value": "1"
+      },
+      {
+        "name": "CH",
+        "value": "8"
+      },
+      {
+        "name": "Difficulty",
+        "value": "Moderate"
+      },
+      {
+        "name": "Objective",
+        "value": "8.1 List and describe five patterns for organizing the main ideas of a speech."
+      },
+      {
+        "name": "shuffle_choices",
+        "value": "Yes"
+      }
+    ],
+    "subject": [
+      "Communication"
+    ],
+    "contentTypeTier2": [
+      "AssessmentItem"
+    ],
+    "contentTypeTier1": "Assessment",
+    "format": [
+      "application/vnd.pearson.sanvan.v1.activity"
+    ],
+    "version": "1.0",
+    "guid": "ba93e358-fe8e-4fc2-a1bd-ebe15fd4324d",
+    "bookAuthor": "Steven A. Beebe; Susan J. Beebe",
+    "title": "Exam.08.05 Organizing Your Main Ideas Apply LO 8.1",
+    "educationalAlignment": [
+      "http://purl.org/pearson/objectives/183725473384362"
+    ]
+  },
+  "body": {
+    "description": "Exam.08.05 Organizing Your Main Ideas, Apply, LO 8.1",
+    "containerConfig": [
+      {
+        "description": "Exam.08.05 Organizing Your Main Ideas, Apply, LO 8.1",
+        "containerId": "target1",
+        "brixConfig": [
+          {
+            "bricId": "q1",
+            "bricType": "MultipleChoiceQuestion",
+            "config": {
+              "id": "QUE60233",
+              "question": "Which of the following speech topics would be a good candidate for cause-and-effect organization?\n\u003cbr /\u003e",
+              "order": "randomized",
+              "presenterType": "RadioGroup",
+              "presenterConfig": {
+                "numberFormat": "none"
+              },
+              "choices": [
+                {
+                  "answerKey": "answer_1",
+                  "content": "how to clean up a broken compact fluorescent light bulb (CFL)"
+                },
+                {
+                  "answerKey": "answer_2",
+                  "content": "adult illiteracy"
+                },
+                {
+                  "answerKey": "answer_3",
+                  "content": "the history of the women’s rights movement in the United States"
+                },
+                {
+                  "answerKey": "answer_4",
+                  "content": "factors to consider when selecting a mountain bike"
+                }
+              ]
+            },
+            "answerKey": {
+              "assessmentType": "multiplechoice",
+              "answers": {
+                "answer_3": {
+                  "score": 0.0,
+                  "response": "Consider this: Which of these topics could be developed by discussing steps or reasons? Learning objective 8.1: List and describe five patterns for organizing the main ideas of a speech."
+                },
+                "answer_2": {
+                  "score": 1.0,
+                  "response": ""
+                },
+                "answer_1": {
+                  "score": 0.0,
+                  "response": "Consider this: Which of these topics could be developed by discussing steps or reasons? Learning objective 8.1: List and describe five patterns for organizing the main ideas of a speech."
+                },
+                "answer_4": {
+                  "score": 0.0,
+                  "response": "Consider this: Which of these topics could be developed by discussing steps or reasons? Learning objective 8.1: List and describe five patterns for organizing the main ideas of a speech."
+                }
+              }
+            },
+            "configFixup": [
+              {
+                "name": "questionId",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "sequenceNodeKey",
+                  "type": "ref"
+                }
+              },
+              {
+                "name": "maxAttempts",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "maxAttempts",
+                  "type": "ref"
+                }
+              }
+            ]
+          }
+        ],
+        "hookupActions": [
+          {
+            "description": "Hookup the submit manager to evaluate answers",
+            "methodName": "handleRequestsFrom",
+            "type": "method-call",
+            "args": [
+              {
+                "domain": "brix",
+                "refId": "q1",
+                "type": "ref"
+              }
+            ],
+            "instance": {
+              "type": "submit-manager"
+            }
+          },
+          {
+            "description": "Draw the question",
+            "methodName": "draw",
+            "type": "method-call",
+            "args": [
+              {
+                "selector": "#target1",
+                "type": "d3select"
+              }
+            ],
+            "instance": {
+              "domain": "brix",
+              "refId": "q1",
+              "type": "ref"
+            }
+          }
+        ]
+      }
+    ],
+    "title": "Exam.08.05 Organizing Your Main Ideas Apply LO 8.1"
+  }
+}

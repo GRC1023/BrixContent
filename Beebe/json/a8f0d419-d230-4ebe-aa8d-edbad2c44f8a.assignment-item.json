@@ -1,0 +1,196 @@
+{
+  "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope",
+  "@type": "Envelope",
+  "metadata": {
+    "bookTitle": "Public Speaking: An Audience-Centered Approach",
+    "keywords": [
+      "Beebe 9e",
+      "ch 11",
+      "Rudowski"
+    ],
+    "extendedMetadata": [
+      {
+        "name": "Page-Reference",
+        "value": "231"
+      },
+      {
+        "name": "ISBN",
+        "value": "0133859703"
+      },
+      {
+        "name": "M",
+        "value": "c01"
+      },
+      {
+        "name": "assessment_title",
+        "value": "Chapter Quiz: Delivering Your Speech"
+      },
+      {
+        "name": "Topic",
+        "value": "Rehearsing Your Speech: Some Final Tips"
+      },
+      {
+        "name": "chapterTitle",
+        "value": "Delivering Your Speech"
+      },
+      {
+        "name": "item_title",
+        "value": "0133859703_Steven A. Beebe; Susan J. Beebe_ch11_c01_q0013"
+      },
+      {
+        "name": "questionlayout",
+        "value": "1"
+      },
+      {
+        "name": "CH",
+        "value": "11"
+      },
+      {
+        "name": "Difficulty",
+        "value": "Moderate"
+      },
+      {
+        "name": "Objective",
+        "value": "11.5 Describe the steps to follow when you rehearse your speech."
+      },
+      {
+        "name": "shuffle_choices",
+        "value": "Yes"
+      }
+    ],
+    "subject": [
+      "Communication"
+    ],
+    "contentTypeTier2": [
+      "AssessmentItem"
+    ],
+    "contentTypeTier1": "Assessment",
+    "format": [
+      "application/vnd.pearson.sanvan.v1.activity"
+    ],
+    "version": "1.0",
+    "guid": "a8f0d419-d230-4ebe-aa8d-edbad2c44f8a",
+    "bookAuthor": "Steven A. Beebe; Susan J. Beebe",
+    "title": "Exam.11.19 Rehearsing Your Speech Some Final Tips Apply LO 11.5",
+    "educationalAlignment": [
+      "http://purl.org/pearson/objectives/183725473384362"
+    ]
+  },
+  "body": {
+    "description": "Exam.11.19 Rehearsing Your Speech: Some Final Tips, Apply, LO 11.5",
+    "containerConfig": [
+      {
+        "description": "Exam.11.19 Rehearsing Your Speech: Some Final Tips, Apply, LO 11.5",
+        "containerId": "target1",
+        "brixConfig": [
+          {
+            "bricId": "q1",
+            "bricType": "MultipleChoiceQuestion",
+            "config": {
+              "id": "QUE60355",
+              "question": "Mandy is going to deliver an extemporaneous speech. Rehearsing her speech delivery will help her to ______.\n\u003cbr /\u003e",
+              "order": "randomized",
+              "presenterType": "RadioGroup",
+              "presenterConfig": {
+                "numberFormat": "none"
+              },
+              "choices": [
+                {
+                  "answerKey": "answer_1",
+                  "content": "avoid using gestures in her speech"
+                },
+                {
+                  "answerKey": "answer_2",
+                  "content": "eliminate her speaking notes"
+                },
+                {
+                  "answerKey": "answer_3",
+                  "content": "present her speech with confidence"
+                },
+                {
+                  "answerKey": "answer_4",
+                  "content": "memorize her speech"
+                }
+              ]
+            },
+            "answerKey": {
+              "assessmentType": "multiplechoice",
+              "answers": {
+                "answer_3": {
+                  "score": 1.0,
+                  "response": ""
+                },
+                "answer_2": {
+                  "score": 0.0,
+                  "response": "Consider this: Try to visualize success. Learning Objective 11.6: List four suggestions for enhancing the final delivery of your speech."
+                },
+                "answer_1": {
+                  "score": 0.0,
+                  "response": "Consider this: Try to visualize success. Learning Objective 11.6: List four suggestions for enhancing the final delivery of your speech."
+                },
+                "answer_4": {
+                  "score": 0.0,
+                  "response": "Consider this: Try to visualize success. Learning Objective 11.6: List four suggestions for enhancing the final delivery of your speech."
+                }
+              }
+            },
+            "configFixup": [
+              {
+                "name": "questionId",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "sequenceNodeKey",
+                  "type": "ref"
+                }
+              },
+              {
+                "name": "maxAttempts",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "maxAttempts",
+                  "type": "ref"
+                }
+              }
+            ]
+          }
+        ],
+        "hookupActions": [
+          {
+            "description": "Hookup the submit manager to evaluate answers",
+            "methodName": "handleRequestsFrom",
+            "type": "method-call",
+            "args": [
+              {
+                "domain": "brix",
+                "refId": "q1",
+                "type": "ref"
+              }
+            ],
+            "instance": {
+              "type": "submit-manager"
+            }
+          },
+          {
+            "description": "Draw the question",
+            "methodName": "draw",
+            "type": "method-call",
+            "args": [
+              {
+                "selector": "#target1",
+                "type": "d3select"
+              }
+            ],
+            "instance": {
+              "domain": "brix",
+              "refId": "q1",
+              "type": "ref"
+            }
+          }
+        ]
+      }
+    ],
+    "title": "Exam.11.19 Rehearsing Your Speech Some Final Tips Apply LO 11.5"
+  }
+}

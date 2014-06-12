@@ -1,0 +1,196 @@
+{
+  "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope",
+  "@type": "Envelope",
+  "metadata": {
+    "bookTitle": "Public Speaking: An Audience-Centered Approach",
+    "keywords": [
+      "Beebe 9e",
+      "ch 14",
+      "Rudowski"
+    ],
+    "extendedMetadata": [
+      {
+        "name": "Page-Reference",
+        "value": "285"
+      },
+      {
+        "name": "ISBN",
+        "value": "0133859703"
+      },
+      {
+        "name": "M",
+        "value": "c01"
+      },
+      {
+        "name": "assessment_title",
+        "value": "Chapter Quiz: Understanding Principles of Persuasive Speaking"
+      },
+      {
+        "name": "Topic",
+        "value": "The Goals of Persuasion"
+      },
+      {
+        "name": "chapterTitle",
+        "value": "Understanding Principles of Persuasive Speaking"
+      },
+      {
+        "name": "item_title",
+        "value": "0133859703_Steven A. Beebe; Susan J. Beebe_ch14_c01_q0013"
+      },
+      {
+        "name": "questionlayout",
+        "value": "1"
+      },
+      {
+        "name": "CH",
+        "value": "14"
+      },
+      {
+        "name": "Difficulty",
+        "value": "Moderate"
+      },
+      {
+        "name": "Objective",
+        "value": "14.1 Describe the goals of persuasive messages."
+      },
+      {
+        "name": "shuffle_choices",
+        "value": "Yes"
+      }
+    ],
+    "subject": [
+      "Communication"
+    ],
+    "contentTypeTier2": [
+      "AssessmentItem"
+    ],
+    "contentTypeTier1": "Assessment",
+    "format": [
+      "application/vnd.pearson.sanvan.v1.activity"
+    ],
+    "version": "1.0",
+    "guid": "857c53d3-61cf-48ba-bfb1-0cfc1d16ac94",
+    "bookAuthor": "Steven A. Beebe; Susan J. Beebe",
+    "title": "Exam.14.04 The Goals Of Persuasion Understand LO 14.1",
+    "educationalAlignment": [
+      "http://purl.org/pearson/objectives/183725473384362"
+    ]
+  },
+  "body": {
+    "description": "Exam.14.04 The Goals of Persuasion, Understand, LO 14.1",
+    "containerConfig": [
+      {
+        "description": "Exam.14.04 The Goals of Persuasion, Understand, LO 14.1",
+        "containerId": "target1",
+        "brixConfig": [
+          {
+            "bricId": "q1",
+            "bricType": "MultipleChoiceQuestion",
+            "config": {
+              "id": "QUE60485",
+              "question": "Of the following predispositions, which changes the \n\u003ci\u003eleast\u003c/i\u003e frequently?\n\u003cbr /\u003e",
+              "order": "randomized",
+              "presenterType": "RadioGroup",
+              "presenterConfig": {
+                "numberFormat": "none"
+              },
+              "choices": [
+                {
+                  "answerKey": "answer_1",
+                  "content": "beliefs"
+                },
+                {
+                  "answerKey": "answer_2",
+                  "content": "attitudes"
+                },
+                {
+                  "answerKey": "answer_3",
+                  "content": "values"
+                },
+                {
+                  "answerKey": "answer_4",
+                  "content": "opinions"
+                }
+              ]
+            },
+            "answerKey": {
+              "assessmentType": "multiplechoice",
+              "answers": {
+                "answer_3": {
+                  "score": 1.0,
+                  "response": ""
+                },
+                "answer_2": {
+                  "score": 0.0,
+                  "response": "Consider this: Which of these is the most enduring? Learning Objective 14.1: Describe the goals of persuasive messages."
+                },
+                "answer_1": {
+                  "score": 0.0,
+                  "response": "Consider this: Which of these is the most enduring? Learning Objective 14.1: Describe the goals of persuasive messages."
+                },
+                "answer_4": {
+                  "score": 0.0,
+                  "response": "Consider this: Which of these is the most enduring? Learning Objective 14.1: Describe the goals of persuasive messages."
+                }
+              }
+            },
+            "configFixup": [
+              {
+                "name": "questionId",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "sequenceNodeKey",
+                  "type": "ref"
+                }
+              },
+              {
+                "name": "maxAttempts",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "maxAttempts",
+                  "type": "ref"
+                }
+              }
+            ]
+          }
+        ],
+        "hookupActions": [
+          {
+            "description": "Hookup the submit manager to evaluate answers",
+            "methodName": "handleRequestsFrom",
+            "type": "method-call",
+            "args": [
+              {
+                "domain": "brix",
+                "refId": "q1",
+                "type": "ref"
+              }
+            ],
+            "instance": {
+              "type": "submit-manager"
+            }
+          },
+          {
+            "description": "Draw the question",
+            "methodName": "draw",
+            "type": "method-call",
+            "args": [
+              {
+                "selector": "#target1",
+                "type": "d3select"
+              }
+            ],
+            "instance": {
+              "domain": "brix",
+              "refId": "q1",
+              "type": "ref"
+            }
+          }
+        ]
+      }
+    ],
+    "title": "Exam.14.04 The Goals Of Persuasion Understand LO 14.1"
+  }
+}

@@ -1,0 +1,196 @@
+{
+  "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope",
+  "@type": "Envelope",
+  "metadata": {
+    "bookTitle": "Public Speaking: An Audience-Centered Approach",
+    "keywords": [
+      "Beebe 9e",
+      "ch 06",
+      "Rudowski"
+    ],
+    "extendedMetadata": [
+      {
+        "name": "Page-Reference",
+        "value": "112"
+      },
+      {
+        "name": "ISBN",
+        "value": "0133859703"
+      },
+      {
+        "name": "M",
+        "value": "c01"
+      },
+      {
+        "name": "assessment_title",
+        "value": "Chapter Quiz: Developing Your Speech"
+      },
+      {
+        "name": "Topic",
+        "value": "Select and Narrow Your Topic"
+      },
+      {
+        "name": "chapterTitle",
+        "value": "Developing Your Speech"
+      },
+      {
+        "name": "item_title",
+        "value": "0133859703_Steven A. Beebe; Susan J. Beebe_ch06_c01_q0001"
+      },
+      {
+        "name": "questionlayout",
+        "value": "1"
+      },
+      {
+        "name": "CH",
+        "value": "6"
+      },
+      {
+        "name": "Difficulty",
+        "value": "Moderate"
+      },
+      {
+        "name": "Objective",
+        "value": "6.1 Select and narrow a topic for a speech that is appropriate to the audience, the occasion, the ti"
+      },
+      {
+        "name": "shuffle_choices",
+        "value": "Yes"
+      }
+    ],
+    "subject": [
+      "Communication"
+    ],
+    "contentTypeTier2": [
+      "AssessmentItem"
+    ],
+    "contentTypeTier1": "Assessment",
+    "format": [
+      "application/vnd.pearson.sanvan.v1.activity"
+    ],
+    "version": "1.0",
+    "guid": "a61f00c7-42e1-4c4a-b6fa-e0e546b26fe3",
+    "bookAuthor": "Steven A. Beebe; Susan J. Beebe",
+    "title": "Exam.06.03 Select And Narrow Your Topic Apply LO 6.1",
+    "educationalAlignment": [
+      "http://purl.org/pearson/objectives/183725473384362"
+    ]
+  },
+  "body": {
+    "description": "Exam.06.03 Select and Narrow Your Topic, Apply, LO 6.1",
+    "containerConfig": [
+      {
+        "description": "Exam.06.03 Select and Narrow Your Topic, Apply, LO 6.1",
+        "containerId": "target1",
+        "brixConfig": [
+          {
+            "bricId": "q1",
+            "bricType": "MultipleChoiceQuestion",
+            "config": {
+              "id": "QUE60159",
+              "question": "The senator was asked to speak to the local teachers\u0027 union. Since the senator had just spoken to the Veterans of Foreign War, he decided to use that same speech for addressing the teacher\u0027s union. What guideline for selecting a speech topic did the senator ignore?\n\u003cbr /\u003e",
+              "order": "randomized",
+              "presenterType": "RadioGroup",
+              "presenterConfig": {
+                "numberFormat": "none"
+              },
+              "choices": [
+                {
+                  "answerKey": "answer_1",
+                  "content": "tailoring his speech to the audience"
+                },
+                {
+                  "answerKey": "answer_2",
+                  "content": "plagiarizing his speech"
+                },
+                {
+                  "answerKey": "answer_3",
+                  "content": "focusing on his general purpose rather than on a specific purpose"
+                },
+                {
+                  "answerKey": "answer_4",
+                  "content": "relying on audience participation to succeed"
+                }
+              ]
+            },
+            "answerKey": {
+              "assessmentType": "multiplechoice",
+              "answers": {
+                "answer_3": {
+                  "score": 0.0,
+                  "response": "Consider this: What is always the most important factor in speechmaking? Learning Objective 6.1: Select and narrow a topic for a speech that is appropriate to the audience, the occasion, the time limits, and yourself."
+                },
+                "answer_2": {
+                  "score": 0.0,
+                  "response": "Consider this: What is always the most important factor in speechmaking? Learning Objective 6.1: Select and narrow a topic for a speech that is appropriate to the audience, the occasion, the time limits, and yourself."
+                },
+                "answer_1": {
+                  "score": 1.0,
+                  "response": ""
+                },
+                "answer_4": {
+                  "score": 0.0,
+                  "response": "Consider this: What is always the most important factor in speechmaking? Learning Objective 6.1: Select and narrow a topic for a speech that is appropriate to the audience, the occasion, the time limits, and yourself."
+                }
+              }
+            },
+            "configFixup": [
+              {
+                "name": "questionId",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "sequenceNodeKey",
+                  "type": "ref"
+                }
+              },
+              {
+                "name": "maxAttempts",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "maxAttempts",
+                  "type": "ref"
+                }
+              }
+            ]
+          }
+        ],
+        "hookupActions": [
+          {
+            "description": "Hookup the submit manager to evaluate answers",
+            "methodName": "handleRequestsFrom",
+            "type": "method-call",
+            "args": [
+              {
+                "domain": "brix",
+                "refId": "q1",
+                "type": "ref"
+              }
+            ],
+            "instance": {
+              "type": "submit-manager"
+            }
+          },
+          {
+            "description": "Draw the question",
+            "methodName": "draw",
+            "type": "method-call",
+            "args": [
+              {
+                "selector": "#target1",
+                "type": "d3select"
+              }
+            ],
+            "instance": {
+              "domain": "brix",
+              "refId": "q1",
+              "type": "ref"
+            }
+          }
+        ]
+      }
+    ],
+    "title": "Exam.06.03 Select And Narrow Your Topic Apply LO 6.1"
+  }
+}

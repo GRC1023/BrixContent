@@ -1,0 +1,196 @@
+{
+  "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope",
+  "@type": "Envelope",
+  "metadata": {
+    "bookTitle": "Public Speaking: An Audience-Centered Approach",
+    "keywords": [
+      "Beebe 9e",
+      "ch 12",
+      "Rudowski"
+    ],
+    "extendedMetadata": [
+      {
+        "name": "Page-Reference",
+        "value": "244"
+      },
+      {
+        "name": "ISBN",
+        "value": "0133859703"
+      },
+      {
+        "name": "M",
+        "value": "c01"
+      },
+      {
+        "name": "assessment_title",
+        "value": "Chapter Quiz: Using Presentation Aids"
+      },
+      {
+        "name": "Topic",
+        "value": "Types of Presentation Aids"
+      },
+      {
+        "name": "chapterTitle",
+        "value": "Using Presentation Aids"
+      },
+      {
+        "name": "item_title",
+        "value": "0133859703_Steven A. Beebe; Susan J. Beebe_ch12_c01_q0004"
+      },
+      {
+        "name": "questionlayout",
+        "value": "1"
+      },
+      {
+        "name": "CH",
+        "value": "12"
+      },
+      {
+        "name": "Difficulty",
+        "value": "Moderate"
+      },
+      {
+        "name": "Objective",
+        "value": "12.2 Describe the types of presentation aids and identify tips for using them effectively."
+      },
+      {
+        "name": "shuffle_choices",
+        "value": "Yes"
+      }
+    ],
+    "subject": [
+      "Communication"
+    ],
+    "contentTypeTier2": [
+      "AssessmentItem"
+    ],
+    "contentTypeTier1": "Assessment",
+    "format": [
+      "application/vnd.pearson.sanvan.v1.activity"
+    ],
+    "version": "1.0",
+    "guid": "d94a321f-39ea-4b7b-8f5f-7da468aed7a4",
+    "bookAuthor": "Steven A. Beebe; Susan J. Beebe",
+    "title": "Exam.12.06 Types Of Presentation Aids Apply LO 12.2",
+    "educationalAlignment": [
+      "http://purl.org/pearson/objectives/183725473384362"
+    ]
+  },
+  "body": {
+    "description": "Exam.12.06 Types of Presentation Aids, Apply, LO 12.2",
+    "containerConfig": [
+      {
+        "description": "Exam.12.06 Types of Presentation Aids, Apply, LO 12.2",
+        "containerId": "target1",
+        "brixConfig": [
+          {
+            "bricId": "q1",
+            "bricType": "MultipleChoiceQuestion",
+            "config": {
+              "id": "QUE60392",
+              "question": "Which two-dimensional aid did Rachel use when she traced an outline of the human brain and then labeled it to indicate where brain functions were located?\n\u003cbr /\u003e",
+              "order": "randomized",
+              "presenterType": "RadioGroup",
+              "presenterConfig": {
+                "numberFormat": "none"
+              },
+              "choices": [
+                {
+                  "answerKey": "answer_1",
+                  "content": "chart"
+                },
+                {
+                  "answerKey": "answer_2",
+                  "content": "photograph"
+                },
+                {
+                  "answerKey": "answer_3",
+                  "content": "map"
+                },
+                {
+                  "answerKey": "answer_4",
+                  "content": "drawing"
+                }
+              ]
+            },
+            "answerKey": {
+              "assessmentType": "multiplechoice",
+              "answers": {
+                "answer_3": {
+                  "score": 0.0,
+                  "response": "Consider this: Review the types of two-dimensional aids. Learning Objective 12.2: Describe the types of presentation aids and identify tips for using them effectively."
+                },
+                "answer_2": {
+                  "score": 0.0,
+                  "response": "Consider this: Review the types of two-dimensional aids. Learning Objective 12.2: Describe the types of presentation aids and identify tips for using them effectively."
+                },
+                "answer_1": {
+                  "score": 0.0,
+                  "response": "Consider this: Review the types of two-dimensional aids. Learning Objective 12.2: Describe the types of presentation aids and identify tips for using them effectively."
+                },
+                "answer_4": {
+                  "score": 1.0,
+                  "response": ""
+                }
+              }
+            },
+            "configFixup": [
+              {
+                "name": "questionId",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "sequenceNodeKey",
+                  "type": "ref"
+                }
+              },
+              {
+                "name": "maxAttempts",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "maxAttempts",
+                  "type": "ref"
+                }
+              }
+            ]
+          }
+        ],
+        "hookupActions": [
+          {
+            "description": "Hookup the submit manager to evaluate answers",
+            "methodName": "handleRequestsFrom",
+            "type": "method-call",
+            "args": [
+              {
+                "domain": "brix",
+                "refId": "q1",
+                "type": "ref"
+              }
+            ],
+            "instance": {
+              "type": "submit-manager"
+            }
+          },
+          {
+            "description": "Draw the question",
+            "methodName": "draw",
+            "type": "method-call",
+            "args": [
+              {
+                "selector": "#target1",
+                "type": "d3select"
+              }
+            ],
+            "instance": {
+              "domain": "brix",
+              "refId": "q1",
+              "type": "ref"
+            }
+          }
+        ]
+      }
+    ],
+    "title": "Exam.12.06 Types Of Presentation Aids Apply LO 12.2"
+  }
+}

@@ -1,0 +1,196 @@
+{
+  "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope",
+  "@type": "Envelope",
+  "metadata": {
+    "bookTitle": "Listen To This",
+    "keywords": [
+      "Bonds 3e",
+      "ch 21",
+      "Rudowski"
+    ],
+    "extendedMetadata": [
+      {
+        "name": "Page-Reference",
+        "value": "182"
+      },
+      {
+        "name": "ISBN",
+        "value": "0133794636"
+      },
+      {
+        "name": "M",
+        "value": "m01"
+      },
+      {
+        "name": "assessment_title",
+        "value": "Quiz: Joseph Haydn, Symphony no. 102 in Bb Major, third and fourth movements"
+      },
+      {
+        "name": "Topic",
+        "value": "The Dynamics of Surprise"
+      },
+      {
+        "name": "chapterTitle",
+        "value": "The Classical Era: (1750â1800)"
+      },
+      {
+        "name": "module",
+        "value": "Joseph Haydn, Symphony no. 102 in Bb Major, third and fourth movements"
+      },
+      {
+        "name": "item_title",
+        "value": "0133794636_Mark Evan Bonds_ch21_m01_q0001"
+      },
+      {
+        "name": "questionlayout",
+        "value": "1"
+      },
+      {
+        "name": "CH",
+        "value": "21"
+      },
+      {
+        "name": "Objective",
+        "value": "LO 21.2 Listen for Haydn\u0027s use of dynamics in the third movement of his Symphony no. 102."
+      },
+      {
+        "name": "shuffle_choices",
+        "value": "Yes"
+      }
+    ],
+    "subject": [
+      "Music"
+    ],
+    "contentTypeTier2": [
+      "AssessmentItem"
+    ],
+    "contentTypeTier1": "Assessment",
+    "format": [
+      "application/vnd.pearson.sanvan.v1.activity"
+    ],
+    "version": "1.0",
+    "guid": "6227e325-085b-4aae-8874-3d28c7d21507",
+    "bookAuthor": "Mark Evan Bonds",
+    "title": "Ch21 Post Concept 02",
+    "educationalAlignment": [
+      "http://purl.org/pearson/objectives/183725473384362"
+    ]
+  },
+  "body": {
+    "description": "ch21_post_concept_02",
+    "containerConfig": [
+      {
+        "description": "ch21_post_concept_02",
+        "containerId": "target1",
+        "brixConfig": [
+          {
+            "bricId": "q1",
+            "bricType": "MultipleChoiceQuestion",
+            "config": {
+              "id": "QUE63907",
+              "question": "When the music of a symphony is played softly for a long time,\n\u003cbr /\u003e",
+              "order": "randomized",
+              "presenterType": "RadioGroup",
+              "presenterConfig": {
+                "numberFormat": "none"
+              },
+              "choices": [
+                {
+                  "answerKey": "answer_1",
+                  "content": "audiences anticipate the music getting loud again."
+                },
+                {
+                  "answerKey": "answer_2",
+                  "content": "audiences are able to talk to each other."
+                },
+                {
+                  "answerKey": "answer_3",
+                  "content": "the percussion section must keep the rhythm going."
+                },
+                {
+                  "answerKey": "answer_4",
+                  "content": "there is time for a vocal solo."
+                }
+              ]
+            },
+            "answerKey": {
+              "assessmentType": "multiplechoice",
+              "answers": {
+                "answer_3": {
+                  "score": 0.0,
+                  "response": " \n\u003cem\u003e \u003c/em\u003eLO 21.2 Listen for Haydn\u0027s use of dynamics in the third movement of his Symphony no. 102."
+                },
+                "answer_2": {
+                  "score": 0.0,
+                  "response": "\u003cem\u003e \u003c/em\u003eLO 21.2 Listen for Haydn\u0027s use of dynamics in the third movement of his Symphony no. 102."
+                },
+                "answer_1": {
+                  "score": 1.0,
+                  "response": ""
+                },
+                "answer_4": {
+                  "score": 0.0,
+                  "response": " \n\u003cem\u003e \u003c/em\u003eLO 21.2 Listen for Haydn\u0027s use of dynamics in the third movement of his Symphony no. 102."
+                }
+              }
+            },
+            "configFixup": [
+              {
+                "name": "questionId",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "sequenceNodeKey",
+                  "type": "ref"
+                }
+              },
+              {
+                "name": "maxAttempts",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "maxAttempts",
+                  "type": "ref"
+                }
+              }
+            ]
+          }
+        ],
+        "hookupActions": [
+          {
+            "description": "Hookup the submit manager to evaluate answers",
+            "methodName": "handleRequestsFrom",
+            "type": "method-call",
+            "args": [
+              {
+                "domain": "brix",
+                "refId": "q1",
+                "type": "ref"
+              }
+            ],
+            "instance": {
+              "type": "submit-manager"
+            }
+          },
+          {
+            "description": "Draw the question",
+            "methodName": "draw",
+            "type": "method-call",
+            "args": [
+              {
+                "selector": "#target1",
+                "type": "d3select"
+              }
+            ],
+            "instance": {
+              "domain": "brix",
+              "refId": "q1",
+              "type": "ref"
+            }
+          }
+        ]
+      }
+    ],
+    "title": "Ch21 Post Concept 02"
+  }
+}

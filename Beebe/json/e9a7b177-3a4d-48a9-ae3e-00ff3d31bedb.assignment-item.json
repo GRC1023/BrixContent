@@ -1,0 +1,196 @@
+{
+  "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope",
+  "@type": "Envelope",
+  "metadata": {
+    "bookTitle": "Public Speaking: An Audience-Centered Approach",
+    "keywords": [
+      "Beebe 9e",
+      "ch 05",
+      "Rudowski"
+    ],
+    "extendedMetadata": [
+      {
+        "name": "Page-Reference",
+        "value": "104"
+      },
+      {
+        "name": "ISBN",
+        "value": "0133859703"
+      },
+      {
+        "name": "M",
+        "value": "c01"
+      },
+      {
+        "name": "assessment_title",
+        "value": "Chapter Quiz: Analyzing Your Audience"
+      },
+      {
+        "name": "Topic",
+        "value": "Adapting to Your Audience as You Speak"
+      },
+      {
+        "name": "chapterTitle",
+        "value": "Analyzing Your Audience"
+      },
+      {
+        "name": "item_title",
+        "value": "0133859703_Steven A. Beebe; Susan J. Beebe_ch05_c01_q0014"
+      },
+      {
+        "name": "questionlayout",
+        "value": "1"
+      },
+      {
+        "name": "CH",
+        "value": "5"
+      },
+      {
+        "name": "Difficulty",
+        "value": "Moderate"
+      },
+      {
+        "name": "Objective",
+        "value": "5.5 Identify methods of assessing and adapting to your audience\u0026amp;rsquo;s reactions while your speech is in"
+      },
+      {
+        "name": "shuffle_choices",
+        "value": "Yes"
+      }
+    ],
+    "subject": [
+      "Communication"
+    ],
+    "contentTypeTier2": [
+      "AssessmentItem"
+    ],
+    "contentTypeTier1": "Assessment",
+    "format": [
+      "application/vnd.pearson.sanvan.v1.activity"
+    ],
+    "version": "1.0",
+    "guid": "e9a7b177-3a4d-48a9-ae3e-00ff3d31bedb",
+    "bookAuthor": "Steven A. Beebe; Susan J. Beebe",
+    "title": "Exam.05.22 Adapting To Your Audience As You Speak Apply LO 5.5",
+    "educationalAlignment": [
+      "http://purl.org/pearson/objectives/183725473384362"
+    ]
+  },
+  "body": {
+    "description": "Exam.05.22 Adapting to Your Audience as You Speak, Apply, LO 5.5",
+    "containerConfig": [
+      {
+        "description": "Exam.05.22 Adapting to Your Audience as You Speak, Apply, LO 5.5",
+        "containerId": "target1",
+        "brixConfig": [
+          {
+            "bricId": "q1",
+            "bricType": "MultipleChoiceQuestion",
+            "config": {
+              "id": "QUE60135",
+              "question": "To begin his presentation, Michael told the audience that statistics showed that by the end of the year, 20% of them would lose their retirement funds. What technique is he using to customize his message?\n\u003cbr /\u003e",
+              "order": "randomized",
+              "presenterType": "RadioGroup",
+              "presenterConfig": {
+                "numberFormat": "none"
+              },
+              "choices": [
+                {
+                  "answerKey": "answer_1",
+                  "content": "relate information directly to listeners"
+                },
+                {
+                  "answerKey": "answer_2",
+                  "content": "refer to a significant event that happened on the day of the speech"
+                },
+                {
+                  "answerKey": "answer_3",
+                  "content": "compliment the group or organization"
+                },
+                {
+                  "answerKey": "answer_4",
+                  "content": "appropriately use audience member names"
+                }
+              ]
+            },
+            "answerKey": {
+              "assessmentType": "multiplechoice",
+              "answers": {
+                "answer_3": {
+                  "score": 0.0,
+                  "response": "Consider this: Review the strategies for how to customize a message. Learning Objective 5.5 Identify methods of assessing and adapting to your audience’s reactions while your speech is in progress."
+                },
+                "answer_2": {
+                  "score": 0.0,
+                  "response": "Consider this: Review the strategies for how to customize a message. Learning Objective 5.5 Identify methods of assessing and adapting to your audience’s reactions while your speech is in progress."
+                },
+                "answer_1": {
+                  "score": 1.0,
+                  "response": ""
+                },
+                "answer_4": {
+                  "score": 0.0,
+                  "response": "Consider this: Review the strategies for how to customize a message. Learning Objective 5.5 Identify methods of assessing and adapting to your audience’s reactions while your speech is in progress."
+                }
+              }
+            },
+            "configFixup": [
+              {
+                "name": "questionId",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "sequenceNodeKey",
+                  "type": "ref"
+                }
+              },
+              {
+                "name": "maxAttempts",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "maxAttempts",
+                  "type": "ref"
+                }
+              }
+            ]
+          }
+        ],
+        "hookupActions": [
+          {
+            "description": "Hookup the submit manager to evaluate answers",
+            "methodName": "handleRequestsFrom",
+            "type": "method-call",
+            "args": [
+              {
+                "domain": "brix",
+                "refId": "q1",
+                "type": "ref"
+              }
+            ],
+            "instance": {
+              "type": "submit-manager"
+            }
+          },
+          {
+            "description": "Draw the question",
+            "methodName": "draw",
+            "type": "method-call",
+            "args": [
+              {
+                "selector": "#target1",
+                "type": "d3select"
+              }
+            ],
+            "instance": {
+              "domain": "brix",
+              "refId": "q1",
+              "type": "ref"
+            }
+          }
+        ]
+      }
+    ],
+    "title": "Exam.05.22 Adapting To Your Audience As You Speak Apply LO 5.5"
+  }
+}

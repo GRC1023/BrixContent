@@ -1,0 +1,196 @@
+{
+  "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope",
+  "@type": "Envelope",
+  "metadata": {
+    "bookTitle": "Public Speaking: An Audience-Centered Approach",
+    "keywords": [
+      "Beebe 9e",
+      "ch 02",
+      "Rudowski"
+    ],
+    "extendedMetadata": [
+      {
+        "name": "Page-Reference",
+        "value": "22"
+      },
+      {
+        "name": "ISBN",
+        "value": "0133859703"
+      },
+      {
+        "name": "M",
+        "value": "c01"
+      },
+      {
+        "name": "assessment_title",
+        "value": "Chapter Quiz: Presenting Your First Speech"
+      },
+      {
+        "name": "Topic",
+        "value": "Consider Your Audience"
+      },
+      {
+        "name": "chapterTitle",
+        "value": "Presenting Your First Speech"
+      },
+      {
+        "name": "item_title",
+        "value": "0133859703_Steven A. Beebe; Susan J. Beebe_ch02_c01_q0001"
+      },
+      {
+        "name": "questionlayout",
+        "value": "1"
+      },
+      {
+        "name": "CH",
+        "value": "2"
+      },
+      {
+        "name": "Difficulty",
+        "value": "Moderate"
+      },
+      {
+        "name": "Objective",
+        "value": "2.1 Explain why it is important to be audience-centered during each step of the speechmaking process"
+      },
+      {
+        "name": "shuffle_choices",
+        "value": "Yes"
+      }
+    ],
+    "subject": [
+      "Communication"
+    ],
+    "contentTypeTier2": [
+      "AssessmentItem"
+    ],
+    "contentTypeTier1": "Assessment",
+    "format": [
+      "application/vnd.pearson.sanvan.v1.activity"
+    ],
+    "version": "1.0",
+    "guid": "07199d61-9b7a-4676-b349-2528e4278105",
+    "bookAuthor": "Steven A. Beebe; Susan J. Beebe",
+    "title": "Exam.02.01 Consider Your Audience Understand LO 2.1",
+    "educationalAlignment": [
+      "http://purl.org/pearson/objectives/183725473384362"
+    ]
+  },
+  "body": {
+    "description": "Exam.02.01 Consider Your Audience, Understand, LO 2.1",
+    "containerConfig": [
+      {
+        "description": "Exam.02.01 Consider Your Audience, Understand, LO 2.1",
+        "containerId": "target1",
+        "brixConfig": [
+          {
+            "bricId": "q1",
+            "bricType": "MultipleChoiceQuestion",
+            "config": {
+              "id": "QUE60024",
+              "question": "Why is the thought that “your audience writes your speech” a valid idea?\n\u003cbr /\u003e",
+              "order": "randomized",
+              "presenterType": "RadioGroup",
+              "presenterConfig": {
+                "numberFormat": "none"
+              },
+              "choices": [
+                {
+                  "answerKey": "answer_1",
+                  "content": "Feedback questionnaires help generate all the main ideas for a speech."
+                },
+                {
+                  "answerKey": "answer_2",
+                  "content": "Your topic, purpose, and main ideas should be based on a thorough understanding of your listeners."
+                },
+                {
+                  "answerKey": "answer_3",
+                  "content": "Anything you choose to use in a speech should be first approved by the listeners."
+                },
+                {
+                  "answerKey": "answer_4",
+                  "content": "The audience’s response to your speech is the only way to determine success."
+                }
+              ]
+            },
+            "answerKey": {
+              "assessmentType": "multiplechoice",
+              "answers": {
+                "answer_3": {
+                  "score": 0.0,
+                  "response": "Consider this: Who is the central focus for a public speech? Learning Objective 2.1: Explain why it is important to be audience-centered during each step of the speechmaking process."
+                },
+                "answer_2": {
+                  "score": 1.0,
+                  "response": ""
+                },
+                "answer_1": {
+                  "score": 0.0,
+                  "response": "Consider this: Who is the central focus for a public speech? Learning Objective 2.1: Explain why it is important to be audience-centered during each step of the speechmaking process."
+                },
+                "answer_4": {
+                  "score": 0.0,
+                  "response": "Consider this: Who is the central focus for a public speech? Learning Objective 2.1: Explain why it is important to be audience-centered during each step of the speechmaking process."
+                }
+              }
+            },
+            "configFixup": [
+              {
+                "name": "questionId",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "sequenceNodeKey",
+                  "type": "ref"
+                }
+              },
+              {
+                "name": "maxAttempts",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "maxAttempts",
+                  "type": "ref"
+                }
+              }
+            ]
+          }
+        ],
+        "hookupActions": [
+          {
+            "description": "Hookup the submit manager to evaluate answers",
+            "methodName": "handleRequestsFrom",
+            "type": "method-call",
+            "args": [
+              {
+                "domain": "brix",
+                "refId": "q1",
+                "type": "ref"
+              }
+            ],
+            "instance": {
+              "type": "submit-manager"
+            }
+          },
+          {
+            "description": "Draw the question",
+            "methodName": "draw",
+            "type": "method-call",
+            "args": [
+              {
+                "selector": "#target1",
+                "type": "d3select"
+              }
+            ],
+            "instance": {
+              "domain": "brix",
+              "refId": "q1",
+              "type": "ref"
+            }
+          }
+        ]
+      }
+    ],
+    "title": "Exam.02.01 Consider Your Audience Understand LO 2.1"
+  }
+}

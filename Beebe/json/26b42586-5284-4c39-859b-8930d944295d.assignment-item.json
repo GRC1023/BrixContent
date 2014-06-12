@@ -1,0 +1,196 @@
+{
+  "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope",
+  "@type": "Envelope",
+  "metadata": {
+    "bookTitle": "Listen To This",
+    "keywords": [
+      "Bonds 3e",
+      "ch 51",
+      "Rudowski"
+    ],
+    "extendedMetadata": [
+      {
+        "name": "Page-Reference",
+        "value": "429"
+      },
+      {
+        "name": "ISBN",
+        "value": "0133794636"
+      },
+      {
+        "name": "M",
+        "value": "m01"
+      },
+      {
+        "name": "assessment_title",
+        "value": "Quiz: BÃ©la BartÃ³k, Concerto for Orchestra, second movement (âGame of Pairsâ)"
+      },
+      {
+        "name": "Topic",
+        "value": "Folk-Inflected Melodies"
+      },
+      {
+        "name": "chapterTitle",
+        "value": "Since 1900: 1900â"
+      },
+      {
+        "name": "module",
+        "value": "BÃ©la BartÃ³k, Concerto for Orchestra, second movement (âGame of Pairsâ)"
+      },
+      {
+        "name": "item_title",
+        "value": "0133794636_Mark Evan Bonds_ch51_m01_q0008"
+      },
+      {
+        "name": "questionlayout",
+        "value": "1"
+      },
+      {
+        "name": "CH",
+        "value": "51"
+      },
+      {
+        "name": "Objective",
+        "value": "LO 51.4 Describe the work of ethnomusicologists and explain how BartÃ³k\u0027s work was infl uenced by folk music of various kinds"
+      },
+      {
+        "name": "shuffle_choices",
+        "value": "Yes"
+      }
+    ],
+    "subject": [
+      "Music"
+    ],
+    "contentTypeTier2": [
+      "AssessmentItem"
+    ],
+    "contentTypeTier1": "Assessment",
+    "format": [
+      "application/vnd.pearson.sanvan.v1.activity"
+    ],
+    "version": "1.0",
+    "guid": "26b42586-5284-4c39-859b-8930d944295d",
+    "bookAuthor": "Mark Evan Bonds",
+    "title": "Ch51 Post Concept 03",
+    "educationalAlignment": [
+      "http://purl.org/pearson/objectives/183725473384362"
+    ]
+  },
+  "body": {
+    "description": "ch51_post_concept_03",
+    "containerConfig": [
+      {
+        "description": "ch51_post_concept_03",
+        "containerId": "target1",
+        "brixConfig": [
+          {
+            "bricId": "q1",
+            "bricType": "MultipleChoiceQuestion",
+            "config": {
+              "id": "QUE64505",
+              "question": "Which of the following describes one of the compositional effects that Bartók achieved by using ideas borrowed from folk traditions?\n\u003cbr /\u003e",
+              "order": "randomized",
+              "presenterType": "RadioGroup",
+              "presenterConfig": {
+                "numberFormat": "none"
+              },
+              "choices": [
+                {
+                  "answerKey": "answer_1",
+                  "content": "It sounded unconventional, yet still maintained a sense of tonality."
+                },
+                {
+                  "answerKey": "answer_2",
+                  "content": "It allowed amateurs to more easily play his music at home."
+                },
+                {
+                  "answerKey": "answer_3",
+                  "content": "It made the music far more difficult to play, effectively limiting it to professionals."
+                },
+                {
+                  "answerKey": "answer_4",
+                  "content": "It sounded conventional even though it was atonal."
+                }
+              ]
+            },
+            "answerKey": {
+              "assessmentType": "multiplechoice",
+              "answers": {
+                "answer_3": {
+                  "score": 0.0,
+                  "response": "LO 51.4 Describe the work of ethnomusicologists and explain how Bartók\u0027s work was infl uenced by folk music of various kinds"
+                },
+                "answer_2": {
+                  "score": 0.0,
+                  "response": "LO 51.4 Describe the work of ethnomusicologists and explain how Bartók\u0027s work was infl uenced by folk music of various kinds"
+                },
+                "answer_1": {
+                  "score": 1.0,
+                  "response": ""
+                },
+                "answer_4": {
+                  "score": 0.0,
+                  "response": "LO 51.4 Describe the work of ethnomusicologists and explain how Bartók\u0027s work was infl uenced by folk music of various kinds"
+                }
+              }
+            },
+            "configFixup": [
+              {
+                "name": "questionId",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "sequenceNodeKey",
+                  "type": "ref"
+                }
+              },
+              {
+                "name": "maxAttempts",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "maxAttempts",
+                  "type": "ref"
+                }
+              }
+            ]
+          }
+        ],
+        "hookupActions": [
+          {
+            "description": "Hookup the submit manager to evaluate answers",
+            "methodName": "handleRequestsFrom",
+            "type": "method-call",
+            "args": [
+              {
+                "domain": "brix",
+                "refId": "q1",
+                "type": "ref"
+              }
+            ],
+            "instance": {
+              "type": "submit-manager"
+            }
+          },
+          {
+            "description": "Draw the question",
+            "methodName": "draw",
+            "type": "method-call",
+            "args": [
+              {
+                "selector": "#target1",
+                "type": "d3select"
+              }
+            ],
+            "instance": {
+              "domain": "brix",
+              "refId": "q1",
+              "type": "ref"
+            }
+          }
+        ]
+      }
+    ],
+    "title": "Ch51 Post Concept 03"
+  }
+}

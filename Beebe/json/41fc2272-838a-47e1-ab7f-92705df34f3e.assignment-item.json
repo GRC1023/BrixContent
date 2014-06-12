@@ -1,0 +1,196 @@
+{
+  "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope",
+  "@type": "Envelope",
+  "metadata": {
+    "bookTitle": "Public Speaking: An Audience-Centered Approach",
+    "keywords": [
+      "Beebe 9e",
+      "ch 06",
+      "Rudowski"
+    ],
+    "extendedMetadata": [
+      {
+        "name": "Page-Reference",
+        "value": "123"
+      },
+      {
+        "name": "ISBN",
+        "value": "0133859703"
+      },
+      {
+        "name": "M",
+        "value": "c01"
+      },
+      {
+        "name": "assessment_title",
+        "value": "Chapter Quiz: Developing Your Speech"
+      },
+      {
+        "name": "Topic",
+        "value": "Generate and Preview Your Main Ideas"
+      },
+      {
+        "name": "chapterTitle",
+        "value": "Developing Your Speech"
+      },
+      {
+        "name": "item_title",
+        "value": "0133859703_Steven A. Beebe; Susan J. Beebe_ch06_c01_q0015"
+      },
+      {
+        "name": "questionlayout",
+        "value": "1"
+      },
+      {
+        "name": "CH",
+        "value": "6"
+      },
+      {
+        "name": "Difficulty",
+        "value": "Easy"
+      },
+      {
+        "name": "Objective",
+        "value": "6.4 Apply three ways of generating main ideas from a central idea."
+      },
+      {
+        "name": "shuffle_choices",
+        "value": "Yes"
+      }
+    ],
+    "subject": [
+      "Communication"
+    ],
+    "contentTypeTier2": [
+      "AssessmentItem"
+    ],
+    "contentTypeTier1": "Assessment",
+    "format": [
+      "application/vnd.pearson.sanvan.v1.activity"
+    ],
+    "version": "1.0",
+    "guid": "41fc2272-838a-47e1-ab7f-92705df34f3e",
+    "bookAuthor": "Steven A. Beebe; Susan J. Beebe",
+    "title": "Exam.06.24 Generate And Preview Your Main Ideas Remember LO 6.4",
+    "educationalAlignment": [
+      "http://purl.org/pearson/objectives/183725473384362"
+    ]
+  },
+  "body": {
+    "description": "Exam.06.24 Generate and Preview Your Main Ideas, Remember, LO 6.4",
+    "containerConfig": [
+      {
+        "description": "Exam.06.24 Generate and Preview Your Main Ideas, Remember, LO 6.4",
+        "containerId": "target1",
+        "brixConfig": [
+          {
+            "bricId": "q1",
+            "bricType": "MultipleChoiceQuestion",
+            "config": {
+              "id": "QUE60173",
+              "question": "Generating main ideas from a central idea is \n\u003ci\u003ebest\u003c/i\u003e accomplished by asking 3 questions: Does my central idea have \n\u003ci\u003elogical divisions\u003c/i\u003e? Can I establish several \n\u003ci\u003ereasons\u003c/i\u003e my central idea is true? And ________.\n\u003cbr /\u003e",
+              "order": "randomized",
+              "presenterType": "RadioGroup",
+              "presenterConfig": {
+                "numberFormat": "none"
+              },
+              "choices": [
+                {
+                  "answerKey": "answer_1",
+                  "content": "Will my audience \n\u003ci\u003erelate\u003c/i\u003e to my central idea?"
+                },
+                {
+                  "answerKey": "answer_2",
+                  "content": "Will I be able to \n\u003ci\u003eexplain\u003c/i\u003e my central idea?"
+                },
+                {
+                  "answerKey": "answer_3",
+                  "content": "Does my central idea \n\u003ci\u003einform, persuade,\u003c/i\u003e or \n\u003ci\u003eentertain\u003c/i\u003e?"
+                },
+                {
+                  "answerKey": "answer_4",
+                  "content": "Can I support my central idea by tracing specific \n\u003ci\u003esteps\u003c/i\u003e?"
+                }
+              ]
+            },
+            "answerKey": {
+              "assessmentType": "multiplechoice",
+              "answers": {
+                "answer_3": {
+                  "score": 0.0,
+                  "response": "Consider this: Review the guidelines for generating main ideas. Learning Objective 6.4: Apply three ways of generating main ideas from a central idea."
+                },
+                "answer_2": {
+                  "score": 0.0,
+                  "response": "Consider this: Review the guidelines for generating main ideas. Learning Objective 6.4: Apply three ways of generating main ideas from a central idea."
+                },
+                "answer_1": {
+                  "score": 0.0,
+                  "response": "Consider this: Review the guidelines for generating main ideas. Learning Objective 6.4: Apply three ways of generating main ideas from a central idea."
+                },
+                "answer_4": {
+                  "score": 1.0,
+                  "response": ""
+                }
+              }
+            },
+            "configFixup": [
+              {
+                "name": "questionId",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "sequenceNodeKey",
+                  "type": "ref"
+                }
+              },
+              {
+                "name": "maxAttempts",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "maxAttempts",
+                  "type": "ref"
+                }
+              }
+            ]
+          }
+        ],
+        "hookupActions": [
+          {
+            "description": "Hookup the submit manager to evaluate answers",
+            "methodName": "handleRequestsFrom",
+            "type": "method-call",
+            "args": [
+              {
+                "domain": "brix",
+                "refId": "q1",
+                "type": "ref"
+              }
+            ],
+            "instance": {
+              "type": "submit-manager"
+            }
+          },
+          {
+            "description": "Draw the question",
+            "methodName": "draw",
+            "type": "method-call",
+            "args": [
+              {
+                "selector": "#target1",
+                "type": "d3select"
+              }
+            ],
+            "instance": {
+              "domain": "brix",
+              "refId": "q1",
+              "type": "ref"
+            }
+          }
+        ]
+      }
+    ],
+    "title": "Exam.06.24 Generate And Preview Your Main Ideas Remember LO 6.4"
+  }
+}

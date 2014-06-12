@@ -1,0 +1,196 @@
+{
+  "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope",
+  "@type": "Envelope",
+  "metadata": {
+    "bookTitle": "Public Speaking: An Audience-Centered Approach",
+    "keywords": [
+      "Beebe 9e",
+      "ch 14",
+      "Rudowski"
+    ],
+    "extendedMetadata": [
+      {
+        "name": "Page-Reference",
+        "value": "284"
+      },
+      {
+        "name": "ISBN",
+        "value": "0133859703"
+      },
+      {
+        "name": "M",
+        "value": "c01"
+      },
+      {
+        "name": "assessment_title",
+        "value": "Chapter Quiz: Understanding Principles of Persuasive Speaking"
+      },
+      {
+        "name": "Topic",
+        "value": "The Goals of Persuasion"
+      },
+      {
+        "name": "chapterTitle",
+        "value": "Understanding Principles of Persuasive Speaking"
+      },
+      {
+        "name": "item_title",
+        "value": "0133859703_Steven A. Beebe; Susan J. Beebe_ch14_c01_q0010"
+      },
+      {
+        "name": "questionlayout",
+        "value": "1"
+      },
+      {
+        "name": "CH",
+        "value": "14"
+      },
+      {
+        "name": "Difficulty",
+        "value": "Moderate"
+      },
+      {
+        "name": "Objective",
+        "value": "14.1 Describe the goals of persuasive messages."
+      },
+      {
+        "name": "shuffle_choices",
+        "value": "Yes"
+      }
+    ],
+    "subject": [
+      "Communication"
+    ],
+    "contentTypeTier2": [
+      "AssessmentItem"
+    ],
+    "contentTypeTier1": "Assessment",
+    "format": [
+      "application/vnd.pearson.sanvan.v1.activity"
+    ],
+    "version": "1.0",
+    "guid": "4b7cf8d1-2e9c-455e-8714-26601dceac54",
+    "bookAuthor": "Steven A. Beebe; Susan J. Beebe",
+    "title": "Exam.14.01 The Goals Of Persuasion Understand LO 14.1",
+    "educationalAlignment": [
+      "http://purl.org/pearson/objectives/183725473384362"
+    ]
+  },
+  "body": {
+    "description": "Exam.14.01 The Goals of Persuasion, Understand, LO 14.1",
+    "containerConfig": [
+      {
+        "description": "Exam.14.01 The Goals of Persuasion, Understand, LO 14.1",
+        "containerId": "target1",
+        "brixConfig": [
+          {
+            "bricId": "q1",
+            "bricType": "MultipleChoiceQuestion",
+            "config": {
+              "id": "QUE60482",
+              "question": "When a speaker uses persuasion, he or she is trying to _______.\n\u003cbr /\u003e",
+              "order": "randomized",
+              "presenterType": "RadioGroup",
+              "presenterConfig": {
+                "numberFormat": "none"
+              },
+              "choices": [
+                {
+                  "answerKey": "answer_1",
+                  "content": "celebrate the accomplishments of another with the audience"
+                },
+                {
+                  "answerKey": "answer_2",
+                  "content": "inform the audience about the specific uses of an item"
+                },
+                {
+                  "answerKey": "answer_3",
+                  "content": "provide the audience with an introduction to formal remarks"
+                },
+                {
+                  "answerKey": "answer_4",
+                  "content": "change or reinforce attitudes, beliefs, values, or behavior of the audience"
+                }
+              ]
+            },
+            "answerKey": {
+              "assessmentType": "multiplechoice",
+              "answers": {
+                "answer_3": {
+                  "score": 0.0,
+                  "response": "Consider this: Review the definition of persuasion. Learning Objective 14.1: Describe the goals of persuasive messages."
+                },
+                "answer_2": {
+                  "score": 0.0,
+                  "response": "Consider this: Review the definition of persuasion. Learning Objective 14.1: Describe the goals of persuasive messages."
+                },
+                "answer_1": {
+                  "score": 0.0,
+                  "response": "Consider this: Review the definition of persuasion. Learning Objective 14.1: Describe the goals of persuasive messages."
+                },
+                "answer_4": {
+                  "score": 1.0,
+                  "response": ""
+                }
+              }
+            },
+            "configFixup": [
+              {
+                "name": "questionId",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "sequenceNodeKey",
+                  "type": "ref"
+                }
+              },
+              {
+                "name": "maxAttempts",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "maxAttempts",
+                  "type": "ref"
+                }
+              }
+            ]
+          }
+        ],
+        "hookupActions": [
+          {
+            "description": "Hookup the submit manager to evaluate answers",
+            "methodName": "handleRequestsFrom",
+            "type": "method-call",
+            "args": [
+              {
+                "domain": "brix",
+                "refId": "q1",
+                "type": "ref"
+              }
+            ],
+            "instance": {
+              "type": "submit-manager"
+            }
+          },
+          {
+            "description": "Draw the question",
+            "methodName": "draw",
+            "type": "method-call",
+            "args": [
+              {
+                "selector": "#target1",
+                "type": "d3select"
+              }
+            ],
+            "instance": {
+              "domain": "brix",
+              "refId": "q1",
+              "type": "ref"
+            }
+          }
+        ]
+      }
+    ],
+    "title": "Exam.14.01 The Goals Of Persuasion Understand LO 14.1"
+  }
+}

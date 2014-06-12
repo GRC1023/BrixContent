@@ -1,0 +1,196 @@
+{
+  "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope",
+  "@type": "Envelope",
+  "metadata": {
+    "bookTitle": "Listen To This",
+    "keywords": [
+      "Bonds 3e",
+      "ch 15",
+      "Rudowski"
+    ],
+    "extendedMetadata": [
+      {
+        "name": "Page-Reference",
+        "value": "125"
+      },
+      {
+        "name": "ISBN",
+        "value": "0133794636"
+      },
+      {
+        "name": "M",
+        "value": "m01"
+      },
+      {
+        "name": "assessment_title",
+        "value": "Quiz: Johann Sebastian Bach, Fugue in G Minor, BWV 578 (âLittleâ)"
+      },
+      {
+        "name": "Topic",
+        "value": "chapter-opening text"
+      },
+      {
+        "name": "chapterTitle",
+        "value": "The Baroque Era: 1600â1750"
+      },
+      {
+        "name": "module",
+        "value": "Johann Sebastian Bach, Fugue in G Minor, BWV 578 (âLittleâ)"
+      },
+      {
+        "name": "item_title",
+        "value": "0133794636_Mark Evan Bonds_ch15_m01_q0001"
+      },
+      {
+        "name": "questionlayout",
+        "value": "1"
+      },
+      {
+        "name": "CH",
+        "value": "15"
+      },
+      {
+        "name": "Objective",
+        "value": "LO 15.1 Listen for and identify the subject, fugal exposition, and episodes by listening to  J. S. Bach\u0027s \"Little\" Fugue in G minor."
+      },
+      {
+        "name": "shuffle_choices",
+        "value": "Yes"
+      }
+    ],
+    "subject": [
+      "Music"
+    ],
+    "contentTypeTier2": [
+      "AssessmentItem"
+    ],
+    "contentTypeTier1": "Assessment",
+    "format": [
+      "application/vnd.pearson.sanvan.v1.activity"
+    ],
+    "version": "1.0",
+    "guid": "bd29b188-d3c0-4c16-b651-bdca92e16ab0",
+    "bookAuthor": "Mark Evan Bonds",
+    "title": "Ch15 Post Fact 01",
+    "educationalAlignment": [
+      "http://purl.org/pearson/objectives/183725473384362"
+    ]
+  },
+  "body": {
+    "description": "ch15_post_fact_01",
+    "containerConfig": [
+      {
+        "description": "ch15_post_fact_01",
+        "containerId": "target1",
+        "brixConfig": [
+          {
+            "bricId": "q1",
+            "bricType": "MultipleChoiceQuestion",
+            "config": {
+              "id": "QUE63779",
+              "question": "How does Bach\u0027s original Fugue in G Minor differ from Stokowski\u0027s arrangement?\n\u003cbr /\u003e",
+              "order": "randomized",
+              "presenterType": "RadioGroup",
+              "presenterConfig": {
+                "numberFormat": "none"
+              },
+              "choices": [
+                {
+                  "answerKey": "answer_1",
+                  "content": "Bach\u0027s original was written for an organ; Stokowski arranged the music for several instruments."
+                },
+                {
+                  "answerKey": "answer_2",
+                  "content": "Stokowski changed some of the notes but kept the instruments the same."
+                },
+                {
+                  "answerKey": "answer_3",
+                  "content": "The two pieces have the same timbre; it is just some of the notes that are different."
+                },
+                {
+                  "answerKey": "answer_4",
+                  "content": "Stokowski updated the organ music to reflect the changes in technology since the eighteenth century."
+                }
+              ]
+            },
+            "answerKey": {
+              "assessmentType": "multiplechoice",
+              "answers": {
+                "answer_3": {
+                  "score": 0.0,
+                  "response": " LO 15.1 Listen for and identify the subject, fugal exposition, and episodes by listening to  J. S. Bach\u0027s \"Little\" Fugue in G minor."
+                },
+                "answer_2": {
+                  "score": 0.0,
+                  "response": " LO 15.1 Listen for and identify the subject, fugal exposition, and episodes by listening to  J. S. Bach\u0027s \"Little\" Fugue in G minor."
+                },
+                "answer_1": {
+                  "score": 1.0,
+                  "response": ""
+                },
+                "answer_4": {
+                  "score": 0.0,
+                  "response": " LO 15.1 Listen for and identify the subject, fugal exposition, and episodes by listening to  J. S. Bach\u0027s \"Little\" Fugue in G minor."
+                }
+              }
+            },
+            "configFixup": [
+              {
+                "name": "questionId",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "sequenceNodeKey",
+                  "type": "ref"
+                }
+              },
+              {
+                "name": "maxAttempts",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "maxAttempts",
+                  "type": "ref"
+                }
+              }
+            ]
+          }
+        ],
+        "hookupActions": [
+          {
+            "description": "Hookup the submit manager to evaluate answers",
+            "methodName": "handleRequestsFrom",
+            "type": "method-call",
+            "args": [
+              {
+                "domain": "brix",
+                "refId": "q1",
+                "type": "ref"
+              }
+            ],
+            "instance": {
+              "type": "submit-manager"
+            }
+          },
+          {
+            "description": "Draw the question",
+            "methodName": "draw",
+            "type": "method-call",
+            "args": [
+              {
+                "selector": "#target1",
+                "type": "d3select"
+              }
+            ],
+            "instance": {
+              "domain": "brix",
+              "refId": "q1",
+              "type": "ref"
+            }
+          }
+        ]
+      }
+    ],
+    "title": "Ch15 Post Fact 01"
+  }
+}

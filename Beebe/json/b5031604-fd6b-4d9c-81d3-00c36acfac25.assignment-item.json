@@ -1,0 +1,196 @@
+{
+  "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope",
+  "@type": "Envelope",
+  "metadata": {
+    "bookTitle": "Public Speaking: An Audience-Centered Approach",
+    "keywords": [
+      "Beebe 9e",
+      "ch 05",
+      "Rudowski"
+    ],
+    "extendedMetadata": [
+      {
+        "name": "Page-Reference",
+        "value": "88"
+      },
+      {
+        "name": "ISBN",
+        "value": "0133859703"
+      },
+      {
+        "name": "M",
+        "value": "c01"
+      },
+      {
+        "name": "assessment_title",
+        "value": "Chapter Quiz: Analyzing Your Audience"
+      },
+      {
+        "name": "Topic",
+        "value": "Analyzing Your Audience Before You Speak"
+      },
+      {
+        "name": "chapterTitle",
+        "value": "Analyzing Your Audience"
+      },
+      {
+        "name": "item_title",
+        "value": "0133859703_Steven A. Beebe; Susan J. Beebe_ch05_c01_q0008"
+      },
+      {
+        "name": "questionlayout",
+        "value": "1"
+      },
+      {
+        "name": "CH",
+        "value": "5"
+      },
+      {
+        "name": "Difficulty",
+        "value": "Easy"
+      },
+      {
+        "name": "Objective",
+        "value": "5.4 Develop methods of analyzing your audience before you speak by seeking demographic, psychologica"
+      },
+      {
+        "name": "shuffle_choices",
+        "value": "Yes"
+      }
+    ],
+    "subject": [
+      "Communication"
+    ],
+    "contentTypeTier2": [
+      "AssessmentItem"
+    ],
+    "contentTypeTier1": "Assessment",
+    "format": [
+      "application/vnd.pearson.sanvan.v1.activity"
+    ],
+    "version": "1.0",
+    "guid": "b5031604-fd6b-4d9c-81d3-00c36acfac25",
+    "bookAuthor": "Steven A. Beebe; Susan J. Beebe",
+    "title": "Exam.05.10 Analyzing Your Audience Before You Speak Remember LO 5.4",
+    "educationalAlignment": [
+      "http://purl.org/pearson/objectives/183725473384362"
+    ]
+  },
+  "body": {
+    "description": "Exam.05.10 Analyzing Your Audience Before You Speak, Remember, LO 5.4",
+    "containerConfig": [
+      {
+        "description": "Exam.05.10 Analyzing Your Audience Before You Speak, Remember, LO 5.4",
+        "containerId": "target1",
+        "brixConfig": [
+          {
+            "bricId": "q1",
+            "bricType": "MultipleChoiceQuestion",
+            "config": {
+              "id": "QUE60129",
+              "question": "________ is the assumption that one’s own cultural perspective is superior to those of other cultures.\n\u003cbr /\u003e",
+              "order": "randomized",
+              "presenterType": "RadioGroup",
+              "presenterConfig": {
+                "numberFormat": "none"
+              },
+              "choices": [
+                {
+                  "answerKey": "answer_1",
+                  "content": "Ethnocentrism"
+                },
+                {
+                  "answerKey": "answer_2",
+                  "content": "Ethnicity"
+                },
+                {
+                  "answerKey": "answer_3",
+                  "content": "Demographics"
+                },
+                {
+                  "answerKey": "answer_4",
+                  "content": "Collectivism"
+                }
+              ]
+            },
+            "answerKey": {
+              "assessmentType": "multiplechoice",
+              "answers": {
+                "answer_3": {
+                  "score": 0.0,
+                  "response": "Consider this: Review the information about various cultural aspects of an audience. Learning Objective 5.4 Develop methods of analyzing your audience before you speak by seeking demographic, psychological, and situational information about your audience and the speaking situation."
+                },
+                "answer_2": {
+                  "score": 0.0,
+                  "response": "Consider this: Review the information about various cultural aspects of an audience. Learning Objective 5.4 Develop methods of analyzing your audience before you speak by seeking demographic, psychological, and situational information about your audience and the speaking situation."
+                },
+                "answer_1": {
+                  "score": 1.0,
+                  "response": ""
+                },
+                "answer_4": {
+                  "score": 0.0,
+                  "response": "Consider this: Review the information about various cultural aspects of an audience. Learning Objective 5.4 Develop methods of analyzing your audience before you speak by seeking demographic, psychological, and situational information about your audience and the speaking situation."
+                }
+              }
+            },
+            "configFixup": [
+              {
+                "name": "questionId",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "sequenceNodeKey",
+                  "type": "ref"
+                }
+              },
+              {
+                "name": "maxAttempts",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "maxAttempts",
+                  "type": "ref"
+                }
+              }
+            ]
+          }
+        ],
+        "hookupActions": [
+          {
+            "description": "Hookup the submit manager to evaluate answers",
+            "methodName": "handleRequestsFrom",
+            "type": "method-call",
+            "args": [
+              {
+                "domain": "brix",
+                "refId": "q1",
+                "type": "ref"
+              }
+            ],
+            "instance": {
+              "type": "submit-manager"
+            }
+          },
+          {
+            "description": "Draw the question",
+            "methodName": "draw",
+            "type": "method-call",
+            "args": [
+              {
+                "selector": "#target1",
+                "type": "d3select"
+              }
+            ],
+            "instance": {
+              "domain": "brix",
+              "refId": "q1",
+              "type": "ref"
+            }
+          }
+        ]
+      }
+    ],
+    "title": "Exam.05.10 Analyzing Your Audience Before You Speak Remember LO 5.4"
+  }
+}

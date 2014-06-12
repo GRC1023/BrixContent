@@ -1,0 +1,196 @@
+{
+  "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope",
+  "@type": "Envelope",
+  "metadata": {
+    "bookTitle": "Public Speaking: An Audience-Centered Approach",
+    "keywords": [
+      "Beebe 9e",
+      "ch 09",
+      "Rudowski"
+    ],
+    "extendedMetadata": [
+      {
+        "name": "Page-Reference",
+        "value": "184"
+      },
+      {
+        "name": "ISBN",
+        "value": "0133859703"
+      },
+      {
+        "name": "M",
+        "value": "c01"
+      },
+      {
+        "name": "assessment_title",
+        "value": "Chapter Quiz: Introducing and Concluding Your Speech"
+      },
+      {
+        "name": "Topic",
+        "value": "Effective Introductions"
+      },
+      {
+        "name": "chapterTitle",
+        "value": "Introducing and Concluding Your Speech"
+      },
+      {
+        "name": "item_title",
+        "value": "0133859703_Steven A. Beebe; Susan J. Beebe_ch09_c01_q0007"
+      },
+      {
+        "name": "questionlayout",
+        "value": "1"
+      },
+      {
+        "name": "CH",
+        "value": "9"
+      },
+      {
+        "name": "Difficulty",
+        "value": "Moderate"
+      },
+      {
+        "name": "Objective",
+        "value": "9.2 List and discuss methods for introducing a speech."
+      },
+      {
+        "name": "shuffle_choices",
+        "value": "Yes"
+      }
+    ],
+    "subject": [
+      "Communication"
+    ],
+    "contentTypeTier2": [
+      "AssessmentItem"
+    ],
+    "contentTypeTier1": "Assessment",
+    "format": [
+      "application/vnd.pearson.sanvan.v1.activity"
+    ],
+    "version": "1.0",
+    "guid": "78e4ddda-c8a2-4f03-ae89-5a120e0a3aec",
+    "bookAuthor": "Steven A. Beebe; Susan J. Beebe",
+    "title": "Exam.09.09 Effective Introductions Understand  LO 9.2",
+    "educationalAlignment": [
+      "http://purl.org/pearson/objectives/183725473384362"
+    ]
+  },
+  "body": {
+    "description": "Exam.09.09 Effective Introductions, Understand , LO 9.2",
+    "containerConfig": [
+      {
+        "description": "Exam.09.09 Effective Introductions, Understand , LO 9.2",
+        "containerId": "target1",
+        "brixConfig": [
+          {
+            "bricId": "q1",
+            "bricType": "MultipleChoiceQuestion",
+            "config": {
+              "id": "QUE60275",
+              "question": "Which of the following statements about using quotations in speech introductions is \n\u003ci\u003etrue\u003c/i\u003e?\n\u003cbr /\u003e",
+              "order": "randomized",
+              "presenterType": "RadioGroup",
+              "presenterConfig": {
+                "numberFormat": "none"
+              },
+              "choices": [
+                {
+                  "answerKey": "answer_1",
+                  "content": "Quotes should only be used only if they are extremely interesting, compelling, or very much to the point."
+                },
+                {
+                  "answerKey": "answer_2",
+                  "content": "Quotations are rarely used in speech introductions despite their effectiveness."
+                },
+                {
+                  "answerKey": "answer_3",
+                  "content": "Quotes are often the best option for a speech introduction, because they are effective every time."
+                },
+                {
+                  "answerKey": "answer_4",
+                  "content": "Quotes should not be combined with other methods of introduction; they are most effective when they stand alone."
+                }
+              ]
+            },
+            "answerKey": {
+              "assessmentType": "multiplechoice",
+              "answers": {
+                "answer_3": {
+                  "score": 0.0,
+                  "response": "Consider this: Review the various ways to introduce a speech. Learning Objective 9.2: List and discuss methods for introducing a speech"
+                },
+                "answer_2": {
+                  "score": 0.0,
+                  "response": "Consider this: Review the various ways to introduce a speech. Learning Objective 9.2: List and discuss methods for introducing a speech"
+                },
+                "answer_1": {
+                  "score": 1.0,
+                  "response": ""
+                },
+                "answer_4": {
+                  "score": 0.0,
+                  "response": "Consider this: Review the various ways to introduce a speech. Learning Objective 9.2: List and discuss methods for introducing a speech"
+                }
+              }
+            },
+            "configFixup": [
+              {
+                "name": "questionId",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "sequenceNodeKey",
+                  "type": "ref"
+                }
+              },
+              {
+                "name": "maxAttempts",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "maxAttempts",
+                  "type": "ref"
+                }
+              }
+            ]
+          }
+        ],
+        "hookupActions": [
+          {
+            "description": "Hookup the submit manager to evaluate answers",
+            "methodName": "handleRequestsFrom",
+            "type": "method-call",
+            "args": [
+              {
+                "domain": "brix",
+                "refId": "q1",
+                "type": "ref"
+              }
+            ],
+            "instance": {
+              "type": "submit-manager"
+            }
+          },
+          {
+            "description": "Draw the question",
+            "methodName": "draw",
+            "type": "method-call",
+            "args": [
+              {
+                "selector": "#target1",
+                "type": "d3select"
+              }
+            ],
+            "instance": {
+              "domain": "brix",
+              "refId": "q1",
+              "type": "ref"
+            }
+          }
+        ]
+      }
+    ],
+    "title": "Exam.09.09 Effective Introductions Understand  LO 9.2"
+  }
+}

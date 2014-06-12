@@ -1,0 +1,196 @@
+{
+  "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope",
+  "@type": "Envelope",
+  "metadata": {
+    "bookTitle": "Public Speaking: An Audience-Centered Approach",
+    "keywords": [
+      "Beebe 9e",
+      "ch 01",
+      "Rudowski"
+    ],
+    "extendedMetadata": [
+      {
+        "name": "Page-Reference",
+        "value": "6-7"
+      },
+      {
+        "name": "ISBN",
+        "value": "0133859703"
+      },
+      {
+        "name": "M",
+        "value": "c01"
+      },
+      {
+        "name": "assessment_title",
+        "value": "Chapter Quiz: Speaking With Confidence"
+      },
+      {
+        "name": "Topic",
+        "value": "The Communication Process"
+      },
+      {
+        "name": "chapterTitle",
+        "value": "Speaking With Confidence"
+      },
+      {
+        "name": "item_title",
+        "value": "0133859703_Steven A. Beebe; Susan J. Beebe_ch01_c01_q0008"
+      },
+      {
+        "name": "questionlayout",
+        "value": "1"
+      },
+      {
+        "name": "CH",
+        "value": "1"
+      },
+      {
+        "name": "Difficulty",
+        "value": "Easy"
+      },
+      {
+        "name": "Objective",
+        "value": "1.3 Sketch and explain a model that illustrates the components and the process of communication."
+      },
+      {
+        "name": "shuffle_choices",
+        "value": "Yes"
+      }
+    ],
+    "subject": [
+      "Communication"
+    ],
+    "contentTypeTier2": [
+      "AssessmentItem"
+    ],
+    "contentTypeTier1": "Assessment",
+    "format": [
+      "application/vnd.pearson.sanvan.v1.activity"
+    ],
+    "version": "1.0",
+    "guid": "3bd8cba7-c819-44d1-a846-150592184e27",
+    "bookAuthor": "Steven A. Beebe; Susan J. Beebe",
+    "title": "Exam.01.13 The Communication Process Remember LO 1.3",
+    "educationalAlignment": [
+      "http://purl.org/pearson/objectives/183725473384362"
+    ]
+  },
+  "body": {
+    "description": "Exam.01.13 The Communication Process, Remember, LO 1.3",
+    "containerConfig": [
+      {
+        "description": "Exam.01.13 The Communication Process, Remember, LO 1.3",
+        "containerId": "target1",
+        "brixConfig": [
+          {
+            "bricId": "q1",
+            "bricType": "MultipleChoiceQuestion",
+            "config": {
+              "id": "QUE59994",
+              "question": "The _______ of a speech is made up of things like the time, the place, and the speaker’s or audience’s cultural traditions and expectations.\n\u003cbr /\u003e",
+              "order": "randomized",
+              "presenterType": "RadioGroup",
+              "presenterConfig": {
+                "numberFormat": "none"
+              },
+              "choices": [
+                {
+                  "answerKey": "answer_1",
+                  "content": "channel"
+                },
+                {
+                  "answerKey": "answer_2",
+                  "content": "source"
+                },
+                {
+                  "answerKey": "answer_3",
+                  "content": "context"
+                },
+                {
+                  "answerKey": "answer_4",
+                  "content": "noise"
+                }
+              ]
+            },
+            "answerKey": {
+              "assessmentType": "multiplechoice",
+              "answers": {
+                "answer_3": {
+                  "score": 1.0,
+                  "response": ""
+                },
+                "answer_2": {
+                  "score": 0.0,
+                  "response": "Consider this: What is the situation of the speaker and audience? Learning Objective 1.3: Sketch and explain a model that illustrates the components and the process of communication."
+                },
+                "answer_1": {
+                  "score": 0.0,
+                  "response": "Consider this: What is the situation of the speaker and audience? Learning Objective 1.3: Sketch and explain a model that illustrates the components and the process of communication."
+                },
+                "answer_4": {
+                  "score": 0.0,
+                  "response": "Consider this: What is the situation of the speaker and audience? Learning Objective 1.3: Sketch and explain a model that illustrates the components and the process of communication."
+                }
+              }
+            },
+            "configFixup": [
+              {
+                "name": "questionId",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "sequenceNodeKey",
+                  "type": "ref"
+                }
+              },
+              {
+                "name": "maxAttempts",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "maxAttempts",
+                  "type": "ref"
+                }
+              }
+            ]
+          }
+        ],
+        "hookupActions": [
+          {
+            "description": "Hookup the submit manager to evaluate answers",
+            "methodName": "handleRequestsFrom",
+            "type": "method-call",
+            "args": [
+              {
+                "domain": "brix",
+                "refId": "q1",
+                "type": "ref"
+              }
+            ],
+            "instance": {
+              "type": "submit-manager"
+            }
+          },
+          {
+            "description": "Draw the question",
+            "methodName": "draw",
+            "type": "method-call",
+            "args": [
+              {
+                "selector": "#target1",
+                "type": "d3select"
+              }
+            ],
+            "instance": {
+              "domain": "brix",
+              "refId": "q1",
+              "type": "ref"
+            }
+          }
+        ]
+      }
+    ],
+    "title": "Exam.01.13 The Communication Process Remember LO 1.3"
+  }
+}

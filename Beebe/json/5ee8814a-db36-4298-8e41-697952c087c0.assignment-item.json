@@ -1,0 +1,196 @@
+{
+  "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope",
+  "@type": "Envelope",
+  "metadata": {
+    "bookTitle": "Public Speaking: An Audience-Centered Approach",
+    "keywords": [
+      "Beebe 9e",
+      "ch 15",
+      "Rudowski"
+    ],
+    "extendedMetadata": [
+      {
+        "name": "Page-Reference",
+        "value": "316"
+      },
+      {
+        "name": "ISBN",
+        "value": "0133859703"
+      },
+      {
+        "name": "M",
+        "value": "c01"
+      },
+      {
+        "name": "assessment_title",
+        "value": "Chapter Quiz: Using Persuasive Strategies"
+      },
+      {
+        "name": "Topic",
+        "value": "Using Logic and Evidence to Persuade"
+      },
+      {
+        "name": "chapterTitle",
+        "value": "Using Persuasive Strategies"
+      },
+      {
+        "name": "item_title",
+        "value": "0133859703_Steven A. Beebe; Susan J. Beebe_ch15_c01_q0009"
+      },
+      {
+        "name": "questionlayout",
+        "value": "1"
+      },
+      {
+        "name": "CH",
+        "value": "15"
+      },
+      {
+        "name": "Difficulty",
+        "value": "Moderate"
+      },
+      {
+        "name": "Objective",
+        "value": "15.2 Use principles of effective logic and evidence to develop a persuasive message."
+      },
+      {
+        "name": "shuffle_choices",
+        "value": "Yes"
+      }
+    ],
+    "subject": [
+      "Communication"
+    ],
+    "contentTypeTier2": [
+      "AssessmentItem"
+    ],
+    "contentTypeTier1": "Assessment",
+    "format": [
+      "application/vnd.pearson.sanvan.v1.activity"
+    ],
+    "version": "1.0",
+    "guid": "5ee8814a-db36-4298-8e41-697952c087c0",
+    "bookAuthor": "Steven A. Beebe; Susan J. Beebe",
+    "title": "Exam.15.10 Using Logic And Evidence To Persuade Apply LO 15.2",
+    "educationalAlignment": [
+      "http://purl.org/pearson/objectives/183725473384362"
+    ]
+  },
+  "body": {
+    "description": "Exam.15.10 Using Logic and Evidence to Persuade, Apply, LO 15.2",
+    "containerConfig": [
+      {
+        "description": "Exam.15.10 Using Logic and Evidence to Persuade, Apply, LO 15.2",
+        "containerId": "target1",
+        "brixConfig": [
+          {
+            "bricId": "q1",
+            "bricType": "MultipleChoiceQuestion",
+            "config": {
+              "id": "QUE60525",
+              "question": "When the governor was up for reelection, he told the citizens that four new highways were going to be built. After the election, he changed his mind and is now against all building projects. This is an example of _________.\n\u003cbr /\u003e",
+              "order": "randomized",
+              "presenterType": "RadioGroup",
+              "presenterConfig": {
+                "numberFormat": "none"
+              },
+              "choices": [
+                {
+                  "answerKey": "answer_1",
+                  "content": "reluctant testimony"
+                },
+                {
+                  "answerKey": "answer_2",
+                  "content": "syllogism"
+                },
+                {
+                  "answerKey": "answer_3",
+                  "content": "deductive reasoning"
+                },
+                {
+                  "answerKey": "answer_4",
+                  "content": "a motivated sequence"
+                }
+              ]
+            },
+            "answerKey": {
+              "assessmentType": "multiplechoice",
+              "answers": {
+                "answer_3": {
+                  "score": 0.0,
+                  "response": "Consider this: Review the ways to use credible evidence. Learning Objective 15.2: Use principles of effective logic and evidence to develop a persuasive message."
+                },
+                "answer_2": {
+                  "score": 0.0,
+                  "response": "Consider this: Review the ways to use credible evidence. Learning Objective 15.2: Use principles of effective logic and evidence to develop a persuasive message."
+                },
+                "answer_1": {
+                  "score": 1.0,
+                  "response": ""
+                },
+                "answer_4": {
+                  "score": 0.0,
+                  "response": "Consider this: Review the ways to use credible evidence. Learning Objective 15.2: Use principles of effective logic and evidence to develop a persuasive message."
+                }
+              }
+            },
+            "configFixup": [
+              {
+                "name": "questionId",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "sequenceNodeKey",
+                  "type": "ref"
+                }
+              },
+              {
+                "name": "maxAttempts",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "maxAttempts",
+                  "type": "ref"
+                }
+              }
+            ]
+          }
+        ],
+        "hookupActions": [
+          {
+            "description": "Hookup the submit manager to evaluate answers",
+            "methodName": "handleRequestsFrom",
+            "type": "method-call",
+            "args": [
+              {
+                "domain": "brix",
+                "refId": "q1",
+                "type": "ref"
+              }
+            ],
+            "instance": {
+              "type": "submit-manager"
+            }
+          },
+          {
+            "description": "Draw the question",
+            "methodName": "draw",
+            "type": "method-call",
+            "args": [
+              {
+                "selector": "#target1",
+                "type": "d3select"
+              }
+            ],
+            "instance": {
+              "domain": "brix",
+              "refId": "q1",
+              "type": "ref"
+            }
+          }
+        ]
+      }
+    ],
+    "title": "Exam.15.10 Using Logic And Evidence To Persuade Apply LO 15.2"
+  }
+}

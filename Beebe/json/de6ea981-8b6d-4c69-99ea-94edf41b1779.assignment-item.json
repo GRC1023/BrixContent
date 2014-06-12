@@ -1,0 +1,196 @@
+{
+  "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope",
+  "@type": "Envelope",
+  "metadata": {
+    "bookTitle": "Listen To This",
+    "keywords": [
+      "Bonds 3e",
+      "ch 26",
+      "Rudowski"
+    ],
+    "extendedMetadata": [
+      {
+        "name": "Page-Reference",
+        "value": "237"
+      },
+      {
+        "name": "ISBN",
+        "value": "0133794636"
+      },
+      {
+        "name": "M",
+        "value": "m01"
+      },
+      {
+        "name": "assessment_title",
+        "value": "Quiz: Ludwig van Beethoven, Symphony no. 5 in C Minor, op. 67"
+      },
+      {
+        "name": "Topic",
+        "value": "Historical Context: Fate?"
+      },
+      {
+        "name": "chapterTitle",
+        "value": "The Nineteenth Century: 1800â1900"
+      },
+      {
+        "name": "module",
+        "value": "Ludwig van Beethoven, Symphony no. 5 in C Minor, op. 67"
+      },
+      {
+        "name": "item_title",
+        "value": "0133794636_Mark Evan Bonds_ch26_m01_q0007"
+      },
+      {
+        "name": "questionlayout",
+        "value": "1"
+      },
+      {
+        "name": "CH",
+        "value": "26"
+      },
+      {
+        "name": "Objective",
+        "value": "LO 26.6 Recount how fate has been associated with Beethoven\u0027s Symphony no. 5."
+      },
+      {
+        "name": "shuffle_choices",
+        "value": "Yes"
+      }
+    ],
+    "subject": [
+      "Music"
+    ],
+    "contentTypeTier2": [
+      "AssessmentItem"
+    ],
+    "contentTypeTier1": "Assessment",
+    "format": [
+      "application/vnd.pearson.sanvan.v1.activity"
+    ],
+    "version": "1.0",
+    "guid": "de6ea981-8b6d-4c69-99ea-94edf41b1779",
+    "bookAuthor": "Mark Evan Bonds",
+    "title": "Ch26 Pre Fact 06",
+    "educationalAlignment": [
+      "http://purl.org/pearson/objectives/183725473384362"
+    ]
+  },
+  "body": {
+    "description": "ch26_pre_fact_06",
+    "containerConfig": [
+      {
+        "description": "ch26_pre_fact_06",
+        "containerId": "target1",
+        "brixConfig": [
+          {
+            "bricId": "q1",
+            "bricType": "MultipleChoiceQuestion",
+            "config": {
+              "id": "QUE64067",
+              "question": "Beethoven\u0027s assistant Anton Schindler said that Beethoven identified the s-s-s-L theme as\n\u003cbr /\u003e",
+              "order": "randomized",
+              "presenterType": "RadioGroup",
+              "presenterConfig": {
+                "numberFormat": "none"
+              },
+              "choices": [
+                {
+                  "answerKey": "answer_1",
+                  "content": "“fate pounding at the portal.”"
+                },
+                {
+                  "answerKey": "answer_2",
+                  "content": "“the inexorable march of time.”"
+                },
+                {
+                  "answerKey": "answer_3",
+                  "content": "“a clap of thunder.”"
+                },
+                {
+                  "answerKey": "answer_4",
+                  "content": "“the footsteps of a giant.”"
+                }
+              ]
+            },
+            "answerKey": {
+              "assessmentType": "multiplechoice",
+              "answers": {
+                "answer_3": {
+                  "score": 0.0,
+                  "response": "\u003cem\u003eIncorrect. \u003c/em\u003eLO 26.6 Recount how fate has been associated with Beethoven\u0027s Symphony no. 5."
+                },
+                "answer_2": {
+                  "score": 0.0,
+                  "response": "\u003cem\u003eIncorrect. \u003c/em\u003eLO 26.6 Recount how fate has been associated with Beethoven\u0027s Symphony no. 5."
+                },
+                "answer_1": {
+                  "score": 1.0,
+                  "response": ""
+                },
+                "answer_4": {
+                  "score": 0.0,
+                  "response": "\u003cem\u003eIncorrect. \u003c/em\u003eLO 26.6 Recount how fate has been associated with Beethoven\u0027s Symphony no. 5."
+                }
+              }
+            },
+            "configFixup": [
+              {
+                "name": "questionId",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "sequenceNodeKey",
+                  "type": "ref"
+                }
+              },
+              {
+                "name": "maxAttempts",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "maxAttempts",
+                  "type": "ref"
+                }
+              }
+            ]
+          }
+        ],
+        "hookupActions": [
+          {
+            "description": "Hookup the submit manager to evaluate answers",
+            "methodName": "handleRequestsFrom",
+            "type": "method-call",
+            "args": [
+              {
+                "domain": "brix",
+                "refId": "q1",
+                "type": "ref"
+              }
+            ],
+            "instance": {
+              "type": "submit-manager"
+            }
+          },
+          {
+            "description": "Draw the question",
+            "methodName": "draw",
+            "type": "method-call",
+            "args": [
+              {
+                "selector": "#target1",
+                "type": "d3select"
+              }
+            ],
+            "instance": {
+              "domain": "brix",
+              "refId": "q1",
+              "type": "ref"
+            }
+          }
+        ]
+      }
+    ],
+    "title": "Ch26 Pre Fact 06"
+  }
+}
