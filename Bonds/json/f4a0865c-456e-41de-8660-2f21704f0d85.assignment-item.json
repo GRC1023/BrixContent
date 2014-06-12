@@ -1,0 +1,196 @@
+{
+  "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope",
+  "@type": "Envelope",
+  "metadata": {
+    "bookTitle": "Listen To This",
+    "keywords": [
+      "Bonds 3e",
+      "ch 41",
+      "Rudowski"
+    ],
+    "extendedMetadata": [
+      {
+        "name": "Page-Reference",
+        "value": "352"
+      },
+      {
+        "name": "ISBN",
+        "value": "0133794636"
+      },
+      {
+        "name": "M",
+        "value": "m01"
+      },
+      {
+        "name": "assessment_title",
+        "value": "Quiz: Arnold Schoenberg, âColumbineâ from Pierrot lunaire"
+      },
+      {
+        "name": "Topic",
+        "value": "chapter-opening text"
+      },
+      {
+        "name": "chapterTitle",
+        "value": "Since 1900: 1900â"
+      },
+      {
+        "name": "module",
+        "value": "Arnold Schoenberg, âColumbineâ from Pierrot lunaire"
+      },
+      {
+        "name": "item_title",
+        "value": "0133794636_Mark Evan Bonds_ch41_m01_q0002"
+      },
+      {
+        "name": "questionlayout",
+        "value": "1"
+      },
+      {
+        "name": "CH",
+        "value": "41"
+      },
+      {
+        "name": "Objective",
+        "value": "LO 41.1 Define Expressionism and identify the motivations that led to this artistic movement."
+      },
+      {
+        "name": "shuffle_choices",
+        "value": "Yes"
+      }
+    ],
+    "subject": [
+      "Music"
+    ],
+    "contentTypeTier2": [
+      "AssessmentItem"
+    ],
+    "contentTypeTier1": "Assessment",
+    "format": [
+      "application/vnd.pearson.sanvan.v1.activity"
+    ],
+    "version": "1.0",
+    "guid": "f4a0865c-456e-41de-8660-2f21704f0d85",
+    "bookAuthor": "Mark Evan Bonds",
+    "title": "Ch41 Post Concept 05",
+    "educationalAlignment": [
+      "http://purl.org/pearson/objectives/183725473384362"
+    ]
+  },
+  "body": {
+    "description": "ch41_post_concept_05",
+    "containerConfig": [
+      {
+        "description": "ch41_post_concept_05",
+        "containerId": "target1",
+        "brixConfig": [
+          {
+            "bricId": "q1",
+            "bricType": "MultipleChoiceQuestion",
+            "config": {
+              "id": "QUE64399",
+              "question": "Which of these stanzas of poetry seems most expressionistic?\n\u003cbr /\u003e",
+              "order": "randomized",
+              "presenterType": "RadioGroup",
+              "presenterConfig": {
+                "numberFormat": "none"
+              },
+              "choices": [
+                {
+                  "answerKey": "answer_1",
+                  "content": "Heavy, gloomy giant black moths\n\u003cbr /\u003eMassacred the sun\u0027s bright rays;\n\u003cbr /\u003eLike a close-shut magic book\n\u003cbr /\u003eBroods the distant sky in silence."
+                },
+                {
+                  "answerKey": "answer_2",
+                  "content": "Full many a glorious morning have I seen,\n\u003cbr /\u003eFlatter the mountain tops with sovereign eye\n\u003cbr /\u003eKissing with golden face the meadows green;\n\u003cbr /\u003eGilding pale streams with heavenly alchemy:"
+                },
+                {
+                  "answerKey": "answer_3",
+                  "content": "A drop fell on the apple tree\n\u003cbr /\u003eAnother on the roof;\n\u003cbr /\u003eA half a dozen kissed the eaves,\n\u003cbr /\u003eAnd made the gables laugh"
+                },
+                {
+                  "answerKey": "answer_4",
+                  "content": "I shall be telling this with a sigh\n\u003cbr /\u003eSomewhere ages and ages hence:\n\u003cbr /\u003eTwo roads diverged in a wood, and—\n\u003cbr /\u003eI took the one less traveled by,\n\u003cbr /\u003eAnd that has made all the difference."
+                }
+              ]
+            },
+            "answerKey": {
+              "assessmentType": "multiplechoice",
+              "answers": {
+                "answer_3": {
+                  "score": 0.0,
+                  "response": "LO 41.1 Define Expressionism and identify the motivations that led to this artistic movement."
+                },
+                "answer_2": {
+                  "score": 0.0,
+                  "response": "LO 41.1 Define Expressionism and identify the motivations that led to this artistic movement."
+                },
+                "answer_1": {
+                  "score": 1.0,
+                  "response": ""
+                },
+                "answer_4": {
+                  "score": 0.0,
+                  "response": "LO 41.1 Define Expressionism and identify the motivations that led to this artistic movement."
+                }
+              }
+            },
+            "configFixup": [
+              {
+                "name": "questionId",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "sequenceNodeKey",
+                  "type": "ref"
+                }
+              },
+              {
+                "name": "maxAttempts",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "maxAttempts",
+                  "type": "ref"
+                }
+              }
+            ]
+          }
+        ],
+        "hookupActions": [
+          {
+            "description": "Hookup the submit manager to evaluate answers",
+            "methodName": "handleRequestsFrom",
+            "type": "method-call",
+            "args": [
+              {
+                "domain": "brix",
+                "refId": "q1",
+                "type": "ref"
+              }
+            ],
+            "instance": {
+              "type": "submit-manager"
+            }
+          },
+          {
+            "description": "Draw the question",
+            "methodName": "draw",
+            "type": "method-call",
+            "args": [
+              {
+                "selector": "#target1",
+                "type": "d3select"
+              }
+            ],
+            "instance": {
+              "domain": "brix",
+              "refId": "q1",
+              "type": "ref"
+            }
+          }
+        ]
+      }
+    ],
+    "title": "Ch41 Post Concept 05"
+  }
+}

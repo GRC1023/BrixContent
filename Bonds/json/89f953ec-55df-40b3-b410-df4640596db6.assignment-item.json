@@ -1,0 +1,196 @@
+{
+  "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope",
+  "@type": "Envelope",
+  "metadata": {
+    "bookTitle": "Listen To This",
+    "keywords": [
+      "Bonds 3e",
+      "ch 02",
+      "Rudowski"
+    ],
+    "extendedMetadata": [
+      {
+        "name": "Page-Reference",
+        "value": "31"
+      },
+      {
+        "name": "ISBN",
+        "value": "0133794636"
+      },
+      {
+        "name": "M",
+        "value": "m01"
+      },
+      {
+        "name": "assessment_title",
+        "value": "Quiz: San Ildefonso Indians of New Mexico, Eagle Dance"
+      },
+      {
+        "name": "Topic",
+        "value": "Melodic Contour"
+      },
+      {
+        "name": "chapterTitle",
+        "value": "The Middle Ages: 476 CE â Early Fifteenth Century"
+      },
+      {
+        "name": "module",
+        "value": "San Ildefonso Indians of New Mexico, Eagle Dance"
+      },
+      {
+        "name": "item_title",
+        "value": "0133794636_Mark Evan Bonds_ch02_m01_q0003"
+      },
+      {
+        "name": "questionlayout",
+        "value": "1"
+      },
+      {
+        "name": "CH",
+        "value": "2"
+      },
+      {
+        "name": "Objective",
+        "value": "LO 2.3 Describe patterning in North American Indian chant melodies."
+      },
+      {
+        "name": "shuffle_choices",
+        "value": "Yes"
+      }
+    ],
+    "subject": [
+      "Music"
+    ],
+    "contentTypeTier2": [
+      "AssessmentItem"
+    ],
+    "contentTypeTier1": "Assessment",
+    "format": [
+      "application/vnd.pearson.sanvan.v1.activity"
+    ],
+    "version": "1.0",
+    "guid": "89f953ec-55df-40b3-b410-df4640596db6",
+    "bookAuthor": "Mark Evan Bonds",
+    "title": "Ch02 Post Fact 02",
+    "educationalAlignment": [
+      "http://purl.org/pearson/objectives/183725473384362"
+    ]
+  },
+  "body": {
+    "description": "ch02_post_fact_02",
+    "containerConfig": [
+      {
+        "description": "ch02_post_fact_02",
+        "containerId": "target1",
+        "brixConfig": [
+          {
+            "bricId": "q1",
+            "bricType": "MultipleChoiceQuestion",
+            "config": {
+              "id": "QUE62975",
+              "question": "How do Native Americans decide on which vocables to sing?\n\u003cbr /\u003e",
+              "order": "randomized",
+              "presenterType": "RadioGroup",
+              "presenterConfig": {
+                "numberFormat": "none"
+              },
+              "choices": [
+                {
+                  "answerKey": "answer_1",
+                  "content": "They believe they are transmitted from the spirit world through dream or revelation."
+                },
+                {
+                  "answerKey": "answer_2",
+                  "content": "They are improvised during dance as the spirit moves the performers."
+                },
+                {
+                  "answerKey": "answer_3",
+                  "content": "They come from an ancient language whose meanings have been lost."
+                },
+                {
+                  "answerKey": "answer_4",
+                  "content": "They are meant to imitate the sound of the eagle."
+                }
+              ]
+            },
+            "answerKey": {
+              "assessmentType": "multiplechoice",
+              "answers": {
+                "answer_3": {
+                  "score": 0.0,
+                  "response": "LO 2.3 Describe patterning in North American Indian chant melodies."
+                },
+                "answer_2": {
+                  "score": 0.0,
+                  "response": "LO 2.3 Describe patterning in North American Indian chant melodies."
+                },
+                "answer_1": {
+                  "score": 1.0,
+                  "response": ""
+                },
+                "answer_4": {
+                  "score": 0.0,
+                  "response": "LO 2.3 Describe patterning in North American Indian chant melodies."
+                }
+              }
+            },
+            "configFixup": [
+              {
+                "name": "questionId",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "sequenceNodeKey",
+                  "type": "ref"
+                }
+              },
+              {
+                "name": "maxAttempts",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "maxAttempts",
+                  "type": "ref"
+                }
+              }
+            ]
+          }
+        ],
+        "hookupActions": [
+          {
+            "description": "Hookup the submit manager to evaluate answers",
+            "methodName": "handleRequestsFrom",
+            "type": "method-call",
+            "args": [
+              {
+                "domain": "brix",
+                "refId": "q1",
+                "type": "ref"
+              }
+            ],
+            "instance": {
+              "type": "submit-manager"
+            }
+          },
+          {
+            "description": "Draw the question",
+            "methodName": "draw",
+            "type": "method-call",
+            "args": [
+              {
+                "selector": "#target1",
+                "type": "d3select"
+              }
+            ],
+            "instance": {
+              "domain": "brix",
+              "refId": "q1",
+              "type": "ref"
+            }
+          }
+        ]
+      }
+    ],
+    "title": "Ch02 Post Fact 02"
+  }
+}

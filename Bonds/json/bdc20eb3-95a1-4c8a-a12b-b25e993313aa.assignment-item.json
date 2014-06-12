@@ -1,0 +1,196 @@
+{
+  "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope",
+  "@type": "Envelope",
+  "metadata": {
+    "bookTitle": "Listen To This",
+    "keywords": [
+      "Bonds 3e",
+      "ch 37",
+      "Rudowski"
+    ],
+    "extendedMetadata": [
+      {
+        "name": "Page-Reference",
+        "value": "313"
+      },
+      {
+        "name": "ISBN",
+        "value": "0133794636"
+      },
+      {
+        "name": "M",
+        "value": "m01"
+      },
+      {
+        "name": "assessment_title",
+        "value": "Quiz: Johannes Brahms, Symphony no. 4 in E Minor, op. 98, finale"
+      },
+      {
+        "name": "Topic",
+        "value": "Timbre: The Drama of Orchestration"
+      },
+      {
+        "name": "chapterTitle",
+        "value": "The Nineteenth Century: 1800â1900"
+      },
+      {
+        "name": "module",
+        "value": "Johannes Brahms, Symphony no. 4 in E Minor, op. 98, finale"
+      },
+      {
+        "name": "item_title",
+        "value": "0133794636_Mark Evan Bonds_ch37_m01_q0006"
+      },
+      {
+        "name": "questionlayout",
+        "value": "1"
+      },
+      {
+        "name": "CH",
+        "value": "37"
+      },
+      {
+        "name": "Objective",
+        "value": "LO 37.5 Listen to the ways in which Brahms\u0027 orchestration provides variety across the movement as a whole."
+      },
+      {
+        "name": "shuffle_choices",
+        "value": "Yes"
+      }
+    ],
+    "subject": [
+      "Music"
+    ],
+    "contentTypeTier2": [
+      "AssessmentItem"
+    ],
+    "contentTypeTier1": "Assessment",
+    "format": [
+      "application/vnd.pearson.sanvan.v1.activity"
+    ],
+    "version": "1.0",
+    "guid": "bdc20eb3-95a1-4c8a-a12b-b25e993313aa",
+    "bookAuthor": "Mark Evan Bonds",
+    "title": "Ch37 Pre Concept 01",
+    "educationalAlignment": [
+      "http://purl.org/pearson/objectives/183725473384362"
+    ]
+  },
+  "body": {
+    "description": "ch37_pre_concept_01",
+    "containerConfig": [
+      {
+        "description": "ch37_pre_concept_01",
+        "containerId": "target1",
+        "brixConfig": [
+          {
+            "bricId": "q1",
+            "bricType": "MultipleChoiceQuestion",
+            "config": {
+              "id": "QUE64240",
+              "question": "The primary way Brahms differentiates each variation is by changing the\n\u003cbr /\u003e",
+              "order": "randomized",
+              "presenterType": "RadioGroup",
+              "presenterConfig": {
+                "numberFormat": "none"
+              },
+              "choices": [
+                {
+                  "answerKey": "answer_1",
+                  "content": "orchestration."
+                },
+                {
+                  "answerKey": "answer_2",
+                  "content": "meter."
+                },
+                {
+                  "answerKey": "answer_3",
+                  "content": "mode."
+                },
+                {
+                  "answerKey": "answer_4",
+                  "content": "tempo."
+                }
+              ]
+            },
+            "answerKey": {
+              "assessmentType": "multiplechoice",
+              "answers": {
+                "answer_3": {
+                  "score": 0.0,
+                  "response": "  LO 37.5 Listen to the ways in which Brahms\u0027 orchestration provides variety across the movement as a whole."
+                },
+                "answer_2": {
+                  "score": 0.0,
+                  "response": "  LO 37.5 Listen to the ways in which Brahms\u0027 orchestration provides variety across the movement as a whole."
+                },
+                "answer_1": {
+                  "score": 1.0,
+                  "response": ""
+                },
+                "answer_4": {
+                  "score": 0.0,
+                  "response": "  LO 37.5 Listen to the ways in which Brahms\u0027 orchestration provides variety across the movement as a whole."
+                }
+              }
+            },
+            "configFixup": [
+              {
+                "name": "questionId",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "sequenceNodeKey",
+                  "type": "ref"
+                }
+              },
+              {
+                "name": "maxAttempts",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "maxAttempts",
+                  "type": "ref"
+                }
+              }
+            ]
+          }
+        ],
+        "hookupActions": [
+          {
+            "description": "Hookup the submit manager to evaluate answers",
+            "methodName": "handleRequestsFrom",
+            "type": "method-call",
+            "args": [
+              {
+                "domain": "brix",
+                "refId": "q1",
+                "type": "ref"
+              }
+            ],
+            "instance": {
+              "type": "submit-manager"
+            }
+          },
+          {
+            "description": "Draw the question",
+            "methodName": "draw",
+            "type": "method-call",
+            "args": [
+              {
+                "selector": "#target1",
+                "type": "d3select"
+              }
+            ],
+            "instance": {
+              "domain": "brix",
+              "refId": "q1",
+              "type": "ref"
+            }
+          }
+        ]
+      }
+    ],
+    "title": "Ch37 Pre Concept 01"
+  }
+}

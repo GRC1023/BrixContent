@@ -1,0 +1,184 @@
+{
+  "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope",
+  "@type": "Envelope",
+  "metadata": {
+    "bookTitle": "Listen To This",
+    "keywords": [
+      "Bonds 3e",
+      "Alick",
+      "Part Exams"
+    ],
+    "extendedMetadata": [
+      {
+        "name": "ISBN",
+        "value": "0133794636"
+      },
+      {
+        "name": "M",
+        "value": "c02"
+      },
+      {
+        "name": "assessment_title",
+        "value": "Part Quiz: The Baroque Era: 1600â1750"
+      },
+      {
+        "name": "chapterTitle",
+        "value": "The Baroque Era: 1600â1750"
+      },
+      {
+        "name": "module",
+        "value": "The Baroque Era: 1600â1750"
+      },
+      {
+        "name": "item_title",
+        "value": "0133794636_Mark Evan Bonds_chP3_c02_q0006"
+      },
+      {
+        "name": "questionlayout",
+        "value": "1"
+      },
+      {
+        "name": "CH",
+        "value": "P3"
+      },
+      {
+        "name": "shuffle_choices",
+        "value": "Yes"
+      }
+    ],
+    "subject": [
+      "Music"
+    ],
+    "contentTypeTier2": [
+      "AssessmentItem"
+    ],
+    "contentTypeTier1": "Assessment",
+    "format": [
+      "application/vnd.pearson.sanvan.v1.activity"
+    ],
+    "version": "1.0",
+    "guid": "b9fe8706-8c32-47d1-81c8-ae95c7391236",
+    "bookAuthor": "Mark Evan Bonds",
+    "title": "Pt03 Exam 12",
+    "educationalAlignment": [
+      "http://purl.org/pearson/objectives/183725473384362"
+    ]
+  },
+  "body": {
+    "description": "pt03_exam_12",
+    "containerConfig": [
+      {
+        "description": "pt03_exam_12",
+        "containerId": "target1",
+        "brixConfig": [
+          {
+            "bricId": "q1",
+            "bricType": "MultipleChoiceQuestion",
+            "config": {
+              "id": "QUE66151",
+              "question": "Bach’s Brandenburg no. 2 in F major was not performed for many years because\n\u003cbr /\u003e",
+              "order": "randomized",
+              "presenterType": "RadioGroup",
+              "presenterConfig": {
+                "numberFormat": "none"
+              },
+              "choices": [
+                {
+                  "answerKey": "answer_1",
+                  "content": "no one knew how to play the natural “Baroque” trumpet."
+                },
+                {
+                  "answerKey": "answer_2",
+                  "content": "his music was considered too old-fashioned."
+                },
+                {
+                  "answerKey": "answer_3",
+                  "content": "the music was too difficult for most musicians of the nineteenth century."
+                },
+                {
+                  "answerKey": "answer_4",
+                  "content": "copyright struggles between Bach’s many children prevented the scores from circulating."
+                }
+              ]
+            },
+            "answerKey": {
+              "assessmentType": "multiplechoice",
+              "answers": {
+                "answer_3": {
+                  "score": 0.0,
+                  "response": "P3.1 List several significant changes in music that occurred during the Baroque period."
+                },
+                "answer_2": {
+                  "score": 0.0,
+                  "response": "P3.1 List several significant changes in music that occurred during the Baroque period."
+                },
+                "answer_1": {
+                  "score": 1.0,
+                  "response": ""
+                },
+                "answer_4": {
+                  "score": 0.0,
+                  "response": "P3.1 List several significant changes in music that occurred during the Baroque period."
+                }
+              }
+            },
+            "configFixup": [
+              {
+                "name": "questionId",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "sequenceNodeKey",
+                  "type": "ref"
+                }
+              },
+              {
+                "name": "maxAttempts",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "maxAttempts",
+                  "type": "ref"
+                }
+              }
+            ]
+          }
+        ],
+        "hookupActions": [
+          {
+            "description": "Hookup the submit manager to evaluate answers",
+            "methodName": "handleRequestsFrom",
+            "type": "method-call",
+            "args": [
+              {
+                "domain": "brix",
+                "refId": "q1",
+                "type": "ref"
+              }
+            ],
+            "instance": {
+              "type": "submit-manager"
+            }
+          },
+          {
+            "description": "Draw the question",
+            "methodName": "draw",
+            "type": "method-call",
+            "args": [
+              {
+                "selector": "#target1",
+                "type": "d3select"
+              }
+            ],
+            "instance": {
+              "domain": "brix",
+              "refId": "q1",
+              "type": "ref"
+            }
+          }
+        ]
+      }
+    ],
+    "title": "Pt03 Exam 12"
+  }
+}

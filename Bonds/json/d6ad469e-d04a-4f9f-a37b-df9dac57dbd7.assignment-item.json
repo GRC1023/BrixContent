@@ -1,0 +1,196 @@
+{
+  "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope",
+  "@type": "Envelope",
+  "metadata": {
+    "bookTitle": "Listen To This",
+    "keywords": [
+      "Bonds 3e",
+      "ch 44",
+      "Rudowski"
+    ],
+    "extendedMetadata": [
+      {
+        "name": "Page-Reference",
+        "value": "377"
+      },
+      {
+        "name": "ISBN",
+        "value": "0133794636"
+      },
+      {
+        "name": "M",
+        "value": "m01"
+      },
+      {
+        "name": "assessment_title",
+        "value": "Quiz: Robert Johnson, âTerraplane Bluesâ"
+      },
+      {
+        "name": "Topic",
+        "value": "chapter-opening text"
+      },
+      {
+        "name": "chapterTitle",
+        "value": "Since 1900: 1900â"
+      },
+      {
+        "name": "module",
+        "value": "Robert Johnson, âTerraplane Bluesâ"
+      },
+      {
+        "name": "item_title",
+        "value": "0133794636_Mark Evan Bonds_ch44_m01_q0001"
+      },
+      {
+        "name": "questionlayout",
+        "value": "1"
+      },
+      {
+        "name": "CH",
+        "value": "44"
+      },
+      {
+        "name": "Objective",
+        "value": "LO 44.1 Explain the origins of \"the blues\" in the early twentieth century."
+      },
+      {
+        "name": "shuffle_choices",
+        "value": "Yes"
+      }
+    ],
+    "subject": [
+      "Music"
+    ],
+    "contentTypeTier2": [
+      "AssessmentItem"
+    ],
+    "contentTypeTier1": "Assessment",
+    "format": [
+      "application/vnd.pearson.sanvan.v1.activity"
+    ],
+    "version": "1.0",
+    "guid": "d6ad469e-d04a-4f9f-a37b-df9dac57dbd7",
+    "bookAuthor": "Mark Evan Bonds",
+    "title": "Ch44 Fa Apply 05",
+    "educationalAlignment": [
+      "http://purl.org/pearson/objectives/183725473384362"
+    ]
+  },
+  "body": {
+    "description": "ch44_fa_apply_05",
+    "containerConfig": [
+      {
+        "description": "ch44_fa_apply_05",
+        "containerId": "target1",
+        "brixConfig": [
+          {
+            "bricId": "q1",
+            "bricType": "MultipleChoiceQuestion",
+            "config": {
+              "id": "QUE64428",
+              "question": "From which tradition does the 12-bar blues emerge?\n\u003cbr /\u003e",
+              "order": "randomized",
+              "presenterType": "RadioGroup",
+              "presenterConfig": {
+                "numberFormat": "none"
+              },
+              "choices": [
+                {
+                  "answerKey": "answer_1",
+                  "content": "African American music"
+                },
+                {
+                  "answerKey": "answer_2",
+                  "content": "Native American music"
+                },
+                {
+                  "answerKey": "answer_3",
+                  "content": "European popular song"
+                },
+                {
+                  "answerKey": "answer_4",
+                  "content": "Nineteenth-century parlor song"
+                }
+              ]
+            },
+            "answerKey": {
+              "assessmentType": "multiplechoice",
+              "answers": {
+                "answer_3": {
+                  "score": 0.0,
+                  "response": " LO 44.1 Explain the origins of \"the blues\" in the early twentieth century."
+                },
+                "answer_2": {
+                  "score": 0.0,
+                  "response": " LO 44.1 Explain the origins of \"the blues\" in the early twentieth century."
+                },
+                "answer_1": {
+                  "score": 1.0,
+                  "response": ""
+                },
+                "answer_4": {
+                  "score": 0.0,
+                  "response": " LO 44.1 Explain the origins of \"the blues\" in the early twentieth century."
+                }
+              }
+            },
+            "configFixup": [
+              {
+                "name": "questionId",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "sequenceNodeKey",
+                  "type": "ref"
+                }
+              },
+              {
+                "name": "maxAttempts",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "maxAttempts",
+                  "type": "ref"
+                }
+              }
+            ]
+          }
+        ],
+        "hookupActions": [
+          {
+            "description": "Hookup the submit manager to evaluate answers",
+            "methodName": "handleRequestsFrom",
+            "type": "method-call",
+            "args": [
+              {
+                "domain": "brix",
+                "refId": "q1",
+                "type": "ref"
+              }
+            ],
+            "instance": {
+              "type": "submit-manager"
+            }
+          },
+          {
+            "description": "Draw the question",
+            "methodName": "draw",
+            "type": "method-call",
+            "args": [
+              {
+                "selector": "#target1",
+                "type": "d3select"
+              }
+            ],
+            "instance": {
+              "domain": "brix",
+              "refId": "q1",
+              "type": "ref"
+            }
+          }
+        ]
+      }
+    ],
+    "title": "Ch44 Fa Apply 05"
+  }
+}

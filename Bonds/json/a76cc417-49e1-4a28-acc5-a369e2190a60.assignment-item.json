@@ -1,0 +1,192 @@
+{
+  "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope",
+  "@type": "Envelope",
+  "metadata": {
+    "bookTitle": "Listen To This",
+    "keywords": [
+      "Bonds 3e",
+      "ch 38",
+      "Rudowski"
+    ],
+    "extendedMetadata": [
+      {
+        "name": "Page-Reference",
+        "value": "322"
+      },
+      {
+        "name": "ISBN",
+        "value": "0133794636"
+      },
+      {
+        "name": "M",
+        "value": "m01"
+      },
+      {
+        "name": "assessment_title",
+        "value": "Quiz: AntonÃ­n DvoÅÃ¡k, String Quartet in F Major, op. 96 (âAmericanâ), third movement"
+      },
+      {
+        "name": "chapterTitle",
+        "value": "Since 1900: 1900â"
+      },
+      {
+        "name": "module",
+        "value": "AntonÃ­n DvoÅÃ¡k, String Quartet in F Major, op. 96 (âAmericanâ), third movement"
+      },
+      {
+        "name": "item_title",
+        "value": "0133794636_Mark Evan Bonds_ch38_m01_q0007"
+      },
+      {
+        "name": "questionlayout",
+        "value": "1"
+      },
+      {
+        "name": "CH",
+        "value": "38"
+      },
+      {
+        "name": "Objective",
+        "value": "LO 38.3 Outline Dvo?Ã¡k\u0027s career as a composer, including the circumstances by which he came to write a string quartet in Iowa in 1893."
+      },
+      {
+        "name": "shuffle_choices",
+        "value": "Yes"
+      }
+    ],
+    "subject": [
+      "Music"
+    ],
+    "contentTypeTier2": [
+      "AssessmentItem"
+    ],
+    "contentTypeTier1": "Assessment",
+    "format": [
+      "application/vnd.pearson.sanvan.v1.activity"
+    ],
+    "version": "1.0",
+    "guid": "a76cc417-49e1-4a28-acc5-a369e2190a60",
+    "bookAuthor": "Mark Evan Bonds",
+    "title": "Ch38 Post Fact 03",
+    "educationalAlignment": [
+      "http://purl.org/pearson/objectives/183725473384362"
+    ]
+  },
+  "body": {
+    "description": "ch38_post_fact_03",
+    "containerConfig": [
+      {
+        "description": "ch38_post_fact_03",
+        "containerId": "target1",
+        "brixConfig": [
+          {
+            "bricId": "q1",
+            "bricType": "MultipleChoiceQuestion",
+            "config": {
+              "id": "QUE64251",
+              "question": "Dvořák felt himself to be a\n\u003cbr /\u003e",
+              "order": "randomized",
+              "presenterType": "RadioGroup",
+              "presenterConfig": {
+                "numberFormat": "none"
+              },
+              "choices": [
+                {
+                  "answerKey": "answer_1",
+                  "content": "Czech composer."
+                },
+                {
+                  "answerKey": "answer_2",
+                  "content": "American composer."
+                },
+                {
+                  "answerKey": "answer_3",
+                  "content": "Native American composer."
+                },
+                {
+                  "answerKey": "answer_4",
+                  "content": "German composer."
+                }
+              ]
+            },
+            "answerKey": {
+              "assessmentType": "multiplechoice",
+              "answers": {
+                "answer_3": {
+                  "score": 0.0,
+                  "response": " LO 38.3 Outline Dvo?ák\u0027s career as a composer, including the circumstances by which he came to write a string quartet in Iowa in 1893."
+                },
+                "answer_2": {
+                  "score": 0.0,
+                  "response": " LO 38.3 Outline Dvo?ák\u0027s career as a composer, including the circumstances by which he came to write a string quartet in Iowa in 1893."
+                },
+                "answer_1": {
+                  "score": 1.0,
+                  "response": ""
+                },
+                "answer_4": {
+                  "score": 0.0,
+                  "response": " LO 38.3 Outline Dvo?ák\u0027s career as a composer, including the circumstances by which he came to write a string quartet in Iowa in 1893."
+                }
+              }
+            },
+            "configFixup": [
+              {
+                "name": "questionId",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "sequenceNodeKey",
+                  "type": "ref"
+                }
+              },
+              {
+                "name": "maxAttempts",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "maxAttempts",
+                  "type": "ref"
+                }
+              }
+            ]
+          }
+        ],
+        "hookupActions": [
+          {
+            "description": "Hookup the submit manager to evaluate answers",
+            "methodName": "handleRequestsFrom",
+            "type": "method-call",
+            "args": [
+              {
+                "domain": "brix",
+                "refId": "q1",
+                "type": "ref"
+              }
+            ],
+            "instance": {
+              "type": "submit-manager"
+            }
+          },
+          {
+            "description": "Draw the question",
+            "methodName": "draw",
+            "type": "method-call",
+            "args": [
+              {
+                "selector": "#target1",
+                "type": "d3select"
+              }
+            ],
+            "instance": {
+              "domain": "brix",
+              "refId": "q1",
+              "type": "ref"
+            }
+          }
+        ]
+      }
+    ],
+    "title": "Ch38 Post Fact 03"
+  }
+}

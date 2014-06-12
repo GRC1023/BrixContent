@@ -1,0 +1,196 @@
+{
+  "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope",
+  "@type": "Envelope",
+  "metadata": {
+    "bookTitle": "Listen To This",
+    "keywords": [
+      "Bonds 3e",
+      "ch 10",
+      "Rudowski"
+    ],
+    "extendedMetadata": [
+      {
+        "name": "Page-Reference",
+        "value": "96"
+      },
+      {
+        "name": "ISBN",
+        "value": "0133794636"
+      },
+      {
+        "name": "M",
+        "value": "m01"
+      },
+      {
+        "name": "assessment_title",
+        "value": "Quiz: Claudio Monteverdi, Orpheus, selection from Act II"
+      },
+      {
+        "name": "Topic",
+        "value": "Profile: Claudio Monteverdi"
+      },
+      {
+        "name": "chapterTitle",
+        "value": "The Baroque Era: 1600â1750"
+      },
+      {
+        "name": "module",
+        "value": "Claudio Monteverdi, Orpheus, selection from Act II"
+      },
+      {
+        "name": "item_title",
+        "value": "0133794636_Mark Evan Bonds_ch10_m01_q0010"
+      },
+      {
+        "name": "questionlayout",
+        "value": "1"
+      },
+      {
+        "name": "CH",
+        "value": "10"
+      },
+      {
+        "name": "Objective",
+        "value": "LO 10.5 Outline Monteverdi\u0027s career as a composer."
+      },
+      {
+        "name": "shuffle_choices",
+        "value": "Yes"
+      }
+    ],
+    "subject": [
+      "Music"
+    ],
+    "contentTypeTier2": [
+      "AssessmentItem"
+    ],
+    "contentTypeTier1": "Assessment",
+    "format": [
+      "application/vnd.pearson.sanvan.v1.activity"
+    ],
+    "version": "1.0",
+    "guid": "aa4d546c-5d5f-461b-bb8b-41c9c96f1996",
+    "bookAuthor": "Mark Evan Bonds",
+    "title": "Ch10 Post Fact 02",
+    "educationalAlignment": [
+      "http://purl.org/pearson/objectives/183725473384362"
+    ]
+  },
+  "body": {
+    "description": "ch10_post_fact_02",
+    "containerConfig": [
+      {
+        "description": "ch10_post_fact_02",
+        "containerId": "target1",
+        "brixConfig": [
+          {
+            "bricId": "q1",
+            "bricType": "MultipleChoiceQuestion",
+            "config": {
+              "id": "QUE63628",
+              "question": "Claudio Monteverdi had a career that spanned the following two eras:\n\u003cbr /\u003e",
+              "order": "randomized",
+              "presenterType": "RadioGroup",
+              "presenterConfig": {
+                "numberFormat": "none"
+              },
+              "choices": [
+                {
+                  "answerKey": "answer_1",
+                  "content": "Renaissance and Baroque."
+                },
+                {
+                  "answerKey": "answer_2",
+                  "content": "Baroque and Classical."
+                },
+                {
+                  "answerKey": "answer_3",
+                  "content": "Choral and Classical."
+                },
+                {
+                  "answerKey": "answer_4",
+                  "content": "Middle Ages and Renaissance."
+                }
+              ]
+            },
+            "answerKey": {
+              "assessmentType": "multiplechoice",
+              "answers": {
+                "answer_3": {
+                  "score": 0.0,
+                  "response": " LO 10.5 Outline Monteverdi\u0027s career as a composer."
+                },
+                "answer_2": {
+                  "score": 0.0,
+                  "response": " LO 10.5 Outline Monteverdi\u0027s career as a composer."
+                },
+                "answer_1": {
+                  "score": 1.0,
+                  "response": ""
+                },
+                "answer_4": {
+                  "score": 0.0,
+                  "response": " LO 10.5 Outline Monteverdi\u0027s career as a composer."
+                }
+              }
+            },
+            "configFixup": [
+              {
+                "name": "questionId",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "sequenceNodeKey",
+                  "type": "ref"
+                }
+              },
+              {
+                "name": "maxAttempts",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "maxAttempts",
+                  "type": "ref"
+                }
+              }
+            ]
+          }
+        ],
+        "hookupActions": [
+          {
+            "description": "Hookup the submit manager to evaluate answers",
+            "methodName": "handleRequestsFrom",
+            "type": "method-call",
+            "args": [
+              {
+                "domain": "brix",
+                "refId": "q1",
+                "type": "ref"
+              }
+            ],
+            "instance": {
+              "type": "submit-manager"
+            }
+          },
+          {
+            "description": "Draw the question",
+            "methodName": "draw",
+            "type": "method-call",
+            "args": [
+              {
+                "selector": "#target1",
+                "type": "d3select"
+              }
+            ],
+            "instance": {
+              "domain": "brix",
+              "refId": "q1",
+              "type": "ref"
+            }
+          }
+        ]
+      }
+    ],
+    "title": "Ch10 Post Fact 02"
+  }
+}

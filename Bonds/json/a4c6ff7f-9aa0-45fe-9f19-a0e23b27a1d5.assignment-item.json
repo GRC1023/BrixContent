@@ -1,0 +1,196 @@
+{
+  "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope",
+  "@type": "Envelope",
+  "metadata": {
+    "bookTitle": "Listen To This",
+    "keywords": [
+      "Bonds 3e",
+      "ch 53",
+      "Rudowski"
+    ],
+    "extendedMetadata": [
+      {
+        "name": "Page-Reference",
+        "value": "441"
+      },
+      {
+        "name": "ISBN",
+        "value": "0133794636"
+      },
+      {
+        "name": "M",
+        "value": "m01"
+      },
+      {
+        "name": "assessment_title",
+        "value": "Quiz: John Cage, Sonata II from Sonatas and Interludes"
+      },
+      {
+        "name": "Topic",
+        "value": "Timbre: The Prepared Piano"
+      },
+      {
+        "name": "chapterTitle",
+        "value": "Since 1900: 1900â"
+      },
+      {
+        "name": "module",
+        "value": "John Cage, Sonata II from Sonatas and Interludes"
+      },
+      {
+        "name": "item_title",
+        "value": "0133794636_Mark Evan Bonds_ch53_m01_q0001"
+      },
+      {
+        "name": "questionlayout",
+        "value": "1"
+      },
+      {
+        "name": "CH",
+        "value": "53"
+      },
+      {
+        "name": "Objective",
+        "value": "LO 53.1 Describe what is meant by \"prepared piano.\""
+      },
+      {
+        "name": "shuffle_choices",
+        "value": "Yes"
+      }
+    ],
+    "subject": [
+      "Music"
+    ],
+    "contentTypeTier2": [
+      "AssessmentItem"
+    ],
+    "contentTypeTier1": "Assessment",
+    "format": [
+      "application/vnd.pearson.sanvan.v1.activity"
+    ],
+    "version": "1.0",
+    "guid": "a4c6ff7f-9aa0-45fe-9f19-a0e23b27a1d5",
+    "bookAuthor": "Mark Evan Bonds",
+    "title": "Ch53 Fa Apply 03",
+    "educationalAlignment": [
+      "http://purl.org/pearson/objectives/183725473384362"
+    ]
+  },
+  "body": {
+    "description": "ch53_fa_apply_03",
+    "containerConfig": [
+      {
+        "description": "ch53_fa_apply_03",
+        "containerId": "target1",
+        "brixConfig": [
+          {
+            "bricId": "q1",
+            "bricType": "MultipleChoiceQuestion",
+            "config": {
+              "id": "QUE64596",
+              "question": "Unlike a standard piano, the prepared piano is capable of producing a combination of\n\u003cbr /\u003e",
+              "order": "randomized",
+              "presenterType": "RadioGroup",
+              "presenterConfig": {
+                "numberFormat": "none"
+              },
+              "choices": [
+                {
+                  "answerKey": "answer_1",
+                  "content": "pitched and unpitched sounds."
+                },
+                {
+                  "answerKey": "answer_2",
+                  "content": "sustained and staccato sounds."
+                },
+                {
+                  "answerKey": "answer_3",
+                  "content": "high-pitched and low-pitched sounds."
+                },
+                {
+                  "answerKey": "answer_4",
+                  "content": "sounds with and without vibrato."
+                }
+              ]
+            },
+            "answerKey": {
+              "assessmentType": "multiplechoice",
+              "answers": {
+                "answer_3": {
+                  "score": 0.0,
+                  "response": "LO 53.1 Describe what is meant by \"prepared piano.\""
+                },
+                "answer_2": {
+                  "score": 0.0,
+                  "response": " LO 53.1 Describe what is meant by \"prepared piano.\""
+                },
+                "answer_1": {
+                  "score": 1.0,
+                  "response": ""
+                },
+                "answer_4": {
+                  "score": 0.0,
+                  "response": "LO 53.1 Describe what is meant by \"prepared piano.\""
+                }
+              }
+            },
+            "configFixup": [
+              {
+                "name": "questionId",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "sequenceNodeKey",
+                  "type": "ref"
+                }
+              },
+              {
+                "name": "maxAttempts",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "maxAttempts",
+                  "type": "ref"
+                }
+              }
+            ]
+          }
+        ],
+        "hookupActions": [
+          {
+            "description": "Hookup the submit manager to evaluate answers",
+            "methodName": "handleRequestsFrom",
+            "type": "method-call",
+            "args": [
+              {
+                "domain": "brix",
+                "refId": "q1",
+                "type": "ref"
+              }
+            ],
+            "instance": {
+              "type": "submit-manager"
+            }
+          },
+          {
+            "description": "Draw the question",
+            "methodName": "draw",
+            "type": "method-call",
+            "args": [
+              {
+                "selector": "#target1",
+                "type": "d3select"
+              }
+            ],
+            "instance": {
+              "domain": "brix",
+              "refId": "q1",
+              "type": "ref"
+            }
+          }
+        ]
+      }
+    ],
+    "title": "Ch53 Fa Apply 03"
+  }
+}

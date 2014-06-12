@@ -1,0 +1,196 @@
+{
+  "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope",
+  "@type": "Envelope",
+  "metadata": {
+    "bookTitle": "Listen To This",
+    "keywords": [
+      "Bonds 3e",
+      "ch 17",
+      "Rudowski"
+    ],
+    "extendedMetadata": [
+      {
+        "name": "Page-Reference",
+        "value": "144"
+      },
+      {
+        "name": "ISBN",
+        "value": "0133794636"
+      },
+      {
+        "name": "M",
+        "value": "m01"
+      },
+      {
+        "name": "assessment_title",
+        "value": "Quiz: Johann Sebastian Bach, Cantata 140: Awake, a Voice Calls to Us, selections"
+      },
+      {
+        "name": "Topic",
+        "value": "Form: The Ritornello Principle"
+      },
+      {
+        "name": "chapterTitle",
+        "value": "The Baroque Era: 1600â1750"
+      },
+      {
+        "name": "module",
+        "value": "Johann Sebastian Bach, Cantata 140: Awake, a Voice Calls to Us, selections"
+      },
+      {
+        "name": "item_title",
+        "value": "0133794636_Mark Evan Bonds_ch17_m01_q0010"
+      },
+      {
+        "name": "questionlayout",
+        "value": "1"
+      },
+      {
+        "name": "CH",
+        "value": "17"
+      },
+      {
+        "name": "Objective",
+        "value": "LO 17.5 Describe the contrasting timbres used by Bach to create the first-movement chorus."
+      },
+      {
+        "name": "shuffle_choices",
+        "value": "Yes"
+      }
+    ],
+    "subject": [
+      "Music"
+    ],
+    "contentTypeTier2": [
+      "AssessmentItem"
+    ],
+    "contentTypeTier1": "Assessment",
+    "format": [
+      "application/vnd.pearson.sanvan.v1.activity"
+    ],
+    "version": "1.0",
+    "guid": "267cb36d-26f6-4ab6-92e6-19f79cc42767",
+    "bookAuthor": "Mark Evan Bonds",
+    "title": "Ch17 Post Concept 05",
+    "educationalAlignment": [
+      "http://purl.org/pearson/objectives/183725473384362"
+    ]
+  },
+  "body": {
+    "description": "ch17_post_concept_05",
+    "containerConfig": [
+      {
+        "description": "ch17_post_concept_05",
+        "containerId": "target1",
+        "brixConfig": [
+          {
+            "bricId": "q1",
+            "bricType": "MultipleChoiceQuestion",
+            "config": {
+              "id": "QUE63809",
+              "question": "What function does the ritornello in movement 7 serve?\n\u003cbr /\u003e",
+              "order": "randomized",
+              "presenterType": "RadioGroup",
+              "presenterConfig": {
+                "numberFormat": "none"
+              },
+              "choices": [
+                {
+                  "answerKey": "answer_1",
+                  "content": "Ritornello provides introductions and conclusions to the movement and subunits."
+                },
+                {
+                  "answerKey": "answer_2",
+                  "content": "Ritornello allows for the words of the melody to be more easily understood."
+                },
+                {
+                  "answerKey": "answer_3",
+                  "content": "Ritornello serves as a constant, in contrast to an ever-changing melody throughout the movement."
+                },
+                {
+                  "answerKey": "answer_4",
+                  "content": "Ritornello provides a subunit in which the orchestra can play with the chorus."
+                }
+              ]
+            },
+            "answerKey": {
+              "assessmentType": "multiplechoice",
+              "answers": {
+                "answer_3": {
+                  "score": 0.0,
+                  "response": " LO 17.5 Describe the contrasting timbres used by Bach to create the first-movement chorus."
+                },
+                "answer_2": {
+                  "score": 0.0,
+                  "response": " LO 17.5 Describe the contrasting timbres used by Bach to create the first-movement chorus."
+                },
+                "answer_1": {
+                  "score": 1.0,
+                  "response": ""
+                },
+                "answer_4": {
+                  "score": 0.0,
+                  "response": " LO 17.5 Describe the contrasting timbres used by Bach to create the first-movement chorus."
+                }
+              }
+            },
+            "configFixup": [
+              {
+                "name": "questionId",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "sequenceNodeKey",
+                  "type": "ref"
+                }
+              },
+              {
+                "name": "maxAttempts",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "maxAttempts",
+                  "type": "ref"
+                }
+              }
+            ]
+          }
+        ],
+        "hookupActions": [
+          {
+            "description": "Hookup the submit manager to evaluate answers",
+            "methodName": "handleRequestsFrom",
+            "type": "method-call",
+            "args": [
+              {
+                "domain": "brix",
+                "refId": "q1",
+                "type": "ref"
+              }
+            ],
+            "instance": {
+              "type": "submit-manager"
+            }
+          },
+          {
+            "description": "Draw the question",
+            "methodName": "draw",
+            "type": "method-call",
+            "args": [
+              {
+                "selector": "#target1",
+                "type": "d3select"
+              }
+            ],
+            "instance": {
+              "domain": "brix",
+              "refId": "q1",
+              "type": "ref"
+            }
+          }
+        ]
+      }
+    ],
+    "title": "Ch17 Post Concept 05"
+  }
+}

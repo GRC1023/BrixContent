@@ -1,0 +1,196 @@
+{
+  "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope",
+  "@type": "Envelope",
+  "metadata": {
+    "bookTitle": "Listen To This",
+    "keywords": [
+      "Bonds 3e",
+      "ch 61",
+      "Rudowski"
+    ],
+    "extendedMetadata": [
+      {
+        "name": "Page-Reference",
+        "value": "506"
+      },
+      {
+        "name": "ISBN",
+        "value": "0133794636"
+      },
+      {
+        "name": "M",
+        "value": "m01"
+      },
+      {
+        "name": "assessment_title",
+        "value": "Quiz: Austin Wintory, âNascence,â from Journey"
+      },
+      {
+        "name": "Topic",
+        "value": "Listening Guide"
+      },
+      {
+        "name": "chapterTitle",
+        "value": "Since 1900: 1900â"
+      },
+      {
+        "name": "module",
+        "value": "Austin Wintory, âNascence,â from Journey"
+      },
+      {
+        "name": "item_title",
+        "value": "0133794636_Mark Evan Bonds_ch61_m01_q0006"
+      },
+      {
+        "name": "questionlayout",
+        "value": "1"
+      },
+      {
+        "name": "CH",
+        "value": "61"
+      },
+      {
+        "name": "Objective",
+        "value": "LO 61.7 Describe the career or Austin Wintory."
+      },
+      {
+        "name": "shuffle_choices",
+        "value": "Yes"
+      }
+    ],
+    "subject": [
+      "Music"
+    ],
+    "contentTypeTier2": [
+      "AssessmentItem"
+    ],
+    "contentTypeTier1": "Assessment",
+    "format": [
+      "application/vnd.pearson.sanvan.v1.activity"
+    ],
+    "version": "1.0",
+    "guid": "4bfd5a3f-8ff1-4640-ae28-eabe73bd4b7c",
+    "bookAuthor": "Mark Evan Bonds",
+    "title": "Ch61 Post Concept 02",
+    "educationalAlignment": [
+      "http://purl.org/pearson/objectives/183725473384362"
+    ]
+  },
+  "body": {
+    "description": "ch61_post_concept_02",
+    "containerConfig": [
+      {
+        "description": "ch61_post_concept_02",
+        "containerId": "target1",
+        "brixConfig": [
+          {
+            "bricId": "q1",
+            "bricType": "MultipleChoiceQuestion",
+            "config": {
+              "id": "QUE64681",
+              "question": "In \n\u003cem\u003eJourney,\u003c/em\u003e the player hears “Nascence”\n\u003cbr /\u003e",
+              "order": "randomized",
+              "presenterType": "RadioGroup",
+              "presenterConfig": {
+                "numberFormat": "none"
+              },
+              "choices": [
+                {
+                  "answerKey": "answer_1",
+                  "content": "only in fragments; it never appears in its entirety."
+                },
+                {
+                  "answerKey": "answer_2",
+                  "content": "in its entirety at the beginning, and never again."
+                },
+                {
+                  "answerKey": "answer_3",
+                  "content": "in fragments until the very end, when the whole thing plays."
+                },
+                {
+                  "answerKey": "answer_4",
+                  "content": "in its entirety in the beginning, then fragments thereafter."
+                }
+              ]
+            },
+            "answerKey": {
+              "assessmentType": "multiplechoice",
+              "answers": {
+                "answer_3": {
+                  "score": 0.0,
+                  "response": " LO 61.7 Describe the career or Austin Wintory."
+                },
+                "answer_2": {
+                  "score": 0.0,
+                  "response": " LO 61.7 Describe the career or Austin Wintory."
+                },
+                "answer_1": {
+                  "score": 1.0,
+                  "response": ""
+                },
+                "answer_4": {
+                  "score": 0.0,
+                  "response": " LO 61.7 Describe the career or Austin Wintory."
+                }
+              }
+            },
+            "configFixup": [
+              {
+                "name": "questionId",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "sequenceNodeKey",
+                  "type": "ref"
+                }
+              },
+              {
+                "name": "maxAttempts",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "maxAttempts",
+                  "type": "ref"
+                }
+              }
+            ]
+          }
+        ],
+        "hookupActions": [
+          {
+            "description": "Hookup the submit manager to evaluate answers",
+            "methodName": "handleRequestsFrom",
+            "type": "method-call",
+            "args": [
+              {
+                "domain": "brix",
+                "refId": "q1",
+                "type": "ref"
+              }
+            ],
+            "instance": {
+              "type": "submit-manager"
+            }
+          },
+          {
+            "description": "Draw the question",
+            "methodName": "draw",
+            "type": "method-call",
+            "args": [
+              {
+                "selector": "#target1",
+                "type": "d3select"
+              }
+            ],
+            "instance": {
+              "domain": "brix",
+              "refId": "q1",
+              "type": "ref"
+            }
+          }
+        ]
+      }
+    ],
+    "title": "Ch61 Post Concept 02"
+  }
+}

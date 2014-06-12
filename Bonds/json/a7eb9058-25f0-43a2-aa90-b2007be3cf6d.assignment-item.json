@@ -1,0 +1,196 @@
+{
+  "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope",
+  "@type": "Envelope",
+  "metadata": {
+    "bookTitle": "Listen To This",
+    "keywords": [
+      "Bonds 3e",
+      "ch 23",
+      "Rudowski"
+    ],
+    "extendedMetadata": [
+      {
+        "name": "Page-Reference",
+        "value": "205"
+      },
+      {
+        "name": "ISBN",
+        "value": "0133794636"
+      },
+      {
+        "name": "M",
+        "value": "m01"
+      },
+      {
+        "name": "assessment_title",
+        "value": "Quiz: Wolfgang Amadeus Mozart, Piano Concerto in A Major, K. 488, first movement"
+      },
+      {
+        "name": "Topic",
+        "value": "Form: Double-Exposition Concerto Form"
+      },
+      {
+        "name": "chapterTitle",
+        "value": "The Classical Era: (1750â1800)"
+      },
+      {
+        "name": "module",
+        "value": "Wolfgang Amadeus Mozart, Piano Concerto in A Major, K. 488, first movement"
+      },
+      {
+        "name": "item_title",
+        "value": "0133794636_Mark Evan Bonds_ch23_m01_q0008"
+      },
+      {
+        "name": "questionlayout",
+        "value": "1"
+      },
+      {
+        "name": "CH",
+        "value": "23"
+      },
+      {
+        "name": "Objective",
+        "value": "LO 23.7 Describe the relationship between sonata form and double-exposition concerto form in Mozart\u0027s Piano Concerto K. 488, first movement."
+      },
+      {
+        "name": "shuffle_choices",
+        "value": "Yes"
+      }
+    ],
+    "subject": [
+      "Music"
+    ],
+    "contentTypeTier2": [
+      "AssessmentItem"
+    ],
+    "contentTypeTier1": "Assessment",
+    "format": [
+      "application/vnd.pearson.sanvan.v1.activity"
+    ],
+    "version": "1.0",
+    "guid": "a7eb9058-25f0-43a2-aa90-b2007be3cf6d",
+    "bookAuthor": "Mark Evan Bonds",
+    "title": "Ch23 Post Concept 04",
+    "educationalAlignment": [
+      "http://purl.org/pearson/objectives/183725473384362"
+    ]
+  },
+  "body": {
+    "description": "ch23_post_concept_04",
+    "containerConfig": [
+      {
+        "description": "ch23_post_concept_04",
+        "containerId": "target1",
+        "brixConfig": [
+          {
+            "bricId": "q1",
+            "bricType": "MultipleChoiceQuestion",
+            "config": {
+              "id": "QUE63938",
+              "question": "Which of the following parts of double-exposition concerto form is NOT also part of sonata form?\n\u003cbr /\u003e",
+              "order": "randomized",
+              "presenterType": "RadioGroup",
+              "presenterConfig": {
+                "numberFormat": "none"
+              },
+              "choices": [
+                {
+                  "answerKey": "answer_1",
+                  "content": "the cadenza"
+                },
+                {
+                  "answerKey": "answer_2",
+                  "content": "the development"
+                },
+                {
+                  "answerKey": "answer_3",
+                  "content": "the recapitulation"
+                },
+                {
+                  "answerKey": "answer_4",
+                  "content": "the exposition"
+                }
+              ]
+            },
+            "answerKey": {
+              "assessmentType": "multiplechoice",
+              "answers": {
+                "answer_3": {
+                  "score": 0.0,
+                  "response": " LO 23.7 Describe the relationship between sonata form and double-exposition concerto form in Mozart\u0027s Piano Concerto K. 488, first movement."
+                },
+                "answer_2": {
+                  "score": 0.0,
+                  "response": " LO 23.7 Describe the relationship between sonata form and double-exposition concerto form in Mozart\u0027s Piano Concerto K. 488, first movement."
+                },
+                "answer_1": {
+                  "score": 1.0,
+                  "response": ""
+                },
+                "answer_4": {
+                  "score": 0.0,
+                  "response": " LO 23.7 Describe the relationship between sonata form and double-exposition concerto form in Mozart\u0027s Piano Concerto K. 488, first movement."
+                }
+              }
+            },
+            "configFixup": [
+              {
+                "name": "questionId",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "sequenceNodeKey",
+                  "type": "ref"
+                }
+              },
+              {
+                "name": "maxAttempts",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "maxAttempts",
+                  "type": "ref"
+                }
+              }
+            ]
+          }
+        ],
+        "hookupActions": [
+          {
+            "description": "Hookup the submit manager to evaluate answers",
+            "methodName": "handleRequestsFrom",
+            "type": "method-call",
+            "args": [
+              {
+                "domain": "brix",
+                "refId": "q1",
+                "type": "ref"
+              }
+            ],
+            "instance": {
+              "type": "submit-manager"
+            }
+          },
+          {
+            "description": "Draw the question",
+            "methodName": "draw",
+            "type": "method-call",
+            "args": [
+              {
+                "selector": "#target1",
+                "type": "d3select"
+              }
+            ],
+            "instance": {
+              "domain": "brix",
+              "refId": "q1",
+              "type": "ref"
+            }
+          }
+        ]
+      }
+    ],
+    "title": "Ch23 Post Concept 04"
+  }
+}

@@ -1,0 +1,196 @@
+{
+  "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope",
+  "@type": "Envelope",
+  "metadata": {
+    "bookTitle": "Listen To This",
+    "keywords": [
+      "Bonds 3e",
+      "ch 12",
+      "Rudowski"
+    ],
+    "extendedMetadata": [
+      {
+        "name": "Page-Reference",
+        "value": "106, 107"
+      },
+      {
+        "name": "ISBN",
+        "value": "0133794636"
+      },
+      {
+        "name": "M",
+        "value": "m01"
+      },
+      {
+        "name": "assessment_title",
+        "value": "Quiz: Mbuti Pygmies, âMarriage Celebration Songâ"
+      },
+      {
+        "name": "Topic",
+        "value": "Texture: Layers upon Layers; Interlocking Rhythms"
+      },
+      {
+        "name": "chapterTitle",
+        "value": "The Baroque Era: 1600â1750"
+      },
+      {
+        "name": "module",
+        "value": "Mbuti Pygmies, âMarriage Celebration Songâ"
+      },
+      {
+        "name": "item_title",
+        "value": "0133794636_Mark Evan Bonds_ch12_m01_q0009"
+      },
+      {
+        "name": "questionlayout",
+        "value": "1"
+      },
+      {
+        "name": "CH",
+        "value": "12"
+      },
+      {
+        "name": "Objective",
+        "value": "LO 12.3 Listen for and define and recognize heterophony"
+      },
+      {
+        "name": "shuffle_choices",
+        "value": "Yes"
+      }
+    ],
+    "subject": [
+      "Music"
+    ],
+    "contentTypeTier2": [
+      "AssessmentItem"
+    ],
+    "contentTypeTier1": "Assessment",
+    "format": [
+      "application/vnd.pearson.sanvan.v1.activity"
+    ],
+    "version": "1.0",
+    "guid": "295190c1-eae5-418b-ac50-db520529822e",
+    "bookAuthor": "Mark Evan Bonds",
+    "title": "Ch12 Fa Apply 04",
+    "educationalAlignment": [
+      "http://purl.org/pearson/objectives/183725473384362"
+    ]
+  },
+  "body": {
+    "description": "ch12_fa_apply_04",
+    "containerConfig": [
+      {
+        "description": "ch12_fa_apply_04",
+        "containerId": "target1",
+        "brixConfig": [
+          {
+            "bricId": "q1",
+            "bricType": "MultipleChoiceQuestion",
+            "config": {
+              "id": "QUE63657",
+              "question": "Which best describes the rhythm heard throughout \"Marriage Celebration Song\"?\n\u003cbr /\u003e",
+              "order": "randomized",
+              "presenterType": "RadioGroup",
+              "presenterConfig": {
+                "numberFormat": "none"
+              },
+              "choices": [
+                {
+                  "answerKey": "answer_1",
+                  "content": "No single line is independent but relies on others."
+                },
+                {
+                  "answerKey": "answer_2",
+                  "content": "Each melody complements but doesn\u0027t rely on the others."
+                },
+                {
+                  "answerKey": "answer_3",
+                  "content": "The lead singer\u0027s melody dominates."
+                },
+                {
+                  "answerKey": "answer_4",
+                  "content": "The response voices sing the same melody one after the other."
+                }
+              ]
+            },
+            "answerKey": {
+              "assessmentType": "multiplechoice",
+              "answers": {
+                "answer_3": {
+                  "score": 0.0,
+                  "response": "LO 12.3 Listen for and define and recognize heterophony."
+                },
+                "answer_2": {
+                  "score": 0.0,
+                  "response": "LO 12.3 Listen for and define and recognize heterophony."
+                },
+                "answer_1": {
+                  "score": 1.0,
+                  "response": ""
+                },
+                "answer_4": {
+                  "score": 0.0,
+                  "response": "LO 12.3 Listen for and define and recognize heterophony."
+                }
+              }
+            },
+            "configFixup": [
+              {
+                "name": "questionId",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "sequenceNodeKey",
+                  "type": "ref"
+                }
+              },
+              {
+                "name": "maxAttempts",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "maxAttempts",
+                  "type": "ref"
+                }
+              }
+            ]
+          }
+        ],
+        "hookupActions": [
+          {
+            "description": "Hookup the submit manager to evaluate answers",
+            "methodName": "handleRequestsFrom",
+            "type": "method-call",
+            "args": [
+              {
+                "domain": "brix",
+                "refId": "q1",
+                "type": "ref"
+              }
+            ],
+            "instance": {
+              "type": "submit-manager"
+            }
+          },
+          {
+            "description": "Draw the question",
+            "methodName": "draw",
+            "type": "method-call",
+            "args": [
+              {
+                "selector": "#target1",
+                "type": "d3select"
+              }
+            ],
+            "instance": {
+              "domain": "brix",
+              "refId": "q1",
+              "type": "ref"
+            }
+          }
+        ]
+      }
+    ],
+    "title": "Ch12 Fa Apply 04"
+  }
+}

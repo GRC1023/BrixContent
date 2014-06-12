@@ -1,0 +1,196 @@
+{
+  "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope",
+  "@type": "Envelope",
+  "metadata": {
+    "bookTitle": "Listen To This",
+    "keywords": [
+      "Bonds 3e",
+      "ch 14",
+      "Rudowski"
+    ],
+    "extendedMetadata": [
+      {
+        "name": "Page-Reference",
+        "value": "119"
+      },
+      {
+        "name": "ISBN",
+        "value": "0133794636"
+      },
+      {
+        "name": "M",
+        "value": "m01"
+      },
+      {
+        "name": "assessment_title",
+        "value": "Quiz: Antonio Vivaldi, The Four Seasons, âWinter,â first movement"
+      },
+      {
+        "name": "Topic",
+        "value": "Form: The Ritornello Principle"
+      },
+      {
+        "name": "chapterTitle",
+        "value": "The Baroque Era: 1600â1750"
+      },
+      {
+        "name": "module",
+        "value": "Antonio Vivaldi, The Four Seasons, âWinter,â first movement"
+      },
+      {
+        "name": "item_title",
+        "value": "0133794636_Mark Evan Bonds_ch14_m01_q0002"
+      },
+      {
+        "name": "questionlayout",
+        "value": "1"
+      },
+      {
+        "name": "CH",
+        "value": "14"
+      },
+      {
+        "name": "Objective",
+        "value": "LO 14.2 Listen for the application of the ritornello principle through the use of contrasting tutti and solo sections in the first movement of Antonio Vivaldi\u0027s Four Seasons, \"Winter\"."
+      },
+      {
+        "name": "shuffle_choices",
+        "value": "Yes"
+      }
+    ],
+    "subject": [
+      "Music"
+    ],
+    "contentTypeTier2": [
+      "AssessmentItem"
+    ],
+    "contentTypeTier1": "Assessment",
+    "format": [
+      "application/vnd.pearson.sanvan.v1.activity"
+    ],
+    "version": "1.0",
+    "guid": "4006dba3-3435-41a1-8001-ea6af4c61d4e",
+    "bookAuthor": "Mark Evan Bonds",
+    "title": "Ch14 Pre Fact 04",
+    "educationalAlignment": [
+      "http://purl.org/pearson/objectives/183725473384362"
+    ]
+  },
+  "body": {
+    "description": "ch14_pre_fact_04",
+    "containerConfig": [
+      {
+        "description": "ch14_pre_fact_04",
+        "containerId": "target1",
+        "brixConfig": [
+          {
+            "bricId": "q1",
+            "bricType": "MultipleChoiceQuestion",
+            "config": {
+              "id": "QUE63677",
+              "question": "The “ritornello principle” means that\n\u003cbr /\u003e",
+              "order": "randomized",
+              "presenterType": "RadioGroup",
+              "presenterConfig": {
+                "numberFormat": "none"
+              },
+              "choices": [
+                {
+                  "answerKey": "answer_1",
+                  "content": "ritornello and solo sections alternate."
+                },
+                {
+                  "answerKey": "answer_2",
+                  "content": "soloists also play during the ritornello sections."
+                },
+                {
+                  "answerKey": "answer_3",
+                  "content": "virtuosity must be restrained when the group is playing."
+                },
+                {
+                  "answerKey": "answer_4",
+                  "content": "the violin acts as a solo instrument."
+                }
+              ]
+            },
+            "answerKey": {
+              "assessmentType": "multiplechoice",
+              "answers": {
+                "answer_3": {
+                  "score": 0.0,
+                  "response": " LO 14.2 Listen for the application of the ritornello principle through the use of contrasting tutti and solo sections in the first movement of Antonio Vivaldi\u0027s Four Seasons, \"Winter\"."
+                },
+                "answer_2": {
+                  "score": 0.0,
+                  "response": " LO 14.2 Listen for the application of the ritornello principle through the use of contrasting tutti and solo sections in the first movement of Antonio Vivaldi\u0027s Four Seasons, \"Winter\"."
+                },
+                "answer_1": {
+                  "score": 1.0,
+                  "response": ""
+                },
+                "answer_4": {
+                  "score": 0.0,
+                  "response": " LO 14.2 Listen for the application of the ritornello principle through the use of contrasting tutti and solo sections in the first movement of Antonio Vivaldi\u0027s Four Seasons, \"Winter\"."
+                }
+              }
+            },
+            "configFixup": [
+              {
+                "name": "questionId",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "sequenceNodeKey",
+                  "type": "ref"
+                }
+              },
+              {
+                "name": "maxAttempts",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "maxAttempts",
+                  "type": "ref"
+                }
+              }
+            ]
+          }
+        ],
+        "hookupActions": [
+          {
+            "description": "Hookup the submit manager to evaluate answers",
+            "methodName": "handleRequestsFrom",
+            "type": "method-call",
+            "args": [
+              {
+                "domain": "brix",
+                "refId": "q1",
+                "type": "ref"
+              }
+            ],
+            "instance": {
+              "type": "submit-manager"
+            }
+          },
+          {
+            "description": "Draw the question",
+            "methodName": "draw",
+            "type": "method-call",
+            "args": [
+              {
+                "selector": "#target1",
+                "type": "d3select"
+              }
+            ],
+            "instance": {
+              "domain": "brix",
+              "refId": "q1",
+              "type": "ref"
+            }
+          }
+        ]
+      }
+    ],
+    "title": "Ch14 Pre Fact 04"
+  }
+}

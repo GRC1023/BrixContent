@@ -1,0 +1,196 @@
+{
+  "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope",
+  "@type": "Envelope",
+  "metadata": {
+    "bookTitle": "Listen To This",
+    "keywords": [
+      "Bonds 3e",
+      "ch 37",
+      "Rudowski"
+    ],
+    "extendedMetadata": [
+      {
+        "name": "Page-Reference",
+        "value": "312"
+      },
+      {
+        "name": "ISBN",
+        "value": "0133794636"
+      },
+      {
+        "name": "M",
+        "value": "m01"
+      },
+      {
+        "name": "assessment_title",
+        "value": "Quiz: Johannes Brahms, Symphony no. 4 in E Minor, op. 98, finale"
+      },
+      {
+        "name": "Topic",
+        "value": "Performance: The Conductor"
+      },
+      {
+        "name": "chapterTitle",
+        "value": "The Nineteenth Century: 1800â1900"
+      },
+      {
+        "name": "module",
+        "value": "Johannes Brahms, Symphony no. 4 in E Minor, op. 98, finale"
+      },
+      {
+        "name": "item_title",
+        "value": "0133794636_Mark Evan Bonds_ch37_m01_q0002"
+      },
+      {
+        "name": "questionlayout",
+        "value": "1"
+      },
+      {
+        "name": "CH",
+        "value": "37"
+      },
+      {
+        "name": "Objective",
+        "value": "LO 37.2 Describe the role of the orchestral conductor"
+      },
+      {
+        "name": "shuffle_choices",
+        "value": "Yes"
+      }
+    ],
+    "subject": [
+      "Music"
+    ],
+    "contentTypeTier2": [
+      "AssessmentItem"
+    ],
+    "contentTypeTier1": "Assessment",
+    "format": [
+      "application/vnd.pearson.sanvan.v1.activity"
+    ],
+    "version": "1.0",
+    "guid": "4f5e1de6-4520-43f3-853d-e5eb40d44a97",
+    "bookAuthor": "Mark Evan Bonds",
+    "title": "Ch37 Pre Fact 03",
+    "educationalAlignment": [
+      "http://purl.org/pearson/objectives/183725473384362"
+    ]
+  },
+  "body": {
+    "description": "ch37_pre_fact_03",
+    "containerConfig": [
+      {
+        "description": "ch37_pre_fact_03",
+        "containerId": "target1",
+        "brixConfig": [
+          {
+            "bricId": "q1",
+            "bricType": "MultipleChoiceQuestion",
+            "config": {
+              "id": "QUE64236",
+              "question": "Which of the following best describes the entire role of the conductor?\n\u003cbr /\u003e",
+              "order": "randomized",
+              "presenterType": "RadioGroup",
+              "presenterConfig": {
+                "numberFormat": "none"
+              },
+              "choices": [
+                {
+                  "answerKey": "answer_1",
+                  "content": "rehearses with the orchestra and shapes all aspects of the performance, including tempo, timbre, dynamics, and texture"
+                },
+                {
+                  "answerKey": "answer_2",
+                  "content": "teaches orchestra members their parts and keeps the orchestra together in performance"
+                },
+                {
+                  "answerKey": "answer_3",
+                  "content": "rehearses with the orchestra and sets the beat for the performance"
+                },
+                {
+                  "answerKey": "answer_4",
+                  "content": "sets and keeps the beat for the orchestra during rehearsal and performance"
+                }
+              ]
+            },
+            "answerKey": {
+              "assessmentType": "multiplechoice",
+              "answers": {
+                "answer_3": {
+                  "score": 0.0,
+                  "response": "  LO 37.2 Describe the role of the orchestral conductor."
+                },
+                "answer_2": {
+                  "score": 0.0,
+                  "response": "  LO 37.2 Describe the role of the orchestral conductor."
+                },
+                "answer_1": {
+                  "score": 1.0,
+                  "response": ""
+                },
+                "answer_4": {
+                  "score": 0.0,
+                  "response": "  LO 37.2 Describe the role of the orchestral conductor."
+                }
+              }
+            },
+            "configFixup": [
+              {
+                "name": "questionId",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "sequenceNodeKey",
+                  "type": "ref"
+                }
+              },
+              {
+                "name": "maxAttempts",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "maxAttempts",
+                  "type": "ref"
+                }
+              }
+            ]
+          }
+        ],
+        "hookupActions": [
+          {
+            "description": "Hookup the submit manager to evaluate answers",
+            "methodName": "handleRequestsFrom",
+            "type": "method-call",
+            "args": [
+              {
+                "domain": "brix",
+                "refId": "q1",
+                "type": "ref"
+              }
+            ],
+            "instance": {
+              "type": "submit-manager"
+            }
+          },
+          {
+            "description": "Draw the question",
+            "methodName": "draw",
+            "type": "method-call",
+            "args": [
+              {
+                "selector": "#target1",
+                "type": "d3select"
+              }
+            ],
+            "instance": {
+              "domain": "brix",
+              "refId": "q1",
+              "type": "ref"
+            }
+          }
+        ]
+      }
+    ],
+    "title": "Ch37 Pre Fact 03"
+  }
+}

@@ -1,0 +1,196 @@
+{
+  "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope",
+  "@type": "Envelope",
+  "metadata": {
+    "bookTitle": "Listen To This",
+    "keywords": [
+      "Bonds 3e",
+      "ch 17",
+      "Rudowski"
+    ],
+    "extendedMetadata": [
+      {
+        "name": "Page-Reference",
+        "value": "141"
+      },
+      {
+        "name": "ISBN",
+        "value": "0133794636"
+      },
+      {
+        "name": "M",
+        "value": "m01"
+      },
+      {
+        "name": "assessment_title",
+        "value": "Quiz: Johann Sebastian Bach, Cantata 140: Awake, a Voice Calls to Us, selections"
+      },
+      {
+        "name": "Topic",
+        "value": "A Familiar Melody"
+      },
+      {
+        "name": "chapterTitle",
+        "value": "The Baroque Era: 1600â1750"
+      },
+      {
+        "name": "module",
+        "value": "Johann Sebastian Bach, Cantata 140: Awake, a Voice Calls to Us, selections"
+      },
+      {
+        "name": "item_title",
+        "value": "0133794636_Mark Evan Bonds_ch17_m01_q0006"
+      },
+      {
+        "name": "questionlayout",
+        "value": "1"
+      },
+      {
+        "name": "CH",
+        "value": "17"
+      },
+      {
+        "name": "Objective",
+        "value": "LO 17.2 Define \"chorale\" and explain its use in Protestant services during the Baroque era."
+      },
+      {
+        "name": "shuffle_choices",
+        "value": "Yes"
+      }
+    ],
+    "subject": [
+      "Music"
+    ],
+    "contentTypeTier2": [
+      "AssessmentItem"
+    ],
+    "contentTypeTier1": "Assessment",
+    "format": [
+      "application/vnd.pearson.sanvan.v1.activity"
+    ],
+    "version": "1.0",
+    "guid": "bc4d2efa-364d-4c9b-98a6-631b6134c3d3",
+    "bookAuthor": "Mark Evan Bonds",
+    "title": "Ch17 Post Concept 01",
+    "educationalAlignment": [
+      "http://purl.org/pearson/objectives/183725473384362"
+    ]
+  },
+  "body": {
+    "description": "ch17_post_concept_01",
+    "containerConfig": [
+      {
+        "description": "ch17_post_concept_01",
+        "containerId": "target1",
+        "brixConfig": [
+          {
+            "bricId": "q1",
+            "bricType": "MultipleChoiceQuestion",
+            "config": {
+              "id": "QUE63805",
+              "question": "One of the reasons Bach wrote Cantata 140:\n\u003cem\u003eAwake,a Voice Calls Us,\u003c/em\u003e in German was because\n\u003cbr /\u003e",
+              "order": "randomized",
+              "presenterType": "RadioGroup",
+              "presenterConfig": {
+                "numberFormat": "none"
+              },
+              "choices": [
+                {
+                  "answerKey": "answer_1",
+                  "content": "Bach’s Lutheran beliefs dictated that worship be done in the vernacular to facilitate a personal connection with God."
+                },
+                {
+                  "answerKey": "answer_2",
+                  "content": "Bach did not know Latin very well and wanted the text setting to be perfect."
+                },
+                {
+                  "answerKey": "answer_3",
+                  "content": "Bach’s Catholic beliefs dictate that only High Masses like Christmas and Easter be sung in Latin."
+                },
+                {
+                  "answerKey": "answer_4",
+                  "content": "The Duke of Weimar, who commissioned the piece, did not understand Latin at all, and ordered that the piece be written in German."
+                }
+              ]
+            },
+            "answerKey": {
+              "assessmentType": "multiplechoice",
+              "answers": {
+                "answer_3": {
+                  "score": 0.0,
+                  "response": " LO 17.2 Define \"chorale\" and explain its use in Protestant services during the Baroque era."
+                },
+                "answer_2": {
+                  "score": 0.0,
+                  "response": " LO 17.2 Define \"chorale\" and explain its use in Protestant services during the Baroque era."
+                },
+                "answer_1": {
+                  "score": 1.0,
+                  "response": ""
+                },
+                "answer_4": {
+                  "score": 0.0,
+                  "response": " LO 17.2 Define \"chorale\" and explain its use in Protestant services during the Baroque era."
+                }
+              }
+            },
+            "configFixup": [
+              {
+                "name": "questionId",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "sequenceNodeKey",
+                  "type": "ref"
+                }
+              },
+              {
+                "name": "maxAttempts",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "maxAttempts",
+                  "type": "ref"
+                }
+              }
+            ]
+          }
+        ],
+        "hookupActions": [
+          {
+            "description": "Hookup the submit manager to evaluate answers",
+            "methodName": "handleRequestsFrom",
+            "type": "method-call",
+            "args": [
+              {
+                "domain": "brix",
+                "refId": "q1",
+                "type": "ref"
+              }
+            ],
+            "instance": {
+              "type": "submit-manager"
+            }
+          },
+          {
+            "description": "Draw the question",
+            "methodName": "draw",
+            "type": "method-call",
+            "args": [
+              {
+                "selector": "#target1",
+                "type": "d3select"
+              }
+            ],
+            "instance": {
+              "domain": "brix",
+              "refId": "q1",
+              "type": "ref"
+            }
+          }
+        ]
+      }
+    ],
+    "title": "Ch17 Post Concept 01"
+  }
+}

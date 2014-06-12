@@ -1,0 +1,196 @@
+{
+  "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope",
+  "@type": "Envelope",
+  "metadata": {
+    "bookTitle": "Listen To This",
+    "keywords": [
+      "Bonds 3e",
+      "ch 06",
+      "Rudowski"
+    ],
+    "extendedMetadata": [
+      {
+        "name": "Page-Reference",
+        "value": "61"
+      },
+      {
+        "name": "ISBN",
+        "value": "0133794636"
+      },
+      {
+        "name": "M",
+        "value": "m01"
+      },
+      {
+        "name": "assessment_title",
+        "value": "Quiz: Josquin des Prez, âThe Cricketâ"
+      },
+      {
+        "name": "Topic",
+        "value": "Word-Painting: Music Imitates the Text"
+      },
+      {
+        "name": "chapterTitle",
+        "value": "The Renaissance: ca. 1425â1600"
+      },
+      {
+        "name": "module",
+        "value": "Josquin des Prez, âThe Cricketâ"
+      },
+      {
+        "name": "item_title",
+        "value": "0133794636_Mark Evan Bonds_ch06_m01_q0001"
+      },
+      {
+        "name": "questionlayout",
+        "value": "1"
+      },
+      {
+        "name": "CH",
+        "value": "6"
+      },
+      {
+        "name": "Objective",
+        "value": "LO 6.3 Recognize how music depicts specific words in the text of \"The Cricket.\""
+      },
+      {
+        "name": "shuffle_choices",
+        "value": "Yes"
+      }
+    ],
+    "subject": [
+      "Music"
+    ],
+    "contentTypeTier2": [
+      "AssessmentItem"
+    ],
+    "contentTypeTier1": "Assessment",
+    "format": [
+      "application/vnd.pearson.sanvan.v1.activity"
+    ],
+    "version": "1.0",
+    "guid": "ecc66ad7-ce09-4b7b-8dcc-a9cb3f354fd7",
+    "bookAuthor": "Mark Evan Bonds",
+    "title": "Ch06 Pre Concept 01",
+    "educationalAlignment": [
+      "http://purl.org/pearson/objectives/183725473384362"
+    ]
+  },
+  "body": {
+    "description": "ch06_pre_concept_01",
+    "containerConfig": [
+      {
+        "description": "ch06_pre_concept_01",
+        "containerId": "target1",
+        "brixConfig": [
+          {
+            "bricId": "q1",
+            "bricType": "MultipleChoiceQuestion",
+            "config": {
+              "id": "QUE68303",
+              "question": "If a composer were to set the word “tremble” using word painting, which of the following would be the most likely choice?\n\u003cbr /\u003e",
+              "order": "randomized",
+              "presenterType": "RadioGroup",
+              "presenterConfig": {
+                "numberFormat": "none"
+              },
+              "choices": [
+                {
+                  "answerKey": "answer_1",
+                  "content": "rapidly going back and forth between two notes"
+                },
+                {
+                  "answerKey": "answer_2",
+                  "content": "holding one note out for a long time"
+                },
+                {
+                  "answerKey": "answer_3",
+                  "content": "thinning down the texture to one or two voices"
+                },
+                {
+                  "answerKey": "answer_4",
+                  "content": "a slow, march-like melody"
+                }
+              ]
+            },
+            "answerKey": {
+              "assessmentType": "multiplechoice",
+              "answers": {
+                "answer_3": {
+                  "score": 0.0,
+                  "response": "LO 6.3 Recognize how music depicts specific words in the text of \"The Cricket.\""
+                },
+                "answer_2": {
+                  "score": 0.0,
+                  "response": "LO 6.3 Recognize how music depicts specific words in the text of \"The Cricket.\""
+                },
+                "answer_1": {
+                  "score": 1.0,
+                  "response": ""
+                },
+                "answer_4": {
+                  "score": 0.0,
+                  "response": "LO 6.3 Recognize how music depicts specific words in the text of \"The Cricket.\""
+                }
+              }
+            },
+            "configFixup": [
+              {
+                "name": "questionId",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "sequenceNodeKey",
+                  "type": "ref"
+                }
+              },
+              {
+                "name": "maxAttempts",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "maxAttempts",
+                  "type": "ref"
+                }
+              }
+            ]
+          }
+        ],
+        "hookupActions": [
+          {
+            "description": "Hookup the submit manager to evaluate answers",
+            "methodName": "handleRequestsFrom",
+            "type": "method-call",
+            "args": [
+              {
+                "domain": "brix",
+                "refId": "q1",
+                "type": "ref"
+              }
+            ],
+            "instance": {
+              "type": "submit-manager"
+            }
+          },
+          {
+            "description": "Draw the question",
+            "methodName": "draw",
+            "type": "method-call",
+            "args": [
+              {
+                "selector": "#target1",
+                "type": "d3select"
+              }
+            ],
+            "instance": {
+              "domain": "brix",
+              "refId": "q1",
+              "type": "ref"
+            }
+          }
+        ]
+      }
+    ],
+    "title": "Ch06 Pre Concept 01"
+  }
+}

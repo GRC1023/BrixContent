@@ -1,0 +1,196 @@
+{
+  "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope",
+  "@type": "Envelope",
+  "metadata": {
+    "bookTitle": "Listen To This",
+    "keywords": [
+      "Bonds 3e",
+      "ch 23",
+      "Rudowski"
+    ],
+    "extendedMetadata": [
+      {
+        "name": "Page-Reference",
+        "value": "208"
+      },
+      {
+        "name": "ISBN",
+        "value": "0133794636"
+      },
+      {
+        "name": "M",
+        "value": "m01"
+      },
+      {
+        "name": "assessment_title",
+        "value": "Quiz: Wolfgang Amadeus Mozart, Piano Concerto in A Major, K. 488, first movement"
+      },
+      {
+        "name": "Topic",
+        "value": "Historical Context: Mozart\u0027s Concerts: The Bottom Line"
+      },
+      {
+        "name": "chapterTitle",
+        "value": "The Classical Era: (1750â1800)"
+      },
+      {
+        "name": "module",
+        "value": "Wolfgang Amadeus Mozart, Piano Concerto in A Major, K. 488, first movement"
+      },
+      {
+        "name": "item_title",
+        "value": "0133794636_Mark Evan Bonds_ch23_m01_q0009"
+      },
+      {
+        "name": "questionlayout",
+        "value": "1"
+      },
+      {
+        "name": "CH",
+        "value": "23"
+      },
+      {
+        "name": "Objective",
+        "value": "LO 23.1 Discuss why Mozart wrote piano concertos."
+      },
+      {
+        "name": "shuffle_choices",
+        "value": "Yes"
+      }
+    ],
+    "subject": [
+      "Music"
+    ],
+    "contentTypeTier2": [
+      "AssessmentItem"
+    ],
+    "contentTypeTier1": "Assessment",
+    "format": [
+      "application/vnd.pearson.sanvan.v1.activity"
+    ],
+    "version": "1.0",
+    "guid": "746e45e1-068c-417d-94c4-054a54f3ce59",
+    "bookAuthor": "Mark Evan Bonds",
+    "title": "Ch23 Post Concept 05",
+    "educationalAlignment": [
+      "http://purl.org/pearson/objectives/183725473384362"
+    ]
+  },
+  "body": {
+    "description": "ch23_post_concept_05",
+    "containerConfig": [
+      {
+        "description": "ch23_post_concept_05",
+        "containerId": "target1",
+        "brixConfig": [
+          {
+            "bricId": "q1",
+            "bricType": "MultipleChoiceQuestion",
+            "config": {
+              "id": "QUE63939",
+              "question": "Mozart\u0027s Vienna concerts in the 1780s made impressive net profit in part because\n\u003cbr /\u003e",
+              "order": "randomized",
+              "presenterType": "RadioGroup",
+              "presenterConfig": {
+                "numberFormat": "none"
+              },
+              "choices": [
+                {
+                  "answerKey": "answer_1",
+                  "content": "Mozart wrote the music, performed it, and sold his own tickets."
+                },
+                {
+                  "answerKey": "answer_2",
+                  "content": "during that time there was a lack of alternative entertainment in Vienna."
+                },
+                {
+                  "answerKey": "answer_3",
+                  "content": "the concert hall Mozart found to play in didn\u0027t charge him a fee."
+                },
+                {
+                  "answerKey": "answer_4",
+                  "content": "Mozart was able to have his servant play the music he wrote."
+                }
+              ]
+            },
+            "answerKey": {
+              "assessmentType": "multiplechoice",
+              "answers": {
+                "answer_3": {
+                  "score": 0.0,
+                  "response": " LO 23.1 Discuss why Mozart wrote piano concertos."
+                },
+                "answer_2": {
+                  "score": 0.0,
+                  "response": " LO 23.1 Discuss why Mozart wrote piano concertos."
+                },
+                "answer_1": {
+                  "score": 1.0,
+                  "response": ""
+                },
+                "answer_4": {
+                  "score": 0.0,
+                  "response": " LO 23.1 Discuss why Mozart wrote piano concertos."
+                }
+              }
+            },
+            "configFixup": [
+              {
+                "name": "questionId",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "sequenceNodeKey",
+                  "type": "ref"
+                }
+              },
+              {
+                "name": "maxAttempts",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "maxAttempts",
+                  "type": "ref"
+                }
+              }
+            ]
+          }
+        ],
+        "hookupActions": [
+          {
+            "description": "Hookup the submit manager to evaluate answers",
+            "methodName": "handleRequestsFrom",
+            "type": "method-call",
+            "args": [
+              {
+                "domain": "brix",
+                "refId": "q1",
+                "type": "ref"
+              }
+            ],
+            "instance": {
+              "type": "submit-manager"
+            }
+          },
+          {
+            "description": "Draw the question",
+            "methodName": "draw",
+            "type": "method-call",
+            "args": [
+              {
+                "selector": "#target1",
+                "type": "d3select"
+              }
+            ],
+            "instance": {
+              "domain": "brix",
+              "refId": "q1",
+              "type": "ref"
+            }
+          }
+        ]
+      }
+    ],
+    "title": "Ch23 Post Concept 05"
+  }
+}

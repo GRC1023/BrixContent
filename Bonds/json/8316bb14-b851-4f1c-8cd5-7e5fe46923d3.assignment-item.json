@@ -1,0 +1,196 @@
+{
+  "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope",
+  "@type": "Envelope",
+  "metadata": {
+    "bookTitle": "Listen To This",
+    "keywords": [
+      "Bonds 3e",
+      "ch 05",
+      "Rudowski"
+    ],
+    "extendedMetadata": [
+      {
+        "name": "Page-Reference",
+        "value": "47"
+      },
+      {
+        "name": "ISBN",
+        "value": "0133794636"
+      },
+      {
+        "name": "M",
+        "value": "m01"
+      },
+      {
+        "name": "assessment_title",
+        "value": "Quiz: Alfonso el Sabio, Songs to the Virgin Mary, no. 249, âHe Who Gladly Servesâ"
+      },
+      {
+        "name": "Topic",
+        "value": "chapter-opening text"
+      },
+      {
+        "name": "chapterTitle",
+        "value": "The Middle Ages: 476 CE â Early Fifteenth Century"
+      },
+      {
+        "name": "module",
+        "value": "Alfonso el Sabio, Songs to the Virgin Mary, no. 249, âHe Who Gladly Servesâ"
+      },
+      {
+        "name": "item_title",
+        "value": "0133794636_Mark Evan Bonds_ch05_m01_q0006"
+      },
+      {
+        "name": "questionlayout",
+        "value": "1"
+      },
+      {
+        "name": "CH",
+        "value": "5"
+      },
+      {
+        "name": "Objective",
+        "value": "LO 5.6 Explain why the identity of so many composers of medieval music remains unknown."
+      },
+      {
+        "name": "shuffle_choices",
+        "value": "Yes"
+      }
+    ],
+    "subject": [
+      "Music"
+    ],
+    "contentTypeTier2": [
+      "AssessmentItem"
+    ],
+    "contentTypeTier1": "Assessment",
+    "format": [
+      "application/vnd.pearson.sanvan.v1.activity"
+    ],
+    "version": "1.0",
+    "guid": "8316bb14-b851-4f1c-8cd5-7e5fe46923d3",
+    "bookAuthor": "Mark Evan Bonds",
+    "title": "Ch05 Pre Concept 02",
+    "educationalAlignment": [
+      "http://purl.org/pearson/objectives/183725473384362"
+    ]
+  },
+  "body": {
+    "description": "ch05_pre_concept_02",
+    "containerConfig": [
+      {
+        "description": "ch05_pre_concept_02",
+        "containerId": "target1",
+        "brixConfig": [
+          {
+            "bricId": "q1",
+            "bricType": "MultipleChoiceQuestion",
+            "config": {
+              "id": "QUE63018",
+              "question": "How are modern jazz musicians similar to medieval musicians?\n\u003cbr /\u003e",
+              "order": "randomized",
+              "presenterType": "RadioGroup",
+              "presenterConfig": {
+                "numberFormat": "none"
+              },
+              "choices": [
+                {
+                  "answerKey": "answer_1",
+                  "content": "Both perform music originally written for singers on instruments."
+                },
+                {
+                  "answerKey": "answer_2",
+                  "content": "Both often compose anonymously."
+                },
+                {
+                  "answerKey": "answer_3",
+                  "content": "Both commonly compose for shawm and other double reed instruments."
+                },
+                {
+                  "answerKey": "answer_4",
+                  "content": "Both rarely perform music that they wrote themselves."
+                }
+              ]
+            },
+            "answerKey": {
+              "assessmentType": "multiplechoice",
+              "answers": {
+                "answer_3": {
+                  "score": 0.0,
+                  "response": " LO 5.6 Explain why the identity of so many composers of medieval music remains unknown."
+                },
+                "answer_2": {
+                  "score": 0.0,
+                  "response": " LO 5.6 Explain why the identity of so many composers of medieval music remains unknown."
+                },
+                "answer_1": {
+                  "score": 1.0,
+                  "response": ""
+                },
+                "answer_4": {
+                  "score": 0.0,
+                  "response": " LO 5.6 Explain why the identity of so many composers of medieval music remains unknown."
+                }
+              }
+            },
+            "configFixup": [
+              {
+                "name": "questionId",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "sequenceNodeKey",
+                  "type": "ref"
+                }
+              },
+              {
+                "name": "maxAttempts",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "maxAttempts",
+                  "type": "ref"
+                }
+              }
+            ]
+          }
+        ],
+        "hookupActions": [
+          {
+            "description": "Hookup the submit manager to evaluate answers",
+            "methodName": "handleRequestsFrom",
+            "type": "method-call",
+            "args": [
+              {
+                "domain": "brix",
+                "refId": "q1",
+                "type": "ref"
+              }
+            ],
+            "instance": {
+              "type": "submit-manager"
+            }
+          },
+          {
+            "description": "Draw the question",
+            "methodName": "draw",
+            "type": "method-call",
+            "args": [
+              {
+                "selector": "#target1",
+                "type": "d3select"
+              }
+            ],
+            "instance": {
+              "domain": "brix",
+              "refId": "q1",
+              "type": "ref"
+            }
+          }
+        ]
+      }
+    ],
+    "title": "Ch05 Pre Concept 02"
+  }
+}

@@ -1,0 +1,192 @@
+{
+  "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope",
+  "@type": "Envelope",
+  "metadata": {
+    "bookTitle": "Listen To This",
+    "keywords": [
+      "Bonds 3e",
+      "ch 38",
+      "Rudowski"
+    ],
+    "extendedMetadata": [
+      {
+        "name": "Page-Reference",
+        "value": "322"
+      },
+      {
+        "name": "ISBN",
+        "value": "0133794636"
+      },
+      {
+        "name": "M",
+        "value": "m01"
+      },
+      {
+        "name": "assessment_title",
+        "value": "Quiz: AntonÃ­n DvoÅÃ¡k, String Quartet in F Major, op. 96 (âAmericanâ), third movement"
+      },
+      {
+        "name": "chapterTitle",
+        "value": "Since 1900: 1900â"
+      },
+      {
+        "name": "module",
+        "value": "AntonÃ­n DvoÅÃ¡k, String Quartet in F Major, op. 96 (âAmericanâ), third movement"
+      },
+      {
+        "name": "item_title",
+        "value": "0133794636_Mark Evan Bonds_ch38_m01_q0009"
+      },
+      {
+        "name": "questionlayout",
+        "value": "1"
+      },
+      {
+        "name": "CH",
+        "value": "38"
+      },
+      {
+        "name": "Objective",
+        "value": "LO 38.5 Discuss Dvorak\u0027s efforts to encourage composers to develop a truly American style of composition."
+      },
+      {
+        "name": "shuffle_choices",
+        "value": "Yes"
+      }
+    ],
+    "subject": [
+      "Music"
+    ],
+    "contentTypeTier2": [
+      "AssessmentItem"
+    ],
+    "contentTypeTier1": "Assessment",
+    "format": [
+      "application/vnd.pearson.sanvan.v1.activity"
+    ],
+    "version": "1.0",
+    "guid": "ee475cc1-36fc-44ed-8305-71feba8863a2",
+    "bookAuthor": "Mark Evan Bonds",
+    "title": "Ch38 Post Concept 03",
+    "educationalAlignment": [
+      "http://purl.org/pearson/objectives/183725473384362"
+    ]
+  },
+  "body": {
+    "description": "ch38_post_concept_03",
+    "containerConfig": [
+      {
+        "description": "ch38_post_concept_03",
+        "containerId": "target1",
+        "brixConfig": [
+          {
+            "bricId": "q1",
+            "bricType": "MultipleChoiceQuestion",
+            "config": {
+              "id": "QUE64253",
+              "question": "Dvořák thought that by using American folk elements in concert music, he could speak to\n\u003cbr /\u003e",
+              "order": "randomized",
+              "presenterType": "RadioGroup",
+              "presenterConfig": {
+                "numberFormat": "none"
+              },
+              "choices": [
+                {
+                  "answerKey": "answer_1",
+                  "content": "all Americans, regardless of race or ethnic background."
+                },
+                {
+                  "answerKey": "answer_2",
+                  "content": "the lower classes who were not exposed to art music."
+                },
+                {
+                  "answerKey": "answer_3",
+                  "content": "Europeans who often used similar nationalist tunes in their music."
+                },
+                {
+                  "answerKey": "answer_4",
+                  "content": "Africans who did not have a concert tradition of their own."
+                }
+              ]
+            },
+            "answerKey": {
+              "assessmentType": "multiplechoice",
+              "answers": {
+                "answer_3": {
+                  "score": 0.0,
+                  "response": " LO 38.5 Discuss Dvorak\u0027s efforts to encourage composers to develop a truly American style of composition."
+                },
+                "answer_2": {
+                  "score": 0.0,
+                  "response": " LO 38.5 Discuss Dvorak\u0027s efforts to encourage composers to develop a truly American style of composition."
+                },
+                "answer_1": {
+                  "score": 1.0,
+                  "response": ""
+                },
+                "answer_4": {
+                  "score": 0.0,
+                  "response": " LO 38.5 Discuss Dvorak\u0027s efforts to encourage composers to develop a truly American style of composition."
+                }
+              }
+            },
+            "configFixup": [
+              {
+                "name": "questionId",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "sequenceNodeKey",
+                  "type": "ref"
+                }
+              },
+              {
+                "name": "maxAttempts",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "maxAttempts",
+                  "type": "ref"
+                }
+              }
+            ]
+          }
+        ],
+        "hookupActions": [
+          {
+            "description": "Hookup the submit manager to evaluate answers",
+            "methodName": "handleRequestsFrom",
+            "type": "method-call",
+            "args": [
+              {
+                "domain": "brix",
+                "refId": "q1",
+                "type": "ref"
+              }
+            ],
+            "instance": {
+              "type": "submit-manager"
+            }
+          },
+          {
+            "description": "Draw the question",
+            "methodName": "draw",
+            "type": "method-call",
+            "args": [
+              {
+                "selector": "#target1",
+                "type": "d3select"
+              }
+            ],
+            "instance": {
+              "domain": "brix",
+              "refId": "q1",
+              "type": "ref"
+            }
+          }
+        ]
+      }
+    ],
+    "title": "Ch38 Post Concept 03"
+  }
+}

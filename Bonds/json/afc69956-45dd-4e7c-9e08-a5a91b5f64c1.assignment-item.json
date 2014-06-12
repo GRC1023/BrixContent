@@ -1,0 +1,196 @@
+{
+  "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope",
+  "@type": "Envelope",
+  "metadata": {
+    "bookTitle": "Listen To This",
+    "keywords": [
+      "Bonds 3e",
+      "ch 19",
+      "Rudowski"
+    ],
+    "extendedMetadata": [
+      {
+        "name": "Page-Reference",
+        "value": "168"
+      },
+      {
+        "name": "ISBN",
+        "value": "0133794636"
+      },
+      {
+        "name": "M",
+        "value": "m01"
+      },
+      {
+        "name": "assessment_title",
+        "value": "Quiz: Joseph Haydn, String Quartet in C Major, op. 76, no. 3, second movement"
+      },
+      {
+        "name": "Topic",
+        "value": "Melody: Periodic Phrase Structure"
+      },
+      {
+        "name": "chapterTitle",
+        "value": "The Classical Era: (1750â1800)"
+      },
+      {
+        "name": "module",
+        "value": "Joseph Haydn, String Quartet in C Major, op. 76, no. 3, second movement"
+      },
+      {
+        "name": "item_title",
+        "value": "0133794636_Mark Evan Bonds_ch19_m01_q0003"
+      },
+      {
+        "name": "questionlayout",
+        "value": "1"
+      },
+      {
+        "name": "CH",
+        "value": "19"
+      },
+      {
+        "name": "Objective",
+        "value": "LO 19.4 Recognize and describe the periodic phrase structure underlying the melody."
+      },
+      {
+        "name": "shuffle_choices",
+        "value": "Yes"
+      }
+    ],
+    "subject": [
+      "Music"
+    ],
+    "contentTypeTier2": [
+      "AssessmentItem"
+    ],
+    "contentTypeTier1": "Assessment",
+    "format": [
+      "application/vnd.pearson.sanvan.v1.activity"
+    ],
+    "version": "1.0",
+    "guid": "afc69956-45dd-4e7c-9e08-a5a91b5f64c1",
+    "bookAuthor": "Mark Evan Bonds",
+    "title": "Ch19 Post Fact 01",
+    "educationalAlignment": [
+      "http://purl.org/pearson/objectives/183725473384362"
+    ]
+  },
+  "body": {
+    "description": "ch19_post_fact_01",
+    "containerConfig": [
+      {
+        "description": "ch19_post_fact_01",
+        "containerId": "target1",
+        "brixConfig": [
+          {
+            "bricId": "q1",
+            "bricType": "MultipleChoiceQuestion",
+            "config": {
+              "id": "QUE68315",
+              "question": "The second movement of Haydn\u0027s String Quartet in C Major, op. 76, no. 3, consists of what kind of phrase structure, with antecedent and consequent units that together make a larger whole?\n\u003cbr /\u003e",
+              "order": "randomized",
+              "presenterType": "RadioGroup",
+              "presenterConfig": {
+                "numberFormat": "none"
+              },
+              "choices": [
+                {
+                  "answerKey": "answer_1",
+                  "content": "periodic"
+                },
+                {
+                  "answerKey": "answer_2",
+                  "content": "contradicting"
+                },
+                {
+                  "answerKey": "answer_3",
+                  "content": "popular"
+                },
+                {
+                  "answerKey": "answer_4",
+                  "content": "classical"
+                }
+              ]
+            },
+            "answerKey": {
+              "assessmentType": "multiplechoice",
+              "answers": {
+                "answer_3": {
+                  "score": 0.0,
+                  "response": "LO 19.4 Recognize and describe the periodic phrase structure underlying the melody."
+                },
+                "answer_2": {
+                  "score": 0.0,
+                  "response": "LO 19.4 Recognize and describe the periodic phrase structure underlying the melody."
+                },
+                "answer_1": {
+                  "score": 1.0,
+                  "response": ""
+                },
+                "answer_4": {
+                  "score": 0.0,
+                  "response": "LO 19.4 Recognize and describe the periodic phrase structure underlying the melody."
+                }
+              }
+            },
+            "configFixup": [
+              {
+                "name": "questionId",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "sequenceNodeKey",
+                  "type": "ref"
+                }
+              },
+              {
+                "name": "maxAttempts",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "maxAttempts",
+                  "type": "ref"
+                }
+              }
+            ]
+          }
+        ],
+        "hookupActions": [
+          {
+            "description": "Hookup the submit manager to evaluate answers",
+            "methodName": "handleRequestsFrom",
+            "type": "method-call",
+            "args": [
+              {
+                "domain": "brix",
+                "refId": "q1",
+                "type": "ref"
+              }
+            ],
+            "instance": {
+              "type": "submit-manager"
+            }
+          },
+          {
+            "description": "Draw the question",
+            "methodName": "draw",
+            "type": "method-call",
+            "args": [
+              {
+                "selector": "#target1",
+                "type": "d3select"
+              }
+            ],
+            "instance": {
+              "domain": "brix",
+              "refId": "q1",
+              "type": "ref"
+            }
+          }
+        ]
+      }
+    ],
+    "title": "Ch19 Post Fact 01"
+  }
+}
