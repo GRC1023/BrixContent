@@ -200,10 +200,14 @@ module.exports.ItemSeeder = function() {
 						if (err) throw err;
 						var jsonFileData = JSON.parse(fileData);
 						var guid = jsonFileData.metadata.guid;
-						var assessmentInfo = that.getAssessmentInfo(jsonFileData);
+						var assessmentInfo = that.getAssessmentInfo(jsonFileData, filename);
 
-						// If we've found a proper assessment type, let's process it
-						if (assessmentInfo.assessmentType) {
+						// If we've found a proper assessment type, let's process it.
+						// NOTE: There's a config.justTestAssessmentTypes which will stop things here.
+						// The point is to let getAssessmentInfo run, which will tell you if you have
+						// a file that doesn't contain a known assessment type, and then stop the script.
+						// We only run that via the default.json config and it's usually set to false.
+						if (assessmentInfo.assessmentType && !config.justTestAssessmentTypes) {
 							
 							items.findOne({activityGuid:guid}, function (err, item) {
 								// @todo - do something with db err
@@ -408,15 +412,22 @@ module.exports.ItemSeeder = function() {
 	 *
 	 * @param {Object}  jsonFileData
 	 *     The container config of the original activity.
+	 * @param {string}  filename
+	 *     The name of the file.    
 	 *
 	 * @returns {Object} assessmentInfo
 	 *     This contains the presenterType and assessmentConfig.
 	 *
-	 * @throws {Error} If the presenterType isn't found.
-	 *
 	 ****************************************************************************/
-	this.getAssessmentInfo = function(jsonFileData){
+	this.getAssessmentInfo = function(jsonFileData, filename){
 		var assessmentInfo = {};
+
+		if (!jsonFileData.body.containerConfig) {
+			var msg = 'MESSED UP JSON in ' + filename;
+			console.log(msg);
+			return assessmentInfo;
+		}
+
 		_(jsonFileData.body.containerConfig).some(function(cont) {
 			return _(cont.brixConfig).some(function(bconfig) {
 				if (assessmentTypesHash[bconfig.bricType]) {
@@ -430,12 +441,9 @@ module.exports.ItemSeeder = function() {
 
 		if (assessmentInfo.assessmentType === undefined)
 		{
-			var msg = 'No bricType found that matches assessmentTypesHash in jsonFileData';
+			var msg = 'No assessmentType in ' + filename;
 			console.log(msg);
-			// @todo - pass filename into here too so we can console.log the filename
-			// then ask the user if they want to throw an error/abort or keep going
 
-			//this.logger_.severe(msg);
 			//throw new Error(msg);
 		}
 		return assessmentInfo;
