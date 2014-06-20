@@ -208,7 +208,6 @@ module.exports.ItemSeeder = function() {
 						// a file that doesn't contain a known assessment type, and then stop the script.
 						// We only run that via the default.json config and it's usually set to false.
 						if (assessmentInfo.assessmentType && !config.justTestAssessmentTypes) {
-							
 							items.findOne({activityGuid:guid}, function (err, item) {
 								// @todo - do something with db err
 								
