@@ -1,0 +1,196 @@
+{
+  "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope",
+  "@type": "Envelope",
+  "metadata": {
+    "bookTitle": "Listen To This",
+    "keywords": [
+      "Bonds 3e",
+      "Alick",
+      "Ch24"
+    ],
+    "extendedMetadata": [
+      {
+        "name": "Page-Reference",
+        "value": "214"
+      },
+      {
+        "name": "ISBN",
+        "value": "0133794636"
+      },
+      {
+        "name": "M",
+        "value": "m01"
+      },
+      {
+        "name": "assessment_title",
+        "value": "Quiz: Wolfgang Amadeus Mozart, The Marriage of Figaro, Act I, âCosa sentoâ"
+      },
+      {
+        "name": "Topic",
+        "value": "Listening Guide"
+      },
+      {
+        "name": "chapterTitle",
+        "value": "The Classical Era: (1750â1800)"
+      },
+      {
+        "name": "module",
+        "value": "Wolfgang Amadeus Mozart, The Marriage of Figaro, Act I, âCosa sentoâ"
+      },
+      {
+        "name": "item_title",
+        "value": "0133794636_Mark Evan Bonds_ch24_m01_q0010"
+      },
+      {
+        "name": "questionlayout",
+        "value": "1"
+      },
+      {
+        "name": "CH",
+        "value": "24"
+      },
+      {
+        "name": "Objective",
+        "value": "LO 24.2 Listen for the contrasting dramatic qualities of the voices and melodic styles of the three characters."
+      },
+      {
+        "name": "shuffle_choices",
+        "value": "Yes"
+      }
+    ],
+    "subject": [
+      "Music"
+    ],
+    "contentTypeTier2": [
+      "AssessmentItem"
+    ],
+    "contentTypeTier1": "Assessment",
+    "format": [
+      "application/vnd.pearson.sanvan.v1.activity"
+    ],
+    "version": "1.0",
+    "guid": "733570b4-3ba4-4dfc-8649-264d607a3507",
+    "bookAuthor": "Mark Evan Bonds",
+    "title": "Ch24 Post Concept 04",
+    "educationalAlignment": [
+      "http://purl.org/pearson/objectives/183725473384362"
+    ]
+  },
+  "body": {
+    "description": "ch24_post_concept_04",
+    "containerConfig": [
+      {
+        "description": "ch24_post_concept_04",
+        "containerId": "target1",
+        "brixConfig": [
+          {
+            "bricId": "q1",
+            "bricType": "MultipleChoiceQuestion",
+            "config": {
+              "id": "QUE63959",
+              "question": "Why are opera characters able to sing simultaneously?\n\u003cbr /\u003e",
+              "order": "randomized",
+              "presenterType": "RadioGroup",
+              "presenterConfig": {
+                "numberFormat": "none"
+              },
+              "choices": [
+                {
+                  "answerKey": "answer_1",
+                  "content": "The differences in vocal range make it easy to understand the words."
+                },
+                {
+                  "answerKey": "answer_2",
+                  "content": "They usually are singing the same words so the audience can still understand them."
+                },
+                {
+                  "answerKey": "answer_3",
+                  "content": "It\u0027s not important to understand the words in opera, only to appreciate the music."
+                },
+                {
+                  "answerKey": "answer_4",
+                  "content": "Characters in opera only sing simultaneously when the action onstage is chaotic."
+                }
+              ]
+            },
+            "answerKey": {
+              "assessmentType": "multiplechoice",
+              "answers": {
+                "answer_3": {
+                  "score": 0.0,
+                  "response": "LO 24.2 Listen for the contrasting dramatic qualities of the voices and melodic styles of the three characters."
+                },
+                "answer_2": {
+                  "score": 0.0,
+                  "response": "LO 24.2 Listen for the contrasting dramatic qualities of the voices and melodic styles of the three characters."
+                },
+                "answer_1": {
+                  "score": 1.0,
+                  "response": ""
+                },
+                "answer_4": {
+                  "score": 0.0,
+                  "response": "LO 24.2 Listen for the contrasting dramatic qualities of the voices and melodic styles of the three characters."
+                }
+              }
+            },
+            "configFixup": [
+              {
+                "name": "questionId",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "sequenceNodeKey",
+                  "type": "ref"
+                }
+              },
+              {
+                "name": "maxAttempts",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "maxAttempts",
+                  "type": "ref"
+                }
+              }
+            ]
+          }
+        ],
+        "hookupActions": [
+          {
+            "description": "Hookup the submit manager to evaluate answers",
+            "methodName": "handleRequestsFrom",
+            "type": "method-call",
+            "args": [
+              {
+                "domain": "brix",
+                "refId": "q1",
+                "type": "ref"
+              }
+            ],
+            "instance": {
+              "type": "submit-manager"
+            }
+          },
+          {
+            "description": "Draw the question",
+            "methodName": "draw",
+            "type": "method-call",
+            "args": [
+              {
+                "selector": "#target1",
+                "type": "d3select"
+              }
+            ],
+            "instance": {
+              "domain": "brix",
+              "refId": "q1",
+              "type": "ref"
+            }
+          }
+        ]
+      }
+    ],
+    "title": "Ch24 Post Concept 04"
+  }
+}

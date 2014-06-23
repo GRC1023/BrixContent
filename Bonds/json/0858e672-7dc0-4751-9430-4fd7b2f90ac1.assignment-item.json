@@ -1,0 +1,196 @@
+{
+  "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope",
+  "@type": "Envelope",
+  "metadata": {
+    "bookTitle": "Listen To This",
+    "keywords": [
+      "Bonds 3e",
+      "Alick",
+      "Ch24"
+    ],
+    "extendedMetadata": [
+      {
+        "name": "Page-Reference",
+        "value": "209"
+      },
+      {
+        "name": "ISBN",
+        "value": "0133794636"
+      },
+      {
+        "name": "M",
+        "value": "m01"
+      },
+      {
+        "name": "assessment_title",
+        "value": "Quiz: Wolfgang Amadeus Mozart, The Marriage of Figaro, Act I, âCosa sentoâ"
+      },
+      {
+        "name": "Topic",
+        "value": "chapter-opening text"
+      },
+      {
+        "name": "chapterTitle",
+        "value": "The Classical Era: (1750â1800)"
+      },
+      {
+        "name": "module",
+        "value": "Wolfgang Amadeus Mozart, The Marriage of Figaro, Act I, âCosa sentoâ"
+      },
+      {
+        "name": "item_title",
+        "value": "0133794636_Mark Evan Bonds_ch24_m01_q0002"
+      },
+      {
+        "name": "questionlayout",
+        "value": "1"
+      },
+      {
+        "name": "CH",
+        "value": "24"
+      },
+      {
+        "name": "Objective",
+        "value": "LO 24.1 Summarize the plot of Mozart\u0027s The Marriage of Figaro."
+      },
+      {
+        "name": "shuffle_choices",
+        "value": "Yes"
+      }
+    ],
+    "subject": [
+      "Music"
+    ],
+    "contentTypeTier2": [
+      "AssessmentItem"
+    ],
+    "contentTypeTier1": "Assessment",
+    "format": [
+      "application/vnd.pearson.sanvan.v1.activity"
+    ],
+    "version": "1.0",
+    "guid": "0858e672-7dc0-4751-9430-4fd7b2f90ac1",
+    "bookAuthor": "Mark Evan Bonds",
+    "title": "Ch24 Pre Fact 02",
+    "educationalAlignment": [
+      "http://purl.org/pearson/objectives/183725473384362"
+    ]
+  },
+  "body": {
+    "description": "ch24_pre_fact_02",
+    "containerConfig": [
+      {
+        "description": "ch24_pre_fact_02",
+        "containerId": "target1",
+        "brixConfig": [
+          {
+            "bricId": "q1",
+            "bricType": "MultipleChoiceQuestion",
+            "config": {
+              "id": "QUE63951",
+              "question": "Mozart\u0027s \n\u003cem\u003eMarriage of Figaro\u003c/em\u003e is \n\u003cem\u003eopera buffa,\u003c/em\u003e meaning which of the following?\n\u003cbr /\u003e",
+              "order": "randomized",
+              "presenterType": "RadioGroup",
+              "presenterConfig": {
+                "numberFormat": "none"
+              },
+              "choices": [
+                {
+                  "answerKey": "answer_1",
+                  "content": "comic opera"
+                },
+                {
+                  "answerKey": "answer_2",
+                  "content": "tragic opera"
+                },
+                {
+                  "answerKey": "answer_3",
+                  "content": "religious opera"
+                },
+                {
+                  "answerKey": "answer_4",
+                  "content": "mythic opera"
+                }
+              ]
+            },
+            "answerKey": {
+              "assessmentType": "multiplechoice",
+              "answers": {
+                "answer_3": {
+                  "score": 0.0,
+                  "response": "LO 24.1 Summarize the plot of Mozart\u0027s The Marriage of Figaro."
+                },
+                "answer_2": {
+                  "score": 0.0,
+                  "response": "LO 24.1 Summarize the plot of Mozart\u0027s The Marriage of Figaro."
+                },
+                "answer_1": {
+                  "score": 1.0,
+                  "response": ""
+                },
+                "answer_4": {
+                  "score": 0.0,
+                  "response": "LO 24.1 Summarize the plot of Mozart\u0027s The Marriage of Figaro."
+                }
+              }
+            },
+            "configFixup": [
+              {
+                "name": "questionId",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "sequenceNodeKey",
+                  "type": "ref"
+                }
+              },
+              {
+                "name": "maxAttempts",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "maxAttempts",
+                  "type": "ref"
+                }
+              }
+            ]
+          }
+        ],
+        "hookupActions": [
+          {
+            "description": "Hookup the submit manager to evaluate answers",
+            "methodName": "handleRequestsFrom",
+            "type": "method-call",
+            "args": [
+              {
+                "domain": "brix",
+                "refId": "q1",
+                "type": "ref"
+              }
+            ],
+            "instance": {
+              "type": "submit-manager"
+            }
+          },
+          {
+            "description": "Draw the question",
+            "methodName": "draw",
+            "type": "method-call",
+            "args": [
+              {
+                "selector": "#target1",
+                "type": "d3select"
+              }
+            ],
+            "instance": {
+              "domain": "brix",
+              "refId": "q1",
+              "type": "ref"
+            }
+          }
+        ]
+      }
+    ],
+    "title": "Ch24 Pre Fact 02"
+  }
+}

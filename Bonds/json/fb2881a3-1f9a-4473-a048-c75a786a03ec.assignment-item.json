@@ -1,0 +1,196 @@
+{
+  "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope",
+  "@type": "Envelope",
+  "metadata": {
+    "bookTitle": "Listen To This",
+    "keywords": [
+      "Bonds 3e",
+      "Alick",
+      "Ch31"
+    ],
+    "extendedMetadata": [
+      {
+        "name": "Page-Reference",
+        "value": "267"
+      },
+      {
+        "name": "ISBN",
+        "value": "0133794636"
+      },
+      {
+        "name": "M",
+        "value": "m01"
+      },
+      {
+        "name": "assessment_title",
+        "value": "Quiz: Clara Wieck Schumann, âForward!â"
+      },
+      {
+        "name": "Topic",
+        "value": "Contrasting Melodies"
+      },
+      {
+        "name": "chapterTitle",
+        "value": "The Nineteenth Century: 1800â1900"
+      },
+      {
+        "name": "module",
+        "value": "Clara Wieck Schumann, âForward!â"
+      },
+      {
+        "name": "item_title",
+        "value": "0133794636_Mark Evan Bonds_ch31_m01_q0010"
+      },
+      {
+        "name": "questionlayout",
+        "value": "1"
+      },
+      {
+        "name": "CH",
+        "value": "31"
+      },
+      {
+        "name": "Objective",
+        "value": "Objective\u003dLO 31.5 Listen for changes in the texture of the music throughout from monophonic to polyphonic."
+      },
+      {
+        "name": "shuffle_choices",
+        "value": "Yes"
+      }
+    ],
+    "subject": [
+      "Music"
+    ],
+    "contentTypeTier2": [
+      "AssessmentItem"
+    ],
+    "contentTypeTier1": "Assessment",
+    "format": [
+      "application/vnd.pearson.sanvan.v1.activity"
+    ],
+    "version": "1.0",
+    "guid": "fb2881a3-1f9a-4473-a048-c75a786a03ec",
+    "bookAuthor": "Mark Evan Bonds",
+    "title": "Ch31 Post Concept 05",
+    "educationalAlignment": [
+      "http://purl.org/pearson/objectives/183725473384362"
+    ]
+  },
+  "body": {
+    "description": "ch31_post_concept_05",
+    "containerConfig": [
+      {
+        "description": "ch31_post_concept_05",
+        "containerId": "target1",
+        "brixConfig": [
+          {
+            "bricId": "q1",
+            "bricType": "MultipleChoiceQuestion",
+            "config": {
+              "id": "QUE64149",
+              "question": "The form of \"Forward!\" is\n\u003cbr /\u003e",
+              "order": "randomized",
+              "presenterType": "RadioGroup",
+              "presenterConfig": {
+                "numberFormat": "none"
+              },
+              "choices": [
+                {
+                  "answerKey": "answer_1",
+                  "content": "ABA\u0027B\u0027A\u0027\u0027."
+                },
+                {
+                  "answerKey": "answer_2",
+                  "content": "ABACA."
+                },
+                {
+                  "answerKey": "answer_3",
+                  "content": "ABCBA."
+                },
+                {
+                  "answerKey": "answer_4",
+                  "content": "ABA\u0027B\u0027C."
+                }
+              ]
+            },
+            "answerKey": {
+              "assessmentType": "multiplechoice",
+              "answers": {
+                "answer_3": {
+                  "score": 0.0,
+                  "response": "LO 31.5 Listen for changes in the texture of the music throughout from monophonic to polyphonic"
+                },
+                "answer_2": {
+                  "score": 0.0,
+                  "response": "LO 31.5 Listen for changes in the texture of the music throughout from monophonic to polyphonic"
+                },
+                "answer_1": {
+                  "score": 1.0,
+                  "response": ""
+                },
+                "answer_4": {
+                  "score": 0.0,
+                  "response": "LO 31.5 Listen for changes in the texture of the music throughout from monophonic to polyphonic"
+                }
+              }
+            },
+            "configFixup": [
+              {
+                "name": "questionId",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "sequenceNodeKey",
+                  "type": "ref"
+                }
+              },
+              {
+                "name": "maxAttempts",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "maxAttempts",
+                  "type": "ref"
+                }
+              }
+            ]
+          }
+        ],
+        "hookupActions": [
+          {
+            "description": "Hookup the submit manager to evaluate answers",
+            "methodName": "handleRequestsFrom",
+            "type": "method-call",
+            "args": [
+              {
+                "domain": "brix",
+                "refId": "q1",
+                "type": "ref"
+              }
+            ],
+            "instance": {
+              "type": "submit-manager"
+            }
+          },
+          {
+            "description": "Draw the question",
+            "methodName": "draw",
+            "type": "method-call",
+            "args": [
+              {
+                "selector": "#target1",
+                "type": "d3select"
+              }
+            ],
+            "instance": {
+              "domain": "brix",
+              "refId": "q1",
+              "type": "ref"
+            }
+          }
+        ]
+      }
+    ],
+    "title": "Ch31 Post Concept 05"
+  }
+}
