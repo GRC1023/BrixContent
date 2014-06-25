@@ -1,0 +1,192 @@
+{
+  "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope",
+  "@type": "Envelope",
+  "metadata": {
+    "bookTitle": "Discovering the Life Span",
+    "keywords": [
+      "Feldman 3e",
+      "Alick",
+      "Ch03"
+    ],
+    "extendedMetadata": [
+      {
+        "name": "Page-Reference",
+        "value": "143"
+      },
+      {
+        "name": "ISBN",
+        "value": "0133869946"
+      },
+      {
+        "name": "M",
+        "value": "c01"
+      },
+      {
+        "name": "assessment_title",
+        "value": "Chapter Quiz: Infancy"
+      },
+      {
+        "name": "Topic",
+        "value": "Developing the Roots of Sociability"
+      },
+      {
+        "name": "chapterTitle",
+        "value": "Infancy"
+      },
+      {
+        "name": "item_title",
+        "value": "0133869946_Robert S. Feldman_ch03_c01_q0012"
+      },
+      {
+        "name": "CH",
+        "value": "3"
+      },
+      {
+        "name": "Difficulty",
+        "value": "Moderate"
+      },
+      {
+        "name": "Objective",
+        "value": "LO 3.19 \u0026amp;ndash; What individual differences distinguish one infant from another?"
+      },
+      {
+        "name": "shuffle_choices",
+        "value": "Yes"
+      }
+    ],
+    "subject": [
+      "Psychology"
+    ],
+    "contentTypeTier2": [
+      "AssessmentItem"
+    ],
+    "contentTypeTier1": "Assessment",
+    "format": [
+      "application/vnd.pearson.sanvan.v1.activity"
+    ],
+    "version": "1.0",
+    "guid": "8c8df4f5-2323-4001-b005-5f1ef30b7cab",
+    "bookAuthor": "Robert S. Feldman",
+    "title": "FA 3.3.3 Differences Among Infants Apply LO 3.19 APA LO 1.1",
+    "educationalAlignment": [
+      "http://purl.org/pearson/objectives/183725473384362"
+    ]
+  },
+  "body": {
+    "description": "FA_3.3.3, Differences among Infants, Apply, LO 3.19, APA LO 1.1",
+    "containerConfig": [
+      {
+        "description": "FA_3.3.3, Differences among Infants, Apply, LO 3.19, APA LO 1.1",
+        "containerId": "target1",
+        "brixConfig": [
+          {
+            "bricId": "q1",
+            "bricType": "MultipleChoiceQuestion",
+            "config": {
+              "id": "QUE61942",
+              "question": "Young Isla has a low activity level and low irritability. She does particularly well in an environment in which she is left to explore on her own. This match between environment and the child\u0027s temperament is called _______.\n\u003cbr /\u003e",
+              "order": "randomized",
+              "presenterType": "RadioGroup",
+              "presenterConfig": {
+                "numberFormat": "none"
+              },
+              "choices": [
+                {
+                  "answerKey": "answer_1",
+                  "content": "appropriate childrearing"
+                },
+                {
+                  "answerKey": "answer_2",
+                  "content": "social referencing"
+                },
+                {
+                  "answerKey": "answer_3",
+                  "content": "goodness-of-fit"
+                },
+                {
+                  "answerKey": "answer_4",
+                  "content": "secure attachment"
+                }
+              ]
+            },
+            "answerKey": {
+              "assessmentType": "multiplechoice",
+              "answers": {
+                "answer_3": {
+                  "score": 1.0,
+                  "response": ""
+                },
+                "answer_2": {
+                  "score": 0.0,
+                  "response": "Consider this: Goodness-of-fit demonstrates the idea that no temperament is better than another. Each requires a different environment to thrive. See below. LO 3.19 What individual differences distinguish one infant from another?"
+                },
+                "answer_1": {
+                  "score": 0.0,
+                  "response": "Consider this: Goodness-of-fit demonstrates the idea that no temperament is better than another. Each requires a different environment to thrive. See below. LO 3.19 What individual differences distinguish one infant from another?"
+                },
+                "answer_4": {
+                  "score": 0.0,
+                  "response": "Consider this: Goodness-of-fit demonstrates the idea that no temperament is better than another. Each requires a different environment to thrive. See below. LO 3.19 What individual differences distinguish one infant from another?"
+                }
+              }
+            },
+            "configFixup": [
+              {
+                "name": "questionId",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "sequenceNodeKey",
+                  "type": "ref"
+                }
+              },
+              {
+                "name": "maxAttempts",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "maxAttempts",
+                  "type": "ref"
+                }
+              }
+            ]
+          }
+        ],
+        "hookupActions": [
+          {
+            "description": "Hookup the submit manager to evaluate answers",
+            "methodName": "handleRequestsFrom",
+            "type": "method-call",
+            "args": [
+              {
+                "domain": "brix",
+                "refId": "q1",
+                "type": "ref"
+              }
+            ],
+            "instance": {
+              "type": "submit-manager"
+            }
+          },
+          {
+            "description": "Draw the question",
+            "methodName": "draw",
+            "type": "method-call",
+            "args": [
+              {
+                "selector": "#target1",
+                "type": "d3select"
+              }
+            ],
+            "instance": {
+              "domain": "brix",
+              "refId": "q1",
+              "type": "ref"
+            }
+          }
+        ]
+      }
+    ],
+    "title": "FA 3.3.3 Differences Among Infants Apply LO 3.19 APA LO 1.1"
+  }
+}

@@ -1,0 +1,192 @@
+{
+  "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope",
+  "@type": "Envelope",
+  "metadata": {
+    "bookTitle": "Discovering the Life Span",
+    "keywords": [
+      "Feldman 3e",
+      "Ch05",
+      "Alick"
+    ],
+    "extendedMetadata": [
+      {
+        "name": "Page-Reference",
+        "value": "211"
+      },
+      {
+        "name": "ISBN",
+        "value": "0133869946"
+      },
+      {
+        "name": "M",
+        "value": "c01"
+      },
+      {
+        "name": "assessment_title",
+        "value": "Chapter Quiz: Middle Childhood"
+      },
+      {
+        "name": "Topic",
+        "value": "Intellectual and Language Development"
+      },
+      {
+        "name": "chapterTitle",
+        "value": "Middle Childhood"
+      },
+      {
+        "name": "item_title",
+        "value": "0133869946_Robert S. Feldman_ch05_c01_q0007"
+      },
+      {
+        "name": "CH",
+        "value": "5"
+      },
+      {
+        "name": "Difficulty",
+        "value": "Moderate"
+      },
+      {
+        "name": "Objective",
+        "value": "LO 5.6 \u0026amp;ndash; How do children in middle childhood develop memory?"
+      },
+      {
+        "name": "shuffle_choices",
+        "value": "Yes"
+      }
+    ],
+    "subject": [
+      "Psychology"
+    ],
+    "contentTypeTier2": [
+      "AssessmentItem"
+    ],
+    "contentTypeTier1": "Assessment",
+    "format": [
+      "application/vnd.pearson.sanvan.v1.activity"
+    ],
+    "version": "1.0",
+    "guid": "7f27c4f9-6622-4e8c-bda3-c7a6a01d46a9",
+    "bookAuthor": "Robert S. Feldman",
+    "title": "FA 5.2.2 Intellectual And Language Development Apply LO 5.6 APA LO 1.2",
+    "educationalAlignment": [
+      "http://purl.org/pearson/objectives/183725473384362"
+    ]
+  },
+  "body": {
+    "description": "FA_5.2.2, Intellectual and Language Development, Apply, LO 5.6, APA LO 1.2",
+    "containerConfig": [
+      {
+        "description": "FA_5.2.2, Intellectual and Language Development, Apply, LO 5.6, APA LO 1.2",
+        "containerId": "target1",
+        "brixConfig": [
+          {
+            "bricId": "q1",
+            "bricType": "MultipleChoiceQuestion",
+            "config": {
+              "id": "QUE62012",
+              "question": "Ten-year-old Mary uses rehearsal, or repeats information aloud, to improve her memory. Rehearsal is an example of a _________.\n\u003cbr /\u003e",
+              "order": "randomized",
+              "presenterType": "RadioGroup",
+              "presenterConfig": {
+                "numberFormat": "none"
+              },
+              "choices": [
+                {
+                  "answerKey": "answer_1",
+                  "content": "keyword strategy"
+                },
+                {
+                  "answerKey": "answer_2",
+                  "content": "mnemonic"
+                },
+                {
+                  "answerKey": "answer_3",
+                  "content": "cognitive technique"
+                },
+                {
+                  "answerKey": "answer_4",
+                  "content": "control strategy"
+                }
+              ]
+            },
+            "answerKey": {
+              "assessmentType": "multiplechoice",
+              "answers": {
+                "answer_3": {
+                  "score": 0.0,
+                  "response": "Consider this: A control strategy is an intentionally used tactic to improve cognitive processing. LO 5.6 How do children in middle childhood develop memory?"
+                },
+                "answer_2": {
+                  "score": 0.0,
+                  "response": "Consider this: A control strategy is an intentionally used tactic to improve cognitive processing. LO 5.6 How do children in middle childhood develop memory?"
+                },
+                "answer_1": {
+                  "score": 0.0,
+                  "response": "Consider this: A control strategy is an intentionally used tactic to improve cognitive processing. LO 5.6 How do children in middle childhood develop memory?"
+                },
+                "answer_4": {
+                  "score": 1.0,
+                  "response": ""
+                }
+              }
+            },
+            "configFixup": [
+              {
+                "name": "questionId",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "sequenceNodeKey",
+                  "type": "ref"
+                }
+              },
+              {
+                "name": "maxAttempts",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "maxAttempts",
+                  "type": "ref"
+                }
+              }
+            ]
+          }
+        ],
+        "hookupActions": [
+          {
+            "description": "Hookup the submit manager to evaluate answers",
+            "methodName": "handleRequestsFrom",
+            "type": "method-call",
+            "args": [
+              {
+                "domain": "brix",
+                "refId": "q1",
+                "type": "ref"
+              }
+            ],
+            "instance": {
+              "type": "submit-manager"
+            }
+          },
+          {
+            "description": "Draw the question",
+            "methodName": "draw",
+            "type": "method-call",
+            "args": [
+              {
+                "selector": "#target1",
+                "type": "d3select"
+              }
+            ],
+            "instance": {
+              "domain": "brix",
+              "refId": "q1",
+              "type": "ref"
+            }
+          }
+        ]
+      }
+    ],
+    "title": "FA 5.2.2 Intellectual And Language Development Apply LO 5.6 APA LO 1.2"
+  }
+}

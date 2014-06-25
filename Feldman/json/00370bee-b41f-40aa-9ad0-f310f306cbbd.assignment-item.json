@@ -1,0 +1,192 @@
+{
+  "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope",
+  "@type": "Envelope",
+  "metadata": {
+    "bookTitle": "Discovering the Life Span",
+    "keywords": [
+      "Feldman 3e",
+      "Ch10",
+      "Alick"
+    ],
+    "extendedMetadata": [
+      {
+        "name": "Page-Reference",
+        "value": "448"
+      },
+      {
+        "name": "ISBN",
+        "value": "0133869946"
+      },
+      {
+        "name": "M",
+        "value": "c01"
+      },
+      {
+        "name": "assessment_title",
+        "value": "Chapter Quiz: Death and Dying"
+      },
+      {
+        "name": "Topic",
+        "value": "Death Across the Life Span: Causes and Reactions"
+      },
+      {
+        "name": "chapterTitle",
+        "value": "Death and Dying"
+      },
+      {
+        "name": "item_title",
+        "value": "0133869946_Robert S. Feldman_ch10_c01_q0001"
+      },
+      {
+        "name": "CH",
+        "value": "10"
+      },
+      {
+        "name": "Difficulty",
+        "value": "Moderate"
+      },
+      {
+        "name": "Objective",
+        "value": "LO 10.2 \u0026amp;ndash; How is death perceived at different stages of the life span?"
+      },
+      {
+        "name": "shuffle_choices",
+        "value": "Yes"
+      }
+    ],
+    "subject": [
+      "Psychology"
+    ],
+    "contentTypeTier2": [
+      "AssessmentItem"
+    ],
+    "contentTypeTier1": "Assessment",
+    "format": [
+      "application/vnd.pearson.sanvan.v1.activity"
+    ],
+    "version": "1.0",
+    "guid": "00370bee-b41f-40aa-9ad0-f310f306cbbd",
+    "bookAuthor": "Robert S. Feldman",
+    "title": "FA 10.1.1 Death Across The Life Span Causes And Reactions Apply LO 10.2 APA LO 1.1",
+    "educationalAlignment": [
+      "http://purl.org/pearson/objectives/183725473384362"
+    ]
+  },
+  "body": {
+    "description": "FA_10.1.1, Death Across the Life Span: Causes and Reactions, Apply, LO 10.2, APA LO 1.1",
+    "containerConfig": [
+      {
+        "description": "FA_10.1.1, Death Across the Life Span: Causes and Reactions, Apply, LO 10.2, APA LO 1.1",
+        "containerId": "target1",
+        "brixConfig": [
+          {
+            "bricId": "q1",
+            "bricType": "MultipleChoiceQuestion",
+            "config": {
+              "id": "QUE62161",
+              "question": "Austin, a seemingly healthy 3-month-old baby, stops breathing and dies of unexplained causes, a form of death known as ________.\n\u003cbr /\u003e",
+              "order": "randomized",
+              "presenterType": "RadioGroup",
+              "presenterConfig": {
+                "numberFormat": "none"
+              },
+              "choices": [
+                {
+                  "answerKey": "answer_1",
+                  "content": "brain death"
+                },
+                {
+                  "answerKey": "answer_2",
+                  "content": "terminal decline"
+                },
+                {
+                  "answerKey": "answer_3",
+                  "content": "euthanasia"
+                },
+                {
+                  "answerKey": "answer_4",
+                  "content": "sudden infant death syndrome"
+                }
+              ]
+            },
+            "answerKey": {
+              "assessmentType": "multiplechoice",
+              "answers": {
+                "answer_3": {
+                  "score": 0.0,
+                  "response": "Consider this: While this is a cause of death, it is not common in the 2–4 month age range. LO 10.2 How is death perceived at different stages of the lifespan?"
+                },
+                "answer_2": {
+                  "score": 0.0,
+                  "response": "Consider this: While this is a cause of death, it is not common in the 2–4 month age range. LO 10.2 How is death perceived at different stages of the lifespan?"
+                },
+                "answer_1": {
+                  "score": 0.0,
+                  "response": "Consider this: While this is a cause of death, it is not common in the 2–4 month age range. LO 10.2 How is death perceived at different stages of the lifespan?"
+                },
+                "answer_4": {
+                  "score": 1.0,
+                  "response": ""
+                }
+              }
+            },
+            "configFixup": [
+              {
+                "name": "questionId",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "sequenceNodeKey",
+                  "type": "ref"
+                }
+              },
+              {
+                "name": "maxAttempts",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "maxAttempts",
+                  "type": "ref"
+                }
+              }
+            ]
+          }
+        ],
+        "hookupActions": [
+          {
+            "description": "Hookup the submit manager to evaluate answers",
+            "methodName": "handleRequestsFrom",
+            "type": "method-call",
+            "args": [
+              {
+                "domain": "brix",
+                "refId": "q1",
+                "type": "ref"
+              }
+            ],
+            "instance": {
+              "type": "submit-manager"
+            }
+          },
+          {
+            "description": "Draw the question",
+            "methodName": "draw",
+            "type": "method-call",
+            "args": [
+              {
+                "selector": "#target1",
+                "type": "d3select"
+              }
+            ],
+            "instance": {
+              "domain": "brix",
+              "refId": "q1",
+              "type": "ref"
+            }
+          }
+        ]
+      }
+    ],
+    "title": "FA 10.1.1 Death Across The Life Span Causes And Reactions Apply LO 10.2 APA LO 1.1"
+  }
+}

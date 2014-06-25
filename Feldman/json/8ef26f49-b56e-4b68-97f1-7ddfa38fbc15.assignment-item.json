@@ -1,0 +1,192 @@
+{
+  "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope",
+  "@type": "Envelope",
+  "metadata": {
+    "bookTitle": "Discovering the Life Span",
+    "keywords": [
+      "Feldman 3e",
+      "Alick",
+      "Ch03"
+    ],
+    "extendedMetadata": [
+      {
+        "name": "Page-Reference",
+        "value": "133"
+      },
+      {
+        "name": "ISBN",
+        "value": "0133869946"
+      },
+      {
+        "name": "M",
+        "value": "c01"
+      },
+      {
+        "name": "assessment_title",
+        "value": "Chapter Quiz: Infancy"
+      },
+      {
+        "name": "Topic",
+        "value": "Developing the Roots of Sociability"
+      },
+      {
+        "name": "chapterTitle",
+        "value": "Infancy"
+      },
+      {
+        "name": "item_title",
+        "value": "0133869946_Robert S. Feldman_ch03_c01_q0010"
+      },
+      {
+        "name": "CH",
+        "value": "3"
+      },
+      {
+        "name": "Difficulty",
+        "value": "Moderate"
+      },
+      {
+        "name": "Objective",
+        "value": "LO 3.15 \u0026amp;amp;ndash; Do infants experience emotions?"
+      },
+      {
+        "name": "shuffle_choices",
+        "value": "Yes"
+      }
+    ],
+    "subject": [
+      "Psychology"
+    ],
+    "contentTypeTier2": [
+      "AssessmentItem"
+    ],
+    "contentTypeTier1": "Assessment",
+    "format": [
+      "application/vnd.pearson.sanvan.v1.activity"
+    ],
+    "version": "1.0",
+    "guid": "8ef26f49-b56e-4b68-97f1-7ddfa38fbc15",
+    "bookAuthor": "Robert S. Feldman",
+    "title": "FA 3.3.1 Developing The Roots Of Sociability Apply LO 3.15 APA LO 1.1",
+    "educationalAlignment": [
+      "http://purl.org/pearson/objectives/183725473384362"
+    ]
+  },
+  "body": {
+    "description": "FA_3.3.1, Developing the Roots of Sociability, Apply, LO 3.15, APA LO 1.1",
+    "containerConfig": [
+      {
+        "description": "FA_3.3.1, Developing the Roots of Sociability, Apply, LO 3.15, APA LO 1.1",
+        "containerId": "target1",
+        "brixConfig": [
+          {
+            "bricId": "q1",
+            "bricType": "MultipleChoiceQuestion",
+            "config": {
+              "id": "QUE61940",
+              "question": "Which child seems to have developed a case of stranger anxiety?\n\u003cbr /\u003e\n\u003cbr /\u003e",
+              "order": "randomized",
+              "presenterType": "RadioGroup",
+              "presenterConfig": {
+                "numberFormat": "none"
+              },
+              "choices": [
+                {
+                  "answerKey": "answer_1",
+                  "content": "Andrew, a 4-month-old, cries when his father, instead of his mother, tries to give him his bottle.\n\u003cbr /\u003e"
+                },
+                {
+                  "answerKey": "answer_2",
+                  "content": "Lewanda, an 11-month-old, cries when the cashier at the grocery store tries to give her stickers.\n\u003cbr /\u003e"
+                },
+                {
+                  "answerKey": "answer_3",
+                  "content": "Bobby, an 8-month-old, cries hysterically when his mother drops him off at the sitter\u0027s before work.\n\u003cbr /\u003e"
+                },
+                {
+                  "answerKey": "answer_4",
+                  "content": "Julia, a 4-month old, hears her big brother crying because he scraped his knee. She is startled by the noise so she also begins to cry.\n\u003cbr /\u003e"
+                }
+              ]
+            },
+            "answerKey": {
+              "assessmentType": "multiplechoice",
+              "answers": {
+                "answer_3": {
+                  "score": 0.0,
+                  "response": "Consider this: Stranger anxiety, the caution and wariness displayed by infants when encountering an unfamiliar person, is usually developed by the end of the first year. LO 3.15 Do infants experience emotions?\n\u003cbr /\u003e"
+                },
+                "answer_2": {
+                  "score": 1.0,
+                  "response": "\u003cbr /\u003e"
+                },
+                "answer_1": {
+                  "score": 0.0,
+                  "response": "Consider this: Stranger anxiety, the caution and wariness displayed by infants when encountering an unfamiliar person, is usually developed by the end of the first year. LO 3.15 Do infants experience emotions?\n\u003cbr /\u003e"
+                },
+                "answer_4": {
+                  "score": 0.0,
+                  "response": "Consider this: Stranger anxiety, the caution and wariness displayed by infants when encountering an unfamiliar person, is usually developed by the end of the first year. LO 3.15 Do infants experience emotions?\n\u003cbr /\u003e"
+                }
+              }
+            },
+            "configFixup": [
+              {
+                "name": "questionId",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "sequenceNodeKey",
+                  "type": "ref"
+                }
+              },
+              {
+                "name": "maxAttempts",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "maxAttempts",
+                  "type": "ref"
+                }
+              }
+            ]
+          }
+        ],
+        "hookupActions": [
+          {
+            "description": "Hookup the submit manager to evaluate answers",
+            "methodName": "handleRequestsFrom",
+            "type": "method-call",
+            "args": [
+              {
+                "domain": "brix",
+                "refId": "q1",
+                "type": "ref"
+              }
+            ],
+            "instance": {
+              "type": "submit-manager"
+            }
+          },
+          {
+            "description": "Draw the question",
+            "methodName": "draw",
+            "type": "method-call",
+            "args": [
+              {
+                "selector": "#target1",
+                "type": "d3select"
+              }
+            ],
+            "instance": {
+              "domain": "brix",
+              "refId": "q1",
+              "type": "ref"
+            }
+          }
+        ]
+      }
+    ],
+    "title": "FA 3.3.1 Developing The Roots Of Sociability Apply LO 3.15 APA LO 1.1"
+  }
+}

@@ -1,0 +1,192 @@
+{
+  "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope",
+  "@type": "Envelope",
+  "metadata": {
+    "bookTitle": "Discovering the Life Span",
+    "keywords": [
+      "Feldman 3e",
+      "Alick",
+      "Ch04"
+    ],
+    "extendedMetadata": [
+      {
+        "name": "Page-Reference",
+        "value": "160"
+      },
+      {
+        "name": "ISBN",
+        "value": "0133869946"
+      },
+      {
+        "name": "M",
+        "value": "c01"
+      },
+      {
+        "name": "assessment_title",
+        "value": "Chapter Quiz: The Preschool Years"
+      },
+      {
+        "name": "Topic",
+        "value": "Piaget\u0026#39;s Approach to Cognitive Development"
+      },
+      {
+        "name": "chapterTitle",
+        "value": "The Preschool Years"
+      },
+      {
+        "name": "item_title",
+        "value": "0133869946_Robert S. Feldman_ch04_c01_q0009"
+      },
+      {
+        "name": "CH",
+        "value": "4"
+      },
+      {
+        "name": "Difficulty",
+        "value": "Moderate"
+      },
+      {
+        "name": "Objective",
+        "value": "LO 4.4 \u0026amp;amp;ndash; How does Piaget interpret cognitive development during the preschool years?"
+      },
+      {
+        "name": "shuffle_choices",
+        "value": "Yes"
+      }
+    ],
+    "subject": [
+      "Psychology"
+    ],
+    "contentTypeTier2": [
+      "AssessmentItem"
+    ],
+    "contentTypeTier1": "Assessment",
+    "format": [
+      "application/vnd.pearson.sanvan.v1.activity"
+    ],
+    "version": "1.0",
+    "guid": "dbb77d9d-be3d-4325-8aff-2d9e2807688e",
+    "bookAuthor": "Robert S. Feldman",
+    "title": "FA 4.2.5 Piagets Approach To Cognitive Development Analyze LO 4.4 APA LO 1.2",
+    "educationalAlignment": [
+      "http://purl.org/pearson/objectives/183725473384362"
+    ]
+  },
+  "body": {
+    "description": "FA_4.2.5, Piaget’s Approach to Cognitive Development, Analyze, LO 4.4, APA LO 1.2",
+    "containerConfig": [
+      {
+        "description": "FA_4.2.5, Piaget’s Approach to Cognitive Development, Analyze, LO 4.4, APA LO 1.2",
+        "containerId": "target1",
+        "brixConfig": [
+          {
+            "bricId": "q1",
+            "bricType": "MultipleChoiceQuestion",
+            "config": {
+              "id": "QUE61972",
+              "question": "A 2-year-old child sees his mother put sunscreen in her purse. He immediately associates the sunscreen with going to the pool and he asks, “Pool, Mommy?” This is an example of symbolic function, which is the key aspect of ________, according to Piaget.\n\u003cbr /\u003e",
+              "order": "randomized",
+              "presenterType": "RadioGroup",
+              "presenterConfig": {
+                "numberFormat": "none"
+              },
+              "choices": [
+                {
+                  "answerKey": "answer_1",
+                  "content": "preoperational thought"
+                },
+                {
+                  "answerKey": "answer_2",
+                  "content": "centration"
+                },
+                {
+                  "answerKey": "answer_3",
+                  "content": "egocentric thought"
+                },
+                {
+                  "answerKey": "answer_4",
+                  "content": "scaffolding"
+                }
+              ]
+            },
+            "answerKey": {
+              "assessmentType": "multiplechoice",
+              "answers": {
+                "answer_3": {
+                  "score": 0.0,
+                  "response": "Consider this: The preoperational period is marked by advances in a child’s symbolic thinking and reasoning. The child saw the sunscreen as representative of swimming and reasoned that his mother would be taking him to the pool. LO 4.4 How does Piaget interpret cognitive development during the preschool years?"
+                },
+                "answer_2": {
+                  "score": 0.0,
+                  "response": "Consider this: The preoperational period is marked by advances in a child’s symbolic thinking and reasoning. The child saw the sunscreen as representative of swimming and reasoned that his mother would be taking him to the pool. LO 4.4 How does Piaget interpret cognitive development during the preschool years?"
+                },
+                "answer_1": {
+                  "score": 1.0,
+                  "response": ""
+                },
+                "answer_4": {
+                  "score": 0.0,
+                  "response": "Consider this: The preoperational period is marked by advances in a child’s symbolic thinking and reasoning. The child saw the sunscreen as representative of swimming and reasoned that his mother would be taking him to the pool. LO 4.4 How does Piaget interpret cognitive development during the preschool years?"
+                }
+              }
+            },
+            "configFixup": [
+              {
+                "name": "questionId",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "sequenceNodeKey",
+                  "type": "ref"
+                }
+              },
+              {
+                "name": "maxAttempts",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "maxAttempts",
+                  "type": "ref"
+                }
+              }
+            ]
+          }
+        ],
+        "hookupActions": [
+          {
+            "description": "Hookup the submit manager to evaluate answers",
+            "methodName": "handleRequestsFrom",
+            "type": "method-call",
+            "args": [
+              {
+                "domain": "brix",
+                "refId": "q1",
+                "type": "ref"
+              }
+            ],
+            "instance": {
+              "type": "submit-manager"
+            }
+          },
+          {
+            "description": "Draw the question",
+            "methodName": "draw",
+            "type": "method-call",
+            "args": [
+              {
+                "selector": "#target1",
+                "type": "d3select"
+              }
+            ],
+            "instance": {
+              "domain": "brix",
+              "refId": "q1",
+              "type": "ref"
+            }
+          }
+        ]
+      }
+    ],
+    "title": "FA 4.2.5 Piagets Approach To Cognitive Development Analyze LO 4.4 APA LO 1.2"
+  }
+}

@@ -1,0 +1,192 @@
+{
+  "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope",
+  "@type": "Envelope",
+  "metadata": {
+    "bookTitle": "Discovering the Life Span",
+    "keywords": [
+      "Feldman 3e",
+      "Alick",
+      "Ch03"
+    ],
+    "extendedMetadata": [
+      {
+        "name": "Page-Reference",
+        "value": "126"
+      },
+      {
+        "name": "ISBN",
+        "value": "0133869946"
+      },
+      {
+        "name": "M",
+        "value": "c01"
+      },
+      {
+        "name": "assessment_title",
+        "value": "Chapter Quiz: Infancy"
+      },
+      {
+        "name": "Topic",
+        "value": "The Roots of Language"
+      },
+      {
+        "name": "chapterTitle",
+        "value": "Infancy"
+      },
+      {
+        "name": "item_title",
+        "value": "0133869946_Robert S. Feldman_ch03_c01_q0008"
+      },
+      {
+        "name": "CH",
+        "value": "3"
+      },
+      {
+        "name": "Difficulty",
+        "value": "Moderate"
+      },
+      {
+        "name": "Objective",
+        "value": "LO 3.13 \u0026amp;amp;ndash; How do children learn to use language?"
+      },
+      {
+        "name": "shuffle_choices",
+        "value": "Yes"
+      }
+    ],
+    "subject": [
+      "Psychology"
+    ],
+    "contentTypeTier2": [
+      "AssessmentItem"
+    ],
+    "contentTypeTier1": "Assessment",
+    "format": [
+      "application/vnd.pearson.sanvan.v1.activity"
+    ],
+    "version": "1.0",
+    "guid": "ce9427c8-e0cd-4074-8aa1-c9ef4ec9adf7",
+    "bookAuthor": "Robert S. Feldman",
+    "title": "FA 3.2.4 The Roots Of Language Apply LO 3.13 APA LO 1.2",
+    "educationalAlignment": [
+      "http://purl.org/pearson/objectives/183725473384362"
+    ]
+  },
+  "body": {
+    "description": "FA_3.2.4, The Roots of Language, Apply, LO 3.13, APA LO 1.2",
+    "containerConfig": [
+      {
+        "description": "FA_3.2.4, The Roots of Language, Apply, LO 3.13, APA LO 1.2",
+        "containerId": "target1",
+        "brixConfig": [
+          {
+            "bricId": "q1",
+            "bricType": "MultipleChoiceQuestion",
+            "config": {
+              "id": "QUE61938",
+              "question": "Gavin, a 15-month-old, often says the word \"drink\" when he is thirsty. This word communicates to his mother the whole phrase \"I want a drink of water,\" or a variety of other choices such as juice, milk, or a bottle before bed. Gavin is using ________ to communicate.\n\u003cbr /\u003e\n\u003cbr /\u003e",
+              "order": "randomized",
+              "presenterType": "RadioGroup",
+              "presenterConfig": {
+                "numberFormat": "none"
+              },
+              "choices": [
+                {
+                  "answerKey": "answer_1",
+                  "content": "telegraphic speech\n\u003cbr /\u003e"
+                },
+                {
+                  "answerKey": "answer_2",
+                  "content": "holophrases\n\u003cbr /\u003e"
+                },
+                {
+                  "answerKey": "answer_3",
+                  "content": "underextension\n\u003cbr /\u003e"
+                },
+                {
+                  "answerKey": "answer_4",
+                  "content": "overextension\n\u003cbr /\u003e"
+                }
+              ]
+            },
+            "answerKey": {
+              "assessmentType": "multiplechoice",
+              "answers": {
+                "answer_3": {
+                  "score": 0.0,
+                  "response": "Consider this: Holophrases are one-word utterances that stand for a whole phrase, the meaning of which depends on the particular context in which they are used. LO 3.13 How do children learn to use language?\n\u003cbr /\u003e"
+                },
+                "answer_2": {
+                  "score": 1.0,
+                  "response": "\u003cbr /\u003e"
+                },
+                "answer_1": {
+                  "score": 0.0,
+                  "response": "Consider this: Holophrases are one-word utterances that stand for a whole phrase, the meaning of which depends on the particular context in which they are used. LO 3.13 How do children learn to use language?\n\u003cbr /\u003e"
+                },
+                "answer_4": {
+                  "score": 0.0,
+                  "response": "Consider this: Holophrases are one-word utterances that stand for a whole phrase, the meaning of which depends on the particular context in which they are used. LO 3.13 How do children learn to use language?\n\u003cbr /\u003e"
+                }
+              }
+            },
+            "configFixup": [
+              {
+                "name": "questionId",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "sequenceNodeKey",
+                  "type": "ref"
+                }
+              },
+              {
+                "name": "maxAttempts",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "maxAttempts",
+                  "type": "ref"
+                }
+              }
+            ]
+          }
+        ],
+        "hookupActions": [
+          {
+            "description": "Hookup the submit manager to evaluate answers",
+            "methodName": "handleRequestsFrom",
+            "type": "method-call",
+            "args": [
+              {
+                "domain": "brix",
+                "refId": "q1",
+                "type": "ref"
+              }
+            ],
+            "instance": {
+              "type": "submit-manager"
+            }
+          },
+          {
+            "description": "Draw the question",
+            "methodName": "draw",
+            "type": "method-call",
+            "args": [
+              {
+                "selector": "#target1",
+                "type": "d3select"
+              }
+            ],
+            "instance": {
+              "domain": "brix",
+              "refId": "q1",
+              "type": "ref"
+            }
+          }
+        ]
+      }
+    ],
+    "title": "FA 3.2.4 The Roots Of Language Apply LO 3.13 APA LO 1.2"
+  }
+}

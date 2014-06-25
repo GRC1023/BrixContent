@@ -1,0 +1,192 @@
+{
+  "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope",
+  "@type": "Envelope",
+  "metadata": {
+    "bookTitle": "Discovering the Life Span",
+    "keywords": [
+      "Feldman 3e",
+      "Alick",
+      "Ch04"
+    ],
+    "extendedMetadata": [
+      {
+        "name": "Page-Reference",
+        "value": "158"
+      },
+      {
+        "name": "ISBN",
+        "value": "0133869946"
+      },
+      {
+        "name": "M",
+        "value": "c01"
+      },
+      {
+        "name": "assessment_title",
+        "value": "Chapter Quiz: The Preschool Years"
+      },
+      {
+        "name": "Topic",
+        "value": "Motor Development"
+      },
+      {
+        "name": "chapterTitle",
+        "value": "The Preschool Years"
+      },
+      {
+        "name": "item_title",
+        "value": "0133869946_Robert S. Feldman_ch04_c01_q0003"
+      },
+      {
+        "name": "CH",
+        "value": "4"
+      },
+      {
+        "name": "Difficulty",
+        "value": "Moderate"
+      },
+      {
+        "name": "Objective",
+        "value": "LO 4.3 \u0026amp;ndash; How does motor development evolve in preschool children?"
+      },
+      {
+        "name": "shuffle_choices",
+        "value": "Yes"
+      }
+    ],
+    "subject": [
+      "Psychology"
+    ],
+    "contentTypeTier2": [
+      "AssessmentItem"
+    ],
+    "contentTypeTier1": "Assessment",
+    "format": [
+      "application/vnd.pearson.sanvan.v1.activity"
+    ],
+    "version": "1.0",
+    "guid": "098add1a-f07b-4b12-8dc6-11d65c460416",
+    "bookAuthor": "Robert S. Feldman",
+    "title": "FA 4.1.3 Motor Development Apply LO 4.3 APA LO 1.3",
+    "educationalAlignment": [
+      "http://purl.org/pearson/objectives/183725473384362"
+    ]
+  },
+  "body": {
+    "description": "FA_4.1.3, Motor Development, Apply, LO 4.3, APA LO 1.3",
+    "containerConfig": [
+      {
+        "description": "FA_4.1.3, Motor Development, Apply, LO 4.3, APA LO 1.3",
+        "containerId": "target1",
+        "brixConfig": [
+          {
+            "bricId": "q1",
+            "bricType": "MultipleChoiceQuestion",
+            "config": {
+              "id": "QUE61966",
+              "question": "Which of the following children is showing signs of being ready to begin potty training?\n\u003cbr /\u003e",
+              "order": "randomized",
+              "presenterType": "RadioGroup",
+              "presenterConfig": {
+                "numberFormat": "none"
+              },
+              "choices": [
+                {
+                  "answerKey": "answer_1",
+                  "content": "Gabriella has been showing interest in wearing “big-girl underwear” like her older sister, but she is unaware when she has a bowel movement."
+                },
+                {
+                  "answerKey": "answer_2",
+                  "content": "Nathan likes to sit on the potty and often hides in his mother\u0027s closet when he knows he will soon be having a bowel movement."
+                },
+                {
+                  "answerKey": "answer_3",
+                  "content": "Madelaine refuses to sit on her new training potty that her mother gave her, insisting instead that she would rather wear diapers all the time."
+                },
+                {
+                  "answerKey": "answer_4",
+                  "content": "Carter has a perpetually wet diaper; his mother reports that he cannot stay dry for any longer than an hour before he requires another diaper change."
+                }
+              ]
+            },
+            "answerKey": {
+              "assessmentType": "multiplechoice",
+              "answers": {
+                "answer_3": {
+                  "score": 0.0,
+                  "response": "Consider this: Signs of readiness include awareness that urination or a bowel movement is about to occur, the ability to remain dry for at least 2 hours, and asking to use the potty chair. LO 4.3 How does motor development evolve in preschool children?"
+                },
+                "answer_2": {
+                  "score": 1.0,
+                  "response": ""
+                },
+                "answer_1": {
+                  "score": 0.0,
+                  "response": "Consider this: Signs of readiness include awareness that urination or a bowel movement is about to occur, the ability to remain dry for at least 2 hours, and asking to use the potty chair. LO 4.3 How does motor development evolve in preschool children?"
+                },
+                "answer_4": {
+                  "score": 0.0,
+                  "response": "Consider this: Signs of readiness include awareness that urination or a bowel movement is about to occur, the ability to remain dry for at least 2 hours, and asking to use the potty chair. LO 4.3 How does motor development evolve in preschool children?"
+                }
+              }
+            },
+            "configFixup": [
+              {
+                "name": "questionId",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "sequenceNodeKey",
+                  "type": "ref"
+                }
+              },
+              {
+                "name": "maxAttempts",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "maxAttempts",
+                  "type": "ref"
+                }
+              }
+            ]
+          }
+        ],
+        "hookupActions": [
+          {
+            "description": "Hookup the submit manager to evaluate answers",
+            "methodName": "handleRequestsFrom",
+            "type": "method-call",
+            "args": [
+              {
+                "domain": "brix",
+                "refId": "q1",
+                "type": "ref"
+              }
+            ],
+            "instance": {
+              "type": "submit-manager"
+            }
+          },
+          {
+            "description": "Draw the question",
+            "methodName": "draw",
+            "type": "method-call",
+            "args": [
+              {
+                "selector": "#target1",
+                "type": "d3select"
+              }
+            ],
+            "instance": {
+              "domain": "brix",
+              "refId": "q1",
+              "type": "ref"
+            }
+          }
+        ]
+      }
+    ],
+    "title": "FA 4.1.3 Motor Development Apply LO 4.3 APA LO 1.3"
+  }
+}

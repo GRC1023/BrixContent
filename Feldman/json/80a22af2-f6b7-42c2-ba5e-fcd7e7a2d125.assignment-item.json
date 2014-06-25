@@ -1,0 +1,192 @@
+{
+  "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope",
+  "@type": "Envelope",
+  "metadata": {
+    "bookTitle": "Discovering the Life Span",
+    "keywords": [
+      "Feldman 3e",
+      "Ch05",
+      "Alick"
+    ],
+    "extendedMetadata": [
+      {
+        "name": "Page-Reference",
+        "value": "216"
+      },
+      {
+        "name": "ISBN",
+        "value": "0133869946"
+      },
+      {
+        "name": "M",
+        "value": "c01"
+      },
+      {
+        "name": "assessment_title",
+        "value": "Chapter Quiz: Middle Childhood"
+      },
+      {
+        "name": "Topic",
+        "value": "Schooling: The Three Rs (And More) of Middle Childhood"
+      },
+      {
+        "name": "chapterTitle",
+        "value": "Middle Childhood"
+      },
+      {
+        "name": "item_title",
+        "value": "0133869946_Robert S. Feldman_ch05_c01_q0010"
+      },
+      {
+        "name": "CH",
+        "value": "5"
+      },
+      {
+        "name": "Difficulty",
+        "value": "Difficult"
+      },
+      {
+        "name": "Objective",
+        "value": "LO 5.8 \u0026amp;ndash; What are some trends in schooling today?"
+      },
+      {
+        "name": "shuffle_choices",
+        "value": "Yes"
+      }
+    ],
+    "subject": [
+      "Psychology"
+    ],
+    "contentTypeTier2": [
+      "AssessmentItem"
+    ],
+    "contentTypeTier1": "Assessment",
+    "format": [
+      "application/vnd.pearson.sanvan.v1.activity"
+    ],
+    "version": "1.0",
+    "guid": "80a22af2-f6b7-42c2-ba5e-fcd7e7a2d125",
+    "bookAuthor": "Robert S. Feldman",
+    "title": "FA 5.2.5 Schooling The Three Rs And More Of Middle Childhood Analyze LO 5.8 APA LO 1.2",
+    "educationalAlignment": [
+      "http://purl.org/pearson/objectives/183725473384362"
+    ]
+  },
+  "body": {
+    "description": "FA_5.2.5, Schooling: The Three Rs (And More) of Middle Childhood, Analyze, LO 5.8, APA LO 1.2",
+    "containerConfig": [
+      {
+        "description": "FA_5.2.5, Schooling: The Three Rs (And More) of Middle Childhood, Analyze, LO 5.8, APA LO 1.2",
+        "containerId": "target1",
+        "brixConfig": [
+          {
+            "bricId": "q1",
+            "bricType": "MultipleChoiceQuestion",
+            "config": {
+              "id": "QUE62015",
+              "question": "Despite being able to read words aloud with fluency and comprehend the information, a child in reading Stage 3 would not be able to ________.\n\u003cbr /\u003e",
+              "order": "randomized",
+              "presenterType": "RadioGroup",
+              "presenterConfig": {
+                "numberFormat": "none"
+              },
+              "choices": [
+                {
+                  "answerKey": "answer_1",
+                  "content": "attach meaning to the words he is reading"
+                },
+                {
+                  "answerKey": "answer_2",
+                  "content": "comprehend information presented from multiple perspectives"
+                },
+                {
+                  "answerKey": "answer_3",
+                  "content": "sound out unfamiliar words"
+                },
+                {
+                  "answerKey": "answer_4",
+                  "content": "use reading as a means to learn"
+                }
+              ]
+            },
+            "answerKey": {
+              "assessmentType": "multiplechoice",
+              "answers": {
+                "answer_3": {
+                  "score": 0.0,
+                  "response": "Consider this: Children in Stage 3 are capable of reading fluently and gleaning enough meaning from what they read to learn. However, they struggle with processing information from multiple points of view. LO 5.8 What are some trends in schooling today?"
+                },
+                "answer_2": {
+                  "score": 1.0,
+                  "response": ""
+                },
+                "answer_1": {
+                  "score": 0.0,
+                  "response": "Consider this: Children in Stage 3 are capable of reading fluently and gleaning enough meaning from what they read to learn. However, they struggle with processing information from multiple points of view. LO 5.8 What are some trends in schooling today?"
+                },
+                "answer_4": {
+                  "score": 0.0,
+                  "response": "Consider this: Children in Stage 3 are capable of reading fluently and gleaning enough meaning from what they read to learn. However, they struggle with processing information from multiple points of view. LO 5.8 What are some trends in schooling today?"
+                }
+              }
+            },
+            "configFixup": [
+              {
+                "name": "questionId",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "sequenceNodeKey",
+                  "type": "ref"
+                }
+              },
+              {
+                "name": "maxAttempts",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "maxAttempts",
+                  "type": "ref"
+                }
+              }
+            ]
+          }
+        ],
+        "hookupActions": [
+          {
+            "description": "Hookup the submit manager to evaluate answers",
+            "methodName": "handleRequestsFrom",
+            "type": "method-call",
+            "args": [
+              {
+                "domain": "brix",
+                "refId": "q1",
+                "type": "ref"
+              }
+            ],
+            "instance": {
+              "type": "submit-manager"
+            }
+          },
+          {
+            "description": "Draw the question",
+            "methodName": "draw",
+            "type": "method-call",
+            "args": [
+              {
+                "selector": "#target1",
+                "type": "d3select"
+              }
+            ],
+            "instance": {
+              "domain": "brix",
+              "refId": "q1",
+              "type": "ref"
+            }
+          }
+        ]
+      }
+    ],
+    "title": "FA 5.2.5 Schooling The Three Rs And More Of Middle Childhood Analyze LO 5.8 APA LO 1.2"
+  }
+}

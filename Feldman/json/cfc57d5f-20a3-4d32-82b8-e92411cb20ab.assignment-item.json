@@ -1,0 +1,192 @@
+{
+  "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope",
+  "@type": "Envelope",
+  "metadata": {
+    "bookTitle": "Discovering the Life Span",
+    "keywords": [
+      "Feldman 3e",
+      "Ch10",
+      "Alick"
+    ],
+    "extendedMetadata": [
+      {
+        "name": "Page-Reference",
+        "value": "451"
+      },
+      {
+        "name": "ISBN",
+        "value": "0133869946"
+      },
+      {
+        "name": "M",
+        "value": "c01"
+      },
+      {
+        "name": "assessment_title",
+        "value": "Chapter Quiz: Death and Dying"
+      },
+      {
+        "name": "Topic",
+        "value": "Death Across the Life Span: Causes and Reactions"
+      },
+      {
+        "name": "chapterTitle",
+        "value": "Death and Dying"
+      },
+      {
+        "name": "item_title",
+        "value": "0133869946_Robert S. Feldman_ch10_c01_q0003"
+      },
+      {
+        "name": "CH",
+        "value": "10"
+      },
+      {
+        "name": "Difficulty",
+        "value": "Moderate"
+      },
+      {
+        "name": "Objective",
+        "value": "LO 10.2 \u0026amp;ndash; How is death perceived at different stages of the life span?"
+      },
+      {
+        "name": "shuffle_choices",
+        "value": "Yes"
+      }
+    ],
+    "subject": [
+      "Psychology"
+    ],
+    "contentTypeTier2": [
+      "AssessmentItem"
+    ],
+    "contentTypeTier1": "Assessment",
+    "format": [
+      "application/vnd.pearson.sanvan.v1.activity"
+    ],
+    "version": "1.0",
+    "guid": "cfc57d5f-20a3-4d32-82b8-e92411cb20ab",
+    "bookAuthor": "Robert S. Feldman",
+    "title": "FA 10.1.3 Death Across The Life Span Causes And Reactions Apply LO 10.2 APA LO 1.1",
+    "educationalAlignment": [
+      "http://purl.org/pearson/objectives/183725473384362"
+    ]
+  },
+  "body": {
+    "description": "FA_10.1.3, Death Across the Life Span: Causes and Reactions, Apply, LO 10.2, APA LO 1.1",
+    "containerConfig": [
+      {
+        "description": "FA_10.1.3, Death Across the Life Span: Causes and Reactions, Apply, LO 10.2, APA LO 1.1",
+        "containerId": "target1",
+        "brixConfig": [
+          {
+            "bricId": "q1",
+            "bricType": "MultipleChoiceQuestion",
+            "config": {
+              "id": "QUE62163",
+              "question": "Raj is a 10-year-old boy of the Hindu faith, and Winona is a 10-year-old girl who is a member of the Lakota tribe. Which of the following statements best describes how their views of death would differ?\n\u003cbr /\u003e",
+              "order": "randomized",
+              "presenterType": "RadioGroup",
+              "presenterConfig": {
+                "numberFormat": "none"
+              },
+              "choices": [
+                {
+                  "answerKey": "answer_1",
+                  "content": "Raj would view death as a judgment about his contributions to the world; Winona would view death as redemption for an earthly life of travail."
+                },
+                {
+                  "answerKey": "answer_2",
+                  "content": "Raj would view death as a continuation of life; Winona would view death as a punishment for a life poorly lived."
+                },
+                {
+                  "answerKey": "answer_3",
+                  "content": "Raj would view death as rebirth into a new body; Winona would view death as movement into a spirit land."
+                },
+                {
+                  "answerKey": "answer_4",
+                  "content": "Raj would view death as a punishment for a life poorly lived; Winona would view death as the scientific cessation of bodily function with no belief in an afterlife."
+                }
+              ]
+            },
+            "answerKey": {
+              "assessmentType": "multiplechoice",
+              "answers": {
+                "answer_3": {
+                  "score": 1.0,
+                  "response": ""
+                },
+                "answer_2": {
+                  "score": 0.0,
+                  "response": "Consider this: While these choices describe certain cultural beliefs about death, they do not correctly describe the Hindu and Lakota views. LO 10.2 How is death perceived at different stages of the lifespan?"
+                },
+                "answer_1": {
+                  "score": 0.0,
+                  "response": "Consider this: While these choices describe certain cultural beliefs about death, they do not correctly describe the Hindu and Lakota views. LO 10.2 How is death perceived at different stages of the lifespan?"
+                },
+                "answer_4": {
+                  "score": 0.0,
+                  "response": "Consider this: While these choices describe certain cultural beliefs about death, they do not correctly describe the Hindu and Lakota views. LO 10.2 How is death perceived at different stages of the lifespan?"
+                }
+              }
+            },
+            "configFixup": [
+              {
+                "name": "questionId",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "sequenceNodeKey",
+                  "type": "ref"
+                }
+              },
+              {
+                "name": "maxAttempts",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "maxAttempts",
+                  "type": "ref"
+                }
+              }
+            ]
+          }
+        ],
+        "hookupActions": [
+          {
+            "description": "Hookup the submit manager to evaluate answers",
+            "methodName": "handleRequestsFrom",
+            "type": "method-call",
+            "args": [
+              {
+                "domain": "brix",
+                "refId": "q1",
+                "type": "ref"
+              }
+            ],
+            "instance": {
+              "type": "submit-manager"
+            }
+          },
+          {
+            "description": "Draw the question",
+            "methodName": "draw",
+            "type": "method-call",
+            "args": [
+              {
+                "selector": "#target1",
+                "type": "d3select"
+              }
+            ],
+            "instance": {
+              "domain": "brix",
+              "refId": "q1",
+              "type": "ref"
+            }
+          }
+        ]
+      }
+    ],
+    "title": "FA 10.1.3 Death Across The Life Span Causes And Reactions Apply LO 10.2 APA LO 1.1"
+  }
+}

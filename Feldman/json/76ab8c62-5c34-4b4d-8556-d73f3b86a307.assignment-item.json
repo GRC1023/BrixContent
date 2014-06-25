@@ -1,0 +1,192 @@
+{
+  "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope",
+  "@type": "Envelope",
+  "metadata": {
+    "bookTitle": "Discovering the Life Span",
+    "keywords": [
+      "Feldman 3e",
+      "Alick",
+      "Ch04"
+    ],
+    "extendedMetadata": [
+      {
+        "name": "Page-Reference",
+        "value": "167"
+      },
+      {
+        "name": "ISBN",
+        "value": "0133869946"
+      },
+      {
+        "name": "M",
+        "value": "c01"
+      },
+      {
+        "name": "assessment_title",
+        "value": "Chapter Quiz: The Preschool Years"
+      },
+      {
+        "name": "Topic",
+        "value": "Information Processing and Vygotsky\u0026#39;s Approach to Cognitive Development"
+      },
+      {
+        "name": "chapterTitle",
+        "value": "The Preschool Years"
+      },
+      {
+        "name": "item_title",
+        "value": "0133869946_Robert S. Feldman_ch04_c01_q0008"
+      },
+      {
+        "name": "CH",
+        "value": "4"
+      },
+      {
+        "name": "Difficulty",
+        "value": "Moderate"
+      },
+      {
+        "name": "Objective",
+        "value": "LO 4.7 \u0026#8211; What separates Vygotsky\u0026#39;s approach from Piaget\u0026#39;s?"
+      },
+      {
+        "name": "shuffle_choices",
+        "value": "Yes"
+      }
+    ],
+    "subject": [
+      "Psychology"
+    ],
+    "contentTypeTier2": [
+      "AssessmentItem"
+    ],
+    "contentTypeTier1": "Assessment",
+    "format": [
+      "application/vnd.pearson.sanvan.v1.activity"
+    ],
+    "version": "1.0",
+    "guid": "76ab8c62-5c34-4b4d-8556-d73f3b86a307",
+    "bookAuthor": "Robert S. Feldman",
+    "title": "FA 4.2.4 Information Processing And Vygotskys Approach To Cognitive Development Apply LO 4.7",
+    "educationalAlignment": [
+      "http://purl.org/pearson/objectives/183725473384362"
+    ]
+  },
+  "body": {
+    "description": "FA_4.2.4, Information Processing and Vygotsky’s Approach to Cognitive Development, Apply, LO 4.7",
+    "containerConfig": [
+      {
+        "description": "FA_4.2.4, Information Processing and Vygotsky’s Approach to Cognitive Development, Apply, LO 4.7",
+        "containerId": "target1",
+        "brixConfig": [
+          {
+            "bricId": "q1",
+            "bricType": "MultipleChoiceQuestion",
+            "config": {
+              "id": "QUE61971",
+              "question": "Five-year-old Trent observes his neighbor, 7-year-old Charlie, playing T-ball with his friends. Trent’s interest is piqued, so his mother signs him up for instructional T-ball. Trent’s coach notices that Trent is having difficulty hitting the ball off of the T, so he places his hands over Trent’s on the bat and helps him swing. Trent hits a home run and is delighted. According to Vygotsky, this is an example of ________.\n\u003cbr /\u003e",
+              "order": "randomized",
+              "presenterType": "RadioGroup",
+              "presenterConfig": {
+                "numberFormat": "none"
+              },
+              "choices": [
+                {
+                  "answerKey": "answer_1",
+                  "content": "the zone of proximal development (ZPD)"
+                },
+                {
+                  "answerKey": "answer_2",
+                  "content": "information processing"
+                },
+                {
+                  "answerKey": "answer_3",
+                  "content": "preoperations"
+                },
+                {
+                  "answerKey": "answer_4",
+                  "content": "transformation"
+                }
+              ]
+            },
+            "answerKey": {
+              "assessmentType": "multiplechoice",
+              "answers": {
+                "answer_3": {
+                  "score": 0.0,
+                  "response": "Consider this: ZPD is the level at which a child can almost, but not fully, perform a task independently, but can do so with the assistance of someone more competent. LO 4.7 What separates Vygotsky’s approach from Piaget’s?"
+                },
+                "answer_2": {
+                  "score": 0.0,
+                  "response": "Consider this: ZPD is the level at which a child can almost, but not fully, perform a task independently, but can do so with the assistance of someone more competent. LO 4.7 What separates Vygotsky’s approach from Piaget’s?"
+                },
+                "answer_1": {
+                  "score": 1.0,
+                  "response": ""
+                },
+                "answer_4": {
+                  "score": 0.0,
+                  "response": "Consider this: ZPD is the level at which a child can almost, but not fully, perform a task independently, but can do so with the assistance of someone more competent. LO 4.7 What separates Vygotsky’s approach from Piaget’s?"
+                }
+              }
+            },
+            "configFixup": [
+              {
+                "name": "questionId",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "sequenceNodeKey",
+                  "type": "ref"
+                }
+              },
+              {
+                "name": "maxAttempts",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "maxAttempts",
+                  "type": "ref"
+                }
+              }
+            ]
+          }
+        ],
+        "hookupActions": [
+          {
+            "description": "Hookup the submit manager to evaluate answers",
+            "methodName": "handleRequestsFrom",
+            "type": "method-call",
+            "args": [
+              {
+                "domain": "brix",
+                "refId": "q1",
+                "type": "ref"
+              }
+            ],
+            "instance": {
+              "type": "submit-manager"
+            }
+          },
+          {
+            "description": "Draw the question",
+            "methodName": "draw",
+            "type": "method-call",
+            "args": [
+              {
+                "selector": "#target1",
+                "type": "d3select"
+              }
+            ],
+            "instance": {
+              "domain": "brix",
+              "refId": "q1",
+              "type": "ref"
+            }
+          }
+        ]
+      }
+    ],
+    "title": "FA 4.2.4 Information Processing And Vygotskys Approach To Cognitive Development Apply LO 4.7"
+  }
+}

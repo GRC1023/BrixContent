@@ -1,0 +1,192 @@
+{
+  "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope",
+  "@type": "Envelope",
+  "metadata": {
+    "bookTitle": "Discovering the Life Span",
+    "keywords": [
+      "Feldman 3e",
+      "Ch01",
+      "Alick"
+    ],
+    "extendedMetadata": [
+      {
+        "name": "Page-Reference",
+        "value": "33"
+      },
+      {
+        "name": "ISBN",
+        "value": "0133869946"
+      },
+      {
+        "name": "M",
+        "value": "c01"
+      },
+      {
+        "name": "assessment_title",
+        "value": "Chapter Quiz: Introduction"
+      },
+      {
+        "name": "Topic",
+        "value": "Experiments: Determining Cause and Effect"
+      },
+      {
+        "name": "chapterTitle",
+        "value": "Introduction"
+      },
+      {
+        "name": "item_title",
+        "value": "0133869946_Robert S. Feldman_ch01_c01_q0011"
+      },
+      {
+        "name": "CH",
+        "value": "1"
+      },
+      {
+        "name": "Difficulty",
+        "value": "Difficult"
+      },
+      {
+        "name": "Objective",
+        "value": "LO 1.11 \u0026amp;ndash; What are the characteristics of experimental research?"
+      },
+      {
+        "name": "shuffle_choices",
+        "value": "Yes"
+      }
+    ],
+    "subject": [
+      "Psychology"
+    ],
+    "contentTypeTier2": [
+      "AssessmentItem"
+    ],
+    "contentTypeTier1": "Assessment",
+    "format": [
+      "application/vnd.pearson.sanvan.v1.activity"
+    ],
+    "version": "1.0",
+    "guid": "543daf89-b7fe-4f6a-8ecc-b671f91cfd11",
+    "bookAuthor": "Robert S. Feldman",
+    "title": "FA 1.3.5 Experiments Determining Cause And Effect Analyze LO 1.11 APA LO 1.2",
+    "educationalAlignment": [
+      "http://purl.org/pearson/objectives/183725473384362"
+    ]
+  },
+  "body": {
+    "description": "FA_1.3.5, Experiments: Determining Cause and Effect, Analyze, LO 1.11, APA LO 1.2",
+    "containerConfig": [
+      {
+        "description": "FA_1.3.5, Experiments: Determining Cause and Effect, Analyze, LO 1.11, APA LO 1.2",
+        "containerId": "target1",
+        "brixConfig": [
+          {
+            "bricId": "q1",
+            "bricType": "MultipleChoiceQuestion",
+            "config": {
+              "id": "QUE61888",
+              "question": "Which of the following describes a drawback of the cross-sectional research strategy?\n\u003cbr /\u003e",
+              "order": "randomized",
+              "presenterType": "RadioGroup",
+              "presenterConfig": {
+                "numberFormat": "none"
+              },
+              "choices": [
+                {
+                  "answerKey": "answer_1",
+                  "content": "This research strategy requires a tremendous investment of time because researchers must wait for participants to become older."
+                },
+                {
+                  "answerKey": "answer_2",
+                  "content": "Participants often drop out over the course of the study due to moves, illness, or death."
+                },
+                {
+                  "answerKey": "answer_3",
+                  "content": "This research strategy is designed to test developmental theories rather than to provide solutions to immediate problems."
+                },
+                {
+                  "answerKey": "answer_4",
+                  "content": "This research strategy can often become skewed if participants are members of different cohorts."
+                }
+              ]
+            },
+            "answerKey": {
+              "assessmentType": "multiplechoice",
+              "answers": {
+                "answer_3": {
+                  "score": 0.0,
+                  "response": "Consider this: Cross-sectional research studies several age groups simultaneously at the same point in time, and therefore environmental situations experienced by members of different cohorts can cloud study results. LO 1.11 What are the characteristics of experimental research?"
+                },
+                "answer_2": {
+                  "score": 0.0,
+                  "response": "Consider this: Cross-sectional research studies several age groups simultaneously at the same point in time, and therefore environmental situations experienced by members of different cohorts can cloud study results. LO 1.11 What are the characteristics of experimental research?"
+                },
+                "answer_1": {
+                  "score": 0.0,
+                  "response": "Consider this: Cross-sectional research studies several age groups simultaneously at the same point in time, and therefore environmental situations experienced by members of different cohorts can cloud study results. LO 1.11 What are the characteristics of experimental research?"
+                },
+                "answer_4": {
+                  "score": 1.0,
+                  "response": ""
+                }
+              }
+            },
+            "configFixup": [
+              {
+                "name": "questionId",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "sequenceNodeKey",
+                  "type": "ref"
+                }
+              },
+              {
+                "name": "maxAttempts",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "maxAttempts",
+                  "type": "ref"
+                }
+              }
+            ]
+          }
+        ],
+        "hookupActions": [
+          {
+            "description": "Hookup the submit manager to evaluate answers",
+            "methodName": "handleRequestsFrom",
+            "type": "method-call",
+            "args": [
+              {
+                "domain": "brix",
+                "refId": "q1",
+                "type": "ref"
+              }
+            ],
+            "instance": {
+              "type": "submit-manager"
+            }
+          },
+          {
+            "description": "Draw the question",
+            "methodName": "draw",
+            "type": "method-call",
+            "args": [
+              {
+                "selector": "#target1",
+                "type": "d3select"
+              }
+            ],
+            "instance": {
+              "domain": "brix",
+              "refId": "q1",
+              "type": "ref"
+            }
+          }
+        ]
+      }
+    ],
+    "title": "FA 1.3.5 Experiments Determining Cause And Effect Analyze LO 1.11 APA LO 1.2"
+  }
+}

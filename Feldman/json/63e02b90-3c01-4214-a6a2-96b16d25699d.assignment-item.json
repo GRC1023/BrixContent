@@ -1,0 +1,192 @@
+{
+  "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope",
+  "@type": "Envelope",
+  "metadata": {
+    "bookTitle": "Discovering the Life Span",
+    "keywords": [
+      "Feldman 3e",
+      "Ch08",
+      "Alick"
+    ],
+    "extendedMetadata": [
+      {
+        "name": "Page-Reference",
+        "value": "370"
+      },
+      {
+        "name": "ISBN",
+        "value": "0133869946"
+      },
+      {
+        "name": "M",
+        "value": "c01"
+      },
+      {
+        "name": "assessment_title",
+        "value": "Chapter Quiz: Middle Adulthood"
+      },
+      {
+        "name": "Topic",
+        "value": "Cognitive Development"
+      },
+      {
+        "name": "chapterTitle",
+        "value": "Middle Adulthood"
+      },
+      {
+        "name": "item_title",
+        "value": "0133869946_Robert S. Feldman_ch08_c01_q0004"
+      },
+      {
+        "name": "CH",
+        "value": "8"
+      },
+      {
+        "name": "Difficulty",
+        "value": "Moderate"
+      },
+      {
+        "name": "Objective",
+        "value": "LO 8.7 \u0026amp;ndash; What happens to a person\u0026amp;rsquo;s intelligence in middle adulthood?"
+      },
+      {
+        "name": "shuffle_choices",
+        "value": "Yes"
+      }
+    ],
+    "subject": [
+      "Psychology"
+    ],
+    "contentTypeTier2": [
+      "AssessmentItem"
+    ],
+    "contentTypeTier1": "Assessment",
+    "format": [
+      "application/vnd.pearson.sanvan.v1.activity"
+    ],
+    "version": "1.0",
+    "guid": "63e02b90-3c01-4214-a6a2-96b16d25699d",
+    "bookAuthor": "Robert S. Feldman",
+    "title": "FA 8.2.1 Cognitive Development Apply LO 8.7 APA 1.2",
+    "educationalAlignment": [
+      "http://purl.org/pearson/objectives/183725473384362"
+    ]
+  },
+  "body": {
+    "description": "FA_8.2.1, Cognitive Development, Apply, LO 8.7, APA 1.2",
+    "containerConfig": [
+      {
+        "description": "FA_8.2.1, Cognitive Development, Apply, LO 8.7, APA 1.2",
+        "containerId": "target1",
+        "brixConfig": [
+          {
+            "bricId": "q1",
+            "bricType": "MultipleChoiceQuestion",
+            "config": {
+              "id": "QUE62110",
+              "question": "In order to investigate the decline of intelligence during middle adulthood, researchers set up a study that tests people of different ages at the same time. The researchers used a _________ study.\n\u003cbr /\u003e",
+              "order": "randomized",
+              "presenterType": "RadioGroup",
+              "presenterConfig": {
+                "numberFormat": "none"
+              },
+              "choices": [
+                {
+                  "answerKey": "answer_1",
+                  "content": "longitudinal"
+                },
+                {
+                  "answerKey": "answer_2",
+                  "content": "cross-sectional"
+                },
+                {
+                  "answerKey": "answer_3",
+                  "content": "cohort effect"
+                },
+                {
+                  "answerKey": "answer_4",
+                  "content": "double-blind"
+                }
+              ]
+            },
+            "answerKey": {
+              "assessmentType": "multiplechoice",
+              "answers": {
+                "answer_3": {
+                  "score": 0.0,
+                  "response": "Consider this: Studying different groups at the same time is the basis of a cross-sectional study. LO 8.7 What happens to a person’s intelligence during middle adulthood?"
+                },
+                "answer_2": {
+                  "score": 1.0,
+                  "response": ""
+                },
+                "answer_1": {
+                  "score": 0.0,
+                  "response": "Consider this: Studying different groups at the same time is the basis of a cross-sectional study. LO 8.7 What happens to a person’s intelligence during middle adulthood?"
+                },
+                "answer_4": {
+                  "score": 0.0,
+                  "response": "Consider this: Studying different groups at the same time is the basis of a cross-sectional study. LO 8.7 What happens to a person’s intelligence during middle adulthood?"
+                }
+              }
+            },
+            "configFixup": [
+              {
+                "name": "questionId",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "sequenceNodeKey",
+                  "type": "ref"
+                }
+              },
+              {
+                "name": "maxAttempts",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "maxAttempts",
+                  "type": "ref"
+                }
+              }
+            ]
+          }
+        ],
+        "hookupActions": [
+          {
+            "description": "Hookup the submit manager to evaluate answers",
+            "methodName": "handleRequestsFrom",
+            "type": "method-call",
+            "args": [
+              {
+                "domain": "brix",
+                "refId": "q1",
+                "type": "ref"
+              }
+            ],
+            "instance": {
+              "type": "submit-manager"
+            }
+          },
+          {
+            "description": "Draw the question",
+            "methodName": "draw",
+            "type": "method-call",
+            "args": [
+              {
+                "selector": "#target1",
+                "type": "d3select"
+              }
+            ],
+            "instance": {
+              "domain": "brix",
+              "refId": "q1",
+              "type": "ref"
+            }
+          }
+        ]
+      }
+    ],
+    "title": "FA 8.2.1 Cognitive Development Apply LO 8.7 APA 1.2"
+  }
+}

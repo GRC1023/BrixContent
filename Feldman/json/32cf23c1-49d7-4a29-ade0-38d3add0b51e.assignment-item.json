@@ -1,0 +1,192 @@
+{
+  "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope",
+  "@type": "Envelope",
+  "metadata": {
+    "bookTitle": "Discovering the Life Span",
+    "keywords": [
+      "Feldman 3e",
+      "Ch05",
+      "Alick"
+    ],
+    "extendedMetadata": [
+      {
+        "name": "Page-Reference",
+        "value": "204"
+      },
+      {
+        "name": "ISBN",
+        "value": "0133869946"
+      },
+      {
+        "name": "M",
+        "value": "c01"
+      },
+      {
+        "name": "assessment_title",
+        "value": "Chapter Quiz: Middle Childhood"
+      },
+      {
+        "name": "Topic",
+        "value": "Motor Development and Safety"
+      },
+      {
+        "name": "chapterTitle",
+        "value": "Middle Childhood"
+      },
+      {
+        "name": "item_title",
+        "value": "0133869946_Robert S. Feldman_ch05_c01_q0005"
+      },
+      {
+        "name": "CH",
+        "value": "5"
+      },
+      {
+        "name": "Difficulty",
+        "value": "Difficult"
+      },
+      {
+        "name": "Objective",
+        "value": "LO 5.3 \u0026amp;ndash; What are the main health concerns at this age?"
+      },
+      {
+        "name": "shuffle_choices",
+        "value": "Yes"
+      }
+    ],
+    "subject": [
+      "Psychology"
+    ],
+    "contentTypeTier2": [
+      "AssessmentItem"
+    ],
+    "contentTypeTier1": "Assessment",
+    "format": [
+      "application/vnd.pearson.sanvan.v1.activity"
+    ],
+    "version": "1.0",
+    "guid": "32cf23c1-49d7-4a29-ade0-38d3add0b51e",
+    "bookAuthor": "Robert S. Feldman",
+    "title": "FA 5.1.5 Motor Development And Safety Analyze LO 5.3 APA LO 1.3",
+    "educationalAlignment": [
+      "http://purl.org/pearson/objectives/183725473384362"
+    ]
+  },
+  "body": {
+    "description": "FA_5.1.5, Motor Development and Safety, Analyze, LO 5.3, APA LO 1.3",
+    "containerConfig": [
+      {
+        "description": "FA_5.1.5, Motor Development and Safety, Analyze, LO 5.3, APA LO 1.3",
+        "containerId": "target1",
+        "brixConfig": [
+          {
+            "bricId": "q1",
+            "bricType": "MultipleChoiceQuestion",
+            "config": {
+              "id": "QUE62010",
+              "question": "Which of the following criticisms has been raised regarding the use of antidepressants for treating psychological disorders in children?\n\u003cbr /\u003e",
+              "order": "randomized",
+              "presenterType": "RadioGroup",
+              "presenterConfig": {
+                "numberFormat": "none"
+              },
+              "choices": [
+                {
+                  "answerKey": "answer_1",
+                  "content": "Critics argue that the use of drug therapy is more harmful than psychological disorders to the development of young children."
+                },
+                {
+                  "answerKey": "answer_2",
+                  "content": "Critics argue that the benefits of traditional therapies using verbal methods to treat psychological disorders are ignored and drug therapies should be a last resort."
+                },
+                {
+                  "answerKey": "answer_3",
+                  "content": "The flavorings used in antidepressants prescribed to children have been linked to impaired motor skills."
+                },
+                {
+                  "answerKey": "answer_4",
+                  "content": "The consequences of antidepressants on the developing brain are unknown."
+                }
+              ]
+            },
+            "answerKey": {
+              "assessmentType": "multiplechoice",
+              "answers": {
+                "answer_3": {
+                  "score": 0.0,
+                  "response": "Consider this: Little is known about the use of antidepressants to treat children, including correct dosage, the consequences for the developing brain, and potential long-term effects such as increased risk of substance abuse. LO 5.3 What are the main health concerns at this age?"
+                },
+                "answer_2": {
+                  "score": 0.0,
+                  "response": "Consider this: Little is known about the use of antidepressants to treat children, including correct dosage, the consequences for the developing brain, and potential long-term effects such as increased risk of substance abuse. LO 5.3 What are the main health concerns at this age?"
+                },
+                "answer_1": {
+                  "score": 0.0,
+                  "response": "Consider this: Little is known about the use of antidepressants to treat children, including correct dosage, the consequences for the developing brain, and potential long-term effects such as increased risk of substance abuse. LO 5.3 What are the main health concerns at this age?"
+                },
+                "answer_4": {
+                  "score": 1.0,
+                  "response": ""
+                }
+              }
+            },
+            "configFixup": [
+              {
+                "name": "questionId",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "sequenceNodeKey",
+                  "type": "ref"
+                }
+              },
+              {
+                "name": "maxAttempts",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "maxAttempts",
+                  "type": "ref"
+                }
+              }
+            ]
+          }
+        ],
+        "hookupActions": [
+          {
+            "description": "Hookup the submit manager to evaluate answers",
+            "methodName": "handleRequestsFrom",
+            "type": "method-call",
+            "args": [
+              {
+                "domain": "brix",
+                "refId": "q1",
+                "type": "ref"
+              }
+            ],
+            "instance": {
+              "type": "submit-manager"
+            }
+          },
+          {
+            "description": "Draw the question",
+            "methodName": "draw",
+            "type": "method-call",
+            "args": [
+              {
+                "selector": "#target1",
+                "type": "d3select"
+              }
+            ],
+            "instance": {
+              "domain": "brix",
+              "refId": "q1",
+              "type": "ref"
+            }
+          }
+        ]
+      }
+    ],
+    "title": "FA 5.1.5 Motor Development And Safety Analyze LO 5.3 APA LO 1.3"
+  }
+}

@@ -1,0 +1,192 @@
+{
+  "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope",
+  "@type": "Envelope",
+  "metadata": {
+    "bookTitle": "Discovering the Life Span",
+    "keywords": [
+      "Feldman 3e",
+      "Ch10",
+      "Alick"
+    ],
+    "extendedMetadata": [
+      {
+        "name": "Page-Reference",
+        "value": "460"
+      },
+      {
+        "name": "ISBN",
+        "value": "0133869946"
+      },
+      {
+        "name": "M",
+        "value": "c01"
+      },
+      {
+        "name": "assessment_title",
+        "value": "Chapter Quiz: Death and Dying"
+      },
+      {
+        "name": "Topic",
+        "value": "Caring for the Terminally Ill: The Place of Death"
+      },
+      {
+        "name": "chapterTitle",
+        "value": "Death and Dying"
+      },
+      {
+        "name": "item_title",
+        "value": "0133869946_Robert S. Feldman_ch10_c01_q0009"
+      },
+      {
+        "name": "CH",
+        "value": "10"
+      },
+      {
+        "name": "Difficulty",
+        "value": "Moderate"
+      },
+      {
+        "name": "Objective",
+        "value": "LO 10.6 \u0026amp;ndash; What are some alternatives for providing end-of-life care for the terminally ill?"
+      },
+      {
+        "name": "shuffle_choices",
+        "value": "Yes"
+      }
+    ],
+    "subject": [
+      "Psychology"
+    ],
+    "contentTypeTier2": [
+      "AssessmentItem"
+    ],
+    "contentTypeTier1": "Assessment",
+    "format": [
+      "application/vnd.pearson.sanvan.v1.activity"
+    ],
+    "version": "1.0",
+    "guid": "6ad9fe51-5234-451f-802a-6f7c044315cf",
+    "bookAuthor": "Robert S. Feldman",
+    "title": "FA 10.2.4 Caring For The Terminally Ill The Place Of Death Apply LO 10.6 APA LO 1.1",
+    "educationalAlignment": [
+      "http://purl.org/pearson/objectives/183725473384362"
+    ]
+  },
+  "body": {
+    "description": "FA_10.2.4, Caring for the Terminally Ill: The Place of Death, Apply, LO 10.6, APA LO 1.1",
+    "containerConfig": [
+      {
+        "description": "FA_10.2.4, Caring for the Terminally Ill: The Place of Death, Apply, LO 10.6, APA LO 1.1",
+        "containerId": "target1",
+        "brixConfig": [
+          {
+            "bricId": "q1",
+            "bricType": "MultipleChoiceQuestion",
+            "config": {
+              "id": "QUE62169",
+              "question": "Jacob, a terminally ill cancer patient, has expressed a wish to die in a place where he will be able to make his last days as full as possible, receive emotional support, and be made comfortable, but where he will not receive treatment that will prolong his life. Jacob has chosen ________.\n\u003cbr /\u003e",
+              "order": "randomized",
+              "presenterType": "RadioGroup",
+              "presenterConfig": {
+                "numberFormat": "none"
+              },
+              "choices": [
+                {
+                  "answerKey": "answer_1",
+                  "content": "intensive care"
+                },
+                {
+                  "answerKey": "answer_2",
+                  "content": "hospice care"
+                },
+                {
+                  "answerKey": "answer_3",
+                  "content": "health care proxy"
+                },
+                {
+                  "answerKey": "answer_4",
+                  "content": "home care"
+                }
+              ]
+            },
+            "answerKey": {
+              "assessmentType": "multiplechoice",
+              "answers": {
+                "answer_3": {
+                  "score": 0.0,
+                  "response": "Consider this: While this term relates to the care of the dying, it does not fit the description in the question. LO 10.5 What are some alternatives for providing end-of-life care for the terminally ill?"
+                },
+                "answer_2": {
+                  "score": 1.0,
+                  "response": ""
+                },
+                "answer_1": {
+                  "score": 0.0,
+                  "response": "Consider this: While this term relates to the care of the dying, it does not fit the description in the question. LO 10.5 What are some alternatives for providing end-of-life care for the terminally ill?"
+                },
+                "answer_4": {
+                  "score": 0.0,
+                  "response": "Consider this: While this term relates to the care of the dying, it does not fit the description in the question. LO 10.5 What are some alternatives for providing end-of-life care for the terminally ill?"
+                }
+              }
+            },
+            "configFixup": [
+              {
+                "name": "questionId",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "sequenceNodeKey",
+                  "type": "ref"
+                }
+              },
+              {
+                "name": "maxAttempts",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "maxAttempts",
+                  "type": "ref"
+                }
+              }
+            ]
+          }
+        ],
+        "hookupActions": [
+          {
+            "description": "Hookup the submit manager to evaluate answers",
+            "methodName": "handleRequestsFrom",
+            "type": "method-call",
+            "args": [
+              {
+                "domain": "brix",
+                "refId": "q1",
+                "type": "ref"
+              }
+            ],
+            "instance": {
+              "type": "submit-manager"
+            }
+          },
+          {
+            "description": "Draw the question",
+            "methodName": "draw",
+            "type": "method-call",
+            "args": [
+              {
+                "selector": "#target1",
+                "type": "d3select"
+              }
+            ],
+            "instance": {
+              "domain": "brix",
+              "refId": "q1",
+              "type": "ref"
+            }
+          }
+        ]
+      }
+    ],
+    "title": "FA 10.2.4 Caring For The Terminally Ill The Place Of Death Apply LO 10.6 APA LO 1.1"
+  }
+}

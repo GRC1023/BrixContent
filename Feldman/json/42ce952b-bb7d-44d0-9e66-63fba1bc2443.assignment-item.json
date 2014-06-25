@@ -1,0 +1,192 @@
+{
+  "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope",
+  "@type": "Envelope",
+  "metadata": {
+    "bookTitle": "Discovering the Life Span",
+    "keywords": [
+      "Feldman 3e",
+      "Alick",
+      "Ch03"
+    ],
+    "extendedMetadata": [
+      {
+        "name": "Page-Reference",
+        "value": "115"
+      },
+      {
+        "name": "ISBN",
+        "value": "0133869946"
+      },
+      {
+        "name": "M",
+        "value": "c01"
+      },
+      {
+        "name": "assessment_title",
+        "value": "Chapter Quiz: Infancy"
+      },
+      {
+        "name": "Topic",
+        "value": "Piaget\u0027s Approach to Cognitive Development"
+      },
+      {
+        "name": "chapterTitle",
+        "value": "Infancy"
+      },
+      {
+        "name": "item_title",
+        "value": "0133869946_Robert S. Feldman_ch03_c01_q0007"
+      },
+      {
+        "name": "CH",
+        "value": "3"
+      },
+      {
+        "name": "Difficulty",
+        "value": "Moderate"
+      },
+      {
+        "name": "Objective",
+        "value": "LO 3.9 What are the fundamental features of Piaget\u0027s theories of cognitive development?"
+      },
+      {
+        "name": "shuffle_choices",
+        "value": "Yes"
+      }
+    ],
+    "subject": [
+      "Psychology"
+    ],
+    "contentTypeTier2": [
+      "AssessmentItem"
+    ],
+    "contentTypeTier1": "Assessment",
+    "format": [
+      "application/vnd.pearson.sanvan.v1.activity"
+    ],
+    "version": "1.0",
+    "guid": "42ce952b-bb7d-44d0-9e66-63fba1bc2443",
+    "bookAuthor": "Robert S. Feldman",
+    "title": "FA 3.2.2 Piagets Approach To Cognitive Development Apply LO 3.9 APA LO 1.2",
+    "educationalAlignment": [
+      "http://purl.org/pearson/objectives/183725473384362"
+    ]
+  },
+  "body": {
+    "description": "FA_3.2.2, Piaget\u0027s Approach to Cognitive Development, Apply, LO 3.9, APA LO 1.2",
+    "containerConfig": [
+      {
+        "description": "FA_3.2.2, Piaget\u0027s Approach to Cognitive Development, Apply, LO 3.9, APA LO 1.2",
+        "containerId": "target1",
+        "brixConfig": [
+          {
+            "bricId": "q1",
+            "bricType": "MultipleChoiceQuestion",
+            "config": {
+              "id": "QUE61937",
+              "question": "Infant Karl rolls over. He reaches to grab a toy that is too far away. Karl has moved into Sensorimotor Substage _______.\n\u003cbr /\u003e\n\u003cbr /\u003e",
+              "order": "randomized",
+              "presenterType": "RadioGroup",
+              "presenterConfig": {
+                "numberFormat": "none"
+              },
+              "choices": [
+                {
+                  "answerKey": "answer_1",
+                  "content": "1: first habits and primary circular reactions\n\u003cbr /\u003e"
+                },
+                {
+                  "answerKey": "answer_2",
+                  "content": "3: secondary circular reactions\n\u003cbr /\u003e"
+                },
+                {
+                  "answerKey": "answer_3",
+                  "content": "4: coordination of secondary circular reactions\n\u003cbr /\u003e"
+                },
+                {
+                  "answerKey": "answer_4",
+                  "content": "5: tertiary circular reactions\n\u003cbr /\u003e"
+                }
+              ]
+            },
+            "answerKey": {
+              "assessmentType": "multiplechoice",
+              "answers": {
+                "answer_3": {
+                  "score": 1.0,
+                  "response": "\u003cbr /\u003e"
+                },
+                "answer_2": {
+                  "score": 0.0,
+                  "response": "Consider this: Goal-directed behavior is part of Substage 4. LO 3.9 What are the fundamental features of Piaget\u0027s theories of cognitive development?\n\u003cbr /\u003e"
+                },
+                "answer_1": {
+                  "score": 0.0,
+                  "response": "Consider this: Goal-directed behavior is part of Substage 4. LO 3.9 What are the fundamental features of Piaget\u0027s theories of cognitive development?\n\u003cbr /\u003e"
+                },
+                "answer_4": {
+                  "score": 0.0,
+                  "response": "Consider this: Goal-directed behavior is part of Substage 4. LO 3.9 What are the fundamental features of Piaget\u0027s theories of cognitive development?\n\u003cbr /\u003e"
+                }
+              }
+            },
+            "configFixup": [
+              {
+                "name": "questionId",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "sequenceNodeKey",
+                  "type": "ref"
+                }
+              },
+              {
+                "name": "maxAttempts",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "maxAttempts",
+                  "type": "ref"
+                }
+              }
+            ]
+          }
+        ],
+        "hookupActions": [
+          {
+            "description": "Hookup the submit manager to evaluate answers",
+            "methodName": "handleRequestsFrom",
+            "type": "method-call",
+            "args": [
+              {
+                "domain": "brix",
+                "refId": "q1",
+                "type": "ref"
+              }
+            ],
+            "instance": {
+              "type": "submit-manager"
+            }
+          },
+          {
+            "description": "Draw the question",
+            "methodName": "draw",
+            "type": "method-call",
+            "args": [
+              {
+                "selector": "#target1",
+                "type": "d3select"
+              }
+            ],
+            "instance": {
+              "domain": "brix",
+              "refId": "q1",
+              "type": "ref"
+            }
+          }
+        ]
+      }
+    ],
+    "title": "FA 3.2.2 Piagets Approach To Cognitive Development Apply LO 3.9 APA LO 1.2"
+  }
+}

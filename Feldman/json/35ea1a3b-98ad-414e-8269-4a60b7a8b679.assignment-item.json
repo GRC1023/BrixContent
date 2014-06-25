@@ -1,0 +1,192 @@
+{
+  "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope",
+  "@type": "Envelope",
+  "metadata": {
+    "bookTitle": "Discovering the Life Span",
+    "keywords": [
+      "Feldman 3e",
+      "Ch09",
+      "Alick"
+    ],
+    "extendedMetadata": [
+      {
+        "name": "Page-Reference",
+        "value": "407"
+      },
+      {
+        "name": "ISBN",
+        "value": "0133869946"
+      },
+      {
+        "name": "M",
+        "value": "c01"
+      },
+      {
+        "name": "assessment_title",
+        "value": "Chapter Quiz: Late Adulthood"
+      },
+      {
+        "name": "Topic",
+        "value": "Physical Development in Late Adulthood"
+      },
+      {
+        "name": "chapterTitle",
+        "value": "Late Adulthood"
+      },
+      {
+        "name": "item_title",
+        "value": "0133869946_Robert S. Feldman_ch09_c01_q0003"
+      },
+      {
+        "name": "CH",
+        "value": "9"
+      },
+      {
+        "name": "Difficulty",
+        "value": "Moderate"
+      },
+      {
+        "name": "Objective",
+        "value": "LO 9.2 \u0026amp;ndash; How are the senses affected by aging?"
+      },
+      {
+        "name": "shuffle_choices",
+        "value": "Yes"
+      }
+    ],
+    "subject": [
+      "Psychology"
+    ],
+    "contentTypeTier2": [
+      "AssessmentItem"
+    ],
+    "contentTypeTier1": "Assessment",
+    "format": [
+      "application/vnd.pearson.sanvan.v1.activity"
+    ],
+    "version": "1.0",
+    "guid": "35ea1a3b-98ad-414e-8269-4a60b7a8b679",
+    "bookAuthor": "Robert S. Feldman",
+    "title": "FA 9.1.3 Physical Development In Late Adulthood Apply LO 9.2 APA LO 1.3",
+    "educationalAlignment": [
+      "http://purl.org/pearson/objectives/183725473384362"
+    ]
+  },
+  "body": {
+    "description": "FA_9.1.3, Physical Development in Late Adulthood, Apply, LO 9.2, APA LO 1.3",
+    "containerConfig": [
+      {
+        "description": "FA_9.1.3, Physical Development in Late Adulthood, Apply, LO 9.2, APA LO 1.3",
+        "containerId": "target1",
+        "brixConfig": [
+          {
+            "bricId": "q1",
+            "bricType": "MultipleChoiceQuestion",
+            "config": {
+              "id": "QUE62137",
+              "question": "Francis, a 78-year-old woman, has lost much of her sensitivity to smell and taste. Why might this be a cause for concern?\n\u003cbr /\u003e",
+              "order": "randomized",
+              "presenterType": "RadioGroup",
+              "presenterConfig": {
+                "numberFormat": "none"
+              },
+              "choices": [
+                {
+                  "answerKey": "answer_1",
+                  "content": "She will likely overeat and develop health problems as a result of weight gain."
+                },
+                {
+                  "answerKey": "answer_2",
+                  "content": "She will likely compensate by eating more spicy foods and may develop gastrointestinal problems."
+                },
+                {
+                  "answerKey": "answer_3",
+                  "content": "She will not be able to accurately judge the temperature of food and, therefore, risks being burned."
+                },
+                {
+                  "answerKey": "answer_4",
+                  "content": "She will likely eat less because food doesn’t taste as good and increase her risk of malnutrition."
+                }
+              ]
+            },
+            "answerKey": {
+              "assessmentType": "multiplechoice",
+              "answers": {
+                "answer_3": {
+                  "score": 0.0,
+                  "response": "Consider this: A lack of appetite because food doesn’t taste as good can leave older adults vulnerable to the negative effects of malnutrition. LO 9.2 How are the senses affected by aging?"
+                },
+                "answer_2": {
+                  "score": 0.0,
+                  "response": "Consider this: A lack of appetite because food doesn’t taste as good can leave older adults vulnerable to the negative effects of malnutrition. LO 9.2 How are the senses affected by aging?"
+                },
+                "answer_1": {
+                  "score": 0.0,
+                  "response": "Consider this: A lack of appetite because food doesn’t taste as good can leave older adults vulnerable to the negative effects of malnutrition. LO 9.2 How are the senses affected by aging?"
+                },
+                "answer_4": {
+                  "score": 1.0,
+                  "response": ""
+                }
+              }
+            },
+            "configFixup": [
+              {
+                "name": "questionId",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "sequenceNodeKey",
+                  "type": "ref"
+                }
+              },
+              {
+                "name": "maxAttempts",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "maxAttempts",
+                  "type": "ref"
+                }
+              }
+            ]
+          }
+        ],
+        "hookupActions": [
+          {
+            "description": "Hookup the submit manager to evaluate answers",
+            "methodName": "handleRequestsFrom",
+            "type": "method-call",
+            "args": [
+              {
+                "domain": "brix",
+                "refId": "q1",
+                "type": "ref"
+              }
+            ],
+            "instance": {
+              "type": "submit-manager"
+            }
+          },
+          {
+            "description": "Draw the question",
+            "methodName": "draw",
+            "type": "method-call",
+            "args": [
+              {
+                "selector": "#target1",
+                "type": "d3select"
+              }
+            ],
+            "instance": {
+              "domain": "brix",
+              "refId": "q1",
+              "type": "ref"
+            }
+          }
+        ]
+      }
+    ],
+    "title": "FA 9.1.3 Physical Development In Late Adulthood Apply LO 9.2 APA LO 1.3"
+  }
+}

@@ -1,0 +1,192 @@
+{
+  "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope",
+  "@type": "Envelope",
+  "metadata": {
+    "bookTitle": "Discovering the Life Span",
+    "keywords": [
+      "Feldman 3e",
+      "Ch09",
+      "Alick"
+    ],
+    "extendedMetadata": [
+      {
+        "name": "Page-Reference",
+        "value": "401"
+      },
+      {
+        "name": "ISBN",
+        "value": "0133869946"
+      },
+      {
+        "name": "M",
+        "value": "c01"
+      },
+      {
+        "name": "assessment_title",
+        "value": "Chapter Quiz: Late Adulthood"
+      },
+      {
+        "name": "Topic",
+        "value": "Physical Development in Late Adulthood"
+      },
+      {
+        "name": "chapterTitle",
+        "value": "Late Adulthood"
+      },
+      {
+        "name": "item_title",
+        "value": "0133869946_Robert S. Feldman_ch09_c01_q0001"
+      },
+      {
+        "name": "CH",
+        "value": "9"
+      },
+      {
+        "name": "Difficulty",
+        "value": "Moderate"
+      },
+      {
+        "name": "Objective",
+        "value": "LO 9.1 \u0026amp;ndash; What sorts of physical changes occur in late adulthood?"
+      },
+      {
+        "name": "shuffle_choices",
+        "value": "Yes"
+      }
+    ],
+    "subject": [
+      "Psychology"
+    ],
+    "contentTypeTier2": [
+      "AssessmentItem"
+    ],
+    "contentTypeTier1": "Assessment",
+    "format": [
+      "application/vnd.pearson.sanvan.v1.activity"
+    ],
+    "version": "1.0",
+    "guid": "dd77da29-6b6b-4cef-a222-4364944d9f67",
+    "bookAuthor": "Robert S. Feldman",
+    "title": "FA 9.1.1 Physical Development In Late Adulthood Apply LO 9.1 APA LO 1.3",
+    "educationalAlignment": [
+      "http://purl.org/pearson/objectives/183725473384362"
+    ]
+  },
+  "body": {
+    "description": "FA_9.1.1, Physical Development in Late Adulthood, Apply, LO 9.1, APA LO 1.3",
+    "containerConfig": [
+      {
+        "description": "FA_9.1.1, Physical Development in Late Adulthood, Apply, LO 9.1, APA LO 1.3",
+        "containerId": "target1",
+        "brixConfig": [
+          {
+            "bricId": "q1",
+            "bricType": "MultipleChoiceQuestion",
+            "config": {
+              "id": "QUE62135",
+              "question": "As a 91-year-old, Archie is part of the fastest-growing segment of the population: the ________.\n\u003cbr /\u003e",
+              "order": "randomized",
+              "presenterType": "RadioGroup",
+              "presenterConfig": {
+                "numberFormat": "none"
+              },
+              "choices": [
+                {
+                  "answerKey": "answer_1",
+                  "content": "oldest old"
+                },
+                {
+                  "answerKey": "answer_2",
+                  "content": "centenarians"
+                },
+                {
+                  "answerKey": "answer_3",
+                  "content": "octogenarians"
+                },
+                {
+                  "answerKey": "answer_4",
+                  "content": "elderly"
+                }
+              ]
+            },
+            "answerKey": {
+              "assessmentType": "multiplechoice",
+              "answers": {
+                "answer_3": {
+                  "score": 0.0,
+                  "response": "Consider this: The oldest old, or those over 85 years old, make up the fastest-growing age segment of the population. LO 9.1 What sorts of physical changes occur in late adulthood?"
+                },
+                "answer_2": {
+                  "score": 0.0,
+                  "response": "Consider this: The oldest old, or those over 85 years old, make up the fastest-growing age segment of the population. LO 9.1 What sorts of physical changes occur in late adulthood?"
+                },
+                "answer_1": {
+                  "score": 1.0,
+                  "response": ""
+                },
+                "answer_4": {
+                  "score": 0.0,
+                  "response": "Consider this: The oldest old, or those over 85 years old, make up the fastest-growing age segment of the population. LO 9.1 What sorts of physical changes occur in late adulthood?"
+                }
+              }
+            },
+            "configFixup": [
+              {
+                "name": "questionId",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "sequenceNodeKey",
+                  "type": "ref"
+                }
+              },
+              {
+                "name": "maxAttempts",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "maxAttempts",
+                  "type": "ref"
+                }
+              }
+            ]
+          }
+        ],
+        "hookupActions": [
+          {
+            "description": "Hookup the submit manager to evaluate answers",
+            "methodName": "handleRequestsFrom",
+            "type": "method-call",
+            "args": [
+              {
+                "domain": "brix",
+                "refId": "q1",
+                "type": "ref"
+              }
+            ],
+            "instance": {
+              "type": "submit-manager"
+            }
+          },
+          {
+            "description": "Draw the question",
+            "methodName": "draw",
+            "type": "method-call",
+            "args": [
+              {
+                "selector": "#target1",
+                "type": "d3select"
+              }
+            ],
+            "instance": {
+              "domain": "brix",
+              "refId": "q1",
+              "type": "ref"
+            }
+          }
+        ]
+      }
+    ],
+    "title": "FA 9.1.1 Physical Development In Late Adulthood Apply LO 9.1 APA LO 1.3"
+  }
+}

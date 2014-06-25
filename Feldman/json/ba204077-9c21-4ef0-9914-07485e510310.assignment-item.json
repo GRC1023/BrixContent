@@ -1,0 +1,192 @@
+{
+  "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope",
+  "@type": "Envelope",
+  "metadata": {
+    "bookTitle": "Discovering the Life Span",
+    "keywords": [
+      "Feldman 3e",
+      "Alick",
+      "Ch03"
+    ],
+    "extendedMetadata": [
+      {
+        "name": "Page-Reference",
+        "value": "135"
+      },
+      {
+        "name": "ISBN",
+        "value": "0133869946"
+      },
+      {
+        "name": "M",
+        "value": "c01"
+      },
+      {
+        "name": "assessment_title",
+        "value": "Chapter Quiz: Infancy"
+      },
+      {
+        "name": "Topic",
+        "value": "Developing the Roots of Sociability"
+      },
+      {
+        "name": "chapterTitle",
+        "value": "Infancy"
+      },
+      {
+        "name": "item_title",
+        "value": "0133869946_Robert S. Feldman_ch03_c01_q0011"
+      },
+      {
+        "name": "CH",
+        "value": "3"
+      },
+      {
+        "name": "Difficulty",
+        "value": "Moderate"
+      },
+      {
+        "name": "Objective",
+        "value": "LO 3.15 \u0026amp;amp;ndash; Do infants experience emotions?"
+      },
+      {
+        "name": "shuffle_choices",
+        "value": "Yes"
+      }
+    ],
+    "subject": [
+      "Psychology"
+    ],
+    "contentTypeTier2": [
+      "AssessmentItem"
+    ],
+    "contentTypeTier1": "Assessment",
+    "format": [
+      "application/vnd.pearson.sanvan.v1.activity"
+    ],
+    "version": "1.0",
+    "guid": "ba204077-9c21-4ef0-9914-07485e510310",
+    "bookAuthor": "Robert S. Feldman",
+    "title": "FA 3.3.2 Developing The Roots Of Sociability Apply LO 3.15 APA LO 1.1",
+    "educationalAlignment": [
+      "http://purl.org/pearson/objectives/183725473384362"
+    ]
+  },
+  "body": {
+    "description": "FA_3.3.2, Developing the Roots of Sociability, Apply, LO 3.15, APA LO 1.1",
+    "containerConfig": [
+      {
+        "description": "FA_3.3.2, Developing the Roots of Sociability, Apply, LO 3.15, APA LO 1.1",
+        "containerId": "target1",
+        "brixConfig": [
+          {
+            "bricId": "q1",
+            "bricType": "MultipleChoiceQuestion",
+            "config": {
+              "id": "QUE61941",
+              "question": "Twenty-month-old Tatiana is attending her first hockey game with her parents and big brother. The first time the home team scores a goal, a loud horn sounds, music plays, and her parents stand up, yelling and screaming encouraging words for their team. Tatiana, startled, begins to cry, but when she sees the smiles and the laughing faces of her family, she stops crying and begins to imitate her brother by clapping her hands. Tatiana used ________ to help her understand this strange experience.\n\u003cbr /\u003e\n\u003cbr /\u003e",
+              "order": "randomized",
+              "presenterType": "RadioGroup",
+              "presenterConfig": {
+                "numberFormat": "none"
+              },
+              "choices": [
+                {
+                  "answerKey": "answer_1",
+                  "content": "self-awareness\n\u003cbr /\u003e"
+                },
+                {
+                  "answerKey": "answer_2",
+                  "content": "theory of mind\n\u003cbr /\u003e"
+                },
+                {
+                  "answerKey": "answer_3",
+                  "content": "empathy\n\u003cbr /\u003e"
+                },
+                {
+                  "answerKey": "answer_4",
+                  "content": "social referencing\n\u003cbr /\u003e"
+                }
+              ]
+            },
+            "answerKey": {
+              "assessmentType": "multiplechoice",
+              "answers": {
+                "answer_3": {
+                  "score": 0.0,
+                  "response": "Consider this: Social referencing is the intentional search for information about others\u0027 feelings to help explain the meaning of uncertain circumstances. LO 3.15 Do infants experience emotions?\n\u003cbr /\u003e"
+                },
+                "answer_2": {
+                  "score": 0.0,
+                  "response": "Consider this: Social referencing is the intentional search for information about others\u0027 feelings to help explain the meaning of uncertain circumstances. LO 3.15 Do infants experience emotions?\n\u003cbr /\u003e"
+                },
+                "answer_1": {
+                  "score": 0.0,
+                  "response": "Consider this: Social referencing is the intentional search for information about others\u0027 feelings to help explain the meaning of uncertain circumstances. LO 3.15 Do infants experience emotions?\n\u003cbr /\u003e"
+                },
+                "answer_4": {
+                  "score": 1.0,
+                  "response": "\u003cbr /\u003e"
+                }
+              }
+            },
+            "configFixup": [
+              {
+                "name": "questionId",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "sequenceNodeKey",
+                  "type": "ref"
+                }
+              },
+              {
+                "name": "maxAttempts",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "maxAttempts",
+                  "type": "ref"
+                }
+              }
+            ]
+          }
+        ],
+        "hookupActions": [
+          {
+            "description": "Hookup the submit manager to evaluate answers",
+            "methodName": "handleRequestsFrom",
+            "type": "method-call",
+            "args": [
+              {
+                "domain": "brix",
+                "refId": "q1",
+                "type": "ref"
+              }
+            ],
+            "instance": {
+              "type": "submit-manager"
+            }
+          },
+          {
+            "description": "Draw the question",
+            "methodName": "draw",
+            "type": "method-call",
+            "args": [
+              {
+                "selector": "#target1",
+                "type": "d3select"
+              }
+            ],
+            "instance": {
+              "domain": "brix",
+              "refId": "q1",
+              "type": "ref"
+            }
+          }
+        ]
+      }
+    ],
+    "title": "FA 3.3.2 Developing The Roots Of Sociability Apply LO 3.15 APA LO 1.1"
+  }
+}

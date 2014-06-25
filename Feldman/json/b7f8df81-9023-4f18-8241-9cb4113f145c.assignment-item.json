@@ -1,0 +1,192 @@
+{
+  "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope",
+  "@type": "Envelope",
+  "metadata": {
+    "bookTitle": "Discovering the Life Span",
+    "keywords": [
+      "Feldman 3e",
+      "Alick",
+      "Ch04"
+    ],
+    "extendedMetadata": [
+      {
+        "name": "Page-Reference",
+        "value": "179"
+      },
+      {
+        "name": "ISBN",
+        "value": "0133869946"
+      },
+      {
+        "name": "M",
+        "value": "c01"
+      },
+      {
+        "name": "assessment_title",
+        "value": "Chapter Quiz: The Preschool Years"
+      },
+      {
+        "name": "Topic",
+        "value": "Friends and Family: Preschoolers\u0026#39; Social Lives"
+      },
+      {
+        "name": "chapterTitle",
+        "value": "The Preschool Years"
+      },
+      {
+        "name": "item_title",
+        "value": "0133869946_Robert S. Feldman_ch04_c01_q0013"
+      },
+      {
+        "name": "CH",
+        "value": "4"
+      },
+      {
+        "name": "Difficulty",
+        "value": "Difficult"
+      },
+      {
+        "name": "Objective",
+        "value": "LO 4.13 \u0026amp;amp;ndash; In what sorts of social relationships and play do preschool-age children engage?"
+      },
+      {
+        "name": "shuffle_choices",
+        "value": "Yes"
+      }
+    ],
+    "subject": [
+      "Psychology"
+    ],
+    "contentTypeTier2": [
+      "AssessmentItem"
+    ],
+    "contentTypeTier1": "Assessment",
+    "format": [
+      "application/vnd.pearson.sanvan.v1.activity"
+    ],
+    "version": "1.0",
+    "guid": "b7f8df81-9023-4f18-8241-9cb4113f145c",
+    "bookAuthor": "Robert S. Feldman",
+    "title": "FA 4.3.5 Friends And Family Preschoolers Social Lives Analyze LO 4.13 APA LO 1.1",
+    "educationalAlignment": [
+      "http://purl.org/pearson/objectives/183725473384362"
+    ]
+  },
+  "body": {
+    "description": "FA_4.3.5, Friends and Family: Preschoolers’ Social Lives, Analyze, LO 4.13, APA LO 1.1",
+    "containerConfig": [
+      {
+        "description": "FA_4.3.5, Friends and Family: Preschoolers’ Social Lives, Analyze, LO 4.13, APA LO 1.1",
+        "containerId": "target1",
+        "brixConfig": [
+          {
+            "bricId": "q1",
+            "bricType": "MultipleChoiceQuestion",
+            "config": {
+              "id": "QUE61976",
+              "question": "Which of the following demonstrates, in chronological order, the types of play that children engage in as they grow older?\n\u003cbr /\u003e",
+              "order": "randomized",
+              "presenterType": "RadioGroup",
+              "presenterConfig": {
+                "numberFormat": "none"
+              },
+              "choices": [
+                {
+                  "answerKey": "answer_1",
+                  "content": "Cooperative play, associative play, parallel play"
+                },
+                {
+                  "answerKey": "answer_2",
+                  "content": "Parallel play, cooperative play, associative play"
+                },
+                {
+                  "answerKey": "answer_3",
+                  "content": "Parallel play, associative play, cooperative play"
+                },
+                {
+                  "answerKey": "answer_4",
+                  "content": "Cooperative play, parallel play, associative play"
+                }
+              ]
+            },
+            "answerKey": {
+              "assessmentType": "multiplechoice",
+              "answers": {
+                "answer_3": {
+                  "score": 1.0,
+                  "response": ""
+                },
+                "answer_2": {
+                  "score": 0.0,
+                  "response": "Consider this: Young preschoolers begin by playing side by side with similar toys without interacting with one another (parallel play). As they get older, they begin to interact by sharing or borrowing toys without doing the same thing (associative play). Finally, they begin to play together, taking turns, playing games, or devising contests (cooperative play). LO 4.13 In what sorts of social relationships and play do preschool-age children engage?"
+                },
+                "answer_1": {
+                  "score": 0.0,
+                  "response": "Consider this: Young preschoolers begin by playing side by side with similar toys without interacting with one another (parallel play). As they get older, they begin to interact by sharing or borrowing toys without doing the same thing (associative play). Finally, they begin to play together, taking turns, playing games, or devising contests (cooperative play). LO 4.13 In what sorts of social relationships and play do preschool-age children engage?"
+                },
+                "answer_4": {
+                  "score": 0.0,
+                  "response": "Consider this: Young preschoolers begin by playing side by side with similar toys without interacting with one another (parallel play). As they get older, they begin to interact by sharing or borrowing toys without doing the same thing (associative play). Finally, they begin to play together, taking turns, playing games, or devising contests (cooperative play). LO 4.13 In what sorts of social relationships and play do preschool-age children engage?"
+                }
+              }
+            },
+            "configFixup": [
+              {
+                "name": "questionId",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "sequenceNodeKey",
+                  "type": "ref"
+                }
+              },
+              {
+                "name": "maxAttempts",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "maxAttempts",
+                  "type": "ref"
+                }
+              }
+            ]
+          }
+        ],
+        "hookupActions": [
+          {
+            "description": "Hookup the submit manager to evaluate answers",
+            "methodName": "handleRequestsFrom",
+            "type": "method-call",
+            "args": [
+              {
+                "domain": "brix",
+                "refId": "q1",
+                "type": "ref"
+              }
+            ],
+            "instance": {
+              "type": "submit-manager"
+            }
+          },
+          {
+            "description": "Draw the question",
+            "methodName": "draw",
+            "type": "method-call",
+            "args": [
+              {
+                "selector": "#target1",
+                "type": "d3select"
+              }
+            ],
+            "instance": {
+              "domain": "brix",
+              "refId": "q1",
+              "type": "ref"
+            }
+          }
+        ]
+      }
+    ],
+    "title": "FA 4.3.5 Friends And Family Preschoolers Social Lives Analyze LO 4.13 APA LO 1.1"
+  }
+}

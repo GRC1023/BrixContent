@@ -1,0 +1,192 @@
+{
+  "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope",
+  "@type": "Envelope",
+  "metadata": {
+    "bookTitle": "Discovering the Life Span",
+    "keywords": [
+      "Feldman 3e",
+      "Ch09",
+      "Alick"
+    ],
+    "extendedMetadata": [
+      {
+        "name": "Page-Reference",
+        "value": "408"
+      },
+      {
+        "name": "ISBN",
+        "value": "0133869946"
+      },
+      {
+        "name": "M",
+        "value": "c01"
+      },
+      {
+        "name": "assessment_title",
+        "value": "Chapter Quiz: Late Adulthood"
+      },
+      {
+        "name": "Topic",
+        "value": "Health and Wellness in Late Adulthood"
+      },
+      {
+        "name": "chapterTitle",
+        "value": "Late Adulthood"
+      },
+      {
+        "name": "item_title",
+        "value": "0133869946_Robert S. Feldman_ch09_c01_q0004"
+      },
+      {
+        "name": "CH",
+        "value": "9"
+      },
+      {
+        "name": "Difficulty",
+        "value": "Moderate"
+      },
+      {
+        "name": "Objective",
+        "value": "LO 9.3 \u0026amp;ndash; What is the general state of health of older people, and to what disorders are they susceptible?"
+      },
+      {
+        "name": "shuffle_choices",
+        "value": "Yes"
+      }
+    ],
+    "subject": [
+      "Psychology"
+    ],
+    "contentTypeTier2": [
+      "AssessmentItem"
+    ],
+    "contentTypeTier1": "Assessment",
+    "format": [
+      "application/vnd.pearson.sanvan.v1.activity"
+    ],
+    "version": "1.0",
+    "guid": "b541f17c-75f6-4e7d-9a5e-867df623c58d",
+    "bookAuthor": "Robert S. Feldman",
+    "title": "FA 9.1.4 Health And Wellness In Late Adulthood Apply LO 9.3 APA LO 1.3",
+    "educationalAlignment": [
+      "http://purl.org/pearson/objectives/183725473384362"
+    ]
+  },
+  "body": {
+    "description": "FA_9.1.4, Health and Wellness in Late Adulthood, Apply, LO 9.3, APA LO 1.3",
+    "containerConfig": [
+      {
+        "description": "FA_9.1.4, Health and Wellness in Late Adulthood, Apply, LO 9.3, APA LO 1.3",
+        "containerId": "target1",
+        "brixConfig": [
+          {
+            "bricId": "q1",
+            "bricType": "MultipleChoiceQuestion",
+            "config": {
+              "id": "QUE62138",
+              "question": "Frank, a 76-year-old man, has high blood pressure but is unaware of it because he has no symptoms. What risk does he face if he leaves his high blood pressure untreated?\n\u003cbr /\u003e",
+              "order": "randomized",
+              "presenterType": "RadioGroup",
+              "presenterConfig": {
+                "numberFormat": "none"
+              },
+              "choices": [
+                {
+                  "answerKey": "answer_1",
+                  "content": "Malnutrition and greater vulnerability to illness"
+                },
+                {
+                  "answerKey": "answer_2",
+                  "content": "Aggressive cancer"
+                },
+                {
+                  "answerKey": "answer_3",
+                  "content": "Damage to the blood vessels and the heart"
+                },
+                {
+                  "answerKey": "answer_4",
+                  "content": "Crippling arthritis"
+                }
+              ]
+            },
+            "answerKey": {
+              "assessmentType": "multiplechoice",
+              "answers": {
+                "answer_3": {
+                  "score": 1.0,
+                  "response": ""
+                },
+                "answer_2": {
+                  "score": 0.0,
+                  "response": "Consider this: High blood pressure increases the risk to the circulatory system and can lead to stroke. LO 9.3 What is the general state of health of older people, and to what disorders are they susceptible?"
+                },
+                "answer_1": {
+                  "score": 0.0,
+                  "response": "Consider this: High blood pressure increases the risk to the circulatory system and can lead to stroke. LO 9.3 What is the general state of health of older people, and to what disorders are they susceptible?"
+                },
+                "answer_4": {
+                  "score": 0.0,
+                  "response": "Consider this: High blood pressure increases the risk to the circulatory system and can lead to stroke. LO 9.3 What is the general state of health of older people, and to what disorders are they susceptible?"
+                }
+              }
+            },
+            "configFixup": [
+              {
+                "name": "questionId",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "sequenceNodeKey",
+                  "type": "ref"
+                }
+              },
+              {
+                "name": "maxAttempts",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "maxAttempts",
+                  "type": "ref"
+                }
+              }
+            ]
+          }
+        ],
+        "hookupActions": [
+          {
+            "description": "Hookup the submit manager to evaluate answers",
+            "methodName": "handleRequestsFrom",
+            "type": "method-call",
+            "args": [
+              {
+                "domain": "brix",
+                "refId": "q1",
+                "type": "ref"
+              }
+            ],
+            "instance": {
+              "type": "submit-manager"
+            }
+          },
+          {
+            "description": "Draw the question",
+            "methodName": "draw",
+            "type": "method-call",
+            "args": [
+              {
+                "selector": "#target1",
+                "type": "d3select"
+              }
+            ],
+            "instance": {
+              "domain": "brix",
+              "refId": "q1",
+              "type": "ref"
+            }
+          }
+        ]
+      }
+    ],
+    "title": "FA 9.1.4 Health And Wellness In Late Adulthood Apply LO 9.3 APA LO 1.3"
+  }
+}

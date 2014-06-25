@@ -1,0 +1,192 @@
+{
+  "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope",
+  "@type": "Envelope",
+  "metadata": {
+    "bookTitle": "Discovering the Life Span",
+    "keywords": [
+      "Feldman 3e",
+      "Ch10",
+      "Alick"
+    ],
+    "extendedMetadata": [
+      {
+        "name": "Page-Reference",
+        "value": "463"
+      },
+      {
+        "name": "ISBN",
+        "value": "0133869946"
+      },
+      {
+        "name": "M",
+        "value": "c01"
+      },
+      {
+        "name": "assessment_title",
+        "value": "Chapter Quiz: Death and Dying"
+      },
+      {
+        "name": "Topic",
+        "value": "Bereavement and Grief: Adjusting to the Death of a Loved One"
+      },
+      {
+        "name": "chapterTitle",
+        "value": "Death and Dying"
+      },
+      {
+        "name": "item_title",
+        "value": "0133869946_Robert S. Feldman_ch10_c01_q0013"
+      },
+      {
+        "name": "CH",
+        "value": "10"
+      },
+      {
+        "name": "Difficulty",
+        "value": "Moderate"
+      },
+      {
+        "name": "Objective",
+        "value": "LO 10.8 \u0026amp;ndash; How do survivors react to and cope with death?"
+      },
+      {
+        "name": "shuffle_choices",
+        "value": "Yes"
+      }
+    ],
+    "subject": [
+      "Psychology"
+    ],
+    "contentTypeTier2": [
+      "AssessmentItem"
+    ],
+    "contentTypeTier1": "Assessment",
+    "format": [
+      "application/vnd.pearson.sanvan.v1.activity"
+    ],
+    "version": "1.0",
+    "guid": "cc9bfb00-2f6c-4232-9ac5-8c2e61722650",
+    "bookAuthor": "Robert S. Feldman",
+    "title": "FA 10.3.3 Bereavement And Grief Adjusting To The Death Of A Loved One Apply LO 10.8 APA LO 1.1",
+    "educationalAlignment": [
+      "http://purl.org/pearson/objectives/183725473384362"
+    ]
+  },
+  "body": {
+    "description": "FA_10.3.3, Bereavement and Grief: Adjusting to the Death of a Loved One, Apply, LO 10.8, APA LO 1.1",
+    "containerConfig": [
+      {
+        "description": "FA_10.3.3, Bereavement and Grief: Adjusting to the Death of a Loved One, Apply, LO 10.8, APA LO 1.1",
+        "containerId": "target1",
+        "brixConfig": [
+          {
+            "bricId": "q1",
+            "bricType": "MultipleChoiceQuestion",
+            "config": {
+              "id": "QUE62173",
+              "question": "Lana has been mourning her husband unceasingly for the past three years. This type of mourning is ________.\n\u003cbr /\u003e",
+              "order": "randomized",
+              "presenterType": "RadioGroup",
+              "presenterConfig": {
+                "numberFormat": "none"
+              },
+              "choices": [
+                {
+                  "answerKey": "answer_1",
+                  "content": "typical of most surviving spouses"
+                },
+                {
+                  "answerKey": "answer_2",
+                  "content": "experienced by about half of all surviving spouses"
+                },
+                {
+                  "answerKey": "answer_3",
+                  "content": "known as complicated grief"
+                },
+                {
+                  "answerKey": "answer_4",
+                  "content": "known as bereavement"
+                }
+              ]
+            },
+            "answerKey": {
+              "assessmentType": "multiplechoice",
+              "answers": {
+                "answer_3": {
+                  "score": 1.0,
+                  "response": ""
+                },
+                "answer_2": {
+                  "score": 0.0,
+                  "response": "Consider this: Mourning that continues unceasingly for months or years is known as complicated grief and is experienced by about 15 percent of those who are bereaved. LO 10.8 How do survivors react to and cope with death?"
+                },
+                "answer_1": {
+                  "score": 0.0,
+                  "response": "Consider this: Mourning that continues unceasingly for months or years is known as complicated grief and is experienced by about 15 percent of those who are bereaved. LO 10.8 How do survivors react to and cope with death?"
+                },
+                "answer_4": {
+                  "score": 0.0,
+                  "response": "Consider this: Mourning that continues unceasingly for months or years is known as complicated grief and is experienced by about 15 percent of those who are bereaved. LO 10.8 How do survivors react to and cope with death?"
+                }
+              }
+            },
+            "configFixup": [
+              {
+                "name": "questionId",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "sequenceNodeKey",
+                  "type": "ref"
+                }
+              },
+              {
+                "name": "maxAttempts",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "maxAttempts",
+                  "type": "ref"
+                }
+              }
+            ]
+          }
+        ],
+        "hookupActions": [
+          {
+            "description": "Hookup the submit manager to evaluate answers",
+            "methodName": "handleRequestsFrom",
+            "type": "method-call",
+            "args": [
+              {
+                "domain": "brix",
+                "refId": "q1",
+                "type": "ref"
+              }
+            ],
+            "instance": {
+              "type": "submit-manager"
+            }
+          },
+          {
+            "description": "Draw the question",
+            "methodName": "draw",
+            "type": "method-call",
+            "args": [
+              {
+                "selector": "#target1",
+                "type": "d3select"
+              }
+            ],
+            "instance": {
+              "domain": "brix",
+              "refId": "q1",
+              "type": "ref"
+            }
+          }
+        ]
+      }
+    ],
+    "title": "FA 10.3.3 Bereavement And Grief Adjusting To The Death Of A Loved One Apply LO 10.8 APA LO 1.1"
+  }
+}

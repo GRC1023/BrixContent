@@ -1,0 +1,192 @@
+{
+  "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope",
+  "@type": "Envelope",
+  "metadata": {
+    "bookTitle": "Discovering the Life Span",
+    "keywords": [
+      "Feldman 3e",
+      "Ch02",
+      "Alick"
+    ],
+    "extendedMetadata": [
+      {
+        "name": "Page-Reference",
+        "value": "69"
+      },
+      {
+        "name": "ISBN",
+        "value": "0133869946"
+      },
+      {
+        "name": "M",
+        "value": "c01"
+      },
+      {
+        "name": "assessment_title",
+        "value": "Chapter Quiz: The Start of Life"
+      },
+      {
+        "name": "Topic",
+        "value": "Birth"
+      },
+      {
+        "name": "chapterTitle",
+        "value": "The Start of Life"
+      },
+      {
+        "name": "item_title",
+        "value": "0133869946_Robert S. Feldman_ch02_c01_q0009"
+      },
+      {
+        "name": "CH",
+        "value": "2"
+      },
+      {
+        "name": "Difficulty",
+        "value": "Moderate"
+      },
+      {
+        "name": "Objective",
+        "value": "LO 2.9 \u0026amp;ndash; What is the normal process of labor?"
+      },
+      {
+        "name": "shuffle_choices",
+        "value": "Yes"
+      }
+    ],
+    "subject": [
+      "Psychology"
+    ],
+    "contentTypeTier2": [
+      "AssessmentItem"
+    ],
+    "contentTypeTier1": "Assessment",
+    "format": [
+      "application/vnd.pearson.sanvan.v1.activity"
+    ],
+    "version": "1.0",
+    "guid": "f0a97ccc-ef0b-4b16-9f6d-1b7f8176f4c2",
+    "bookAuthor": "Robert S. Feldman",
+    "title": "FA 2.3.1 Birth Apply LO 2.9 APA LO 1.3",
+    "educationalAlignment": [
+      "http://purl.org/pearson/objectives/183725473384362"
+    ]
+  },
+  "body": {
+    "description": "FA_2.3.1, Birth, Apply, LO 2.9, APA LO 1.3",
+    "containerConfig": [
+      {
+        "description": "FA_2.3.1, Birth, Apply, LO 2.9, APA LO 1.3",
+        "containerId": "target1",
+        "brixConfig": [
+          {
+            "bricId": "q1",
+            "bricType": "MultipleChoiceQuestion",
+            "config": {
+              "id": "QUE61912",
+              "question": "Jillian is 39 weeks along in her pregnancy and has been experiencing contractions every 8 to 10 minutes that last about 30 seconds. Jillian most likely is in the ________ stage of labor.\n\u003cbr /\u003e",
+              "order": "randomized",
+              "presenterType": "RadioGroup",
+              "presenterConfig": {
+                "numberFormat": "none"
+              },
+              "choices": [
+                {
+                  "answerKey": "answer_1",
+                  "content": "first"
+                },
+                {
+                  "answerKey": "answer_2",
+                  "content": "transition"
+                },
+                {
+                  "answerKey": "answer_3",
+                  "content": "second"
+                },
+                {
+                  "answerKey": "answer_4",
+                  "content": "third"
+                }
+              ]
+            },
+            "answerKey": {
+              "assessmentType": "multiplechoice",
+              "answers": {
+                "answer_3": {
+                  "score": 0.0,
+                  "response": "Consider this: The first stage of labor is characterized by contractions that initially occur every 8 to 10 minutes and increase in frequency and length as labor progresses. LO 2.9 What is the normal process of labor?"
+                },
+                "answer_2": {
+                  "score": 0.0,
+                  "response": "Consider this: The first stage of labor is characterized by contractions that initially occur every 8 to 10 minutes and increase in frequency and length as labor progresses. LO 2.9 What is the normal process of labor?"
+                },
+                "answer_1": {
+                  "score": 1.0,
+                  "response": ""
+                },
+                "answer_4": {
+                  "score": 0.0,
+                  "response": "Consider this: The first stage of labor is characterized by contractions that initially occur every 8 to 10 minutes and increase in frequency and length as labor progresses. LO 2.9 What is the normal process of labor?"
+                }
+              }
+            },
+            "configFixup": [
+              {
+                "name": "questionId",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "sequenceNodeKey",
+                  "type": "ref"
+                }
+              },
+              {
+                "name": "maxAttempts",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "maxAttempts",
+                  "type": "ref"
+                }
+              }
+            ]
+          }
+        ],
+        "hookupActions": [
+          {
+            "description": "Hookup the submit manager to evaluate answers",
+            "methodName": "handleRequestsFrom",
+            "type": "method-call",
+            "args": [
+              {
+                "domain": "brix",
+                "refId": "q1",
+                "type": "ref"
+              }
+            ],
+            "instance": {
+              "type": "submit-manager"
+            }
+          },
+          {
+            "description": "Draw the question",
+            "methodName": "draw",
+            "type": "method-call",
+            "args": [
+              {
+                "selector": "#target1",
+                "type": "d3select"
+              }
+            ],
+            "instance": {
+              "domain": "brix",
+              "refId": "q1",
+              "type": "ref"
+            }
+          }
+        ]
+      }
+    ],
+    "title": "FA 2.3.1 Birth Apply LO 2.9 APA LO 1.3"
+  }
+}

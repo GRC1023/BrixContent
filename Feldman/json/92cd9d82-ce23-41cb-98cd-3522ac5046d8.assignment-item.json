@@ -1,0 +1,192 @@
+{
+  "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope",
+  "@type": "Envelope",
+  "metadata": {
+    "bookTitle": "Discovering the Life Span",
+    "keywords": [
+      "Feldman 3e",
+      "Alick",
+      "Ch07"
+    ],
+    "extendedMetadata": [
+      {
+        "name": "Page-Reference",
+        "value": "319"
+      },
+      {
+        "name": "ISBN",
+        "value": "0133869946"
+      },
+      {
+        "name": "M",
+        "value": "c01"
+      },
+      {
+        "name": "assessment_title",
+        "value": "Chapter Quiz: Early Adulthood"
+      },
+      {
+        "name": "Topic",
+        "value": "Cognitive Development"
+      },
+      {
+        "name": "chapterTitle",
+        "value": "Early Adulthood"
+      },
+      {
+        "name": "item_title",
+        "value": "0133869946_Robert S. Feldman_ch07_c01_q0006"
+      },
+      {
+        "name": "CH",
+        "value": "7"
+      },
+      {
+        "name": "Difficulty",
+        "value": "Moderate"
+      },
+      {
+        "name": "Objective",
+        "value": "L 7.8 \u0026amp;ndash; How does postformal thinking develop in early adulthood?"
+      },
+      {
+        "name": "shuffle_choices",
+        "value": "Yes"
+      }
+    ],
+    "subject": [
+      "Psychology"
+    ],
+    "contentTypeTier2": [
+      "AssessmentItem"
+    ],
+    "contentTypeTier1": "Assessment",
+    "format": [
+      "application/vnd.pearson.sanvan.v1.activity"
+    ],
+    "version": "1.0",
+    "guid": "92cd9d82-ce23-41cb-98cd-3522ac5046d8",
+    "bookAuthor": "Robert S. Feldman",
+    "title": "FA 7.2.1 Cognitive Development Apply LO 7.8 APA LO 1.1",
+    "educationalAlignment": [
+      "http://purl.org/pearson/objectives/183725473384362"
+    ]
+  },
+  "body": {
+    "description": "FA_7.2.1, Cognitive Development, Apply, LO 7.8, APA LO 1.1",
+    "containerConfig": [
+      {
+        "description": "FA_7.2.1, Cognitive Development, Apply, LO 7.8, APA LO 1.1",
+        "containerId": "target1",
+        "brixConfig": [
+          {
+            "bricId": "q1",
+            "bricType": "MultipleChoiceQuestion",
+            "config": {
+              "id": "QUE62074",
+              "question": "As a teen, Stephanie believed that there was always a clear right and wrong way to handle situations. Now that she is older and has faced many predicaments that are not so clear-cut, Stephanie understands that real-life situations must sometimes be solved in relativistic terms. Stephanie now uses ______.\n\u003cbr /\u003e",
+              "order": "randomized",
+              "presenterType": "RadioGroup",
+              "presenterConfig": {
+                "numberFormat": "none"
+              },
+              "choices": [
+                {
+                  "answerKey": "answer_1",
+                  "content": "logical thinking"
+                },
+                {
+                  "answerKey": "answer_2",
+                  "content": "formal operations"
+                },
+                {
+                  "answerKey": "answer_3",
+                  "content": "postformal thought\n\u003cbr /\u003e"
+                },
+                {
+                  "answerKey": "answer_4",
+                  "content": "dualistic thinking"
+                }
+              ]
+            },
+            "answerKey": {
+              "assessmentType": "multiplechoice",
+              "answers": {
+                "answer_3": {
+                  "score": 1.0,
+                  "response": ""
+                },
+                "answer_2": {
+                  "score": 0.0,
+                  "response": "Consider this: Stephanie has graduated from formal operations and logical thinking to postformal thought. LO 7.8 How does postformal thinking develop in early adulthood"
+                },
+                "answer_1": {
+                  "score": 0.0,
+                  "response": "Consider this: Stephanie has graduated from formal operations and logical thinking to postformal thought. LO 7.8 How does postformal thinking develop in early adulthood"
+                },
+                "answer_4": {
+                  "score": 0.0,
+                  "response": "Consider this: Stephanie has graduated from formal operations and logical thinking to postformal thought. LO 7.8 How does postformal thinking develop in early adulthood"
+                }
+              }
+            },
+            "configFixup": [
+              {
+                "name": "questionId",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "sequenceNodeKey",
+                  "type": "ref"
+                }
+              },
+              {
+                "name": "maxAttempts",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "maxAttempts",
+                  "type": "ref"
+                }
+              }
+            ]
+          }
+        ],
+        "hookupActions": [
+          {
+            "description": "Hookup the submit manager to evaluate answers",
+            "methodName": "handleRequestsFrom",
+            "type": "method-call",
+            "args": [
+              {
+                "domain": "brix",
+                "refId": "q1",
+                "type": "ref"
+              }
+            ],
+            "instance": {
+              "type": "submit-manager"
+            }
+          },
+          {
+            "description": "Draw the question",
+            "methodName": "draw",
+            "type": "method-call",
+            "args": [
+              {
+                "selector": "#target1",
+                "type": "d3select"
+              }
+            ],
+            "instance": {
+              "domain": "brix",
+              "refId": "q1",
+              "type": "ref"
+            }
+          }
+        ]
+      }
+    ],
+    "title": "FA 7.2.1 Cognitive Development Apply LO 7.8 APA LO 1.1"
+  }
+}

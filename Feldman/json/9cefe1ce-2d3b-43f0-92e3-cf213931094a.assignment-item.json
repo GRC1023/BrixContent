@@ -1,0 +1,192 @@
+{
+  "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope",
+  "@type": "Envelope",
+  "metadata": {
+    "bookTitle": "Discovering the Life Span",
+    "keywords": [
+      "Feldman 3e",
+      "Alick",
+      "Ch06"
+    ],
+    "extendedMetadata": [
+      {
+        "name": "Page-Reference",
+        "value": "277"
+      },
+      {
+        "name": "ISBN",
+        "value": "0133869946"
+      },
+      {
+        "name": "M",
+        "value": "c01"
+      },
+      {
+        "name": "assessment_title",
+        "value": "Chapter Quiz: Adolescence"
+      },
+      {
+        "name": "Topic",
+        "value": "School Performance"
+      },
+      {
+        "name": "chapterTitle",
+        "value": "Adolescence"
+      },
+      {
+        "name": "item_title",
+        "value": "0133869946_Robert S. Feldman_ch06_c01_q0006"
+      },
+      {
+        "name": "CH",
+        "value": "6"
+      },
+      {
+        "name": "Difficulty",
+        "value": "Moderate"
+      },
+      {
+        "name": "Objective",
+        "value": "LO 6.8 \u0026amp;ndash; What factors affect adolescent school performance?"
+      },
+      {
+        "name": "shuffle_choices",
+        "value": "Yes"
+      }
+    ],
+    "subject": [
+      "Psychology"
+    ],
+    "contentTypeTier2": [
+      "AssessmentItem"
+    ],
+    "contentTypeTier1": "Assessment",
+    "format": [
+      "application/vnd.pearson.sanvan.v1.activity"
+    ],
+    "version": "1.0",
+    "guid": "9cefe1ce-2d3b-43f0-92e3-cf213931094a",
+    "bookAuthor": "Robert S. Feldman",
+    "title": "FA 6.2.4 School Performance Apply LO 6.8 APA LO 1.2",
+    "educationalAlignment": [
+      "http://purl.org/pearson/objectives/183725473384362"
+    ]
+  },
+  "body": {
+    "description": "FA_6.2.4, School Performance, Apply, LO 6.8, APA LO 1.2",
+    "containerConfig": [
+      {
+        "description": "FA_6.2.4, School Performance, Apply, LO 6.8, APA LO 1.2",
+        "containerId": "target1",
+        "brixConfig": [
+          {
+            "bricId": "q1",
+            "bricType": "MultipleChoiceQuestion",
+            "config": {
+              "id": "QUE62044",
+              "question": "Nick dropped out of high school. Based on the research regarding the effects of dropping out of high school, Nick can expect to _________.\n\u003cbr /\u003e",
+              "order": "randomized",
+              "presenterType": "RadioGroup",
+              "presenterConfig": {
+                "numberFormat": "none"
+              },
+              "choices": [
+                {
+                  "answerKey": "answer_1",
+                  "content": "earn 24% less than his graduating counterparts"
+                },
+                {
+                  "answerKey": "answer_2",
+                  "content": "earn 42% less than his graduating counterparts"
+                },
+                {
+                  "answerKey": "answer_3",
+                  "content": "experience greater job stability than his graduating counterparts"
+                },
+                {
+                  "answerKey": "answer_4",
+                  "content": "take the GED and return to college"
+                }
+              ]
+            },
+            "answerKey": {
+              "assessmentType": "multiplechoice",
+              "answers": {
+                "answer_3": {
+                  "score": 0.0,
+                  "response": "Consider this: On average, high school dropouts earn 42% less than graduates. LO 6.8 What factors affect adolescent school performance?"
+                },
+                "answer_2": {
+                  "score": 1.0,
+                  "response": ""
+                },
+                "answer_1": {
+                  "score": 0.0,
+                  "response": "Consider this: On average, high school dropouts earn 42% less than graduates. LO 6.8 What factors affect adolescent school performance?"
+                },
+                "answer_4": {
+                  "score": 0.0,
+                  "response": "Consider this: On average, high school dropouts earn 42% less than graduates. LO 6.8 What factors affect adolescent school performance?"
+                }
+              }
+            },
+            "configFixup": [
+              {
+                "name": "questionId",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "sequenceNodeKey",
+                  "type": "ref"
+                }
+              },
+              {
+                "name": "maxAttempts",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "maxAttempts",
+                  "type": "ref"
+                }
+              }
+            ]
+          }
+        ],
+        "hookupActions": [
+          {
+            "description": "Hookup the submit manager to evaluate answers",
+            "methodName": "handleRequestsFrom",
+            "type": "method-call",
+            "args": [
+              {
+                "domain": "brix",
+                "refId": "q1",
+                "type": "ref"
+              }
+            ],
+            "instance": {
+              "type": "submit-manager"
+            }
+          },
+          {
+            "description": "Draw the question",
+            "methodName": "draw",
+            "type": "method-call",
+            "args": [
+              {
+                "selector": "#target1",
+                "type": "d3select"
+              }
+            ],
+            "instance": {
+              "domain": "brix",
+              "refId": "q1",
+              "type": "ref"
+            }
+          }
+        ]
+      }
+    ],
+    "title": "FA 6.2.4 School Performance Apply LO 6.8 APA LO 1.2"
+  }
+}

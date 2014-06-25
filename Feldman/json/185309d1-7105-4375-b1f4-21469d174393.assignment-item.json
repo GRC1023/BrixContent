@@ -1,0 +1,192 @@
+{
+  "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope",
+  "@type": "Envelope",
+  "metadata": {
+    "bookTitle": "Discovering the Life Span",
+    "keywords": [
+      "Feldman 3e",
+      "Ch05",
+      "Alick"
+    ],
+    "extendedMetadata": [
+      {
+        "name": "Page-Reference",
+        "value": "206"
+      },
+      {
+        "name": "ISBN",
+        "value": "0133869946"
+      },
+      {
+        "name": "M",
+        "value": "c01"
+      },
+      {
+        "name": "assessment_title",
+        "value": "Chapter Quiz: Middle Childhood"
+      },
+      {
+        "name": "Topic",
+        "value": "Children with Special Needs"
+      },
+      {
+        "name": "chapterTitle",
+        "value": "Middle Childhood"
+      },
+      {
+        "name": "item_title",
+        "value": "0133869946_Robert S. Feldman_ch05_c01_q0003"
+      },
+      {
+        "name": "CH",
+        "value": "5"
+      },
+      {
+        "name": "Difficulty",
+        "value": "Moderate"
+      },
+      {
+        "name": "Objective",
+        "value": "LO 5.4 \u0026amp;ndash; What special needs can become apparent during these years, and how can they be met?"
+      },
+      {
+        "name": "shuffle_choices",
+        "value": "Yes"
+      }
+    ],
+    "subject": [
+      "Psychology"
+    ],
+    "contentTypeTier2": [
+      "AssessmentItem"
+    ],
+    "contentTypeTier1": "Assessment",
+    "format": [
+      "application/vnd.pearson.sanvan.v1.activity"
+    ],
+    "version": "1.0",
+    "guid": "185309d1-7105-4375-b1f4-21469d174393",
+    "bookAuthor": "Robert S. Feldman",
+    "title": "FA 5.1.3 Children With Special Needs Apply LO 5.4 APA LO 1.3",
+    "educationalAlignment": [
+      "http://purl.org/pearson/objectives/183725473384362"
+    ]
+  },
+  "body": {
+    "description": "FA_5.1.3, Children with Special Needs, Apply, LO 5.4, APA LO 1.3",
+    "containerConfig": [
+      {
+        "description": "FA_5.1.3, Children with Special Needs, Apply, LO 5.4, APA LO 1.3",
+        "containerId": "target1",
+        "brixConfig": [
+          {
+            "bricId": "q1",
+            "bricType": "MultipleChoiceQuestion",
+            "config": {
+              "id": "QUE62008",
+              "question": "Nine-year-old Aida struggles with a learning disability called ________ that interferes with her reading and causes misperception of letters, difficulty spelling, and left–right confusion.\n\u003cbr /\u003e",
+              "order": "randomized",
+              "presenterType": "RadioGroup",
+              "presenterConfig": {
+                "numberFormat": "none"
+              },
+              "choices": [
+                {
+                  "answerKey": "answer_1",
+                  "content": "attention deficit disorder"
+                },
+                {
+                  "answerKey": "answer_2",
+                  "content": "dyslexia"
+                },
+                {
+                  "answerKey": "answer_3",
+                  "content": "partial sightedness"
+                },
+                {
+                  "answerKey": "answer_4",
+                  "content": "stuttering"
+                }
+              ]
+            },
+            "answerKey": {
+              "assessmentType": "multiplechoice",
+              "answers": {
+                "answer_3": {
+                  "score": 0.0,
+                  "response": "Consider this: Dyslexia is a learning disability that can result in visual misperception of letters, unusual difficulty in spelling or sounding out letters, and left–right confusion. LO 5.4 What special needs may become apparent over these years, and how can they be met?"
+                },
+                "answer_2": {
+                  "score": 1.0,
+                  "response": ""
+                },
+                "answer_1": {
+                  "score": 0.0,
+                  "response": "Consider this: Dyslexia is a learning disability that can result in visual misperception of letters, unusual difficulty in spelling or sounding out letters, and left–right confusion. LO 5.4 What special needs may become apparent over these years, and how can they be met?"
+                },
+                "answer_4": {
+                  "score": 0.0,
+                  "response": "Consider this: Dyslexia is a learning disability that can result in visual misperception of letters, unusual difficulty in spelling or sounding out letters, and left–right confusion. LO 5.4 What special needs may become apparent over these years, and how can they be met?"
+                }
+              }
+            },
+            "configFixup": [
+              {
+                "name": "questionId",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "sequenceNodeKey",
+                  "type": "ref"
+                }
+              },
+              {
+                "name": "maxAttempts",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "maxAttempts",
+                  "type": "ref"
+                }
+              }
+            ]
+          }
+        ],
+        "hookupActions": [
+          {
+            "description": "Hookup the submit manager to evaluate answers",
+            "methodName": "handleRequestsFrom",
+            "type": "method-call",
+            "args": [
+              {
+                "domain": "brix",
+                "refId": "q1",
+                "type": "ref"
+              }
+            ],
+            "instance": {
+              "type": "submit-manager"
+            }
+          },
+          {
+            "description": "Draw the question",
+            "methodName": "draw",
+            "type": "method-call",
+            "args": [
+              {
+                "selector": "#target1",
+                "type": "d3select"
+              }
+            ],
+            "instance": {
+              "domain": "brix",
+              "refId": "q1",
+              "type": "ref"
+            }
+          }
+        ]
+      }
+    ],
+    "title": "FA 5.1.3 Children With Special Needs Apply LO 5.4 APA LO 1.3"
+  }
+}
