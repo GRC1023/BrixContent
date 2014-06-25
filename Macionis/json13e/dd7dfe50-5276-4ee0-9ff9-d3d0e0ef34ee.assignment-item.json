@@ -1,0 +1,192 @@
+{
+  "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope",
+  "@type": "Envelope",
+  "metadata": {
+    "bookTitle": "Society: The Basics",
+    "keywords": [
+      "Macionis 13e",
+      "ch 06",
+      "Rudowski"
+    ],
+    "extendedMetadata": [
+      {
+        "name": "ISBN",
+        "value": "0133794997"
+      },
+      {
+        "name": "M",
+        "value": "c01"
+      },
+      {
+        "name": "assessment_title",
+        "value": "Chapter Quiz: Sexuality and Society"
+      },
+      {
+        "name": "Topic",
+        "value": "Understanding Sexuality"
+      },
+      {
+        "name": "chapterTitle",
+        "value": "Sexuality and Society"
+      },
+      {
+        "name": "item_title",
+        "value": "0133794997_John J. Macionis_ch06_c01_q0001"
+      },
+      {
+        "name": "questionlayout",
+        "value": "1"
+      },
+      {
+        "name": "CH",
+        "value": "6"
+      },
+      {
+        "name": "Difficulty",
+        "value": "Easy"
+      },
+      {
+        "name": "Objective",
+        "value": "L.O. 6.1: Describe how sexuality is both a biological and a cultural issue."
+      },
+      {
+        "name": "shuffle_choices",
+        "value": "Yes"
+      }
+    ],
+    "subject": [
+      "Sociology"
+    ],
+    "contentTypeTier2": [
+      "AssessmentItem"
+    ],
+    "contentTypeTier1": "Assessment",
+    "format": [
+      "application/vnd.pearson.sanvan.v1.activity"
+    ],
+    "version": "1.0",
+    "guid": "dd7dfe50-5276-4ee0-9ff9-d3d0e0ef34ee",
+    "bookAuthor": "John J. Macionis",
+    "title": "CE.06.39 Understanding Sexuality Apply L.O. 6.1",
+    "educationalAlignment": [
+      "http://purl.org/pearson/objectives/183725473384362"
+    ]
+  },
+  "body": {
+    "description": "CE.06.39, Understanding Sexuality, Apply, L.O. 6.1",
+    "containerConfig": [
+      {
+        "description": "CE.06.39, Understanding Sexuality, Apply, L.O. 6.1",
+        "containerId": "target1",
+        "brixConfig": [
+          {
+            "bricId": "q1",
+            "bricType": "MultipleChoiceQuestion",
+            "config": {
+              "id": "QUE62423",
+              "question": "What is the difference between sex and gender?\n\u003cbr /\u003e",
+              "order": "randomized",
+              "presenterType": "RadioGroup",
+              "presenterConfig": {
+                "numberFormat": "none"
+              },
+              "choices": [
+                {
+                  "answerKey": "answer_1",
+                  "content": "Gender is cultural, while sex refers to biological traits."
+                },
+                {
+                  "answerKey": "answer_2",
+                  "content": "Sex is cultural, while gender is biological."
+                },
+                {
+                  "answerKey": "answer_3",
+                  "content": "Gender refers to a person’s biological traits, while sex refers to a person’s sexual orientation."
+                },
+                {
+                  "answerKey": "answer_4",
+                  "content": "Gender refers to a person’s sexual orientation, while sex refers to a person’s biological traits."
+                }
+              ]
+            },
+            "answerKey": {
+              "assessmentType": "multiplechoice",
+              "answers": {
+                "answer_3": {
+                  "score": 0.0,
+                  "response": "Consider this: Gender is an important dimension of social inequality.\n\u003cbr /\u003e Refer to Learning Objective 6.1: Describe how sexuality is both a biological and a cultural issue."
+                },
+                "answer_2": {
+                  "score": 0.0,
+                  "response": "Consider this: Gender is an important dimension of social inequality.\n\u003cbr /\u003e Refer to Learning Objective 6.1: Describe how sexuality is both a biological and a cultural issue."
+                },
+                "answer_1": {
+                  "score": 1.0,
+                  "response": ""
+                },
+                "answer_4": {
+                  "score": 0.0,
+                  "response": "Consider this: Gender is an important dimension of social inequality.\n\u003cbr /\u003e Refer to Learning Objective 6.1: Describe how sexuality is both a biological and a cultural issue."
+                }
+              }
+            },
+            "configFixup": [
+              {
+                "name": "questionId",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "sequenceNodeKey",
+                  "type": "ref"
+                }
+              },
+              {
+                "name": "maxAttempts",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "maxAttempts",
+                  "type": "ref"
+                }
+              }
+            ]
+          }
+        ],
+        "hookupActions": [
+          {
+            "description": "Hookup the submit manager to evaluate answers",
+            "methodName": "handleRequestsFrom",
+            "type": "method-call",
+            "args": [
+              {
+                "domain": "brix",
+                "refId": "q1",
+                "type": "ref"
+              }
+            ],
+            "instance": {
+              "type": "submit-manager"
+            }
+          },
+          {
+            "description": "Draw the question",
+            "methodName": "draw",
+            "type": "method-call",
+            "args": [
+              {
+                "selector": "#target1",
+                "type": "d3select"
+              }
+            ],
+            "instance": {
+              "domain": "brix",
+              "refId": "q1",
+              "type": "ref"
+            }
+          }
+        ]
+      }
+    ],
+    "title": "CE.06.39 Understanding Sexuality Apply L.O. 6.1"
+  }
+}

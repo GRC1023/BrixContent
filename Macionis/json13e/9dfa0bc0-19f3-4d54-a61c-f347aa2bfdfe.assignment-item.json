@@ -1,0 +1,192 @@
+{
+  "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope",
+  "@type": "Envelope",
+  "metadata": {
+    "bookTitle": "Society: The Basics",
+    "keywords": [
+      "Macionis 13e",
+      "ch 03",
+      "Rudowski"
+    ],
+    "extendedMetadata": [
+      {
+        "name": "ISBN",
+        "value": "0133794997"
+      },
+      {
+        "name": "M",
+        "value": "c01"
+      },
+      {
+        "name": "assessment_title",
+        "value": "Chapter Quiz: Socialization- From Infancy to Old Age"
+      },
+      {
+        "name": "Topic",
+        "value": "Resocialization: Total Institutions"
+      },
+      {
+        "name": "chapterTitle",
+        "value": "Socialization - From Infancy to Old Age"
+      },
+      {
+        "name": "item_title",
+        "value": "0133794997_John J. Macionis_ch03_c01_q0010"
+      },
+      {
+        "name": "questionlayout",
+        "value": "1"
+      },
+      {
+        "name": "CH",
+        "value": "3"
+      },
+      {
+        "name": "Difficulty",
+        "value": "Moderate"
+      },
+      {
+        "name": "Objective",
+        "value": "L.O. 3.5: Characterize the operation of total institutions."
+      },
+      {
+        "name": "shuffle_choices",
+        "value": "Yes"
+      }
+    ],
+    "subject": [
+      "Sociology"
+    ],
+    "contentTypeTier2": [
+      "AssessmentItem"
+    ],
+    "contentTypeTier1": "Assessment",
+    "format": [
+      "application/vnd.pearson.sanvan.v1.activity"
+    ],
+    "version": "1.0",
+    "guid": "9dfa0bc0-19f3-4d54-a61c-f347aa2bfdfe",
+    "bookAuthor": "John J. Macionis",
+    "title": "CE.03.49 Resocialization Total Institutions Remember L.O. 3.5",
+    "educationalAlignment": [
+      "http://purl.org/pearson/objectives/183725473384362"
+    ]
+  },
+  "body": {
+    "description": "CE.03.49, Resocialization: Total Institutions, Remember, L.O. 3.5",
+    "containerConfig": [
+      {
+        "description": "CE.03.49, Resocialization: Total Institutions, Remember, L.O. 3.5",
+        "containerId": "target1",
+        "brixConfig": [
+          {
+            "bricId": "q1",
+            "bricType": "MultipleChoiceQuestion",
+            "config": {
+              "id": "QUE58511",
+              "question": "What is the first step of resocialization in a total institution such as prison?\n\u003cbr /\u003e",
+              "order": "randomized",
+              "presenterType": "RadioGroup",
+              "presenterConfig": {
+                "numberFormat": "none"
+              },
+              "choices": [
+                {
+                  "answerKey": "answer_1",
+                  "content": "the removal of an inmate’s existing identity"
+                },
+                {
+                  "answerKey": "answer_2",
+                  "content": "a system of rewards and punishments"
+                },
+                {
+                  "answerKey": "answer_3",
+                  "content": "becoming institutionalized"
+                },
+                {
+                  "answerKey": "answer_4",
+                  "content": "drug rehabilitation"
+                }
+              ]
+            },
+            "answerKey": {
+              "assessmentType": "multiplechoice",
+              "answers": {
+                "answer_3": {
+                  "score": 0.0,
+                  "response": "Consider this: Resocialization is a two-part process.\n\u003cbr /\u003eRefer to Learning Objective 3.5 : Characterize the operation of total institutions."
+                },
+                "answer_2": {
+                  "score": 0.0,
+                  "response": "Consider this: Resocialization is a two-part process.\n\u003cbr /\u003eRefer to Learning Objective 3.5 : Characterize the operation of total institutions."
+                },
+                "answer_1": {
+                  "score": 1.0,
+                  "response": ""
+                },
+                "answer_4": {
+                  "score": 0.0,
+                  "response": "Consider this: Resocialization is a two-part process.\n\u003cbr /\u003eRefer to Learning Objective 3.5 : Characterize the operation of total institutions."
+                }
+              }
+            },
+            "configFixup": [
+              {
+                "name": "questionId",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "sequenceNodeKey",
+                  "type": "ref"
+                }
+              },
+              {
+                "name": "maxAttempts",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "maxAttempts",
+                  "type": "ref"
+                }
+              }
+            ]
+          }
+        ],
+        "hookupActions": [
+          {
+            "description": "Hookup the submit manager to evaluate answers",
+            "methodName": "handleRequestsFrom",
+            "type": "method-call",
+            "args": [
+              {
+                "domain": "brix",
+                "refId": "q1",
+                "type": "ref"
+              }
+            ],
+            "instance": {
+              "type": "submit-manager"
+            }
+          },
+          {
+            "description": "Draw the question",
+            "methodName": "draw",
+            "type": "method-call",
+            "args": [
+              {
+                "selector": "#target1",
+                "type": "d3select"
+              }
+            ],
+            "instance": {
+              "domain": "brix",
+              "refId": "q1",
+              "type": "ref"
+            }
+          }
+        ]
+      }
+    ],
+    "title": "CE.03.49 Resocialization Total Institutions Remember L.O. 3.5"
+  }
+}

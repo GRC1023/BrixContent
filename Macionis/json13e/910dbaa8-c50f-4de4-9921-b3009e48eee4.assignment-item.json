@@ -1,0 +1,192 @@
+{
+  "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope",
+  "@type": "Envelope",
+  "metadata": {
+    "bookTitle": "Society: The Basics",
+    "keywords": [
+      "Macionis 13e",
+      "ch 01",
+      "Rudowski"
+    ],
+    "extendedMetadata": [
+      {
+        "name": "ISBN",
+        "value": "0133794997"
+      },
+      {
+        "name": "M",
+        "value": "c01"
+      },
+      {
+        "name": "assessment_title",
+        "value": "Chapter Quiz: Sociology - Perspective, Theory, and Method"
+      },
+      {
+        "name": "Topic",
+        "value": "The Origins of Sociology"
+      },
+      {
+        "name": "chapterTitle",
+        "value": "Sociology - Perspective, Theory, and Method"
+      },
+      {
+        "name": "item_title",
+        "value": "0133794997_John J. Macionis_ch01_c01_q0004"
+      },
+      {
+        "name": "questionlayout",
+        "value": "1"
+      },
+      {
+        "name": "CH",
+        "value": "1"
+      },
+      {
+        "name": "Difficulty",
+        "value": "Moderate"
+      },
+      {
+        "name": "Objective",
+        "value": "L.O. 1.4: Link the origins of sociology to historical social changes."
+      },
+      {
+        "name": "shuffle_choices",
+        "value": "Yes"
+      }
+    ],
+    "subject": [
+      "Sociology"
+    ],
+    "contentTypeTier2": [
+      "AssessmentItem"
+    ],
+    "contentTypeTier1": "Assessment",
+    "format": [
+      "application/vnd.pearson.sanvan.v1.activity"
+    ],
+    "version": "1.0",
+    "guid": "910dbaa8-c50f-4de4-9921-b3009e48eee4",
+    "bookAuthor": "John J. Macionis",
+    "title": "CE.01.18 The Origins Of Sociology Understand L.O. 1.4",
+    "educationalAlignment": [
+      "http://purl.org/pearson/objectives/183725473384362"
+    ]
+  },
+  "body": {
+    "description": "CE.01.18, The Origins of Sociology, Understand, L.O. 1.4",
+    "containerConfig": [
+      {
+        "description": "CE.01.18, The Origins of Sociology, Understand, L.O. 1.4",
+        "containerId": "target1",
+        "brixConfig": [
+          {
+            "bricId": "q1",
+            "bricType": "MultipleChoiceQuestion",
+            "config": {
+              "id": "QUE58416",
+              "question": "According to Auguste Comte, the writings of Thomas Hobbes, John Locke, and Adam Smith shifted focus from moral obligation to God and king (theological stage) to _________ (metaphysical stage).\n\u003cbr /\u003e",
+              "order": "randomized",
+              "presenterType": "RadioGroup",
+              "presenterConfig": {
+                "numberFormat": "none"
+              },
+              "choices": [
+                {
+                  "answerKey": "answer_1",
+                  "content": "democracy"
+                },
+                {
+                  "answerKey": "answer_2",
+                  "content": "attack on tradition"
+                },
+                {
+                  "answerKey": "answer_3",
+                  "content": "the pursuit of self-interest"
+                },
+                {
+                  "answerKey": "answer_4",
+                  "content": "analysis of societal structures"
+                }
+              ]
+            },
+            "answerKey": {
+              "assessmentType": "multiplechoice",
+              "answers": {
+                "answer_3": {
+                  "score": 1.0,
+                  "response": ""
+                },
+                "answer_2": {
+                  "score": 0.0,
+                  "response": "Consider this: Their ideas ended up influencing democracy in the United States.\n\u003cbr /\u003eRefer to Learning Objective 1.4 : Link the origins of sociology to historical social changes."
+                },
+                "answer_1": {
+                  "score": 0.0,
+                  "response": "Consider this: Their ideas ended up influencing democracy in the United States.\n\u003cbr /\u003eRefer to Learning Objective 1.4 : Link the origins of sociology to historical social changes."
+                },
+                "answer_4": {
+                  "score": 0.0,
+                  "response": "Consider this: Their ideas ended up influencing democracy in the United States.\n\u003cbr /\u003eRefer to Learning Objective 1.4 : Link the origins of sociology to historical social changes."
+                }
+              }
+            },
+            "configFixup": [
+              {
+                "name": "questionId",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "sequenceNodeKey",
+                  "type": "ref"
+                }
+              },
+              {
+                "name": "maxAttempts",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "maxAttempts",
+                  "type": "ref"
+                }
+              }
+            ]
+          }
+        ],
+        "hookupActions": [
+          {
+            "description": "Hookup the submit manager to evaluate answers",
+            "methodName": "handleRequestsFrom",
+            "type": "method-call",
+            "args": [
+              {
+                "domain": "brix",
+                "refId": "q1",
+                "type": "ref"
+              }
+            ],
+            "instance": {
+              "type": "submit-manager"
+            }
+          },
+          {
+            "description": "Draw the question",
+            "methodName": "draw",
+            "type": "method-call",
+            "args": [
+              {
+                "selector": "#target1",
+                "type": "d3select"
+              }
+            ],
+            "instance": {
+              "domain": "brix",
+              "refId": "q1",
+              "type": "ref"
+            }
+          }
+        ]
+      }
+    ],
+    "title": "CE.01.18 The Origins Of Sociology Understand L.O. 1.4"
+  }
+}

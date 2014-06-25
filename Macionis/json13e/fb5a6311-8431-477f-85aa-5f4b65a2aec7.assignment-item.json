@@ -1,0 +1,192 @@
+{
+  "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope",
+  "@type": "Envelope",
+  "metadata": {
+    "bookTitle": "Society: The Basics",
+    "keywords": [
+      "Macionis 13e",
+      "ch 03",
+      "Rudowski"
+    ],
+    "extendedMetadata": [
+      {
+        "name": "ISBN",
+        "value": "0133794997"
+      },
+      {
+        "name": "M",
+        "value": "c01"
+      },
+      {
+        "name": "assessment_title",
+        "value": "Chapter Quiz: Socialization- From Infancy to Old Age"
+      },
+      {
+        "name": "Topic",
+        "value": "Agents of Socialization"
+      },
+      {
+        "name": "chapterTitle",
+        "value": "Socialization - From Infancy to Old Age"
+      },
+      {
+        "name": "item_title",
+        "value": "0133794997_John J. Macionis_ch03_c01_q0005"
+      },
+      {
+        "name": "questionlayout",
+        "value": "1"
+      },
+      {
+        "name": "CH",
+        "value": "3"
+      },
+      {
+        "name": "Difficulty",
+        "value": "Moderate"
+      },
+      {
+        "name": "Objective",
+        "value": "3.3: Analyze how family, school, peer groups, and mass media guide the socialization process."
+      },
+      {
+        "name": "shuffle_choices",
+        "value": "Yes"
+      }
+    ],
+    "subject": [
+      "Sociology"
+    ],
+    "contentTypeTier2": [
+      "AssessmentItem"
+    ],
+    "contentTypeTier1": "Assessment",
+    "format": [
+      "application/vnd.pearson.sanvan.v1.activity"
+    ],
+    "version": "1.0",
+    "guid": "fb5a6311-8431-477f-85aa-5f4b65a2aec7",
+    "bookAuthor": "John J. Macionis",
+    "title": "CE.03.25 Agents Of Socialization Understand L.O. 3.3",
+    "educationalAlignment": [
+      "http://purl.org/pearson/objectives/183725473384362"
+    ]
+  },
+  "body": {
+    "description": "CE.03.25, Agents of Socialization, Understand, L.O. 3.3",
+    "containerConfig": [
+      {
+        "description": "CE.03.25, Agents of Socialization, Understand, L.O. 3.3",
+        "containerId": "target1",
+        "brixConfig": [
+          {
+            "bricId": "q1",
+            "bricType": "MultipleChoiceQuestion",
+            "config": {
+              "id": "QUE58506",
+              "question": "Which of the following traits are lower-income parents, compared to high-income parents, more likely to desire in their children?\n\u003cbr /\u003e",
+              "order": "randomized",
+              "presenterType": "RadioGroup",
+              "presenterConfig": {
+                "numberFormat": "none"
+              },
+              "choices": [
+                {
+                  "answerKey": "answer_1",
+                  "content": "independence"
+                },
+                {
+                  "answerKey": "answer_2",
+                  "content": "creativity"
+                },
+                {
+                  "answerKey": "answer_3",
+                  "content": "obedience"
+                },
+                {
+                  "answerKey": "answer_4",
+                  "content": "using imagination"
+                }
+              ]
+            },
+            "answerKey": {
+              "assessmentType": "multiplechoice",
+              "answers": {
+                "answer_3": {
+                  "score": 1.0,
+                  "response": ""
+                },
+                "answer_2": {
+                  "score": 0.0,
+                  "response": "Consider this: These parents have limited education and perform routine jobs under close supervision.\n\u003cbr /\u003eRefer to Learning Objective 3.3 : Analyze how the family, school, peer groups, and the mass media guide the socialization process."
+                },
+                "answer_1": {
+                  "score": 0.0,
+                  "response": "Consider this: These parents have limited education and perform routine jobs under close supervision.\n\u003cbr /\u003eRefer to Learning Objective 3.3 : Analyze how the family, school, peer groups, and the mass media guide the socialization process."
+                },
+                "answer_4": {
+                  "score": 0.0,
+                  "response": "Consider this: These parents have limited education and perform routine jobs under close supervision.\n\u003cbr /\u003eRefer to Learning Objective 3.3 : Analyze how the family, school, peer groups, and the mass media guide the socialization process."
+                }
+              }
+            },
+            "configFixup": [
+              {
+                "name": "questionId",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "sequenceNodeKey",
+                  "type": "ref"
+                }
+              },
+              {
+                "name": "maxAttempts",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "maxAttempts",
+                  "type": "ref"
+                }
+              }
+            ]
+          }
+        ],
+        "hookupActions": [
+          {
+            "description": "Hookup the submit manager to evaluate answers",
+            "methodName": "handleRequestsFrom",
+            "type": "method-call",
+            "args": [
+              {
+                "domain": "brix",
+                "refId": "q1",
+                "type": "ref"
+              }
+            ],
+            "instance": {
+              "type": "submit-manager"
+            }
+          },
+          {
+            "description": "Draw the question",
+            "methodName": "draw",
+            "type": "method-call",
+            "args": [
+              {
+                "selector": "#target1",
+                "type": "d3select"
+              }
+            ],
+            "instance": {
+              "domain": "brix",
+              "refId": "q1",
+              "type": "ref"
+            }
+          }
+        ]
+      }
+    ],
+    "title": "CE.03.25 Agents Of Socialization Understand L.O. 3.3"
+  }
+}

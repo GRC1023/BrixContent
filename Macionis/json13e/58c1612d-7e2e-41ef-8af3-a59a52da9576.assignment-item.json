@@ -1,0 +1,192 @@
+{
+  "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope",
+  "@type": "Envelope",
+  "metadata": {
+    "bookTitle": "Society: The Basics",
+    "keywords": [
+      "Macionis 13e",
+      "ch 12",
+      "Rudowski"
+    ],
+    "extendedMetadata": [
+      {
+        "name": "ISBN",
+        "value": "0133794997"
+      },
+      {
+        "name": "M",
+        "value": "c01"
+      },
+      {
+        "name": "assessment_title",
+        "value": "Chapter Quiz: Economics and Politics"
+      },
+      {
+        "name": "Topic",
+        "value": "War and Peace"
+      },
+      {
+        "name": "chapterTitle",
+        "value": "Economics and Politics"
+      },
+      {
+        "name": "item_title",
+        "value": "0133794997_John J. Macionis_ch12_c01_q0010"
+      },
+      {
+        "name": "questionlayout",
+        "value": "1"
+      },
+      {
+        "name": "CH",
+        "value": "12"
+      },
+      {
+        "name": "Difficulty",
+        "value": "Difficult"
+      },
+      {
+        "name": "Objective",
+        "value": "L.O. 12.10: Identify factors encouraging war or peace."
+      },
+      {
+        "name": "shuffle_choices",
+        "value": "Yes"
+      }
+    ],
+    "subject": [
+      "Sociology"
+    ],
+    "contentTypeTier2": [
+      "AssessmentItem"
+    ],
+    "contentTypeTier1": "Assessment",
+    "format": [
+      "application/vnd.pearson.sanvan.v1.activity"
+    ],
+    "version": "1.0",
+    "guid": "58c1612d-7e2e-41ef-8af3-a59a52da9576",
+    "bookAuthor": "John J. Macionis",
+    "title": "CE.12.44 War And Peace Apply L.O. 12.10",
+    "educationalAlignment": [
+      "http://purl.org/pearson/objectives/183725473384362"
+    ]
+  },
+  "body": {
+    "description": "CE.12.44, War and Peace, Apply, L.O. 12.10",
+    "containerConfig": [
+      {
+        "description": "CE.12.44, War and Peace, Apply, L.O. 12.10",
+        "containerId": "target1",
+        "brixConfig": [
+          {
+            "bricId": "q1",
+            "bricType": "MultipleChoiceQuestion",
+            "config": {
+              "id": "QUE58609",
+              "question": "Why might a country suffering from internal issues go to war?\n\u003cbr /\u003e",
+              "order": "randomized",
+              "presenterType": "RadioGroup",
+              "presenterConfig": {
+                "numberFormat": "none"
+              },
+              "choices": [
+                {
+                  "answerKey": "answer_1",
+                  "content": "By eliminating perceived threats from the outside, a country ensures regional peace."
+                },
+                {
+                  "answerKey": "answer_2",
+                  "content": "By going to war, a country demonstrates its power, ensuring that it will not be attacked in the near future."
+                },
+                {
+                  "answerKey": "answer_3",
+                  "content": "Citizen morale is boosted by the idea of acquiring more wealth and power."
+                },
+                {
+                  "answerKey": "answer_4",
+                  "content": "The threat of an external enemy draws citizens’ attention away from internal problems."
+                }
+              ]
+            },
+            "answerKey": {
+              "assessmentType": "multiplechoice",
+              "answers": {
+                "answer_3": {
+                  "score": 0.0,
+                  "response": "Consider this: Quincy Wright identified “social problems” as one of five factors that can lead to war. How might war solve a country’s internal social problems?\n\u003cbr /\u003eRefer to Learning Objective 12.10 : Identify factors encouraging war or peace."
+                },
+                "answer_2": {
+                  "score": 0.0,
+                  "response": "Consider this: Quincy Wright identified “social problems” as one of five factors that can lead to war. How might war solve a country’s internal social problems?\n\u003cbr /\u003eRefer to Learning Objective 12.10 : Identify factors encouraging war or peace."
+                },
+                "answer_1": {
+                  "score": 0.0,
+                  "response": "Consider this: Quincy Wright identified “social problems” as one of five factors that can lead to war. How might war solve a country’s internal social problems?\n\u003cbr /\u003eRefer to Learning Objective 12.10 : Identify factors encouraging war or peace."
+                },
+                "answer_4": {
+                  "score": 1.0,
+                  "response": ""
+                }
+              }
+            },
+            "configFixup": [
+              {
+                "name": "questionId",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "sequenceNodeKey",
+                  "type": "ref"
+                }
+              },
+              {
+                "name": "maxAttempts",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "maxAttempts",
+                  "type": "ref"
+                }
+              }
+            ]
+          }
+        ],
+        "hookupActions": [
+          {
+            "description": "Hookup the submit manager to evaluate answers",
+            "methodName": "handleRequestsFrom",
+            "type": "method-call",
+            "args": [
+              {
+                "domain": "brix",
+                "refId": "q1",
+                "type": "ref"
+              }
+            ],
+            "instance": {
+              "type": "submit-manager"
+            }
+          },
+          {
+            "description": "Draw the question",
+            "methodName": "draw",
+            "type": "method-call",
+            "args": [
+              {
+                "selector": "#target1",
+                "type": "d3select"
+              }
+            ],
+            "instance": {
+              "domain": "brix",
+              "refId": "q1",
+              "type": "ref"
+            }
+          }
+        ]
+      }
+    ],
+    "title": "CE.12.44 War And Peace Apply L.O. 12.10"
+  }
+}

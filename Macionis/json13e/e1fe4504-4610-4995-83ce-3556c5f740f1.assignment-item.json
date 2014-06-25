@@ -1,0 +1,196 @@
+{
+  "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope",
+  "@type": "Envelope",
+  "metadata": {
+    "bookTitle": "Society: The Basics",
+    "keywords": [
+      "Macionis 13e",
+      "ch 11",
+      "Rudowski"
+    ],
+    "extendedMetadata": [
+      {
+        "name": "ISBN",
+        "value": "0133794997"
+      },
+      {
+        "name": "M",
+        "value": "m01"
+      },
+      {
+        "name": "assessment_title",
+        "value": "Quiz: The Social Meaning of Race and Ethnicity"
+      },
+      {
+        "name": "Topic",
+        "value": "The Social Meaning of Race and Ethnicity"
+      },
+      {
+        "name": "chapterTitle",
+        "value": "Race and Ethnicity"
+      },
+      {
+        "name": "module",
+        "value": "The Social Meaning of Race and Ethnicity"
+      },
+      {
+        "name": "item_title",
+        "value": "0133794997_John J. Macionis_ch11_m01_q0003"
+      },
+      {
+        "name": "questionlayout",
+        "value": "1"
+      },
+      {
+        "name": "CH",
+        "value": "11"
+      },
+      {
+        "name": "Difficulty",
+        "value": "Difficult"
+      },
+      {
+        "name": "Objective",
+        "value": "L.O. 11.1: Explain the social construction of race and ethnicity."
+      },
+      {
+        "name": "shuffle_choices",
+        "value": "Yes"
+      }
+    ],
+    "subject": [
+      "Sociology"
+    ],
+    "contentTypeTier2": [
+      "AssessmentItem"
+    ],
+    "contentTypeTier1": "Assessment",
+    "format": [
+      "application/vnd.pearson.sanvan.v1.activity"
+    ],
+    "version": "1.0",
+    "guid": "e1fe4504-4610-4995-83ce-3556c5f740f1",
+    "bookAuthor": "John J. Macionis",
+    "title": "Post.11.31 The Social Meaning Of Race And Ethnicity Analyze L.O. 11.1",
+    "educationalAlignment": [
+      "http://purl.org/pearson/objectives/183725473384362"
+    ]
+  },
+  "body": {
+    "description": "Post.11.31, The Social Meaning of Race and Ethnicity, Analyze, L.O. 11.1",
+    "containerConfig": [
+      {
+        "description": "Post.11.31, The Social Meaning of Race and Ethnicity, Analyze, L.O. 11.1",
+        "containerId": "target1",
+        "brixConfig": [
+          {
+            "bricId": "q1",
+            "bricType": "MultipleChoiceQuestion",
+            "config": {
+              "id": "QUE62595",
+              "question": "Science tells us that there is more genetic variation within each racial category than there is between racial categories. Knowing this fact, why do people in societies around the world make so much of racial differences?\n\u003cbr /\u003e",
+              "order": "randomized",
+              "presenterType": "RadioGroup",
+              "presenterConfig": {
+                "numberFormat": "none"
+              },
+              "choices": [
+                {
+                  "answerKey": "answer_1",
+                  "content": "Placing people into categories allows societies to create hierarchies in which some people have greater access to things of value than other people."
+                },
+                {
+                  "answerKey": "answer_2",
+                  "content": "Biology is more important than culture in determining social definitions of race."
+                },
+                {
+                  "answerKey": "answer_3",
+                  "content": "Human beings instinctually seek variation in all things."
+                },
+                {
+                  "answerKey": "answer_4",
+                  "content": "Evolutionary forces have produced people with differing talents, abilities, needs, and wants."
+                }
+              ]
+            },
+            "answerKey": {
+              "assessmentType": "multiplechoice",
+              "answers": {
+                "answer_3": {
+                  "score": 0.0,
+                  "response": ""
+                },
+                "answer_2": {
+                  "score": 0.0,
+                  "response": ""
+                },
+                "answer_1": {
+                  "score": 1.0,
+                  "response": ""
+                },
+                "answer_4": {
+                  "score": 0.0,
+                  "response": ""
+                }
+              }
+            },
+            "configFixup": [
+              {
+                "name": "questionId",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "sequenceNodeKey",
+                  "type": "ref"
+                }
+              },
+              {
+                "name": "maxAttempts",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "maxAttempts",
+                  "type": "ref"
+                }
+              }
+            ]
+          }
+        ],
+        "hookupActions": [
+          {
+            "description": "Hookup the submit manager to evaluate answers",
+            "methodName": "handleRequestsFrom",
+            "type": "method-call",
+            "args": [
+              {
+                "domain": "brix",
+                "refId": "q1",
+                "type": "ref"
+              }
+            ],
+            "instance": {
+              "type": "submit-manager"
+            }
+          },
+          {
+            "description": "Draw the question",
+            "methodName": "draw",
+            "type": "method-call",
+            "args": [
+              {
+                "selector": "#target1",
+                "type": "d3select"
+              }
+            ],
+            "instance": {
+              "domain": "brix",
+              "refId": "q1",
+              "type": "ref"
+            }
+          }
+        ]
+      }
+    ],
+    "title": "Post.11.31 The Social Meaning Of Race And Ethnicity Analyze L.O. 11.1"
+  }
+}

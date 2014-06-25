@@ -1,0 +1,192 @@
+{
+  "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope",
+  "@type": "Envelope",
+  "metadata": {
+    "bookTitle": "Society: The Basics",
+    "keywords": [
+      "Macionis 13e",
+      "ch 16",
+      "Rudowski"
+    ],
+    "extendedMetadata": [
+      {
+        "name": "ISBN",
+        "value": "0133794997"
+      },
+      {
+        "name": "M",
+        "value": "c01"
+      },
+      {
+        "name": "assessment_title",
+        "value": "Chapter Quiz: Social Change - Modern and Postmodern Societies"
+      },
+      {
+        "name": "Topic",
+        "value": "Modernity and the Individual"
+      },
+      {
+        "name": "chapterTitle",
+        "value": "Social Change - Modern and Postmodern Societies"
+      },
+      {
+        "name": "item_title",
+        "value": "0133794997_John J. Macionis_ch16_c01_q0006"
+      },
+      {
+        "name": "questionlayout",
+        "value": "1"
+      },
+      {
+        "name": "CH",
+        "value": "16"
+      },
+      {
+        "name": "Difficulty",
+        "value": "Difficult"
+      },
+      {
+        "name": "Objective",
+        "value": "L.O. 16.6: Apply sociological theory to understand how people experience modern social life."
+      },
+      {
+        "name": "shuffle_choices",
+        "value": "Yes"
+      }
+    ],
+    "subject": [
+      "Sociology"
+    ],
+    "contentTypeTier2": [
+      "AssessmentItem"
+    ],
+    "contentTypeTier1": "Assessment",
+    "format": [
+      "application/vnd.pearson.sanvan.v1.activity"
+    ],
+    "version": "1.0",
+    "guid": "5e963a10-0069-4844-9a82-d06282d259d5",
+    "bookAuthor": "John J. Macionis",
+    "title": "CE.16.46 Modernity And The Individual Apply L.O. 16.6",
+    "educationalAlignment": [
+      "http://purl.org/pearson/objectives/183725473384362"
+    ]
+  },
+  "body": {
+    "description": "CE.16.46, Modernity and the Individual, Apply, L.O. 16.6",
+    "containerConfig": [
+      {
+        "description": "CE.16.46, Modernity and the Individual, Apply, L.O. 16.6",
+        "containerId": "target1",
+        "brixConfig": [
+          {
+            "bricId": "q1",
+            "bricType": "MultipleChoiceQuestion",
+            "config": {
+              "id": "QUE58785",
+              "question": "When Kimberly left her small-town home to attend the University of Chicago, she did not leave behind her rigid conformity to traditional ways of living. Though all of her new friends were getting tattoos, dressing in the latest trends, and exploring Eastern religions, Kimberly remained a conservative dresser and went to Catholic mass every Sunday morning. Compared to the behavior of her friends, Kimberly’s behavior is more a matter of __________.\n\u003cbr /\u003e",
+              "order": "randomized",
+              "presenterType": "RadioGroup",
+              "presenterConfig": {
+                "numberFormat": "none"
+              },
+              "choices": [
+                {
+                  "answerKey": "answer_1",
+                  "content": "innovation."
+                },
+                {
+                  "answerKey": "answer_2",
+                  "content": "individualization"
+                },
+                {
+                  "answerKey": "answer_3",
+                  "content": "tradition-directedness"
+                },
+                {
+                  "answerKey": "answer_4",
+                  "content": "other-directedness"
+                }
+              ]
+            },
+            "answerKey": {
+              "assessmentType": "multiplechoice",
+              "answers": {
+                "answer_3": {
+                  "score": 1.0,
+                  "response": ""
+                },
+                "answer_2": {
+                  "score": 0.0,
+                  "response": "Consider this: Her behavior shows conformity to time-honored ways of living.\n\u003cbr /\u003eRefer to Learning Objective 16.6 : Apply sociological theory to understand how people experience modern social life."
+                },
+                "answer_1": {
+                  "score": 0.0,
+                  "response": "Consider this: Her behavior shows conformity to time-honored ways of living.\n\u003cbr /\u003eRefer to Learning Objective 16.6 : Apply sociological theory to understand how people experience modern social life."
+                },
+                "answer_4": {
+                  "score": 0.0,
+                  "response": "Consider this: Her behavior shows conformity to time-honored ways of living.\n\u003cbr /\u003eRefer to Learning Objective 16.6 : Apply sociological theory to understand how people experience modern social life."
+                }
+              }
+            },
+            "configFixup": [
+              {
+                "name": "questionId",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "sequenceNodeKey",
+                  "type": "ref"
+                }
+              },
+              {
+                "name": "maxAttempts",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "maxAttempts",
+                  "type": "ref"
+                }
+              }
+            ]
+          }
+        ],
+        "hookupActions": [
+          {
+            "description": "Hookup the submit manager to evaluate answers",
+            "methodName": "handleRequestsFrom",
+            "type": "method-call",
+            "args": [
+              {
+                "domain": "brix",
+                "refId": "q1",
+                "type": "ref"
+              }
+            ],
+            "instance": {
+              "type": "submit-manager"
+            }
+          },
+          {
+            "description": "Draw the question",
+            "methodName": "draw",
+            "type": "method-call",
+            "args": [
+              {
+                "selector": "#target1",
+                "type": "d3select"
+              }
+            ],
+            "instance": {
+              "domain": "brix",
+              "refId": "q1",
+              "type": "ref"
+            }
+          }
+        ]
+      }
+    ],
+    "title": "CE.16.46 Modernity And The Individual Apply L.O. 16.6"
+  }
+}

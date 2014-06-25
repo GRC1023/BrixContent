@@ -1,0 +1,192 @@
+{
+  "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope",
+  "@type": "Envelope",
+  "metadata": {
+    "bookTitle": "Society: The Basics",
+    "keywords": [
+      "Macionis 13e",
+      "ch 07",
+      "Rudowski"
+    ],
+    "extendedMetadata": [
+      {
+        "name": "ISBN",
+        "value": "0133794997"
+      },
+      {
+        "name": "M",
+        "value": "c01"
+      },
+      {
+        "name": "assessment_title",
+        "value": "Chapter Quiz: Deviance"
+      },
+      {
+        "name": "Topic",
+        "value": "The U.S. Criminal Justice System"
+      },
+      {
+        "name": "chapterTitle",
+        "value": "Deviance"
+      },
+      {
+        "name": "item_title",
+        "value": "0133794997_John J. Macionis_ch07_c01_q0010"
+      },
+      {
+        "name": "questionlayout",
+        "value": "1"
+      },
+      {
+        "name": "CH",
+        "value": "7"
+      },
+      {
+        "name": "Difficulty",
+        "value": "Difficult"
+      },
+      {
+        "name": "Objective",
+        "value": "L.O. 7.7: Analyze the operation of the criminal justice system."
+      },
+      {
+        "name": "shuffle_choices",
+        "value": "Yes"
+      }
+    ],
+    "subject": [
+      "Sociology"
+    ],
+    "contentTypeTier2": [
+      "AssessmentItem"
+    ],
+    "contentTypeTier1": "Assessment",
+    "format": [
+      "application/vnd.pearson.sanvan.v1.activity"
+    ],
+    "version": "1.0",
+    "guid": "b28a2166-fc45-4b86-87fe-ff05b8b7d923",
+    "bookAuthor": "John J. Macionis",
+    "title": "CE.07.43 The U.S. Criminal Justice System Apply L.O. 7.7",
+    "educationalAlignment": [
+      "http://purl.org/pearson/objectives/183725473384362"
+    ]
+  },
+  "body": {
+    "description": "CE.07.43, The U.S. Criminal Justice System, Apply, L.O. 7.7",
+    "containerConfig": [
+      {
+        "description": "CE.07.43, The U.S. Criminal Justice System, Apply, L.O. 7.7",
+        "containerId": "target1",
+        "brixConfig": [
+          {
+            "bricId": "q1",
+            "bricType": "MultipleChoiceQuestion",
+            "config": {
+              "id": "QUE62467",
+              "question": "Gary is angry to find that a coworker took his food out of the office fridge. In retaliation, he takes the coworker’s lunch. Gary is engaging in an act of\n\u003cbr /\u003e",
+              "order": "randomized",
+              "presenterType": "RadioGroup",
+              "presenterConfig": {
+                "numberFormat": "none"
+              },
+              "choices": [
+                {
+                  "answerKey": "answer_1",
+                  "content": "retribution."
+                },
+                {
+                  "answerKey": "answer_2",
+                  "content": "deterrence."
+                },
+                {
+                  "answerKey": "answer_3",
+                  "content": "rehabilitation."
+                },
+                {
+                  "answerKey": "answer_4",
+                  "content": "societal protection."
+                }
+              ]
+            },
+            "answerKey": {
+              "assessmentType": "multiplechoice",
+              "answers": {
+                "answer_3": {
+                  "score": 0.0,
+                  "response": "Consider this: Which type of punishment makes the offender suffer as much as the victim suffered?\n\u003cbr /\u003eRefer to Learning Objective 7.7: Analyze the operation of the criminal justice system."
+                },
+                "answer_2": {
+                  "score": 0.0,
+                  "response": "Consider this: Which type of punishment makes the offender suffer as much as the victim suffered?\n\u003cbr /\u003eRefer to Learning Objective 7.7: Analyze the operation of the criminal justice system."
+                },
+                "answer_1": {
+                  "score": 1.0,
+                  "response": ""
+                },
+                "answer_4": {
+                  "score": 0.0,
+                  "response": "Consider this: Which type of punishment makes the offender suffer as much as the victim suffered?\n\u003cbr /\u003eRefer to Learning Objective 7.7: Analyze the operation of the criminal justice system."
+                }
+              }
+            },
+            "configFixup": [
+              {
+                "name": "questionId",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "sequenceNodeKey",
+                  "type": "ref"
+                }
+              },
+              {
+                "name": "maxAttempts",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "maxAttempts",
+                  "type": "ref"
+                }
+              }
+            ]
+          }
+        ],
+        "hookupActions": [
+          {
+            "description": "Hookup the submit manager to evaluate answers",
+            "methodName": "handleRequestsFrom",
+            "type": "method-call",
+            "args": [
+              {
+                "domain": "brix",
+                "refId": "q1",
+                "type": "ref"
+              }
+            ],
+            "instance": {
+              "type": "submit-manager"
+            }
+          },
+          {
+            "description": "Draw the question",
+            "methodName": "draw",
+            "type": "method-call",
+            "args": [
+              {
+                "selector": "#target1",
+                "type": "d3select"
+              }
+            ],
+            "instance": {
+              "domain": "brix",
+              "refId": "q1",
+              "type": "ref"
+            }
+          }
+        ]
+      }
+    ],
+    "title": "CE.07.43 The U.S. Criminal Justice System Apply L.O. 7.7"
+  }
+}

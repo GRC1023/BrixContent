@@ -1,0 +1,196 @@
+{
+  "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope",
+  "@type": "Envelope",
+  "metadata": {
+    "bookTitle": "Society: The Basics",
+    "keywords": [
+      "Macionis 13e",
+      "ch 14",
+      "Rudowski"
+    ],
+    "extendedMetadata": [
+      {
+        "name": "ISBN",
+        "value": "0133794997"
+      },
+      {
+        "name": "M",
+        "value": "m04"
+      },
+      {
+        "name": "assessment_title",
+        "value": "Quiz: Schooling and Social Inequality"
+      },
+      {
+        "name": "Topic",
+        "value": "Schooling and Social Inequality"
+      },
+      {
+        "name": "chapterTitle",
+        "value": "Education, Health, and Medicine"
+      },
+      {
+        "name": "module",
+        "value": "Schooling and Social Inequality"
+      },
+      {
+        "name": "item_title",
+        "value": "0133794997_John J. Macionis_ch14_m04_q0005"
+      },
+      {
+        "name": "questionlayout",
+        "value": "1"
+      },
+      {
+        "name": "CH",
+        "value": "14"
+      },
+      {
+        "name": "Difficulty",
+        "value": "Difficult"
+      },
+      {
+        "name": "Objective",
+        "value": "L.O. 14.4: Apply social-conflict theory to schooling."
+      },
+      {
+        "name": "shuffle_choices",
+        "value": "Yes"
+      }
+    ],
+    "subject": [
+      "Sociology"
+    ],
+    "contentTypeTier2": [
+      "AssessmentItem"
+    ],
+    "contentTypeTier1": "Assessment",
+    "format": [
+      "application/vnd.pearson.sanvan.v1.activity"
+    ],
+    "version": "1.0",
+    "guid": "656e0590-7581-45f5-a45e-7a3a565732b1",
+    "bookAuthor": "John J. Macionis",
+    "title": "Post.14.17 Schooling And Social Inequality Apply L.O. 14.4",
+    "educationalAlignment": [
+      "http://purl.org/pearson/objectives/183725473384362"
+    ]
+  },
+  "body": {
+    "description": "Post.14.17, Schooling and Social Inequality, Apply, L.O. 14.4",
+    "containerConfig": [
+      {
+        "description": "Post.14.17, Schooling and Social Inequality, Apply, L.O. 14.4",
+        "containerId": "target1",
+        "brixConfig": [
+          {
+            "bricId": "q1",
+            "bricType": "MultipleChoiceQuestion",
+            "config": {
+              "id": "QUE58744",
+              "question": "According to data provided by the U.S. Census Bureau, how does the median income of male high school dropouts compare to the median income of male high school graduates?\n\u003cbr /\u003e",
+              "order": "randomized",
+              "presenterType": "RadioGroup",
+              "presenterConfig": {
+                "numberFormat": "none"
+              },
+              "choices": [
+                {
+                  "answerKey": "answer_1",
+                  "content": "Male high school dropouts and high school graduates have roughly equivalent median incomes."
+                },
+                {
+                  "answerKey": "answer_2",
+                  "content": "Male high school graduates have a median income slightly lower than that of male high school dropouts."
+                },
+                {
+                  "answerKey": "answer_3",
+                  "content": "Male high school graduates have a median income more than $2,000 higher than that of male high school dropouts."
+                },
+                {
+                  "answerKey": "answer_4",
+                  "content": "Male high school dropouts have a median income more than $10,000 lower than that of male high school graduates."
+                }
+              ]
+            },
+            "answerKey": {
+              "assessmentType": "multiplechoice",
+              "answers": {
+                "answer_3": {
+                  "score": 0.0,
+                  "response": ""
+                },
+                "answer_2": {
+                  "score": 0.0,
+                  "response": ""
+                },
+                "answer_1": {
+                  "score": 0.0,
+                  "response": ""
+                },
+                "answer_4": {
+                  "score": 1.0,
+                  "response": "Additional years of schooling result in higher earnings."
+                }
+              }
+            },
+            "configFixup": [
+              {
+                "name": "questionId",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "sequenceNodeKey",
+                  "type": "ref"
+                }
+              },
+              {
+                "name": "maxAttempts",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "maxAttempts",
+                  "type": "ref"
+                }
+              }
+            ]
+          }
+        ],
+        "hookupActions": [
+          {
+            "description": "Hookup the submit manager to evaluate answers",
+            "methodName": "handleRequestsFrom",
+            "type": "method-call",
+            "args": [
+              {
+                "domain": "brix",
+                "refId": "q1",
+                "type": "ref"
+              }
+            ],
+            "instance": {
+              "type": "submit-manager"
+            }
+          },
+          {
+            "description": "Draw the question",
+            "methodName": "draw",
+            "type": "method-call",
+            "args": [
+              {
+                "selector": "#target1",
+                "type": "d3select"
+              }
+            ],
+            "instance": {
+              "domain": "brix",
+              "refId": "q1",
+              "type": "ref"
+            }
+          }
+        ]
+      }
+    ],
+    "title": "Post.14.17 Schooling And Social Inequality Apply L.O. 14.4"
+  }
+}
