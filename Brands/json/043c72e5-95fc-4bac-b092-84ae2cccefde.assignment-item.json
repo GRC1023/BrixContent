@@ -1,0 +1,192 @@
+{
+  "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope",
+  "@type": "Envelope",
+  "metadata": {
+    "bookTitle": "Society: The Basics",
+    "keywords": [
+      "Macionis 13e",
+      "ch 10",
+      "Rudowski"
+    ],
+    "extendedMetadata": [
+      {
+        "name": "ISBN",
+        "value": "0133794997"
+      },
+      {
+        "name": "M",
+        "value": "c01"
+      },
+      {
+        "name": "assessment_title",
+        "value": "Chapter Quiz: Gender Stratification"
+      },
+      {
+        "name": "Topic",
+        "value": "Gender and Social Stratification"
+      },
+      {
+        "name": "chapterTitle",
+        "value": "Gender Stratification"
+      },
+      {
+        "name": "item_title",
+        "value": "0133794997_John J. Macionis_ch10_c01_q0005"
+      },
+      {
+        "name": "questionlayout",
+        "value": "1"
+      },
+      {
+        "name": "CH",
+        "value": "10"
+      },
+      {
+        "name": "Difficulty",
+        "value": "Easy"
+      },
+      {
+        "name": "Objective",
+        "value": "L.O. 10.3: Analyze the extent of gender inequality in various social institutions."
+      },
+      {
+        "name": "shuffle_choices",
+        "value": "Yes"
+      }
+    ],
+    "subject": [
+      "Sociology"
+    ],
+    "contentTypeTier2": [
+      "AssessmentItem"
+    ],
+    "contentTypeTier1": "Assessment",
+    "format": [
+      "application/vnd.pearson.sanvan.v1.activity"
+    ],
+    "version": "1.0",
+    "guid": "043c72e5-95fc-4bac-b092-84ae2cccefde",
+    "bookAuthor": "John J. Macionis",
+    "title": "CE.10.38 Gender And Social Stratification Apply L.O. 10.3",
+    "educationalAlignment": [
+      "http://purl.org/pearson/objectives/183725473384362"
+    ]
+  },
+  "body": {
+    "description": "CE.10.38, Gender and Social Stratification, Apply, L.O. 10.3",
+    "containerConfig": [
+      {
+        "description": "CE.10.38, Gender and Social Stratification, Apply, L.O. 10.3",
+        "containerId": "target1",
+        "brixConfig": [
+          {
+            "bricId": "q1",
+            "bricType": "MultipleChoiceQuestion",
+            "config": {
+              "id": "QUE62539",
+              "question": "Which of the following women is at the greatest risk of violence?\n\u003cbr /\u003e",
+              "order": "randomized",
+              "presenterType": "RadioGroup",
+              "presenterConfig": {
+                "numberFormat": "none"
+              },
+              "choices": [
+                {
+                  "answerKey": "answer_1",
+                  "content": "Violet, who lives with her husband and three young children. Both she and her husband work to support their family, but together they earn only $30,000 a year."
+                },
+                {
+                  "answerKey": "answer_2",
+                  "content": "Selene, who lives with her parents, who help raise her infant daughter. During the day, Selene attends high school, and at night she spends time with her family."
+                },
+                {
+                  "answerKey": "answer_3",
+                  "content": "Cindy, who has been married for 35 years. Over time, she and her husband have grown a successful business."
+                },
+                {
+                  "answerKey": "answer_4",
+                  "content": "Bonnie, who is divorced. She lives with her teenage son and works as a defense attorney, sending her ex-husband a large alimony each month."
+                }
+              ]
+            },
+            "answerKey": {
+              "assessmentType": "multiplechoice",
+              "answers": {
+                "answer_3": {
+                  "score": 0.0,
+                  "response": "Consider this: The risk of violence is highest for women who live in low-income families with high stress levels.\n\u003cbr /\u003eRefer to Learning Objective 10.3: Analyze the extent of gender inequality in various social institutions."
+                },
+                "answer_2": {
+                  "score": 0.0,
+                  "response": "Consider this: The risk of violence is highest for women who live in low-income families with high stress levels.\n\u003cbr /\u003eRefer to Learning Objective 10.3: Analyze the extent of gender inequality in various social institutions."
+                },
+                "answer_1": {
+                  "score": 1.0,
+                  "response": ""
+                },
+                "answer_4": {
+                  "score": 0.0,
+                  "response": "Consider this: The risk of violence is highest for women who live in low-income families with high stress levels.\n\u003cbr /\u003eRefer to Learning Objective 10.3: Analyze the extent of gender inequality in various social institutions."
+                }
+              }
+            },
+            "configFixup": [
+              {
+                "name": "questionId",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "sequenceNodeKey",
+                  "type": "ref"
+                }
+              },
+              {
+                "name": "maxAttempts",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "maxAttempts",
+                  "type": "ref"
+                }
+              }
+            ]
+          }
+        ],
+        "hookupActions": [
+          {
+            "description": "Hookup the submit manager to evaluate answers",
+            "methodName": "handleRequestsFrom",
+            "type": "method-call",
+            "args": [
+              {
+                "domain": "brix",
+                "refId": "q1",
+                "type": "ref"
+              }
+            ],
+            "instance": {
+              "type": "submit-manager"
+            }
+          },
+          {
+            "description": "Draw the question",
+            "methodName": "draw",
+            "type": "method-call",
+            "args": [
+              {
+                "selector": "#target1",
+                "type": "d3select"
+              }
+            ],
+            "instance": {
+              "domain": "brix",
+              "refId": "q1",
+              "type": "ref"
+            }
+          }
+        ]
+      }
+    ],
+    "title": "CE.10.38 Gender And Social Stratification Apply L.O. 10.3"
+  }
+}

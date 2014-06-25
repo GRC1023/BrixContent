@@ -1,0 +1,196 @@
+{
+  "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope",
+  "@type": "Envelope",
+  "metadata": {
+    "bookTitle": "Society: The Basics",
+    "keywords": [
+      "Macionis 13e",
+      "ch 14",
+      "Rudowski"
+    ],
+    "extendedMetadata": [
+      {
+        "name": "ISBN",
+        "value": "0133794997"
+      },
+      {
+        "name": "M",
+        "value": "m08"
+      },
+      {
+        "name": "assessment_title",
+        "value": "Quiz: Health in the United States"
+      },
+      {
+        "name": "Topic",
+        "value": "Health in the United States"
+      },
+      {
+        "name": "chapterTitle",
+        "value": "Education, Health, and Medicine"
+      },
+      {
+        "name": "module",
+        "value": "Health in the United States"
+      },
+      {
+        "name": "item_title",
+        "value": "0133794997_John J. Macionis_ch14_m08_q0002"
+      },
+      {
+        "name": "questionlayout",
+        "value": "1"
+      },
+      {
+        "name": "CH",
+        "value": "14"
+      },
+      {
+        "name": "Difficulty",
+        "value": "Difficult"
+      },
+      {
+        "name": "Objective",
+        "value": "L.O. 14.8: Analyze how race, class, gender, and age are linked to health."
+      },
+      {
+        "name": "shuffle_choices",
+        "value": "Yes"
+      }
+    ],
+    "subject": [
+      "Sociology"
+    ],
+    "contentTypeTier2": [
+      "AssessmentItem"
+    ],
+    "contentTypeTier1": "Assessment",
+    "format": [
+      "application/vnd.pearson.sanvan.v1.activity"
+    ],
+    "version": "1.0",
+    "guid": "9f99a356-a82b-4be3-b116-d9a1e0717b74",
+    "bookAuthor": "John J. Macionis",
+    "title": "Pre.14.18 Health In The United States Apply L.O. 14.8",
+    "educationalAlignment": [
+      "http://purl.org/pearson/objectives/183725473384362"
+    ]
+  },
+  "body": {
+    "description": "Pre.14.18, Health in the United States, Apply, L.O. 14.8",
+    "containerConfig": [
+      {
+        "description": "Pre.14.18, Health in the United States, Apply, L.O. 14.8",
+        "containerId": "target1",
+        "brixConfig": [
+          {
+            "bricId": "q1",
+            "bricType": "MultipleChoiceQuestion",
+            "config": {
+              "id": "QUE58766",
+              "question": "Based on societal patterns, which United States resident is most likely to suffer ill health?\n\u003cbr /\u003e",
+              "order": "randomized",
+              "presenterType": "RadioGroup",
+              "presenterConfig": {
+                "numberFormat": "none"
+              },
+              "choices": [
+                {
+                  "answerKey": "answer_1",
+                  "content": "Malik, an older African American male who is poor"
+                },
+                {
+                  "answerKey": "answer_2",
+                  "content": "Kip, a younger white male who earns an average income"
+                },
+                {
+                  "answerKey": "answer_3",
+                  "content": "Kip, a younger white male who earns an average income"
+                },
+                {
+                  "answerKey": "answer_4",
+                  "content": "Yolanda, an older African American female who is financially well-off"
+                }
+              ]
+            },
+            "answerKey": {
+              "assessmentType": "multiplechoice",
+              "answers": {
+                "answer_3": {
+                  "score": 0.0,
+                  "response": ""
+                },
+                "answer_2": {
+                  "score": 0.0,
+                  "response": ""
+                },
+                "answer_1": {
+                  "score": 1.0,
+                  "response": ""
+                },
+                "answer_4": {
+                  "score": 0.0,
+                  "response": ""
+                }
+              }
+            },
+            "configFixup": [
+              {
+                "name": "questionId",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "sequenceNodeKey",
+                  "type": "ref"
+                }
+              },
+              {
+                "name": "maxAttempts",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "maxAttempts",
+                  "type": "ref"
+                }
+              }
+            ]
+          }
+        ],
+        "hookupActions": [
+          {
+            "description": "Hookup the submit manager to evaluate answers",
+            "methodName": "handleRequestsFrom",
+            "type": "method-call",
+            "args": [
+              {
+                "domain": "brix",
+                "refId": "q1",
+                "type": "ref"
+              }
+            ],
+            "instance": {
+              "type": "submit-manager"
+            }
+          },
+          {
+            "description": "Draw the question",
+            "methodName": "draw",
+            "type": "method-call",
+            "args": [
+              {
+                "selector": "#target1",
+                "type": "d3select"
+              }
+            ],
+            "instance": {
+              "domain": "brix",
+              "refId": "q1",
+              "type": "ref"
+            }
+          }
+        ]
+      }
+    ],
+    "title": "Pre.14.18 Health In The United States Apply L.O. 14.8"
+  }
+}

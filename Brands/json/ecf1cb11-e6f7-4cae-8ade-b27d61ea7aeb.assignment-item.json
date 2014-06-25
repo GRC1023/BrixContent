@@ -1,0 +1,192 @@
+{
+  "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope",
+  "@type": "Envelope",
+  "metadata": {
+    "bookTitle": "Society: The Basics",
+    "keywords": [
+      "Macionis 13e",
+      "ch 03",
+      "Rudowski"
+    ],
+    "extendedMetadata": [
+      {
+        "name": "ISBN",
+        "value": "0133794997"
+      },
+      {
+        "name": "M",
+        "value": "c01"
+      },
+      {
+        "name": "assessment_title",
+        "value": "Chapter Quiz: Socialization- From Infancy to Old Age"
+      },
+      {
+        "name": "Topic",
+        "value": "Social Experience: The Key to Our Humanity"
+      },
+      {
+        "name": "chapterTitle",
+        "value": "Socialization - From Infancy to Old Age"
+      },
+      {
+        "name": "item_title",
+        "value": "0133794997_John J. Macionis_ch03_c01_q0001"
+      },
+      {
+        "name": "questionlayout",
+        "value": "1"
+      },
+      {
+        "name": "CH",
+        "value": "3"
+      },
+      {
+        "name": "Difficulty",
+        "value": "Difficult"
+      },
+      {
+        "name": "Objective",
+        "value": "L.O. 3.1: Describe how social interaction is the foundation of personality."
+      },
+      {
+        "name": "shuffle_choices",
+        "value": "Yes"
+      }
+    ],
+    "subject": [
+      "Sociology"
+    ],
+    "contentTypeTier2": [
+      "AssessmentItem"
+    ],
+    "contentTypeTier1": "Assessment",
+    "format": [
+      "application/vnd.pearson.sanvan.v1.activity"
+    ],
+    "version": "1.0",
+    "guid": "ecf1cb11-e6f7-4cae-8ade-b27d61ea7aeb",
+    "bookAuthor": "John J. Macionis",
+    "title": "CE.03.04 Social Experience The Key To Our Humanity Analyze L.O. 3.1",
+    "educationalAlignment": [
+      "http://purl.org/pearson/objectives/183725473384362"
+    ]
+  },
+  "body": {
+    "description": "CE.03.04, Social Experience: The Key to Our Humanity, Analyze, L.O. 3.1",
+    "containerConfig": [
+      {
+        "description": "CE.03.04, Social Experience: The Key to Our Humanity, Analyze, L.O. 3.1",
+        "containerId": "target1",
+        "brixConfig": [
+          {
+            "bricId": "q1",
+            "bricType": "MultipleChoiceQuestion",
+            "config": {
+              "id": "QUE58502",
+              "question": "What can we learn from the Harlows’ rhesus monkey studies?\n\u003cbr /\u003e",
+              "order": "randomized",
+              "presenterType": "RadioGroup",
+              "presenterConfig": {
+                "numberFormat": "none"
+              },
+              "choices": [
+                {
+                  "answerKey": "answer_1",
+                  "content": "Emotional damage can be healed with subsequent nurturing and socialization."
+                },
+                {
+                  "answerKey": "answer_2",
+                  "content": "Behavioral damage can be corrected with a “firm hand.”"
+                },
+                {
+                  "answerKey": "answer_3",
+                  "content": "Long-term and short-term isolation have similar effects."
+                },
+                {
+                  "answerKey": "answer_4",
+                  "content": "Social isolation early in life can cause irreversible damage."
+                }
+              ]
+            },
+            "answerKey": {
+              "assessmentType": "multiplechoice",
+              "answers": {
+                "answer_3": {
+                  "score": 0.0,
+                  "response": "Consider this: The Harlows found that complete isolation (with adequate nutrition) for even six months seriously disturbed the monkeys’ development.\n\u003cbr /\u003eRefer to Learning Objective 3.1 : Describe how social interaction is the foundation of personality."
+                },
+                "answer_2": {
+                  "score": 0.0,
+                  "response": "Consider this: The Harlows found that complete isolation (with adequate nutrition) for even six months seriously disturbed the monkeys’ development.\n\u003cbr /\u003eRefer to Learning Objective 3.1 : Describe how social interaction is the foundation of personality."
+                },
+                "answer_1": {
+                  "score": 0.0,
+                  "response": "Consider this: The Harlows found that complete isolation (with adequate nutrition) for even six months seriously disturbed the monkeys’ development.\n\u003cbr /\u003eRefer to Learning Objective 3.1 : Describe how social interaction is the foundation of personality."
+                },
+                "answer_4": {
+                  "score": 1.0,
+                  "response": ""
+                }
+              }
+            },
+            "configFixup": [
+              {
+                "name": "questionId",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "sequenceNodeKey",
+                  "type": "ref"
+                }
+              },
+              {
+                "name": "maxAttempts",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "maxAttempts",
+                  "type": "ref"
+                }
+              }
+            ]
+          }
+        ],
+        "hookupActions": [
+          {
+            "description": "Hookup the submit manager to evaluate answers",
+            "methodName": "handleRequestsFrom",
+            "type": "method-call",
+            "args": [
+              {
+                "domain": "brix",
+                "refId": "q1",
+                "type": "ref"
+              }
+            ],
+            "instance": {
+              "type": "submit-manager"
+            }
+          },
+          {
+            "description": "Draw the question",
+            "methodName": "draw",
+            "type": "method-call",
+            "args": [
+              {
+                "selector": "#target1",
+                "type": "d3select"
+              }
+            ],
+            "instance": {
+              "domain": "brix",
+              "refId": "q1",
+              "type": "ref"
+            }
+          }
+        ]
+      }
+    ],
+    "title": "CE.03.04 Social Experience The Key To Our Humanity Analyze L.O. 3.1"
+  }
+}

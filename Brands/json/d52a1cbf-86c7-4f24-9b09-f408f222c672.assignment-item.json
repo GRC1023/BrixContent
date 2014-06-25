@@ -1,0 +1,196 @@
+{
+  "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope",
+  "@type": "Envelope",
+  "metadata": {
+    "bookTitle": "Society: The Basics",
+    "keywords": [
+      "Macionis 13e",
+      "ch 15",
+      "Rudowski"
+    ],
+    "extendedMetadata": [
+      {
+        "name": "ISBN",
+        "value": "0133794997"
+      },
+      {
+        "name": "M",
+        "value": "m02"
+      },
+      {
+        "name": "assessment_title",
+        "value": "Quiz: History and Theory of Population Growth"
+      },
+      {
+        "name": "Topic",
+        "value": "History and Theory of Population Growth"
+      },
+      {
+        "name": "chapterTitle",
+        "value": "Population Urbanization and Environment"
+      },
+      {
+        "name": "module",
+        "value": "History and Theory of Population Growth"
+      },
+      {
+        "name": "item_title",
+        "value": "0133794997_John J. Macionis_ch15_m02_q0005"
+      },
+      {
+        "name": "questionlayout",
+        "value": "1"
+      },
+      {
+        "name": "CH",
+        "value": "15"
+      },
+      {
+        "name": "Difficulty",
+        "value": "Difficult"
+      },
+      {
+        "name": "Objective",
+        "value": "L.O. 15.2: Analyze population trend using Malthusian theory and demographic transition theory."
+      },
+      {
+        "name": "shuffle_choices",
+        "value": "Yes"
+      }
+    ],
+    "subject": [
+      "Sociology"
+    ],
+    "contentTypeTier2": [
+      "AssessmentItem"
+    ],
+    "contentTypeTier1": "Assessment",
+    "format": [
+      "application/vnd.pearson.sanvan.v1.activity"
+    ],
+    "version": "1.0",
+    "guid": "d52a1cbf-86c7-4f24-9b09-f408f222c672",
+    "bookAuthor": "John J. Macionis",
+    "title": "Post.15.13 History And Theory Of Population Growth Analyze L.O. 15.2",
+    "educationalAlignment": [
+      "http://purl.org/pearson/objectives/183725473384362"
+    ]
+  },
+  "body": {
+    "description": "Post.15.13, History and Theory of Population Growth, Analyze, L.O. 15.2",
+    "containerConfig": [
+      {
+        "description": "Post.15.13, History and Theory of Population Growth, Analyze, L.O. 15.2",
+        "containerId": "target1",
+        "brixConfig": [
+          {
+            "bricId": "q1",
+            "bricType": "MultipleChoiceQuestion",
+            "config": {
+              "id": "QUE62640",
+              "question": "According to the demographic transition theory, how do Stage 2 countries and Stage 4 countries differ?\n\u003cbr /\u003e",
+              "order": "randomized",
+              "presenterType": "RadioGroup",
+              "presenterConfig": {
+                "numberFormat": "none"
+              },
+              "choices": [
+                {
+                  "answerKey": "answer_1",
+                  "content": "Stage 2 countries are at the onset of industrialization and have falling death rates along with high birth rates. Stage 4 countries have a mature industrial economy, with dropping birth rates and increasing death rates."
+                },
+                {
+                  "answerKey": "answer_2",
+                  "content": "Stage 2 countries are at the onset of industrialization and have falling death rates along with high birth rates. Stage 4 countries have a postindustrial economy, with dropping birth rates and low and steady death rates."
+                },
+                {
+                  "answerKey": "answer_3",
+                  "content": "Stage 2 countries are agrarian, preindustrial countries and have high death rates along with high birth rates. Stage 4 countries are in a mature industrial economy, with dropping birth rates and increasing death rates."
+                },
+                {
+                  "answerKey": "answer_4",
+                  "content": "Stage 2 countries are agrarian, preindustrial countries and have high death rates along with high birth rates. Stage 4 countries have a postindustrial economy, with dropping birth rates and steady death rates."
+                }
+              ]
+            },
+            "answerKey": {
+              "assessmentType": "multiplechoice",
+              "answers": {
+                "answer_3": {
+                  "score": 0.0,
+                  "response": ""
+                },
+                "answer_2": {
+                  "score": 1.0,
+                  "response": ""
+                },
+                "answer_1": {
+                  "score": 0.0,
+                  "response": ""
+                },
+                "answer_4": {
+                  "score": 0.0,
+                  "response": ""
+                }
+              }
+            },
+            "configFixup": [
+              {
+                "name": "questionId",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "sequenceNodeKey",
+                  "type": "ref"
+                }
+              },
+              {
+                "name": "maxAttempts",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "maxAttempts",
+                  "type": "ref"
+                }
+              }
+            ]
+          }
+        ],
+        "hookupActions": [
+          {
+            "description": "Hookup the submit manager to evaluate answers",
+            "methodName": "handleRequestsFrom",
+            "type": "method-call",
+            "args": [
+              {
+                "domain": "brix",
+                "refId": "q1",
+                "type": "ref"
+              }
+            ],
+            "instance": {
+              "type": "submit-manager"
+            }
+          },
+          {
+            "description": "Draw the question",
+            "methodName": "draw",
+            "type": "method-call",
+            "args": [
+              {
+                "selector": "#target1",
+                "type": "d3select"
+              }
+            ],
+            "instance": {
+              "domain": "brix",
+              "refId": "q1",
+              "type": "ref"
+            }
+          }
+        ]
+      }
+    ],
+    "title": "Post.15.13 History And Theory Of Population Growth Analyze L.O. 15.2"
+  }
+}

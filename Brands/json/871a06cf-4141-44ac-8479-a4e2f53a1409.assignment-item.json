@@ -1,0 +1,196 @@
+{
+  "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope",
+  "@type": "Envelope",
+  "metadata": {
+    "bookTitle": "Society: The Basics",
+    "keywords": [
+      "Macionis 13e",
+      "ch 12",
+      "Rudowski"
+    ],
+    "extendedMetadata": [
+      {
+        "name": "ISBN",
+        "value": "0133794997"
+      },
+      {
+        "name": "M",
+        "value": "m03"
+      },
+      {
+        "name": "assessment_title",
+        "value": "Quiz: Work in the Postindustrial U.S. Economy"
+      },
+      {
+        "name": "Topic",
+        "value": "Work in the Postindustrial U.S. Economy"
+      },
+      {
+        "name": "chapterTitle",
+        "value": "Economics and Politics"
+      },
+      {
+        "name": "module",
+        "value": "Work in the Postindustrial U.S. Economy"
+      },
+      {
+        "name": "item_title",
+        "value": "0133794997_John J. Macionis_ch12_m03_q0003"
+      },
+      {
+        "name": "questionlayout",
+        "value": "1"
+      },
+      {
+        "name": "CH",
+        "value": "12"
+      },
+      {
+        "name": "Difficulty",
+        "value": "Moderate"
+      },
+      {
+        "name": "Objective",
+        "value": "L.O. 12.3: Analyze patterns of employment and unemployment in the United States."
+      },
+      {
+        "name": "shuffle_choices",
+        "value": "Yes"
+      }
+    ],
+    "subject": [
+      "Sociology"
+    ],
+    "contentTypeTier2": [
+      "AssessmentItem"
+    ],
+    "contentTypeTier1": "Assessment",
+    "format": [
+      "application/vnd.pearson.sanvan.v1.activity"
+    ],
+    "version": "1.0",
+    "guid": "871a06cf-4141-44ac-8479-a4e2f53a1409",
+    "bookAuthor": "John J. Macionis",
+    "title": "Post.12.13 Work In The Postindustrial U.S. Economy Understand L.O. 12.3",
+    "educationalAlignment": [
+      "http://purl.org/pearson/objectives/183725473384362"
+    ]
+  },
+  "body": {
+    "description": "Post.12.13, Work in the Postindustrial U.S. Economy, Understand, L.O. 12.3",
+    "containerConfig": [
+      {
+        "description": "Post.12.13, Work in the Postindustrial U.S. Economy, Understand, L.O. 12.3",
+        "containerId": "target1",
+        "brixConfig": [
+          {
+            "bricId": "q1",
+            "bricType": "MultipleChoiceQuestion",
+            "config": {
+              "id": "QUE58620",
+              "question": "What has happened in the United States since 1970 as a result of the industrial sector of the economy becoming smaller?\n\u003cbr /\u003e",
+              "order": "randomized",
+              "presenterType": "RadioGroup",
+              "presenterConfig": {
+                "numberFormat": "none"
+              },
+              "choices": [
+                {
+                  "answerKey": "answer_1",
+                  "content": "The number of blue-collar jobs has increased."
+                },
+                {
+                  "answerKey": "answer_2",
+                  "content": "The number of white-collar jobs has decreased."
+                },
+                {
+                  "answerKey": "answer_3",
+                  "content": "Union membership has declined."
+                },
+                {
+                  "answerKey": "answer_4",
+                  "content": "Union membership has increased."
+                }
+              ]
+            },
+            "answerKey": {
+              "assessmentType": "multiplechoice",
+              "answers": {
+                "answer_3": {
+                  "score": 1.0,
+                  "response": ""
+                },
+                "answer_2": {
+                  "score": 0.0,
+                  "response": ""
+                },
+                "answer_1": {
+                  "score": 0.0,
+                  "response": ""
+                },
+                "answer_4": {
+                  "score": 0.0,
+                  "response": ""
+                }
+              }
+            },
+            "configFixup": [
+              {
+                "name": "questionId",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "sequenceNodeKey",
+                  "type": "ref"
+                }
+              },
+              {
+                "name": "maxAttempts",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "maxAttempts",
+                  "type": "ref"
+                }
+              }
+            ]
+          }
+        ],
+        "hookupActions": [
+          {
+            "description": "Hookup the submit manager to evaluate answers",
+            "methodName": "handleRequestsFrom",
+            "type": "method-call",
+            "args": [
+              {
+                "domain": "brix",
+                "refId": "q1",
+                "type": "ref"
+              }
+            ],
+            "instance": {
+              "type": "submit-manager"
+            }
+          },
+          {
+            "description": "Draw the question",
+            "methodName": "draw",
+            "type": "method-call",
+            "args": [
+              {
+                "selector": "#target1",
+                "type": "d3select"
+              }
+            ],
+            "instance": {
+              "domain": "brix",
+              "refId": "q1",
+              "type": "ref"
+            }
+          }
+        ]
+      }
+    ],
+    "title": "Post.12.13 Work In The Postindustrial U.S. Economy Understand L.O. 12.3"
+  }
+}

@@ -1,0 +1,192 @@
+{
+  "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope",
+  "@type": "Envelope",
+  "metadata": {
+    "bookTitle": "Society: The Basics",
+    "keywords": [
+      "Macionis 13e",
+      "ch 13",
+      "Rudowski"
+    ],
+    "extendedMetadata": [
+      {
+        "name": "ISBN",
+        "value": "0133794997"
+      },
+      {
+        "name": "M",
+        "value": "c01"
+      },
+      {
+        "name": "assessment_title",
+        "value": "Chapter Quiz: Family and Religion"
+      },
+      {
+        "name": "Topic",
+        "value": "Religion in the United States"
+      },
+      {
+        "name": "chapterTitle",
+        "value": "Family and Religion"
+      },
+      {
+        "name": "item_title",
+        "value": "0133794997_John J. Macionis_ch13_c01_q0011"
+      },
+      {
+        "name": "questionlayout",
+        "value": "1"
+      },
+      {
+        "name": "CH",
+        "value": "13"
+      },
+      {
+        "name": "Difficulty",
+        "value": "Moderate"
+      },
+      {
+        "name": "Objective",
+        "value": "L.O. 13.11: Analyze patterns of religiosity in the United States."
+      },
+      {
+        "name": "shuffle_choices",
+        "value": "Yes"
+      }
+    ],
+    "subject": [
+      "Sociology"
+    ],
+    "contentTypeTier2": [
+      "AssessmentItem"
+    ],
+    "contentTypeTier1": "Assessment",
+    "format": [
+      "application/vnd.pearson.sanvan.v1.activity"
+    ],
+    "version": "1.0",
+    "guid": "69fd7e63-6941-4f3c-a0ea-f630450d43a0",
+    "bookAuthor": "John J. Macionis",
+    "title": "CE.13.44 Religion In The United States Understand L.O. 13.11",
+    "educationalAlignment": [
+      "http://purl.org/pearson/objectives/183725473384362"
+    ]
+  },
+  "body": {
+    "description": "CE.13.44, Religion in the United States, Understand, L.O. 13.11",
+    "containerConfig": [
+      {
+        "description": "CE.13.44, Religion in the United States, Understand, L.O. 13.11",
+        "containerId": "target1",
+        "brixConfig": [
+          {
+            "bricId": "q1",
+            "bricType": "MultipleChoiceQuestion",
+            "config": {
+              "id": "QUE58664",
+              "question": "Which of the following social patterns is associated with holding strong religious beliefs?\n\u003cbr /\u003e",
+              "order": "randomized",
+              "presenterType": "RadioGroup",
+              "presenterConfig": {
+                "numberFormat": "none"
+              },
+              "choices": [
+                {
+                  "answerKey": "answer_1",
+                  "content": "higher levels of delinquency"
+                },
+                {
+                  "answerKey": "answer_2",
+                  "content": "being younger"
+                },
+                {
+                  "answerKey": "answer_3",
+                  "content": "being middle class"
+                },
+                {
+                  "answerKey": "answer_4",
+                  "content": "having a lower likelihood of divorce"
+                }
+              ]
+            },
+            "answerKey": {
+              "assessmentType": "multiplechoice",
+              "answers": {
+                "answer_3": {
+                  "score": 0.0,
+                  "response": "Consider this: Researchers have linked a number of social patterns to strong religious beliefs.\n\u003cbr /\u003eRefer to Learning Objective 13.11 : Analyze patterns of religiosity in the United States."
+                },
+                "answer_2": {
+                  "score": 0.0,
+                  "response": "Consider this: Researchers have linked a number of social patterns to strong religious beliefs.\n\u003cbr /\u003eRefer to Learning Objective 13.11 : Analyze patterns of religiosity in the United States."
+                },
+                "answer_1": {
+                  "score": 0.0,
+                  "response": "Consider this: Researchers have linked a number of social patterns to strong religious beliefs.\n\u003cbr /\u003eRefer to Learning Objective 13.11 : Analyze patterns of religiosity in the United States."
+                },
+                "answer_4": {
+                  "score": 1.0,
+                  "response": ""
+                }
+              }
+            },
+            "configFixup": [
+              {
+                "name": "questionId",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "sequenceNodeKey",
+                  "type": "ref"
+                }
+              },
+              {
+                "name": "maxAttempts",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "maxAttempts",
+                  "type": "ref"
+                }
+              }
+            ]
+          }
+        ],
+        "hookupActions": [
+          {
+            "description": "Hookup the submit manager to evaluate answers",
+            "methodName": "handleRequestsFrom",
+            "type": "method-call",
+            "args": [
+              {
+                "domain": "brix",
+                "refId": "q1",
+                "type": "ref"
+              }
+            ],
+            "instance": {
+              "type": "submit-manager"
+            }
+          },
+          {
+            "description": "Draw the question",
+            "methodName": "draw",
+            "type": "method-call",
+            "args": [
+              {
+                "selector": "#target1",
+                "type": "d3select"
+              }
+            ],
+            "instance": {
+              "domain": "brix",
+              "refId": "q1",
+              "type": "ref"
+            }
+          }
+        ]
+      }
+    ],
+    "title": "CE.13.44 Religion In The United States Understand L.O. 13.11"
+  }
+}

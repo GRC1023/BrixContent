@@ -1,0 +1,192 @@
+{
+  "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope",
+  "@type": "Envelope",
+  "metadata": {
+    "bookTitle": "Society: The Basics",
+    "keywords": [
+      "Macionis 13e",
+      "ch 05",
+      "Rudowski"
+    ],
+    "extendedMetadata": [
+      {
+        "name": "ISBN",
+        "value": "0133794997"
+      },
+      {
+        "name": "M",
+        "value": "c01"
+      },
+      {
+        "name": "assessment_title",
+        "value": "Chapter Quiz: Groups and Organizations"
+      },
+      {
+        "name": "Topic",
+        "value": "Social Groups"
+      },
+      {
+        "name": "chapterTitle",
+        "value": "Groups and Organizations"
+      },
+      {
+        "name": "item_title",
+        "value": "0133794997_John J. Macionis_ch05_c01_q0003"
+      },
+      {
+        "name": "questionlayout",
+        "value": "1"
+      },
+      {
+        "name": "CH",
+        "value": "5"
+      },
+      {
+        "name": "Difficulty",
+        "value": "Moderate"
+      },
+      {
+        "name": "Objective",
+        "value": "L.O. 5.1: Explain the importance of various types of groups to social life."
+      },
+      {
+        "name": "shuffle_choices",
+        "value": "Yes"
+      }
+    ],
+    "subject": [
+      "Sociology"
+    ],
+    "contentTypeTier2": [
+      "AssessmentItem"
+    ],
+    "contentTypeTier1": "Assessment",
+    "format": [
+      "application/vnd.pearson.sanvan.v1.activity"
+    ],
+    "version": "1.0",
+    "guid": "7e72fe5c-1265-4398-8383-1f9ac057ad5e",
+    "bookAuthor": "John J. Macionis",
+    "title": "CE.05.05 Social Groups Understand L.O. 5.1",
+    "educationalAlignment": [
+      "http://purl.org/pearson/objectives/183725473384362"
+    ]
+  },
+  "body": {
+    "description": "CE.05.05, Social Groups, Understand, L.O. 5.1",
+    "containerConfig": [
+      {
+        "description": "CE.05.05, Social Groups, Understand, L.O. 5.1",
+        "containerId": "target1",
+        "brixConfig": [
+          {
+            "bricId": "q1",
+            "bricType": "MultipleChoiceQuestion",
+            "config": {
+              "id": "QUE62398",
+              "question": "A problem with groupthink for getting a job done is that it results in _________.\n\u003cbr /\u003e",
+              "order": "randomized",
+              "presenterType": "RadioGroup",
+              "presenterConfig": {
+                "numberFormat": "none"
+              },
+              "choices": [
+                {
+                  "answerKey": "answer_1",
+                  "content": "approaching an issue in opposing ways"
+                },
+                {
+                  "answerKey": "answer_2",
+                  "content": "losing focus on the problem at hand"
+                },
+                {
+                  "answerKey": "answer_3",
+                  "content": "making decisions by overthinking an issue"
+                },
+                {
+                  "answerKey": "answer_4",
+                  "content": "conforming, leading to a narrow view of an issue"
+                }
+              ]
+            },
+            "answerKey": {
+              "assessmentType": "multiplechoice",
+              "answers": {
+                "answer_3": {
+                  "score": 0.0,
+                  "response": "Consider this: Groupthink happens when a group member will not share his or her opposing ideas.\n\u003cbr /\u003eRefer to Learning Objective 5.1: Explain the importance of various types of groups to social life."
+                },
+                "answer_2": {
+                  "score": 0.0,
+                  "response": "Consider this: Groupthink happens when a group member will not share his or her opposing ideas.\n\u003cbr /\u003eRefer to Learning Objective 5.1: Explain the importance of various types of groups to social life."
+                },
+                "answer_1": {
+                  "score": 0.0,
+                  "response": "Consider this: Groupthink happens when a group member will not share his or her opposing ideas.\n\u003cbr /\u003eRefer to Learning Objective 5.1: Explain the importance of various types of groups to social life."
+                },
+                "answer_4": {
+                  "score": 1.0,
+                  "response": ""
+                }
+              }
+            },
+            "configFixup": [
+              {
+                "name": "questionId",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "sequenceNodeKey",
+                  "type": "ref"
+                }
+              },
+              {
+                "name": "maxAttempts",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "maxAttempts",
+                  "type": "ref"
+                }
+              }
+            ]
+          }
+        ],
+        "hookupActions": [
+          {
+            "description": "Hookup the submit manager to evaluate answers",
+            "methodName": "handleRequestsFrom",
+            "type": "method-call",
+            "args": [
+              {
+                "domain": "brix",
+                "refId": "q1",
+                "type": "ref"
+              }
+            ],
+            "instance": {
+              "type": "submit-manager"
+            }
+          },
+          {
+            "description": "Draw the question",
+            "methodName": "draw",
+            "type": "method-call",
+            "args": [
+              {
+                "selector": "#target1",
+                "type": "d3select"
+              }
+            ],
+            "instance": {
+              "domain": "brix",
+              "refId": "q1",
+              "type": "ref"
+            }
+          }
+        ]
+      }
+    ],
+    "title": "CE.05.05 Social Groups Understand L.O. 5.1"
+  }
+}
