@@ -1,0 +1,188 @@
+{
+  "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope",
+  "@type": "Envelope",
+  "metadata": {
+    "bookTitle": "Sociology: A Down-to-Earth Approach",
+    "keywords": [
+      "Henslin 12e",
+      "ch 16",
+      "Rudowski"
+    ],
+    "extendedMetadata": [
+      {
+        "name": "ISBN",
+        "value": "0133795004"
+      },
+      {
+        "name": "M",
+        "value": "m02"
+      },
+      {
+        "name": "assessment_title",
+        "value": "Quiz: Marriage and Family in Theoretical Perspective"
+      },
+      {
+        "name": "Topic",
+        "value": "Marriage and Family in Theoretical Perspective"
+      },
+      {
+        "name": "chapterTitle",
+        "value": "Marriage and Family"
+      },
+      {
+        "name": "module",
+        "value": "Marriage and Family in Theoretical Perspective"
+      },
+      {
+        "name": "item_title",
+        "value": "0133795004_James M. Henslin_ch16_m02_q0007"
+      },
+      {
+        "name": "CH",
+        "value": "16"
+      },
+      {
+        "name": "Objective",
+        "value": "LO: 16.2: Contrast the functionalist, conflict, and symbolic interactionist perspectives on marriage and family."
+      },
+      {
+        "name": "shuffle_choices",
+        "value": "Yes"
+      }
+    ],
+    "subject": [
+      "Sociology"
+    ],
+    "contentTypeTier2": [
+      "AssessmentItem"
+    ],
+    "contentTypeTier1": "Assessment",
+    "format": [
+      "application/vnd.pearson.sanvan.v1.activity"
+    ],
+    "version": "1.0",
+    "guid": "c14e495e-7064-40ef-87ea-615a684e17ab",
+    "bookAuthor": "James M. Henslin",
+    "title": "PRE 16 11",
+    "educationalAlignment": [
+      "http://purl.org/pearson/objectives/183725473384362"
+    ]
+  },
+  "body": {
+    "description": "PRE_16_11",
+    "containerConfig": [
+      {
+        "description": "PRE_16_11",
+        "containerId": "target1",
+        "brixConfig": [
+          {
+            "bricId": "q1",
+            "bricType": "MultipleChoiceQuestion",
+            "config": {
+              "id": "QUE59351",
+              "question": "In Sasha\u0027s family, her dad earns the income and her mom takes care of the home and children. This represents the concept of __________.\n\u003cbr /\u003e",
+              "order": "randomized",
+              "presenterType": "RadioGroup",
+              "presenterConfig": {
+                "numberFormat": "none"
+              },
+              "choices": [
+                {
+                  "answerKey": "answer_1",
+                  "content": "matriarchy"
+                },
+                {
+                  "answerKey": "answer_2",
+                  "content": "gendered exploitation"
+                },
+                {
+                  "answerKey": "answer_3",
+                  "content": "patriarchy"
+                },
+                {
+                  "answerKey": "answer_4",
+                  "content": "the gendered division of labor"
+                }
+              ]
+            },
+            "answerKey": {
+              "assessmentType": "multiplechoice",
+              "answers": {
+                "answer_3": {
+                  "score": 0.0,
+                  "response": "Incorrect."
+                },
+                "answer_2": {
+                  "score": 0.0,
+                  "response": "Incorrect."
+                },
+                "answer_1": {
+                  "score": 0.0,
+                  "response": "Incorrect."
+                },
+                "answer_4": {
+                  "score": 1.0,
+                  "response": ""
+                }
+              }
+            },
+            "configFixup": [
+              {
+                "name": "questionId",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "sequenceNodeKey",
+                  "type": "ref"
+                }
+              },
+              {
+                "name": "maxAttempts",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "maxAttempts",
+                  "type": "ref"
+                }
+              }
+            ]
+          }
+        ],
+        "hookupActions": [
+          {
+            "description": "Hookup the submit manager to evaluate answers",
+            "methodName": "handleRequestsFrom",
+            "type": "method-call",
+            "args": [
+              {
+                "domain": "brix",
+                "refId": "q1",
+                "type": "ref"
+              }
+            ],
+            "instance": {
+              "type": "submit-manager"
+            }
+          },
+          {
+            "description": "Draw the question",
+            "methodName": "draw",
+            "type": "method-call",
+            "args": [
+              {
+                "selector": "#target1",
+                "type": "d3select"
+              }
+            ],
+            "instance": {
+              "domain": "brix",
+              "refId": "q1",
+              "type": "ref"
+            }
+          }
+        ]
+      }
+    ],
+    "title": "PRE 16 11"
+  }
+}

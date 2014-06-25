@@ -1,0 +1,188 @@
+{
+  "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope",
+  "@type": "Envelope",
+  "metadata": {
+    "bookTitle": "Sociology: A Down-to-Earth Approach",
+    "keywords": [
+      "Henslin 12e",
+      "ch 16",
+      "Rudowski"
+    ],
+    "extendedMetadata": [
+      {
+        "name": "ISBN",
+        "value": "0133795004"
+      },
+      {
+        "name": "M",
+        "value": "c01"
+      },
+      {
+        "name": "assessment_title",
+        "value": "Chapter Quiz: Marriage and Family"
+      },
+      {
+        "name": "Topic",
+        "value": "Diversity in U.S. Families"
+      },
+      {
+        "name": "chapterTitle",
+        "value": "Marriage and Family"
+      },
+      {
+        "name": "item_title",
+        "value": "0133795004_James M. Henslin_ch16_c01_q0002"
+      },
+      {
+        "name": "questionlayout",
+        "value": "1"
+      },
+      {
+        "name": "CH",
+        "value": "16"
+      },
+      {
+        "name": "Objective",
+        "value": "LO: 16.4: Summarize research on families: African American, Latino, Asian American, Native American, one-parent, couples without children, blended, and gay and lesbian."
+      },
+      {
+        "name": "shuffle_choices",
+        "value": "Yes"
+      }
+    ],
+    "subject": [
+      "Sociology"
+    ],
+    "contentTypeTier2": [
+      "AssessmentItem"
+    ],
+    "contentTypeTier1": "Assessment",
+    "format": [
+      "application/vnd.pearson.sanvan.v1.activity"
+    ],
+    "version": "1.0",
+    "guid": "d5fb0399-497e-4854-9b3d-333e344eb4c8",
+    "bookAuthor": "James M. Henslin",
+    "title": "CE 16 24",
+    "educationalAlignment": [
+      "http://purl.org/pearson/objectives/183725473384362"
+    ]
+  },
+  "body": {
+    "description": "CE_16_24",
+    "containerConfig": [
+      {
+        "description": "CE_16_24",
+        "containerId": "target1",
+        "brixConfig": [
+          {
+            "bricId": "q1",
+            "bricType": "MultipleChoiceQuestion",
+            "config": {
+              "id": "QUE59314",
+              "question": "Which action shows a distinctive characteristic ascribed to typical Asian-American families?\n\u003cbr /\u003e",
+              "order": "randomized",
+              "presenterType": "RadioGroup",
+              "presenterConfig": {
+                "numberFormat": "none"
+              },
+              "choices": [
+                {
+                  "answerKey": "answer_1",
+                  "content": "A wife refuses to help take care of her elderly in-laws."
+                },
+                {
+                  "answerKey": "answer_2",
+                  "content": "A father shows no interest in his child\u0027s awards and school honors."
+                },
+                {
+                  "answerKey": "answer_3",
+                  "content": "A young girl practices violin for hours so that she may bring honor to her family during her recital."
+                },
+                {
+                  "answerKey": "answer_4",
+                  "content": "A teenage boy is rude and insolent with his grandparents."
+                }
+              ]
+            },
+            "answerKey": {
+              "assessmentType": "multiplechoice",
+              "answers": {
+                "answer_3": {
+                  "score": 1.0,
+                  "response": "That’s correct!"
+                },
+                "answer_2": {
+                  "score": 0.0,
+                  "response": "sider this: As we review some of the vast diversity of U.S. families, it is important to note that we are not comparing any of them to the “ideal” American family, since there is no such thing. LO16.4 Summarize research on families: African American, Latino, Asian American, Native American, one-parent, couples without children, blended, and gay and lesbian."
+                },
+                "answer_1": {
+                  "score": 0.0,
+                  "response": "sider this: As we review some of the vast diversity of U.S. families, it is important to note that we are not comparing any of them to the “ideal” American family, since there is no such thing. LO16.4 Summarize research on families: African American, Latino, Asian American, Native American, one-parent, couples without children, blended, and gay and lesbian."
+                },
+                "answer_4": {
+                  "score": 0.0,
+                  "response": "sider this: As we review some of the vast diversity of U.S. families, it is important to note that we are not comparing any of them to the “ideal” American family, since there is no such thing. LO16.4 Summarize research on families: African American, Latino, Asian American, Native American, one-parent, couples without children, blended, and gay and lesbian."
+                }
+              }
+            },
+            "configFixup": [
+              {
+                "name": "questionId",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "sequenceNodeKey",
+                  "type": "ref"
+                }
+              },
+              {
+                "name": "maxAttempts",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "maxAttempts",
+                  "type": "ref"
+                }
+              }
+            ]
+          }
+        ],
+        "hookupActions": [
+          {
+            "description": "Hookup the submit manager to evaluate answers",
+            "methodName": "handleRequestsFrom",
+            "type": "method-call",
+            "args": [
+              {
+                "domain": "brix",
+                "refId": "q1",
+                "type": "ref"
+              }
+            ],
+            "instance": {
+              "type": "submit-manager"
+            }
+          },
+          {
+            "description": "Draw the question",
+            "methodName": "draw",
+            "type": "method-call",
+            "args": [
+              {
+                "selector": "#target1",
+                "type": "d3select"
+              }
+            ],
+            "instance": {
+              "domain": "brix",
+              "refId": "q1",
+              "type": "ref"
+            }
+          }
+        ]
+      }
+    ],
+    "title": "CE 16 24"
+  }
+}

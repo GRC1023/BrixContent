@@ -1,0 +1,188 @@
+{
+  "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope",
+  "@type": "Envelope",
+  "metadata": {
+    "bookTitle": "Sociology: A Down-to-Earth Approach",
+    "keywords": [
+      "Henslin 12e",
+      "ch 22",
+      "Rudowski"
+    ],
+    "extendedMetadata": [
+      {
+        "name": "ISBN",
+        "value": "0133795004"
+      },
+      {
+        "name": "M",
+        "value": "m03"
+      },
+      {
+        "name": "assessment_title",
+        "value": "Quiz: How Technology Is Changing Our Lives"
+      },
+      {
+        "name": "Topic",
+        "value": "How Technology Changes Society"
+      },
+      {
+        "name": "chapterTitle",
+        "value": "Social Change and the Environment"
+      },
+      {
+        "name": "module",
+        "value": "How Technology Is Changing Our Lives"
+      },
+      {
+        "name": "item_title",
+        "value": "0133795004_James M. Henslin_ch22_m03_q0003"
+      },
+      {
+        "name": "CH",
+        "value": "22"
+      },
+      {
+        "name": "Objective",
+        "value": "LO: 22.3: Use the examples of the automobile and the microchip to illustrate the sociological significance of technology; include changes in ideology, norms, human relationships, education, work, business, war, and social inequality."
+      },
+      {
+        "name": "shuffle_choices",
+        "value": "Yes"
+      }
+    ],
+    "subject": [
+      "Sociology"
+    ],
+    "contentTypeTier2": [
+      "AssessmentItem"
+    ],
+    "contentTypeTier1": "Assessment",
+    "format": [
+      "application/vnd.pearson.sanvan.v1.activity"
+    ],
+    "version": "1.0",
+    "guid": "24544025-026c-43df-8649-2e3d7f3661b2",
+    "bookAuthor": "James M. Henslin",
+    "title": "POST 22 20",
+    "educationalAlignment": [
+      "http://purl.org/pearson/objectives/183725473384362"
+    ]
+  },
+  "body": {
+    "description": "POST_22_20",
+    "containerConfig": [
+      {
+        "description": "POST_22_20",
+        "containerId": "target1",
+        "brixConfig": [
+          {
+            "bricId": "q1",
+            "bricType": "MultipleChoiceQuestion",
+            "config": {
+              "id": "QUE59821",
+              "question": "Technology has a double meaning. It refers to both the tools, items used to accomplish tasks, and __________.\n\u003cbr /\u003e",
+              "order": "randomized",
+              "presenterType": "RadioGroup",
+              "presenterConfig": {
+                "numberFormat": "none"
+              },
+              "choices": [
+                {
+                  "answerKey": "answer_1",
+                  "content": "the cost of making those tools"
+                },
+                {
+                  "answerKey": "answer_2",
+                  "content": "the number of people needed to create those tools"
+                },
+                {
+                  "answerKey": "answer_3",
+                  "content": "the knowledge to improve those tools to make them more useful"
+                },
+                {
+                  "answerKey": "answer_4",
+                  "content": "the skills or procedures needed to make and use those tools"
+                }
+              ]
+            },
+            "answerKey": {
+              "assessmentType": "multiplechoice",
+              "answers": {
+                "answer_3": {
+                  "score": 0.0,
+                  "response": ""
+                },
+                "answer_2": {
+                  "score": 0.0,
+                  "response": ""
+                },
+                "answer_1": {
+                  "score": 0.0,
+                  "response": ""
+                },
+                "answer_4": {
+                  "score": 1.0,
+                  "response": ""
+                }
+              }
+            },
+            "configFixup": [
+              {
+                "name": "questionId",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "sequenceNodeKey",
+                  "type": "ref"
+                }
+              },
+              {
+                "name": "maxAttempts",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "maxAttempts",
+                  "type": "ref"
+                }
+              }
+            ]
+          }
+        ],
+        "hookupActions": [
+          {
+            "description": "Hookup the submit manager to evaluate answers",
+            "methodName": "handleRequestsFrom",
+            "type": "method-call",
+            "args": [
+              {
+                "domain": "brix",
+                "refId": "q1",
+                "type": "ref"
+              }
+            ],
+            "instance": {
+              "type": "submit-manager"
+            }
+          },
+          {
+            "description": "Draw the question",
+            "methodName": "draw",
+            "type": "method-call",
+            "args": [
+              {
+                "selector": "#target1",
+                "type": "d3select"
+              }
+            ],
+            "instance": {
+              "domain": "brix",
+              "refId": "q1",
+              "type": "ref"
+            }
+          }
+        ]
+      }
+    ],
+    "title": "POST 22 20"
+  }
+}

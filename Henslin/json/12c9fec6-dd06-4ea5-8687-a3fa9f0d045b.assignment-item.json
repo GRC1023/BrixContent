@@ -1,0 +1,188 @@
+{
+  "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope",
+  "@type": "Envelope",
+  "metadata": {
+    "bookTitle": "Sociology: A Down-to-Earth Approach",
+    "keywords": [
+      "Henslin 12e",
+      "ch 09",
+      "Rudowski"
+    ],
+    "extendedMetadata": [
+      {
+        "name": "ISBN",
+        "value": "0133795004"
+      },
+      {
+        "name": "M",
+        "value": "c01"
+      },
+      {
+        "name": "assessment_title",
+        "value": "Chapter Quiz: Global Stratification"
+      },
+      {
+        "name": "Topic",
+        "value": "Maintaining Global Stratification"
+      },
+      {
+        "name": "chapterTitle",
+        "value": "Global Stratification"
+      },
+      {
+        "name": "item_title",
+        "value": "0133795004_James M. Henslin_ch09_c01_q0001"
+      },
+      {
+        "name": "questionlayout",
+        "value": "1"
+      },
+      {
+        "name": "CH",
+        "value": "9"
+      },
+      {
+        "name": "Objective",
+        "value": "LO: 9.8"
+      },
+      {
+        "name": "shuffle_choices",
+        "value": "Yes"
+      }
+    ],
+    "subject": [
+      "Sociology"
+    ],
+    "contentTypeTier2": [
+      "AssessmentItem"
+    ],
+    "contentTypeTier1": "Assessment",
+    "format": [
+      "application/vnd.pearson.sanvan.v1.activity"
+    ],
+    "version": "1.0",
+    "guid": "12c9fec6-dd06-4ea5-8687-a3fa9f0d045b",
+    "bookAuthor": "James M. Henslin",
+    "title": "CE 09 30",
+    "educationalAlignment": [
+      "http://purl.org/pearson/objectives/183725473384362"
+    ]
+  },
+  "body": {
+    "description": "CE_09_30",
+    "containerConfig": [
+      {
+        "description": "CE_09_30",
+        "containerId": "target1",
+        "brixConfig": [
+          {
+            "bricId": "q1",
+            "bricType": "MultipleChoiceQuestion",
+            "config": {
+              "id": "QUE59187",
+              "question": "__________ has almost disappeared from the world.\n\u003cbr /\u003e",
+              "order": "randomized",
+              "presenterType": "RadioGroup",
+              "presenterConfig": {
+                "numberFormat": "none"
+              },
+              "choices": [
+                {
+                  "answerKey": "answer_1",
+                  "content": "The feminization of poverty"
+                },
+                {
+                  "answerKey": "answer_2",
+                  "content": "Racial and ethnic discrimination"
+                },
+                {
+                  "answerKey": "answer_3",
+                  "content": "Formal colonialism"
+                },
+                {
+                  "answerKey": "answer_4",
+                  "content": "Multinational corporations"
+                }
+              ]
+            },
+            "answerKey": {
+              "assessmentType": "multiplechoice",
+              "answers": {
+                "answer_3": {
+                  "score": 1.0,
+                  "response": "That’s correct!"
+                },
+                "answer_2": {
+                  "score": 0.0,
+                  "response": "sider this: U.S. culture still recognizes the contributions of some groups over others. LO 9.8 Know how neocolonialism, multinational corporations, and technology account for how global stratification is maintained."
+                },
+                "answer_1": {
+                  "score": 0.0,
+                  "response": "sider this: In the U.S. the number of poor families being headed by females continues to grow. LO 9.8 Know how neocolonialism, multinational corporations, and technology account for how global stratification is maintained."
+                },
+                "answer_4": {
+                  "score": 0.0,
+                  "response": "sider this: Economic challenges have many companies continuing to operate across national boards to reduce production costs. LO 9.8 Know how neocolonialism, multinational corporations, and technology account for how global stratification is maintained."
+                }
+              }
+            },
+            "configFixup": [
+              {
+                "name": "questionId",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "sequenceNodeKey",
+                  "type": "ref"
+                }
+              },
+              {
+                "name": "maxAttempts",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "maxAttempts",
+                  "type": "ref"
+                }
+              }
+            ]
+          }
+        ],
+        "hookupActions": [
+          {
+            "description": "Hookup the submit manager to evaluate answers",
+            "methodName": "handleRequestsFrom",
+            "type": "method-call",
+            "args": [
+              {
+                "domain": "brix",
+                "refId": "q1",
+                "type": "ref"
+              }
+            ],
+            "instance": {
+              "type": "submit-manager"
+            }
+          },
+          {
+            "description": "Draw the question",
+            "methodName": "draw",
+            "type": "method-call",
+            "args": [
+              {
+                "selector": "#target1",
+                "type": "d3select"
+              }
+            ],
+            "instance": {
+              "domain": "brix",
+              "refId": "q1",
+              "type": "ref"
+            }
+          }
+        ]
+      }
+    ],
+    "title": "CE 09 30"
+  }
+}

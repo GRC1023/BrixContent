@@ -1,0 +1,188 @@
+{
+  "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope",
+  "@type": "Envelope",
+  "metadata": {
+    "bookTitle": "Sociology: A Down-to-Earth Approach",
+    "keywords": [
+      "Henslin 12e",
+      "ch 06",
+      "Rudowski"
+    ],
+    "extendedMetadata": [
+      {
+        "name": "ISBN",
+        "value": "0133795004"
+      },
+      {
+        "name": "M",
+        "value": "c01"
+      },
+      {
+        "name": "assessment_title",
+        "value": "Chapter Quiz: Chapter 06: Societies to Social Networks"
+      },
+      {
+        "name": "Topic",
+        "value": "Group Dynamics"
+      },
+      {
+        "name": "chapterTitle",
+        "value": "Societies to Social Networks"
+      },
+      {
+        "name": "item_title",
+        "value": "0133795004_James M. Henslin_ch06_c01_q0004"
+      },
+      {
+        "name": "questionlayout",
+        "value": "1"
+      },
+      {
+        "name": "CH",
+        "value": "6"
+      },
+      {
+        "name": "Objective",
+        "value": "LO: 6.3: Be familiar with the effects of group size on stability, intimacy, attitudes, and behavior; types and styles of leaders; the Asch experiment on peer pressure; the Milgram experiment on authority; and the implications of groupthink."
+      },
+      {
+        "name": "shuffle_choices",
+        "value": "Yes"
+      }
+    ],
+    "subject": [
+      "Sociology"
+    ],
+    "contentTypeTier2": [
+      "AssessmentItem"
+    ],
+    "contentTypeTier1": "Assessment",
+    "format": [
+      "application/vnd.pearson.sanvan.v1.activity"
+    ],
+    "version": "1.0",
+    "guid": "4e2a4df8-acf9-47ad-93d9-fdecee218dd2",
+    "bookAuthor": "James M. Henslin",
+    "title": "CE 06 28",
+    "educationalAlignment": [
+      "http://purl.org/pearson/objectives/183725473384362"
+    ]
+  },
+  "body": {
+    "description": "CE_06_28",
+    "containerConfig": [
+      {
+        "description": "CE_06_28",
+        "containerId": "target1",
+        "brixConfig": [
+          {
+            "bricId": "q1",
+            "bricType": "MultipleChoiceQuestion",
+            "config": {
+              "id": "QUE59070",
+              "question": "According to Irving Janis, people participating in groupthink limit __________, resulting in a narrow view of the issue.\n\u003cbr /\u003e",
+              "order": "randomized",
+              "presenterType": "RadioGroup",
+              "presenterConfig": {
+                "numberFormat": "none"
+              },
+              "choices": [
+                {
+                  "answerKey": "answer_1",
+                  "content": "unrealistic options"
+                },
+                {
+                  "answerKey": "answer_2",
+                  "content": "additional points of view"
+                },
+                {
+                  "answerKey": "answer_3",
+                  "content": "unaffordable choices"
+                },
+                {
+                  "answerKey": "answer_4",
+                  "content": "inappropriate comments"
+                }
+              ]
+            },
+            "answerKey": {
+              "assessmentType": "multiplechoice",
+              "answers": {
+                "answer_3": {
+                  "score": 0.0,
+                  "response": "sider this: Groupthink leads to the perception that there is only one correct course of action. LO 6.3 Be familiar with the effects of group size on stability, intimacy, attitudes, and behavior; types and styles of leaders; the Asch experiment on peer pressure; the Milgram experiment on authority; and the implications of groupthink."
+                },
+                "answer_2": {
+                  "score": 1.0,
+                  "response": "That’s correct!"
+                },
+                "answer_1": {
+                  "score": 0.0,
+                  "response": "sider this: Groupthink leads to the perception that there is only one correct course of action. LO 6.3 Be familiar with the effects of group size on stability, intimacy, attitudes, and behavior; types and styles of leaders; the Asch experiment on peer pressure; the Milgram experiment on authority; and the implications of groupthink."
+                },
+                "answer_4": {
+                  "score": 0.0,
+                  "response": "sider this: Groupthink leads to the perception that there is only one correct course of action. LO 6.3 Be familiar with the effects of group size on stability, intimacy, attitudes, and behavior; types and styles of leaders; the Asch experiment on peer pressure; the Milgram experiment on authority; and the implications of groupthink."
+                }
+              }
+            },
+            "configFixup": [
+              {
+                "name": "questionId",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "sequenceNodeKey",
+                  "type": "ref"
+                }
+              },
+              {
+                "name": "maxAttempts",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "maxAttempts",
+                  "type": "ref"
+                }
+              }
+            ]
+          }
+        ],
+        "hookupActions": [
+          {
+            "description": "Hookup the submit manager to evaluate answers",
+            "methodName": "handleRequestsFrom",
+            "type": "method-call",
+            "args": [
+              {
+                "domain": "brix",
+                "refId": "q1",
+                "type": "ref"
+              }
+            ],
+            "instance": {
+              "type": "submit-manager"
+            }
+          },
+          {
+            "description": "Draw the question",
+            "methodName": "draw",
+            "type": "method-call",
+            "args": [
+              {
+                "selector": "#target1",
+                "type": "d3select"
+              }
+            ],
+            "instance": {
+              "domain": "brix",
+              "refId": "q1",
+              "type": "ref"
+            }
+          }
+        ]
+      }
+    ],
+    "title": "CE 06 28"
+  }
+}

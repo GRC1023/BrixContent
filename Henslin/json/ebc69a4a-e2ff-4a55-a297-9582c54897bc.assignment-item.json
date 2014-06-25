@@ -1,0 +1,188 @@
+{
+  "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope",
+  "@type": "Envelope",
+  "metadata": {
+    "bookTitle": "Sociology: A Down-to-Earth Approach",
+    "keywords": [
+      "Henslin 12e",
+      "ch 10",
+      "Rudowski"
+    ],
+    "extendedMetadata": [
+      {
+        "name": "ISBN",
+        "value": "0133795004"
+      },
+      {
+        "name": "M",
+        "value": "c01"
+      },
+      {
+        "name": "assessment_title",
+        "value": "Chapter Quiz: Social Class in the United States"
+      },
+      {
+        "name": "Topic",
+        "value": "Social Mobility"
+      },
+      {
+        "name": "chapterTitle",
+        "value": "Social Class in the United States"
+      },
+      {
+        "name": "item_title",
+        "value": "0133795004_James M. Henslin_ch10_c01_q0005"
+      },
+      {
+        "name": "questionlayout",
+        "value": "1"
+      },
+      {
+        "name": "CH",
+        "value": "10"
+      },
+      {
+        "name": "Objective",
+        "value": "LO: 10.4: Contrast the three types of social mobility, and review gender issues in research on social mobility and why social mobility brings pain."
+      },
+      {
+        "name": "shuffle_choices",
+        "value": "Yes"
+      }
+    ],
+    "subject": [
+      "Sociology"
+    ],
+    "contentTypeTier2": [
+      "AssessmentItem"
+    ],
+    "contentTypeTier1": "Assessment",
+    "format": [
+      "application/vnd.pearson.sanvan.v1.activity"
+    ],
+    "version": "1.0",
+    "guid": "ebc69a4a-e2ff-4a55-a297-9582c54897bc",
+    "bookAuthor": "James M. Henslin",
+    "title": "CE 10 21",
+    "educationalAlignment": [
+      "http://purl.org/pearson/objectives/183725473384362"
+    ]
+  },
+  "body": {
+    "description": "CE_10_21",
+    "containerConfig": [
+      {
+        "description": "CE_10_21",
+        "containerId": "target1",
+        "brixConfig": [
+          {
+            "bricId": "q1",
+            "bricType": "MultipleChoiceQuestion",
+            "config": {
+              "id": "QUE59222",
+              "question": "Which of the following is an example of downward social mobility?\n\u003cbr /\u003e",
+              "order": "randomized",
+              "presenterType": "RadioGroup",
+              "presenterConfig": {
+                "numberFormat": "none"
+              },
+              "choices": [
+                {
+                  "answerKey": "answer_1",
+                  "content": "When offspring occupy a lower position on the social class ladder than their parents"
+                },
+                {
+                  "answerKey": "answer_2",
+                  "content": "When offspring occupy a higher position on the social class ladder than their parents"
+                },
+                {
+                  "answerKey": "answer_3",
+                  "content": "When offspring occupy a different location on the social class ladder than their parents"
+                },
+                {
+                  "answerKey": "answer_4",
+                  "content": "When society changes to allow large numbers of people to move up or down the class ladder"
+                }
+              ]
+            },
+            "answerKey": {
+              "assessmentType": "multiplechoice",
+              "answers": {
+                "answer_3": {
+                  "score": 0.0,
+                  "response": "sider this: Downward social mobility is movement down the social class ladder. LO 10.4 Contrast the three types of social mobility, and review gender issues in research on social mobility and why social mobility brings pain."
+                },
+                "answer_2": {
+                  "score": 0.0,
+                  "response": "sider this: Downward social mobility is movement down the social class ladder. LO 10.4 Contrast the three types of social mobility, and review gender issues in research on social mobility and why social mobility brings pain."
+                },
+                "answer_1": {
+                  "score": 1.0,
+                  "response": "That’s correct!"
+                },
+                "answer_4": {
+                  "score": 0.0,
+                  "response": "sider this: Downward social mobility is movement down the social class ladder. LO 10.4 Contrast the three types of social mobility, and review gender issues in research on social mobility and why social mobility brings pain."
+                }
+              }
+            },
+            "configFixup": [
+              {
+                "name": "questionId",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "sequenceNodeKey",
+                  "type": "ref"
+                }
+              },
+              {
+                "name": "maxAttempts",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "maxAttempts",
+                  "type": "ref"
+                }
+              }
+            ]
+          }
+        ],
+        "hookupActions": [
+          {
+            "description": "Hookup the submit manager to evaluate answers",
+            "methodName": "handleRequestsFrom",
+            "type": "method-call",
+            "args": [
+              {
+                "domain": "brix",
+                "refId": "q1",
+                "type": "ref"
+              }
+            ],
+            "instance": {
+              "type": "submit-manager"
+            }
+          },
+          {
+            "description": "Draw the question",
+            "methodName": "draw",
+            "type": "method-call",
+            "args": [
+              {
+                "selector": "#target1",
+                "type": "d3select"
+              }
+            ],
+            "instance": {
+              "domain": "brix",
+              "refId": "q1",
+              "type": "ref"
+            }
+          }
+        ]
+      }
+    ],
+    "title": "CE 10 21"
+  }
+}

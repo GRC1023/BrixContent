@@ -1,0 +1,192 @@
+{
+  "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope",
+  "@type": "Envelope",
+  "metadata": {
+    "bookTitle": "Sociology: A Down-to-Earth Approach",
+    "keywords": [
+      "Henslin 12e",
+      "ch 07",
+      "Rudowski"
+    ],
+    "extendedMetadata": [
+      {
+        "name": "ISBN",
+        "value": "0133795004"
+      },
+      {
+        "name": "M",
+        "value": "m06"
+      },
+      {
+        "name": "assessment_title",
+        "value": "Quiz: Global Competition in an Age of Uncertainty"
+      },
+      {
+        "name": "Topic",
+        "value": "Global Competition in an Age of Uncertainty"
+      },
+      {
+        "name": "chapterTitle",
+        "value": "Bureaucracy and Formal Organizations"
+      },
+      {
+        "name": "module",
+        "value": "Global Competition in an Age of Uncertainty"
+      },
+      {
+        "name": "item_title",
+        "value": "0133795004_James M. Henslin_ch07_m06_q0001"
+      },
+      {
+        "name": "questionlayout",
+        "value": "1"
+      },
+      {
+        "name": "CH",
+        "value": "7"
+      },
+      {
+        "name": "Objective",
+        "value": "LO: 7.6: Explain how global competition is affecting corporations."
+      },
+      {
+        "name": "shuffle_choices",
+        "value": "Yes"
+      }
+    ],
+    "subject": [
+      "Sociology"
+    ],
+    "contentTypeTier2": [
+      "AssessmentItem"
+    ],
+    "contentTypeTier1": "Assessment",
+    "format": [
+      "application/vnd.pearson.sanvan.v1.activity"
+    ],
+    "version": "1.0",
+    "guid": "e917a40f-7202-4f44-bc6c-879234c2c961",
+    "bookAuthor": "James M. Henslin",
+    "title": "POST 07 30",
+    "educationalAlignment": [
+      "http://purl.org/pearson/objectives/183725473384362"
+    ]
+  },
+  "body": {
+    "description": "POST_07_30",
+    "containerConfig": [
+      {
+        "description": "POST_07_30",
+        "containerId": "target1",
+        "brixConfig": [
+          {
+            "bricId": "q1",
+            "bricType": "MultipleChoiceQuestion",
+            "config": {
+              "id": "QUE59137",
+              "question": "Which of the following statements best explains the relationship between globalization and corporate culture?\n\u003cbr /\u003e",
+              "order": "randomized",
+              "presenterType": "RadioGroup",
+              "presenterConfig": {
+                "numberFormat": "none"
+              },
+              "choices": [
+                {
+                  "answerKey": "answer_1",
+                  "content": "Globalization has allowed wealthy countries’ organizations to feel more secure in their positions of power."
+                },
+                {
+                  "answerKey": "answer_2",
+                  "content": "Because corporations are constantly worried about being undersold by another country, organizations must stay nimble to survive."
+                },
+                {
+                  "answerKey": "answer_3",
+                  "content": "Globalization has destroyed corporations’ ability to make a profit."
+                },
+                {
+                  "answerKey": "answer_4",
+                  "content": "Corporate organizations have celebrated the positive outcomes from globalization."
+                }
+              ]
+            },
+            "answerKey": {
+              "assessmentType": "multiplechoice",
+              "answers": {
+                "answer_3": {
+                  "score": 0.0,
+                  "response": ""
+                },
+                "answer_2": {
+                  "score": 1.0,
+                  "response": ""
+                },
+                "answer_1": {
+                  "score": 0.0,
+                  "response": ""
+                },
+                "answer_4": {
+                  "score": 0.0,
+                  "response": ""
+                }
+              }
+            },
+            "configFixup": [
+              {
+                "name": "questionId",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "sequenceNodeKey",
+                  "type": "ref"
+                }
+              },
+              {
+                "name": "maxAttempts",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "maxAttempts",
+                  "type": "ref"
+                }
+              }
+            ]
+          }
+        ],
+        "hookupActions": [
+          {
+            "description": "Hookup the submit manager to evaluate answers",
+            "methodName": "handleRequestsFrom",
+            "type": "method-call",
+            "args": [
+              {
+                "domain": "brix",
+                "refId": "q1",
+                "type": "ref"
+              }
+            ],
+            "instance": {
+              "type": "submit-manager"
+            }
+          },
+          {
+            "description": "Draw the question",
+            "methodName": "draw",
+            "type": "method-call",
+            "args": [
+              {
+                "selector": "#target1",
+                "type": "d3select"
+              }
+            ],
+            "instance": {
+              "domain": "brix",
+              "refId": "q1",
+              "type": "ref"
+            }
+          }
+        ]
+      }
+    ],
+    "title": "POST 07 30"
+  }
+}

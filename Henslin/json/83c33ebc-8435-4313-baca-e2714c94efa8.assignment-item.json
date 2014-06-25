@@ -1,0 +1,192 @@
+{
+  "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope",
+  "@type": "Envelope",
+  "metadata": {
+    "bookTitle": "Sociology: A Down-to-Earth Approach",
+    "keywords": [
+      "Henslin 12e",
+      "ch 06",
+      "Rudowski"
+    ],
+    "extendedMetadata": [
+      {
+        "name": "ISBN",
+        "value": "0133795004"
+      },
+      {
+        "name": "M",
+        "value": "m03"
+      },
+      {
+        "name": "assessment_title",
+        "value": "Quiz: Group Dynamics"
+      },
+      {
+        "name": "Topic",
+        "value": "Group Dynamics"
+      },
+      {
+        "name": "chapterTitle",
+        "value": "Societies to Social Networks"
+      },
+      {
+        "name": "module",
+        "value": "Group Dynamics"
+      },
+      {
+        "name": "item_title",
+        "value": "0133795004_James M. Henslin_ch06_m03_q0006"
+      },
+      {
+        "name": "questionlayout",
+        "value": "1"
+      },
+      {
+        "name": "CH",
+        "value": "6"
+      },
+      {
+        "name": "Objective",
+        "value": "LO: 6.3: Be familiar with the effects of group size on stability, intimacy, attitudes, and behavior; types and styles of leaders; the Asch experiment on peer pressure; the Milgram experiment on authority; and the implications of groupthink."
+      },
+      {
+        "name": "shuffle_choices",
+        "value": "Yes"
+      }
+    ],
+    "subject": [
+      "Sociology"
+    ],
+    "contentTypeTier2": [
+      "AssessmentItem"
+    ],
+    "contentTypeTier1": "Assessment",
+    "format": [
+      "application/vnd.pearson.sanvan.v1.activity"
+    ],
+    "version": "1.0",
+    "guid": "83c33ebc-8435-4313-baca-e2714c94efa8",
+    "bookAuthor": "James M. Henslin",
+    "title": "POST 06 16",
+    "educationalAlignment": [
+      "http://purl.org/pearson/objectives/183725473384362"
+    ]
+  },
+  "body": {
+    "description": "POST_06_16",
+    "containerConfig": [
+      {
+        "description": "POST_06_16",
+        "containerId": "target1",
+        "brixConfig": [
+          {
+            "bricId": "q1",
+            "bricType": "MultipleChoiceQuestion",
+            "config": {
+              "id": "QUE59097",
+              "question": "What did Solomon Asch’s line study demonstrate about group dynamics?\n\u003cbr /\u003e",
+              "order": "randomized",
+              "presenterType": "RadioGroup",
+              "presenterConfig": {
+                "numberFormat": "none"
+              },
+              "choices": [
+                {
+                  "answerKey": "answer_1",
+                  "content": "Individuals are willing to compromise their beliefs to avoid the discomfort of being different from others in a group."
+                },
+                {
+                  "answerKey": "answer_2",
+                  "content": "People are likely to follow the direction of authority figures, even when doing so goes against their own moral beliefs."
+                },
+                {
+                  "answerKey": "answer_3",
+                  "content": "When judging themselves, people do not often compare themselves to others in a group and regularly make decisions based on absolute rather than relative terms."
+                },
+                {
+                  "answerKey": "answer_4",
+                  "content": "When discussing an issue, individuals in a group tend not to conform to the same beliefs, resulting in confusion and arguments."
+                }
+              ]
+            },
+            "answerKey": {
+              "assessmentType": "multiplechoice",
+              "answers": {
+                "answer_3": {
+                  "score": 0.0,
+                  "response": ""
+                },
+                "answer_2": {
+                  "score": 0.0,
+                  "response": ""
+                },
+                "answer_1": {
+                  "score": 1.0,
+                  "response": ""
+                },
+                "answer_4": {
+                  "score": 0.0,
+                  "response": ""
+                }
+              }
+            },
+            "configFixup": [
+              {
+                "name": "questionId",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "sequenceNodeKey",
+                  "type": "ref"
+                }
+              },
+              {
+                "name": "maxAttempts",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "maxAttempts",
+                  "type": "ref"
+                }
+              }
+            ]
+          }
+        ],
+        "hookupActions": [
+          {
+            "description": "Hookup the submit manager to evaluate answers",
+            "methodName": "handleRequestsFrom",
+            "type": "method-call",
+            "args": [
+              {
+                "domain": "brix",
+                "refId": "q1",
+                "type": "ref"
+              }
+            ],
+            "instance": {
+              "type": "submit-manager"
+            }
+          },
+          {
+            "description": "Draw the question",
+            "methodName": "draw",
+            "type": "method-call",
+            "args": [
+              {
+                "selector": "#target1",
+                "type": "d3select"
+              }
+            ],
+            "instance": {
+              "domain": "brix",
+              "refId": "q1",
+              "type": "ref"
+            }
+          }
+        ]
+      }
+    ],
+    "title": "POST 06 16"
+  }
+}

@@ -1,0 +1,188 @@
+{
+  "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope",
+  "@type": "Envelope",
+  "metadata": {
+    "bookTitle": "Sociology: A Down-to-Earth Approach",
+    "keywords": [
+      "Henslin 12e",
+      "ch 16",
+      "Rudowski"
+    ],
+    "extendedMetadata": [
+      {
+        "name": "ISBN",
+        "value": "0133795004"
+      },
+      {
+        "name": "M",
+        "value": "m06"
+      },
+      {
+        "name": "assessment_title",
+        "value": "Quiz: Divorce and Remarriage"
+      },
+      {
+        "name": "Topic",
+        "value": "Divorce and Remarriage"
+      },
+      {
+        "name": "chapterTitle",
+        "value": "Marriage and Family"
+      },
+      {
+        "name": "module",
+        "value": "Divorce and Remarriage"
+      },
+      {
+        "name": "item_title",
+        "value": "0133795004_James M. Henslin_ch16_m06_q0002"
+      },
+      {
+        "name": "CH",
+        "value": "16"
+      },
+      {
+        "name": "Objective",
+        "value": "LO: 16.6: Summarize problems in measuring divorce, research findings on children and grandchildren of divorce, fathersâ; contact after divorce, ex-spouses, and remarriage."
+      },
+      {
+        "name": "shuffle_choices",
+        "value": "Yes"
+      }
+    ],
+    "subject": [
+      "Sociology"
+    ],
+    "contentTypeTier2": [
+      "AssessmentItem"
+    ],
+    "contentTypeTier1": "Assessment",
+    "format": [
+      "application/vnd.pearson.sanvan.v1.activity"
+    ],
+    "version": "1.0",
+    "guid": "5ee693a5-bb0f-4c3c-ad1a-e69c48fef68d",
+    "bookAuthor": "James M. Henslin",
+    "title": "POST 16 28",
+    "educationalAlignment": [
+      "http://purl.org/pearson/objectives/183725473384362"
+    ]
+  },
+  "body": {
+    "description": "POST_16_28",
+    "containerConfig": [
+      {
+        "description": "POST_16_28",
+        "containerId": "target1",
+        "brixConfig": [
+          {
+            "bricId": "q1",
+            "bricType": "MultipleChoiceQuestion",
+            "config": {
+              "id": "QUE59418",
+              "question": "Henry is a product of divorce. He feels distant from both parents and is worried because his mom, with whom he lives, is very poor. But his mom has a boyfriend Henry adores. Jack is also a product of divorce. He is very close to his mother and likes his new stepfather, but he is not very close with his biological father. He is from an upper-class family. Which child, if either, has the better chance of adjusting to life after divorce?\n\u003cbr /\u003e",
+              "order": "randomized",
+              "presenterType": "RadioGroup",
+              "presenterConfig": {
+                "numberFormat": "none"
+              },
+              "choices": [
+                {
+                  "answerKey": "answer_1",
+                  "content": "Both"
+                },
+                {
+                  "answerKey": "answer_2",
+                  "content": "Neither"
+                },
+                {
+                  "answerKey": "answer_3",
+                  "content": "Henry"
+                },
+                {
+                  "answerKey": "answer_4",
+                  "content": "Jack"
+                }
+              ]
+            },
+            "answerKey": {
+              "assessmentType": "multiplechoice",
+              "answers": {
+                "answer_3": {
+                  "score": 0.0,
+                  "response": ""
+                },
+                "answer_2": {
+                  "score": 0.0,
+                  "response": ""
+                },
+                "answer_1": {
+                  "score": 0.0,
+                  "response": ""
+                },
+                "answer_4": {
+                  "score": 1.0,
+                  "response": ""
+                }
+              }
+            },
+            "configFixup": [
+              {
+                "name": "questionId",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "sequenceNodeKey",
+                  "type": "ref"
+                }
+              },
+              {
+                "name": "maxAttempts",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "maxAttempts",
+                  "type": "ref"
+                }
+              }
+            ]
+          }
+        ],
+        "hookupActions": [
+          {
+            "description": "Hookup the submit manager to evaluate answers",
+            "methodName": "handleRequestsFrom",
+            "type": "method-call",
+            "args": [
+              {
+                "domain": "brix",
+                "refId": "q1",
+                "type": "ref"
+              }
+            ],
+            "instance": {
+              "type": "submit-manager"
+            }
+          },
+          {
+            "description": "Draw the question",
+            "methodName": "draw",
+            "type": "method-call",
+            "args": [
+              {
+                "selector": "#target1",
+                "type": "d3select"
+              }
+            ],
+            "instance": {
+              "domain": "brix",
+              "refId": "q1",
+              "type": "ref"
+            }
+          }
+        ]
+      }
+    ],
+    "title": "POST 16 28"
+  }
+}

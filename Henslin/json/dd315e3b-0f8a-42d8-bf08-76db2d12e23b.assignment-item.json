@@ -1,0 +1,184 @@
+{
+  "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope",
+  "@type": "Envelope",
+  "metadata": {
+    "bookTitle": "Sociology: A Down-to-Earth Approach",
+    "keywords": [
+      "Henslin 12e",
+      "ch 17",
+      "Rudowski"
+    ],
+    "extendedMetadata": [
+      {
+        "name": "ISBN",
+        "value": "0133795004"
+      },
+      {
+        "name": "M",
+        "value": "c01"
+      },
+      {
+        "name": "assessment_title",
+        "value": "Chapter Quiz: Education"
+      },
+      {
+        "name": "Topic",
+        "value": "The Functionalist Perspective: Providing Social Benefits"
+      },
+      {
+        "name": "chapterTitle",
+        "value": "Education"
+      },
+      {
+        "name": "item_title",
+        "value": "0133795004_James M. Henslin_ch17_c01_q0008"
+      },
+      {
+        "name": "CH",
+        "value": "17"
+      },
+      {
+        "name": "Objective",
+        "value": "LO: 17.3: Explain the functions of education: knowledge and skills, values, social integration, gatekeeping, and replacing family functions."
+      },
+      {
+        "name": "shuffle_choices",
+        "value": "Yes"
+      }
+    ],
+    "subject": [
+      "Sociology"
+    ],
+    "contentTypeTier2": [
+      "AssessmentItem"
+    ],
+    "contentTypeTier1": "Assessment",
+    "format": [
+      "application/vnd.pearson.sanvan.v1.activity"
+    ],
+    "version": "1.0",
+    "guid": "dd315e3b-0f8a-42d8-bf08-76db2d12e23b",
+    "bookAuthor": "James M. Henslin",
+    "title": "PRE 17 09",
+    "educationalAlignment": [
+      "http://purl.org/pearson/objectives/183725473384362"
+    ]
+  },
+  "body": {
+    "description": "PRE_17_09",
+    "containerConfig": [
+      {
+        "description": "PRE_17_09",
+        "containerId": "target1",
+        "brixConfig": [
+          {
+            "bricId": "q1",
+            "bricType": "MultipleChoiceQuestion",
+            "config": {
+              "id": "QUE59444",
+              "question": "What is the difference between manifest and latent functions as they relate to people’s actions?\n\u003cbr /\u003e",
+              "order": "randomized",
+              "presenterType": "RadioGroup",
+              "presenterConfig": {
+                "numberFormat": "none"
+              },
+              "choices": [
+                {
+                  "answerKey": "answer_1",
+                  "content": "One has a significant impact; the other does not."
+                },
+                {
+                  "answerKey": "answer_2",
+                  "content": "One has intentional benefits, while the other has unintended benefits."
+                },
+                {
+                  "answerKey": "answer_3",
+                  "content": "One has dire consequences; the other is beneficial."
+                },
+                {
+                  "answerKey": "answer_4",
+                  "content": "One is used in most societies, the other in only a few."
+                }
+              ]
+            },
+            "answerKey": {
+              "assessmentType": "multiplechoice",
+              "answers": {
+                "answer_3": {
+                  "score": 0.0,
+                  "response": "sider this: the social benefits provided by the functions of education. LO 17.3 Explain the functions of education: knowledge and skills, values, social integration, gatekeeping, and replacing family functions."
+                },
+                "answer_2": {
+                  "score": 1.0,
+                  "response": "That’s correct!"
+                },
+                "answer_1": {
+                  "score": 0.0,
+                  "response": "sider this: the social benefits provided by the functions of education. LO 17.3 Explain the functions of education: knowledge and skills, values, social integration, gatekeeping, and replacing family functions."
+                },
+                "answer_4": {
+                  "score": 0.0,
+                  "response": "sider this: the social benefits provided by the functions of education. LO 17.3 Explain the functions of education: knowledge and skills, values, social integration, gatekeeping, and replacing family functions."
+                }
+              }
+            },
+            "configFixup": [
+              {
+                "name": "questionId",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "sequenceNodeKey",
+                  "type": "ref"
+                }
+              },
+              {
+                "name": "maxAttempts",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "maxAttempts",
+                  "type": "ref"
+                }
+              }
+            ]
+          }
+        ],
+        "hookupActions": [
+          {
+            "description": "Hookup the submit manager to evaluate answers",
+            "methodName": "handleRequestsFrom",
+            "type": "method-call",
+            "args": [
+              {
+                "domain": "brix",
+                "refId": "q1",
+                "type": "ref"
+              }
+            ],
+            "instance": {
+              "type": "submit-manager"
+            }
+          },
+          {
+            "description": "Draw the question",
+            "methodName": "draw",
+            "type": "method-call",
+            "args": [
+              {
+                "selector": "#target1",
+                "type": "d3select"
+              }
+            ],
+            "instance": {
+              "domain": "brix",
+              "refId": "q1",
+              "type": "ref"
+            }
+          }
+        ]
+      }
+    ],
+    "title": "PRE 17 09"
+  }
+}

@@ -1,0 +1,188 @@
+{
+  "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope",
+  "@type": "Envelope",
+  "metadata": {
+    "bookTitle": "Sociology: A Down-to-Earth Approach",
+    "keywords": [
+      "Henslin 12e",
+      "ch 14",
+      "Rudowski"
+    ],
+    "extendedMetadata": [
+      {
+        "name": "ISBN",
+        "value": "0133795004"
+      },
+      {
+        "name": "M",
+        "value": "m07"
+      },
+      {
+        "name": "assessment_title",
+        "value": "Quiz: Global Capitalism and Our Future"
+      },
+      {
+        "name": "Topic",
+        "value": "Global Capitalism and Our Future"
+      },
+      {
+        "name": "chapterTitle",
+        "value": "The Economy"
+      },
+      {
+        "name": "module",
+        "value": "Global Capitalism and Our Future"
+      },
+      {
+        "name": "item_title",
+        "value": "0133795004_James M. Henslin_ch14_m07_q0001"
+      },
+      {
+        "name": "CH",
+        "value": "14"
+      },
+      {
+        "name": "Objective",
+        "value": "LO: 14.7: Explain how our economic transition is affecting the national income distribution."
+      },
+      {
+        "name": "shuffle_choices",
+        "value": "Yes"
+      }
+    ],
+    "subject": [
+      "Sociology"
+    ],
+    "contentTypeTier2": [
+      "AssessmentItem"
+    ],
+    "contentTypeTier1": "Assessment",
+    "format": [
+      "application/vnd.pearson.sanvan.v1.activity"
+    ],
+    "version": "1.0",
+    "guid": "5b548518-1a4f-4387-abdf-0e55cc42ad2f",
+    "bookAuthor": "James M. Henslin",
+    "title": "NEW",
+    "educationalAlignment": [
+      "http://purl.org/pearson/objectives/183725473384362"
+    ]
+  },
+  "body": {
+    "description": "NEW",
+    "containerConfig": [
+      {
+        "description": "NEW",
+        "containerId": "target1",
+        "brixConfig": [
+          {
+            "bricId": "q1",
+            "bricType": "MultipleChoiceQuestion",
+            "config": {
+              "id": "QUE59622",
+              "question": "\u003cstrong\u003eWhat is the proportion of income received by the wealthiest 20 percent and the poorest 20 percent?\u003c/strong\u003e\n\u003cbr /\u003e",
+              "order": "randomized",
+              "presenterType": "RadioGroup",
+              "presenterConfig": {
+                "numberFormat": "none"
+              },
+              "choices": [
+                {
+                  "answerKey": "answer_1",
+                  "content": "The wealthiest 20% receives 50% of the nation’s total income versus 3% by the poorest 20%.  "
+                },
+                {
+                  "answerKey": "answer_2",
+                  "content": "The poorest 20% receives 24% of the nation’s total income versus the wealthiest who receives 40%"
+                },
+                {
+                  "answerKey": "answer_3",
+                  "content": "The wealthiest 20% receives 23% of the nation’s total income while the poorest receives 15%."
+                },
+                {
+                  "answerKey": "answer_4",
+                  "content": "The poorest 20% receives 5% of the nation’s total income while the wealthiest receives 60%."
+                }
+              ]
+            },
+            "answerKey": {
+              "assessmentType": "multiplechoice",
+              "answers": {
+                "answer_3": {
+                  "score": 0.0,
+                  "response": ""
+                },
+                "answer_2": {
+                  "score": 0.0,
+                  "response": ""
+                },
+                "answer_1": {
+                  "score": 1.0,
+                  "response": "\u003cem\u003eCorrect! \u003c/em\u003e"
+                },
+                "answer_4": {
+                  "score": 0.0,
+                  "response": ""
+                }
+              }
+            },
+            "configFixup": [
+              {
+                "name": "questionId",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "sequenceNodeKey",
+                  "type": "ref"
+                }
+              },
+              {
+                "name": "maxAttempts",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "maxAttempts",
+                  "type": "ref"
+                }
+              }
+            ]
+          }
+        ],
+        "hookupActions": [
+          {
+            "description": "Hookup the submit manager to evaluate answers",
+            "methodName": "handleRequestsFrom",
+            "type": "method-call",
+            "args": [
+              {
+                "domain": "brix",
+                "refId": "q1",
+                "type": "ref"
+              }
+            ],
+            "instance": {
+              "type": "submit-manager"
+            }
+          },
+          {
+            "description": "Draw the question",
+            "methodName": "draw",
+            "type": "method-call",
+            "args": [
+              {
+                "selector": "#target1",
+                "type": "d3select"
+              }
+            ],
+            "instance": {
+              "domain": "brix",
+              "refId": "q1",
+              "type": "ref"
+            }
+          }
+        ]
+      }
+    ],
+    "title": "NEW"
+  }
+}

@@ -1,0 +1,184 @@
+{
+  "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope",
+  "@type": "Envelope",
+  "metadata": {
+    "bookTitle": "Sociology: A Down-to-Earth Approach",
+    "keywords": [
+      "Henslin 12e",
+      "ch 21",
+      "Rudowski"
+    ],
+    "extendedMetadata": [
+      {
+        "name": "ISBN",
+        "value": "0133795004"
+      },
+      {
+        "name": "M",
+        "value": "c01"
+      },
+      {
+        "name": "assessment_title",
+        "value": "Chapter Quiz: Collective Behavior and Social Movements"
+      },
+      {
+        "name": "Topic",
+        "value": "On the Success and Failure of Social Movements"
+      },
+      {
+        "name": "chapterTitle",
+        "value": "Collective Behavior and Social Movements"
+      },
+      {
+        "name": "item_title",
+        "value": "0133795004_James M. Henslin_ch21_c01_q0004"
+      },
+      {
+        "name": "CH",
+        "value": "21"
+      },
+      {
+        "name": "Objective",
+        "value": "LO: 21.6: Explain why most social movements fail, why some succeed, and why some continue for decades."
+      },
+      {
+        "name": "shuffle_choices",
+        "value": "Yes"
+      }
+    ],
+    "subject": [
+      "Sociology"
+    ],
+    "contentTypeTier2": [
+      "AssessmentItem"
+    ],
+    "contentTypeTier1": "Assessment",
+    "format": [
+      "application/vnd.pearson.sanvan.v1.activity"
+    ],
+    "version": "1.0",
+    "guid": "4a53c8d0-e7cd-4640-a9ce-eb1f8e79e530",
+    "bookAuthor": "James M. Henslin",
+    "title": "CE 21 25",
+    "educationalAlignment": [
+      "http://purl.org/pearson/objectives/183725473384362"
+    ]
+  },
+  "body": {
+    "description": "CE_21_25",
+    "containerConfig": [
+      {
+        "description": "CE_21_25",
+        "containerId": "target1",
+        "brixConfig": [
+          {
+            "bricId": "q1",
+            "bricType": "MultipleChoiceQuestion",
+            "config": {
+              "id": "QUE59699",
+              "question": "Which statement below is correct, from a historical perspective, about the success of most social movements?\n\u003cbr /\u003e",
+              "order": "randomized",
+              "presenterType": "RadioGroup",
+              "presenterConfig": {
+                "numberFormat": "none"
+              },
+              "choices": [
+                {
+                  "answerKey": "answer_1",
+                  "content": "Few bring about extensive social change."
+                },
+                {
+                  "answerKey": "answer_2",
+                  "content": "Most bring about extensive social change."
+                },
+                {
+                  "answerKey": "answer_3",
+                  "content": "Most are effective."
+                },
+                {
+                  "answerKey": "answer_4",
+                  "content": "Most have an impact on politics if nowhere else."
+                }
+              ]
+            },
+            "answerKey": {
+              "assessmentType": "multiplechoice",
+              "answers": {
+                "answer_3": {
+                  "score": 0.0,
+                  "response": "sider this: the difficulties faced by social movements. LO 21.6 Explain why most social movements fail, why some succeed, and why some continue for decades."
+                },
+                "answer_2": {
+                  "score": 0.0,
+                  "response": "sider this: the difficulties faced by social movements. LO 21.6 Explain why most social movements fail, why some succeed, and why some continue for decades."
+                },
+                "answer_1": {
+                  "score": 1.0,
+                  "response": "That’s correct!"
+                },
+                "answer_4": {
+                  "score": 0.0,
+                  "response": "sider this: the difficulties faced by social movements. LO 21.6 Explain why most social movements fail, why some succeed, and why some continue for decades."
+                }
+              }
+            },
+            "configFixup": [
+              {
+                "name": "questionId",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "sequenceNodeKey",
+                  "type": "ref"
+                }
+              },
+              {
+                "name": "maxAttempts",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "maxAttempts",
+                  "type": "ref"
+                }
+              }
+            ]
+          }
+        ],
+        "hookupActions": [
+          {
+            "description": "Hookup the submit manager to evaluate answers",
+            "methodName": "handleRequestsFrom",
+            "type": "method-call",
+            "args": [
+              {
+                "domain": "brix",
+                "refId": "q1",
+                "type": "ref"
+              }
+            ],
+            "instance": {
+              "type": "submit-manager"
+            }
+          },
+          {
+            "description": "Draw the question",
+            "methodName": "draw",
+            "type": "method-call",
+            "args": [
+              {
+                "selector": "#target1",
+                "type": "d3select"
+              }
+            ],
+            "instance": {
+              "domain": "brix",
+              "refId": "q1",
+              "type": "ref"
+            }
+          }
+        ]
+      }
+    ],
+    "title": "CE 21 25"
+  }
+}

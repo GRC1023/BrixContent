@@ -1,0 +1,184 @@
+{
+  "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope",
+  "@type": "Envelope",
+  "metadata": {
+    "bookTitle": "Sociology: A Down-to-Earth Approach",
+    "keywords": [
+      "Henslin 12e",
+      "ch 01",
+      "Rudowski"
+    ],
+    "extendedMetadata": [
+      {
+        "name": "ISBN",
+        "value": "0133795004"
+      },
+      {
+        "name": "M",
+        "value": "c01"
+      },
+      {
+        "name": "assessment_title",
+        "value": "Chapter Quiz: The Sociological Perspective"
+      },
+      {
+        "name": "Topic",
+        "value": "Theoretical Perspectives in Sociology"
+      },
+      {
+        "name": "chapterTitle",
+        "value": "The Sociological Perspective"
+      },
+      {
+        "name": "item_title",
+        "value": "0133795004_James M. Henslin_ch01_c01_q0012"
+      },
+      {
+        "name": "questionlayout",
+        "value": "1"
+      },
+      {
+        "name": "CH",
+        "value": "1"
+      },
+      {
+        "name": "shuffle_choices",
+        "value": "Yes"
+      }
+    ],
+    "subject": [
+      "Sociology"
+    ],
+    "contentTypeTier2": [
+      "AssessmentItem"
+    ],
+    "contentTypeTier1": "Assessment",
+    "format": [
+      "application/vnd.pearson.sanvan.v1.activity"
+    ],
+    "version": "1.0",
+    "guid": "6eb52cdc-5862-4f2e-9b5d-13a156132e76",
+    "bookAuthor": "James M. Henslin",
+    "title": "CE 01 22",
+    "educationalAlignment": [
+      "http://purl.org/pearson/objectives/183725473384362"
+    ]
+  },
+  "body": {
+    "description": "CE_01_22",
+    "containerConfig": [
+      {
+        "description": "CE_01_22",
+        "containerId": "target1",
+        "brixConfig": [
+          {
+            "bricId": "q1",
+            "bricType": "MultipleChoiceQuestion",
+            "config": {
+              "id": "QUE58846",
+              "question": "Siobhan is writing a paper for her sociology class on the unfairness of wage differences between races and genders. What sociological approach is she most likely to take?\n\u003cbr /\u003e",
+              "order": "randomized",
+              "presenterType": "RadioGroup",
+              "presenterConfig": {
+                "numberFormat": "none"
+              },
+              "choices": [
+                {
+                  "answerKey": "answer_1",
+                  "content": "Conflict theory"
+                },
+                {
+                  "answerKey": "answer_2",
+                  "content": "Symbolic interactionism"
+                },
+                {
+                  "answerKey": "answer_3",
+                  "content": "Marxism"
+                },
+                {
+                  "answerKey": "answer_4",
+                  "content": "Functional analysis"
+                }
+              ]
+            },
+            "answerKey": {
+              "assessmentType": "multiplechoice",
+              "answers": {
+                "answer_3": {
+                  "score": 0.0,
+                  "response": "sider this: Marxism focuses on class conflict, not conflict between races and genders. LO: 1.7: Explain the basic ideas of symbolic interactionism, functional analysis, and conflict theory."
+                },
+                "answer_2": {
+                  "score": 0.0,
+                  "response": "sider this: When exploring issues of race and gender symbolic interactionists would be interested how experiences differ for people of different races and different genders as well as how each is labeled and the impact that has on our interactions, self-perceptions, etc. LO: 1.7: Explain the basic ideas of symbolic interactionism, functional analysis, and conflict theory."
+                },
+                "answer_1": {
+                  "score": 1.0,
+                  "response": "That’s correct!"
+                },
+                "answer_4": {
+                  "score": 0.0,
+                  "response": "sider this: Functionalists are interested in studying how prejudice and discrimination function for society. LO: 1.7: Explain the basic ideas of symbolic interactionism, functional analysis, and conflict theory."
+                }
+              }
+            },
+            "configFixup": [
+              {
+                "name": "questionId",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "sequenceNodeKey",
+                  "type": "ref"
+                }
+              },
+              {
+                "name": "maxAttempts",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "maxAttempts",
+                  "type": "ref"
+                }
+              }
+            ]
+          }
+        ],
+        "hookupActions": [
+          {
+            "description": "Hookup the submit manager to evaluate answers",
+            "methodName": "handleRequestsFrom",
+            "type": "method-call",
+            "args": [
+              {
+                "domain": "brix",
+                "refId": "q1",
+                "type": "ref"
+              }
+            ],
+            "instance": {
+              "type": "submit-manager"
+            }
+          },
+          {
+            "description": "Draw the question",
+            "methodName": "draw",
+            "type": "method-call",
+            "args": [
+              {
+                "selector": "#target1",
+                "type": "d3select"
+              }
+            ],
+            "instance": {
+              "domain": "brix",
+              "refId": "q1",
+              "type": "ref"
+            }
+          }
+        ]
+      }
+    ],
+    "title": "CE 01 22"
+  }
+}

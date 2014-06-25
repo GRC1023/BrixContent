@@ -1,0 +1,184 @@
+{
+  "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope",
+  "@type": "Envelope",
+  "metadata": {
+    "bookTitle": "Sociology: A Down-to-Earth Approach",
+    "keywords": [
+      "Henslin 12e",
+      "ch 22",
+      "Rudowski"
+    ],
+    "extendedMetadata": [
+      {
+        "name": "ISBN",
+        "value": "0133795004"
+      },
+      {
+        "name": "M",
+        "value": "c01"
+      },
+      {
+        "name": "assessment_title",
+        "value": "Chapter Quiz: Social Change and the Environment"
+      },
+      {
+        "name": "Topic",
+        "value": "The Growth Machine versus the Earth"
+      },
+      {
+        "name": "chapterTitle",
+        "value": "Social Change and the Environment"
+      },
+      {
+        "name": "item_title",
+        "value": "0133795004_James M. Henslin_ch22_c01_q0004"
+      },
+      {
+        "name": "CH",
+        "value": "22"
+      },
+      {
+        "name": "Objective",
+        "value": "LO: 22.4: Explain how industrialization is related to environmental problems; contrast the environmental movement and environmental sociology; discuss the goal of harmony."
+      },
+      {
+        "name": "shuffle_choices",
+        "value": "Yes"
+      }
+    ],
+    "subject": [
+      "Sociology"
+    ],
+    "contentTypeTier2": [
+      "AssessmentItem"
+    ],
+    "contentTypeTier1": "Assessment",
+    "format": [
+      "application/vnd.pearson.sanvan.v1.activity"
+    ],
+    "version": "1.0",
+    "guid": "6638cd98-c078-46dd-be42-1a4236801d16",
+    "bookAuthor": "James M. Henslin",
+    "title": "CE 22 24",
+    "educationalAlignment": [
+      "http://purl.org/pearson/objectives/183725473384362"
+    ]
+  },
+  "body": {
+    "description": "CE_22_24",
+    "containerConfig": [
+      {
+        "description": "CE_22_24",
+        "containerId": "target1",
+        "brixConfig": [
+          {
+            "bricId": "q1",
+            "bricType": "MultipleChoiceQuestion",
+            "config": {
+              "id": "QUE59786",
+              "question": "Which of the following countries has the strongest green party?\n\u003cbr /\u003e",
+              "order": "randomized",
+              "presenterType": "RadioGroup",
+              "presenterConfig": {
+                "numberFormat": "none"
+              },
+              "choices": [
+                {
+                  "answerKey": "answer_1",
+                  "content": "Germany"
+                },
+                {
+                  "answerKey": "answer_2",
+                  "content": "China"
+                },
+                {
+                  "answerKey": "answer_3",
+                  "content": "United States"
+                },
+                {
+                  "answerKey": "answer_4",
+                  "content": "Great Britain"
+                }
+              ]
+            },
+            "answerKey": {
+              "assessmentType": "multiplechoice",
+              "answers": {
+                "answer_3": {
+                  "score": 0.0,
+                  "response": "sider this: which country has Green Party candidates that have won seats in the national legislature? LO 22.4 Explain how industrialization is related to environmental problems; contrast the environmental movement and environmental sociology; discuss the goal of harmony."
+                },
+                "answer_2": {
+                  "score": 0.0,
+                  "response": "sider this: which country has Green Party candidates that have won seats in the national legislature? LO 22.4 Explain how industrialization is related to environmental problems; contrast the environmental movement and environmental sociology; discuss the goal of harmony."
+                },
+                "answer_1": {
+                  "score": 1.0,
+                  "response": "That’s correct!"
+                },
+                "answer_4": {
+                  "score": 0.0,
+                  "response": "sider this: which country has Green Party candidates that have won seats in the national legislature? LO 22.4 Explain how industrialization is related to environmental problems; contrast the environmental movement and environmental sociology; discuss the goal of harmony."
+                }
+              }
+            },
+            "configFixup": [
+              {
+                "name": "questionId",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "sequenceNodeKey",
+                  "type": "ref"
+                }
+              },
+              {
+                "name": "maxAttempts",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "maxAttempts",
+                  "type": "ref"
+                }
+              }
+            ]
+          }
+        ],
+        "hookupActions": [
+          {
+            "description": "Hookup the submit manager to evaluate answers",
+            "methodName": "handleRequestsFrom",
+            "type": "method-call",
+            "args": [
+              {
+                "domain": "brix",
+                "refId": "q1",
+                "type": "ref"
+              }
+            ],
+            "instance": {
+              "type": "submit-manager"
+            }
+          },
+          {
+            "description": "Draw the question",
+            "methodName": "draw",
+            "type": "method-call",
+            "args": [
+              {
+                "selector": "#target1",
+                "type": "d3select"
+              }
+            ],
+            "instance": {
+              "domain": "brix",
+              "refId": "q1",
+              "type": "ref"
+            }
+          }
+        ]
+      }
+    ],
+    "title": "CE 22 24"
+  }
+}

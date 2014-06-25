@@ -1,0 +1,184 @@
+{
+  "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope",
+  "@type": "Envelope",
+  "metadata": {
+    "bookTitle": "Sociology: A Down-to-Earth Approach",
+    "keywords": [
+      "Henslin 12e",
+      "ch 19",
+      "Rudowski"
+    ],
+    "extendedMetadata": [
+      {
+        "name": "ISBN",
+        "value": "0133795004"
+      },
+      {
+        "name": "M",
+        "value": "c01"
+      },
+      {
+        "name": "assessment_title",
+        "value": "Chapter Quiz: Medicine and Health"
+      },
+      {
+        "name": "Topic",
+        "value": "Threats to Health"
+      },
+      {
+        "name": "chapterTitle",
+        "value": "Medicine and Health"
+      },
+      {
+        "name": "item_title",
+        "value": "0133795004_James M. Henslin_ch19_c01_q0002"
+      },
+      {
+        "name": "CH",
+        "value": "19"
+      },
+      {
+        "name": "Objective",
+        "value": "LO: 19.6: Discuss threats to health: HIV/AIDS, weight, alcohol and nicotine, disabling environments, medical experiments, globalization of disease and treatment or prevention."
+      },
+      {
+        "name": "shuffle_choices",
+        "value": "Yes"
+      }
+    ],
+    "subject": [
+      "Sociology"
+    ],
+    "contentTypeTier2": [
+      "AssessmentItem"
+    ],
+    "contentTypeTier1": "Assessment",
+    "format": [
+      "application/vnd.pearson.sanvan.v1.activity"
+    ],
+    "version": "1.0",
+    "guid": "2cbd08fd-77ab-435a-a58e-ff4e1d946a77",
+    "bookAuthor": "James M. Henslin",
+    "title": "CE 19 21",
+    "educationalAlignment": [
+      "http://purl.org/pearson/objectives/183725473384362"
+    ]
+  },
+  "body": {
+    "description": "CE_19_21",
+    "containerConfig": [
+      {
+        "description": "CE_19_21",
+        "containerId": "target1",
+        "brixConfig": [
+          {
+            "bricId": "q1",
+            "bricType": "MultipleChoiceQuestion",
+            "config": {
+              "id": "QUE59709",
+              "question": "Tawanda is an American who has just been diagnosed with HIV. Which of the following was the most likely source of her HIV?\n\u003cbr /\u003e",
+              "order": "randomized",
+              "presenterType": "RadioGroup",
+              "presenterConfig": {
+                "numberFormat": "none"
+              },
+              "choices": [
+                {
+                  "answerKey": "answer_1",
+                  "content": "Homosexual sex"
+                },
+                {
+                  "answerKey": "answer_2",
+                  "content": "Heterosexual sex"
+                },
+                {
+                  "answerKey": "answer_3",
+                  "content": "Blood transfusion"
+                },
+                {
+                  "answerKey": "answer_4",
+                  "content": "Drug injection"
+                }
+              ]
+            },
+            "answerKey": {
+              "assessmentType": "multiplechoice",
+              "answers": {
+                "answer_3": {
+                  "score": 0.0,
+                  "response": "sider this: Gender and race-ethnicity are important when discussing issues surrounding HIV. LO 19.6 Discuss threats to health: HIV/AIDS, weight, alcohol and nicotine, disabling environments, medical experiments, globalization of disease and treatment or prevention."
+                },
+                "answer_2": {
+                  "score": 1.0,
+                  "response": "That’s correct!"
+                },
+                "answer_1": {
+                  "score": 0.0,
+                  "response": "sider this: Gender and race-ethnicity are important when discussing issues surrounding HIV. LO 19.6 Discuss threats to health: HIV/AIDS, weight, alcohol and nicotine, disabling environments, medical experiments, globalization of disease and treatment or prevention."
+                },
+                "answer_4": {
+                  "score": 0.0,
+                  "response": "sider this: Gender and race-ethnicity are important when discussing issues surrounding HIV. LO 19.6 Discuss threats to health: HIV/AIDS, weight, alcohol and nicotine, disabling environments, medical experiments, globalization of disease and treatment or prevention."
+                }
+              }
+            },
+            "configFixup": [
+              {
+                "name": "questionId",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "sequenceNodeKey",
+                  "type": "ref"
+                }
+              },
+              {
+                "name": "maxAttempts",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "maxAttempts",
+                  "type": "ref"
+                }
+              }
+            ]
+          }
+        ],
+        "hookupActions": [
+          {
+            "description": "Hookup the submit manager to evaluate answers",
+            "methodName": "handleRequestsFrom",
+            "type": "method-call",
+            "args": [
+              {
+                "domain": "brix",
+                "refId": "q1",
+                "type": "ref"
+              }
+            ],
+            "instance": {
+              "type": "submit-manager"
+            }
+          },
+          {
+            "description": "Draw the question",
+            "methodName": "draw",
+            "type": "method-call",
+            "args": [
+              {
+                "selector": "#target1",
+                "type": "d3select"
+              }
+            ],
+            "instance": {
+              "domain": "brix",
+              "refId": "q1",
+              "type": "ref"
+            }
+          }
+        ]
+      }
+    ],
+    "title": "CE 19 21"
+  }
+}

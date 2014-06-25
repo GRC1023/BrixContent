@@ -1,0 +1,184 @@
+{
+  "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope",
+  "@type": "Envelope",
+  "metadata": {
+    "bookTitle": "Sociology: A Down-to-Earth Approach",
+    "keywords": [
+      "Henslin 12e",
+      "ch 02",
+      "Rudowski"
+    ],
+    "extendedMetadata": [
+      {
+        "name": "ISBN",
+        "value": "0133795004"
+      },
+      {
+        "name": "M",
+        "value": "c01"
+      },
+      {
+        "name": "assessment_title",
+        "value": "Chapter Quiz: Culture"
+      },
+      {
+        "name": "Topic",
+        "value": "Components of Symbolic Culture"
+      },
+      {
+        "name": "chapterTitle",
+        "value": "Culture"
+      },
+      {
+        "name": "item_title",
+        "value": "0133795004_James M. Henslin_ch02_c01_q0003"
+      },
+      {
+        "name": "questionlayout",
+        "value": "1"
+      },
+      {
+        "name": "CH",
+        "value": "2"
+      },
+      {
+        "name": "shuffle_choices",
+        "value": "Yes"
+      }
+    ],
+    "subject": [
+      "Sociology"
+    ],
+    "contentTypeTier2": [
+      "AssessmentItem"
+    ],
+    "contentTypeTier1": "Assessment",
+    "format": [
+      "application/vnd.pearson.sanvan.v1.activity"
+    ],
+    "version": "1.0",
+    "guid": "af516b76-942f-4dc4-a683-31b507a1341d",
+    "bookAuthor": "James M. Henslin",
+    "title": "CE 02 23",
+    "educationalAlignment": [
+      "http://purl.org/pearson/objectives/183725473384362"
+    ]
+  },
+  "body": {
+    "description": "CE_02_23",
+    "containerConfig": [
+      {
+        "description": "CE_02_23",
+        "containerId": "target1",
+        "brixConfig": [
+          {
+            "bricId": "q1",
+            "bricType": "MultipleChoiceQuestion",
+            "config": {
+              "id": "QUE58889",
+              "question": "Violators of cultural taboos in the United States most likely would be sanctioned with __________.\n\u003cbr /\u003e",
+              "order": "randomized",
+              "presenterType": "RadioGroup",
+              "presenterConfig": {
+                "numberFormat": "none"
+              },
+              "choices": [
+                {
+                  "answerKey": "answer_1",
+                  "content": "very high fines"
+                },
+                {
+                  "answerKey": "answer_2",
+                  "content": "smiles and hugs"
+                },
+                {
+                  "answerKey": "answer_3",
+                  "content": "imprisonment"
+                },
+                {
+                  "answerKey": "answer_4",
+                  "content": "frowns and harsh words"
+                }
+              ]
+            },
+            "answerKey": {
+              "assessmentType": "multiplechoice",
+              "answers": {
+                "answer_3": {
+                  "score": 1.0,
+                  "response": "That’s correct!"
+                },
+                "answer_2": {
+                  "score": 0.0,
+                  "response": "sider this: Taboos are norms so strong that they often bring revulsion if violated; not smiles, hugs or other positive sanctions. LO 2.2 Know the components of symbolic culture: gestures, language, values, norms, sanctions, folkways, mores, and taboos; also explain the Sapir-Whorf hypothesis."
+                },
+                "answer_1": {
+                  "score": 0.0,
+                  "response": "sider this: Taboos are norms so strong that they often bring revulsion if violated. Therefore, one would likely suffer more than fines if violating a taboo. LO 2.2 Know the components of symbolic culture: gestures, language, values, norms, sanctions, folkways, mores, and taboos; also explain the Sapir-Whorf hypothesis."
+                },
+                "answer_4": {
+                  "score": 0.0,
+                  "response": "sider this: Taboos are norms so strong that they often bring revulsion if violated. Therefore, one would likely suffer more than frowns and harsh words if violating a taboo. LO 2.2 Know the components of symbolic culture: gestures, language, values, norms, sanctions, folkways, mores, and taboos; also explain the Sapir-Whorf hypothesis."
+                }
+              }
+            },
+            "configFixup": [
+              {
+                "name": "questionId",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "sequenceNodeKey",
+                  "type": "ref"
+                }
+              },
+              {
+                "name": "maxAttempts",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "maxAttempts",
+                  "type": "ref"
+                }
+              }
+            ]
+          }
+        ],
+        "hookupActions": [
+          {
+            "description": "Hookup the submit manager to evaluate answers",
+            "methodName": "handleRequestsFrom",
+            "type": "method-call",
+            "args": [
+              {
+                "domain": "brix",
+                "refId": "q1",
+                "type": "ref"
+              }
+            ],
+            "instance": {
+              "type": "submit-manager"
+            }
+          },
+          {
+            "description": "Draw the question",
+            "methodName": "draw",
+            "type": "method-call",
+            "args": [
+              {
+                "selector": "#target1",
+                "type": "d3select"
+              }
+            ],
+            "instance": {
+              "domain": "brix",
+              "refId": "q1",
+              "type": "ref"
+            }
+          }
+        ]
+      }
+    ],
+    "title": "CE 02 23"
+  }
+}

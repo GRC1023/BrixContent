@@ -1,0 +1,184 @@
+{
+  "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope",
+  "@type": "Envelope",
+  "metadata": {
+    "bookTitle": "Sociology: A Down-to-Earth Approach",
+    "keywords": [
+      "Henslin 12e",
+      "ch 16",
+      "Rudowski"
+    ],
+    "extendedMetadata": [
+      {
+        "name": "ISBN",
+        "value": "0133795004"
+      },
+      {
+        "name": "M",
+        "value": "c01"
+      },
+      {
+        "name": "assessment_title",
+        "value": "Chapter Quiz: Marriage and Family"
+      },
+      {
+        "name": "Topic",
+        "value": "The Family Life Cycle"
+      },
+      {
+        "name": "chapterTitle",
+        "value": "Marriage and Family"
+      },
+      {
+        "name": "item_title",
+        "value": "0133795004_James M. Henslin_ch16_c01_q0003"
+      },
+      {
+        "name": "CH",
+        "value": "16"
+      },
+      {
+        "name": "Objective",
+        "value": "LO: 16.3: Summarize research on love and courtship, marriage, childbirth, child rearing, and family transitions."
+      },
+      {
+        "name": "shuffle_choices",
+        "value": "Yes"
+      }
+    ],
+    "subject": [
+      "Sociology"
+    ],
+    "contentTypeTier2": [
+      "AssessmentItem"
+    ],
+    "contentTypeTier1": "Assessment",
+    "format": [
+      "application/vnd.pearson.sanvan.v1.activity"
+    ],
+    "version": "1.0",
+    "guid": "36fd4831-debe-4c34-beec-3e07af2c51e4",
+    "bookAuthor": "James M. Henslin",
+    "title": "CE 16 18",
+    "educationalAlignment": [
+      "http://purl.org/pearson/objectives/183725473384362"
+    ]
+  },
+  "body": {
+    "description": "CE_16_18",
+    "containerConfig": [
+      {
+        "description": "CE_16_18",
+        "containerId": "target1",
+        "brixConfig": [
+          {
+            "bricId": "q1",
+            "bricType": "MultipleChoiceQuestion",
+            "config": {
+              "id": "QUE59315",
+              "question": "Gabby is opening a day care facility. What two things should she focus on to help ensure her center offers high-quality care?\n\u003cbr /\u003e",
+              "order": "randomized",
+              "presenterType": "RadioGroup",
+              "presenterConfig": {
+                "numberFormat": "none"
+              },
+              "choices": [
+                {
+                  "answerKey": "answer_1",
+                  "content": "Keeping the child-to-staff ratio low; developing an intensive daily curriculum"
+                },
+                {
+                  "answerKey": "answer_2",
+                  "content": "Developing an intensive daily curriculum; providing clear communication lines with parents and caregivers"
+                },
+                {
+                  "answerKey": "answer_3",
+                  "content": "Hiring staff with a background in early childhood development education; developing an intensive daily curriculum"
+                },
+                {
+                  "answerKey": "answer_4",
+                  "content": "Hiring staff with a background in early childhood development education; keeping the child-to-staff ratio low"
+                }
+              ]
+            },
+            "answerKey": {
+              "assessmentType": "multiplechoice",
+              "answers": {
+                "answer_3": {
+                  "score": 0.0,
+                  "response": "sider this: only a minority of U.S. daycare centers provides high-quality care. LO 16.3 Summarize research on love and courtship, marriage, childbirth, child rearing, and family transitions."
+                },
+                "answer_2": {
+                  "score": 0.0,
+                  "response": "sider this: only a minority of U.S. daycare centers provides high-quality care. LO 16.3 Summarize research on love and courtship, marriage, childbirth, child rearing, and family transitions."
+                },
+                "answer_1": {
+                  "score": 0.0,
+                  "response": "sider this: only a minority of U.S. daycare centers provides high-quality care. LO 16.3 Summarize research on love and courtship, marriage, childbirth, child rearing, and family transitions."
+                },
+                "answer_4": {
+                  "score": 1.0,
+                  "response": "That’s correct!"
+                }
+              }
+            },
+            "configFixup": [
+              {
+                "name": "questionId",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "sequenceNodeKey",
+                  "type": "ref"
+                }
+              },
+              {
+                "name": "maxAttempts",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "maxAttempts",
+                  "type": "ref"
+                }
+              }
+            ]
+          }
+        ],
+        "hookupActions": [
+          {
+            "description": "Hookup the submit manager to evaluate answers",
+            "methodName": "handleRequestsFrom",
+            "type": "method-call",
+            "args": [
+              {
+                "domain": "brix",
+                "refId": "q1",
+                "type": "ref"
+              }
+            ],
+            "instance": {
+              "type": "submit-manager"
+            }
+          },
+          {
+            "description": "Draw the question",
+            "methodName": "draw",
+            "type": "method-call",
+            "args": [
+              {
+                "selector": "#target1",
+                "type": "d3select"
+              }
+            ],
+            "instance": {
+              "domain": "brix",
+              "refId": "q1",
+              "type": "ref"
+            }
+          }
+        ]
+      }
+    ],
+    "title": "CE 16 18"
+  }
+}

@@ -1,0 +1,184 @@
+{
+  "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope",
+  "@type": "Envelope",
+  "metadata": {
+    "bookTitle": "Sociology: A Down-to-Earth Approach",
+    "keywords": [
+      "Henslin 12e",
+      "ch 22",
+      "Rudowski"
+    ],
+    "extendedMetadata": [
+      {
+        "name": "ISBN",
+        "value": "0133795004"
+      },
+      {
+        "name": "M",
+        "value": "c01"
+      },
+      {
+        "name": "assessment_title",
+        "value": "Chapter Quiz: Social Change and the Environment"
+      },
+      {
+        "name": "Topic",
+        "value": "How Social Change Transforms Social Life"
+      },
+      {
+        "name": "chapterTitle",
+        "value": "Social Change and the Environment"
+      },
+      {
+        "name": "item_title",
+        "value": "0133795004_James M. Henslin_ch22_c01_q0010"
+      },
+      {
+        "name": "CH",
+        "value": "22"
+      },
+      {
+        "name": "Objective",
+        "value": "LO: 22.1: Summarize how social change transforms society; include the four social revolutions, Gemeinschaft and Gesellschaft, capitalism, social movements, and global politics."
+      },
+      {
+        "name": "shuffle_choices",
+        "value": "Yes"
+      }
+    ],
+    "subject": [
+      "Sociology"
+    ],
+    "contentTypeTier2": [
+      "AssessmentItem"
+    ],
+    "contentTypeTier1": "Assessment",
+    "format": [
+      "application/vnd.pearson.sanvan.v1.activity"
+    ],
+    "version": "1.0",
+    "guid": "aa76d357-0557-4e2e-878b-9d4d213f37c5",
+    "bookAuthor": "James M. Henslin",
+    "title": "CE 22 02",
+    "educationalAlignment": [
+      "http://purl.org/pearson/objectives/183725473384362"
+    ]
+  },
+  "body": {
+    "description": "CE_22_02",
+    "containerConfig": [
+      {
+        "description": "CE_22_02",
+        "containerId": "target1",
+        "brixConfig": [
+          {
+            "bricId": "q1",
+            "bricType": "MultipleChoiceQuestion",
+            "config": {
+              "id": "QUE59792",
+              "question": "Which of the following four social revolutions are we currently living through?\n\u003cbr /\u003e",
+              "order": "randomized",
+              "presenterType": "RadioGroup",
+              "presenterConfig": {
+                "numberFormat": "none"
+              },
+              "choices": [
+                {
+                  "answerKey": "answer_1",
+                  "content": "The invention of the plow"
+                },
+                {
+                  "answerKey": "answer_2",
+                  "content": "The invention of the steam engine"
+                },
+                {
+                  "answerKey": "answer_3",
+                  "content": "The domestication of plants and animals"
+                },
+                {
+                  "answerKey": "answer_4",
+                  "content": "The invention of the microchip"
+                }
+              ]
+            },
+            "answerKey": {
+              "assessmentType": "multiplechoice",
+              "answers": {
+                "answer_3": {
+                  "score": 0.0,
+                  "response": "sider this: think about when each social revolution took place. LO 22.1 Summarize how social change transforms society; include the four social revolutions, Gemeinschaft and Gesellschaft, capitalism, social movements, and global politics."
+                },
+                "answer_2": {
+                  "score": 0.0,
+                  "response": "sider this: think about when each social revolution took place. LO 22.1 Summarize how social change transforms society; include the four social revolutions, Gemeinschaft and Gesellschaft, capitalism, social movements, and global politics."
+                },
+                "answer_1": {
+                  "score": 0.0,
+                  "response": "sider this: think about when each social revolution took place. LO 22.1 Summarize how social change transforms society; include the four social revolutions, Gemeinschaft and Gesellschaft, capitalism, social movements, and global politics."
+                },
+                "answer_4": {
+                  "score": 1.0,
+                  "response": "That’s correct!"
+                }
+              }
+            },
+            "configFixup": [
+              {
+                "name": "questionId",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "sequenceNodeKey",
+                  "type": "ref"
+                }
+              },
+              {
+                "name": "maxAttempts",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "maxAttempts",
+                  "type": "ref"
+                }
+              }
+            ]
+          }
+        ],
+        "hookupActions": [
+          {
+            "description": "Hookup the submit manager to evaluate answers",
+            "methodName": "handleRequestsFrom",
+            "type": "method-call",
+            "args": [
+              {
+                "domain": "brix",
+                "refId": "q1",
+                "type": "ref"
+              }
+            ],
+            "instance": {
+              "type": "submit-manager"
+            }
+          },
+          {
+            "description": "Draw the question",
+            "methodName": "draw",
+            "type": "method-call",
+            "args": [
+              {
+                "selector": "#target1",
+                "type": "d3select"
+              }
+            ],
+            "instance": {
+              "domain": "brix",
+              "refId": "q1",
+              "type": "ref"
+            }
+          }
+        ]
+      }
+    ],
+    "title": "CE 22 02"
+  }
+}

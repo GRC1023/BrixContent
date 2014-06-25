@@ -1,0 +1,188 @@
+{
+  "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope",
+  "@type": "Envelope",
+  "metadata": {
+    "bookTitle": "Sociology: A Down-to-Earth Approach",
+    "keywords": [
+      "Henslin 12e",
+      "ch 16",
+      "Rudowski"
+    ],
+    "extendedMetadata": [
+      {
+        "name": "ISBN",
+        "value": "0133795004"
+      },
+      {
+        "name": "M",
+        "value": "m02"
+      },
+      {
+        "name": "assessment_title",
+        "value": "Quiz: Marriage and Family in Theoretical Perspective"
+      },
+      {
+        "name": "Topic",
+        "value": "Marriage and Family in Theoretical Perspective"
+      },
+      {
+        "name": "chapterTitle",
+        "value": "Marriage and Family"
+      },
+      {
+        "name": "module",
+        "value": "Marriage and Family in Theoretical Perspective"
+      },
+      {
+        "name": "item_title",
+        "value": "0133795004_James M. Henslin_ch16_m02_q0002"
+      },
+      {
+        "name": "CH",
+        "value": "16"
+      },
+      {
+        "name": "Objective",
+        "value": "LO: 16.2: Contrast the functionalist, conflict, and symbolic interactionist perspectives on marriage and family."
+      },
+      {
+        "name": "shuffle_choices",
+        "value": "Yes"
+      }
+    ],
+    "subject": [
+      "Sociology"
+    ],
+    "contentTypeTier2": [
+      "AssessmentItem"
+    ],
+    "contentTypeTier1": "Assessment",
+    "format": [
+      "application/vnd.pearson.sanvan.v1.activity"
+    ],
+    "version": "1.0",
+    "guid": "7433a1c6-cddc-4d5d-9fbd-67537c7b24f8",
+    "bookAuthor": "James M. Henslin",
+    "title": "POST 16 24",
+    "educationalAlignment": [
+      "http://purl.org/pearson/objectives/183725473384362"
+    ]
+  },
+  "body": {
+    "description": "POST_16_24",
+    "containerConfig": [
+      {
+        "description": "POST_16_24",
+        "containerId": "target1",
+        "brixConfig": [
+          {
+            "bricId": "q1",
+            "bricType": "MultipleChoiceQuestion",
+            "config": {
+              "id": "QUE59346",
+              "question": "Why is the number of hours per week that U.S. husbands currently do housework significant?\n\u003cbr /\u003e",
+              "order": "randomized",
+              "presenterType": "RadioGroup",
+              "presenterConfig": {
+                "numberFormat": "none"
+              },
+              "choices": [
+                {
+                  "answerKey": "answer_1",
+                  "content": "Because it shows that men are becoming more compassionate and sensitive and are socialized to be more like women."
+                },
+                {
+                  "answerKey": "answer_2",
+                  "content": "Because it shows that more men are working in the home rather than outside it, gradually leaving the workforce."
+                },
+                {
+                  "answerKey": "answer_3",
+                  "content": "Because it shows that men are taking more responsibility for maintaining their relationships, and they are more concerned about pleasing their wives."
+                },
+                {
+                  "answerKey": "answer_4",
+                  "content": "Because it represents a change in traditional gender roles, and gendered labor division is becoming more equal."
+                }
+              ]
+            },
+            "answerKey": {
+              "assessmentType": "multiplechoice",
+              "answers": {
+                "answer_3": {
+                  "score": 0.0,
+                  "response": ""
+                },
+                "answer_2": {
+                  "score": 0.0,
+                  "response": ""
+                },
+                "answer_1": {
+                  "score": 0.0,
+                  "response": ""
+                },
+                "answer_4": {
+                  "score": 1.0,
+                  "response": ""
+                }
+              }
+            },
+            "configFixup": [
+              {
+                "name": "questionId",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "sequenceNodeKey",
+                  "type": "ref"
+                }
+              },
+              {
+                "name": "maxAttempts",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "maxAttempts",
+                  "type": "ref"
+                }
+              }
+            ]
+          }
+        ],
+        "hookupActions": [
+          {
+            "description": "Hookup the submit manager to evaluate answers",
+            "methodName": "handleRequestsFrom",
+            "type": "method-call",
+            "args": [
+              {
+                "domain": "brix",
+                "refId": "q1",
+                "type": "ref"
+              }
+            ],
+            "instance": {
+              "type": "submit-manager"
+            }
+          },
+          {
+            "description": "Draw the question",
+            "methodName": "draw",
+            "type": "method-call",
+            "args": [
+              {
+                "selector": "#target1",
+                "type": "d3select"
+              }
+            ],
+            "instance": {
+              "domain": "brix",
+              "refId": "q1",
+              "type": "ref"
+            }
+          }
+        ]
+      }
+    ],
+    "title": "POST 16 24"
+  }
+}

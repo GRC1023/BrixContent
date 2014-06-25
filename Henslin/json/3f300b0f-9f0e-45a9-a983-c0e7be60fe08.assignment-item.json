@@ -1,0 +1,184 @@
+{
+  "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope",
+  "@type": "Envelope",
+  "metadata": {
+    "bookTitle": "Sociology: A Down-to-Earth Approach",
+    "keywords": [
+      "Henslin 12e",
+      "ch 01",
+      "Rudowski"
+    ],
+    "extendedMetadata": [
+      {
+        "name": "ISBN",
+        "value": "0133795004"
+      },
+      {
+        "name": "M",
+        "value": "c01"
+      },
+      {
+        "name": "assessment_title",
+        "value": "Chapter Quiz: The Sociological Perspective"
+      },
+      {
+        "name": "Topic",
+        "value": "Origins of Sociology"
+      },
+      {
+        "name": "chapterTitle",
+        "value": "The Sociological Perspective"
+      },
+      {
+        "name": "item_title",
+        "value": "0133795004_James M. Henslin_ch01_c01_q0001"
+      },
+      {
+        "name": "questionlayout",
+        "value": "1"
+      },
+      {
+        "name": "CH",
+        "value": "1"
+      },
+      {
+        "name": "shuffle_choices",
+        "value": "Yes"
+      }
+    ],
+    "subject": [
+      "Sociology"
+    ],
+    "contentTypeTier2": [
+      "AssessmentItem"
+    ],
+    "contentTypeTier1": "Assessment",
+    "format": [
+      "application/vnd.pearson.sanvan.v1.activity"
+    ],
+    "version": "1.0",
+    "guid": "3f300b0f-9f0e-45a9-a983-c0e7be60fe08",
+    "bookAuthor": "James M. Henslin",
+    "title": "CE 01 05",
+    "educationalAlignment": [
+      "http://purl.org/pearson/objectives/183725473384362"
+    ]
+  },
+  "body": {
+    "description": "CE_01_05",
+    "containerConfig": [
+      {
+        "description": "CE_01_05",
+        "containerId": "target1",
+        "brixConfig": [
+          {
+            "bricId": "q1",
+            "bricType": "MultipleChoiceQuestion",
+            "config": {
+              "id": "QUE58835",
+              "question": "Which of the following best defines positivism?\n\u003cbr /\u003e",
+              "order": "randomized",
+              "presenterType": "RadioGroup",
+              "presenterConfig": {
+                "numberFormat": "none"
+              },
+              "choices": [
+                {
+                  "answerKey": "answer_1",
+                  "content": "Supporting social equality for women and men"
+                },
+                {
+                  "answerKey": "answer_2",
+                  "content": "Using the scientific method to study the social world"
+                },
+                {
+                  "answerKey": "answer_3",
+                  "content": "Comparing society to the human body"
+                },
+                {
+                  "answerKey": "answer_4",
+                  "content": "Valuing the harmonious operation of society"
+                }
+              ]
+            },
+            "answerKey": {
+              "assessmentType": "multiplechoice",
+              "answers": {
+                "answer_3": {
+                  "score": 0.0,
+                  "response": "sider this: Functionalism, one of the main theoretical perspectives in sociology is often explained using the analogy of the human body as an organism. Organisms have many parts that fulfill different functions. In order for the whole system to function smoothly each part must fulfill its function. LO 1.3 Trace the origins of sociology, from tradition to Max Weber."
+                },
+                "answer_2": {
+                  "score": 1.0,
+                  "response": "That’s correct!"
+                },
+                "answer_1": {
+                  "score": 0.0,
+                  "response": "sider this: While sociologists support equality for men and women, before we were able to make large strides in that direction we first had to understand social inequality. Applying the scientific method of study to the social world allowed us a new means of understanding the inequalities that existed. LO 1.3 Trace the origins of sociology, from tradition to Max Weber."
+                },
+                "answer_4": {
+                  "score": 0.0,
+                  "response": "sider this: August Comte first suggesting applying the scientific method to understanding how society operates. This application is known as positivism. LO 1.3 Trace the origins of sociology, from tradition to Max Weber."
+                }
+              }
+            },
+            "configFixup": [
+              {
+                "name": "questionId",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "sequenceNodeKey",
+                  "type": "ref"
+                }
+              },
+              {
+                "name": "maxAttempts",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "maxAttempts",
+                  "type": "ref"
+                }
+              }
+            ]
+          }
+        ],
+        "hookupActions": [
+          {
+            "description": "Hookup the submit manager to evaluate answers",
+            "methodName": "handleRequestsFrom",
+            "type": "method-call",
+            "args": [
+              {
+                "domain": "brix",
+                "refId": "q1",
+                "type": "ref"
+              }
+            ],
+            "instance": {
+              "type": "submit-manager"
+            }
+          },
+          {
+            "description": "Draw the question",
+            "methodName": "draw",
+            "type": "method-call",
+            "args": [
+              {
+                "selector": "#target1",
+                "type": "d3select"
+              }
+            ],
+            "instance": {
+              "domain": "brix",
+              "refId": "q1",
+              "type": "ref"
+            }
+          }
+        ]
+      }
+    ],
+    "title": "CE 01 05"
+  }
+}

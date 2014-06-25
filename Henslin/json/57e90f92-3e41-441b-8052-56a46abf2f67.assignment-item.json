@@ -1,0 +1,184 @@
+{
+  "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope",
+  "@type": "Envelope",
+  "metadata": {
+    "bookTitle": "Sociology: A Down-to-Earth Approach",
+    "keywords": [
+      "Henslin 12e",
+      "ch 17",
+      "Rudowski"
+    ],
+    "extendedMetadata": [
+      {
+        "name": "ISBN",
+        "value": "0133795004"
+      },
+      {
+        "name": "M",
+        "value": "c01"
+      },
+      {
+        "name": "assessment_title",
+        "value": "Chapter Quiz: Education"
+      },
+      {
+        "name": "Topic",
+        "value": "The Functionalist Perspective: Providing Social Benefits"
+      },
+      {
+        "name": "chapterTitle",
+        "value": "Education"
+      },
+      {
+        "name": "item_title",
+        "value": "0133795004_James M. Henslin_ch17_c01_q0001"
+      },
+      {
+        "name": "CH",
+        "value": "17"
+      },
+      {
+        "name": "Objective",
+        "value": "LO: 17.3: Explain the functions of education: knowledge and skills, values, social integration, gatekeeping, and replacing family functions."
+      },
+      {
+        "name": "shuffle_choices",
+        "value": "Yes"
+      }
+    ],
+    "subject": [
+      "Sociology"
+    ],
+    "contentTypeTier2": [
+      "AssessmentItem"
+    ],
+    "contentTypeTier1": "Assessment",
+    "format": [
+      "application/vnd.pearson.sanvan.v1.activity"
+    ],
+    "version": "1.0",
+    "guid": "57e90f92-3e41-441b-8052-56a46abf2f67",
+    "bookAuthor": "James M. Henslin",
+    "title": "POST 17 13",
+    "educationalAlignment": [
+      "http://purl.org/pearson/objectives/183725473384362"
+    ]
+  },
+  "body": {
+    "description": "POST_17_13",
+    "containerConfig": [
+      {
+        "description": "POST_17_13",
+        "containerId": "target1",
+        "brixConfig": [
+          {
+            "bricId": "q1",
+            "bricType": "MultipleChoiceQuestion",
+            "config": {
+              "id": "QUE59437",
+              "question": "Which of the following statements best represents the functionalist perspective on education?\n\u003cbr /\u003e",
+              "order": "randomized",
+              "presenterType": "RadioGroup",
+              "presenterConfig": {
+                "numberFormat": "none"
+              },
+              "choices": [
+                {
+                  "answerKey": "answer_1",
+                  "content": "Schools bring about social integration."
+                },
+                {
+                  "answerKey": "answer_2",
+                  "content": "Schools emphasize and promote the idea that immigrants retain a great part of their national and cultural identities as they become Americans."
+                },
+                {
+                  "answerKey": "answer_3",
+                  "content": "The practice of mainstreaming is dysfunctional for society."
+                },
+                {
+                  "answerKey": "answer_4",
+                  "content": "Formal education is no longer a strong avenue for cultural transmission now that the mass media serves that purpose."
+                }
+              ]
+            },
+            "answerKey": {
+              "assessmentType": "multiplechoice",
+              "answers": {
+                "answer_3": {
+                  "score": 0.0,
+                  "response": "sider this: that a central position of functionalism is that when the parts of a society are working properly, each contributes to the well-being or stability of that society. LO 17.3 Explain the functions of education: knowledge and skills, values, social integration, gatekeeping, and replacing family functions."
+                },
+                "answer_2": {
+                  "score": 0.0,
+                  "response": "sider this: that a central position of functionalism is that when the parts of a society are working properly, each contributes to the well-being or stability of that society. LO 17.3 Explain the functions of education: knowledge and skills, values, social integration, gatekeeping, and replacing family functions."
+                },
+                "answer_1": {
+                  "score": 1.0,
+                  "response": "That’s correct!"
+                },
+                "answer_4": {
+                  "score": 0.0,
+                  "response": "sider this: that a central position of functionalism is that when the parts of a society are working properly, each contributes to the well-being or stability of that society. LO 17.3 Explain the functions of education: knowledge and skills, values, social integration, gatekeeping, and replacing family functions."
+                }
+              }
+            },
+            "configFixup": [
+              {
+                "name": "questionId",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "sequenceNodeKey",
+                  "type": "ref"
+                }
+              },
+              {
+                "name": "maxAttempts",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "maxAttempts",
+                  "type": "ref"
+                }
+              }
+            ]
+          }
+        ],
+        "hookupActions": [
+          {
+            "description": "Hookup the submit manager to evaluate answers",
+            "methodName": "handleRequestsFrom",
+            "type": "method-call",
+            "args": [
+              {
+                "domain": "brix",
+                "refId": "q1",
+                "type": "ref"
+              }
+            ],
+            "instance": {
+              "type": "submit-manager"
+            }
+          },
+          {
+            "description": "Draw the question",
+            "methodName": "draw",
+            "type": "method-call",
+            "args": [
+              {
+                "selector": "#target1",
+                "type": "d3select"
+              }
+            ],
+            "instance": {
+              "domain": "brix",
+              "refId": "q1",
+              "type": "ref"
+            }
+          }
+        ]
+      }
+    ],
+    "title": "POST 17 13"
+  }
+}

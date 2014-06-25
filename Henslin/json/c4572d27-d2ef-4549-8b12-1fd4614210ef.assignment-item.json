@@ -1,0 +1,188 @@
+{
+  "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope",
+  "@type": "Envelope",
+  "metadata": {
+    "bookTitle": "Sociology: A Down-to-Earth Approach",
+    "keywords": [
+      "Henslin 12e",
+      "ch 07",
+      "Rudowski"
+    ],
+    "extendedMetadata": [
+      {
+        "name": "ISBN",
+        "value": "0133795004"
+      },
+      {
+        "name": "M",
+        "value": "c01"
+      },
+      {
+        "name": "assessment_title",
+        "value": "Chapter Quiz: Bureaucracy and Formal Organizations"
+      },
+      {
+        "name": "Topic",
+        "value": "The Rationalization of Society"
+      },
+      {
+        "name": "chapterTitle",
+        "value": "Bureaucracy and Formal Organizations"
+      },
+      {
+        "name": "item_title",
+        "value": "0133795004_James M. Henslin_ch07_c01_q0001"
+      },
+      {
+        "name": "questionlayout",
+        "value": "1"
+      },
+      {
+        "name": "CH",
+        "value": "7"
+      },
+      {
+        "name": "Objective",
+        "value": "LO: 7.1: Compare the explanations of Marx and Weber for why traditional societies rationalized."
+      },
+      {
+        "name": "shuffle_choices",
+        "value": "Yes"
+      }
+    ],
+    "subject": [
+      "Sociology"
+    ],
+    "contentTypeTier2": [
+      "AssessmentItem"
+    ],
+    "contentTypeTier1": "Assessment",
+    "format": [
+      "application/vnd.pearson.sanvan.v1.activity"
+    ],
+    "version": "1.0",
+    "guid": "c4572d27-d2ef-4549-8b12-1fd4614210ef",
+    "bookAuthor": "James M. Henslin",
+    "title": "CE 07 02",
+    "educationalAlignment": [
+      "http://purl.org/pearson/objectives/183725473384362"
+    ]
+  },
+  "body": {
+    "description": "CE_07_02",
+    "containerConfig": [
+      {
+        "description": "CE_07_02",
+        "containerId": "target1",
+        "brixConfig": [
+          {
+            "bricId": "q1",
+            "bricType": "MultipleChoiceQuestion",
+            "config": {
+              "id": "QUE59099",
+              "question": "Which kind of society is considered nontraditional, or rational?\n\u003cbr /\u003e",
+              "order": "randomized",
+              "presenterType": "RadioGroup",
+              "presenterConfig": {
+                "numberFormat": "none"
+              },
+              "choices": [
+                {
+                  "answerKey": "answer_1",
+                  "content": "Horticultural"
+                },
+                {
+                  "answerKey": "answer_2",
+                  "content": "Industrial"
+                },
+                {
+                  "answerKey": "answer_3",
+                  "content": "Agricultural"
+                },
+                {
+                  "answerKey": "answer_4",
+                  "content": "Pastoral"
+                }
+              ]
+            },
+            "answerKey": {
+              "assessmentType": "multiplechoice",
+              "answers": {
+                "answer_3": {
+                  "score": 0.0,
+                  "response": "sider this: The rationalization of society has led to bureaucracies dominating social life. LO 7.1 Compare the explanations of Marx and Weber for why traditional societies rationalized."
+                },
+                "answer_2": {
+                  "score": 1.0,
+                  "response": "That’s correct!"
+                },
+                "answer_1": {
+                  "score": 0.0,
+                  "response": "sider this: The rationalization of society has led to bureaucracies dominating social life. LO 7.1 Compare the explanations of Marx and Weber for why traditional societies rationalized."
+                },
+                "answer_4": {
+                  "score": 0.0,
+                  "response": "sider this: The rationalization of society has led to bureaucracies dominating social life. LO 7.1 Compare the explanations of Marx and Weber for why traditional societies rationalized."
+                }
+              }
+            },
+            "configFixup": [
+              {
+                "name": "questionId",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "sequenceNodeKey",
+                  "type": "ref"
+                }
+              },
+              {
+                "name": "maxAttempts",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "maxAttempts",
+                  "type": "ref"
+                }
+              }
+            ]
+          }
+        ],
+        "hookupActions": [
+          {
+            "description": "Hookup the submit manager to evaluate answers",
+            "methodName": "handleRequestsFrom",
+            "type": "method-call",
+            "args": [
+              {
+                "domain": "brix",
+                "refId": "q1",
+                "type": "ref"
+              }
+            ],
+            "instance": {
+              "type": "submit-manager"
+            }
+          },
+          {
+            "description": "Draw the question",
+            "methodName": "draw",
+            "type": "method-call",
+            "args": [
+              {
+                "selector": "#target1",
+                "type": "d3select"
+              }
+            ],
+            "instance": {
+              "domain": "brix",
+              "refId": "q1",
+              "type": "ref"
+            }
+          }
+        ]
+      }
+    ],
+    "title": "CE 07 02"
+  }
+}

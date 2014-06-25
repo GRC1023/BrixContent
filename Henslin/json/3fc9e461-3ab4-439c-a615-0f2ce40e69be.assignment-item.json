@@ -1,0 +1,188 @@
+{
+  "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope",
+  "@type": "Envelope",
+  "metadata": {
+    "bookTitle": "Sociology: A Down-to-Earth Approach",
+    "keywords": [
+      "Henslin 12e",
+      "ch 15",
+      "Rudowski"
+    ],
+    "extendedMetadata": [
+      {
+        "name": "ISBN",
+        "value": "0133795004"
+      },
+      {
+        "name": "M",
+        "value": "c01"
+      },
+      {
+        "name": "assessment_title",
+        "value": "Chapter Quiz: Politics"
+      },
+      {
+        "name": "Topic",
+        "value": "The U. S. Political System"
+      },
+      {
+        "name": "chapterTitle",
+        "value": "Politics"
+      },
+      {
+        "name": "item_title",
+        "value": "0133795004_James M. Henslin_ch15_c01_q0003"
+      },
+      {
+        "name": "questionlayout",
+        "value": "1"
+      },
+      {
+        "name": "CH",
+        "value": "15"
+      },
+      {
+        "name": "Objective",
+        "value": "LO: 15.4, : Compare the U.S. political system with other democratic systems; discuss voting patterns, lobbyists, and PACs."
+      },
+      {
+        "name": "shuffle_choices",
+        "value": "Yes"
+      }
+    ],
+    "subject": [
+      "Sociology"
+    ],
+    "contentTypeTier2": [
+      "AssessmentItem"
+    ],
+    "contentTypeTier1": "Assessment",
+    "format": [
+      "application/vnd.pearson.sanvan.v1.activity"
+    ],
+    "version": "1.0",
+    "guid": "3fc9e461-3ab4-439c-a615-0f2ce40e69be",
+    "bookAuthor": "James M. Henslin",
+    "title": "CE 15 14",
+    "educationalAlignment": [
+      "http://purl.org/pearson/objectives/183725473384362"
+    ]
+  },
+  "body": {
+    "description": "CE_15_14",
+    "containerConfig": [
+      {
+        "description": "CE_15_14",
+        "containerId": "target1",
+        "brixConfig": [
+          {
+            "bricId": "q1",
+            "bricType": "MultipleChoiceQuestion",
+            "config": {
+              "id": "QUE59629",
+              "question": "Although the Democrats and the Republicans represent somewhat different philosophical principles, __________.\n\u003cbr /\u003e",
+              "order": "randomized",
+              "presenterType": "RadioGroup",
+              "presenterConfig": {
+                "numberFormat": "none"
+              },
+              "choices": [
+                {
+                  "answerKey": "answer_1",
+                  "content": "they virtually never agree on the important principles"
+                },
+                {
+                  "answerKey": "answer_2",
+                  "content": "they both struggle with helping the poor versus the rich"
+                },
+                {
+                  "answerKey": "answer_3",
+                  "content": "it is difficult to distinguish a conservative Democrat from a liberal Republican"
+                },
+                {
+                  "answerKey": "answer_4",
+                  "content": "it is not difficult to distinguish them on ideology"
+                }
+              ]
+            },
+            "answerKey": {
+              "assessmentType": "multiplechoice",
+              "answers": {
+                "answer_3": {
+                  "score": 1.0,
+                  "response": "That’s correct!"
+                },
+                "answer_2": {
+                  "score": 0.0,
+                  "response": "sider this: each party represents slightly different slices of the center. LO 15.4 Compare the U.S. political system with other democratic systems; discuss voting patterns, lobbyists, and PACs."
+                },
+                "answer_1": {
+                  "score": 0.0,
+                  "response": "sider this: each party represents slightly different slices of the center. LO 15.4 Compare the U.S. political system with other democratic systems; discuss voting patterns, lobbyists, and PACs."
+                },
+                "answer_4": {
+                  "score": 0.0,
+                  "response": "sider this: each party represents slightly different slices of the center. LO 15.4 Compare the U.S. political system with other democratic systems; discuss voting patterns, lobbyists, and PACs."
+                }
+              }
+            },
+            "configFixup": [
+              {
+                "name": "questionId",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "sequenceNodeKey",
+                  "type": "ref"
+                }
+              },
+              {
+                "name": "maxAttempts",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "maxAttempts",
+                  "type": "ref"
+                }
+              }
+            ]
+          }
+        ],
+        "hookupActions": [
+          {
+            "description": "Hookup the submit manager to evaluate answers",
+            "methodName": "handleRequestsFrom",
+            "type": "method-call",
+            "args": [
+              {
+                "domain": "brix",
+                "refId": "q1",
+                "type": "ref"
+              }
+            ],
+            "instance": {
+              "type": "submit-manager"
+            }
+          },
+          {
+            "description": "Draw the question",
+            "methodName": "draw",
+            "type": "method-call",
+            "args": [
+              {
+                "selector": "#target1",
+                "type": "d3select"
+              }
+            ],
+            "instance": {
+              "domain": "brix",
+              "refId": "q1",
+              "type": "ref"
+            }
+          }
+        ]
+      }
+    ],
+    "title": "CE 15 14"
+  }
+}

@@ -1,0 +1,188 @@
+{
+  "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope",
+  "@type": "Envelope",
+  "metadata": {
+    "bookTitle": "Sociology: A Down-to-Earth Approach",
+    "keywords": [
+      "Henslin 12e",
+      "ch 19",
+      "Rudowski"
+    ],
+    "extendedMetadata": [
+      {
+        "name": "ISBN",
+        "value": "0133795004"
+      },
+      {
+        "name": "M",
+        "value": "c01"
+      },
+      {
+        "name": "assessment_title",
+        "value": "Chapter Quiz: Medicine and Health"
+      },
+      {
+        "name": "Topic",
+        "value": "Issues in Health Care"
+      },
+      {
+        "name": "chapterTitle",
+        "value": "Medicine and Health"
+      },
+      {
+        "name": "item_title",
+        "value": "0133795004_James M. Henslin_ch19_c01_q0005"
+      },
+      {
+        "name": "questionlayout",
+        "value": "1"
+      },
+      {
+        "name": "CH",
+        "value": "19"
+      },
+      {
+        "name": "Objective",
+        "value": "19.5: Discuss medical care as a right or a commodity, increasing costs, social inequality, lawsuits, incompetence, fraud, conflict of interest, depersonalization, sexism, racism, the medicalization of society, physician assisted suicide, and attempts to reduce cost."
+      },
+      {
+        "name": "shuffle_choices",
+        "value": "Yes"
+      }
+    ],
+    "subject": [
+      "Sociology"
+    ],
+    "contentTypeTier2": [
+      "AssessmentItem"
+    ],
+    "contentTypeTier1": "Assessment",
+    "format": [
+      "application/vnd.pearson.sanvan.v1.activity"
+    ],
+    "version": "1.0",
+    "guid": "a0b27e21-540d-4c96-9362-bad9fd6ec8bb",
+    "bookAuthor": "James M. Henslin",
+    "title": "CE 19 18",
+    "educationalAlignment": [
+      "http://purl.org/pearson/objectives/183725473384362"
+    ]
+  },
+  "body": {
+    "description": "CE_19_18",
+    "containerConfig": [
+      {
+        "description": "CE_19_18",
+        "containerId": "target1",
+        "brixConfig": [
+          {
+            "bricId": "q1",
+            "bricType": "MultipleChoiceQuestion",
+            "config": {
+              "id": "QUE59712",
+              "question": "How many wrong-patient, wrong-side, or wrong-procedure surgeries occur each day in the United States?\n\u003cbr /\u003e",
+              "order": "randomized",
+              "presenterType": "RadioGroup",
+              "presenterConfig": {
+                "numberFormat": "none"
+              },
+              "choices": [
+                {
+                  "answerKey": "answer_1",
+                  "content": "About a dozen"
+                },
+                {
+                  "answerKey": "answer_2",
+                  "content": "Fewer than 5"
+                },
+                {
+                  "answerKey": "answer_3",
+                  "content": "More than two dozen"
+                },
+                {
+                  "answerKey": "answer_4",
+                  "content": "About 20"
+                }
+              ]
+            },
+            "answerKey": {
+              "assessmentType": "multiplechoice",
+              "answers": {
+                "answer_3": {
+                  "score": 0.0,
+                  "response": "sider this: how some hospitals have grown so desperate that before an operation, they require the surgeon to mark the patient’s body where the incision is to be made. Then at that spot, both the surgeon and the patient sign their names in indelible ink. LO 19.5 Discuss medical care as a right or a commodity, increasing costs, social inequality, lawsuits, incompetence, fraud, conflict of interest, depersonalization, sexism, racism, the medicalization of society, physician assisted suicide, and attempts to reduce cost."
+                },
+                "answer_2": {
+                  "score": 0.0,
+                  "response": "sider this: how some hospitals have grown so desperate that before an operation, they require the surgeon to mark the patient’s body where the incision is to be made. Then at that spot, both the surgeon and the patient sign their names in indelible ink. LO 19.5 Discuss medical care as a right or a commodity, increasing costs, social inequality, lawsuits, incompetence, fraud, conflict of interest, depersonalization, sexism, racism, the medicalization of society, physician assisted suicide, and attempts to reduce cost."
+                },
+                "answer_1": {
+                  "score": 1.0,
+                  "response": "That’s correct!"
+                },
+                "answer_4": {
+                  "score": 0.0,
+                  "response": "sider this: how some hospitals have grown so desperate that before an operation, they require the surgeon to mark the patient’s body where the incision is to be made. Then at that spot, both the surgeon and the patient sign their names in indelible ink. LO 19.5 Discuss medical care as a right or a commodity, increasing costs, social inequality, lawsuits, incompetence, fraud, conflict of interest, depersonalization, sexism, racism, the medicalization of society, physician assisted suicide, and attempts to reduce cost."
+                }
+              }
+            },
+            "configFixup": [
+              {
+                "name": "questionId",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "sequenceNodeKey",
+                  "type": "ref"
+                }
+              },
+              {
+                "name": "maxAttempts",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "maxAttempts",
+                  "type": "ref"
+                }
+              }
+            ]
+          }
+        ],
+        "hookupActions": [
+          {
+            "description": "Hookup the submit manager to evaluate answers",
+            "methodName": "handleRequestsFrom",
+            "type": "method-call",
+            "args": [
+              {
+                "domain": "brix",
+                "refId": "q1",
+                "type": "ref"
+              }
+            ],
+            "instance": {
+              "type": "submit-manager"
+            }
+          },
+          {
+            "description": "Draw the question",
+            "methodName": "draw",
+            "type": "method-call",
+            "args": [
+              {
+                "selector": "#target1",
+                "type": "d3select"
+              }
+            ],
+            "instance": {
+              "domain": "brix",
+              "refId": "q1",
+              "type": "ref"
+            }
+          }
+        ]
+      }
+    ],
+    "title": "CE 19 18"
+  }
+}

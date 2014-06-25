@@ -1,0 +1,184 @@
+{
+  "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope",
+  "@type": "Envelope",
+  "metadata": {
+    "bookTitle": "Sociology: A Down-to-Earth Approach",
+    "keywords": [
+      "Henslin 12e",
+      "ch 18",
+      "Rudowski"
+    ],
+    "extendedMetadata": [
+      {
+        "name": "ISBN",
+        "value": "0133795004"
+      },
+      {
+        "name": "M",
+        "value": "c01"
+      },
+      {
+        "name": "assessment_title",
+        "value": "Chapter Quiz: Religion"
+      },
+      {
+        "name": "Topic",
+        "value": "The World\u0026amp;rsquo;s Major Religions"
+      },
+      {
+        "name": "chapterTitle",
+        "value": "Religion"
+      },
+      {
+        "name": "item_title",
+        "value": "0133795004_James M. Henslin_ch18_c01_q0009"
+      },
+      {
+        "name": "CH",
+        "value": "18"
+      },
+      {
+        "name": "Objective",
+        "value": "LO: 18.6: Discuss the origins and development of Judaism, Islam, Hinduism, Buddhism, and Confucianism."
+      },
+      {
+        "name": "shuffle_choices",
+        "value": "Yes"
+      }
+    ],
+    "subject": [
+      "Sociology"
+    ],
+    "contentTypeTier2": [
+      "AssessmentItem"
+    ],
+    "contentTypeTier1": "Assessment",
+    "format": [
+      "application/vnd.pearson.sanvan.v1.activity"
+    ],
+    "version": "1.0",
+    "guid": "932d65f7-01c9-4cf6-bdf1-c4e6259d2a6c",
+    "bookAuthor": "James M. Henslin",
+    "title": "CE 18 15",
+    "educationalAlignment": [
+      "http://purl.org/pearson/objectives/183725473384362"
+    ]
+  },
+  "body": {
+    "description": "CE_18_15",
+    "containerConfig": [
+      {
+        "description": "CE_18_15",
+        "containerId": "target1",
+        "brixConfig": [
+          {
+            "bricId": "q1",
+            "bricType": "MultipleChoiceQuestion",
+            "config": {
+              "id": "QUE59548",
+              "question": "Which of the following terms would describe the behavior of people who regularly slander anyone they know to be Jewish?\n\u003cbr /\u003e",
+              "order": "randomized",
+              "presenterType": "RadioGroup",
+              "presenterConfig": {
+                "numberFormat": "none"
+              },
+              "choices": [
+                {
+                  "answerKey": "answer_1",
+                  "content": "Anti-religion"
+                },
+                {
+                  "answerKey": "answer_2",
+                  "content": "Anti-Semitism"
+                },
+                {
+                  "answerKey": "answer_3",
+                  "content": "Anti-tolerance"
+                },
+                {
+                  "answerKey": "answer_4",
+                  "content": "Anti-Judaism"
+                }
+              ]
+            },
+            "answerKey": {
+              "assessmentType": "multiplechoice",
+              "answers": {
+                "answer_3": {
+                  "score": 0.0,
+                  "response": "sider this: the fact that the history of Judaism is marked by conflict and persecution. LO 18.6 Discuss the origins and development of Judaism, Islam, Hinduism, Buddhism, and Confucianism."
+                },
+                "answer_2": {
+                  "score": 1.0,
+                  "response": "That’s correct!"
+                },
+                "answer_1": {
+                  "score": 0.0,
+                  "response": "sider this: the fact that the history of Judaism is marked by conflict and persecution. LO 18.6 Discuss the origins and development of Judaism, Islam, Hinduism, Buddhism, and Confucianism."
+                },
+                "answer_4": {
+                  "score": 0.0,
+                  "response": "sider this: the fact that the history of Judaism is marked by conflict and persecution. LO 18.6 Discuss the origins and development of Judaism, Islam, Hinduism, Buddhism, and Confucianism."
+                }
+              }
+            },
+            "configFixup": [
+              {
+                "name": "questionId",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "sequenceNodeKey",
+                  "type": "ref"
+                }
+              },
+              {
+                "name": "maxAttempts",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "maxAttempts",
+                  "type": "ref"
+                }
+              }
+            ]
+          }
+        ],
+        "hookupActions": [
+          {
+            "description": "Hookup the submit manager to evaluate answers",
+            "methodName": "handleRequestsFrom",
+            "type": "method-call",
+            "args": [
+              {
+                "domain": "brix",
+                "refId": "q1",
+                "type": "ref"
+              }
+            ],
+            "instance": {
+              "type": "submit-manager"
+            }
+          },
+          {
+            "description": "Draw the question",
+            "methodName": "draw",
+            "type": "method-call",
+            "args": [
+              {
+                "selector": "#target1",
+                "type": "d3select"
+              }
+            ],
+            "instance": {
+              "domain": "brix",
+              "refId": "q1",
+              "type": "ref"
+            }
+          }
+        ]
+      }
+    ],
+    "title": "CE 18 15"
+  }
+}

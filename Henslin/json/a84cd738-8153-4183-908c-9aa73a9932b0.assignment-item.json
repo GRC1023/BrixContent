@@ -1,0 +1,184 @@
+{
+  "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope",
+  "@type": "Envelope",
+  "metadata": {
+    "bookTitle": "Sociology: A Down-to-Earth Approach",
+    "keywords": [
+      "Henslin 12e",
+      "ch 13",
+      "Rudowski"
+    ],
+    "extendedMetadata": [
+      {
+        "name": "ISBN",
+        "value": "0133795004"
+      },
+      {
+        "name": "M",
+        "value": "c01"
+      },
+      {
+        "name": "assessment_title",
+        "value": "Chapter Quiz: The Elderly"
+      },
+      {
+        "name": "Topic",
+        "value": "Looking toward the Future"
+      },
+      {
+        "name": "chapterTitle",
+        "value": "The Elderly"
+      },
+      {
+        "name": "item_title",
+        "value": "0133795004_James M. Henslin_ch13_c01_q0007"
+      },
+      {
+        "name": "CH",
+        "value": "13"
+      },
+      {
+        "name": "Objective",
+        "value": "LO: 13.7: Discuss developing views of aging and the impact of technology on how long people live."
+      },
+      {
+        "name": "shuffle_choices",
+        "value": "Yes"
+      }
+    ],
+    "subject": [
+      "Sociology"
+    ],
+    "contentTypeTier2": [
+      "AssessmentItem"
+    ],
+    "contentTypeTier1": "Assessment",
+    "format": [
+      "application/vnd.pearson.sanvan.v1.activity"
+    ],
+    "version": "1.0",
+    "guid": "a84cd738-8153-4183-908c-9aa73a9932b0",
+    "bookAuthor": "James M. Henslin",
+    "title": "CE 13 30",
+    "educationalAlignment": [
+      "http://purl.org/pearson/objectives/183725473384362"
+    ]
+  },
+  "body": {
+    "description": "CE_13_30",
+    "containerConfig": [
+      {
+        "description": "CE_13_30",
+        "containerId": "target1",
+        "brixConfig": [
+          {
+            "bricId": "q1",
+            "bricType": "MultipleChoiceQuestion",
+            "config": {
+              "id": "QUE59460",
+              "question": "What societal benefit could there be to the new concept of creative aging?\n\u003cbr /\u003e",
+              "order": "randomized",
+              "presenterType": "RadioGroup",
+              "presenterConfig": {
+                "numberFormat": "none"
+              },
+              "choices": [
+                {
+                  "answerKey": "answer_1",
+                  "content": "We can leverage the elderly for creative thoughts."
+                },
+                {
+                  "answerKey": "answer_2",
+                  "content": "We can group the elderly in collective homes."
+                },
+                {
+                  "answerKey": "answer_3",
+                  "content": "Negative stereotypes about the elderly will be replaced with positive ones."
+                },
+                {
+                  "answerKey": "answer_4",
+                  "content": "We will find more hidden artists among the elderly."
+                }
+              ]
+            },
+            "answerKey": {
+              "assessmentType": "multiplechoice",
+              "answers": {
+                "answer_3": {
+                  "score": 1.0,
+                  "response": "That’s correct!"
+                },
+                "answer_2": {
+                  "score": 0.0,
+                  "response": "sider this: more and more, the goal of the elderly is to enjoy themselves. LO 13.7 Discuss developing views of aging and the impact of technology on how long people live."
+                },
+                "answer_1": {
+                  "score": 0.0,
+                  "response": "sider this: more and more, the goal of the elderly is to enjoy themselves. LO 13.7 Discuss developing views of aging and the impact of technology on how long people live."
+                },
+                "answer_4": {
+                  "score": 0.0,
+                  "response": "sider this: more and more, the goal of the elderly is to enjoy themselves. LO 13.7 Discuss developing views of aging and the impact of technology on how long people live."
+                }
+              }
+            },
+            "configFixup": [
+              {
+                "name": "questionId",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "sequenceNodeKey",
+                  "type": "ref"
+                }
+              },
+              {
+                "name": "maxAttempts",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "maxAttempts",
+                  "type": "ref"
+                }
+              }
+            ]
+          }
+        ],
+        "hookupActions": [
+          {
+            "description": "Hookup the submit manager to evaluate answers",
+            "methodName": "handleRequestsFrom",
+            "type": "method-call",
+            "args": [
+              {
+                "domain": "brix",
+                "refId": "q1",
+                "type": "ref"
+              }
+            ],
+            "instance": {
+              "type": "submit-manager"
+            }
+          },
+          {
+            "description": "Draw the question",
+            "methodName": "draw",
+            "type": "method-call",
+            "args": [
+              {
+                "selector": "#target1",
+                "type": "d3select"
+              }
+            ],
+            "instance": {
+              "domain": "brix",
+              "refId": "q1",
+              "type": "ref"
+            }
+          }
+        ]
+      }
+    ],
+    "title": "CE 13 30"
+  }
+}

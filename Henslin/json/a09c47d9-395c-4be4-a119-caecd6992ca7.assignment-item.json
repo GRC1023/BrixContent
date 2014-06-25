@@ -1,0 +1,184 @@
+{
+  "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope",
+  "@type": "Envelope",
+  "metadata": {
+    "bookTitle": "Sociology: A Down-to-Earth Approach",
+    "keywords": [
+      "Henslin 12e",
+      "ch 19",
+      "Rudowski"
+    ],
+    "extendedMetadata": [
+      {
+        "name": "ISBN",
+        "value": "0133795004"
+      },
+      {
+        "name": "M",
+        "value": "c01"
+      },
+      {
+        "name": "assessment_title",
+        "value": "Chapter Quiz: Medicine and Health"
+      },
+      {
+        "name": "Topic",
+        "value": "Issues in Health Care"
+      },
+      {
+        "name": "chapterTitle",
+        "value": "Medicine and Health"
+      },
+      {
+        "name": "item_title",
+        "value": "0133795004_James M. Henslin_ch19_c01_q0001"
+      },
+      {
+        "name": "CH",
+        "value": "19"
+      },
+      {
+        "name": "Objective",
+        "value": "LO: 19.5: Discuss medical care as a right or a commodity, increasing costs, social inequality, lawsuits, incompetence, fraud, conflict of interest, depersonalization, sexism, racism, the medicalization of society, physician assisted suicide, and attempts to reduce cost."
+      },
+      {
+        "name": "shuffle_choices",
+        "value": "Yes"
+      }
+    ],
+    "subject": [
+      "Sociology"
+    ],
+    "contentTypeTier2": [
+      "AssessmentItem"
+    ],
+    "contentTypeTier1": "Assessment",
+    "format": [
+      "application/vnd.pearson.sanvan.v1.activity"
+    ],
+    "version": "1.0",
+    "guid": "a09c47d9-395c-4be4-a119-caecd6992ca7",
+    "bookAuthor": "James M. Henslin",
+    "title": "CE 19 16",
+    "educationalAlignment": [
+      "http://purl.org/pearson/objectives/183725473384362"
+    ]
+  },
+  "body": {
+    "description": "CE_19_16",
+    "containerConfig": [
+      {
+        "description": "CE_19_16",
+        "containerId": "target1",
+        "brixConfig": [
+          {
+            "bricId": "q1",
+            "bricType": "MultipleChoiceQuestion",
+            "config": {
+              "id": "QUE59708",
+              "question": "The intention of the Patient Protection and Affordable Care Act is to __________.\n\u003cbr /\u003e",
+              "order": "randomized",
+              "presenterType": "RadioGroup",
+              "presenterConfig": {
+                "numberFormat": "none"
+              },
+              "choices": [
+                {
+                  "answerKey": "answer_1",
+                  "content": "reduce the inequalities in health care by requiring all U.S. citizens and legal residents to have medical insurance"
+                },
+                {
+                  "answerKey": "answer_2",
+                  "content": "eliminate medical malpractice litigation and costs, guarantee insurance coverage to all people, and fund the training of many more medical professionals"
+                },
+                {
+                  "answerKey": "answer_3",
+                  "content": "coordinate socialized medicine that ensures all citizens the same level and quality of health care"
+                },
+                {
+                  "answerKey": "answer_4",
+                  "content": "provide a two-tiered system of medical care that will eliminate inequalities in health care"
+                }
+              ]
+            },
+            "answerKey": {
+              "assessmentType": "multiplechoice",
+              "answers": {
+                "answer_3": {
+                  "score": 0.0,
+                  "response": "sider this: the need to address the two-tier healthcare system found in the United States. LO 19.5 Discuss medical care as a right or a commodity, increasing costs, social inequality, lawsuits, incompetence, fraud, conflict of interest, depersonalization, sexism, racism, the medicalization of society, physician assisted suicide, and attempts to reduce cost."
+                },
+                "answer_2": {
+                  "score": 0.0,
+                  "response": "sider this: the need to address the two-tier healthcare system found in the United States. LO 19.5 Discuss medical care as a right or a commodity, increasing costs, social inequality, lawsuits, incompetence, fraud, conflict of interest, depersonalization, sexism, racism, the medicalization of society, physician assisted suicide, and attempts to reduce cost."
+                },
+                "answer_1": {
+                  "score": 1.0,
+                  "response": "That’s correct!"
+                },
+                "answer_4": {
+                  "score": 0.0,
+                  "response": "sider this: the need to address the two-tier healthcare system found in the United States. LO 19.5 Discuss medical care as a right or a commodity, increasing costs, social inequality, lawsuits, incompetence, fraud, conflict of interest, depersonalization, sexism, racism, the medicalization of society, physician assisted suicide, and attempts to reduce cost."
+                }
+              }
+            },
+            "configFixup": [
+              {
+                "name": "questionId",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "sequenceNodeKey",
+                  "type": "ref"
+                }
+              },
+              {
+                "name": "maxAttempts",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "maxAttempts",
+                  "type": "ref"
+                }
+              }
+            ]
+          }
+        ],
+        "hookupActions": [
+          {
+            "description": "Hookup the submit manager to evaluate answers",
+            "methodName": "handleRequestsFrom",
+            "type": "method-call",
+            "args": [
+              {
+                "domain": "brix",
+                "refId": "q1",
+                "type": "ref"
+              }
+            ],
+            "instance": {
+              "type": "submit-manager"
+            }
+          },
+          {
+            "description": "Draw the question",
+            "methodName": "draw",
+            "type": "method-call",
+            "args": [
+              {
+                "selector": "#target1",
+                "type": "d3select"
+              }
+            ],
+            "instance": {
+              "domain": "brix",
+              "refId": "q1",
+              "type": "ref"
+            }
+          }
+        ]
+      }
+    ],
+    "title": "CE 19 16"
+  }
+}

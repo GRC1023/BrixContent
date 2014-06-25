@@ -1,0 +1,188 @@
+{
+  "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope",
+  "@type": "Envelope",
+  "metadata": {
+    "bookTitle": "Sociology: A Down-to-Earth Approach",
+    "keywords": [
+      "Henslin 12e",
+      "ch 20",
+      "Rudowski"
+    ],
+    "extendedMetadata": [
+      {
+        "name": "ISBN",
+        "value": "0133795004"
+      },
+      {
+        "name": "M",
+        "value": "m05"
+      },
+      {
+        "name": "assessment_title",
+        "value": "Quiz: City Life"
+      },
+      {
+        "name": "Topic",
+        "value": "City Life"
+      },
+      {
+        "name": "chapterTitle",
+        "value": "Population and Urbanization"
+      },
+      {
+        "name": "module",
+        "value": "City Life"
+      },
+      {
+        "name": "item_title",
+        "value": "0133795004_James M. Henslin_ch20_m05_q0003"
+      },
+      {
+        "name": "CH",
+        "value": "20"
+      },
+      {
+        "name": "Objective",
+        "value": "LO: 20.5: Discuss alienation and community, types of people who live in the city, the norm of noninvolvement and the diffusion of responsibility."
+      },
+      {
+        "name": "shuffle_choices",
+        "value": "Yes"
+      }
+    ],
+    "subject": [
+      "Sociology"
+    ],
+    "contentTypeTier2": [
+      "AssessmentItem"
+    ],
+    "contentTypeTier1": "Assessment",
+    "format": [
+      "application/vnd.pearson.sanvan.v1.activity"
+    ],
+    "version": "1.0",
+    "guid": "5263357c-d790-44b2-a745-87969b88bf08",
+    "bookAuthor": "James M. Henslin",
+    "title": "PRE 20 19",
+    "educationalAlignment": [
+      "http://purl.org/pearson/objectives/183725473384362"
+    ]
+  },
+  "body": {
+    "description": "PRE_20_19",
+    "containerConfig": [
+      {
+        "description": "PRE_20_19",
+        "containerId": "target1",
+        "brixConfig": [
+          {
+            "bricId": "q1",
+            "bricType": "MultipleChoiceQuestion",
+            "config": {
+              "id": "QUE59882",
+              "question": "How might the suburbs of Mexico City lead to instability across the entire country?\n\u003cbr /\u003e",
+              "order": "randomized",
+              "presenterType": "RadioGroup",
+              "presenterConfig": {
+                "numberFormat": "none"
+              },
+              "choices": [
+                {
+                  "answerKey": "answer_1",
+                  "content": "Because so many people have left rural areas to live in the suburbs, the country will have difficulty providing enough food for everyone."
+                },
+                {
+                  "answerKey": "answer_2",
+                  "content": "Because the suburbs were hastily built, they will probably collapse the next time a large earthquake hits Mexico City."
+                },
+                {
+                  "answerKey": "answer_3",
+                  "content": "Because millions of people live in squatting settlements with little chance of improvement, the government will eventually have to provide services that it cannot afford."
+                },
+                {
+                  "answerKey": "answer_4",
+                  "content": "Because so many people have moved out of the cities into the suburbs, the cities are beginning to collapse."
+                }
+              ]
+            },
+            "answerKey": {
+              "assessmentType": "multiplechoice",
+              "answers": {
+                "answer_3": {
+                  "score": 1.0,
+                  "response": ""
+                },
+                "answer_2": {
+                  "score": 0.0,
+                  "response": ""
+                },
+                "answer_1": {
+                  "score": 0.0,
+                  "response": ""
+                },
+                "answer_4": {
+                  "score": 0.0,
+                  "response": ""
+                }
+              }
+            },
+            "configFixup": [
+              {
+                "name": "questionId",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "sequenceNodeKey",
+                  "type": "ref"
+                }
+              },
+              {
+                "name": "maxAttempts",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "maxAttempts",
+                  "type": "ref"
+                }
+              }
+            ]
+          }
+        ],
+        "hookupActions": [
+          {
+            "description": "Hookup the submit manager to evaluate answers",
+            "methodName": "handleRequestsFrom",
+            "type": "method-call",
+            "args": [
+              {
+                "domain": "brix",
+                "refId": "q1",
+                "type": "ref"
+              }
+            ],
+            "instance": {
+              "type": "submit-manager"
+            }
+          },
+          {
+            "description": "Draw the question",
+            "methodName": "draw",
+            "type": "method-call",
+            "args": [
+              {
+                "selector": "#target1",
+                "type": "d3select"
+              }
+            ],
+            "instance": {
+              "domain": "brix",
+              "refId": "q1",
+              "type": "ref"
+            }
+          }
+        ]
+      }
+    ],
+    "title": "PRE 20 19"
+  }
+}

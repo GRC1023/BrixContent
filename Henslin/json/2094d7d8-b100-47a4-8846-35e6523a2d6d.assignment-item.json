@@ -1,0 +1,188 @@
+{
+  "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope",
+  "@type": "Envelope",
+  "metadata": {
+    "bookTitle": "Sociology: A Down-to-Earth Approach",
+    "keywords": [
+      "Henslin 12e",
+      "ch 05",
+      "Rudowski"
+    ],
+    "extendedMetadata": [
+      {
+        "name": "ISBN",
+        "value": "0133795004"
+      },
+      {
+        "name": "M",
+        "value": "c01"
+      },
+      {
+        "name": "assessment_title",
+        "value": "Chapter Quiz: How Sociologists Do Research"
+      },
+      {
+        "name": "Topic",
+        "value": "Research Methods (Designs)"
+      },
+      {
+        "name": "chapterTitle",
+        "value": "How Sociologists Do Research"
+      },
+      {
+        "name": "item_title",
+        "value": "0133795004_James M. Henslin_ch05_c01_q0008"
+      },
+      {
+        "name": "questionlayout",
+        "value": "1"
+      },
+      {
+        "name": "CH",
+        "value": "5"
+      },
+      {
+        "name": "Objective",
+        "value": "LO: 5.4: Know the main elements of the 7 research methods: surveys, participant observation, case studies, secondary analysis, analysis of documents, experiments, and unobtrusive measures; state why sociological research can lead to controversy."
+      },
+      {
+        "name": "shuffle_choices",
+        "value": "Yes"
+      }
+    ],
+    "subject": [
+      "Sociology"
+    ],
+    "contentTypeTier2": [
+      "AssessmentItem"
+    ],
+    "contentTypeTier1": "Assessment",
+    "format": [
+      "application/vnd.pearson.sanvan.v1.activity"
+    ],
+    "version": "1.0",
+    "guid": "2094d7d8-b100-47a4-8846-35e6523a2d6d",
+    "bookAuthor": "James M. Henslin",
+    "title": "CE 05 23",
+    "educationalAlignment": [
+      "http://purl.org/pearson/objectives/183725473384362"
+    ]
+  },
+  "body": {
+    "description": "CE_05_23",
+    "containerConfig": [
+      {
+        "description": "CE_05_23",
+        "containerId": "target1",
+        "brixConfig": [
+          {
+            "bricId": "q1",
+            "bricType": "MultipleChoiceQuestion",
+            "config": {
+              "id": "QUE59032",
+              "question": "Which of the following is a primary factor in influencing which method a sociologist will use in conducting research?\n\u003cbr /\u003e",
+              "order": "randomized",
+              "presenterType": "RadioGroup",
+              "presenterConfig": {
+                "numberFormat": "none"
+              },
+              "choices": [
+                {
+                  "answerKey": "answer_1",
+                  "content": "Access to subjects"
+                },
+                {
+                  "answerKey": "answer_2",
+                  "content": "Whether the public is interested in the results of the study"
+                },
+                {
+                  "answerKey": "answer_3",
+                  "content": "Amount of education of the subjects in the study"
+                },
+                {
+                  "answerKey": "answer_4",
+                  "content": "The correlation coefficient of the variables"
+                }
+              ]
+            },
+            "answerKey": {
+              "assessmentType": "multiplechoice",
+              "answers": {
+                "answer_3": {
+                  "score": 0.0,
+                  "response": "sider this: This is irrelevant in most studies. LO 5.4 Know the main elements of the 7 research methods: surveys, participant observation, case studies, secondary analysis, analysis of documents, experiments, and unobtrusive measures; state why sociological research can lead to controversy."
+                },
+                "answer_2": {
+                  "score": 0.0,
+                  "response": "sider this: Public interest often develops after research sheds light on the issue. LO 5.4 Know the main elements of the 7 research methods: surveys, participant observation, case studies, secondary analysis, analysis of documents, experiments, and unobtrusive measures; state why sociological research can lead to controversy."
+                },
+                "answer_1": {
+                  "score": 1.0,
+                  "response": "That’s correct!"
+                },
+                "answer_4": {
+                  "score": 0.0,
+                  "response": "sider this: This is not a primary factor in selecting a method. When determining a method of data collection one must consider their access to the data. LO 5.4 Know the main elements of the 7 research methods: surveys, participant observation, case studies, secondary analysis, analysis of documents, experiments, and unobtrusive measures; state why sociological research can lead to controversy."
+                }
+              }
+            },
+            "configFixup": [
+              {
+                "name": "questionId",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "sequenceNodeKey",
+                  "type": "ref"
+                }
+              },
+              {
+                "name": "maxAttempts",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "maxAttempts",
+                  "type": "ref"
+                }
+              }
+            ]
+          }
+        ],
+        "hookupActions": [
+          {
+            "description": "Hookup the submit manager to evaluate answers",
+            "methodName": "handleRequestsFrom",
+            "type": "method-call",
+            "args": [
+              {
+                "domain": "brix",
+                "refId": "q1",
+                "type": "ref"
+              }
+            ],
+            "instance": {
+              "type": "submit-manager"
+            }
+          },
+          {
+            "description": "Draw the question",
+            "methodName": "draw",
+            "type": "method-call",
+            "args": [
+              {
+                "selector": "#target1",
+                "type": "d3select"
+              }
+            ],
+            "instance": {
+              "domain": "brix",
+              "refId": "q1",
+              "type": "ref"
+            }
+          }
+        ]
+      }
+    ],
+    "title": "CE 05 23"
+  }
+}
