@@ -1,0 +1,162 @@
+{
+  "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope",
+  "@type": "Envelope",
+  "metadata": {
+    "guid": "1018100b-2d70-4cea-ad0c-d6cc955c05aa",
+    "title": "68830_RE_C09.html",
+    "extendedMetadata": [
+      {
+        "name": "crawlable",
+        "value": "false"
+      },
+      {
+        "name": "owner",
+        "value": "Brix"
+      },
+      {
+        "name": "contentTypeTier2",
+        "value": "assessment item"
+      },
+      {
+        "name": "contentTypeTier1",
+        "value": "Test and Assessment"
+      },
+      {
+        "name": "format",
+        "value": "application/vnd.pearson.sanvan.v1.activity"
+      }
+    ],
+    "description": "68830_RE_C09.html",
+    "subject": [
+      "EnvironmentalScience"
+    ],
+    "contentTypeTier2": [
+      "AssessmentItem"
+    ],
+    "contentTypeTier1": "Assessment",
+    "format": [
+      "application/vnd.pearson.sanvan.v1.activity"
+    ],
+    "educationalAlignment": [
+      "http://purl.org/pearson/objectives/183725473384362"
+    ],
+    "version": "1.0"
+  },
+  "body": {
+    "containerConfig": [
+      {
+        "brixConfig": [
+          {
+            "config": {
+              "presenterType": "RadioGroup",
+              "question": "One of the major concerns about current first generation biomass fuels is that they take a lot of energy to produce and therefore won’t help to reduce the emissions of greenhouse gases. In the following example, would this be true? A gallon of gasoline releases about 9 kg CO\u003csub\u003e2\u003c/sub\u003e when burned. If it takes about 2 kg of coal to produce the electricity to make one gallon of biofuel and each kilogram of coal results in the emission of 3.75 kg CO\u003csub\u003e2\u003c/sub\u003e, how much would CO\u003csub\u003e2\u003c/sub\u003e emissions be reduced or increased by using biofuel instead of gasoline? You can assume that a gallon of biofuel and a gallon of gasoline have exactly the same amount of energy in them.",
+              "presenterConfig": {
+                "numberFormat": ""
+              },
+              "choices": [
+                {
+                  "content": " increased emission of 12.75 kg CO\u003csub\u003e2\u003c/sub\u003e",
+                  "answerKey": "answer1"
+                },
+                {
+                  "content": " increased emission of 1.5 kg CO\u003csub\u003e2\u003c/sub\u003e",
+                  "answerKey": "answer2"
+                },
+                {
+                  "content": "no change in emissions",
+                  "answerKey": "answer3"
+                },
+                {
+                  "content": " decreased emission of 1.5 kg CO\u003csub\u003e2\u003c/sub\u003e",
+                  "answerKey": "answer4"
+                }
+              ],
+              "order": "randomized",
+              "id": "sampleQ1"
+            },
+            "answerKey": {
+              "assessmentType": "multiplechoice",
+              "answers": {
+                "answer4": {
+                  "score": 1.0,
+                  "response": ""
+                },
+                "answer1": {
+                  "score": 0.0,
+                  "response": "Calculate the CO\u003csub\u003e2\u003c/sub\u003e emissions produced for 2 kg of coal (the amount it takes to make one gallon of biofuel). Are these emissions greater or less than the amount of CO\u003csub\u003e2\u003c/sub\u003e released from one gallon of traditional gasoline?"
+                },
+                "answer3": {
+                  "score": 0.0,
+                  "response": "Calculate the CO\u003csub\u003e2\u003c/sub\u003e emissions produced for 2 kg of coal (the amount it takes to make one gallon of biofuel). Are these emissions greater or less than the amount of CO\u003csub\u003e2\u003c/sub\u003e released from one gallon of traditional gasoline?"
+                },
+                "answer2": {
+                  "score": 0.0,
+                  "response": "Calculate the CO\u003csub\u003e2\u003c/sub\u003e emissions produced for 2 kg of coal (the amount it takes to make one gallon of biofuel). Are these emissions greater or less than the amount of CO\u003csub\u003e2\u003c/sub\u003e released from one gallon of traditional gasoline?"
+                }
+              }
+            },
+            "bricType": "MultipleChoiceQuestion",
+            "bricId": "Q1",
+            "configFixup": [
+              {
+                "type": "set-property",
+                "name": "questionId",
+                "value": {
+                  "domain": "info",
+                  "type": "ref",
+                  "refId": "sequenceNodeKey"
+                }
+              },
+              {
+                "type": "set-property",
+                "name": "maxAttempts",
+                "value": {
+                  "domain": "info",
+                  "type": "ref",
+                  "refId": "maxAttempts"
+                }
+              }
+            ]
+          }
+        ],
+        "description": "container for the sample multiple choice question",
+        "hookupActions": [
+          {
+            "instance": {
+              "type": "submit-manager"
+            },
+            "args": [
+              {
+                "domain": "brix",
+                "type": "ref",
+                "refId": "Q1"
+              }
+            ],
+            "type": "method-call",
+            "description": "Hookup the submit manager to evaluate answers",
+            "methodName": "handleRequestsFrom"
+          },
+          {
+            "instance": {
+              "domain": "brix",
+              "type": "ref",
+              "refId": "Q1"
+            },
+            "args": [
+              {
+                "type": "d3select",
+                "selector": "#target1"
+              }
+            ],
+            "type": "method-call",
+            "description": "Draw the question",
+            "methodName": "draw"
+          }
+        ],
+        "containerId": "target1"
+      }
+    ],
+    "description": "A Sample Activity containing a single multiple choice bric",
+    "title": "68830_RE_C09.html"
+  }
+}

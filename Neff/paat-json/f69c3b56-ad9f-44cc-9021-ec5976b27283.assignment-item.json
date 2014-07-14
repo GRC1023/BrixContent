@@ -1,0 +1,157 @@
+{
+  "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope",
+  "@type": "Envelope",
+  "metadata": {
+    "guid": "f69c3b56-ad9f-44cc-9021-ec5976b27283",
+    "title": "68830_NE_C09.html",
+    "extendedMetadata": [
+      {
+        "name": "crawlable",
+        "value": "false"
+      },
+      {
+        "name": "owner",
+        "value": "Brix"
+      },
+      {
+        "name": "contentTypeTier2",
+        "value": "assessment item"
+      },
+      {
+        "name": "contentTypeTier1",
+        "value": "Test and Assessment"
+      },
+      {
+        "name": "format",
+        "value": "application/vnd.pearson.sanvan.v1.activity"
+      },
+      {
+        "name": "timeRequired",
+        "value": "PT20S"
+      }
+    ],
+    "description": "68830_NE_C09.html",
+    "subject": [
+      "EnvironmentalScience"
+    ],
+    "contentTypeTier2": [
+      "AssessmentItem"
+    ],
+    "contentTypeTier1": "Assessment",
+    "format": [
+      "application/vnd.pearson.sanvan.v1.activity"
+    ],
+    "educationalAlignment": [
+      "http://purl.org/pearson/objectives/183725473384362"
+    ],
+    "version": "1.0"
+  },
+  "body": {
+    "containerConfig": [
+      {
+        "brixConfig": [
+          {
+            "bricId": "Q1",
+            "answerKey": {
+              "answers": {
+                "answer3": {
+                  "score": 0.0,
+                  "response": "Is the type of oil produced from shale oil the same as the oil traditionally produced from traditional oil drilling?"
+                },
+                "answer2": {
+                  "score": 1.0,
+                  "response": "Correct."
+                },
+                "answer1": {
+                  "score": 0.0,
+                  "response": "Think about how difficult it is to extract shale oil.  In the end, does using shale oil emit more or less CO\u003csub\u003e2\u003c/sub\u003e than traditional fossil fuels?"
+                },
+                "answer4": {
+                  "score": 0.0,
+                  "response": "Think about how difficult it is to extract shale oil and whether the monetary and environmental costs of using this source are greater or lesser than using traditional oil."
+                }
+              },
+              "assessmentType": "multiplechoice"
+            },
+            "bricType": "MultipleChoiceQuestion",
+            "config": {
+              "id": "sampleQ1",
+              "order": "randomized",
+              "question": "Although extracting petroleum from shale oil is highly energy and resource intensive, why would companies such as Shell Oil want to develop this energy source?",
+              "presenterType": "RadioGroup",
+              "presenterConfig": {
+                "numberFormat": ""
+              },
+              "choices": [
+                {
+                  "content": "Shale oil emits less CO\u003csub\u003e2\u003c/sub\u003e in the end than traditional fossil fuels.",
+                  "answerKey": "answer1"
+                },
+                {
+                  "content": "The products of shale oil are easily integrated into our current system of energy use.",
+                  "answerKey": "answer2"
+                },
+                {
+                  "content": "Shale oil has a higher energy density than traditional oil.",
+                  "answerKey": "answer3"
+                },
+                {
+                  "content": "The technology used to obtain shale oil is easily available, cheap, and environmentally friendly.",
+                  "answerKey": "answer4"
+                }
+              ]
+            },
+            "configFixup": [
+              {
+                "value": {
+                  "domain": "info",
+                  "type": "ref",
+                  "refId": "sequenceNodeKey"
+                },
+                "type": "set-property",
+                "name": "questionId"
+              }
+            ]
+          }
+        ],
+        "containerId": "target1",
+        "hookupActions": [
+          {
+            "methodName": "handleRequestsFrom",
+            "instance": {
+              "type": "submit-manager"
+            },
+            "args": [
+              {
+                "domain": "brix",
+                "type": "ref",
+                "refId": "Q1"
+              }
+            ],
+            "type": "method-call",
+            "description": "Hookup the submit manager to evaluate answers"
+          },
+          {
+            "methodName": "draw",
+            "instance": {
+              "domain": "brix",
+              "type": "ref",
+              "refId": "Q1"
+            },
+            "args": [
+              {
+                "type": "d3select",
+                "selector": "#target1"
+              }
+            ],
+            "type": "method-call",
+            "description": "Draw the question"
+          }
+        ],
+        "description": "container for the sample multiple choice question"
+      }
+    ],
+    "description": "A Sample Activity containing a single multiple choice bric",
+    "title": "68830_NE_C09.html"
+  }
+}

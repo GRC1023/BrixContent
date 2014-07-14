@@ -1,0 +1,157 @@
+{
+  "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope",
+  "@type": "Envelope",
+  "metadata": {
+    "guid": "b1274516-42fe-4707-9388-9490aec57368",
+    "title": "68830_NE_C04.html",
+    "extendedMetadata": [
+      {
+        "name": "crawlable",
+        "value": "false"
+      },
+      {
+        "name": "owner",
+        "value": "Brix"
+      },
+      {
+        "name": "contentTypeTier2",
+        "value": "assessment item"
+      },
+      {
+        "name": "contentTypeTier1",
+        "value": "Test and Assessment"
+      },
+      {
+        "name": "format",
+        "value": "application/vnd.pearson.sanvan.v1.activity"
+      },
+      {
+        "name": "timeRequired",
+        "value": "PT20S"
+      }
+    ],
+    "description": "68830_NE_C04.html",
+    "subject": [
+      "EnvironmentalScience"
+    ],
+    "contentTypeTier2": [
+      "AssessmentItem"
+    ],
+    "contentTypeTier1": "Assessment",
+    "format": [
+      "application/vnd.pearson.sanvan.v1.activity"
+    ],
+    "educationalAlignment": [
+      "http://purl.org/pearson/objectives/183725473384362"
+    ],
+    "version": "1.0"
+  },
+  "body": {
+    "containerConfig": [
+      {
+        "brixConfig": [
+          {
+            "bricId": "Q1",
+            "answerKey": {
+              "answers": {
+                "answer3": {
+                  "score": 1.0,
+                  "response": "There are actually more known reserves of coal than natural gas at the current time, but the United States has developed natural gas for many other reasons."
+                },
+                "answer2": {
+                  "score": 0.0,
+                  "response": "This IS true. What do you know about the amount of CO\u003csub\u003e2\u003c/sub\u003e and pollution that natural gas emits in relation to coal?"
+                },
+                "answer1": {
+                  "score": 0.0,
+                  "response": "This IS true. The United States chose to develop natural gas despite this."
+                },
+                "answer4": {
+                  "score": 0.0,
+                  "response": "This IS true. Unconventional methods allowed the United States to access many new reserves at once."
+                }
+              },
+              "assessmentType": "multiplechoice"
+            },
+            "bricType": "MultipleChoiceQuestion",
+            "config": {
+              "id": "sampleQ1",
+              "order": "randomized",
+              "question": "Which of the following is NOT true about the United States\u0027 switch over to natural gas as a major source for electricity generation rather than coal?",
+              "presenterType": "RadioGroup",
+              "presenterConfig": {
+                "numberFormat": ""
+              },
+              "choices": [
+                {
+                  "content": "Natural gas is more expensive to use than coal.",
+                  "answerKey": "answer1"
+                },
+                {
+                  "content": "The natural gas found in the United States burns \"cleaner\" than coal.",
+                  "answerKey": "answer2"
+                },
+                {
+                  "content": "There are larger reserves of natural gas in the ground than coal.",
+                  "answerKey": "answer3"
+                },
+                {
+                  "content": "The United States was suddenly able to access a lot of natural gas at once.",
+                  "answerKey": "answer4"
+                }
+              ]
+            },
+            "configFixup": [
+              {
+                "value": {
+                  "domain": "info",
+                  "type": "ref",
+                  "refId": "sequenceNodeKey"
+                },
+                "type": "set-property",
+                "name": "questionId"
+              }
+            ]
+          }
+        ],
+        "containerId": "target1",
+        "hookupActions": [
+          {
+            "methodName": "handleRequestsFrom",
+            "instance": {
+              "type": "submit-manager"
+            },
+            "args": [
+              {
+                "domain": "brix",
+                "type": "ref",
+                "refId": "Q1"
+              }
+            ],
+            "type": "method-call",
+            "description": "Hookup the submit manager to evaluate answers"
+          },
+          {
+            "methodName": "draw",
+            "instance": {
+              "domain": "brix",
+              "type": "ref",
+              "refId": "Q1"
+            },
+            "args": [
+              {
+                "type": "d3select",
+                "selector": "#target1"
+              }
+            ],
+            "type": "method-call",
+            "description": "Draw the question"
+          }
+        ],
+        "description": "container for the sample multiple choice question"
+      }
+    ],
+    "description": "A Sample Activity containing a single multiple choice bric",
+    "title": "68830_NE_C04.html"
+  }
+}

@@ -1,0 +1,212 @@
+{
+  "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope",
+  "@type": "Envelope",
+  "metadata": {
+    "guid": "648d3f0f-992f-40d1-adcb-6cd6d4bd3401",
+    "title": "Environmental impacts and practical limitations of solar energy production",
+    "extendedMetadata": [
+      {
+        "name": "crawlable",
+        "value": "false"
+      },
+      {
+        "name": "owner",
+        "value": "Brix"
+      },
+      {
+        "name": "contentTypeTier2",
+        "value": "Exercise"
+      },
+      {
+        "name": "contentTypeTier1",
+        "value": "Activity"
+      },
+      {
+        "name": "format",
+        "value": "application/vnd.pearson.sanvan.v1.activity"
+      }
+    ],
+    "description": "Environmental impacts and practical limitations of solar energy production",
+    "subject": [
+      "EnvironmentalScience"
+    ],
+    "contentTypeTier2": [
+      "AssessmentItem"
+    ],
+    "contentTypeTier1": "Assessment",
+    "format": [
+      "application/vnd.pearson.sanvan.v1.activity"
+    ],
+    "educationalAlignment": [
+      "http://purl.org/pearson/objectives/183725473384362"
+    ],
+    "version": "1.0"
+  },
+  "body": {
+    "containerConfig": [
+      {
+        "brixConfig": [
+          {
+            "bricId": "lblCarousel1",
+            "bricType": "LabelCarousel",
+            "config": {
+              "displayWidth": 457.0,
+              "id": "lblCrsl1",
+              "imagesActualSize": {
+                "height": 325.0,
+                "width": 478.0
+              }
+            },
+            "configFixup": [
+              {
+                "name": "images",
+                "type": "set-property",
+                "value": {
+                  "elements": [
+                    {
+                      "properties": [
+                        {
+                          "name": "URI",
+                          "value": {
+                            "parts": [
+                              {
+                                "domain": "info",
+                                "refId": "imgBaseUrl",
+                                "type": "ref"
+                              },
+                              {
+                                "type": "constant",
+                                "value": "img/68830_RE_02_03_S1.jpg"
+                              }
+                            ],
+                            "type": "join"
+                          }
+                        },
+                        {
+                          "name": "caption",
+                          "value": {
+                            "type": "constant",
+                            "value": "Solar energy production limited by cloudy skies and darkness\u003cbr/\u003e\u003cbr/\u003e"
+                          }
+                        }
+                      ],
+                      "type": "object"
+                    },
+                    {
+                      "properties": [
+                        {
+                          "name": "URI",
+                          "value": {
+                            "parts": [
+                              {
+                                "domain": "info",
+                                "refId": "imgBaseUrl",
+                                "type": "ref"
+                              },
+                              {
+                                "type": "constant",
+                                "value": "img/68830_RE_02_03_S2.jpg"
+                              }
+                            ],
+                            "type": "join"
+                          }
+                        },
+                        {
+                          "name": "caption",
+                          "value": {
+                            "type": "constant",
+                            "value": "The expense of precious metals used in the production of solar panels"
+                          }
+                        }
+                      ],
+                      "type": "object"
+                    },
+                    {
+                      "properties": [
+                        {
+                          "name": "URI",
+                          "value": {
+                            "parts": [
+                              {
+                                "domain": "info",
+                                "refId": "imgBaseUrl",
+                                "type": "ref"
+                              },
+                              {
+                                "type": "constant",
+                                "value": "img/68830_RE_02_03_S3.jpg"
+                              }
+                            ],
+                            "type": "join"
+                          }
+                        },
+                        {
+                          "name": "caption",
+                          "value": {
+                            "type": "constant",
+                            "value": "Land disturbance associated with the creation of large fields of solar panels"
+                          }
+                        }
+                      ],
+                      "type": "object"
+                    }
+                  ],
+                  "type": "array"
+                }
+              }
+            ]
+          },
+          {
+            "bricId": "cntr1",
+            "bricType": "SvgContainer",
+            "config": {
+              "maxSize": {
+                "height": 430.0,
+                "width": 457.0
+              }
+            }
+          }
+        ],
+        "containerId": "b42d4bbc879d64c9caf9c59fef150856b",
+        "description": "Container for the LabelCarousel",
+        "hookupActions": [
+          {
+            "args": [
+              {
+                "selector": "#b42d4bbc879d64c9caf9c59fef150856b",
+                "type": "d3select"
+              }
+            ],
+            "description": "Draw the svg container",
+            "instance": {
+              "domain": "brix",
+              "refId": "cntr1",
+              "type": "ref"
+            },
+            "methodName": "draw",
+            "type": "method-call"
+          },
+          {
+            "args": [
+              {
+                "domain": "brix",
+                "refId": "lblCarousel1",
+                "type": "ref"
+              }
+            ],
+            "description": "Append the label image carousel to the svg container",
+            "instance": {
+              "domain": "brix",
+              "refId": "cntr1",
+              "type": "ref"
+            },
+            "methodName": "append",
+            "type": "method-call"
+          }
+        ]
+      }
+    ],
+    "description": "Environmental impacts and practical limitations of solar energy production",
+    "title": "Environmental impacts and practical limitations of solar energy production"
+  }
+}

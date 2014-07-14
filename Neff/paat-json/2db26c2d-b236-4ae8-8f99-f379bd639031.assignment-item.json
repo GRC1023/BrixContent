@@ -1,0 +1,157 @@
+{
+  "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope",
+  "@type": "Envelope",
+  "metadata": {
+    "guid": "2db26c2d-b236-4ae8-8f99-f379bd639031",
+    "title": "68830_NE_C07.html",
+    "extendedMetadata": [
+      {
+        "name": "crawlable",
+        "value": "false"
+      },
+      {
+        "name": "owner",
+        "value": "Brix"
+      },
+      {
+        "name": "contentTypeTier2",
+        "value": "assessment item"
+      },
+      {
+        "name": "contentTypeTier1",
+        "value": "Test and Assessment"
+      },
+      {
+        "name": "format",
+        "value": "application/vnd.pearson.sanvan.v1.activity"
+      },
+      {
+        "name": "timeRequired",
+        "value": "PT20S"
+      }
+    ],
+    "description": "68830_NE_C07.html",
+    "subject": [
+      "EnvironmentalScience"
+    ],
+    "contentTypeTier2": [
+      "AssessmentItem"
+    ],
+    "contentTypeTier1": "Assessment",
+    "format": [
+      "application/vnd.pearson.sanvan.v1.activity"
+    ],
+    "educationalAlignment": [
+      "http://purl.org/pearson/objectives/183725473384362"
+    ],
+    "version": "1.0"
+  },
+  "body": {
+    "containerConfig": [
+      {
+        "brixConfig": [
+          {
+            "bricId": "Q1",
+            "answerKey": {
+              "answers": {
+                "answer3": {
+                  "score": 0.0,
+                  "response": "Is it the fuel itself or the process of extraction that makes a fuel source unconventional?"
+                },
+                "answer2": {
+                  "score": 1.0,
+                  "response": ""
+                },
+                "answer1": {
+                  "score": 0.0,
+                  "response": "Is it the fuel itself or the process of extraction that makes a fuel source unconventional?"
+                },
+                "answer4": {
+                  "score": 0.0,
+                  "response": "While the fuel itself may not actually produce any more CO\u003csub\u003e2\u003c/sub\u003e, what do you know about the extraction processes for unconventional fuels?"
+                }
+              },
+              "assessmentType": "multiplechoice"
+            },
+            "bricType": "MultipleChoiceQuestion",
+            "config": {
+              "id": "sampleQ1",
+              "order": "randomized",
+              "question": "Why will we likely emit more CO\u003csub\u003e2\u003c/sub\u003e per unit of energy consumed as we use more unconventional fuel sources in the future such as tar sands and oil shale?",
+              "presenterType": "RadioGroup",
+              "presenterConfig": {
+                "numberFormat": ""
+              },
+              "choices": [
+                {
+                  "content": "Unconventional fuels actually hold more CO\u003csub\u003e2\u003c/sub\u003e inside of them, which burns off when they are used to make energy.",
+                  "answerKey": "answer1"
+                },
+                {
+                  "content": "Unconventional fuels often take more energy to extract, which uses more fossil fuels and hence creates more CO\u003csub\u003e2\u003c/sub\u003e.",
+                  "answerKey": "answer2"
+                },
+                {
+                  "content": "We need to burn more unconventional fuels by mass/volume to get the same amount of energy as traditional fuels, which consequently produces more CO\u003csub\u003e2\u003c/sub\u003e.",
+                  "answerKey": "answer3"
+                },
+                {
+                  "content": "The question is moot. The majority of unconventional fuels actually do not produce more CO\u003csub\u003e2\u003c/sub\u003e than traditional fossil fuels on average.",
+                  "answerKey": "answer4"
+                }
+              ]
+            },
+            "configFixup": [
+              {
+                "value": {
+                  "domain": "info",
+                  "type": "ref",
+                  "refId": "sequenceNodeKey"
+                },
+                "type": "set-property",
+                "name": "questionId"
+              }
+            ]
+          }
+        ],
+        "containerId": "target1",
+        "hookupActions": [
+          {
+            "methodName": "handleRequestsFrom",
+            "instance": {
+              "type": "submit-manager"
+            },
+            "args": [
+              {
+                "domain": "brix",
+                "type": "ref",
+                "refId": "Q1"
+              }
+            ],
+            "type": "method-call",
+            "description": "Hookup the submit manager to evaluate answers"
+          },
+          {
+            "methodName": "draw",
+            "instance": {
+              "domain": "brix",
+              "type": "ref",
+              "refId": "Q1"
+            },
+            "args": [
+              {
+                "type": "d3select",
+                "selector": "#target1"
+              }
+            ],
+            "type": "method-call",
+            "description": "Draw the question"
+          }
+        ],
+        "description": "container for the sample multiple choice question"
+      }
+    ],
+    "description": "A Sample Activity containing a single multiple choice bric",
+    "title": "68830_NE_C07.html"
+  }
+}

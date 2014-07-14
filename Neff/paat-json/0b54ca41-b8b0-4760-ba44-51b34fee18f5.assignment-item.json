@@ -1,0 +1,157 @@
+{
+  "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope",
+  "@type": "Envelope",
+  "metadata": {
+    "guid": "0b54ca41-b8b0-4760-ba44-51b34fee18f5",
+    "title": "68830_NE_C01.html",
+    "extendedMetadata": [
+      {
+        "name": "crawlable",
+        "value": "false"
+      },
+      {
+        "name": "owner",
+        "value": "Brix"
+      },
+      {
+        "name": "contentTypeTier2",
+        "value": "assessment item"
+      },
+      {
+        "name": "contentTypeTier1",
+        "value": "Test and Assessment"
+      },
+      {
+        "name": "format",
+        "value": "application/vnd.pearson.sanvan.v1.activity"
+      },
+      {
+        "name": "timeRequired",
+        "value": "PT20S"
+      }
+    ],
+    "description": "68830_NE_C01.html",
+    "subject": [
+      "EnvironmentalScience"
+    ],
+    "contentTypeTier2": [
+      "AssessmentItem"
+    ],
+    "contentTypeTier1": "Assessment",
+    "format": [
+      "application/vnd.pearson.sanvan.v1.activity"
+    ],
+    "educationalAlignment": [
+      "http://purl.org/pearson/objectives/183725473384362"
+    ],
+    "version": "1.0"
+  },
+  "body": {
+    "containerConfig": [
+      {
+        "brixConfig": [
+          {
+            "bricId": "Q1",
+            "answerKey": {
+              "answers": {
+                "answer3": {
+                  "score": 0.0,
+                  "response": "Does the United States produce oil, coal, or natural gas, which are typically considered traditional fossil fuels?"
+                },
+                "answer2": {
+                  "score": 0.0,
+                  "response": "While some unconventional fuels may emit less pollution, is this true for unconventional fuels across the board?"
+                },
+                "answer1": {
+                  "score": 0.0,
+                  "response": "Think about what you know about unconventional fuels like tar sands. Does this fuel emit CO\u003csub\u003e2\u003c/sub\u003e when burned?"
+                },
+                "answer4": {
+                  "score": 1.0,
+                  "response": ""
+                }
+              },
+              "assessmentType": "multiplechoice"
+            },
+            "bricType": "MultipleChoiceQuestion",
+            "config": {
+              "id": "sampleQ1",
+              "order": "randomized",
+              "question": "Which of the following statements about the relationship between traditional fossil fuels and unconventional fossil fuels is true?",
+              "presenterType": "RadioGroup",
+              "presenterConfig": {
+                "numberFormat": ""
+              },
+              "choices": [
+                {
+                  "content": "Traditional fossil fuels emit a lot of CO\u003csub\u003e2\u003c/sub\u003e when they are burned, whereas unconventional fossil fuels do not emit any CO\u003csub\u003e2\u003c/sub\u003e.",
+                  "answerKey": "answer1"
+                },
+                {
+                  "content": "Traditional fossil fuels typically result in more air pollution when they are burned, whereas unconventional fossil fuels are typically cleaner burning.",
+                  "answerKey": "answer2"
+                },
+                {
+                  "content": "Traditional fossil fuels all come from the Middle East, whereas unconventional fossil fuels are fossil fuel sources that have been found elsewhere.",
+                  "answerKey": "answer3"
+                },
+                {
+                  "content": "Traditional fossil fuels are located in large pockets relatively near to the earth\u0027s surface, whereas unconventional fuels are present in deeper or smaller pockets and require new technology or greater expense to extract.",
+                  "answerKey": "answer4"
+                }
+              ]
+            },
+            "configFixup": [
+              {
+                "value": {
+                  "domain": "info",
+                  "type": "ref",
+                  "refId": "sequenceNodeKey"
+                },
+                "type": "set-property",
+                "name": "questionId"
+              }
+            ]
+          }
+        ],
+        "containerId": "target1",
+        "hookupActions": [
+          {
+            "methodName": "handleRequestsFrom",
+            "instance": {
+              "type": "submit-manager"
+            },
+            "args": [
+              {
+                "domain": "brix",
+                "type": "ref",
+                "refId": "Q1"
+              }
+            ],
+            "type": "method-call",
+            "description": "Hookup the submit manager to evaluate answers"
+          },
+          {
+            "methodName": "draw",
+            "instance": {
+              "domain": "brix",
+              "type": "ref",
+              "refId": "Q1"
+            },
+            "args": [
+              {
+                "type": "d3select",
+                "selector": "#target1"
+              }
+            ],
+            "type": "method-call",
+            "description": "Draw the question"
+          }
+        ],
+        "description": "container for the sample multiple choice question"
+      }
+    ],
+    "description": "A Sample Activity containing a single multiple choice bric",
+    "title": "68830_NE_C01.html"
+  }
+}

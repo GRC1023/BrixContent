@@ -1,0 +1,201 @@
+{
+  "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope",
+  "@type": "Envelope",
+  "metadata": {
+    "guid": "8ab96b9c-59e4-4854-8418-2b5c85b2ba32",
+    "title": "Fossil fuels were formed over millions of years ",
+    "extendedMetadata": [
+      {
+        "name": "crawlable",
+        "value": "false"
+      },
+      {
+        "name": "owner",
+        "value": "Brix"
+      },
+      {
+        "name": "contentTypeTier2",
+        "value": "Exercise"
+      },
+      {
+        "name": "contentTypeTier1",
+        "value": "Activity"
+      },
+      {
+        "name": "format",
+        "value": "application/vnd.pearson.sanvan.v1.activity"
+      },
+      {
+        "name": "timeRequired",
+        "value": "PT20S"
+      }
+    ],
+    "description": "Fossil fuels were formed over millions of years ",
+    "subject": [
+      "EnvironmentalScience"
+    ],
+    "contentTypeTier2": [
+      "AssessmentItem"
+    ],
+    "contentTypeTier1": "Assessment",
+    "format": [
+      "application/vnd.pearson.sanvan.v1.activity"
+    ],
+    "educationalAlignment": [
+      "http://purl.org/pearson/objectives/183725473384362"
+    ],
+    "version": "1.0"
+  },
+  "body": {
+    "containerConfig": [
+      {
+        "brixConfig": [
+          {
+            "bricId": "lblCarousel1",
+            "bricType": "LabelCarousel",
+            "config": {
+              "id": "lblCrsl1",
+              "imagesActualSize": {
+                "height": 470.0,
+                "width": 457.0
+              },
+              "type": "textLabels"
+            },
+            "configFixup": [
+              {
+                "name": "images",
+                "type": "set-property",
+                "value": {
+                  "elements": [
+                    {
+                      "properties": [
+                        {
+                          "name": "URI",
+                          "value": {
+                            "parts": [
+                              {
+                                "domain": "info",
+                                "refId": "imgBaseUrl",
+                                "type": "ref"
+                              },
+                              {
+                                "type": "constant",
+                                "value": "img/68830_NE_01_01_S1.png"
+                              }
+                            ],
+                            "type": "join"
+                          }
+                        },
+                        {
+                          "name": "caption",
+                          "value": {
+                            "type": "constant",
+                            "value": "359-299 million years ago: Ferns, trees, and other plants in ancient swamps fell and accumulated in deep layers of sediment, which is now mined as coal.\u003cbr/\u003e\u003cbr/\u003e\u003cbr/\u003e\u003cbr/\u003e"
+                          }
+                        },
+                        {
+                          "name": "selectorLabel",
+                          "value": {
+                            "type": "constant",
+                            "value": "Coal"
+                          }
+                        }
+                      ],
+                      "type": "object"
+                    },
+                    {
+                      "properties": [
+                        {
+                          "name": "URI",
+                          "value": {
+                            "parts": [
+                              {
+                                "domain": "info",
+                                "refId": "imgBaseUrl",
+                                "type": "ref"
+                              },
+                              {
+                                "type": "constant",
+                                "value": "img/68830_NE_01_01_S2.png"
+                              }
+                            ],
+                            "type": "join"
+                          }
+                        },
+                        {
+                          "name": "caption",
+                          "value": {
+                            "type": "constant",
+                            "value": "359-299 million years ago: In ancient rivers and oceans, plankton and algae died and were buried in deep layers of sediments. After being heated and compressed under the sediments, these deposits were transformed into the oil or natural that we extract today."
+                          }
+                        },
+                        {
+                          "name": "selectorLabel",
+                          "value": {
+                            "type": "constant",
+                            "value": "Oil and Natural Gas"
+                          }
+                        }
+                      ],
+                      "type": "object"
+                    }
+                  ],
+                  "type": "array"
+                }
+              }
+            ]
+          },
+          {
+            "bricId": "cntr1",
+            "bricType": "SvgContainer",
+            "config": {
+              "maxSize": {
+                "height": 640.0,
+                "width": 457.0
+              }
+            }
+          }
+        ],
+        "containerId": "b0ebb75eb0f784ad68d4b5d5c84d23823",
+        "description": "Container for the LabelCarousel",
+        "hookupActions": [
+          {
+            "args": [
+              {
+                "selector": "#b0ebb75eb0f784ad68d4b5d5c84d23823",
+                "type": "d3select"
+              }
+            ],
+            "description": "Draw the svg container",
+            "instance": {
+              "domain": "brix",
+              "refId": "cntr1",
+              "type": "ref"
+            },
+            "methodName": "draw",
+            "type": "method-call"
+          },
+          {
+            "args": [
+              {
+                "domain": "brix",
+                "refId": "lblCarousel1",
+                "type": "ref"
+              }
+            ],
+            "description": "Append the label image carousel to the svg container",
+            "instance": {
+              "domain": "brix",
+              "refId": "cntr1",
+              "type": "ref"
+            },
+            "methodName": "append",
+            "type": "method-call"
+          }
+        ]
+      }
+    ],
+    "description": "Fossil fuels were formed over millions of years",
+    "title": "Fossil fuels were formed over millions of years "
+  }
+}

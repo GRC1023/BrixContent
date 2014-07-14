@@ -1,0 +1,216 @@
+{
+  "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope",
+  "@type": "Envelope",
+  "metadata": {
+    "guid": "61b1b4d4-f26f-4bae-a7bf-ac303424c629",
+    "title": "Some impacts of NUCLEAR ENERGY PRODUCTION",
+    "extendedMetadata": [
+      {
+        "name": "crawlable",
+        "value": "false"
+      },
+      {
+        "name": "owner",
+        "value": "Brix"
+      },
+      {
+        "name": "contentTypeTier2",
+        "value": "Exercise"
+      },
+      {
+        "name": "contentTypeTier1",
+        "value": "Activity"
+      },
+      {
+        "name": "format",
+        "value": "application/vnd.pearson.sanvan.v1.activity"
+      },
+      {
+        "name": "timeRequired",
+        "value": "PT20S"
+      }
+    ],
+    "description": "Some impacts of NUCLEAR ENERGY PRODUCTION",
+    "subject": [
+      "EnvironmentalScience"
+    ],
+    "contentTypeTier2": [
+      "AssessmentItem"
+    ],
+    "contentTypeTier1": "Assessment",
+    "format": [
+      "application/vnd.pearson.sanvan.v1.activity"
+    ],
+    "educationalAlignment": [
+      "http://purl.org/pearson/objectives/183725473384362"
+    ],
+    "version": "1.0"
+  },
+  "body": {
+    "containerConfig": [
+      {
+        "brixConfig": [
+          {
+            "bricId": "lblCarousel1",
+            "bricType": "LabelCarousel",
+            "config": {
+              "displayWidth": 335.0,
+              "id": "lblCrsl1",
+              "imagesActualSize": {
+                "height": 335.0,
+                "width": 335.0
+              }
+            },
+            "configFixup": [
+              {
+                "name": "images",
+                "type": "set-property",
+                "value": {
+                  "elements": [
+                    {
+                      "properties": [
+                        {
+                          "name": "URI",
+                          "value": {
+                            "parts": [
+                              {
+                                "domain": "info",
+                                "refId": "imgBaseUrl",
+                                "type": "ref"
+                              },
+                              {
+                                "type": "constant",
+                                "value": "img/68830_NE_06_05_S1.jpg"
+                              }
+                            ],
+                            "type": "join"
+                          }
+                        },
+                        {
+                          "name": "caption",
+                          "value": {
+                            "type": "constant",
+                            "value": "Contamination and ecological damage from uranium mining"
+                          }
+                        }
+                      ],
+                      "type": "object"
+                    },
+                    {
+                      "properties": [
+                        {
+                          "name": "URI",
+                          "value": {
+                            "parts": [
+                              {
+                                "domain": "info",
+                                "refId": "imgBaseUrl",
+                                "type": "ref"
+                              },
+                              {
+                                "type": "constant",
+                                "value": "img/68830_NE_06_05_S2.jpg"
+                              }
+                            ],
+                            "type": "join"
+                          }
+                        },
+                        {
+                          "name": "caption",
+                          "value": {
+                            "type": "constant",
+                            "value": "Release of radiation from a damaged nuclear reactor such as this one in Fukushima, Japan"
+                          }
+                        }
+                      ],
+                      "type": "object"
+                    },
+                    {
+                      "properties": [
+                        {
+                          "name": "URI",
+                          "value": {
+                            "parts": [
+                              {
+                                "domain": "info",
+                                "refId": "imgBaseUrl",
+                                "type": "ref"
+                              },
+                              {
+                                "type": "constant",
+                                "value": "img/68830_NE_06_05_S3.jpg"
+                              }
+                            ],
+                            "type": "join"
+                          }
+                        },
+                        {
+                          "name": "caption",
+                          "value": {
+                            "type": "constant",
+                            "value": "Generation of highly radioactive nuclear waste"
+                          }
+                        }
+                      ],
+                      "type": "object"
+                    }
+                  ],
+                  "type": "array"
+                }
+              }
+            ]
+          },
+          {
+            "bricId": "cntr1",
+            "bricType": "SvgContainer",
+            "config": {
+              "maxSize": {
+                "height": 450.0,
+                "width": 335.0
+              }
+            }
+          }
+        ],
+        "containerId": "b5dbc93dc44074b47b6f549c99c5c7be3",
+        "description": "Container for the LabelCarousel",
+        "hookupActions": [
+          {
+            "args": [
+              {
+                "selector": "#b5dbc93dc44074b47b6f549c99c5c7be3",
+                "type": "d3select"
+              }
+            ],
+            "description": "Draw the svg container",
+            "instance": {
+              "domain": "brix",
+              "refId": "cntr1",
+              "type": "ref"
+            },
+            "methodName": "draw",
+            "type": "method-call"
+          },
+          {
+            "args": [
+              {
+                "domain": "brix",
+                "refId": "lblCarousel1",
+                "type": "ref"
+              }
+            ],
+            "description": "Append the label image carousel to the svg container",
+            "instance": {
+              "domain": "brix",
+              "refId": "cntr1",
+              "type": "ref"
+            },
+            "methodName": "append",
+            "type": "method-call"
+          }
+        ]
+      }
+    ],
+    "description": "Some impacts of NUCLEAR ENERGY PRODUCTION",
+    "title": "Some impacts of NUCLEAR ENERGY PRODUCTION"
+  }
+}
