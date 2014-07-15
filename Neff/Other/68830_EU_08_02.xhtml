@@ -1,0 +1,178 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <meta content="Template for LabelSelector" name="description" />
+    <title>LineGraph brix template</title>
+  
+    <!-- brix.css contains styling for the interactive brix -->
+    <link href="css/brix.css" rel="stylesheet" />
+</head>
+<body>
+    <div id="target1"></div>
+    <script src="js/d3.v3.min.js"></script>
+    
+    <script src="js/brixlib-compiled.js"></script>
+   
+
+<script>
+ <![CDATA[
+    // Create an object that will contain the objects needed for the activities
+    // on this page.
+    pearson.brix.activity = {};
+    var a = pearson.brix.activity;
+
+    // The activity config that defines the brix and mortar for this page
+    // 
+    // Set imgBaseUrl to imgBaseUrl": "http://localhost:8088/images/", or whatever server the IPS is running
+    // on to serve the images that route, or just leave it empty ("imgBaseUrl": "",) to point to images
+    // local to this html file
+
+    a.config =
+        {
+			"description": "Technology and choices that may affect future impacts of transportation",
+            "sequenceNodeKey": "6B824262-1702-41F9-8D9E-31620F5B8787",
+            //"imgBaseUrl": "http://localhost:8088/images/",
+            "imgBaseUrl": "",
+            "containerConfig":
+                [
+                    {
+                        "description": "Container for the LabelCarousel",
+                        "containerId": "imgContainer",
+                        "brixConfig":
+                            [
+                                {
+                                    "bricId": "lblCarousel1",
+                                    "bricType": "LabelCarousel",
+                                    "config":
+                                        {
+                                            "id": "lblCrsl1",
+                                            "imagesActualSize": { "height": 562, "width": 477 },
+                                            "displayWidth": 457,
+                                            "type": "textLabels"
+                                        },
+                                    "configFixup":
+                                        [
+                                            {
+                                                "type": "set-property",
+                                                "name": "images",
+                                                "value":
+                                                    {
+                                                        "type": "array",
+                                                        "elements":
+                                                            [
+                                                                {
+                                                                    "type": "object",
+                                                                    "properties":
+                                                                        [
+                                                                            {
+                                                                                "name": "URI",
+                                                                                "value":
+                                                                                    {
+                                                                                        "type": "join",
+                                                                                        "parts":
+                                                                                        [
+                                                                                            { "type": "ref", "domain": "info", "refId": "imgBaseUrl" },
+                                                                                            { "type": "constant", "value": "img/68830_EU_08_02_S1.png" }
+                                                                                        ]
+                                                                                    }
+                                                                            },
+                                                                            {
+                                                                                "name": "caption",
+                                                                                "value": { "type": "constant", "value": "" }
+                                                                            },
+                                                                            {
+                                                                                "name": "selectorLabel",
+                                                                                 "value": 
+                                                                                 {
+                                                                                        "type": "constant",
+                                                                                        "value": "INCREASE future impacts"
+                                                                                 }
+                                                                            }
+                                                                        ]
+                                                                },
+                                                                {
+                                                                    "type": "object",
+                                                                    "properties":
+                                                                        [
+                                                                            {
+                                                                                "name": "URI",
+                                                                                "value":
+                                                                                    {
+                                                                                        "type": "join",
+                                                                                        "parts":
+                                                                                        [
+                                                                                            { "type": "ref", "domain": "info", "refId": "imgBaseUrl" },
+                                                                                            { "type": "constant", "value": "img/68830_EU_08_02_S2.png" }
+                                                                                        ]
+                                                                                    }
+                                                                            },
+                                                                            {
+                                                                                "name": "caption",
+                                                                                "value": { "type": "constant", "value": "" }
+                                                                            }, 
+                                                                            {
+                                                                                "name": "selectorLabel",
+                                                                                "value": {
+                                                                                        "type": "constant",
+                                                                                        "value": "DECREASE future impacts"
+                                                                                    }
+                                                                            } 
+                                                                        ]
+                                                                }
+                                                            ]
+                                                    }
+                                            }
+                                        ]
+                                },
+                                {
+                                    "bricId": "cntr1",
+                                    "bricType": "SvgContainer",
+                                    "config":
+                                        {
+                                            "maxSize": { "height": 600, "width": 457 },
+                                        }
+                                }
+                            ],
+                        "hookupActions":
+                            [
+                                {
+                                    "description": "Draw the svg container",
+                                    "type": "method-call",
+                                    "instance": {"type": "ref", "domain": "brix", "refId": "cntr1"},
+                                    "methodName": "draw",
+                                    "args":
+                                        [
+                                            { "type": "d3select", "selector": "#target1" }
+                                        ]
+                                },
+                                {
+                                    "description": "Append the label image carousel to the svg container",
+                                    "type": "method-call",
+                                    "instance": {"type": "ref", "domain": "brix", "refId": "cntr1"},
+                                    "methodName": "append",
+                                    "args":
+                                        [
+                                            { "type": "ref", "domain": "brix", "refId": "lblCarousel1" }
+                                        ]
+                                }
+                            ]
+                    }
+            ]
+        };
+
+    // create the eventmanager to be used by the created brix, and the
+    // bricLayer which will create them, and then tell the bricLayer to build.
+    a.eventManager = new pearson.utils.EventManager();
+    a.answerMan = new pearson.brix.utils.LocalAnswerMan();
+    a.submitManager = new pearson.brix.utils.SubmitManager(a.eventManager, a.answerMan);
+
+    a.bricLayer = new pearson.brix.utils.BricLayer(null, a.eventManager, a.submitManager);
+
+    a.building = a.bricLayer.build(a.config);
+    ]]>
+    </script>
+</body>
+</html>
