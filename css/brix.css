@@ -40,177 +40,226 @@ svg g.brixImage
 
 g.brixImage > rect.background
 {
-	fill: #fff;
-	stroke-width: 0;
-  stroke: #fff;
+    fill: #fff;
+    stroke-width: 0;
+    stroke: #fff;
 }
 
 svg g.brixCaptionedImage>rect.background
 {
-  fill: #fff;
-  stroke-width: 0;
-  stroke: #fff;
+    fill: #fff;
+    stroke-width: 0;
+    stroke: #fff;
 }
 
 svg g.brixImage>rect.highlight
 {
-	fill: none;
-	fill-opacity:	0.0;
-	stroke-opacity:	0.0;
+    fill: none;
+    fill-opacity:   0.0;
+    stroke-opacity: 0.0;
 }
 
 svg g.brixImage.lit>rect.highlight
 {
-	fill-opacity:	0.0;
-	stroke:	blue;
-	stroke-opacity:	0.8;
+    fill-opacity:   0.0;
+    stroke: blue;
+    stroke-opacity: 0.8;
 }
 
 svg g.brixCarousel>rect.background
-
 {
-	fill:	#f0f0f0;
+    fill:   #f0f0f0;
 }
 
 svg g.brixCarousel>g.brixItem>rect.selection
 {
-	fill:			#fff;
-	fill-opacity:	0.0;
-	stroke:		#999;
-  stroke-width: 1;
-	stroke-opacity:	0.0;
+    fill:           #fff;
+    fill-opacity:   0.0;
+    stroke:     #999;
+    stroke-width: 1;
+    stroke-opacity: 0.0;
 }
 
 svg g.brixCarousel>g.brixItem.selected>rect.selection
 {
-	fill-opacity:	0.3;
-	stroke-opacity:	1;
+    fill-opacity:   0.3;
+    stroke-opacity: 1;
 }
 
 svg g.brixImageViewer>rect,
 svg g.brixLabelCarousel>rect
 {
-	fill:	#f0f0f0;
-	stroke-width:	1;
-  stroke: #f0f0f0;
+    fill:   #f0f0f0;
+    stroke-width:   1;
+    stroke: #f0f0f0;
 }
 
 .brixImageCaption
 {
-  font: 16px Helvetica;
-  background: #fff;
-  color: #4d4d4d;
-  padding: 15px 0px;
-  border: 0px solid #cbcbcb;
-
+    font: 16px Helvetica;
+    background: #fff;
+    color: #4d4d4d;
+    padding: 15px 0px;
+    border: 0px solid #cbcbcb;
 }
 
 /* Markers
 ================================================== */
 svg g.bricMarkers line
 {
-  fill:     none;
-  stroke:   #e4e4e4;
-  stroke-width: 2;
+    fill: none;
+    stroke: #e4e4e4;
+    stroke-width: 2;
 }
 
 svg g.bricMarkers circle
 {
-  opacity: 0.5;
+    opacity: 0.5;
 }
 
 svg g.bricMarkers .lit line
 {
-  stroke:   #F05A24;
+    stroke:   #F05A24;
 }
 
 svg g.bricMarkers polygon,
 svg g.bricMarkers rect,
 svg g.bricMarkers circle
 {
-  fill:     #e4e4e4;
-  stroke:   #e4e4e4;
+    fill:     #e4e4e4;
+    stroke:   #e4e4e4;
 }
 
 svg g.bricMarkers .lit rect,
 svg g.bricMarkers .lit circle
 {
-  fill:    #f4f4f4;
-  stroke:  #F05A24;
-  stroke-width: 2;
+    fill:    #f4f4f4;
+    stroke:  #F05A24;
+    stroke-width: 2;
 }
 
 svg g.bricMarkers .lit polygon,
 svg g.bricMarkers .lit circle
 {
-  fill:    #F05A24;
-  stroke:  #F05A24;
-  stroke-width: 2;
+    fill:    #F05A24;
+    stroke:  #F05A24;
+    stroke-width: 2;
 }
 
 svg g.bricMarkers .markerLabel
 {
-  padding: 2px;
-  text-align:right;
-  color: 666;
-  font: Helvetica 9pt;
-  background-color: #f4f4f4;
-  padding: 8px 8px;
+    padding: 2px;
+    text-align:right;
+    color: 666;
+    font: Helvetica 9pt;
+    background-color: #f4f4f4;
+    padding: 8px 8px;
+}
+
+/* Proto Labels
+================================================== */
+svg .brixProtoLabelGroup g.brixLabel>circle
+{
+    fill: #f0f0f0;
+    stroke: #c0c0c0;
+    stroke-width: 1;
+}
+svg .brixProtoLabelGroup g.brixLabel.lit>circle
+{
+    fill: #107aca;
+    stroke: #0d65a6;
+}
+svg .brixProtoLabelGroup g.brixLabel>text
+{
+    fill: #4d4d4d;
+    font: bold 16px Helvetica;
+    margin: 20px;
+}
+svg .brixProtoLabelGroup g.brixLabel.lit>text
+{
+    fill: #f4f4f4;
+}
+
+svg .brixProtoLabelGroup g.brixLabel .descLabel
+{
+    color: 4d4d4d;
+    font: 14px Helvetica;
+    border: 1px solid #c0c0c0;
+    background-color: #f0f0f0;
+    padding: 6px 8px 8px;
+
+}
+
+svg .brixProtoLabelGroup g.brixLabel .bullets
+{
+    padding: 6px 6px 8px 38px;
+    min-height: 35px;
+}
+
+svg .brixProtoLabelGroup g.brixLabel.lit .descLabel
+{
+    color: #f4f4f4;
+    background-color: #107aca;
+    border: 1px solid #0d65A6;
 }
 
 
 /* Labels
 ================================================== */
-svg g.brixLabel>circle
+svg g.brixLabel text
 {
-	fill:			#f0f0f0;
-	stroke:		#c0c0c0;
-	stroke-width:	1;
-}
-svg g.brixLabel.lit>circle
-{
-	fill:			#107aca;
-	stroke:		#0d65a6;
-}
-svg g.brixLabel>text
-{
-	fill:			#4d4d4d;
-  font: bold 16px Helvetica;
-  margin: 20px;
-}
-svg g.brixLabel.lit>text
-{
-	fill:			#f4f4f4;
-}
-
-svg g.brixLabel .descLabel
-{
-  color: 4d4d4d;
-  font: 14px Helvetica;
-  border: 1px solid #c0c0c0;
-  background-color: #f0f0f0;
-  padding: 6px 8px 8px;
-
+    fill: #4d4d4d;
+    font: bold 16px Helvetica;
+    margin: 20px;
 }
 
 svg g.brixLabel .bullets
 {
-  padding: 6px 6px 8px 38px;
-  min-height: 35px;
+    padding: 6px 6px 8px 38px;
+    min-height: 35px;
 }
 
-svg g.brixLabel.lit .descLabel
+svg g.brixLabelIndex > g.label > circle
 {
-	color: #f4f4f4;
-	background-color: #107aca;
-  border: 1px solid #0d65A6;
+    fill: #f0f0f0;
+    stroke: #c0c0c0;
+    stroke-width: 1;
+}
+
+svg g.brixLabelIndex > g.label.lit > circle
+{
+    fill: #107aca;
+    stroke: #0d65a6;
+}
+
+svg g.brixLabelIndex > g.label.lit > text
+{
+    fill: #f4f4f4;
+}
+
+svg g.brixLabelText > g.label div.descLabel
+{
+    color: #4d4d4d;
+    font: 14px Helvetica;
+    border: 1px solid #c0c0c0;
+    background-color: #f0f0f0;
+    padding: 6px 8px 8px;
+    white-space: normal;
+}
+
+svg g.brixLabelText > g.label.lit div.descLabel
+{
+    color: #f4f4f4;
+    background-color: #107aca;
+    border: 1px solid #0d65A6;
 }
 
 
 /* Sliders
 ================================================== */
 
-.bric-round-corner {
+.bric-round-corner
+{
     border-bottom-right-radius: 5px;
     border-bottom-left-radius: 5px;
     border-top-right-radius: 5px;
@@ -219,37 +268,38 @@ svg g.brixLabel.lit .descLabel
 
 .bricSlider-container
 {
-  margin: 2px;
-  padding: 8px;
-  /*background-color: #fff;*/
-  border-radius: 8px;
-  display: inline-block;
-  font: 16px Helvetica;
+    box-sizing: border-box;
+    margin: 2px;
+    padding: 8px;
+    /*background-color: #fff;*/
+    border-radius: 8px;
+    display: inline-block;
+    font: 16px Helvetica;
 }
 
 .bricSlider-container .readout
 {
-  margin-left: 10px;
-  font-weight: bold;
+    margin-left: 10px;
+    font-weight: bold;
 }
 
 .bricSlider-widget {
-  /*background-color: ThreeDFace;*/
-  overflow: hidden;
-  margin-top: 18px;
-  margin-bottom: 10px;
+    /*background-color: ThreeDFace;*/
+    overflow: hidden;
+    margin-top: 18px;
+    margin-bottom: 10px;
 }
 
 .bricSlider-thumb {
-  position: absolute;
-  background-color: ThreeDShadow;
-  overflow: hidden;
+    position: absolute;
+    background-color: ThreeDShadow;
+    overflow: hidden;
 }
 
 .goog-slider-vertical .bricSlider-thumb {
-  left: 0;
-  height: 20px;
-  width: 100%;
+    left: 0;
+    height: 20px;
+    width: 100%;
 }
 
 .goog-slider-horizontal .bricSlider-thumb {
@@ -274,37 +324,42 @@ svg g.brixLabel.lit .descLabel
     background-color: lightgray
 }
 
-/* Radio groups
+/* Radio and Check groups
 ================================================== */
-div.brixRadioGroup tr>td
+/*this should isolate the groups from any page level table padding */
+div.brixRadioGroup tr>td,
+div.brixCheckGroup tr>td
+
 {
-  padding: 0;
+    padding: 0;
 }
+
 div.brixRadioGroup table.questionTable,
 div.brixCheckGroup table.questionTable
 {
-  margin: 0 0 0 25px;
+    margin: 0;
 }
-
 
 div.brixRadioGroup .choiceLabel,
 div.brixCheckGroup .choiceLabel
 {
-  font-weight: bold;
-  margin: 0 5px;
+    /*font-weight: bold;
+    margin: 0 5px;  */
 }
 
 div.brixRadioGroup table.questionTable tr>td:first-child,
 div.brixCheckGroup table.questionTable tr>td:first-child
 {
-  text-align:   right;
-  vertical-align:top;
-  padding-top: 5px;
+    text-align: right;
+    vertical-align: top;
+    padding-top: 5px;
+    margin-top: 10px;
 }
 div.brixRadioGroup table.questionTable tr>td:nth-of-type(2),
 div.brixCheckGroup table.questionTable tr>td:nth-of-type(2)
 {
-  padding-left: 8px;
+    padding-left: 5px;
+    padding-top: 0px;
 }
 
 div.brixRadioGroup table.questionTable input[type=radio],
@@ -321,122 +376,120 @@ div.brixCheckGroup table.questionTable input[type=checkbox]
 /* overwrite higher level css shenanigans */
 div.brixJournal :last-child
 {
-  margin-bottom: auto;
+    margin-bottom: auto;
 }
 
 div.widgetnumericquestion,
 div.brixJournal,
 div.brixMultipleChoiceQuestion
 {
-
-  padding: 10px 0;
-  margin-bottom: 10px;
-  -moz-border-radius: 4px;
-  border-radius: 4px;
-  cursor: default;
+    padding: 10px 0;
+    margin-bottom: 10px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+    cursor: default;
 }
 
 div.brixJournal fieldset
 {
-  display: inline-block;
-  border: 0;
-  -webkit-margin-start: 2px;
-  -webkit-margin-end: 2px;
-  -webkit-padding-before: 0.35em;
-  -webkit-padding-end: 0.75em;
-  margin-bottom: auto;
+    display: inline-block;
+    border: 0;
+    -webkit-margin-start: 2px;
+    -webkit-margin-end: 2px;
+    -webkit-padding-before: 0.35em;
+    -webkit-padding-end: 0.75em;
+    margin-bottom: auto;
 }
 
 div.brixMultipleChoiceQuestion fieldset
 {
-  display: inline-block;
-  border: 0;
-  -webkit-margin-start: 2px;
-  -webkit-margin-end: 2px;
-  -webkit-padding-before: 0.35em;
-  -webkit-padding-start: 0.75em;
-  -webkit-padding-end: 0.75em;
-  -webkit-padding-after: 0.625em;
-  margin-bottom: auto;
+    display: inline-block;
+    border: 0;
+    -webkit-margin-start: 2px;
+    -webkit-margin-end: 2px;
+    -webkit-padding-before: 0.35em;
+    -webkit-padding-start: 0.75em;
+    -webkit-padding-end: 0.75em;
+    -webkit-padding-after: 0.625em;
+    margin-bottom: auto;
 }
 
 div.brixJournal fieldset legend,
 div.brixMultipleChoiceQuestion fieldset legend
 {
-  line-height: 40px;
-  color: #4d4d4d;
-  font: 20px Helvetica;
-  margin-bottom: 5px;
+    line-height: 20px;
+    font: bold 15px Helvetica;
+    color: #4d4d4d;
+    border: 0; /*specifically making this 0 to override page css */
+    margin-bottom: 5px;
 }
 
 div.brixMultipleChoiceQuestion label
 {
-  font: 16px Helvetica;
-  color: #4d4d4d;
-  line-height: 30px;
+    font: 15px Helvetica;
+    line-height: 20px;
+    color: #4d4d4d;
 }
 
 
 div.brixJournal .journalTextarea
 {
-  margin-left: 10px;
+    margin-left: 10px;
 }
 
 div.brixJournal .journalTextarea textarea
 {
-  overflow: auto;
-  max-width: 556px;
-  width: 100%;
-  resize: none;
-  font-size: 80%;
+    overflow: auto;
+    max-width: 556px;
+    width: 100%;
+    resize: none;
+    font-size: 80%;
 }
 
 div.brixMultipleChoiceQuestion .choiceLabel
 {
-  font: bold 16px Helvetica;
-  color: #4d4d4d;
-  margin: 0 5px;
+    margin: 0 3px;
 }
 
 div.brixJournal .submit,
 div.brixMultipleChoiceQuestion .submit
 {
-  float: left;
+    float: left;
 }
 
 div.brixJournal span.attempts,
 div.brixMultipleChoiceQuestion span.attempts
 {
-  margin-top: 5px;
-  display: inline-block;
+    margin-top: 5px;
+    display: inline-block;
 }
 
 div.brixMultipleChoiceQuestion span.attempts span.count
 {
-  font: bold 33px/28px Helvetica;
-  color: #686868;
-  margin-left: 16px;
-  margin-right: 5px;
-  float: left;
+    font: bold 33px/28px Helvetica;
+    color: #686868;
+    margin-left: 16px;
+    margin-right: 5px;
+    float: left;
 }
 
 div.brixMultipleChoiceQuestion span.attempts span.descr
 {
-  font: 13px/14px Helvetica;
-  color: #686868;
-  margin-left: 6px;
-  display: inline-block;
-  width: 80px;
+    font: 13px/14px Helvetica;
+    color: #686868;
+    margin-left: 6px;
+    display: inline-block;
+    width: 80px;
 }
 
 div.brixJournal .submit button:disabled,
 div.brixMultipleChoiceQuestion .submit button:disabled
 {
-  border-color: #e0e0e0;
-  background: #e0e0e0;
-  text-shadow: none;
-  cursor: default;
-  color: #686868;
+    border-color: #e0e0e0;
+    background: #e0e0e0;
+    text-shadow: none;
+    cursor: default;
+    color: #686868;
 }
 
 .brixButton button
@@ -460,19 +513,21 @@ div.brixMultipleChoiceQuestion .submit button:disabled
     display: inline-block;
     margin-bottom: 0;
     vertical-align: middle;
-
 }
 
 .brixButton button:hover,
-.brixButton button:focus {
+.brixButton button:focus
+{
     background: -webkit-gradient(linear, 0 0, 0 100%, from(#107aca), to(#368fd2));
     background: -webkit-linear-gradient(#107aca 0%, #368fd2 100%);
     background: -moz-linear-gradient(#107aca 0%, #368fd2 100%);
     background: -o-linear-gradient(#107aca 0%, #368fd2 100%);
     background: linear-gradient(#107aca 0%, #368fd2 100%) repeat scroll 0 0 rgba(0, 0, 0, 0);
 }
+
 .brixButton button:active,
-.brixButton button.active {
+.brixButton button.active
+{
     background: -webkit-gradient(linear, 0 100%, 0 0, from(#c0c0c0), to(#d6d6d6));
     background: -webkit-linear-gradient(#c0c0c0 0%, #d6d6d6 100%);
     background: -moz-linear-gradient(#c0c0c0 0%, #d6d6d6 100%);
@@ -485,31 +540,31 @@ div.brixMultipleChoiceQuestion .submit button:disabled
 .brixJournal .feedback,
 .brixMultipleChoiceQuestion .feedback
 {
-  padding: 20px;
-  font: bold 18px Helvetica;
-  color: #4d4d4d;
-  bottom: 20px;
-  left: 0;
-  width: 100%;
-  -moz-box-sizing: border-box;
-  -webkit-box-sizing: border-box;
-  -ms-box-sizing: border-box;
-  box-sizing: border-box;
-  -moz-transition: bottom 0.3s;
-  -webkit-transition: bottom 0.3s;
-  transition: bottom 0.3s;
+    padding: 20px;
+    font: bold 18px Helvetica;
+    color: #4d4d4d;
+    bottom: 20px;
+    left: 0;
+    width: 100%;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    box-sizing: border-box;
+    -moz-transition: bottom 0.3s;
+    -webkit-transition: bottom 0.3s;
+    transition: bottom 0.3s;
 }
 
 .brixMultipleChoiceQuestion .feedback .custom-feedback
 {
-  font: 16px Helvetica;
+    font: 16px Helvetica;
 }
 
 .brixMultipleChoiceQuestion .feedback .feedback-correctAfterWrong
 {
-  background-color: #fff;
-  border: 1px solid #c7e5fc;
-  padding: 20px;
+    background-color: #fff;
+    border: 1px solid #c7e5fc;
+    padding: 20px;
 }
 
 .brixJournal .feedback .feedback-correct,
@@ -517,23 +572,22 @@ div.brixMultipleChoiceQuestion .submit button:disabled
 .brixMultipleChoiceQuestion .feedback .feedback-incorrect,
 .brixMultipleChoiceQuestion .feedback .feedback-partial
 {
-  background-color: #f0f7fc;
-  border: 1px solid #c7e5fc;
-  padding: 20px;
+    background-color: #f0f7fc;
+    border: 1px solid #c7e5fc;
+    padding: 20px;
 }
 
 .brixMultipleChoiceQuestion i
 {
-  font-size: 24px;
-  margin-right: 4px;
-  margin-top: -3px;
+    font-size: 24px;
+    margin-top: -3px;
 }
 
 .brixMultipleChoiceQuestion div.feedback i
 {
-  float: left;
-  margin-right: 15px;
-  margin-top: 0;
+    float: left;
+    margin-right: 15px;
+    margin-top: 0;
 }
 
 /*
@@ -558,97 +612,128 @@ div.brixMultipleChoiceQuestion .submit button:disabled
  *  Twitter: http://twitter.com/fortaweso_me
  *  Work: Lead Product Designer @ http://kyruus.com
  */
-@font-face {
-  font-family: 'FontAwesome';
-  src: url("fonts//font-awesome.min.css");
-  src: url("fonts//font-awesome.min.css") format("embedded-opentype"), url("fonts//fontawesome-webfont.woff?v=3.0.1") format("woff"), url("fonts//fontawesome-webfont.ttf?v=3.0.1") format("truetype");
-  font-weight: normal;
-  font-style: normal; }
+@font-face
+{
+    font-family: 'FontAwesome';
+    src: url("fonts//font-awesome.min.css");
+    src: url("fonts//font-awesome.min.css") format("embedded-opentype"), url("fonts//fontawesome-webfont.woff?v=3.0.1") format("woff"), url("fonts//fontawesome-webfont.ttf?v=3.0.1") format("truetype");
+    font-weight: normal;
+    font-style: normal;
+}
 
 /*  Font Awesome styles
     ------------------------------------------------------- */
 [class^="icon-"],
 [class*=" icon-"]
 {
-  font-family: FontAwesome;
-  font-weight: normal;
-  font-style: normal;
-  text-decoration: inherit;
-  -webkit-font-smoothing: antialiased;
-  /* sprites.less reset */
-  display: inline;
-  width: auto;
-  height: auto;
-  line-height: normal;
-  vertical-align: baseline;
-  background-image: none;
-  background-position: 0% 0%;
-  background-repeat: repeat;
- }
+    font-family: FontAwesome;
+    font-weight: normal;
+    font-style: normal;
+    text-decoration: inherit;
+    -webkit-font-smoothing: antialiased;
+    /* sprites.less reset */
+    display: inline;
+    width: auto;
+    height: auto;
+    line-height: normal;
+    vertical-align: baseline;
+    background-image: none;
+    background-position: 0% 0%;
+    background-repeat: repeat;
+}
 
 [class^="icon-"]:before,
-[class*=" icon-"]:before {
-  text-decoration: inherit;
-  display: inline-block;
-  speak: none; }
+[class*=" icon-"]:before
+{
+    text-decoration: inherit;
+    display: inline-block;
+    speak: none;
+}
+
+.icon-large
+{
+    font-size: 1.33333em;
+    vertical-align: -10%;
+}
 
 .icon-ok-sign:before
 {
-  content: "\f058";
-  color: #00a05e;
+    content: "\f058";
+    color: #00a05e;
 }
 
 .icon-check:before
 {
-  content: "\f00c";
-  color: #00a05e;
+    content: "\f00c";
+    color: #00a05e;
 }
 
 .icon-wrong:before
 {
-  content: "\f057";
-  color: #dc3535;
+    content: "\f057";
+    color: #dc3535;
 }
 
 .icon-adjust:before
 {
-  content: "\f057";
-  color: #dc3535;
+    content: "\f057";
+    color: #dc3535;
+}
+
+.icon-caret-down:before
+{
+    content: "\f0d7";
+}
+
+.icon-caret-right:before
+{
+    content: "\f0da";
+}
+
+.icon-user:before
+{
+    content: "\f007";
+}
+
+.icon-circle-blank:before
+{
+    content: '\f10c';
 }
 
 
 /* tables of callouts/data
 ================================================== */
 table.widgetCallout {
-  border-collapse: collapse;
-  border-spacing: 0;
-  border: 2px solid #f4f4f4;
-  width: auto;
-  font: 14px Helvetica;
-  margin-bottom: 15px;
-  }
+    border-collapse: collapse;
+    border-spacing: 0;
+    border: 2px solid #f4f4f4;
+    width: auto;
+    font: 14px Helvetica;
+    margin-bottom: 15px;
+}
 
 table.widgetCallout td {
-  vertical-align: top;
-  padding-top: 5px;
-  padding-bottom: 3px;
-  padding-right: 15px;
-  padding-left: 35px;
-  text-indent: -22px;
-  }
+    vertical-align: top;
+    padding-top: 5px;
+    padding-bottom: 3px;
+    padding-right: 15px;
+    padding-left: 35px;
+    text-indent: -22px;
+}
 
 table.widgetCallout thead>tr td {
-  border-bottom: 2px solid #f4f4f4;
-  padding-bottom: 3px;
-  font-weight: bold;
-  text-align: left;}
+    border-bottom: 2px solid #f4f4f4;
+    padding-bottom: 3px;
+    font-weight: bold;
+    text-align: left;
+}
 
 
 table tr.widgetCallout.lit
 {
-	color:#1d456e;
-	border-left: 4px solid #107aca;
-	background-color: #f4f4f4;
+    color:#1d456e;
+    border-left: 4px solid #107aca;
+    background-color: #f4f4f4;
 }
 
 /* used in callout automatic step numbering */
@@ -659,21 +744,21 @@ table tr.widgetCallout.lit
     border: 2px solid white;
     border-radius: 14px; /* one half of ( (border * 2) + height + padding )
 
- Got this from stack overflow, it's pretty close
+    Got this from stack overflow, it's pretty close
     color: white;
     font: 0.9em/1.3em Helvetica, Verdana, Tahoma;
     height: 16px;
     min-width: 16px;
     padding: 4px 3px 2px 3px;
-  	margin: 4px 11px 3px 0px;
+    margin: 4px 11px 3px 0px;
     text-align: center;
-	display: block;
-	float: left;*/
+    display: block;
+    float: left;*/
 
-  font: bold 16px Helvetica;
-  color: #000;
-  padding-top: 4px;
-  padding-right:12px;
+    font: bold 16px Helvetica;
+    color: #000;
+    padding-top: 4px;
+    padding-right:12px;
 }
 
 
@@ -684,67 +769,69 @@ table tr.widgetCallout.lit
 ================================================== */
 
 svg g.widgetSketch .shape {
-
-	stroke: #666;
-	stroke-width: 2;
+    stroke: #666;
+    stroke-width: 2;
 }
 
 svg g.widgetSketch .shape.hot {
-	opacity: 0.0;
+    opacity: 0.0;
 }
 
 svg g.widgetSketch .shape.lit {
-	fill: #107aca;
-	stroke: #1d95ae;
-	stroke-width:3;
-	opacity: 0.5;
+    fill: #107aca;
+    stroke: #1d95ae;
+    stroke-width:3;
+    opacity: 0.5;
 }
 
 svg g.widgetSketch .shape>text {
-	fill: #333;
-	stroke: none;
-	font: bold italic 1.3em Times, serif;
-
+    fill: #333;
+    stroke: none;
+    font: bold italic 1.3em Times, serif;
 }
 
 /* Math and questions
 ================================================== */
 .math {
-  font: bold italic 1em Times, serif;
-  border: 0;
-  font-size: 125%;
-  padding: 0;
+    font: bold italic 1em Times, serif;
+    border: 0;
+    font-size: 125%;
+    padding: 0;
 }
 .math sup {
-	font-size: 80%;
+    font-size: 80%;
 }
 
 
 /* title and captions and feedback messages
 ================================================== */
 .graphTitle {
-  font-size: 17px;
-  border-bottom: 1px solid #ccc;
-  padding-left: 20px;
-  padding-bottom: 5px; }
+    font-size: 17px;
+    border-bottom: 1px solid #ccc;
+    padding-left: 20px;
+    padding-bottom: 5px;
+}
 
 .msgbox {
-  background-color: #d0eaea;
-  border: solid #008496;
-  -moz-border-radius: 5px;
-  border-radius: 5px;
-  height: 4em;
-  max-width: 30em;
-  padding: .5em; }
+    background-color: #d0eaea;
+    border: solid #008496;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    height: 4em;
+    max-width: 30em;
+    padding: .5em;
+}
 
 #message_0 {
-  font: .8em/1.5em;
-  color: #003; }
+    font: .8em/1.5em;
+    color: #003;
+}
 
 .caption {
-  font: bold 0.6em/0.9em;
-  color: #000;
-  padding: 0em 0.2em; }
+    font: bold 0.6em/0.9em;
+    color: #000;
+    padding: 0em 0.2em;
+}
 
 
 
@@ -752,37 +839,44 @@ svg g.widgetSketch .shape>text {
 ================================================== */
 g.brix .axis path,
 g.brix .axis line,
-g.brix .axis circle {
-  fill: none;
-  stroke: #bbbbbb;
-  shapeRendering: crisp-edges;
-  stroke-width: 1;
+g.brix .axis circle
+{
+    fill: none;
+    stroke: #bbbbbb;
+    shapeRendering: crisp-edges;
+    stroke-width: 1;
 }
 
-g.brix .axis text {
-  font: 14px Helvetica;
-  color: #008496;
+g.brix .axis text
+{
+    font: 14px Helvetica;
+    color: #008496;
 }
 
-.areaMarker {
-  fill: #2C6CB8;
-  opacity: .3; }
-
-.axisLabel {
-  font: 14px Helvetica;
-  color: #000;
-  word-wrap: break-word;
-  text-align: center;
+.areaMarker
+{
+    fill: #2C6CB8;
+    opacity: .3;
 }
 
-.graphLabel {
-  font: .85em/1.1em;
-  word-wrap: break-word;
-  position: static;
-  text-align: left;
-  background-color: transparent;
-  padding: .2em;
-  margin: .2em; }
+.axisLabel
+{
+    font: 14px Helvetica;
+    color: #000;
+    word-wrap: break-word;
+    text-align: center;
+}
+
+.graphLabel
+{
+    font: .85em/1.1em;
+    word-wrap: break-word;
+    position: static;
+    text-align: left;
+    background-color: transparent;
+    padding: .2em;
+    margin: .2em;
+}
 
 
 
@@ -794,9 +888,9 @@ svg g.widgetLineGraph .traces,
 svg g.widgetLegend .traces,
 svg g.brixLegend .traces
 {
-  opacity:		0.9;
-  fill: none;
-  stroke-width: 3;
+    opacity:        0.9;
+    fill:           none;
+    stroke-width:   3;
 }
 
 svg g.brixLineGraph .trace.lit,
@@ -806,144 +900,109 @@ svg g.widgetLineGraph .traces.selected,
 svg g.widgetLegend .lit .traces,
 svg g.brixLegend .lit .traces
 {
-	opacity:		1;
-	stroke-width:	5;
+    opacity:        1;
+    stroke-width:   5;
 }
 
 svg g.widgetLegend .legendLabel,
-svg g.brixLegend .legendLabel{
-  font: 0.9em/1.1em HelveticaNeue-Light,HelveticaNeue,Helvetica, Arial, Lucida Grande, sans-serif;
-  color: #000;
-  text-align: left;
-  padding: 2px;
+svg g.brixLegend .legendLabel
+{
+    font:           0.9em/1.1em HelveticaNeue-Light,HelveticaNeue,Helvetica, Arial, Lucida Grande, sans-serif;
+    color:          #000;
+    text-align:     left;
+    padding:        2px;
 }
 
 svg g.widgetLegend .lit>text,
 svg g.brixLegend .lit>text
 {
-	font-weight: bold;
+    font-weight:    bold;
 }
 
 svg g.widgetLegend .legendBox,
-svg g.brixLegend .legendBox{
-  fill: #fff;
-  stroke: #3A87AD;
-  stroke-width: 1px;
+svg g.brixLegend .legendBox
+{
+    fill:           #fff;
+    stroke:         #3A87AD;
+    stroke-width:   1px;
 }
 
-svg g .stroke0 {
-  stroke: #5688D6;
-   }
+/* Stroke and Fill color palette */
+svg g .stroke0      { stroke: #5688d6; }
+svg g .fill0        { fill:   #5688d6; }
 
-svg g .stroke1 {
-  stroke: #F25757; }
+svg g .stroke1      { stroke: #f25757; }
+svg g .fill1        { fill:   #f25757; }
 
-svg g .stroke2 {
-  stroke: #fabc4a; }
+svg g .stroke2      { stroke: #fabc4a; }
+svg g .fill2        { fill:   #fabc4a; }
 
-svg g .stroke3 {
-  stroke: #999; }
+svg g .stroke3      { stroke: #999;    }
+svg g .fill3        { fill:   #999; }
 
-svg g .stroke4 {
-  stroke: #19bac2; }
+svg g .stroke4      { stroke: #19bac2; }
+svg g .fill4        { fill:   #19bac2; }
 
-svg g .stroke5 {
-  stroke: #cc76cc; }
+svg g .stroke5      { stroke: #cc76cc; }
+svg g .fill5        { fill:   #cc76cc; }
 
-svg g .stroke6 {
-  stroke: #96b5e0; }
+svg g .stroke6      { stroke: #96b5e0; }
+svg g .fill6        { fill:   #96b5e0; }
 
-svg g .stroke7 {
-  stroke: #ff7747; }
+svg g .stroke7      { stroke: #ff7747; }
+svg g .fill7        { fill:   #ff7747; }
 
-svg g .stroke8 {
-  stroke: #2ea0d9; }
+svg g .stroke8      { stroke: #2ea0d9; }
+svg g .fill8        { fill:   #2ea0d9; }
 
-svg g .stroke9 {
-  stroke: #d19469; }
+svg g .stroke9      { stroke: #d19469; }
+svg g .fill9        { fill:   #d19469; }
 
-svg g .stroke10 {
-  stroke: #339999; }
+svg g .stroke10     { stroke: #339999; }
+svg g .fill10       { fill:   #339999; }
 
-svg g .stroke11 {
-  stroke: #8063c7; }
+svg g .stroke11     { stroke: #8063c7; }
+svg g .fill11       { fill:   #8063c7; }
+
+svg g .strokeWhite  { stroke: #fff;    }
+svg g .fillWhite    { fill:   #fff;    }
+
+svg g .strokeBlack  { stroke: #000;    }
+svg g .fillBlack    { fill:   #000;    }
+
+svg g .strokeNone   { stroke: none;    }
+svg g .fillNone     { fill:   none;    }
+
 
 /* bars, pie wedges and points
 ================================================== */
 svg g.brixBarChart .bar,
 svg g.widgetLegend rect,
 svg g.brixLegend rect,
-svg g.bricPieChart path {
-  opacity: 0.9;
-  }
+svg g.bricPieChart path
+{
+    opacity: 0.9;
+}
 
 svg g.brixBarChart .lit .bar,
 svg g.widgetLegend .lit rect,
 svg g.brixLegend .lit rect
-svg g.bricPieChart path .lit  {
-  opacity: 1;
-  stroke-width: 1;
-  stroke: #999;
-  }
-
-
-svg g .fill0 {
-  fill: #5688D6;
-  }
-
-svg g .fill1 {
-   fill: #F25757; }
-
-svg g .fill2 {
-  fill: #fabc4a; }
-
-svg g .fill3 {
-  fill: #999; }
-
-svg g .fill4 {
-  fill: #19bac2; }
-
-svg g .fill5 {
-  fill: #cc76cc; }
-
-svg g .fill6 {
-  fill: #96b5e0; }
-
-svg g .fill7 {
-  fill: #ff7747; }
-
-svg g .fill8 {
-  fill: #2ea0d9; }
-
-svg g .fill9 {
-  fill: #d19469; }
-
-svg g .fill10 {
-  fill: #339999; }
-
-svg g .fill11 {
-  fill: #8063c7; }
-
-svg g .fillWhite {
-  fill: #fff;
+svg g.bricPieChart path .lit
+{
+    opacity: 1;
+    stroke-width: 1;
+    stroke: #999;
 }
 
-svg g .fillBlack {
-  fill: #000;
-}
-
-svg g .fillNone {
-  fill: none;
-}
 
 /* readouts
 ================================================== */
 
 
 .dataLabel {
-  font-weight: bold;
-  margin-left: 3px;
-  }
+    font-weight: bold;
+    margin-left: 3px;
+}
 
 .dataLabel.green {
     background: green;
@@ -952,57 +1011,215 @@ svg g .fillNone {
     padding: 5px;
     -moz-border-radius: 2px;
     -webkit-border-radius: 2px;
-    border-radius: 2px; }
-  .dataLabel.short {
-    margin-right: 10px; }
+    border-radius: 2px;
+}
 
-.dataInput {
-  border: solid 1px #5BAFE4;
-  -moz-border-radius: 2px;
-  border-radius: 2px;
-  padding: .2em;
-  margin: .1em;
-  font-size: 0.8em;
-  text-align:right;
+.dataLabel.short {
+    margin-right: 10px;
+}
+
+.dataInput
+{
+    border: solid 1px #5BAFE4;
+    -moz-border-radius: 2px;
+    border-radius: 2px;
+    padding: .2em;
+    margin: .1em;
+    font-size: 0.8em;
+    text-align:right;
 }
 
 /* stats, statsMCQ, and stackedbar
 ================================================== */
 
-.brixStatsMultipleChoiceQuestion {
-  border-bottom: solid 1px #D3D3D3;
-  padding: 5px;
-  margin: 2px;
-  margin-right: 15px;
-  margin-left: 5px;
-  vertical-align: middle;
-
-  display: table;
-  width: 100%;
+.brixStatsMultipleChoiceQuestion
+{
+    border-bottom: solid 1px #D3D3D3;
+    box-sizing: border-box;
+    color: #4D4D4D;
+    font: 14px Helvetica;
+    height: 50px;
+    line-height: 1.4;
+    padding: 15px;
+    width: 100%;
 }
 
-.brixStatsMultipleChoiceQuestion .topRow {
-  display: table-row;
+.brixStatsMultipleChoiceQuestion .centerColumn
+{
+    float: left;
+    width: 100%;
 }
 
-.brixStatsMultipleChoiceQuestion .topRow .expandy {
-  display: table-cell;
-  width: 0px;
+.brixStatsMultipleChoiceQuestion .centerColumn .centerContent
+{
+    margin: 0 160px 0 15px;
+    padding-right: 30px;
 }
 
-.brixStatsMultipleChoiceQuestion .topRow .question {
-  display: table-cell;
+.brixStatsMultipleChoiceQuestion .centerColumn .question
+{
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
 }
 
-.brixStatsMultipleChoiceQuestion .topRow .question .questionInnards {
-  font: 14px Helvetica;
-  color: #4d4d4d;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-  overflow: hidden;
+.brixStatsMultipleChoiceQuestion .leftColumn
+{
+    float: left;
+    margin-left: -100%;
+    width: 15px;
 }
 
-.brixStatsMultipleChoiceQuestion .topRow .colorBar {
-  display: table-cell;
-  width: 124px;
+.brixStatsMultipleChoiceQuestion .expandCollapse
+{
+    cursor: pointer;
+}
+
+
+.brixStatsMultipleChoiceQuestion .expandy
+{
+    /* The following makes the expandy div a little wider (to make it easier
+     * to click) without changing the location of the expand/collapse icon. */
+    margin-left: -10px;
+    padding-left: 10px;
+    width: 15px;
+}
+
+.brixStatsMultipleChoiceQuestion .icon-caret-right
+{
+    color: #707070;
+}
+
+.brixStatsMultipleChoiceQuestion .rightColumn
+{
+    float: left;
+    margin-left: -160px;
+    width: 160px;
+}
+
+.brixStatsMultipleChoiceQuestion .stats
+{
+    display: none;
+    margin-top: 25px;
+}
+
+.brixStatsMultipleChoiceQuestion .statsHeader
+{
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.brixStatsMultipleChoiceQuestion .statsTable table
+{
+    box-sizing: border-box;
+    width: 100%;
+    border-width: 1px;
+    border-spacing: 0px;
+    border-style: solid;
+    border-collapse: separate;
+    border-color: #DDD;
+}
+
+.brixStatsMultipleChoiceQuestion .statsTable td
+{
+    border: 1px solid #DDD;
+    padding: 10px
+}
+
+.brixStatsMultipleChoiceQuestion .statsTable td:first-child
+{
+    text-align: center;
+    width: 30px;
+}
+
+.brixStatsMultipleChoiceQuestion .statsTable td span
+{
+    display: table-cell;
+    vertical-align: middle;
+}
+
+.brixStatsMultipleChoiceQuestion .statsTable .marker
+{
+    padding: 0 10px 0 0;
+}
+
+.brixStatsMultipleChoiceQuestion .statsTable .marker .icon-circle-blank
+{
+    color: #CCC;
+}
+
+.brixStatsMultipleChoiceQuestion .persons
+{
+    display: none;
+    margin-top: 5px;
+}
+
+.brixStatsMultipleChoiceQuestion .person
+{
+    display: inline-block;
+    min-width: 20px;
+    padding-right: 10px;
+    text-align: center;
+}
+
+.brixStatsMultipleChoiceQuestion .person:last-child
+{
+    padding-right: 0;
+}
+
+.brixStatsMultipleChoiceQuestion .count
+{
+    color: #0D65A6;
+    font-size: 13px;
+    font-weight: bold;
+}
+
+.brixStatsMultipleChoiceQuestion svg g .fill0
+{
+    fill: #00A05E; /* emerald green */
+}
+
+.brixStatsMultipleChoiceQuestion .color0
+{
+    color: #00A05E; /* emerald green */
+}
+
+.brixStatsMultipleChoiceQuestion svg g .fill1
+{
+    fill: #A3D900; /* chartreuse */
+}
+
+.brixStatsMultipleChoiceQuestion .color1
+{
+    color: #A3D900; /* chartreuse */
+}
+
+.brixStatsMultipleChoiceQuestion svg g .fill2
+{
+    fill: #FFC800; /* warm yellow */
+}
+
+.brixStatsMultipleChoiceQuestion .color2
+{
+    color: #FFC800; /* warm yellow */
+}
+
+.brixStatsMultipleChoiceQuestion svg g .fill3
+{
+    fill: #F25757; /* raw salmon */
+}
+
+.brixStatsMultipleChoiceQuestion .color3
+{
+    color: #F25757; /* raw salmon */
+}
+
+.brixStatsMultipleChoiceQuestion svg g .fill4
+{
+    fill: #B0B0B0; /* medium grey */
+}
+
+.brixStatsMultipleChoiceQuestion .color4
+{
+    color: #B0B0B0; /* medium grey */
 }
