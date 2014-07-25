@@ -15,7 +15,16 @@
 <body>
 <!-- Body Content -->
 <figure>
-	
+	<span data-containerid="fertility-cntr"></span>
+	<div>
+        <span data-containerid="display-elapsed-years-cntr"></span>
+
+        <span data-containerid="display-total-pop-cntr"></span>
+    </div>
+
+    <div data-containerid="set-elapsed-years-cntr"></div>
+
+    <div data-containerid="population-graphs-cntr"></div>
 	<div id="b224d16baf7644821b63e0a58aae443e9" ></div>
 	<div id="b25a16f66b9754457b18d4f837e5141e1" ></div>
 	<div id="b027bece5c5784b6490e15ff01bbdf4b5" ></div>
@@ -45,11 +54,20 @@
 	a.config =
 		{
 			"description": "Interactive Lab: The Effect of Total Fertility Rate on Population Growth",
+			"brixVersion": "1.1.0",
+            "targetSelectorValues":
+            [
+                "fertility-cntr",
+                "set-elapsed-years-cntr",
+                "display-elapsed-years-cntr",
+                "display-total-pop-cntr",
+                "population-graphs-cntr"
+            ],
 			"containerConfig":
 				[
 					{
 						"description": "Fertility Rate",
-						"containerId": "b224d16baf7644821b63e0a58aae443e9",
+						"containerId": "fertility-cntr",
 						"brixConfig":
 							[
 								{
@@ -79,7 +97,7 @@
 									"methodName": "draw",
 									"args":
 										[
-											{ "type": "d3select", "selector": "#b224d16baf7644821b63e0a58aae443e9" }
+											{ "type": "d3select", "targetSelectorIndex": "0" }
 										]
 								},
 								{
@@ -96,7 +114,7 @@
 					},
 					{
 						"description": "container for year slider",
-						"containerId": "b59156be2773d4c3c82fa621cd5b0476b",
+						"containerId": "set-elapsed-years-cntr",
 						"brixConfig":
 							[
 								{
@@ -115,6 +133,27 @@
 										}
 								}
 							],
+						"mortarConfig":
+		                    [
+		                        {
+		                            "mortarId": "resetYear",
+		                            "mortarType": "MethodCall",
+		                            "config":
+		                            {
+		                                "topic": "mortar-ageSim1-resetyear",
+		                                "methodName": "setValue",
+		                                "args": [ 0 ]
+		                            },
+		                            "configFixup":
+		                            [
+		                                {
+		                                    "type": "set-property",
+		                                    "name": "targetBlock",
+		                                    "value": { "type": "ref", "domain": "brix", "refId": "slider1" }
+		                                }
+		                            ]
+		                        }
+		                    ],
 						"hookupActions":
 							[
 								{
@@ -124,14 +163,14 @@
 									"methodName": "draw",
 									"args":
 										[
-											{ "type": "d3select", "selector": "#b59156be2773d4c3c82fa621cd5b0476b" }
+											{ "type": "d3select", "targetSelectorIndex": 1}
 										]
 								}
 							]
 					},
 					{
 						"description": "container for year readout",
-						"containerId": "Ratio",
+						"containerId": "display-elapsed-years-cntr",
 						"brixConfig":
 							[
 								{
@@ -152,17 +191,38 @@
 												"value":
 													{
 														"type": "d3select",
-														"selector": "#b027bece5c5784b6490e15ff01bbdf4b5"
+														"targetSelectorIndex": 2
 													}
 											}
 
                                         ]
 								}
-							]
+							],
+						"mortarConfig":
+		                    [
+		                        {
+		                            "mortarId": "displayYear",
+		                            "mortarType": "MethodCall",
+		                            "config":
+		                            {
+		                                "topic": "mortar-ageSim1-graphupdated",
+		                                "methodName": "setValue",
+		                                "propertyArgs": [ "year" ]
+		                            },
+		                            "configFixup":
+		                            [
+		                                {
+		                                    "type": "set-property",
+		                                    "name": "targetBlock",
+		                                    "value": { "type": "ref", "domain": "brix", "refId": "readout2" }
+		                                }
+		                            ]
+		                        }
+		                    ]
 					},
 					{
 						"description": "container for population readout",
-						"containerId": "b027bece5c5784b6490e15ff01bbdf4b5",
+						"containerId": "display-total-pop-cntr",
 						"brixConfig":
 							[
 								{
@@ -183,17 +243,38 @@
 												"value":
 													{
 														"type": "d3select",
-														"selector": "#b027bece5c5784b6490e15ff01bbdf4b5"
+														"targetSelectorIndex": 3
 													}
 											}
 
                                         ]
 								}
-							]
+							],
+						"mortarConfig":
+		                    [
+		                        {
+		                            "mortarId": "displayPop",
+		                            "mortarType": "MethodCall",
+		                            "config":
+		                            {
+		                                "topic": "mortar-ageSim1-graphupdated",
+		                                "methodName": "setValue",
+		                                "propertyArgs": [ "population" ]
+		                            },
+		                            "configFixup":
+		                            [
+		                                {
+		                                    "type": "set-property",
+		                                    "name": "targetBlock",
+		                                    "value": { "type": "ref", "domain": "brix", "refId": "readout1" }
+		                                }
+		                            ]
+		                        }
+		                    ]
 					},
 					{
 						"description": "container for interactive graph based on slider value",
-						"containerId": "b0f426ac794f646bdb493df7cfa969fd6",
+						"containerId": "population-graphs-cntr",
 						"brixConfig":
 							[
 								{
@@ -279,6 +360,7 @@
 									"mortarType": "AgeStructure",
 									"config":
 										{
+											"id": "ageSim1",
 											"mortTopic": 0,
 											"ageFirstBirthTopic": 1
                                  
@@ -338,14 +420,7 @@
 						"hookupActions":
 							[
 								 {
-						            "args": 
-						            [
-						              {
-						                "selector": "#b0f426ac794f646bdb493df7cfa969fd6", 
-						                "type": "d3select"
-						              }
-						            ], 
-						            "description": "Draw the svg container", 
+						             "description": "Draw the svg container", 
 						            "instance": 
 						            {
 						              "domain": "brix", 
@@ -353,7 +428,14 @@
 						              "type": "ref"
 						            }, 
 						            "methodName": "draw", 
-						            "type": "method-call"
+						            "type": "method-call",
+						            "args": 
+						            [
+						              {
+						                "type": "d3select",
+						                "targetSelectorIndex": 4
+						              }
+						            ]
 						          }, 
 						          {
 									"description": "Append the graph to the svg container",
