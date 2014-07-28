@@ -2,8 +2,15 @@
   "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope",
   "@type": "Envelope",
   "metadata": {
-    "guid": "aa24df24-e0d8-4ca1-b138-b85ee319e59c",
+    "description": "68830_HP_M07_01.html",
     "title": "68830_HP_M07_01.html",
+    "guid": "aa24df24-e0d8-4ca1-b138-b85ee319e59c",
+    "subject": [ "EnvironmentalScience" ],
+    "contentTypeTier2": [ "AssessmentItem" ],
+    "contentTypeTier1": "Assessment",
+    "format": [ "application/vnd.pearson.sanvan.v1.activity" ],
+    "educationalAlignment": [ "http://purl.org/pearson/objectives/183725473384362" ],
+    "version": "1.0",
     "extendedMetadata": [
       {
         "name": "crawlable",
@@ -25,129 +32,118 @@
         "name": "timeRequired",
         "value": "PT20S"
       }
-    ],
-    "description": "68830_HP_M07_01.html",
-    "subject": [
-      "EnvironmentalScience"
-    ],
-    "contentTypeTier2": [
-      "AssessmentItem"
-    ],
-    "contentTypeTier1": "Assessment",
-    "format": [
-      "application/vnd.pearson.sanvan.v1.activity"
-    ],
-    "educationalAlignment": [
-      "http://purl.org/pearson/objectives/183725473384362"
-    ],
-    "version": "1.0"
+    ]
   },
-  "body": {
-    "containerConfig": [
+  "body":
+  {
+    "description": "A Sample Activity containing a single multiple choice bric",
+    "targetSelectorValues": [ "question-cntr" ],
+    "containerConfig":
+    [
       {
-        "brixConfig": [
+        "description": "container for the multiple choice question",
+        "containerId": "question-cntr",
+        "brixConfig":
+        [
           {
-            "config": {
+            "bricType": "MultipleChoiceQuestion",
+            "bricId": "Q1",
+            "config":
+            {
               "presenterType": "RadioGroup",
               "question": "Set up the following simulation: A developing nations mortality curve and 15 years as the age of first childbirth. How many children will the average woman have to have if the initial population is going to double (that is, be about 20,000) in 100 years?",
-              "presenterConfig": {
+              "presenterConfig":
+              {
                 "numberFormat": ""
               },
-              "choices": [
+              "choices":
+              [
                 {
-                  "content": "Total fertility rate \u003d 3",
+                  "content": "Total fertility rate = 3",
                   "answerKey": "answer1"
                 },
                 {
-                  "content": "Total fertility rate \u003d 2",
+                  "content": "Total fertility rate = 2",
                   "answerKey": "answer2"
                 },
                 {
-                  "content": "Total fertility rate \u003d 1",
+                  "content": "Total fertility rate = 1",
                   "answerKey": "answer3"
                 },
                 {
-                  "content": "Total fertility rate \u003d 4",
+                  "content": "Total fertility rate = 4",
                   "answerKey": "answer4"
                 }
               ],
               "order": "randomized",
               "id": "sampleQ1"
             },
-            "answerKey": {
-              "assessmentType": "multiplechoice",
-              "answers": {
-                "answer4": {
-                  "score": 0.0,
-                  "response": ""
-                },
-                "answer1": {
-                  "score": 1.0,
-                  "response": ""
-                },
-                "answer3": {
-                  "score": 0.0,
-                  "response": ""
-                },
-                "answer2": {
-                  "score": 0.0,
-                  "response": ""
-                }
-              }
-            },
-            "bricType": "MultipleChoiceQuestion",
-            "bricId": "Q1",
-            "configFixup": [
+            "configFixup":
+            [
               {
                 "type": "set-property",
                 "name": "questionId",
-                "value": {
+                "value":
+                {
                   "domain": "info",
                   "type": "ref",
                   "refId": "sequenceNodeKey"
                 }
               }
-            ]
+            ],
+            "answerKey":
+            {
+              "assessmentType": "multiplechoice",
+              "answers":
+              {
+                "answer4":
+                {
+                  "score": 0.0,
+                  "response": ""
+                },
+                "answer1":
+                {
+                  "score": 1.0,
+                  "response": ""
+                },
+                "answer3":
+                {
+                  "score": 0.0,
+                  "response": ""
+                },
+                "answer2":
+                {
+                  "score": 0.0,
+                  "response": ""
+                }
+              }
+            }
           }
         ],
-        "description": "container for the sample multiple choice question",
-        "hookupActions": [
+        "hookupActions":
+        [
           {
-            "instance": {
-              "type": "submit-manager"
-            },
-            "args": [
-              {
-                "domain": "brix",
-                "type": "ref",
-                "refId": "Q1"
-              }
-            ],
-            "type": "method-call",
             "description": "Hookup the submit manager to evaluate answers",
-            "methodName": "handleRequestsFrom"
+            "type": "method-call",
+            "instance": { "type": "submit-manager" },
+            "methodName": "handleRequestsFrom",
+            "args":
+            [
+              { "type": "ref", "domain": "brix", "refId": "Q1" }
+            ]
           },
           {
-            "instance": {
-              "domain": "brix",
-              "type": "ref",
-              "refId": "Q1"
-            },
-            "args": [
-              {
-                "type": "d3select",
-                "selector": "#target1"
-              }
-            ],
             "type": "method-call",
             "description": "Draw the question",
-            "methodName": "draw"
+            "methodName": "draw",
+            "instance": { "type": "ref", "domain": "brix", "refId": "Q1" },
+            "args":
+            [
+              { "type": "d3select", "targetSelectorIndex": 0 }
+            ]
           }
-        ],
-        "containerId": "target1"
+        ]
       }
-    ],
-    "description": "A Sample Activity containing a single multiple choice bric",
-    "title": "68830_HP_M07_01.html"
+    ]
   }
 }
