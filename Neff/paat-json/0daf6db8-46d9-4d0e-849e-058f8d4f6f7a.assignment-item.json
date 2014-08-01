@@ -2,12 +2,16 @@
   "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope",
   "@type": "Envelope",
   "metadata": {
-    "guid": "834F2D06-D6BB-45EF-B2AD-76A5F894E080",
-    "title": "Interactive Lab: Human Populations",
+    "guid": "0daf6db8-46d9-4d0e-849e-058f8d4f6f7a",
+    "title": "Interactive Lab: The Effect of Total Fertility Rate on Population Growth",
     "extendedMetadata": [
       {
         "name": "crawlable",
         "value": "false"
+      },
+      {
+        "name": "owner",
+        "value": "Brix"
       },
       {
         "name": "contentTypeTier2",
@@ -26,7 +30,7 @@
         "value": "PT20S"
       }
     ],
-    "description": "Age Structure simulation",
+    "description": "Interactive Lab: The Effect of Total Fertility Rate on Population Growth",
     "subject": [
       "EnvironmentalScience"
     ],
@@ -43,10 +47,19 @@
     "version": "1.0"
   },
   "body": {
+    "description": "Interactive Lab: The Effect of Total Fertility Rate on Population Growth",
+    "brixVersion": "1.1.0",
+    "targetSelectorValues": [
+      "fertility-cntr",
+      "set-elapsed-years-cntr",
+      "display-elapsed-years-cntr",
+      "display-total-pop-cntr",
+      "population-graphs-cntr"
+    ],
     "containerConfig": [
       {
         "description": "Fertility Rate",
-        "containerId": "bd26e2320703b4087a6a013e01f3f0bb9",
+        "containerId": "fertility-cntr",
         "brixConfig": [
           {
             "bricId": "dropdown1",
@@ -55,22 +68,22 @@
               "id": "fertile-selgrp",
               "choices": [
                 {
-                  "content": "T\u003csub\u003ef\u003c/sub\u003e \u003d 0 children/female"
+                  "content": "0"
                 },
                 {
-                  "content": "T\u003csub\u003ef\u003c/sub\u003e \u003d 1 child/female"
+                  "content": "1"
                 },
                 {
-                  "content": "T\u003csub\u003ef\u003c/sub\u003e \u003d 2 children/female"
+                  "content": "2"
                 },
                 {
-                  "content": "T\u003csub\u003ef\u003c/sub\u003e \u003d 3 children/female"
+                  "content": "3"
                 },
                 {
-                  "content": "T\u003csub\u003ef\u003c/sub\u003e \u003d 4 children/female"
+                  "content": "4"
                 },
                 {
-                  "content": "T\u003csub\u003ef\u003c/sub\u003e \u003d 5 children/female"
+                  "content": "5"
                 }
               ]
             }
@@ -89,7 +102,7 @@
             "args": [
               {
                 "type": "d3select",
-                "selector": "#bd26e2320703b4087a6a013e01f3f0bb9"
+                "targetSelectorIndex": "0"
               }
             ]
           },
@@ -112,101 +125,8 @@
         ]
       },
       {
-        "description": "Mortality Rate",
-        "containerId": "b42a6ce95b82643498800287764bacfc6",
-        "brixConfig": [
-          {
-            "bricId": "dropdown2",
-            "bricType": "SelectGroup",
-            "config": {
-              "id": "mortal-selgrp",
-              "choices": [
-                {
-                  "content": "Highly developed nations"
-                },
-                {
-                  "content": "Developing nations"
-                },
-                {
-                  "content": "Least developed nations"
-                }
-              ]
-            }
-          }
-        ],
-        "hookupActions": [
-          {
-            "description": "draw the dropdown",
-            "type": "method-call",
-            "instance": {
-              "type": "ref",
-              "domain": "brix",
-              "refId": "dropdown2"
-            },
-            "methodName": "draw",
-            "args": [
-              {
-                "type": "d3select",
-                "selector": "#b42a6ce95b82643498800287764bacfc6"
-              }
-            ]
-          }
-        ]
-      },
-      {
-        "description": "Age first birth",
-        "containerId": "b25a16f66b9754457b18d4f837e5141e1",
-        "brixConfig": [
-          {
-            "bricId": "dropdown3",
-            "bricType": "SelectGroup",
-            "config": {
-              "id": "ageBirth-selgrp",
-              "choices": [
-                {
-                  "content": "A\u003csub\u003ec\u003c/sub\u003e \u003d 15"
-                },
-                {
-                  "content": "A\u003csub\u003ec\u003c/sub\u003e \u003d 20"
-                },
-                {
-                  "content": "A\u003csub\u003ec\u003c/sub\u003e \u003d 25"
-                },
-                {
-                  "content": "A\u003csub\u003ec\u003c/sub\u003e \u003d 30"
-                },
-                {
-                  "content": "A\u003csub\u003ec\u003c/sub\u003e \u003d 35"
-                },
-                {
-                  "content": "A\u003csub\u003ec\u003c/sub\u003e \u003d 40"
-                }
-              ]
-            }
-          }
-        ],
-        "hookupActions": [
-          {
-            "description": "draw the dropdown",
-            "type": "method-call",
-            "instance": {
-              "type": "ref",
-              "domain": "brix",
-              "refId": "dropdown3"
-            },
-            "methodName": "draw",
-            "args": [
-              {
-                "type": "d3select",
-                "selector": "#b25a16f66b9754457b18d4f837e5141e1"
-              }
-            ]
-          }
-        ]
-      },
-      {
         "description": "container for year slider",
-        "containerId": "b7abeeb378bcb442ab2fe11a9ef2f3f39",
+        "containerId": "set-elapsed-years-cntr",
         "brixConfig": [
           {
             "bricId": "slider1",
@@ -223,6 +143,30 @@
             }
           }
         ],
+        "mortarConfig": [
+          {
+            "mortarId": "resetYear",
+            "mortarType": "MethodCall",
+            "config": {
+              "topic": "mortar-ageSim1-resetyear",
+              "methodName": "setValue",
+              "args": [
+                0.0
+              ]
+            },
+            "configFixup": [
+              {
+                "type": "set-property",
+                "name": "targetBlock",
+                "value": {
+                  "type": "ref",
+                  "domain": "brix",
+                  "refId": "slider1"
+                }
+              }
+            ]
+          }
+        ],
         "hookupActions": [
           {
             "description": "draw the slider",
@@ -236,7 +180,7 @@
             "args": [
               {
                 "type": "d3select",
-                "selector": "#b7abeeb378bcb442ab2fe11a9ef2f3f39"
+                "targetSelectorIndex": 1.0
               }
             ]
           }
@@ -244,7 +188,7 @@
       },
       {
         "description": "container for year readout",
-        "containerId": "Ratio",
+        "containerId": "display-elapsed-years-cntr",
         "brixConfig": [
           {
             "bricId": "readout2",
@@ -261,7 +205,31 @@
                 "name": "node",
                 "value": {
                   "type": "d3select",
-                  "selector": "#b344007fec7e64621a4b14f60f54e2f06"
+                  "targetSelectorIndex": 2.0
+                }
+              }
+            ]
+          }
+        ],
+        "mortarConfig": [
+          {
+            "mortarId": "displayYear",
+            "mortarType": "MethodCall",
+            "config": {
+              "topic": "mortar-ageSim1-graphupdated",
+              "methodName": "setValue",
+              "propertyArgs": [
+                "year"
+              ]
+            },
+            "configFixup": [
+              {
+                "type": "set-property",
+                "name": "targetBlock",
+                "value": {
+                  "type": "ref",
+                  "domain": "brix",
+                  "refId": "readout2"
                 }
               }
             ]
@@ -270,7 +238,7 @@
       },
       {
         "description": "container for population readout",
-        "containerId": "b344007fec7e64621a4b14f60f54e2f06",
+        "containerId": "display-total-pop-cntr",
         "brixConfig": [
           {
             "bricId": "readout1",
@@ -287,7 +255,31 @@
                 "name": "node",
                 "value": {
                   "type": "d3select",
-                  "selector": "#b344007fec7e64621a4b14f60f54e2f06"
+                  "targetSelectorIndex": 3.0
+                }
+              }
+            ]
+          }
+        ],
+        "mortarConfig": [
+          {
+            "mortarId": "displayPop",
+            "mortarType": "MethodCall",
+            "config": {
+              "topic": "mortar-ageSim1-graphupdated",
+              "methodName": "setValue",
+              "propertyArgs": [
+                "population"
+              ]
+            },
+            "configFixup": [
+              {
+                "type": "set-property",
+                "name": "targetBlock",
+                "value": {
+                  "type": "ref",
+                  "domain": "brix",
+                  "refId": "readout1"
                 }
               }
             ]
@@ -296,32 +288,41 @@
       },
       {
         "description": "container for interactive graph based on slider value",
-        "containerId": "b1aecdd0ced3b4613b246cb9311043c71",
+        "containerId": "population-graphs-cntr",
         "brixConfig": [
           {
             "bricId": "graph1",
             "bricType": "BarChart",
             "config": {
               "id": "bar-left",
-              "Data": [
-                []
+              "barOrientation": "horizontal",
+              "useHiddenSeriesToDetermineDataDomains": false,
+              "seriesData": [
+                [
+                  {
+                    "x": 50.0,
+                    "y": "0-10"
+                  }
+                ]
               ],
-              "xAxisFormat": {
-                "type": "linear",
-                "mode": "reverse",
-                "ticks": [
-                  0.0,
-                  150.0,
-                  300.0
-                ],
-                "orientation": "bottom",
-                "label": "Male population"
+              "xAxis": {
+                "location": "bottom",
+                "label": "Male population",
+                "reverse": true,
+                "tickmarkSettings": {
+                  "ticks": [
+                    0.0,
+                    150.0,
+                    300.0
+                  ]
+                }
               },
-              "yAxisFormat": {
-                "type": "ordinal",
-                "orientation": "right",
-                "ticks": 10.0,
-                "label": ""
+              "yAxis": {
+                "location": "right",
+                "label": "Age",
+                "tickmarkSettings": {
+                  "ticks": 10.0
+                }
               }
             }
           },
@@ -330,25 +331,38 @@
             "bricType": "BarChart",
             "config": {
               "id": "bar-right",
-              "Data": [
-                [],
-                []
+              "barOrientation": "horizontal",
+              "useHiddenSeriesToDetermineDataDomains": false,
+              "seriesData": [
+                [
+                  {
+                    "x": 60.0,
+                    "y": "0-10"
+                  }
+                ]
               ],
-              "xAxisFormat": {
-                "type": "linear",
-                "ticks": [
-                  0.0,
-                  150.0,
-                  300.0
-                ],
-                "orientation": "bottom",
-                "label": "Female population"
+              "seriesAttributes": [
+                {
+                  "seriesIndex": 0.0,
+                  "colorIndex": 1.0
+                }
+              ],
+              "xAxis": {
+                "location": "bottom",
+                "label": "Female population",
+                "tickmarkSettings": {
+                  "ticks": [
+                    0.0,
+                    150.0,
+                    300.0
+                  ]
+                }
               },
-              "yAxisFormat": {
-                "type": "ordinal",
-                "orientation": "left",
-                "ticks": 10.0,
-                "label": "Age"
+              "yAxis": {
+                "location": "left",
+                "tickmarkSettings": {
+                  "ticks": 10.0
+                }
               }
             }
           },
@@ -357,27 +371,21 @@
             "bricType": "SvgContainer",
             "config": {
               "maxSize": {
-                "height": 450.0,
+                "height": 380.0,
                 "width": 577.0
               }
-            },
-            "configFixup": [
-              {
-                "type": "set-property",
-                "name": "node",
-                "value": {
-                  "type": "d3select",
-                  "selector": "#b1aecdd0ced3b4613b246cb9311043c71"
-                }
-              }
-            ]
+            }
           }
         ],
         "mortarConfig": [
           {
             "mortarId": "agesim",
             "mortarType": "AgeStructure",
-            "config": {},
+            "config": {
+              "id": "ageSim1",
+              "mortTopic": 0.0,
+              "ageFirstBirthTopic": 1.0
+            },
             "configFixup": [
               {
                 "type": "set-property",
@@ -400,31 +408,11 @@
               },
               {
                 "type": "set-property",
-                "name": "mortTopic",
-                "value": {
-                  "type": "brix-topic",
-                  "bricType": "SelectGroup",
-                  "instanceId": "mortal-selgrp",
-                  "eventName": "selected"
-                }
-              },
-              {
-                "type": "set-property",
                 "name": "fertilityTopic",
                 "value": {
                   "type": "brix-topic",
                   "bricType": "SelectGroup",
                   "instanceId": "fertile-selgrp",
-                  "eventName": "selected"
-                }
-              },
-              {
-                "type": "set-property",
-                "name": "ageFirstBirthTopic",
-                "value": {
-                  "type": "brix-topic",
-                  "bricType": "SelectGroup",
-                  "instanceId": "ageBirth-selgrp",
                   "eventName": "selected"
                 }
               },
@@ -469,6 +457,22 @@
         ],
         "hookupActions": [
           {
+            "description": "Draw the svg container",
+            "instance": {
+              "domain": "brix",
+              "refId": "cntr2",
+              "type": "ref"
+            },
+            "methodName": "draw",
+            "type": "method-call",
+            "args": [
+              {
+                "type": "d3select",
+                "targetSelectorIndex": 4.0
+              }
+            ]
+          },
+          {
             "description": "Append the graph to the svg container",
             "type": "method-call",
             "instance": {
@@ -487,9 +491,9 @@
                 "type": "constant",
                 "value": {
                   "topPercentOffset": 0.0,
-                  "leftPercentOffset": 0.05,
+                  "leftPercentOffset": 0.0,
                   "heightPercent": 1.0,
-                  "widthPercent": 0.45
+                  "widthPercent": 0.48
                 }
               }
             ]
@@ -513,9 +517,9 @@
                 "type": "constant",
                 "value": {
                   "topPercentOffset": 0.0,
-                  "leftPercentOffset": 0.45,
+                  "leftPercentOffset": 0.5,
                   "heightPercent": 1.0,
-                  "widthPercent": 0.55
+                  "widthPercent": 0.48
                 }
               }
             ]
@@ -523,6 +527,6 @@
         ]
       }
     ],
-    "title": "Interactive Lab: Human Populations"
+    "title": "Interactive Lab: The Effect of Total Fertility Rate on Population Growth"
   }
 }

@@ -1,0 +1,137 @@
+{
+  "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope",
+  "@type": "Envelope",
+  "metadata": {
+    "guid": "f3cd9646-43dc-4130-80e7-70b7b0f5f6d0",
+    "title": "68830_NE_GDE_05.html",
+    "extendedMetadata": [],
+    "contentTypeTier2": [
+      "AssessmentItem"
+    ],
+    "contentTypeTier1": "Assessment",
+    "format": [
+      "application/vnd.pearson.sanvan.v1.activity"
+    ],
+    "educationalAlignment": [
+      "http://purl.org/pearson/objectives/183725473384362"
+    ],
+    "version": "1.0"
+  },
+  "body": {
+    "containerConfig": [
+      {
+        "brixConfig": [
+          {
+            "config": {
+              "presenterType": "RadioGroup",
+              "question": "Now that you know how to find the “estimated time that reserves will remain,” let’s take a closer look at the oil reserves of the United States, Canada, and the total world. Their respective oil production and oil consumption rates for 2012 are also displayed in the table. Using the data from the table and the equation you created on the previous page, estimate how many years of production of oil the United States has left at current production rates. [Hint: Remember, estimated time that reserves will remain equals reserves divided by production.]",
+              "presenterConfig": {
+                "numberFormat": ""
+              },
+              "choices": [
+                {
+                  "content": "5.2 years",
+                  "answerKey": "answer1"
+                },
+                {
+                  "content": "10.8 years",
+                  "answerKey": "answer2"
+                },
+                {
+                  "content": "53.1 years",
+                  "answerKey": "answer3"
+                },
+                {
+                  "content": "127.3 years",
+                  "answerKey": "answer4"
+                }
+              ],
+              "order": "randomized",
+              "id": "sampleQ1"
+            },
+            "answerKey": {
+              "assessmentType": "multiplechoice",
+              "answers": {
+                "answer4": {
+                  "score": 0.0,
+                  "response": "Did you use the correct equation (reserves/production) and the U.S. numbers?"
+                },
+                "answer1": {
+                  "score": 0.0,
+                  "response": "Did you use the correct equation (reserves/production) and the U.S. numbers?"
+                },
+                "answer3": {
+                  "score": 0.0,
+                  "response": "Did you use the correct equation (reserves/production) and the U.S. numbers?"
+                },
+                "answer2": {
+                  "score": 1.0,
+                  "response": ""
+                }
+              }
+            },
+            "bricType": "MultipleChoiceQuestion",
+            "bricId": "Q1",
+            "configFixup": [
+              {
+                "type": "set-property",
+                "name": "questionId",
+                "value": {
+                  "domain": "info",
+                  "type": "ref",
+                  "refId": "sequenceNodeKey"
+                }
+              },
+              {
+                "name": "maxAttempts",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "maxAttempts",
+                  "type": "ref"
+                }
+              }
+            ]
+          }
+        ],
+        "description": "container for the sample multiple choice question",
+        "hookupActions": [
+          {
+            "instance": {
+              "type": "submit-manager"
+            },
+            "args": [
+              {
+                "domain": "brix",
+                "type": "ref",
+                "refId": "Q1"
+              }
+            ],
+            "type": "method-call",
+            "description": "Hookup the submit manager to evaluate answers",
+            "methodName": "handleRequestsFrom"
+          },
+          {
+            "instance": {
+              "domain": "brix",
+              "type": "ref",
+              "refId": "Q1"
+            },
+            "args": [
+              {
+                "type": "d3select",
+                "selector": "#target1"
+              }
+            ],
+            "type": "method-call",
+            "description": "Draw the question",
+            "methodName": "draw"
+          }
+        ],
+        "containerId": "target1"
+      }
+    ],
+    "description": "A Sample Activity containing a single multiple choice bric",
+    "title": "68830_NE_GDE_05.html"
+  }
+}
