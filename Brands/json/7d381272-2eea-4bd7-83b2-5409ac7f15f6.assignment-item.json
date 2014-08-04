@@ -1,0 +1,256 @@
+{
+  "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope",
+  "@type": "Envelope",
+  "metadata": {
+    "bookTitle": "Sociology: A Down-to-Earth Approach",
+    "keywords": [
+      "Henslin 12e",
+      "ch 19",
+      "Rudowski"
+    ],
+    "extendedMetadata": [
+      {
+        "name": "ISBN",
+        "value": "0133795004"
+      },
+      {
+        "name": "qmd_BloomsID",
+        "value": "4"
+      },
+      {
+        "name": "M",
+        "value": "m05"
+      },
+      {
+        "name": "qmd_absolutescore_min",
+        "value": "0"
+      },
+      {
+        "name": "assessment_title",
+        "value": "Quiz: Issues in Health Care"
+      },
+      {
+        "name": "Topic",
+        "value": "Issues in Health Care"
+      },
+      {
+        "name": "qst_type",
+        "value": "MCSS text without media"
+      },
+      {
+        "name": "qmd_HighStake",
+        "value": "True"
+      },
+      {
+        "name": "qst_html_template",
+        "value": "mcssall"
+      },
+      {
+        "name": "qmd_minimumscore",
+        "value": "1"
+      },
+      {
+        "name": "chapterTitle",
+        "value": "Medicine and Health"
+      },
+      {
+        "name": "module",
+        "value": "Issues in Health Care"
+      },
+      {
+        "name": "qmd_maximumscore",
+        "value": "1.00"
+      },
+      {
+        "name": "qmd_QuestionTime",
+        "value": "0"
+      },
+      {
+        "name": "item_title",
+        "value": "0133795004_James M. Henslin_ch19_m05_q0002"
+      },
+      {
+        "name": "qmd_version",
+        "value": "2.0"
+      },
+      {
+        "name": "qmd_weighting",
+        "value": "1"
+      },
+      {
+        "name": "qmd_Hidden",
+        "value": "False"
+      },
+      {
+        "name": "qmd_toolvendor",
+        "value": "Excelsoft"
+      },
+      {
+        "name": "CH",
+        "value": "19"
+      },
+      {
+        "name": "qmd_penaltyvalue",
+        "value": "0.0"
+      },
+      {
+        "name": "qmd_status",
+        "value": "Normal"
+      },
+      {
+        "name": "qmd_itemtype",
+        "value": "Multiple Choice Static"
+      },
+      {
+        "name": "qmd_absolutescore_max",
+        "value": "100"
+      },
+      {
+        "name": "Objective",
+        "value": "LO: 19.5: Discuss medical care as a right or a commodity, increasing costs, social inequality, lawsuits, incompetence, fraud, conflict of interest, depersonalization, sexism, racism, the medicalization of society, physician assisted suicide, and attempts to reduce cost."
+      },
+      {
+        "name": "qst_id",
+        "value": "63652"
+      },
+      {
+        "name": "shuffle_choices",
+        "value": "Yes"
+      }
+    ],
+    "subject": [
+      "Sociology"
+    ],
+    "contentTypeTier2": [
+      "AssessmentItem"
+    ],
+    "contentTypeTier1": "Assessment",
+    "format": [
+      "application/vnd.pearson.sanvan.v1.activity"
+    ],
+    "version": "1.0",
+    "guid": "7d381272-2eea-4bd7-83b2-5409ac7f15f6",
+    "bookAuthor": "James M. Henslin",
+    "title": "POST 19 08",
+    "educationalAlignment": [
+      "http://purl.org/pearson/objectives/183725473384362"
+    ]
+  },
+  "body": {
+    "description": "POST_19_08",
+    "containerConfig": [
+      {
+        "description": "POST_19_08",
+        "containerId": "target1",
+        "brixConfig": [
+          {
+            "bricId": "q1",
+            "bricType": "MultipleChoiceQuestion",
+            "config": {
+              "id": "QUE59777",
+              "question": "Briana’s company is an organization that provides medical care to another company’s employees for an annual fee. What kind of medical company does Briana work for?\n\u003cbr /\u003e",
+              "order": "randomized",
+              "presenterType": "RadioGroup",
+              "presenterConfig": {
+                "numberFormat": "none"
+              },
+              "choices": [
+                {
+                  "answerKey": "answer_1",
+                  "content": "PPO"
+                },
+                {
+                  "answerKey": "answer_2",
+                  "content": "CMO"
+                },
+                {
+                  "answerKey": "answer_3",
+                  "content": "MOM"
+                },
+                {
+                  "answerKey": "answer_4",
+                  "content": "HMO"
+                }
+              ]
+            },
+            "answerKey": {
+              "assessmentType": "multiplechoice",
+              "answers": {
+                "answer_3": {
+                  "score": 0.0,
+                  "response": ""
+                },
+                "answer_2": {
+                  "score": 0.0,
+                  "response": ""
+                },
+                "answer_1": {
+                  "score": 0.0,
+                  "response": ""
+                },
+                "answer_4": {
+                  "score": 1.0,
+                  "response": ""
+                }
+              }
+            },
+            "configFixup": [
+              {
+                "name": "questionId",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "sequenceNodeKey",
+                  "type": "ref"
+                }
+              },
+              {
+                "name": "maxAttempts",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "maxAttempts",
+                  "type": "ref"
+                }
+              }
+            ]
+          }
+        ],
+        "hookupActions": [
+          {
+            "description": "Hookup the submit manager to evaluate answers",
+            "methodName": "handleRequestsFrom",
+            "type": "method-call",
+            "args": [
+              {
+                "domain": "brix",
+                "refId": "q1",
+                "type": "ref"
+              }
+            ],
+            "instance": {
+              "type": "submit-manager"
+            }
+          },
+          {
+            "description": "Draw the question",
+            "methodName": "draw",
+            "type": "method-call",
+            "args": [
+              {
+                "selector": "#target1",
+                "type": "d3select"
+              }
+            ],
+            "instance": {
+              "domain": "brix",
+              "refId": "q1",
+              "type": "ref"
+            }
+          }
+        ]
+      }
+    ],
+    "title": "POST 19 08"
+  }
+}
