@@ -1,0 +1,256 @@
+{
+  "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope",
+  "@type": "Envelope",
+  "metadata": {
+    "bookTitle": "Sociology: A Down-to-Earth Approach",
+    "keywords": [
+      "Henslin 12e",
+      "ch 19",
+      "Rudowski"
+    ],
+    "extendedMetadata": [
+      {
+        "name": "ISBN",
+        "value": "0133795004"
+      },
+      {
+        "name": "qmd_BloomsID",
+        "value": "5"
+      },
+      {
+        "name": "M",
+        "value": "m08"
+      },
+      {
+        "name": "qmd_absolutescore_min",
+        "value": "0"
+      },
+      {
+        "name": "assessment_title",
+        "value": "Quiz: The Future of Medicine"
+      },
+      {
+        "name": "Topic",
+        "value": "The Future of Medicine"
+      },
+      {
+        "name": "qst_type",
+        "value": "MCSS text without media"
+      },
+      {
+        "name": "qmd_HighStake",
+        "value": "True"
+      },
+      {
+        "name": "qst_html_template",
+        "value": "mcssall"
+      },
+      {
+        "name": "qmd_minimumscore",
+        "value": "1"
+      },
+      {
+        "name": "chapterTitle",
+        "value": "Medicine and Health"
+      },
+      {
+        "name": "module",
+        "value": "The Future of Medicine"
+      },
+      {
+        "name": "qmd_maximumscore",
+        "value": "1.00"
+      },
+      {
+        "name": "qmd_QuestionTime",
+        "value": "0"
+      },
+      {
+        "name": "item_title",
+        "value": "0133795004_James M. Henslin_ch19_m08_q0003"
+      },
+      {
+        "name": "qmd_version",
+        "value": "2.0"
+      },
+      {
+        "name": "qmd_weighting",
+        "value": "1"
+      },
+      {
+        "name": "qmd_Hidden",
+        "value": "False"
+      },
+      {
+        "name": "qmd_toolvendor",
+        "value": "Excelsoft"
+      },
+      {
+        "name": "CH",
+        "value": "19"
+      },
+      {
+        "name": "qmd_penaltyvalue",
+        "value": "0.0"
+      },
+      {
+        "name": "qmd_status",
+        "value": "Normal"
+      },
+      {
+        "name": "qmd_itemtype",
+        "value": "Multiple Choice Static"
+      },
+      {
+        "name": "qmd_absolutescore_max",
+        "value": "100"
+      },
+      {
+        "name": "Objective",
+        "value": "LO: 19.8: Discuss how technology and alternative medicine are likely to affect the future of medicine."
+      },
+      {
+        "name": "qst_id",
+        "value": "57320"
+      },
+      {
+        "name": "shuffle_choices",
+        "value": "Yes"
+      }
+    ],
+    "subject": [
+      "Sociology"
+    ],
+    "contentTypeTier2": [
+      "AssessmentItem"
+    ],
+    "contentTypeTier1": "Assessment",
+    "format": [
+      "application/vnd.pearson.sanvan.v1.activity"
+    ],
+    "version": "1.0",
+    "guid": "688c9496-ac60-4b33-b240-2d8d16b82cad",
+    "bookAuthor": "James M. Henslin",
+    "title": "CE 19 29",
+    "educationalAlignment": [
+      "http://purl.org/pearson/objectives/183725473384362"
+    ]
+  },
+  "body": {
+    "description": "CE_19_29",
+    "containerConfig": [
+      {
+        "description": "CE_19_29",
+        "containerId": "target1",
+        "brixConfig": [
+          {
+            "bricId": "q1",
+            "bricType": "MultipleChoiceQuestion",
+            "config": {
+              "id": "QUE59828",
+              "question": "A major factor that has changed and will continue to change medical care is __________.\n\u003cbr /\u003e",
+              "order": "randomized",
+              "presenterType": "RadioGroup",
+              "presenterConfig": {
+                "numberFormat": "none"
+              },
+              "choices": [
+                {
+                  "answerKey": "answer_1",
+                  "content": "technology"
+                },
+                {
+                  "answerKey": "answer_2",
+                  "content": "the healing capabilities of the human body"
+                },
+                {
+                  "answerKey": "answer_3",
+                  "content": "the fact that humans are encountering less and less disease"
+                },
+                {
+                  "answerKey": "answer_4",
+                  "content": "mortality"
+                }
+              ]
+            },
+            "answerKey": {
+              "assessmentType": "multiplechoice",
+              "answers": {
+                "answer_3": {
+                  "score": 0.0,
+                  "response": ""
+                },
+                "answer_2": {
+                  "score": 0.0,
+                  "response": ""
+                },
+                "answer_1": {
+                  "score": 1.0,
+                  "response": ""
+                },
+                "answer_4": {
+                  "score": 0.0,
+                  "response": ""
+                }
+              }
+            },
+            "configFixup": [
+              {
+                "name": "questionId",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "sequenceNodeKey",
+                  "type": "ref"
+                }
+              },
+              {
+                "name": "maxAttempts",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "maxAttempts",
+                  "type": "ref"
+                }
+              }
+            ]
+          }
+        ],
+        "hookupActions": [
+          {
+            "description": "Hookup the submit manager to evaluate answers",
+            "methodName": "handleRequestsFrom",
+            "type": "method-call",
+            "args": [
+              {
+                "domain": "brix",
+                "refId": "q1",
+                "type": "ref"
+              }
+            ],
+            "instance": {
+              "type": "submit-manager"
+            }
+          },
+          {
+            "description": "Draw the question",
+            "methodName": "draw",
+            "type": "method-call",
+            "args": [
+              {
+                "selector": "#target1",
+                "type": "d3select"
+              }
+            ],
+            "instance": {
+              "domain": "brix",
+              "refId": "q1",
+              "type": "ref"
+            }
+          }
+        ]
+      }
+    ],
+    "title": "CE 19 29"
+  }
+}

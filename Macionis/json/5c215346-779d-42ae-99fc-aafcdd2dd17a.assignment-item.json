@@ -1,0 +1,256 @@
+{
+  "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope",
+  "@type": "Envelope",
+  "metadata": {
+    "bookTitle": "Sociology: A Down-to-Earth Approach",
+    "keywords": [
+      "Henslin 12e",
+      "ch 19",
+      "Rudowski"
+    ],
+    "extendedMetadata": [
+      {
+        "name": "ISBN",
+        "value": "0133795004"
+      },
+      {
+        "name": "qmd_BloomsID",
+        "value": "6"
+      },
+      {
+        "name": "M",
+        "value": "m06"
+      },
+      {
+        "name": "qmd_absolutescore_min",
+        "value": "0"
+      },
+      {
+        "name": "assessment_title",
+        "value": "Quiz: Threats to Health"
+      },
+      {
+        "name": "Topic",
+        "value": "Threats to Health"
+      },
+      {
+        "name": "qst_type",
+        "value": "MCSS text without media"
+      },
+      {
+        "name": "qmd_HighStake",
+        "value": "True"
+      },
+      {
+        "name": "qst_html_template",
+        "value": "mcssall"
+      },
+      {
+        "name": "qmd_minimumscore",
+        "value": "1"
+      },
+      {
+        "name": "chapterTitle",
+        "value": "Medicine and Health"
+      },
+      {
+        "name": "module",
+        "value": "Threats to Health"
+      },
+      {
+        "name": "qmd_maximumscore",
+        "value": "1.00"
+      },
+      {
+        "name": "qmd_QuestionTime",
+        "value": "0"
+      },
+      {
+        "name": "item_title",
+        "value": "0133795004_James M. Henslin_ch19_m06_q0002"
+      },
+      {
+        "name": "qmd_version",
+        "value": "2.0"
+      },
+      {
+        "name": "qmd_weighting",
+        "value": "1"
+      },
+      {
+        "name": "qmd_Hidden",
+        "value": "False"
+      },
+      {
+        "name": "qmd_toolvendor",
+        "value": "Excelsoft"
+      },
+      {
+        "name": "CH",
+        "value": "19"
+      },
+      {
+        "name": "qmd_penaltyvalue",
+        "value": "0.0"
+      },
+      {
+        "name": "qmd_status",
+        "value": "Normal"
+      },
+      {
+        "name": "qmd_itemtype",
+        "value": "Multiple Choice Static"
+      },
+      {
+        "name": "qmd_absolutescore_max",
+        "value": "100"
+      },
+      {
+        "name": "Objective",
+        "value": "LO: 19.6: Discuss threats to health: HIV/AIDS, weight, alcohol and nicotine, disabling environments, medical experiments, globalization of disease and treatment or prevention."
+      },
+      {
+        "name": "qst_id",
+        "value": "63673"
+      },
+      {
+        "name": "shuffle_choices",
+        "value": "Yes"
+      }
+    ],
+    "subject": [
+      "Sociology"
+    ],
+    "contentTypeTier2": [
+      "AssessmentItem"
+    ],
+    "contentTypeTier1": "Assessment",
+    "format": [
+      "application/vnd.pearson.sanvan.v1.activity"
+    ],
+    "version": "1.0",
+    "guid": "5c215346-779d-42ae-99fc-aafcdd2dd17a",
+    "bookAuthor": "James M. Henslin",
+    "title": "POST 19 25",
+    "educationalAlignment": [
+      "http://purl.org/pearson/objectives/183725473384362"
+    ]
+  },
+  "body": {
+    "description": "POST_19_25",
+    "containerConfig": [
+      {
+        "description": "POST_19_25",
+        "containerId": "target1",
+        "brixConfig": [
+          {
+            "bricId": "q1",
+            "bricType": "MultipleChoiceQuestion",
+            "config": {
+              "id": "QUE59798",
+              "question": "Billy has emphysema and a rare form of lip cancer. Given this scenario, which one drug is he most likely to have chosen to abuse?\n\u003cbr /\u003e",
+              "order": "randomized",
+              "presenterType": "RadioGroup",
+              "presenterConfig": {
+                "numberFormat": "none"
+              },
+              "choices": [
+                {
+                  "answerKey": "answer_1",
+                  "content": "Cocaine"
+                },
+                {
+                  "answerKey": "answer_2",
+                  "content": "Nicotine"
+                },
+                {
+                  "answerKey": "answer_3",
+                  "content": "Alcohol"
+                },
+                {
+                  "answerKey": "answer_4",
+                  "content": "Marijuana"
+                }
+              ]
+            },
+            "answerKey": {
+              "assessmentType": "multiplechoice",
+              "answers": {
+                "answer_3": {
+                  "score": 0.0,
+                  "response": ""
+                },
+                "answer_2": {
+                  "score": 1.0,
+                  "response": ""
+                },
+                "answer_1": {
+                  "score": 0.0,
+                  "response": ""
+                },
+                "answer_4": {
+                  "score": 0.0,
+                  "response": ""
+                }
+              }
+            },
+            "configFixup": [
+              {
+                "name": "questionId",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "sequenceNodeKey",
+                  "type": "ref"
+                }
+              },
+              {
+                "name": "maxAttempts",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "maxAttempts",
+                  "type": "ref"
+                }
+              }
+            ]
+          }
+        ],
+        "hookupActions": [
+          {
+            "description": "Hookup the submit manager to evaluate answers",
+            "methodName": "handleRequestsFrom",
+            "type": "method-call",
+            "args": [
+              {
+                "domain": "brix",
+                "refId": "q1",
+                "type": "ref"
+              }
+            ],
+            "instance": {
+              "type": "submit-manager"
+            }
+          },
+          {
+            "description": "Draw the question",
+            "methodName": "draw",
+            "type": "method-call",
+            "args": [
+              {
+                "selector": "#target1",
+                "type": "d3select"
+              }
+            ],
+            "instance": {
+              "domain": "brix",
+              "refId": "q1",
+              "type": "ref"
+            }
+          }
+        ]
+      }
+    ],
+    "title": "POST 19 25"
+  }
+}
