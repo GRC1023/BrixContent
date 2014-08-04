@@ -1,0 +1,248 @@
+{
+  "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope",
+  "@type": "Envelope",
+  "metadata": {
+    "bookTitle": "Essentials of Sociology",
+    "keywords": [
+      "Henslin 11e",
+      "ch 04",
+      "Rudowski"
+    ],
+    "extendedMetadata": [
+      {
+        "name": "ISBN",
+        "value": "0133869369"
+      },
+      {
+        "name": "qmd_BloomsID",
+        "value": "7"
+      },
+      {
+        "name": "M",
+        "value": "c01"
+      },
+      {
+        "name": "qmd_absolutescore_min",
+        "value": "0"
+      },
+      {
+        "name": "assessment_title",
+        "value": "Chapter Quiz: Social Structure and Social Interaction"
+      },
+      {
+        "name": "Topic",
+        "value": "The Microsociological Perspective: Social Interaction in Everyday Life"
+      },
+      {
+        "name": "qst_type",
+        "value": "MCSS text without media"
+      },
+      {
+        "name": "qmd_HighStake",
+        "value": "True"
+      },
+      {
+        "name": "qst_html_template",
+        "value": "mcssall"
+      },
+      {
+        "name": "chapterTitle",
+        "value": "Social Structure and Social Interaction"
+      },
+      {
+        "name": "qmd_maximumscore",
+        "value": "1"
+      },
+      {
+        "name": "item_title",
+        "value": "0133869369_James M. Henslin_ch04_c01_q0011"
+      },
+      {
+        "name": "qmd_version",
+        "value": "2.0"
+      },
+      {
+        "name": "qmd_weighting",
+        "value": "1.00"
+      },
+      {
+        "name": "qmd_Hidden",
+        "value": "False"
+      },
+      {
+        "name": "questionlayout",
+        "value": "1"
+      },
+      {
+        "name": "qmd_toolvendor",
+        "value": "Excelsoft"
+      },
+      {
+        "name": "CH",
+        "value": "4"
+      },
+      {
+        "name": "qmd_penaltyvalue",
+        "value": "0.0"
+      },
+      {
+        "name": "qmd_status",
+        "value": "Normal"
+      },
+      {
+        "name": "qmd_itemtype",
+        "value": "Multiple Choice Static"
+      },
+      {
+        "name": "qmd_absolutescore_max",
+        "value": "100"
+      },
+      {
+        "name": "Objective",
+        "value": "LO: 4.3: Discuss what symbolic interactionists study and explain dramaturgy, ethnomethodology, and the social construction of reality."
+      },
+      {
+        "name": "qst_id",
+        "value": "64999"
+      },
+      {
+        "name": "shuffle_choices",
+        "value": "Yes"
+      }
+    ],
+    "subject": [
+      "Sociology"
+    ],
+    "contentTypeTier2": [
+      "AssessmentItem"
+    ],
+    "contentTypeTier1": "Assessment",
+    "format": [
+      "application/vnd.pearson.sanvan.v1.activity"
+    ],
+    "version": "1.0",
+    "guid": "add59c18-cd84-421a-bddc-49dc3261fba0",
+    "bookAuthor": "James M. Henslin",
+    "title": "CE 04 22",
+    "educationalAlignment": [
+      "http://purl.org/pearson/objectives/183725473384362"
+    ]
+  },
+  "body": {
+    "description": "CE_04_22",
+    "containerConfig": [
+      {
+        "description": "CE_04_22",
+        "containerId": "target1",
+        "brixConfig": [
+          {
+            "bricId": "q1",
+            "bricType": "MultipleChoiceQuestion",
+            "config": {
+              "id": "QUE64961",
+              "question": "In the United States, people tend to stay several feet apart when talking to each other. In the Middle East, however, both men and women tend to stand much closer. Which of the following does this demonstrate?\n\u003cbr /\u003e",
+              "order": "randomized",
+              "presenterType": "RadioGroup",
+              "presenterConfig": {
+                "numberFormat": "none"
+              },
+              "choices": [
+                {
+                  "answerKey": "answer_1",
+                  "content": "Personal space is an American concept."
+                },
+                {
+                  "answerKey": "answer_2",
+                  "content": "Personal space is biologically innate."
+                },
+                {
+                  "answerKey": "answer_3",
+                  "content": "Personal space can be seen as a sign of sexual interest or disinterest."
+                },
+                {
+                  "answerKey": "answer_4",
+                  "content": "Personal space is largely cultural."
+                }
+              ]
+            },
+            "answerKey": {
+              "assessmentType": "multiplechoice",
+              "answers": {
+                "answer_3": {
+                  "score": 0.0,
+                  "response": "sider this: While in some culture/situations this may be true, it is not demonstrated by this point."
+                },
+                "answer_2": {
+                  "score": 0.0,
+                  "response": "sider this: There is more biological variation within a race than exists between races."
+                },
+                "answer_1": {
+                  "score": 0.0,
+                  "response": "sider this: All cultures have a concept of personal space."
+                },
+                "answer_4": {
+                  "score": 1.0,
+                  "response": "That’s correct!"
+                }
+              }
+            },
+            "configFixup": [
+              {
+                "name": "questionId",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "sequenceNodeKey",
+                  "type": "ref"
+                }
+              },
+              {
+                "name": "maxAttempts",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "maxAttempts",
+                  "type": "ref"
+                }
+              }
+            ]
+          }
+        ],
+        "hookupActions": [
+          {
+            "description": "Hookup the submit manager to evaluate answers",
+            "methodName": "handleRequestsFrom",
+            "type": "method-call",
+            "args": [
+              {
+                "domain": "brix",
+                "refId": "q1",
+                "type": "ref"
+              }
+            ],
+            "instance": {
+              "type": "submit-manager"
+            }
+          },
+          {
+            "description": "Draw the question",
+            "methodName": "draw",
+            "type": "method-call",
+            "args": [
+              {
+                "selector": "#target1",
+                "type": "d3select"
+              }
+            ],
+            "instance": {
+              "domain": "brix",
+              "refId": "q1",
+              "type": "ref"
+            }
+          }
+        ]
+      }
+    ],
+    "title": "CE 04 22"
+  }
+}
