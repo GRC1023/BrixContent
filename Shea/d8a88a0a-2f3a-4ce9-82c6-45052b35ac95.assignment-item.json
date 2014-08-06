@@ -1,0 +1,184 @@
+{
+  "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope",
+  "@type": "Envelope",
+  "metadata": {
+    "guid": "d8a88a0a-2f3a-4ce9-82c6-45052b35ac95",
+    "bookAuthor": "Daniel M. Shea, et al.",
+    "title": "02 52",
+    "keywords": [
+      "Shea",
+      "Alick",
+      "Ch13"
+    ],
+    "extendedMetadata": [
+      {
+        "name": "qst_html_template",
+        "value": "mcssall"
+      },
+      {
+        "name": "CH",
+        "value": "13"
+      },
+      {
+        "name": "ISBN",
+        "value": "0134017005"
+      },
+      {
+        "name": "item_title",
+        "value": "0134017005_Daniel M. Shea, et al._ch13_m06_q0003"
+      },
+      {
+        "name": "Topic",
+        "value": "Elections and Campaigns"
+      },
+      {
+        "name": "M",
+        "value": "m06"
+      },
+      {
+        "name": "qmd_absolutescore_max",
+        "value": "100"
+      },
+      {
+        "name": "qmd_absolutescore_min",
+        "value": "0"
+      },
+      {
+        "name": "qst_type",
+        "value": "MCSS text without media"
+      },
+      {
+        "name": "qst_id",
+        "value": "75727"
+      }
+    ],
+    "contentTypeTier2": [
+      "AssessmentItem"
+    ],
+    "contentTypeTier1": "Assessment",
+    "format": [
+      "application/vnd.pearson.sanvan.v1.activity"
+    ],
+    "educationalAlignment": [
+      "http://purl.org/pearson/objectives/183725473384362"
+    ],
+    "version": "1.0"
+  },
+  "body": {
+    "description": "02-52",
+    "containerConfig": [
+      {
+        "description": "02-52",
+        "containerId": "target1",
+        "brixConfig": [
+          {
+            "bricId": "q1",
+            "bricType": "MultipleChoiceQuestion",
+            "config": {
+              "id": "QUE72880",
+              "question": "Based on the map shown in Figure 13.11, \n\u003cem\u003ePrimary Systems in the United States\u003c/em\u003e, if you were voting in Ohio, how could you expect to cast your ballot?\n\u003cbr /\u003e",
+              "order": "randomized",
+              "presenterType": "RadioGroup",
+              "presenterConfig": {
+                "numberFormat": "none"
+              },
+              "choices": [
+                {
+                  "answerKey": "answer_1",
+                  "content": "You would be able to vote in the Democratic primary only if you were already registered as a Democrat."
+                },
+                {
+                  "answerKey": "answer_2",
+                  "content": "You would be able to vote in either the Democratic or Republican primary if you were registered as an Independent."
+                },
+                {
+                  "answerKey": "answer_3",
+                  "content": "You would be able to vote for both Democratic and Republican candidates, with the top two finishers to be placed on the general election ballot."
+                },
+                {
+                  "answerKey": "answer_4",
+                  "content": "As a registered Republican, you would be able to vote in both the Republican and the Democratic primaries."
+                }
+              ]
+            },
+            "answerKey": {
+              "assessmentType": "multiplechoice",
+              "answers": {
+                "answer_3": {
+                  "score": 0.0,
+                  "response": "Consider This: In some states, the voter must declare his or her party registration in advance of the primary election—often 30 days or so—while in other states, the registration can be done (or changed) on primary day. Either way, the states that rely on this system allow only registered members of the party to vote on prospective nominees. LO 13.6: Outline the process by which party nominees are chosen to run in the general election."
+                },
+                "answer_2": {
+                  "score": 0.0,
+                  "response": "Consider This: In some states, the voter must declare his or her party registration in advance of the primary election—often 30 days or so—while in other states, the registration can be done (or changed) on primary day. Either way, the states that rely on this system allow only registered members of the party to vote on prospective nominees. LO 13.6: Outline the process by which party nominees are chosen to run in the general election."
+                },
+                "answer_1": {
+                  "score": 1.0,
+                  "response": ""
+                },
+                "answer_4": {
+                  "score": 0.0,
+                  "response": "Consider This: In some states, the voter must declare his or her party registration in advance of the primary election—often 30 days or so—while in other states, the registration can be done (or changed) on primary day. Either way, the states that rely on this system allow only registered members of the party to vote on prospective nominees. LO 13.6: Outline the process by which party nominees are chosen to run in the general election."
+                }
+              }
+            },
+            "configFixup": [
+              {
+                "name": "questionId",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "sequenceNodeKey",
+                  "type": "ref"
+                }
+              },
+              {
+                "name": "maxAttempts",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "maxAttempts",
+                  "type": "ref"
+                }
+              }
+            ]
+          }
+        ],
+        "hookupActions": [
+          {
+            "description": "Hookup the submit manager to evaluate answers",
+            "methodName": "handleRequestsFrom",
+            "type": "method-call",
+            "args": [
+              {
+                "domain": "brix",
+                "refId": "q1",
+                "type": "ref"
+              }
+            ],
+            "instance": {
+              "type": "submit-manager"
+            }
+          },
+          {
+            "description": "Draw the question",
+            "methodName": "draw",
+            "type": "method-call",
+            "args": [
+              {
+                "selector": "#target1",
+                "type": "d3select"
+              }
+            ],
+            "instance": {
+              "domain": "brix",
+              "refId": "q1",
+              "type": "ref"
+            }
+          }
+        ]
+      }
+    ],
+    "title": "02 52"
+  }
+}

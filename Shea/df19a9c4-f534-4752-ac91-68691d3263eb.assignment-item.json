@@ -1,0 +1,188 @@
+{
+  "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope",
+  "@type": "Envelope",
+  "metadata": {
+    "guid": "df19a9c4-f534-4752-ac91-68691d3263eb",
+    "bookAuthor": "Daniel M. Shea, et. al",
+    "title": "02 60",
+    "keywords": [
+      "Shea",
+      "Alick",
+      "Ch13"
+    ],
+    "extendedMetadata": [
+      {
+        "name": "qst_html_template",
+        "value": "mcssall"
+      },
+      {
+        "name": "ISBN",
+        "value": "0134017005"
+      },
+      {
+        "name": "item_title",
+        "value": "0134017005 _Daniel M. Shea, et. al_ch13_m01_q0002"
+      },
+      {
+        "name": "M",
+        "value": "m01"
+      },
+      {
+        "name": "qmd_absolutescore_min",
+        "value": "0"
+      },
+      {
+        "name": "CH",
+        "value": "13"
+      },
+      {
+        "name": "Topic",
+        "value": "Political Participation"
+      },
+      {
+        "name": "Difficulty",
+        "value": "Medium"
+      },
+      {
+        "name": "qmd_absolutescore_max",
+        "value": "100"
+      },
+      {
+        "name": "qst_type",
+        "value": "MCSS text without media"
+      },
+      {
+        "name": "qst_id",
+        "value": "75712"
+      }
+    ],
+    "contentTypeTier2": [
+      "AssessmentItem"
+    ],
+    "contentTypeTier1": "Assessment",
+    "format": [
+      "application/vnd.pearson.sanvan.v1.activity"
+    ],
+    "educationalAlignment": [
+      "http://purl.org/pearson/objectives/183725473384362"
+    ],
+    "version": "1.0"
+  },
+  "body": {
+    "description": "02-60",
+    "containerConfig": [
+      {
+        "description": "02-60",
+        "containerId": "target1",
+        "brixConfig": [
+          {
+            "bricId": "q1",
+            "bricType": "MultipleChoiceQuestion",
+            "config": {
+              "id": "QUE72866",
+              "question": "When the Justice Department objected to a Texas voter ID law in 2012, it did so by comparing the fee for the state-mandated ID card to be a(n) __________.\n\u003cbr /\u003e",
+              "order": "randomized",
+              "presenterType": "RadioGroup",
+              "presenterConfig": {
+                "numberFormat": "none"
+              },
+              "choices": [
+                {
+                  "answerKey": "answer_1",
+                  "content": "illegal ID check"
+                },
+                {
+                  "answerKey": "answer_2",
+                  "content": "head tax"
+                },
+                {
+                  "answerKey": "answer_3",
+                  "content": "violation of the Help America Vote Act"
+                },
+                {
+                  "answerKey": "answer_4",
+                  "content": "poll tax"
+                }
+              ]
+            },
+            "answerKey": {
+              "assessmentType": "multiplechoice",
+              "answers": {
+                "answer_3": {
+                  "score": 0.0,
+                  "response": "Consider This: Because a fee is required for obtaining a state-issued photo identification card in Texas, the Department of Justice said in the summer of 2012 that this law, and others like it, may violate the Twenty-Fourth Amendment. LO 13.1: Describe the legal challenges that have broadened the democratic character of elections in America."
+                },
+                "answer_2": {
+                  "score": 0.0,
+                  "response": "Consider This: Because a fee is required for obtaining a state-issued photo identification card in Texas, the Department of Justice said in the summer of 2012 that this law, and others like it, may violate the Twenty-Fourth Amendment. LO 13.1: Describe the legal challenges that have broadened the democratic character of elections in America."
+                },
+                "answer_1": {
+                  "score": 0.0,
+                  "response": "Consider This: Because a fee is required for obtaining a state-issued photo identification card in Texas, the Department of Justice said in the summer of 2012 that this law, and others like it, may violate the Twenty-Fourth Amendment. LO 13.1: Describe the legal challenges that have broadened the democratic character of elections in America."
+                },
+                "answer_4": {
+                  "score": 1.0,
+                  "response": ""
+                }
+              }
+            },
+            "configFixup": [
+              {
+                "name": "questionId",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "sequenceNodeKey",
+                  "type": "ref"
+                }
+              },
+              {
+                "name": "maxAttempts",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "maxAttempts",
+                  "type": "ref"
+                }
+              }
+            ]
+          }
+        ],
+        "hookupActions": [
+          {
+            "description": "Hookup the submit manager to evaluate answers",
+            "methodName": "handleRequestsFrom",
+            "type": "method-call",
+            "args": [
+              {
+                "domain": "brix",
+                "refId": "q1",
+                "type": "ref"
+              }
+            ],
+            "instance": {
+              "type": "submit-manager"
+            }
+          },
+          {
+            "description": "Draw the question",
+            "methodName": "draw",
+            "type": "method-call",
+            "args": [
+              {
+                "selector": "#target1",
+                "type": "d3select"
+              }
+            ],
+            "instance": {
+              "domain": "brix",
+              "refId": "q1",
+              "type": "ref"
+            }
+          }
+        ]
+      }
+    ],
+    "title": "02 60"
+  }
+}

@@ -1,0 +1,180 @@
+{
+  "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope",
+  "@type": "Envelope",
+  "metadata": {
+    "guid": "75c6cd42-b5cc-4b38-a265-dad7c1d2bfa5",
+    "bookAuthor": "Daniel M. Shea, et al.",
+    "title": "02 37",
+    "keywords": [
+      "Shea",
+      "Alick",
+      "Ch13"
+    ],
+    "extendedMetadata": [
+      {
+        "name": "qst_html_template",
+        "value": "mcssall"
+      },
+      {
+        "name": "CH",
+        "value": "13"
+      },
+      {
+        "name": "ISBN",
+        "value": "0134017005"
+      },
+      {
+        "name": "item_title",
+        "value": "0134017005_Daniel M. Shea, et al._ch13_c01_q0011"
+      },
+      {
+        "name": "M",
+        "value": "c01"
+      },
+      {
+        "name": "qmd_absolutescore_max",
+        "value": "100"
+      },
+      {
+        "name": "qmd_absolutescore_min",
+        "value": "0"
+      },
+      {
+        "name": "qst_type",
+        "value": "MCSS text without media"
+      },
+      {
+        "name": "qst_id",
+        "value": "75703"
+      }
+    ],
+    "contentTypeTier2": [
+      "AssessmentItem"
+    ],
+    "contentTypeTier1": "Assessment",
+    "format": [
+      "application/vnd.pearson.sanvan.v1.activity"
+    ],
+    "educationalAlignment": [
+      "http://purl.org/pearson/objectives/183725473384362"
+    ],
+    "version": "1.0"
+  },
+  "body": {
+    "description": "02-37",
+    "containerConfig": [
+      {
+        "description": "02-37",
+        "containerId": "target1",
+        "brixConfig": [
+          {
+            "bricId": "q1",
+            "bricType": "MultipleChoiceQuestion",
+            "config": {
+              "id": "QUE73325",
+              "question": "Figure 13.7 shows two charts that compare party unity in congressional voting. Does it fairly represent the increasing political polarization in the last ten years?\n\u003cbr /\u003e",
+              "order": "randomized",
+              "presenterType": "RadioGroup",
+              "presenterConfig": {
+                "numberFormat": "none"
+              },
+              "choices": [
+                {
+                  "answerKey": "answer_1",
+                  "content": "No, party-line voting among Democrats has decreased over the last decade."
+                },
+                {
+                  "answerKey": "answer_2",
+                  "content": "In fact, only party-line voting among Democrats has increased over the last decade, while Republicans, given these charts, are more bipartisan."
+                },
+                {
+                  "answerKey": "answer_3",
+                  "content": "No, party-line voting among Republicans is what has decreased over the last decade."
+                },
+                {
+                  "answerKey": "answer_4",
+                  "content": "Yes, party-line voting among Democrats and Republicans has increased over the last decade."
+                }
+              ]
+            },
+            "answerKey": {
+              "assessmentType": "multiplechoice",
+              "answers": {
+                "answer_3": {
+                  "score": 0.0,
+                  "response": "Consider this: One of the most significant aspects of contemporary party politics is the record high levels of party unity in Congress. LO 13.3 Identify the functions served by political parties in a democracy, and explain how they help organize the governmental process.  "
+                },
+                "answer_2": {
+                  "score": 0.0,
+                  "response": "Consider this: One of the most significant aspects of contemporary party politics is the record high levels of party unity in Congress. LO 13.3 Identify the functions served by political parties in a democracy, and explain how they help organize the governmental process.  "
+                },
+                "answer_1": {
+                  "score": 0.0,
+                  "response": "Consider this: One of the most significant aspects of contemporary party politics is the record high levels of party unity in Congress. LO 13.3 Identify the functions served by political parties in a democracy, and explain how they help organize the governmental process.  "
+                },
+                "answer_4": {
+                  "score": 1.0,
+                  "response": ""
+                }
+              }
+            },
+            "configFixup": [
+              {
+                "name": "questionId",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "sequenceNodeKey",
+                  "type": "ref"
+                }
+              },
+              {
+                "name": "maxAttempts",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "maxAttempts",
+                  "type": "ref"
+                }
+              }
+            ]
+          }
+        ],
+        "hookupActions": [
+          {
+            "description": "Hookup the submit manager to evaluate answers",
+            "methodName": "handleRequestsFrom",
+            "type": "method-call",
+            "args": [
+              {
+                "domain": "brix",
+                "refId": "q1",
+                "type": "ref"
+              }
+            ],
+            "instance": {
+              "type": "submit-manager"
+            }
+          },
+          {
+            "description": "Draw the question",
+            "methodName": "draw",
+            "type": "method-call",
+            "args": [
+              {
+                "selector": "#target1",
+                "type": "d3select"
+              }
+            ],
+            "instance": {
+              "domain": "brix",
+              "refId": "q1",
+              "type": "ref"
+            }
+          }
+        ]
+      }
+    ],
+    "title": "02 37"
+  }
+}

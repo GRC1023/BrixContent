@@ -1,0 +1,184 @@
+{
+  "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope",
+  "@type": "Envelope",
+  "metadata": {
+    "guid": "a9ea45a4-225e-4a89-b845-efa464fbb30d",
+    "bookAuthor": "Daniel M. Shea, et al.",
+    "title": "02 53",
+    "keywords": [
+      "Shea",
+      "Alick",
+      "Ch13"
+    ],
+    "extendedMetadata": [
+      {
+        "name": "qst_html_template",
+        "value": "mcssall"
+      },
+      {
+        "name": "CH",
+        "value": "13"
+      },
+      {
+        "name": "ISBN",
+        "value": "0134017005"
+      },
+      {
+        "name": "item_title",
+        "value": "0134017005_Daniel M. Shea, et al._ch13_m06_q0004"
+      },
+      {
+        "name": "Topic",
+        "value": "Elections and Campaigns"
+      },
+      {
+        "name": "M",
+        "value": "m06"
+      },
+      {
+        "name": "qmd_absolutescore_max",
+        "value": "100"
+      },
+      {
+        "name": "qmd_absolutescore_min",
+        "value": "0"
+      },
+      {
+        "name": "qst_type",
+        "value": "MCSS text without media"
+      },
+      {
+        "name": "qst_id",
+        "value": "75728"
+      }
+    ],
+    "contentTypeTier2": [
+      "AssessmentItem"
+    ],
+    "contentTypeTier1": "Assessment",
+    "format": [
+      "application/vnd.pearson.sanvan.v1.activity"
+    ],
+    "educationalAlignment": [
+      "http://purl.org/pearson/objectives/183725473384362"
+    ],
+    "version": "1.0"
+  },
+  "body": {
+    "description": "02-53",
+    "containerConfig": [
+      {
+        "description": "02-53",
+        "containerId": "target1",
+        "brixConfig": [
+          {
+            "bricId": "q1",
+            "bricType": "MultipleChoiceQuestion",
+            "config": {
+              "id": "QUE72881",
+              "question": "One disadvantage of a national primary could be that __________.\n\u003cbr /\u003e",
+              "order": "randomized",
+              "presenterType": "RadioGroup",
+              "presenterConfig": {
+                "numberFormat": "none"
+              },
+              "choices": [
+                {
+                  "answerKey": "answer_1",
+                  "content": "States would have to choose whether to have a primary or a caucus."
+                },
+                {
+                  "answerKey": "answer_2",
+                  "content": "Small states would still be at a disadvantage with a primary on the same day as a large state."
+                },
+                {
+                  "answerKey": "answer_3",
+                  "content": "Small towns and rural areas might never get to meet candidates face to face because candidates would be engaged in massive national media campaigns."
+                },
+                {
+                  "answerKey": "answer_4",
+                  "content": "Voters would be very confused about which blocks would be rotating into importance in each election cycle."
+                }
+              ]
+            },
+            "answerKey": {
+              "assessmentType": "multiplechoice",
+              "answers": {
+                "answer_3": {
+                  "score": 1.0,
+                  "response": ""
+                },
+                "answer_2": {
+                  "score": 0.0,
+                  "response": "Consider This: Many suggest that this plan would increase turnout because more people would feel that their vote could make a difference. 13.6: Outline the process by which party nominees are chosen to run in the general election."
+                },
+                "answer_1": {
+                  "score": 0.0,
+                  "response": "Consider This: Many suggest that this plan would increase turnout because more people would feel that their vote could make a difference. 13.6: Outline the process by which party nominees are chosen to run in the general election."
+                },
+                "answer_4": {
+                  "score": 0.0,
+                  "response": "Consider This: Many suggest that this plan would increase turnout because more people would feel that their vote could make a difference. 13.6: Outline the process by which party nominees are chosen to run in the general election."
+                }
+              }
+            },
+            "configFixup": [
+              {
+                "name": "questionId",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "sequenceNodeKey",
+                  "type": "ref"
+                }
+              },
+              {
+                "name": "maxAttempts",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "maxAttempts",
+                  "type": "ref"
+                }
+              }
+            ]
+          }
+        ],
+        "hookupActions": [
+          {
+            "description": "Hookup the submit manager to evaluate answers",
+            "methodName": "handleRequestsFrom",
+            "type": "method-call",
+            "args": [
+              {
+                "domain": "brix",
+                "refId": "q1",
+                "type": "ref"
+              }
+            ],
+            "instance": {
+              "type": "submit-manager"
+            }
+          },
+          {
+            "description": "Draw the question",
+            "methodName": "draw",
+            "type": "method-call",
+            "args": [
+              {
+                "selector": "#target1",
+                "type": "d3select"
+              }
+            ],
+            "instance": {
+              "domain": "brix",
+              "refId": "q1",
+              "type": "ref"
+            }
+          }
+        ]
+      }
+    ],
+    "title": "02 53"
+  }
+}

@@ -1,0 +1,184 @@
+{
+  "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope",
+  "@type": "Envelope",
+  "metadata": {
+    "guid": "f47f4c95-fe41-4b01-9986-eac4b908c5d5",
+    "bookAuthor": "Daniel M. Shea, et al.",
+    "title": "02 54",
+    "keywords": [
+      "Shea",
+      "Alick",
+      "Ch13"
+    ],
+    "extendedMetadata": [
+      {
+        "name": "qst_html_template",
+        "value": "mcssall"
+      },
+      {
+        "name": "CH",
+        "value": "13"
+      },
+      {
+        "name": "ISBN",
+        "value": "0134017005"
+      },
+      {
+        "name": "item_title",
+        "value": "0134017005_Daniel M. Shea, et al._ch13_m07_q0003"
+      },
+      {
+        "name": "Topic",
+        "value": "Elections and Campaigns"
+      },
+      {
+        "name": "M",
+        "value": "m07"
+      },
+      {
+        "name": "qmd_absolutescore_max",
+        "value": "100"
+      },
+      {
+        "name": "qmd_absolutescore_min",
+        "value": "0"
+      },
+      {
+        "name": "qst_type",
+        "value": "MCSS text without media"
+      },
+      {
+        "name": "qst_id",
+        "value": "75731"
+      }
+    ],
+    "contentTypeTier2": [
+      "AssessmentItem"
+    ],
+    "contentTypeTier1": "Assessment",
+    "format": [
+      "application/vnd.pearson.sanvan.v1.activity"
+    ],
+    "educationalAlignment": [
+      "http://purl.org/pearson/objectives/183725473384362"
+    ],
+    "version": "1.0"
+  },
+  "body": {
+    "description": "02-54",
+    "containerConfig": [
+      {
+        "description": "02-54",
+        "containerId": "target1",
+        "brixConfig": [
+          {
+            "bricId": "q1",
+            "bricType": "MultipleChoiceQuestion",
+            "config": {
+              "id": "QUE72884",
+              "question": "According to Figure 13.12, \n\u003cem\u003eHow to Get to the White House\u003c/em\u003e, under what circumstances would a new Vice President assume the duties of President?\n\u003cbr /\u003e",
+              "order": "randomized",
+              "presenterType": "RadioGroup",
+              "presenterConfig": {
+                "numberFormat": "none"
+              },
+              "choices": [
+                {
+                  "answerKey": "answer_1",
+                  "content": "if no candidate achieves 270 electoral votes and the House vote results in an absolute majority of votes for one of the top three candidates"
+                },
+                {
+                  "answerKey": "answer_2",
+                  "content": "if the top presidential vote getter declines the office and the House has to select a new candidate"
+                },
+                {
+                  "answerKey": "answer_3",
+                  "content": "if the House vote does not result in a majority for one candidate and the Senate gives more than 51 votes to one of the vice presidential candidates"
+                },
+                {
+                  "answerKey": "answer_4",
+                  "content": "if a presidential candidate receives 270 or more electoral votes"
+                }
+              ]
+            },
+            "answerKey": {
+              "assessmentType": "multiplechoice",
+              "answers": {
+                "answer_3": {
+                  "score": 1.0,
+                  "response": ""
+                },
+                "answer_2": {
+                  "score": 0.0,
+                  "response": "Consider This: The Senate votes for the Vice President (from top two vice presidential candidates). If neither candidate receives an absolute majority of votes, Speaker of the House assumes the duties of President until the House elects a President. LO 13.7 Explain the process by which we select the president of the United States. "
+                },
+                "answer_1": {
+                  "score": 0.0,
+                  "response": "Consider This: The Senate votes for the Vice President (from top two vice presidential candidates). If neither candidate receives an absolute majority of votes, Speaker of the House assumes the duties of President until the House elects a President. LO 13.7 Explain the process by which we select the president of the United States. "
+                },
+                "answer_4": {
+                  "score": 0.0,
+                  "response": "Consider This: The Senate votes for the Vice President (from top two vice presidential candidates). If neither candidate receives an absolute majority of votes, Speaker of the House assumes the duties of President until the House elects a President. LO 13.7 Explain the process by which we select the president of the United States. "
+                }
+              }
+            },
+            "configFixup": [
+              {
+                "name": "questionId",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "sequenceNodeKey",
+                  "type": "ref"
+                }
+              },
+              {
+                "name": "maxAttempts",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "maxAttempts",
+                  "type": "ref"
+                }
+              }
+            ]
+          }
+        ],
+        "hookupActions": [
+          {
+            "description": "Hookup the submit manager to evaluate answers",
+            "methodName": "handleRequestsFrom",
+            "type": "method-call",
+            "args": [
+              {
+                "domain": "brix",
+                "refId": "q1",
+                "type": "ref"
+              }
+            ],
+            "instance": {
+              "type": "submit-manager"
+            }
+          },
+          {
+            "description": "Draw the question",
+            "methodName": "draw",
+            "type": "method-call",
+            "args": [
+              {
+                "selector": "#target1",
+                "type": "d3select"
+              }
+            ],
+            "instance": {
+              "domain": "brix",
+              "refId": "q1",
+              "type": "ref"
+            }
+          }
+        ]
+      }
+    ],
+    "title": "02 54"
+  }
+}

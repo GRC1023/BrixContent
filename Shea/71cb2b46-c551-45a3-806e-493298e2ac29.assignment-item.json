@@ -1,0 +1,184 @@
+{
+  "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope",
+  "@type": "Envelope",
+  "metadata": {
+    "guid": "71cb2b46-c551-45a3-806e-493298e2ac29",
+    "bookAuthor": "Daniel M. Shea, et al.",
+    "title": "02 44",
+    "keywords": [
+      "Shea",
+      "Alick",
+      "Ch13"
+    ],
+    "extendedMetadata": [
+      {
+        "name": "qst_html_template",
+        "value": "mcssall"
+      },
+      {
+        "name": "CH",
+        "value": "13"
+      },
+      {
+        "name": "ISBN",
+        "value": "0134017005"
+      },
+      {
+        "name": "item_title",
+        "value": "0134017005_Daniel M. Shea, et al._ch13_m07_q0002"
+      },
+      {
+        "name": "Topic",
+        "value": "Elections and Campaigns"
+      },
+      {
+        "name": "M",
+        "value": "m07"
+      },
+      {
+        "name": "qmd_absolutescore_max",
+        "value": "100"
+      },
+      {
+        "name": "qmd_absolutescore_min",
+        "value": "0"
+      },
+      {
+        "name": "qst_type",
+        "value": "MCSS text without media"
+      },
+      {
+        "name": "qst_id",
+        "value": "75730"
+      }
+    ],
+    "contentTypeTier2": [
+      "AssessmentItem"
+    ],
+    "contentTypeTier1": "Assessment",
+    "format": [
+      "application/vnd.pearson.sanvan.v1.activity"
+    ],
+    "educationalAlignment": [
+      "http://purl.org/pearson/objectives/183725473384362"
+    ],
+    "version": "1.0"
+  },
+  "body": {
+    "description": "02-44",
+    "containerConfig": [
+      {
+        "description": "02-44",
+        "containerId": "target1",
+        "brixConfig": [
+          {
+            "bricId": "q1",
+            "bricType": "MultipleChoiceQuestion",
+            "config": {
+              "id": "QUE72883",
+              "question": "The Electoral College system reflects the founders’ concerns over the __________.\n\u003cbr /\u003e",
+              "order": "randomized",
+              "presenterType": "RadioGroup",
+              "presenterConfig": {
+                "numberFormat": "none"
+              },
+              "choices": [
+                {
+                  "answerKey": "answer_1",
+                  "content": "wisdom of the people"
+                },
+                {
+                  "answerKey": "answer_2",
+                  "content": "need for political stability"
+                },
+                {
+                  "answerKey": "answer_3",
+                  "content": "power of the political elite"
+                },
+                {
+                  "answerKey": "answer_4",
+                  "content": "undue influence of the newspapers of the day"
+                }
+              ]
+            },
+            "answerKey": {
+              "assessmentType": "multiplechoice",
+              "answers": {
+                "answer_3": {
+                  "score": 0.0,
+                  "response": "Consider This: The framers believed that only men of the highest caliber and intellect should become president. They worried about politicians with “talents for low intrigue, and the little arts of popularity,” as noted by Alexander Hamilton in Federalist No. 69. LO 13.7: Explain the process by which we select the president of the United States. "
+                },
+                "answer_2": {
+                  "score": 0.0,
+                  "response": "Consider This: The framers believed that only men of the highest caliber and intellect should become president. They worried about politicians with “talents for low intrigue, and the little arts of popularity,” as noted by Alexander Hamilton in Federalist No. 69. LO 13.7: Explain the process by which we select the president of the United States. "
+                },
+                "answer_1": {
+                  "score": 1.0,
+                  "response": ""
+                },
+                "answer_4": {
+                  "score": 0.0,
+                  "response": "Consider This: The framers believed that only men of the highest caliber and intellect should become president. They worried about politicians with “talents for low intrigue, and the little arts of popularity,” as noted by Alexander Hamilton in Federalist No. 69. LO 13.7: Explain the process by which we select the president of the United States. "
+                }
+              }
+            },
+            "configFixup": [
+              {
+                "name": "questionId",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "sequenceNodeKey",
+                  "type": "ref"
+                }
+              },
+              {
+                "name": "maxAttempts",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "maxAttempts",
+                  "type": "ref"
+                }
+              }
+            ]
+          }
+        ],
+        "hookupActions": [
+          {
+            "description": "Hookup the submit manager to evaluate answers",
+            "methodName": "handleRequestsFrom",
+            "type": "method-call",
+            "args": [
+              {
+                "domain": "brix",
+                "refId": "q1",
+                "type": "ref"
+              }
+            ],
+            "instance": {
+              "type": "submit-manager"
+            }
+          },
+          {
+            "description": "Draw the question",
+            "methodName": "draw",
+            "type": "method-call",
+            "args": [
+              {
+                "selector": "#target1",
+                "type": "d3select"
+              }
+            ],
+            "instance": {
+              "domain": "brix",
+              "refId": "q1",
+              "type": "ref"
+            }
+          }
+        ]
+      }
+    ],
+    "title": "02 44"
+  }
+}

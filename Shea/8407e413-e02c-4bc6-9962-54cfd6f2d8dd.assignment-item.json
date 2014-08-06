@@ -1,0 +1,184 @@
+{
+  "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope",
+  "@type": "Envelope",
+  "metadata": {
+    "guid": "8407e413-e02c-4bc6-9962-54cfd6f2d8dd",
+    "bookAuthor": "Daniel M. Shea, et al.",
+    "title": "02 48",
+    "keywords": [
+      "Shea",
+      "Alick",
+      "Ch13"
+    ],
+    "extendedMetadata": [
+      {
+        "name": "qst_html_template",
+        "value": "mcssall"
+      },
+      {
+        "name": "CH",
+        "value": "13"
+      },
+      {
+        "name": "ISBN",
+        "value": "0134017005"
+      },
+      {
+        "name": "item_title",
+        "value": "0134017005_Daniel M. Shea, et al._ch13_m08_q0001"
+      },
+      {
+        "name": "Topic",
+        "value": "Elections and Campaigns"
+      },
+      {
+        "name": "M",
+        "value": "m08"
+      },
+      {
+        "name": "qmd_absolutescore_max",
+        "value": "100"
+      },
+      {
+        "name": "qmd_absolutescore_min",
+        "value": "0"
+      },
+      {
+        "name": "qst_type",
+        "value": "MCSS text without media"
+      },
+      {
+        "name": "qst_id",
+        "value": "75734"
+      }
+    ],
+    "contentTypeTier2": [
+      "AssessmentItem"
+    ],
+    "contentTypeTier1": "Assessment",
+    "format": [
+      "application/vnd.pearson.sanvan.v1.activity"
+    ],
+    "educationalAlignment": [
+      "http://purl.org/pearson/objectives/183725473384362"
+    ],
+    "version": "1.0"
+  },
+  "body": {
+    "description": "02-48",
+    "containerConfig": [
+      {
+        "description": "02-48",
+        "containerId": "target1",
+        "brixConfig": [
+          {
+            "bricId": "q1",
+            "bricType": "MultipleChoiceQuestion",
+            "config": {
+              "id": "QUE72887",
+              "question": "What is the inherent problem of soft money donations and democracy?\n\u003cbr /\u003e",
+              "order": "randomized",
+              "presenterType": "RadioGroup",
+              "presenterConfig": {
+                "numberFormat": "none"
+              },
+              "choices": [
+                {
+                  "answerKey": "answer_1",
+                  "content": "It elects corrupt politicians."
+                },
+                {
+                  "answerKey": "answer_2",
+                  "content": "Soft money is a bridge to hard money."
+                },
+                {
+                  "answerKey": "answer_3",
+                  "content": "It allows a wealth individual to donate large sums and thereby gain influence exceeding that of most people."
+                },
+                {
+                  "answerKey": "answer_4",
+                  "content": "Soft money donations are patently illegal after \n\u003cem\u003eCitizens United\u003c/em\u003e v. \n\u003cem\u003eFederal Elections Commission.\u003c/em\u003e"
+                }
+              ]
+            },
+            "answerKey": {
+              "assessmentType": "multiplechoice",
+              "answers": {
+                "answer_3": {
+                  "score": 1.0,
+                  "response": ""
+                },
+                "answer_2": {
+                  "score": 0.0,
+                  "response": "Consider This: The Bipartisan Campaign Reform Act (BCRA) was sweeping: It outlawed unlimited contributions to the national political organizations and barred group-sponsored advertisements 30 days before primary elections and 60 days before general elections. LO 13.8: Assess the critical role that money plays in the election process, p. 491."
+                },
+                "answer_1": {
+                  "score": 0.0,
+                  "response": "Consider This: The Bipartisan Campaign Reform Act (BCRA) was sweeping: It outlawed unlimited contributions to the national political organizations and barred group-sponsored advertisements 30 days before primary elections and 60 days before general elections. LO 13.8: Assess the critical role that money plays in the election process, p. 491."
+                },
+                "answer_4": {
+                  "score": 0.0,
+                  "response": "Consider This: The Bipartisan Campaign Reform Act (BCRA) was sweeping: It outlawed unlimited contributions to the national political organizations and barred group-sponsored advertisements 30 days before primary elections and 60 days before general elections. LO 13.8: Assess the critical role that money plays in the election process, p. 491."
+                }
+              }
+            },
+            "configFixup": [
+              {
+                "name": "questionId",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "sequenceNodeKey",
+                  "type": "ref"
+                }
+              },
+              {
+                "name": "maxAttempts",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "maxAttempts",
+                  "type": "ref"
+                }
+              }
+            ]
+          }
+        ],
+        "hookupActions": [
+          {
+            "description": "Hookup the submit manager to evaluate answers",
+            "methodName": "handleRequestsFrom",
+            "type": "method-call",
+            "args": [
+              {
+                "domain": "brix",
+                "refId": "q1",
+                "type": "ref"
+              }
+            ],
+            "instance": {
+              "type": "submit-manager"
+            }
+          },
+          {
+            "description": "Draw the question",
+            "methodName": "draw",
+            "type": "method-call",
+            "args": [
+              {
+                "selector": "#target1",
+                "type": "d3select"
+              }
+            ],
+            "instance": {
+              "domain": "brix",
+              "refId": "q1",
+              "type": "ref"
+            }
+          }
+        ]
+      }
+    ],
+    "title": "02 48"
+  }
+}

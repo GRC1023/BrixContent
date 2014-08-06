@@ -1,0 +1,184 @@
+{
+  "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope",
+  "@type": "Envelope",
+  "metadata": {
+    "guid": "3f06345f-f19d-4184-9aec-3ef55e6d40b4",
+    "bookAuthor": "Daniel M. Shea, et al.",
+    "title": "02 56",
+    "keywords": [
+      "Shea",
+      "Alick",
+      "Ch13"
+    ],
+    "extendedMetadata": [
+      {
+        "name": "qst_html_template",
+        "value": "mcssall"
+      },
+      {
+        "name": "CH",
+        "value": "13"
+      },
+      {
+        "name": "ISBN",
+        "value": "0134017005"
+      },
+      {
+        "name": "item_title",
+        "value": "0134017005_Daniel M. Shea, et al._ch13_m08_q0002"
+      },
+      {
+        "name": "Topic",
+        "value": "Elections and Campaigns"
+      },
+      {
+        "name": "M",
+        "value": "m08"
+      },
+      {
+        "name": "qmd_absolutescore_max",
+        "value": "100"
+      },
+      {
+        "name": "qmd_absolutescore_min",
+        "value": "0"
+      },
+      {
+        "name": "qst_type",
+        "value": "MCSS text without media"
+      },
+      {
+        "name": "qst_id",
+        "value": "75735"
+      }
+    ],
+    "contentTypeTier2": [
+      "AssessmentItem"
+    ],
+    "contentTypeTier1": "Assessment",
+    "format": [
+      "application/vnd.pearson.sanvan.v1.activity"
+    ],
+    "educationalAlignment": [
+      "http://purl.org/pearson/objectives/183725473384362"
+    ],
+    "version": "1.0"
+  },
+  "body": {
+    "description": "02-56",
+    "containerConfig": [
+      {
+        "description": "02-56",
+        "containerId": "target1",
+        "brixConfig": [
+          {
+            "bricId": "q1",
+            "bricType": "MultipleChoiceQuestion",
+            "config": {
+              "id": "QUE72888",
+              "question": "How did the Bipartisan Campaign Reform Act (BCRA) regulate television ad blitzes financed by interest groups in order to influence voters?\n\u003cbr /\u003e",
+              "order": "randomized",
+              "presenterType": "RadioGroup",
+              "presenterConfig": {
+                "numberFormat": "none"
+              },
+              "choices": [
+                {
+                  "answerKey": "answer_1",
+                  "content": "It forbid group-sponsored advertisements for a set before an election."
+                },
+                {
+                  "answerKey": "answer_2",
+                  "content": "It forbid television ads that cost over $100,000."
+                },
+                {
+                  "answerKey": "answer_3",
+                  "content": "It provided government funds for poorer interest groups to runs their own television ads."
+                },
+                {
+                  "answerKey": "answer_4",
+                  "content": "It placed a tax on ads run 30 days before a primary or general election."
+                }
+              ]
+            },
+            "answerKey": {
+              "assessmentType": "multiplechoice",
+              "answers": {
+                "answer_3": {
+                  "score": 0.0,
+                  "response": "Consider This: The Bipartisan Campaign Reform Act (BCRA) also raised the contribution limits for individuals, and left open the ability for wealthy individuals to donate soft money, virtually unlimited sums of money, to state and local party organizations. LO 13.8: Assess the critical role that money plays in the election process, p. 491."
+                },
+                "answer_2": {
+                  "score": 0.0,
+                  "response": "Consider This: The Bipartisan Campaign Reform Act (BCRA) also raised the contribution limits for individuals, and left open the ability for wealthy individuals to donate soft money, virtually unlimited sums of money, to state and local party organizations. LO 13.8: Assess the critical role that money plays in the election process, p. 491."
+                },
+                "answer_1": {
+                  "score": 1.0,
+                  "response": ""
+                },
+                "answer_4": {
+                  "score": 0.0,
+                  "response": "Consider This: The Bipartisan Campaign Reform Act (BCRA) also raised the contribution limits for individuals, and left open the ability for wealthy individuals to donate soft money, virtually unlimited sums of money, to state and local party organizations. LO 13.8: Assess the critical role that money plays in the election process, p. 491."
+                }
+              }
+            },
+            "configFixup": [
+              {
+                "name": "questionId",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "sequenceNodeKey",
+                  "type": "ref"
+                }
+              },
+              {
+                "name": "maxAttempts",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "maxAttempts",
+                  "type": "ref"
+                }
+              }
+            ]
+          }
+        ],
+        "hookupActions": [
+          {
+            "description": "Hookup the submit manager to evaluate answers",
+            "methodName": "handleRequestsFrom",
+            "type": "method-call",
+            "args": [
+              {
+                "domain": "brix",
+                "refId": "q1",
+                "type": "ref"
+              }
+            ],
+            "instance": {
+              "type": "submit-manager"
+            }
+          },
+          {
+            "description": "Draw the question",
+            "methodName": "draw",
+            "type": "method-call",
+            "args": [
+              {
+                "selector": "#target1",
+                "type": "d3select"
+              }
+            ],
+            "instance": {
+              "domain": "brix",
+              "refId": "q1",
+              "type": "ref"
+            }
+          }
+        ]
+      }
+    ],
+    "title": "02 56"
+  }
+}

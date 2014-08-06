@@ -1,0 +1,197 @@
+{
+  "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope",
+  "@type": "Envelope",
+  "metadata": {
+    "guid": "8bf8faf0-4bbf-45f2-8239-9c39567da06d",
+    "bookAuthor": "Daniel M. Shea, et. al",
+    "title": "FA Remember 13 1",
+    "keywords": [
+      "Shea",
+      "Alick",
+      "sample only",
+      "Ch13"
+    ],
+    "extendedMetadata": [
+      {
+        "name": "qst_html_template",
+        "value": "mcssall"
+      },
+      {
+        "name": "ISBN",
+        "value": "0134017005"
+      },
+      {
+        "name": "item_title",
+        "value": "0134017005 _Daniel M. Shea, et. al_ch13_1_q0003"
+      },
+      {
+        "name": "M",
+        "value": "1"
+      },
+      {
+        "name": "qmd_absolutescore_min",
+        "value": "0"
+      },
+      {
+        "name": "CH",
+        "value": "13"
+      },
+      {
+        "name": "Difficulty",
+        "value": "Easy"
+      },
+      {
+        "name": "Topic",
+        "value": "Political Parties"
+      },
+      {
+        "name": "qmd_absolutescore_max",
+        "value": "100"
+      },
+      {
+        "name": "qst_type",
+        "value": "MCSS text without media"
+      },
+      {
+        "name": "qst_id",
+        "value": "75196"
+      }
+    ],
+    "contentTypeTier2": [
+      "AssessmentItem"
+    ],
+    "contentTypeTier1": "Assessment",
+    "format": [
+      "application/vnd.pearson.sanvan.v1.activity"
+    ],
+    "educationalAlignment": [
+      "http://purl.org/pearson/objectives/183725473384362"
+    ],
+    "version": "1.0"
+  },
+  "body": {
+    "description": "FA_Remember_13_1",
+    "containerConfig": [
+      {
+        "description": "FA_Remember_13_1",
+        "containerId": "target1",
+        "brixConfig": [
+          {
+            "bricId": "q1",
+            "bricType": "MultipleChoiceQuestion",
+            "config": {
+              "id": "QUE72867",
+              "question": "The Help America Vote Act was designed to ________.\n\u003cbr /\u003e",
+              "order": "randomized",
+              "presenterType": "RadioGroup",
+              "presenterConfig": {
+                "numberFormat": "none"
+              },
+              "choices": [
+                {
+                  "answerKey": "answer_1",
+                  "content": "create a more uniform voting system"
+                },
+                {
+                  "answerKey": "answer_2",
+                  "content": "spread the use of open primaries"
+                },
+                {
+                  "answerKey": "answer_3",
+                  "content": "establish a national voter ID system"
+                },
+                {
+                  "answerKey": "answer_4",
+                  "content": "remove barriers that limited electoral participation"
+                },
+                {
+                  "answerKey": "answer_5",
+                  "content": "provide the states with more control over elections"
+                }
+              ]
+            },
+            "answerKey": {
+              "assessmentType": "multiplechoice",
+              "answers": {
+                "answer_3": {
+                  "score": 0.0,
+                  "response": "Consider This: In the wake of the confusion surrounding the 2000 presidential election, in 2002 Congress passed the Help America Vote Act. This measure was designed to replace the haphazard, stateby-state process that had existed for two centuries. LO 13.1: Describe the legal challenges that have broadened the democratic character of elections in America."
+                },
+                "answer_2": {
+                  "score": 0.0,
+                  "response": "Consider This: In the wake of the confusion surrounding the 2000 presidential election, in 2002 Congress passed the Help America Vote Act. This measure was designed to replace the haphazard, stateby-state process that had existed for two centuries. LO 13.1: Describe the legal challenges that have broadened the democratic character of elections in America."
+                },
+                "answer_1": {
+                  "score": 1.0,
+                  "response": "Correct. See L.O. 13.1."
+                },
+                "answer_5": {
+                  "score": 0.0,
+                  "response": "Consider This: In the wake of the confusion surrounding the 2000 presidential election, in 2002 Congress passed the Help America Vote Act. This measure was designed to replace the haphazard, stateby-state process that had existed for two centuries. LO 13.1: Describe the legal challenges that have broadened the democratic character of elections in America."
+                },
+                "answer_4": {
+                  "score": 0.0,
+                  "response": "Consider This: In the wake of the confusion surrounding the 2000 presidential election, in 2002 Congress passed the Help America Vote Act. This measure was designed to replace the haphazard, stateby-state process that had existed for two centuries. LO 13.1: Describe the legal challenges that have broadened the democratic character of elections in America."
+                }
+              }
+            },
+            "configFixup": [
+              {
+                "name": "questionId",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "sequenceNodeKey",
+                  "type": "ref"
+                }
+              },
+              {
+                "name": "maxAttempts",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "maxAttempts",
+                  "type": "ref"
+                }
+              }
+            ]
+          }
+        ],
+        "hookupActions": [
+          {
+            "description": "Hookup the submit manager to evaluate answers",
+            "methodName": "handleRequestsFrom",
+            "type": "method-call",
+            "args": [
+              {
+                "domain": "brix",
+                "refId": "q1",
+                "type": "ref"
+              }
+            ],
+            "instance": {
+              "type": "submit-manager"
+            }
+          },
+          {
+            "description": "Draw the question",
+            "methodName": "draw",
+            "type": "method-call",
+            "args": [
+              {
+                "selector": "#target1",
+                "type": "d3select"
+              }
+            ],
+            "instance": {
+              "domain": "brix",
+              "refId": "q1",
+              "type": "ref"
+            }
+          }
+        ]
+      }
+    ],
+    "title": "FA Remember 13 1"
+  }
+}

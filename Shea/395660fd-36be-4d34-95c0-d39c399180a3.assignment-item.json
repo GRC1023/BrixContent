@@ -1,0 +1,184 @@
+{
+  "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope",
+  "@type": "Envelope",
+  "metadata": {
+    "guid": "395660fd-36be-4d34-95c0-d39c399180a3",
+    "bookAuthor": "Daniel M. Shea, et al.",
+    "title": "02 21",
+    "keywords": [
+      "Shea",
+      "Alick",
+      "Ch13"
+    ],
+    "extendedMetadata": [
+      {
+        "name": "qst_html_template",
+        "value": "mcssall"
+      },
+      {
+        "name": "CH",
+        "value": "13"
+      },
+      {
+        "name": "ISBN",
+        "value": "0134017005"
+      },
+      {
+        "name": "item_title",
+        "value": "0134017005_Daniel M. Shea, et al._ch13_c01_q0007"
+      },
+      {
+        "name": "Topic",
+        "value": "Political Parties"
+      },
+      {
+        "name": "M",
+        "value": "c01"
+      },
+      {
+        "name": "qmd_absolutescore_max",
+        "value": "100"
+      },
+      {
+        "name": "qmd_absolutescore_min",
+        "value": "0"
+      },
+      {
+        "name": "qst_type",
+        "value": "MCSS text without media"
+      },
+      {
+        "name": "qst_id",
+        "value": "75699"
+      }
+    ],
+    "contentTypeTier2": [
+      "AssessmentItem"
+    ],
+    "contentTypeTier1": "Assessment",
+    "format": [
+      "application/vnd.pearson.sanvan.v1.activity"
+    ],
+    "educationalAlignment": [
+      "http://purl.org/pearson/objectives/183725473384362"
+    ],
+    "version": "1.0"
+  },
+  "body": {
+    "description": "02-21",
+    "containerConfig": [
+      {
+        "description": "02-21",
+        "containerId": "target1",
+        "brixConfig": [
+          {
+            "bricId": "q1",
+            "bricType": "MultipleChoiceQuestion",
+            "config": {
+              "id": "QUE73321",
+              "question": "How do minor parties facilitate democracy in the United States?\n\u003cbr /\u003e",
+              "order": "randomized",
+              "presenterType": "RadioGroup",
+              "presenterConfig": {
+                "numberFormat": "none"
+              },
+              "choices": [
+                {
+                  "answerKey": "answer_1",
+                  "content": "by bringing more citizens into the political process with issue awareness"
+                },
+                {
+                  "answerKey": "answer_2",
+                  "content": "by challenging the constitutional supports for the two-party model"
+                },
+                {
+                  "answerKey": "answer_3",
+                  "content": "by sending important delegates to the major parties’ national conventions"
+                },
+                {
+                  "answerKey": "answer_4",
+                  "content": "by thwarting the major party that is most ideologically distant"
+                }
+              ]
+            },
+            "answerKey": {
+              "assessmentType": "multiplechoice",
+              "answers": {
+                "answer_3": {
+                  "score": 0.0,
+                  "response": "Consider this: Minor parties have played a significant role in shaping public policy by drawing attention to particular issues and by threatening to drain support from the major parties. LO 13.6 Outline the process by which party nominees are chosen to run in the general election. "
+                },
+                "answer_2": {
+                  "score": 0.0,
+                  "response": "Consider this: Minor parties have played a significant role in shaping public policy by drawing attention to particular issues and by threatening to drain support from the major parties. LO 13.6 Outline the process by which party nominees are chosen to run in the general election. "
+                },
+                "answer_1": {
+                  "score": 1.0,
+                  "response": ""
+                },
+                "answer_4": {
+                  "score": 0.0,
+                  "response": "Consider this: Minor parties have played a significant role in shaping public policy by drawing attention to particular issues and by threatening to drain support from the major parties. LO 13.6 Outline the process by which party nominees are chosen to run in the general election. "
+                }
+              }
+            },
+            "configFixup": [
+              {
+                "name": "questionId",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "sequenceNodeKey",
+                  "type": "ref"
+                }
+              },
+              {
+                "name": "maxAttempts",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "maxAttempts",
+                  "type": "ref"
+                }
+              }
+            ]
+          }
+        ],
+        "hookupActions": [
+          {
+            "description": "Hookup the submit manager to evaluate answers",
+            "methodName": "handleRequestsFrom",
+            "type": "method-call",
+            "args": [
+              {
+                "domain": "brix",
+                "refId": "q1",
+                "type": "ref"
+              }
+            ],
+            "instance": {
+              "type": "submit-manager"
+            }
+          },
+          {
+            "description": "Draw the question",
+            "methodName": "draw",
+            "type": "method-call",
+            "args": [
+              {
+                "selector": "#target1",
+                "type": "d3select"
+              }
+            ],
+            "instance": {
+              "domain": "brix",
+              "refId": "q1",
+              "type": "ref"
+            }
+          }
+        ]
+      }
+    ],
+    "title": "02 21"
+  }
+}

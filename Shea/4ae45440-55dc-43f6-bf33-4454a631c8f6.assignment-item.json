@@ -1,0 +1,184 @@
+{
+  "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope",
+  "@type": "Envelope",
+  "metadata": {
+    "guid": "4ae45440-55dc-43f6-bf33-4454a631c8f6",
+    "bookAuthor": "Daniel M. Shea, et al.",
+    "title": "02 24",
+    "keywords": [
+      "Shea",
+      "Alick",
+      "Ch13"
+    ],
+    "extendedMetadata": [
+      {
+        "name": "qst_html_template",
+        "value": "mcssall"
+      },
+      {
+        "name": "CH",
+        "value": "13"
+      },
+      {
+        "name": "ISBN",
+        "value": "0134017005"
+      },
+      {
+        "name": "item_title",
+        "value": "0134017005_Daniel M. Shea, et al._ch13_c01_q0003"
+      },
+      {
+        "name": "Topic",
+        "value": "Political Participation"
+      },
+      {
+        "name": "M",
+        "value": "c01"
+      },
+      {
+        "name": "qmd_absolutescore_max",
+        "value": "100"
+      },
+      {
+        "name": "qmd_absolutescore_min",
+        "value": "0"
+      },
+      {
+        "name": "qst_type",
+        "value": "MCSS text without media"
+      },
+      {
+        "name": "qst_id",
+        "value": "75695"
+      }
+    ],
+    "contentTypeTier2": [
+      "AssessmentItem"
+    ],
+    "contentTypeTier1": "Assessment",
+    "format": [
+      "application/vnd.pearson.sanvan.v1.activity"
+    ],
+    "educationalAlignment": [
+      "http://purl.org/pearson/objectives/183725473384362"
+    ],
+    "version": "1.0"
+  },
+  "body": {
+    "description": "02-24",
+    "containerConfig": [
+      {
+        "description": "02-24",
+        "containerId": "target1",
+        "brixConfig": [
+          {
+            "bricId": "q1",
+            "bricType": "MultipleChoiceQuestion",
+            "config": {
+              "id": "QUE73317",
+              "question": "Which of the following is one reason that people did not fully participate in elections in the early twentieth century?\n\u003cbr /\u003e",
+              "order": "randomized",
+              "presenterType": "RadioGroup",
+              "presenterConfig": {
+                "numberFormat": "none"
+              },
+              "choices": [
+                {
+                  "answerKey": "answer_1",
+                  "content": "Immigration resulted in population losses in some urban areas."
+                },
+                {
+                  "answerKey": "answer_2",
+                  "content": "Residency requirements resulted in many people moving to different areas."
+                },
+                {
+                  "answerKey": "answer_3",
+                  "content": "The First World War resulted in fewer voters going to the polls."
+                },
+                {
+                  "answerKey": "answer_4",
+                  "content": "Women who had been granted the vote were slow to exercise that right."
+                }
+              ]
+            },
+            "answerKey": {
+              "assessmentType": "multiplechoice",
+              "answers": {
+                "answer_3": {
+                  "score": 0.0,
+                  "response": "Consider this: In the early twentieth century, there was a flood of immigration, causing a population boom in urban areas. Although these new citizens would soon be assimilated into the political process, many of them did not immediately vote. LO 13.2 Evaluate levels of electoral engagement in America, particularly among young citizens. "
+                },
+                "answer_2": {
+                  "score": 0.0,
+                  "response": "Consider this: In the early twentieth century, there was a flood of immigration, causing a population boom in urban areas. Although these new citizens would soon be assimilated into the political process, many of them did not immediately vote. LO 13.2 Evaluate levels of electoral engagement in America, particularly among young citizens. "
+                },
+                "answer_1": {
+                  "score": 0.0,
+                  "response": "Consider this: In the early twentieth century, there was a flood of immigration, causing a population boom in urban areas. Although these new citizens would soon be assimilated into the political process, many of them did not immediately vote. LO 13.2 Evaluate levels of electoral engagement in America, particularly among young citizens. "
+                },
+                "answer_4": {
+                  "score": 1.0,
+                  "response": ""
+                }
+              }
+            },
+            "configFixup": [
+              {
+                "name": "questionId",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "sequenceNodeKey",
+                  "type": "ref"
+                }
+              },
+              {
+                "name": "maxAttempts",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "maxAttempts",
+                  "type": "ref"
+                }
+              }
+            ]
+          }
+        ],
+        "hookupActions": [
+          {
+            "description": "Hookup the submit manager to evaluate answers",
+            "methodName": "handleRequestsFrom",
+            "type": "method-call",
+            "args": [
+              {
+                "domain": "brix",
+                "refId": "q1",
+                "type": "ref"
+              }
+            ],
+            "instance": {
+              "type": "submit-manager"
+            }
+          },
+          {
+            "description": "Draw the question",
+            "methodName": "draw",
+            "type": "method-call",
+            "args": [
+              {
+                "selector": "#target1",
+                "type": "d3select"
+              }
+            ],
+            "instance": {
+              "domain": "brix",
+              "refId": "q1",
+              "type": "ref"
+            }
+          }
+        ]
+      }
+    ],
+    "title": "02 24"
+  }
+}

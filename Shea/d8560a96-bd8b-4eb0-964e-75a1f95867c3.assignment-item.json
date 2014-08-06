@@ -1,0 +1,196 @@
+{
+  "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope",
+  "@type": "Envelope",
+  "metadata": {
+    "guid": "d8560a96-bd8b-4eb0-964e-75a1f95867c3",
+    "bookAuthor": "Daniel M. Shea, et al.",
+    "title": "POST 13 17",
+    "keywords": [
+      "Shea",
+      "Alick",
+      "Ch13"
+    ],
+    "extendedMetadata": [
+      {
+        "name": "qst_html_template",
+        "value": "mcssall"
+      },
+      {
+        "name": "ISBN",
+        "value": "0134017005"
+      },
+      {
+        "name": "item_title",
+        "value": "0134017005_Daniel M. Shea, et al._ch13_m04_q0002"
+      },
+      {
+        "name": "M",
+        "value": "m04"
+      },
+      {
+        "name": "qmd_absolutescore_min",
+        "value": "0"
+      },
+      {
+        "name": "CH",
+        "value": "13"
+      },
+      {
+        "name": "skill",
+        "value": "Remember the Facts"
+      },
+      {
+        "name": "Topic",
+        "value": "Political Parties"
+      },
+      {
+        "name": "Difficulty",
+        "value": "Remember the Facts"
+      },
+      {
+        "name": "qmd_absolutescore_max",
+        "value": "100"
+      },
+      {
+        "name": "qst_type",
+        "value": "MCSS text without media"
+      },
+      {
+        "name": "Objective",
+        "value": "LO 13.4 Trace the evolution of political parties in the United States."
+      },
+      {
+        "name": "qst_id",
+        "value": "75710"
+      }
+    ],
+    "contentTypeTier2": [
+      "AssessmentItem"
+    ],
+    "contentTypeTier1": "Assessment",
+    "format": [
+      "application/vnd.pearson.sanvan.v1.activity"
+    ],
+    "educationalAlignment": [
+      "http://purl.org/pearson/objectives/183725473384362"
+    ],
+    "version": "1.0"
+  },
+  "body": {
+    "description": "POST_13_17",
+    "containerConfig": [
+      {
+        "description": "POST_13_17",
+        "containerId": "target1",
+        "brixConfig": [
+          {
+            "bricId": "q1",
+            "bricType": "MultipleChoiceQuestion",
+            "config": {
+              "id": "QUE73314",
+              "question": "The decline of party machines coincided with the loss of patronage jobs because ________ was introduced.\n\u003cbr /\u003e",
+              "order": "randomized",
+              "presenterType": "RadioGroup",
+              "presenterConfig": {
+                "numberFormat": "none"
+              },
+              "choices": [
+                {
+                  "answerKey": "answer_1",
+                  "content": "the merit system"
+                },
+                {
+                  "answerKey": "answer_2",
+                  "content": "realignment"
+                },
+                {
+                  "answerKey": "answer_3",
+                  "content": "reapportionment"
+                },
+                {
+                  "answerKey": "answer_4",
+                  "content": "redistricting"
+                }
+              ]
+            },
+            "answerKey": {
+              "assessmentType": "multiplechoice",
+              "answers": {
+                "answer_3": {
+                  "score": 0.0,
+                  "response": "Consider this: Civil service helped people earn jobs by doing well in exams. LO 13.4 Trace the evolution of political parties in the United States."
+                },
+                "answer_2": {
+                  "score": 0.0,
+                  "response": "Consider this: Civil service helped people earn jobs by doing well in exams. LO 13.4 Trace the evolution of political parties in the United States."
+                },
+                "answer_1": {
+                  "score": 1.0,
+                  "response": ""
+                },
+                "answer_4": {
+                  "score": 0.0,
+                  "response": "Consider this: Civil service helped people earn jobs by doing well in exams. LO 13.4 Trace the evolution of political parties in the United States."
+                }
+              }
+            },
+            "configFixup": [
+              {
+                "name": "questionId",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "sequenceNodeKey",
+                  "type": "ref"
+                }
+              },
+              {
+                "name": "maxAttempts",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "maxAttempts",
+                  "type": "ref"
+                }
+              }
+            ]
+          }
+        ],
+        "hookupActions": [
+          {
+            "description": "Hookup the submit manager to evaluate answers",
+            "methodName": "handleRequestsFrom",
+            "type": "method-call",
+            "args": [
+              {
+                "domain": "brix",
+                "refId": "q1",
+                "type": "ref"
+              }
+            ],
+            "instance": {
+              "type": "submit-manager"
+            }
+          },
+          {
+            "description": "Draw the question",
+            "methodName": "draw",
+            "type": "method-call",
+            "args": [
+              {
+                "selector": "#target1",
+                "type": "d3select"
+              }
+            ],
+            "instance": {
+              "domain": "brix",
+              "refId": "q1",
+              "type": "ref"
+            }
+          }
+        ]
+      }
+    ],
+    "title": "POST 13 17"
+  }
+}
