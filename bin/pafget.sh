@@ -1,20 +1,39 @@
 #! /bin/bash
 # usage:
-# get an activity: ./pafget.sh activity PUT_THE_GUID_HERE
-# get an assignment: ./pafget.sh assignment PUT_THE_GUID_HERE
+# get an activity: pafget.sh <PAF-env> activity <activity-GUID>
+# get an assignment: pafget.sh <PAF-env> assignment <assignment-GUID>
 
-PAFIMPORTER='java -jar brix-tool-pafclient-0.3-jar-with-dependencies.jar'
-METHOD=GET
-DEV_URL='http://repo.paf.dev.pearsoncmg.com/paf-repo/resources/activities'
-CERT_URL='http://repo.paf.cert.pearsoncmg.com/paf-repo/resources/activities'
-REV_URL='http://repo.paf.staging.pearsoncmg.com/paf-repo/resources/activities'
-PROD_URL='http://repo.paf.pearsoncmg.com/paf-repo/resources/activities'
-ACTIVITY_HDR='Accept:application/vnd.pearson.sanvan.v1.activity'
-ASSIGNMENT_HDR='Accept:application/vnd.pearson.paf.v1.assignment+json'
-TYPE=$1
-GUID=$2
+function echosyntax() {
+    echo ''
+    echo 'usage:'
+    echo 'get an activity:   pafget.sh <PAF-env> activity <activity-GUID>'
+    echo 'get an assignment: pafget.sh <PAF-env> assignment <assignment-GUID>'
+    echo ''
+    echo -n 'output is saved in the files: '
+    echo pafget{,.nohdr}.out{,.json}
+    echo 'the output files overwrite any pre-existing files'
+}
 
-URL=$REV_URL
+function getfullpath() {
+  DIR=$(echo "${1%/*}")
+  (cd "$DIR" && echo "$(pwd -P)")
+}
+
+if [ $# -ne 3 ]
+then
+    echo 'Wrong number of arguments'
+    echosyntax
+    exit 1
+fi
+
+PAFENV=$1
+TYPE=$2
+GUID=$3
+
+# Get the path to this script file which is where the paf tool jar file lives.
+SCRIPT_PATH="`getfullpath $0`"
+
+source $SCRIPT_PATH/setpafenv.sh $PAFENV GET
 
 if [[ $TYPE == 'activity' ]]
 then
@@ -23,17 +42,38 @@ elif [[ $TYPE == 'assignment' ]]
 then
     HEADER=$ASSIGNMENT_HDR
 else
-    echo "The first argument must be either 'activity' or 'assignment'"
-    echo ''
-    echo 'usage:'
-    echo 'get an activity:   ./pafget.sh activity PUT_THE_GUID_HERE'
-    echo 'get an assignment: ./pafget.sh assignment PUT_THE_GUID_HERE'
-    echo ''
+    echo "The second argument must be either 'activity' or 'assignment'"
+    echosyntax
     exit 1
 fi
 
 date
-echo getting $TYPE $GUID from PAF $URL...
-$PAFIMPORTER -c -m $METHOD -h "$HEADER" -u $URL/$GUID
-echo ...done getting $TYPE $GUID from PAF $URL
+echo getting $TYPE $GUID from PAF $UC_TARGET_PAF_ENV \($URL\)...
+$PAFTOOL -c -m GET -h "$HEADER" -u $URL/$GUID > pafget.out
+status=$?
+if [ $status -ne 0 ]
+then
+    cat pafget.out
+else
+    $PAFTOOL -c -m GET -u $URL/$GUID > pafget.nohdr.out
+
+    if [ ! -v JQ_AVAILABLE ]
+    then
+        cat pafget.out
+    else
+        # pretty print the activity or assignment body into the pafget.out.json file
+        sed '1,/^\[OUT\]/ d' pafget.out | jq . > pafget.out.json
+        cat pafget.out.json
+
+        # pretty print the activity or assignment envelope into the pafget.nohdr.out.json file
+        sed '1,/^\[OUT\]/ d' pafget.nohdr.out | jq . > pafget.nohdr.out.json
+
+        echo ''
+        echo -n "output saved in: "
+        echo pafget{,.nohdr}.out{,.json}
+        echo ''
+    fi
+fi
+
+echo ...done getting $TYPE $GUID from PAF $UC_TARGET_PAF_ENV \($URL\)
 date
