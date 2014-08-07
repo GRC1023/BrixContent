@@ -26,14 +26,13 @@ then
     exit 1
 fi
 
-PAFENV=$1
-TYPE=$2
-GUID=$3
-
 # Get the path to this script file which is where the paf tool jar file lives.
 SCRIPT_PATH="`getfullpath $0`"
 
-source $SCRIPT_PATH/setpafenv.sh $PAFENV GET
+source $SCRIPT_PATH/setpafenv.sh $1 GET
+
+TYPE=$2
+GUID=$3
 
 if [[ $TYPE == 'activity' ]]
 then
@@ -44,6 +43,8 @@ then
 else
     echo "The second argument must be either 'activity' or 'assignment'"
     echosyntax
+    echo "The supported PAF environments are: $SUPPORTED_PAF_ENVS"
+    echo ''
     exit 1
 fi
 

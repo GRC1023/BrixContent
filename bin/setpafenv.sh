@@ -29,6 +29,7 @@ UC_TARGET_PAF_ENV=$(tr '[:lower:]' '[:upper:]' <<< "$TARGET_PAF_ENV")
 PAFTOOL="java -jar $SCRIPT_PATH/brix-tool-pafclient-0.3-jar-with-dependencies.jar"
 
 # URLs to the supported environments
+SUPPORTED_PAF_ENVS="DEV, CERT, REV (aka staging), PRE_PROD, PROD"
 DEV_URL='http://repo.paf.dev.pearsoncmg.com/paf-repo/resources/activities'
 CERT_URL='http://repo.paf.cert.pearsoncmg.com/paf-repo/resources/activities'
 REV_URL='http://repo.paf.staging.pearsoncmg.com/paf-repo/resources/activities'
@@ -43,6 +44,15 @@ ASSIGNMENT_HDR_GET='Accept:application/vnd.pearson.paf.v1.assignment+json'
 ACTIVITY_HDR_PUT='Content-Type: application/vnd.pearson.paf.v1.envelope+json;charset=UTF-8;body="application/vnd.pearson.sanvan.v1.activity""'
 ASSIGNMENT_HDR_PUT='Content-Type: application/vnd.pearson.paf.v1.envelope+json;charset=UTF-8;body="application/vnd.pearson.paf.v1.assignment+json""'
 
+# if this script didn't get 2 arguments, it's probably because the PAF environment wasn't specified by the user to the calling script
+if [ $# -ne 2 ]
+then
+	echosyntax
+	echo "This script supports the following PAF environments:"
+	echo $SUPPORTED_PAF_ENVS
+	exit 1
+fi
+
 # requested headers
 eval "ACTIVITY_HDR=\$ACTIVITY_HDR_$2"
 eval "ASSIGNMENT_HDR=\$ASSIGNMENT_HDR_$2"
@@ -53,9 +63,9 @@ eval "URL=\$${UC_TARGET_PAF_ENV}_URL"
 if [ -z "$URL" ]
 then
 	echo "The specified PAF environment \"$TARGET_PAF_ENV\" is not supported by this script"
-	echo "This script supports the following PAF enviornments:"
-	echo "DEV, CERT, REV (aka staging), PRE_PROD, PROD"
-    echo ''
+	echo "This script supports the following PAF environments:"
+	echo $SUPPORTED_PAF_ENVS
+	echosyntax
 	exit 1
 fi
 
