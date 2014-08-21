@@ -1,0 +1,252 @@
+{
+  "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope",
+  "@type": "Envelope",
+  "metadata": {
+    "bookTitle": "Essentials of Sociology",
+    "keywords": [
+      "Henslin 11e",
+      "ch 03",
+      "Rudowski"
+    ],
+    "extendedMetadata": [
+      {
+        "name": "ISBN",
+        "value": "0133869369"
+      },
+      {
+        "name": "qmd_BloomsID",
+        "value": "6"
+      },
+      {
+        "name": "M",
+        "value": "m02"
+      },
+      {
+        "name": "qmd_absolutescore_min",
+        "value": "0"
+      },
+      {
+        "name": "assessment_title",
+        "value": "Quiz: Socialization into the Self and Mind"
+      },
+      {
+        "name": "Topic",
+        "value": "Socialization into the Self and Mind"
+      },
+      {
+        "name": "qst_type",
+        "value": "MCSS text without media"
+      },
+      {
+        "name": "qmd_HighStake",
+        "value": "True"
+      },
+      {
+        "name": "qst_html_template",
+        "value": "mcssall"
+      },
+      {
+        "name": "chapterTitle",
+        "value": "Socialization"
+      },
+      {
+        "name": "module",
+        "value": "Socialization into the Self and Mind"
+      },
+      {
+        "name": "qmd_maximumscore",
+        "value": "1"
+      },
+      {
+        "name": "item_title",
+        "value": "0133869369_James M. Henslin_ch03_m02_q0005"
+      },
+      {
+        "name": "qmd_version",
+        "value": "2.0"
+      },
+      {
+        "name": "qmd_weighting",
+        "value": "1.00"
+      },
+      {
+        "name": "qmd_Hidden",
+        "value": "False"
+      },
+      {
+        "name": "questionlayout",
+        "value": "1"
+      },
+      {
+        "name": "qmd_toolvendor",
+        "value": "Excelsoft"
+      },
+      {
+        "name": "CH",
+        "value": "3"
+      },
+      {
+        "name": "qmd_penaltyvalue",
+        "value": "0.0"
+      },
+      {
+        "name": "qmd_status",
+        "value": "Normal"
+      },
+      {
+        "name": "qmd_itemtype",
+        "value": "Multiple Choice Static"
+      },
+      {
+        "name": "qmd_absolutescore_max",
+        "value": "100"
+      },
+      {
+        "name": "Objective",
+        "value": "LO: 3.2: Use the ideas and research of Cooley (looking-glass self), Mead (role taking), and Piaget (reasoning) to explain socialization into the self and mind."
+      },
+      {
+        "name": "qst_id",
+        "value": "64703"
+      },
+      {
+        "name": "shuffle_choices",
+        "value": "Yes"
+      }
+    ],
+    "subject": [
+      "Sociology"
+    ],
+    "contentTypeTier2": [
+      "AssessmentItem"
+    ],
+    "contentTypeTier1": "Assessment",
+    "format": [
+      "application/vnd.pearson.sanvan.v1.activity"
+    ],
+    "version": "1.0",
+    "guid": "17ca74c8-852f-4eac-ad6e-3b617a5c0b46",
+    "bookAuthor": "James M. Henslin",
+    "title": "POST 03 21",
+    "educationalAlignment": [
+      "http://purl.org/pearson/objectives/183725473384362"
+    ]
+  },
+  "body": {
+    "description": "POST_03_21",
+    "containerConfig": [
+      {
+        "description": "POST_03_21",
+        "containerId": "target1",
+        "brixConfig": [
+          {
+            "bricId": "q1",
+            "bricType": "MultipleChoiceQuestion",
+            "config": {
+              "id": "QUE64920",
+              "question": "Which individual is most likely experiencing Piaget’s preoperational stage of cognitive development?\n\u003cbr /\u003e",
+              "order": "randomized",
+              "presenterType": "RadioGroup",
+              "presenterConfig": {
+                "numberFormat": "none"
+              },
+              "choices": [
+                {
+                  "answerKey": "answer_1",
+                  "content": "Christine, a newborn"
+                },
+                {
+                  "answerKey": "answer_2",
+                  "content": "Maurice, age fifteen"
+                },
+                {
+                  "answerKey": "answer_3",
+                  "content": "Jorge, age six"
+                },
+                {
+                  "answerKey": "answer_4",
+                  "content": "Amir, age eight"
+                }
+              ]
+            },
+            "answerKey": {
+              "assessmentType": "multiplechoice",
+              "answers": {
+                "answer_3": {
+                  "score": 1.0,
+                  "response": ""
+                },
+                "answer_2": {
+                  "score": 0.0,
+                  "response": ""
+                },
+                "answer_1": {
+                  "score": 0.0,
+                  "response": ""
+                },
+                "answer_4": {
+                  "score": 0.0,
+                  "response": ""
+                }
+              }
+            },
+            "configFixup": [
+              {
+                "name": "questionId",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "sequenceNodeKey",
+                  "type": "ref"
+                }
+              },
+              {
+                "name": "maxAttempts",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "maxAttempts",
+                  "type": "ref"
+                }
+              }
+            ]
+          }
+        ],
+        "hookupActions": [
+          {
+            "description": "Hookup the submit manager to evaluate answers",
+            "methodName": "handleRequestsFrom",
+            "type": "method-call",
+            "args": [
+              {
+                "domain": "brix",
+                "refId": "q1",
+                "type": "ref"
+              }
+            ],
+            "instance": {
+              "type": "submit-manager"
+            }
+          },
+          {
+            "description": "Draw the question",
+            "methodName": "draw",
+            "type": "method-call",
+            "args": [
+              {
+                "selector": "#target1",
+                "type": "d3select"
+              }
+            ],
+            "instance": {
+              "domain": "brix",
+              "refId": "q1",
+              "type": "ref"
+            }
+          }
+        ]
+      }
+    ],
+    "title": "POST 03 21"
+  }
+}

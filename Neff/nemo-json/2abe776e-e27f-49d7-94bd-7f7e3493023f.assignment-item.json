@@ -1,0 +1,162 @@
+{
+  "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope",
+  "@type": "Envelope",
+  "metadata": {
+    "guid": "2abe776e-e27f-49d7-94bd-7f7e3493023f",
+    "title": "68830_RE_M06_04.html",
+    "extendedMetadata": [
+      {
+        "name": "crawlable",
+        "value": "false"
+      },
+      {
+        "name": "owner",
+        "value": "Brix"
+      },
+      {
+        "name": "contentTypeTier2",
+        "value": "assessment item"
+      },
+      {
+        "name": "contentTypeTier1",
+        "value": "Test and Assessment"
+      },
+      {
+        "name": "format",
+        "value": "application/vnd.pearson.sanvan.v1.activity"
+      }
+    ],
+    "description": "68830_RE_M06_04.html",
+    "subject": [
+      "EnvironmentalScience"
+    ],
+    "contentTypeTier2": [
+      "AssessmentItem"
+    ],
+    "contentTypeTier1": "Assessment",
+    "format": [
+      "application/vnd.pearson.sanvan.v1.activity"
+    ],
+    "educationalAlignment": [
+      "http://purl.org/pearson/objectives/183725473384362"
+    ],
+    "version": "1.0"
+  },
+  "body": {
+    "containerConfig": [
+      {
+        "brixConfig": [
+          {
+            "config": {
+              "presenterType": "RadioGroup",
+              "question": "Why is hydrogen hard to store?",
+              "presenterConfig": {
+                "numberFormat": ""
+              },
+              "choices": [
+                {
+                  "content": "The process of storing hydrogen involves toxic chemicals that no one wants to live near.",
+                  "answerKey": "answer1"
+                },
+                {
+                  "content": "Hydrogen atoms are very small and difficult to identify.",
+                  "answerKey": "answer2"
+                },
+                {
+                  "content": " As a liquid, it needs to be stored at very cold temperatures, and as a gas, the molecules tend to escape through tiny cracks in the containers.",
+                  "answerKey": "answer3"
+                },
+                {
+                  "content": "It needs to be kept very warm to remain in a gaseous state.",
+                  "answerKey": "answer4"
+                }
+              ],
+              "order": "randomized",
+              "id": "sampleQ1"
+            },
+            "answerKey": {
+              "assessmentType": "multiplechoice",
+              "answers": {
+                "answer4": {
+                  "score": 0.0,
+                  "response": ""
+                },
+                "answer1": {
+                  "score": 0.0,
+                  "response": ""
+                },
+                "answer3": {
+                  "score": 1.0,
+                  "response": ""
+                },
+                "answer2": {
+                  "score": 0.0,
+                  "response": ""
+                }
+              }
+            },
+            "bricType": "MultipleChoiceQuestion",
+            "bricId": "Q1",
+            "configFixup": [
+              {
+                "type": "set-property",
+                "name": "questionId",
+                "value": {
+                  "domain": "info",
+                  "type": "ref",
+                  "refId": "sequenceNodeKey"
+                }
+              },
+              {
+                "type": "set-property",
+                "name": "maxAttempts",
+                "value": {
+                  "domain": "info",
+                  "type": "ref",
+                  "refId": "maxAttempts"
+                }
+              }
+            ]
+          }
+        ],
+        "description": "container for the sample multiple choice question",
+        "hookupActions": [
+          {
+            "instance": {
+              "type": "submit-manager"
+            },
+            "args": [
+              {
+                "domain": "brix",
+                "type": "ref",
+                "refId": "Q1"
+              }
+            ],
+            "type": "method-call",
+            "description": "Hookup the submit manager to evaluate answers",
+            "methodName": "handleRequestsFrom"
+          },
+          {
+            "instance": {
+              "domain": "brix",
+              "type": "ref",
+              "refId": "Q1"
+            },
+            "args": [
+              {
+                "type": "d3select",
+                "selector": "#target1"
+              }
+            ],
+            "type": "method-call",
+            "description": "Draw the question",
+            "methodName": "draw"
+          }
+        ],
+        "containerId": "target1"
+      }
+    ],
+    "description": "A Sample Activity containing a single multiple choice bric",
+    "title": "68830_RE_M06_04.html"
+  }
+}

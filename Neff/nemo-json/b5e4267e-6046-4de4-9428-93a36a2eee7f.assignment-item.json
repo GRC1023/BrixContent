@@ -1,0 +1,137 @@
+{
+  "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope",
+  "@type": "Envelope",
+  "metadata": {
+    "guid": "b5e4267e-6046-4de4-9428-93a36a2eee7f",
+    "title": "68830_NE_GDE_07.html",
+    "extendedMetadata": [],
+    "contentTypeTier2": [
+      "AssessmentItem"
+    ],
+    "contentTypeTier1": "Assessment",
+    "format": [
+      "application/vnd.pearson.sanvan.v1.activity"
+    ],
+    "educationalAlignment": [
+      "http://purl.org/pearson/objectives/183725473384362"
+    ],
+    "version": "1.0"
+  },
+  "body": {
+    "containerConfig": [
+      {
+        "brixConfig": [
+          {
+            "config": {
+              "presenterType": "RadioGroup",
+              "question": "Estimate how long it would take the United States to extract all of its oil reserves at the current rate of consumption. In other words, if the United States didn’t import oil from elsewhere and could extract as much as it wanted each year, how long could it sustain its own demand on domestic supplies? To estimate this, use a similar equation to the one you created earlier, but replace production with consumption. [Hint: Remember, estimated time that reserves will remain equals reserves divided by production.]",
+              "presenterConfig": {
+                "numberFormat": ""
+              },
+              "choices": [
+                {
+                  "content": "0.19 years",
+                  "answerKey": "answer1"
+                },
+                {
+                  "content": "5.2 years",
+                  "answerKey": "answer2"
+                },
+                {
+                  "content": "10.8 years",
+                  "answerKey": "answer3"
+                },
+                {
+                  "content": "50.9 years",
+                  "answerKey": "answer4"
+                }
+              ],
+              "order": "randomized",
+              "id": "sampleQ1"
+            },
+            "answerKey": {
+              "assessmentType": "multiplechoice",
+              "answers": {
+                "answer4": {
+                  "score": 0.0,
+                  "response": "Did you use the correct equation (reserves/consumption) and the U.S. numbers?"
+                },
+                "answer1": {
+                  "score": 0.0,
+                  "response": "Did you use the correct equation (reserves/consumption) and the U.S. numbers?"
+                },
+                "answer3": {
+                  "score": 0.0,
+                  "response": "Did you use the correct equation (reserves/consumption) and the U.S. numbers?"
+                },
+                "answer2": {
+                  "score": 1.0,
+                  "response": ""
+                }
+              }
+            },
+            "bricType": "MultipleChoiceQuestion",
+            "bricId": "Q1",
+            "configFixup": [
+              {
+                "type": "set-property",
+                "name": "questionId",
+                "value": {
+                  "domain": "info",
+                  "type": "ref",
+                  "refId": "sequenceNodeKey"
+                }
+              },
+              {
+                "name": "maxAttempts",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "maxAttempts",
+                  "type": "ref"
+                }
+              }
+            ]
+          }
+        ],
+        "description": "container for the sample multiple choice question",
+        "hookupActions": [
+          {
+            "instance": {
+              "type": "submit-manager"
+            },
+            "args": [
+              {
+                "domain": "brix",
+                "type": "ref",
+                "refId": "Q1"
+              }
+            ],
+            "type": "method-call",
+            "description": "Hookup the submit manager to evaluate answers",
+            "methodName": "handleRequestsFrom"
+          },
+          {
+            "instance": {
+              "domain": "brix",
+              "type": "ref",
+              "refId": "Q1"
+            },
+            "args": [
+              {
+                "type": "d3select",
+                "selector": "#target1"
+              }
+            ],
+            "type": "method-call",
+            "description": "Draw the question",
+            "methodName": "draw"
+          }
+        ],
+        "containerId": "target1"
+      }
+    ],
+    "description": "A Sample Activity containing a single multiple choice bric",
+    "title": "68830_NE_GDE_07.html"
+  }
+}

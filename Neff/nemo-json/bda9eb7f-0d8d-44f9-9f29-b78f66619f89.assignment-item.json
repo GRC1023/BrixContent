@@ -1,0 +1,157 @@
+{
+  "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope",
+  "@type": "Envelope",
+  "metadata": {
+    "guid": "bda9eb7f-0d8d-44f9-9f29-b78f66619f89",
+    "title": "68830_EU_C01.html",
+    "extendedMetadata": [
+      {
+        "name": "crawlable",
+        "value": "false"
+      },
+      {
+        "name": "owner",
+        "value": "Brix"
+      },
+      {
+        "name": "contentTypeTier2",
+        "value": "assessment item"
+      },
+      {
+        "name": "contentTypeTier1",
+        "value": "Test and Assessment"
+      },
+      {
+        "name": "format",
+        "value": "application/vnd.pearson.sanvan.v1.activity"
+      },
+      {
+        "name": "timeRequired",
+        "value": "PT20S"
+      }
+    ],
+    "description": "68830_EU_C01.html",
+    "subject": [
+      "EnvironmentalScience"
+    ],
+    "contentTypeTier2": [
+      "AssessmentItem"
+    ],
+    "contentTypeTier1": "Assessment",
+    "format": [
+      "application/vnd.pearson.sanvan.v1.activity"
+    ],
+    "educationalAlignment": [
+      "http://purl.org/pearson/objectives/183725473384362"
+    ],
+    "version": "1.0"
+  },
+  "body": {
+    "containerConfig": [
+      {
+        "brixConfig": [
+          {
+            "bricId": "Q1",
+            "answerKey": {
+              "answers": {
+                "answer3": {
+                  "score": 0.0,
+                  "response": "When you multiply EU million barrels by 600 days, is your result greater or less than 3 billion?"
+                },
+                "answer2": {
+                  "score": 1.0,
+                  "response": "Correct."
+                },
+                "answer1": {
+                  "score": 0.0,
+                  "response": "When you multiply EU million barrels by 16 days, is your result greater or less than 3 billion?"
+                },
+                "answer4": {
+                  "score": 0.0,
+                  "response": "When you multiply EU million barrels by 5,400 days, is your result greater or less than 3 billion?"
+                }
+              },
+              "assessmentType": "multiplechoice"
+            },
+            "bricType": "MultipleChoiceQuestion",
+            "config": {
+              "id": "sampleQ1",
+              "order": "randomized",
+              "question": "If the bedrock under the Arctic National Wildlife Refuge contains an estimated 3 billion barrels of oil and the United States consumes about EU million barrels of oil per day, how many days of U.S. consumption could these oil deposits support?",
+              "presenterType": "RadioGroup",
+              "presenterConfig": {
+                "numberFormat": ""
+              },
+              "choices": [
+                {
+                  "content": "16 days",
+                  "answerKey": "answer1"
+                },
+                {
+                  "content": "167 days",
+                  "answerKey": "answer2"
+                },
+                {
+                  "content": "600 days",
+                  "answerKey": "answer3"
+                },
+                {
+                  "content": "5,400 days",
+                  "answerKey": "answer4"
+                }
+              ]
+            },
+            "configFixup": [
+              {
+                "value": {
+                  "domain": "info",
+                  "type": "ref",
+                  "refId": "sequenceNodeKey"
+                },
+                "type": "set-property",
+                "name": "questionId"
+              }
+            ]
+          }
+        ],
+        "containerId": "target1",
+        "hookupActions": [
+          {
+            "methodName": "handleRequestsFrom",
+            "instance": {
+              "type": "submit-manager"
+            },
+            "args": [
+              {
+                "domain": "brix",
+                "type": "ref",
+                "refId": "Q1"
+              }
+            ],
+            "type": "method-call",
+            "description": "Hookup the submit manager to evaluate answers"
+          },
+          {
+            "methodName": "draw",
+            "instance": {
+              "domain": "brix",
+              "type": "ref",
+              "refId": "Q1"
+            },
+            "args": [
+              {
+                "type": "d3select",
+                "selector": "#target1"
+              }
+            ],
+            "type": "method-call",
+            "description": "Draw the question"
+          }
+        ],
+        "description": "container for the sample multiple choice question"
+      }
+    ],
+    "description": "A Sample Activity containing a single multiple choice bric",
+    "title": "68830_EU_C01.html"
+  }
+}

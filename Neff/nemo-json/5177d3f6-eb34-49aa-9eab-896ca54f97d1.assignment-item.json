@@ -1,0 +1,202 @@
+{
+  "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope",
+  "@type": "Envelope",
+  "metadata": {
+    "guid": "5177d3f6-eb34-49aa-9eab-896ca54f97d1",
+    "title": "Changing landscape surrounding the Three Gorges Dam",
+    "extendedMetadata": [
+      {
+        "name": "crawlable",
+        "value": "false"
+      },
+      {
+        "name": "owner",
+        "value": "Brix"
+      },
+      {
+        "name": "contentTypeTier2",
+        "value": "Exercise"
+      },
+      {
+        "name": "contentTypeTier1",
+        "value": "Activity"
+      },
+      {
+        "name": "format",
+        "value": "application/vnd.pearson.sanvan.v1.activity"
+      },
+      {
+        "name": "timeRequired",
+        "value": "PT20S"
+      }
+    ],
+    "description": "Changing landscape surrounding the Three Gorges Dam",
+    "subject": [
+      "EnvironmentalScience"
+    ],
+    "contentTypeTier2": [
+      "AssessmentItem"
+    ],
+    "contentTypeTier1": "Assessment",
+    "format": [
+      "application/vnd.pearson.sanvan.v1.activity"
+    ],
+    "educationalAlignment": [
+      "http://purl.org/pearson/objectives/183725473384362"
+    ],
+    "version": "1.0"
+  },
+  "body": {
+    "containerConfig": [
+      {
+        "brixConfig": [
+          {
+            "bricId": "lblCarousel1",
+            "bricType": "LabelCarousel",
+            "config": {
+              "displayWidth": 457.0,
+              "id": "lblCrsl1",
+              "imagesActualSize": {
+                "height": 335.0,
+                "width": 457.0
+              },
+              "type": "textLabels"
+            },
+            "configFixup": [
+              {
+                "name": "images",
+                "type": "set-property",
+                "value": {
+                  "elements": [
+                    {
+                      "properties": [
+                        {
+                          "name": "URI",
+                          "value": {
+                            "parts": [
+                              {
+                                "domain": "info",
+                                "refId": "imgBaseUrl",
+                                "type": "ref"
+                              },
+                              {
+                                "type": "constant",
+                                "value": "img/68830_RE_01_02a_S1.jpg"
+                              }
+                            ],
+                            "type": "join"
+                          }
+                        },
+                        {
+                          "name": "caption",
+                          "value": {
+                            "type": "constant",
+                            "value": "The Yangtze River before dam construction"
+                          }
+                        },
+                        {
+                          "name": "selectorLabel",
+                          "value": {
+                            "type": "constant",
+                            "value": "1987"
+                          }
+                        }
+                      ],
+                      "type": "object"
+                    },
+                    {
+                      "properties": [
+                        {
+                          "name": "URI",
+                          "value": {
+                            "parts": [
+                              {
+                                "domain": "info",
+                                "refId": "imgBaseUrl",
+                                "type": "ref"
+                              },
+                              {
+                                "type": "constant",
+                                "value": "img/68830_RE_01_02a_S2.png"
+                              }
+                            ],
+                            "type": "join"
+                          }
+                        },
+                        {
+                          "name": "caption",
+                          "value": {
+                            "type": "constant",
+                            "value": "Operational dam with filled reservoir"
+                          }
+                        },
+                        {
+                          "name": "selectorLabel",
+                          "value": {
+                            "type": "constant",
+                            "value": "2006"
+                          }
+                        }
+                      ],
+                      "type": "object"
+                    }
+                  ],
+                  "type": "array"
+                }
+              }
+            ]
+          },
+          {
+            "bricId": "cntr1",
+            "bricType": "SvgContainer",
+            "config": {
+              "maxSize": {
+                "height": 450.0,
+                "width": 457.0
+              }
+            }
+          }
+        ],
+        "containerId": "b265edf28834c4b788a576291a315b742",
+        "description": "Container for the LabelCarousel",
+        "hookupActions": [
+          {
+            "args": [
+              {
+                "selector": "#b265edf28834c4b788a576291a315b742",
+                "type": "d3select"
+              }
+            ],
+            "description": "Draw the svg container",
+            "instance": {
+              "domain": "brix",
+              "refId": "cntr1",
+              "type": "ref"
+            },
+            "methodName": "draw",
+            "type": "method-call"
+          },
+          {
+            "args": [
+              {
+                "domain": "brix",
+                "refId": "lblCarousel1",
+                "type": "ref"
+              }
+            ],
+            "description": "Append the label image carousel to the svg container",
+            "instance": {
+              "domain": "brix",
+              "refId": "cntr1",
+              "type": "ref"
+            },
+            "methodName": "append",
+            "type": "method-call"
+          }
+        ]
+      }
+    ],
+    "description": "Changing landscape surrounding the Three Gorges Dam",
+    "title": "Changing landscape surrounding the Three Gorges Dam"
+  }
+}

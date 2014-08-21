@@ -1,0 +1,177 @@
+{
+  "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope", 
+  "@type": "Envelope", 
+  "body": {
+    "containerConfig": [
+      {
+        "brixConfig": [
+          {
+            "bricId": "lblCarousel1", 
+            "bricType": "LabelCarousel", 
+            "config": {
+              "displayWidth": 457, 
+              "id": "lblCrsl1", 
+              "imagesActualSize": {
+                "height": 562, 
+                "width": 477
+              }, 
+              "type": "textLabels"
+            }, 
+            "configFixup": [
+              {
+                "name": "images", 
+                "type": "set-property", 
+                "value": {
+                  "elements": [
+                    {
+                      "properties": [
+                        {
+                          "name": "URI", 
+                          "value": {
+                            "parts": [
+                              {
+                                "domain": "info", 
+                                "refId": "imgBaseUrl", 
+                                "type": "ref"
+                              }, 
+                              {
+                                "type": "constant", 
+                                "value": "img/68830_EU_08_02_S1.png"
+                              }
+                            ], 
+                            "type": "join"
+                          }
+                        }, 
+                        {
+                          "name": "caption", 
+                          "value": {
+                            "type": "constant", 
+                            "value": ""
+                          }
+                        }, 
+                        {
+                          "name": "selectorLabel", 
+                          "value": {
+                            "type": "constant", 
+                            "value": "INCREASE future impacts"
+                          }
+                        }
+                      ], 
+                      "type": "object"
+                    }, 
+                    {
+                      "properties": [
+                        {
+                          "name": "URI", 
+                          "value": {
+                            "parts": [
+                              {
+                                "domain": "info", 
+                                "refId": "imgBaseUrl", 
+                                "type": "ref"
+                              }, 
+                              {
+                                "type": "constant", 
+                                "value": "img/68830_EU_08_02_S2.png"
+                              }
+                            ], 
+                            "type": "join"
+                          }
+                        }, 
+                        {
+                          "name": "caption", 
+                          "value": {
+                            "type": "constant", 
+                            "value": ""
+                          }
+                        }, 
+                        {
+                          "name": "selectorLabel", 
+                          "value": {
+                            "type": "constant", 
+                            "value": "DECREASE future impacts"
+                          }
+                        }
+                      ], 
+                      "type": "object"
+                    }
+                  ], 
+                  "type": "array"
+                }
+              }
+            ]
+          }, 
+          {
+            "bricId": "cntr1", 
+            "bricType": "SvgContainer", 
+            "config": {
+              "maxSize": {
+                "height": 600, 
+                "width": 457
+              }
+            }
+          }
+        ], 
+        "containerId": "imgContainer", 
+        "description": "Container for the LabelCarousel", 
+        "hookupActions": [
+          {
+            "args": [
+              {
+                "selector": "#target1", 
+                "type": "d3select"
+              }
+            ], 
+            "description": "Draw the svg container", 
+            "instance": {
+              "domain": "brix", 
+              "refId": "cntr1", 
+              "type": "ref"
+            }, 
+            "methodName": "draw", 
+            "type": "method-call"
+          }, 
+          {
+            "args": [
+              {
+                "domain": "brix", 
+                "refId": "lblCarousel1", 
+                "type": "ref"
+              }
+            ], 
+            "description": "Append the label image carousel to the svg container", 
+            "instance": {
+              "domain": "brix", 
+              "refId": "cntr1", 
+              "type": "ref"
+            }, 
+            "methodName": "append", 
+            "type": "method-call"
+          }
+        ]
+      }
+    ], 
+    "description": "Technology and choices that may affect future impacts of transportation"
+  }, 
+  "metadata": {
+    "contentTypeTier1": "Activity", 
+    "contentTypeTier2": [
+      "Exercise"
+    ], 
+    "created": "2014-07-15T16:34:47.256372", 
+    "description": "Technology and choices that may affect the future of transportation", 
+    "format": [
+      "application/vnd.pearson.sanvan.v1.activity"
+    ], 
+    "guid": "c3dfc0d5-b7ed-4f51-b790-f814cac31e57", 
+    "intendedEndUserRole": [
+      "Student"
+    ], 
+    "owner": "Brix", 
+    "subject": [
+      "EnvironmentalScience"
+    ], 
+    "timeRequired": "PT20S", 
+    "title": "Technology and choices that may affect the future of transportation"
+  }
+}

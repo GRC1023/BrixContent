@@ -1,0 +1,140 @@
+{
+  "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope",
+  "@type": "Envelope",
+  "metadata": {
+    "guid": "4d0bc746-1996-47e7-a43d-f9a3aab372e6",
+    "title": "68830_EU_GDV_05.html",
+    "keywords": [
+      "guided data visualization"
+    ],
+    "extendedMetadata": [],
+    "contentTypeTier2": [
+      "AssessmentItem"
+    ],
+    "contentTypeTier1": "Assessment",
+    "format": [
+      "application/vnd.pearson.sanvan.v1.activity"
+    ],
+    "educationalAlignment": [
+      "http://purl.org/pearson/objectives/183725473384362"
+    ],
+    "version": "1.0"
+  },
+  "body": {
+    "containerConfig": [
+      {
+        "brixConfig": [
+          {
+            "config": {
+              "presenterType": "RadioGroup",
+              "question": "Compare the sources of energy generation in China to those used in the United States. What does this tell you about how energy is used in these two countries?",
+              "presenterConfig": {
+                "numberFormat": ""
+              },
+              "choices": [
+                {
+                  "content": "There is more demand for transportation fuel in the United States.",
+                  "answerKey": "answer1"
+                },
+                {
+                  "content": "The use of nuclear energy in the United States means that less hydroelectric energy is needed.",
+                  "answerKey": "answer2"
+                },
+                {
+                  "content": "China is unable to build nuclear power plants due to international restrictions.",
+                  "answerKey": "answer3"
+                },
+                {
+                  "content": "There is more demand for home heating oil in the United States.",
+                  "answerKey": "answer4"
+                }
+              ],
+              "order": "randomized",
+              "id": "sampleQ1"
+            },
+            "answerKey": {
+              "assessmentType": "multiplechoice",
+              "answers": {
+                "answer4": {
+                  "score": 0.0,
+                  "response": "Home heating oil is made from oil (petroleum), but is this the most common use of this fossil fuel?"
+                },
+                "answer1": {
+                  "score": 1.0,
+                  "response": ""
+                },
+                "answer3": {
+                  "score": 0.0,
+                  "response": "Check the graph again. Does China have nuclear energy?"
+                },
+                "answer2": {
+                  "score": 0.0,
+                  "response": "Both hydroelectric and nuclear energy can be used for electricity generation, but why would the use of one require less use of the other?"
+                }
+              }
+            },
+            "bricType": "MultipleChoiceQuestion",
+            "bricId": "Q1",
+            "configFixup": [
+              {
+                "type": "set-property",
+                "name": "questionId",
+                "value": {
+                  "domain": "info",
+                  "type": "ref",
+                  "refId": "sequenceNodeKey"
+                }
+              },
+              {
+                "name": "maxAttempts",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "maxAttempts",
+                  "type": "ref"
+                }
+              }
+            ]
+          }
+        ],
+        "description": "container for the sample multiple choice question",
+        "hookupActions": [
+          {
+            "instance": {
+              "type": "submit-manager"
+            },
+            "args": [
+              {
+                "domain": "brix",
+                "type": "ref",
+                "refId": "Q1"
+              }
+            ],
+            "type": "method-call",
+            "description": "Hookup the submit manager to evaluate answers",
+            "methodName": "handleRequestsFrom"
+          },
+          {
+            "instance": {
+              "domain": "brix",
+              "type": "ref",
+              "refId": "Q1"
+            },
+            "args": [
+              {
+                "type": "d3select",
+                "selector": "#target1"
+              }
+            ],
+            "type": "method-call",
+            "description": "Draw the question",
+            "methodName": "draw"
+          }
+        ],
+        "containerId": "target1"
+      }
+    ],
+    "description": "A Sample Activity containing a single multiple choice bric",
+    "title": "68830_EU_GDV_05.html"
+  }
+}

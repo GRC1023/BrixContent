@@ -1,0 +1,137 @@
+{
+  "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope",
+  "@type": "Envelope",
+  "metadata": {
+    "guid": "c123928a-28ce-43ea-93ad-694e5b715b82",
+    "title": "68830_NE_GDE_06.html",
+    "extendedMetadata": [],
+    "contentTypeTier2": [
+      "AssessmentItem"
+    ],
+    "contentTypeTier1": "Assessment",
+    "format": [
+      "application/vnd.pearson.sanvan.v1.activity"
+    ],
+    "educationalAlignment": [
+      "http://purl.org/pearson/objectives/183725473384362"
+    ],
+    "version": "1.0"
+  },
+  "body": {
+    "containerConfig": [
+      {
+        "brixConfig": [
+          {
+            "config": {
+              "presenterType": "RadioGroup",
+              "question": "Importantly, the calculation of the estimated time oil reserves will remain that you completed earlier assumes that oil reserves and production will remain constant into the future. Assuming that oil reserves do actually stay constant over time for a country, what would happen to the estimate if production rates increased?",
+              "presenterConfig": {
+                "numberFormat": ""
+              },
+              "choices": [
+                {
+                  "content": "The estimated time reserves will remain would increase.",
+                  "answerKey": "answer1"
+                },
+                {
+                  "content": "The estimated time reserves will remain would decrease.",
+                  "answerKey": "answer2"
+                },
+                {
+                  "content": "The estimated time reserves will remain would stay the same.",
+                  "answerKey": "answer3"
+                },
+                {
+                  "content": "It\u0027s impossible to tell.",
+                  "answerKey": "answer4"
+                }
+              ],
+              "order": "randomized",
+              "id": "sampleQ1"
+            },
+            "answerKey": {
+              "assessmentType": "multiplechoice",
+              "answers": {
+                "answer4": {
+                  "score": 0.0,
+                  "response": "Consider what would happen if a country extracted more of a resource next year than it did this year. Would more or less of that resource be left compared to a situation in which production rates remained the same?"
+                },
+                "answer1": {
+                  "score": 0.0,
+                  "response": "Consider what would happen if a country extracted more of a resource next year than it did this year. Would more or less of that resource be left compared to a situation in which production rates remained the same?"
+                },
+                "answer3": {
+                  "score": 0.0,
+                  "response": "Consider what would happen if a country extracted more of a resource next year than it did this year. Would more or less of that resource be left compared to a situation in which production rates remained the same?"
+                },
+                "answer2": {
+                  "score": 1.0,
+                  "response": "If a country extracts a resource more quickly, those reserves won’t last as long."
+                }
+              }
+            },
+            "bricType": "MultipleChoiceQuestion",
+            "bricId": "Q1",
+            "configFixup": [
+              {
+                "type": "set-property",
+                "name": "questionId",
+                "value": {
+                  "domain": "info",
+                  "type": "ref",
+                  "refId": "sequenceNodeKey"
+                }
+              },
+              {
+                "name": "maxAttempts",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "maxAttempts",
+                  "type": "ref"
+                }
+              }
+            ]
+          }
+        ],
+        "description": "container for the sample multiple choice question",
+        "hookupActions": [
+          {
+            "instance": {
+              "type": "submit-manager"
+            },
+            "args": [
+              {
+                "domain": "brix",
+                "type": "ref",
+                "refId": "Q1"
+              }
+            ],
+            "type": "method-call",
+            "description": "Hookup the submit manager to evaluate answers",
+            "methodName": "handleRequestsFrom"
+          },
+          {
+            "instance": {
+              "domain": "brix",
+              "type": "ref",
+              "refId": "Q1"
+            },
+            "args": [
+              {
+                "type": "d3select",
+                "selector": "#target1"
+              }
+            ],
+            "type": "method-call",
+            "description": "Draw the question",
+            "methodName": "draw"
+          }
+        ],
+        "containerId": "target1"
+      }
+    ],
+    "description": "A Sample Activity containing a single multiple choice bric",
+    "title": "68830_NE_GDE_06.html"
+  }
+}

@@ -1,0 +1,137 @@
+{
+  "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope",
+  "@type": "Envelope",
+  "metadata": {
+    "guid": "301b5bbc-284f-4497-8af4-4513db6e51b3",
+    "title": "68830_NE_GDE_08.html",
+    "extendedMetadata": [],
+    "contentTypeTier2": [
+      "AssessmentItem"
+    ],
+    "contentTypeTier1": "Assessment",
+    "format": [
+      "application/vnd.pearson.sanvan.v1.activity"
+    ],
+    "educationalAlignment": [
+      "http://purl.org/pearson/objectives/183725473384362"
+    ],
+    "version": "1.0"
+  },
+  "body": {
+    "containerConfig": [
+      {
+        "brixConfig": [
+          {
+            "config": {
+              "presenterType": "RadioGroup",
+              "question": "Assuming global consumption  (demand) of oil stays relatively constant over time and that any amount of  oil can feasibly be extracted from the ground each year, for how many years could the world’s demand be met using only  Canada’s reserves? [Hint: Formulate an equation with Canada’s reserves divided by 2012 total world consumption.]",
+              "presenterConfig": {
+                "numberFormat": ""
+              },
+              "choices": [
+                {
+                  "content": "5.3 years",
+                  "answerKey": "answer1"
+                },
+                {
+                  "content": "25.7 years",
+                  "answerKey": "answer2"
+                },
+                {
+                  "content": "197.5 years",
+                  "answerKey": "answer3"
+                },
+                {
+                  "content": "1895.7 years",
+                  "answerKey": "answer4"
+                }
+              ],
+              "order": "randomized",
+              "id": "sampleQ1"
+            },
+            "answerKey": {
+              "assessmentType": "multiplechoice",
+              "answers": {
+                "answer4": {
+                  "score": 0.0,
+                  "response": "Did you use the correct equation and numbers (Canada reserves/total world consumption)?"
+                },
+                "answer1": {
+                  "score": 1.0,
+                  "response": ""
+                },
+                "answer3": {
+                  "score": 0.0,
+                  "response": "Did you use the correct equation and numbers (Canada reserves/total world consumption)?"
+                },
+                "answer2": {
+                  "score": 0.0,
+                  "response": "Did you use the correct equation and numbers (Canada reserves/total world consumption)?"
+                }
+              }
+            },
+            "bricType": "MultipleChoiceQuestion",
+            "bricId": "Q1",
+            "configFixup": [
+              {
+                "type": "set-property",
+                "name": "questionId",
+                "value": {
+                  "domain": "info",
+                  "type": "ref",
+                  "refId": "sequenceNodeKey"
+                }
+              },
+              {
+                "name": "maxAttempts",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "maxAttempts",
+                  "type": "ref"
+                }
+              }
+            ]
+          }
+        ],
+        "description": "container for the sample multiple choice question",
+        "hookupActions": [
+          {
+            "instance": {
+              "type": "submit-manager"
+            },
+            "args": [
+              {
+                "domain": "brix",
+                "type": "ref",
+                "refId": "Q1"
+              }
+            ],
+            "type": "method-call",
+            "description": "Hookup the submit manager to evaluate answers",
+            "methodName": "handleRequestsFrom"
+          },
+          {
+            "instance": {
+              "domain": "brix",
+              "type": "ref",
+              "refId": "Q1"
+            },
+            "args": [
+              {
+                "type": "d3select",
+                "selector": "#target1"
+              }
+            ],
+            "type": "method-call",
+            "description": "Draw the question",
+            "methodName": "draw"
+          }
+        ],
+        "containerId": "target1"
+      }
+    ],
+    "description": "A Sample Activity containing a single multiple choice bric",
+    "title": "68830_NE_GDE_08.html"
+  }
+}

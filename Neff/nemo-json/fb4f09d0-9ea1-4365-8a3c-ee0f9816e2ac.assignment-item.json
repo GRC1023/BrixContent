@@ -1,0 +1,162 @@
+{
+  "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope",
+  "@type": "Envelope",
+  "metadata": {
+    "guid": "fb4f09d0-9ea1-4365-8a3c-ee0f9816e2ac",
+    "title": "68830_HP_C06.html",
+    "extendedMetadata": [
+      {
+        "name": "crawlable",
+        "value": "false"
+      },
+      {
+        "name": "contentTypeTier2",
+        "value": "assessment item"
+      },
+      {
+        "name": "contentTypeTier1",
+        "value": "Test and Assessment"
+      },
+      {
+        "name": "format",
+        "value": "application/vnd.pearson.sanvan.v1.activity"
+      },
+      {
+        "name": "timeRequired",
+        "value": "PT20S"
+      }
+    ],
+    "description": "68830_HP_C06.html",
+    "subject": [
+      "EnvironmentalScience"
+    ],
+    "contentTypeTier2": [
+      "AssessmentItem"
+    ],
+    "contentTypeTier1": "Assessment",
+    "format": [
+      "application/vnd.pearson.sanvan.v1.activity"
+    ],
+    "educationalAlignment": [
+      "http://purl.org/pearson/objectives/183725473384362"
+    ],
+    "version": "1.0"
+  },
+  "body": {
+    "containerConfig": [
+      {
+        "brixConfig": [
+          {
+            "config": {
+              "presenterType": "RadioGroup",
+              "question": "If Country B’s economy expanded and the money was invested into health and sanitation infrastructure, what would happen to population growth rates according to the demographic transition model?",
+              "presenterConfig": {
+                "numberFormat": ""
+              },
+              "choices": [
+                {
+                  "content": "The growth rates would rise quickly and remain elevated for generations.",
+                  "answerKey": "answer1"
+                },
+                {
+                  "content": "The growth rates would drop quickly and remain low for generations.",
+                  "answerKey": "answer2"
+                },
+                {
+                  "content": "There would be little change in growth rates.",
+                  "answerKey": "answer3"
+                },
+                {
+                  "content": "Growth rates would rise for a period of time but would then eventually fall.",
+                  "answerKey": "answer4"
+                }
+              ],
+              "order": "randomized",
+              "id": "sampleQ1"
+            },
+            "answerKey": {
+              "assessmentType": "multiplechoice",
+              "answers": {
+                "answer4": {
+                  "score": 1.0,
+                  "response": ""
+                },
+                "answer1": {
+                  "score": 0.0,
+                  "response": "While these improvements may initially cause more people to live longer, what are the long-term effects of this transition?"
+                },
+                "answer3": {
+                  "score": 0.0,
+                  "response": "How do investments in things like sanitation and health affect statistics such as infant mortality rate over time?"
+                },
+                "answer2": {
+                  "score": 0.0,
+                  "response": "While rates may remain lower in the long-term, what immediate effects will increased sanitation and heath care have on a population?"
+                }
+              }
+            },
+            "bricType": "MultipleChoiceQuestion",
+            "bricId": "Q1",
+            "configFixup": [
+              {
+                "type": "set-property",
+                "name": "questionId",
+                "value": {
+                  "domain": "info",
+                  "type": "ref",
+                  "refId": "sequenceNodeKey"
+                }
+              },
+              {
+                "name": "maxAttempts",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "maxAttempts",
+                  "type": "ref"
+                }
+              }
+            ]
+          }
+        ],
+        "description": "container for the sample multiple choice question",
+        "hookupActions": [
+          {
+            "instance": {
+              "type": "submit-manager"
+            },
+            "args": [
+              {
+                "domain": "brix",
+                "type": "ref",
+                "refId": "Q1"
+              }
+            ],
+            "type": "method-call",
+            "description": "Hookup the submit manager to evaluate answers",
+            "methodName": "handleRequestsFrom"
+          },
+          {
+            "instance": {
+              "domain": "brix",
+              "type": "ref",
+              "refId": "Q1"
+            },
+            "args": [
+              {
+                "type": "d3select",
+                "selector": "#target1"
+              }
+            ],
+            "type": "method-call",
+            "description": "Draw the question",
+            "methodName": "draw"
+          }
+        ],
+        "containerId": "target1"
+      }
+    ],
+    "description": "A Sample Activity containing a single multiple choice bric",
+    "title": "68830_HP_C06.html"
+  }
+}

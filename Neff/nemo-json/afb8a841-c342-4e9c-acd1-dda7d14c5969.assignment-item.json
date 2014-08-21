@@ -1,0 +1,166 @@
+{
+  "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope",
+  "@type": "Envelope",
+  "metadata": {
+    "guid": "afb8a841-c342-4e9c-acd1-dda7d14c5969",
+    "title": "68830_HP_M07_05.html",
+    "extendedMetadata": [
+      {
+        "name": "crawlable",
+        "value": "false"
+      },
+      {
+        "name": "owner",
+        "value": "Brix"
+      },
+      {
+        "name": "contentTypeTier2",
+        "value": "assessment item"
+      },
+      {
+        "name": "contentTypeTier1",
+        "value": "Test and Assessment"
+      },
+      {
+        "name": "format",
+        "value": "application/vnd.pearson.sanvan.v1.activity"
+      },
+      {
+        "name": "timeRequired",
+        "value": "PT20S"
+      }
+    ],
+    "description": "68830_HP_M07_05.html",
+    "subject": [
+      "EnvironmentalScience"
+    ],
+    "contentTypeTier2": [
+      "AssessmentItem"
+    ],
+    "contentTypeTier1": "Assessment",
+    "format": [
+      "application/vnd.pearson.sanvan.v1.activity"
+    ],
+    "educationalAlignment": [
+      "http://purl.org/pearson/objectives/183725473384362"
+    ],
+    "version": "1.0"
+  },
+  "body": {
+    "description": "A Sample Activity containing a single multiple choice bric",
+    "containerConfig": [
+      {
+        "brixConfig": [
+          {
+            "config": {
+              "id": "sampleQ1",
+              "presenterType": "RadioGroup",
+              "choices": [
+                {
+                  "answerKey": "answer1",
+                  "content": "The age of first childbirth is declining quickly in the United States."
+                },
+                {
+                  "answerKey": "answer2",
+                  "content": "The total fertility rate in the United States is rising quickly"
+                },
+                {
+                  "answerKey": "answer3",
+                  "content": "Immigration into the United States keeps the population growing."
+                },
+                {
+                  "answerKey": "answer4",
+                  "content": "The baby boom generation is still having children, and so the country is still growing."
+                }
+              ],
+              "order": "randomized",
+              "question": "In the prior question, the simulation suggests that the U.S. population should be declining, but in fact the U.S. population is still increasing. What could explain this?",
+              "presenterConfig": {
+                "numberFormat": ""
+              }
+            },
+            "answerKey": {
+              "assessmentType": "multiplechoice",
+              "answers": {
+                "answer3": {
+                  "score": 1.0,
+                  "response": ""
+                },
+                "answer2": {
+                  "score": 0.0,
+                  "response": "Does this pattern fit with what you know about changes in the U.S.?"
+                },
+                "answer1": {
+                  "score": 0.0,
+                  "response": "Does this fit with what you know about changes in the U.S.?"
+                },
+                "answer4": {
+                  "score": 0.0,
+                  "response": "The baby boomers are now starting to retire and are past reproductive age."
+                }
+              }
+            },
+            "bricType": "MultipleChoiceQuestion",
+            "bricId": "Q1",
+            "configFixup": [
+              {
+                "type": "set-property",
+                "value": {
+                  "type": "ref",
+                  "refId": "sequenceNodeKey",
+                  "domain": "info"
+                },
+                "name": "questionId"
+              },
+              {
+                "type": "set-property",
+                "value": {
+                  "type": "ref",
+                  "refId": "maxAttempts",
+                  "domain": "info"
+                },
+                "name": "maxAttempts"
+              }
+            ]
+          }
+        ],
+        "hookupActions": [
+          {
+            "type": "method-call",
+            "methodName": "handleRequestsFrom",
+            "description": "Hookup the submit manager to evaluate answers",
+            "args": [
+              {
+                "type": "ref",
+                "refId": "Q1",
+                "domain": "brix"
+              }
+            ],
+            "instance": {
+              "type": "submit-manager"
+            }
+          },
+          {
+            "type": "method-call",
+            "methodName": "draw",
+            "description": "Draw the question",
+            "args": [
+              {
+                "type": "d3select",
+                "selector": "#target1"
+              }
+            ],
+            "instance": {
+              "type": "ref",
+              "refId": "Q1",
+              "domain": "brix"
+            }
+          }
+        ],
+        "description": "container for the sample multiple choice question",
+        "containerId": "target1"
+      }
+    ],
+    "title": "68830_HP_M07_05.html"
+  }
+}

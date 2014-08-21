@@ -1,0 +1,260 @@
+{
+  "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope",
+  "@type": "Envelope",
+  "metadata": {
+    "bookTitle": "Sociology",
+    "keywords": [
+      "Macionis 15e",
+      "Ch09",
+      "Alick"
+    ],
+    "extendedMetadata": [
+      {
+        "name": "ISBN",
+        "value": "0133795012"
+      },
+      {
+        "name": "qmd_BloomsID",
+        "value": "4"
+      },
+      {
+        "name": "M",
+        "value": "m06"
+      },
+      {
+        "name": "qmd_absolutescore_min",
+        "value": "0"
+      },
+      {
+        "name": "assessment_title",
+        "value": "Quiz: Deviance Race and Gender"
+      },
+      {
+        "name": "Topic",
+        "value": "Crime"
+      },
+      {
+        "name": "qst_type",
+        "value": "MCSS text without media"
+      },
+      {
+        "name": "qmd_HighStake",
+        "value": "True"
+      },
+      {
+        "name": "qst_html_template",
+        "value": "mcssall"
+      },
+      {
+        "name": "chapterTitle",
+        "value": "Deviance"
+      },
+      {
+        "name": "module",
+        "value": "Deviance Race and Gender"
+      },
+      {
+        "name": "qmd_maximumscore",
+        "value": "1"
+      },
+      {
+        "name": "qmd_QuestionTime",
+        "value": "0"
+      },
+      {
+        "name": "item_title",
+        "value": "0133795012_John J. Macionis_ch09_m06_q0001"
+      },
+      {
+        "name": "qmd_version",
+        "value": "2.0"
+      },
+      {
+        "name": "qmd_weighting",
+        "value": "1.00"
+      },
+      {
+        "name": "qmd_Hidden",
+        "value": "False"
+      },
+      {
+        "name": "questionlayout",
+        "value": "1"
+      },
+      {
+        "name": "qmd_toolvendor",
+        "value": "Excelsoft"
+      },
+      {
+        "name": "CH",
+        "value": "9"
+      },
+      {
+        "name": "qmd_penaltyvalue",
+        "value": "0.0"
+      },
+      {
+        "name": "qmd_status",
+        "value": "Normal"
+      },
+      {
+        "name": "Difficulty",
+        "value": "Easy"
+      },
+      {
+        "name": "qmd_itemtype",
+        "value": "Multiple Choice Static"
+      },
+      {
+        "name": "qmd_absolutescore_max",
+        "value": "100"
+      },
+      {
+        "name": "Objective",
+        "value": "L.O. 9.6: Identify patterns of crime in the United States and around the world."
+      },
+      {
+        "name": "qst_id",
+        "value": "58001"
+      },
+      {
+        "name": "shuffle_choices",
+        "value": "Yes"
+      }
+    ],
+    "subject": [
+      "Sociology"
+    ],
+    "contentTypeTier2": [
+      "AssessmentItem"
+    ],
+    "contentTypeTier1": "Assessment",
+    "format": [
+      "application/vnd.pearson.sanvan.v1.activity"
+    ],
+    "version": "1.0",
+    "guid": "e98472a7-2d17-4c40-8174-5f87b0952105",
+    "bookAuthor": "John J. Macionis",
+    "title": "Pre.09.05 Crime Remember L.O. 9.6",
+    "educationalAlignment": [
+      "http://purl.org/pearson/objectives/183725473384362"
+    ]
+  },
+  "body": {
+    "description": "Pre.09.05, Crime, Remember, L.O. 9.6",
+    "containerConfig": [
+      {
+        "description": "Pre.09.05, Crime, Remember, L.O. 9.6",
+        "containerId": "target1",
+        "brixConfig": [
+          {
+            "bricId": "q1",
+            "bricType": "MultipleChoiceQuestion",
+            "config": {
+              "id": "QUE57829",
+              "question": "According to victimization surveys, the overall crime rate is _________ official reports indicated.\n\u003cbr /\u003e",
+              "order": "randomized",
+              "presenterType": "RadioGroup",
+              "presenterConfig": {
+                "numberFormat": "none"
+              },
+              "choices": [
+                {
+                  "answerKey": "answer_1",
+                  "content": "the same as"
+                },
+                {
+                  "answerKey": "answer_2",
+                  "content": "considerably lower than"
+                },
+                {
+                  "answerKey": "answer_3",
+                  "content": "more than twice as high"
+                },
+                {
+                  "answerKey": "answer_4",
+                  "content": "ten times higher than"
+                }
+              ]
+            },
+            "answerKey": {
+              "assessmentType": "multiplechoice",
+              "answers": {
+                "answer_3": {
+                  "score": 1.0,
+                  "response": ""
+                },
+                "answer_2": {
+                  "score": 0.0,
+                  "response": ""
+                },
+                "answer_1": {
+                  "score": 0.0,
+                  "response": ""
+                },
+                "answer_4": {
+                  "score": 0.0,
+                  "response": ""
+                }
+              }
+            },
+            "configFixup": [
+              {
+                "name": "questionId",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "sequenceNodeKey",
+                  "type": "ref"
+                }
+              },
+              {
+                "name": "maxAttempts",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "maxAttempts",
+                  "type": "ref"
+                }
+              }
+            ]
+          }
+        ],
+        "hookupActions": [
+          {
+            "description": "Hookup the submit manager to evaluate answers",
+            "methodName": "handleRequestsFrom",
+            "type": "method-call",
+            "args": [
+              {
+                "domain": "brix",
+                "refId": "q1",
+                "type": "ref"
+              }
+            ],
+            "instance": {
+              "type": "submit-manager"
+            }
+          },
+          {
+            "description": "Draw the question",
+            "methodName": "draw",
+            "type": "method-call",
+            "args": [
+              {
+                "selector": "#target1",
+                "type": "d3select"
+              }
+            ],
+            "instance": {
+              "domain": "brix",
+              "refId": "q1",
+              "type": "ref"
+            }
+          }
+        ]
+      }
+    ],
+    "title": "Pre.09.05 Crime Remember L.O. 9.6"
+  }
+}

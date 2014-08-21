@@ -1,0 +1,216 @@
+{
+  "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope",
+  "@type": "Envelope",
+  "metadata": {
+    "guid": "dbc24a02-b66f-40a4-94d9-3dd15e569d12",
+    "title": "New developments in fuel cell technology",
+    "extendedMetadata": [
+      {
+        "name": "crawlable",
+        "value": "false"
+      },
+      {
+        "name": "owner",
+        "value": "Brix"
+      },
+      {
+        "name": "contentTypeTier2",
+        "value": "Exercise"
+      },
+      {
+        "name": "contentTypeTier1",
+        "value": "Activity"
+      },
+      {
+        "name": "format",
+        "value": "application/vnd.pearson.sanvan.v1.activity"
+      },
+      {
+        "name": "timeRequired",
+        "value": "PT20S"
+      }
+    ],
+    "description": "New developments in fuel cell technology",
+    "subject": [
+      "EnvironmentalScience"
+    ],
+    "contentTypeTier2": [
+      "AssessmentItem"
+    ],
+    "contentTypeTier1": "Assessment",
+    "format": [
+      "application/vnd.pearson.sanvan.v1.activity"
+    ],
+    "educationalAlignment": [
+      "http://purl.org/pearson/objectives/183725473384362"
+    ],
+    "version": "1.0"
+  },
+  "body": {
+    "containerConfig": [
+      {
+        "brixConfig": [
+          {
+            "bricId": "lblCarousel1",
+            "bricType": "LabelCarousel",
+            "config": {
+              "displayWidth": 457.0,
+              "id": "lblCrsl1",
+              "imagesActualSize": {
+                "height": 389.0,
+                "width": 477.0
+              }
+            },
+            "configFixup": [
+              {
+                "name": "images",
+                "type": "set-property",
+                "value": {
+                  "elements": [
+                    {
+                      "properties": [
+                        {
+                          "name": "URI",
+                          "value": {
+                            "parts": [
+                              {
+                                "domain": "info",
+                                "refId": "imgBaseUrl",
+                                "type": "ref"
+                              },
+                              {
+                                "type": "constant",
+                                "value": "img/68830_RE_06_04_S1.jpg"
+                              }
+                            ],
+                            "type": "join"
+                          }
+                        },
+                        {
+                          "name": "caption",
+                          "value": {
+                            "type": "constant",
+                            "value": "A hydrogen filling station"
+                          }
+                        }
+                      ],
+                      "type": "object"
+                    },
+                    {
+                      "properties": [
+                        {
+                          "name": "URI",
+                          "value": {
+                            "parts": [
+                              {
+                                "domain": "info",
+                                "refId": "imgBaseUrl",
+                                "type": "ref"
+                              },
+                              {
+                                "type": "constant",
+                                "value": "img/68830_RE_06_04_S2.jpg"
+                              }
+                            ],
+                            "type": "join"
+                          }
+                        },
+                        {
+                          "name": "caption",
+                          "value": {
+                            "type": "constant",
+                            "value": "An experimental fuel cell bus"
+                          }
+                        }
+                      ],
+                      "type": "object"
+                    },
+                    {
+                      "properties": [
+                        {
+                          "name": "URI",
+                          "value": {
+                            "parts": [
+                              {
+                                "domain": "info",
+                                "refId": "imgBaseUrl",
+                                "type": "ref"
+                              },
+                              {
+                                "type": "constant",
+                                "value": "img/68830_RE_06_04_S3.jpg"
+                              }
+                            ],
+                            "type": "join"
+                          }
+                        },
+                        {
+                          "name": "caption",
+                          "value": {
+                            "type": "constant",
+                            "value": "An experimental fuel cell tricycle"
+                          }
+                        }
+                      ],
+                      "type": "object"
+                    }
+                  ],
+                  "type": "array"
+                }
+              }
+            ]
+          },
+          {
+            "bricId": "cntr1",
+            "bricType": "SvgContainer",
+            "config": {
+              "maxSize": {
+                "height": 465.0,
+                "width": 457.0
+              }
+            }
+          }
+        ],
+        "containerId": "b612844c463ab4bccb7a9a2e704f618b4",
+        "description": "Container for the LabelCarousel",
+        "hookupActions": [
+          {
+            "args": [
+              {
+                "selector": "#b612844c463ab4bccb7a9a2e704f618b4",
+                "type": "d3select"
+              }
+            ],
+            "description": "Draw the svg container",
+            "instance": {
+              "domain": "brix",
+              "refId": "cntr1",
+              "type": "ref"
+            },
+            "methodName": "draw",
+            "type": "method-call"
+          },
+          {
+            "args": [
+              {
+                "domain": "brix",
+                "refId": "lblCarousel1",
+                "type": "ref"
+              }
+            ],
+            "description": "Append the label image carousel to the svg container",
+            "instance": {
+              "domain": "brix",
+              "refId": "cntr1",
+              "type": "ref"
+            },
+            "methodName": "append",
+            "type": "method-call"
+          }
+        ]
+      }
+    ],
+    "description": "New developments in fuel cell technology",
+    "title": "New developments in fuel cell technology"
+  }
+}

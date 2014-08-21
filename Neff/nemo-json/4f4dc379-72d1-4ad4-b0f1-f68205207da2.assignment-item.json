@@ -1,0 +1,137 @@
+{
+  "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope",
+  "@type": "Envelope",
+  "metadata": {
+    "guid": "4f4dc379-72d1-4ad4-b0f1-f68205207da2",
+    "title": "68830_NE_GDE_02.html",
+    "extendedMetadata": [],
+    "contentTypeTier2": [
+      "AssessmentItem"
+    ],
+    "contentTypeTier1": "Assessment",
+    "format": [
+      "application/vnd.pearson.sanvan.v1.activity"
+    ],
+    "educationalAlignment": [
+      "http://purl.org/pearson/objectives/183725473384362"
+    ],
+    "version": "1.0"
+  },
+  "body": {
+    "containerConfig": [
+      {
+        "brixConfig": [
+          {
+            "config": {
+              "presenterType": "RadioGroup",
+              "question": "\u003cdiv\u003e\n\n\u003cspan\u003e\n \u003cspan\u003e\u003cspan\u003e\n  \u003cspan\u003e\n  After Saudi Arabia, which\n  country had the highest oil reserves in 2000?\n  \u003c/span\u003e\n \u003c/span\u003e\n\u003c/span\u003e\u003c/span\u003e\n\n\u003c/div\u003e",
+              "presenterConfig": {
+                "numberFormat": ""
+              },
+              "choices": [
+                {
+                  "content": "Russian Federation ",
+                  "answerKey": "answer1"
+                },
+                {
+                  "content": "United States ",
+                  "answerKey": "answer2"
+                },
+                {
+                  "content": "China ",
+                  "answerKey": "answer3"
+                },
+                {
+                  "content": "Canada ",
+                  "answerKey": "answer4"
+                }
+              ],
+              "order": "randomized",
+              "id": "sampleQ1"
+            },
+            "answerKey": {
+              "assessmentType": "multiplechoice",
+              "answers": {
+                "answer4": {
+                  "score": 1.0,
+                  "response": ""
+                },
+                "answer1": {
+                  "score": 0.0,
+                  "response": "Try again."
+                },
+                "answer3": {
+                  "score": 0.0,
+                  "response": "Try again."
+                },
+                "answer2": {
+                  "score": 0.0,
+                  "response": "Try again."
+                }
+              }
+            },
+            "bricType": "MultipleChoiceQuestion",
+            "bricId": "Q1",
+            "configFixup": [
+              {
+                "type": "set-property",
+                "name": "questionId",
+                "value": {
+                  "domain": "info",
+                  "type": "ref",
+                  "refId": "sequenceNodeKey"
+                }
+              },
+              {
+                "name": "maxAttempts",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "maxAttempts",
+                  "type": "ref"
+                }
+              }
+            ]
+          }
+        ],
+        "description": "container for the sample multiple choice question",
+        "hookupActions": [
+          {
+            "instance": {
+              "type": "submit-manager"
+            },
+            "args": [
+              {
+                "domain": "brix",
+                "type": "ref",
+                "refId": "Q1"
+              }
+            ],
+            "type": "method-call",
+            "description": "Hookup the submit manager to evaluate answers",
+            "methodName": "handleRequestsFrom"
+          },
+          {
+            "instance": {
+              "domain": "brix",
+              "type": "ref",
+              "refId": "Q1"
+            },
+            "args": [
+              {
+                "type": "d3select",
+                "selector": "#target1"
+              }
+            ],
+            "type": "method-call",
+            "description": "Draw the question",
+            "methodName": "draw"
+          }
+        ],
+        "containerId": "target1"
+      }
+    ],
+    "description": "A Sample Activity containing a single multiple choice bric",
+    "title": "68830_NE_GDE_02.html"
+  }
+}

@@ -1,0 +1,137 @@
+{
+  "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope",
+  "@type": "Envelope",
+  "metadata": {
+    "guid": "6d71fe96-cbb7-4b83-a569-ad91a9589ef0",
+    "title": "68830_NE_GDE_03.html",
+    "extendedMetadata": [],
+    "contentTypeTier2": [
+      "AssessmentItem"
+    ],
+    "contentTypeTier1": "Assessment",
+    "format": [
+      "application/vnd.pearson.sanvan.v1.activity"
+    ],
+    "educationalAlignment": [
+      "http://purl.org/pearson/objectives/183725473384362"
+    ],
+    "version": "1.0"
+  },
+  "body": {
+    "containerConfig": [
+      {
+        "brixConfig": [
+          {
+            "config": {
+              "presenterType": "RadioGroup",
+              "question": "Which one of the following choices is the best explanation for why most countries’ reserves often increase over time (rather than decrease over time, as one would expect if reserves are continually extracted)?",
+              "presenterConfig": {
+                "numberFormat": ""
+              },
+              "choices": [
+                {
+                  "content": "As the market price of a fuel rises, it becomes possible and economically viable to access new reserves.",
+                  "answerKey": "answer1"
+                },
+                {
+                  "content": "Countries always extract less of a reserve over time.",
+                  "answerKey": "answer2"
+                },
+                {
+                  "content": "Countries typically annex new land, which increases their total reserves.",
+                  "answerKey": "answer3"
+                },
+                {
+                  "content": "Countries are continually discovering new domestic reserves.",
+                  "answerKey": "answer4"
+                }
+              ],
+              "order": "randomized",
+              "id": "sampleQ1"
+            },
+            "answerKey": {
+              "assessmentType": "multiplechoice",
+              "answers": {
+                "answer4": {
+                  "score": 0.0,
+                  "response": "While some countries may discover new reserves, most countries gain access over time to reserves they knew about but could not access in the past. Why is this?"
+                },
+                "answer1": {
+                  "score": 1.0,
+                  "response": "As oil prices began to rise, accessing non-traditional reserves (such as tar sands in Canada in the late 1990s) became more economically feasible."
+                },
+                "answer3": {
+                  "score": 0.0,
+                  "response": "While this is possible, would this cause the total world’s reserves to continue rising over time as well if reserves were simply being swapped among countries?"
+                },
+                "answer2": {
+                  "score": 0.0,
+                  "response": "Would this cause the total reserve amount to rise over time?"
+                }
+              }
+            },
+            "bricType": "MultipleChoiceQuestion",
+            "bricId": "Q1",
+            "configFixup": [
+              {
+                "type": "set-property",
+                "name": "questionId",
+                "value": {
+                  "domain": "info",
+                  "type": "ref",
+                  "refId": "sequenceNodeKey"
+                }
+              },
+              {
+                "name": "maxAttempts",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "maxAttempts",
+                  "type": "ref"
+                }
+              }
+            ]
+          }
+        ],
+        "description": "container for the sample multiple choice question",
+        "hookupActions": [
+          {
+            "instance": {
+              "type": "submit-manager"
+            },
+            "args": [
+              {
+                "domain": "brix",
+                "type": "ref",
+                "refId": "Q1"
+              }
+            ],
+            "type": "method-call",
+            "description": "Hookup the submit manager to evaluate answers",
+            "methodName": "handleRequestsFrom"
+          },
+          {
+            "instance": {
+              "domain": "brix",
+              "type": "ref",
+              "refId": "Q1"
+            },
+            "args": [
+              {
+                "type": "d3select",
+                "selector": "#target1"
+              }
+            ],
+            "type": "method-call",
+            "description": "Draw the question",
+            "methodName": "draw"
+          }
+        ],
+        "containerId": "target1"
+      }
+    ],
+    "description": "A Sample Activity containing a single multiple choice bric",
+    "title": "68830_NE_GDE_03.html"
+  }
+}

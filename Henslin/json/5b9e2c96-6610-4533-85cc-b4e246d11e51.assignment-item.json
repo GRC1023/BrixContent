@@ -1,0 +1,252 @@
+{
+  "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope",
+  "@type": "Envelope",
+  "metadata": {
+    "bookTitle": "Essentials of Sociology",
+    "keywords": [
+      "Henslin 11e",
+      "ch 03",
+      "Rudowski"
+    ],
+    "extendedMetadata": [
+      {
+        "name": "ISBN",
+        "value": "0133869369"
+      },
+      {
+        "name": "qmd_BloomsID",
+        "value": "6"
+      },
+      {
+        "name": "M",
+        "value": "m04"
+      },
+      {
+        "name": "qmd_absolutescore_min",
+        "value": "0"
+      },
+      {
+        "name": "assessment_title",
+        "value": "Quiz: Socialization into Gender"
+      },
+      {
+        "name": "Topic",
+        "value": "Socialization into Gender"
+      },
+      {
+        "name": "qst_type",
+        "value": "MCSS text without media"
+      },
+      {
+        "name": "qmd_HighStake",
+        "value": "True"
+      },
+      {
+        "name": "qst_html_template",
+        "value": "mcssall"
+      },
+      {
+        "name": "chapterTitle",
+        "value": "Socialization"
+      },
+      {
+        "name": "module",
+        "value": "Socialization into Gender"
+      },
+      {
+        "name": "qmd_maximumscore",
+        "value": "1"
+      },
+      {
+        "name": "item_title",
+        "value": "0133869369_James M. Henslin_ch03_m04_q0004"
+      },
+      {
+        "name": "qmd_version",
+        "value": "2.0"
+      },
+      {
+        "name": "qmd_weighting",
+        "value": "1.00"
+      },
+      {
+        "name": "qmd_Hidden",
+        "value": "False"
+      },
+      {
+        "name": "questionlayout",
+        "value": "1"
+      },
+      {
+        "name": "qmd_toolvendor",
+        "value": "Excelsoft"
+      },
+      {
+        "name": "CH",
+        "value": "3"
+      },
+      {
+        "name": "qmd_penaltyvalue",
+        "value": "0.0"
+      },
+      {
+        "name": "qmd_status",
+        "value": "Normal"
+      },
+      {
+        "name": "qmd_itemtype",
+        "value": "Multiple Choice Static"
+      },
+      {
+        "name": "qmd_absolutescore_max",
+        "value": "100"
+      },
+      {
+        "name": "Objective",
+        "value": "LO: 3.4: Discuss how gender messages from the family, peers, and the mass media teach us society\u0027s gender map."
+      },
+      {
+        "name": "qst_id",
+        "value": "64782"
+      },
+      {
+        "name": "shuffle_choices",
+        "value": "Yes"
+      }
+    ],
+    "subject": [
+      "Sociology"
+    ],
+    "contentTypeTier2": [
+      "AssessmentItem"
+    ],
+    "contentTypeTier1": "Assessment",
+    "format": [
+      "application/vnd.pearson.sanvan.v1.activity"
+    ],
+    "version": "1.0",
+    "guid": "5b9e2c96-6610-4533-85cc-b4e246d11e51",
+    "bookAuthor": "James M. Henslin",
+    "title": "PRE 03 15",
+    "educationalAlignment": [
+      "http://purl.org/pearson/objectives/183725473384362"
+    ]
+  },
+  "body": {
+    "description": "PRE_03_15",
+    "containerConfig": [
+      {
+        "description": "PRE_03_15",
+        "containerId": "target1",
+        "brixConfig": [
+          {
+            "bricId": "q1",
+            "bricType": "MultipleChoiceQuestion",
+            "config": {
+              "id": "QUE64933",
+              "question": "Ms. Jones and Mr. Frederick both go to Dr. Grant with complaints of headaches and joint pain. Dr. Grant suggests that Ms. Jones should go home and rest but sends Mr. Frederick for further testing until it is discovered that Mr. Frederick has Lyme disease. This scenario is an example of __________ based on gender.\n\u003cbr /\u003e",
+              "order": "randomized",
+              "presenterType": "RadioGroup",
+              "presenterConfig": {
+                "numberFormat": "none"
+              },
+              "choices": [
+                {
+                  "answerKey": "answer_1",
+                  "content": "political inequality"
+                },
+                {
+                  "answerKey": "answer_2",
+                  "content": "symbolic inequality"
+                },
+                {
+                  "answerKey": "answer_3",
+                  "content": "economic inequality"
+                },
+                {
+                  "answerKey": "answer_4",
+                  "content": "social inequality"
+                }
+              ]
+            },
+            "answerKey": {
+              "assessmentType": "multiplechoice",
+              "answers": {
+                "answer_3": {
+                  "score": 0.0,
+                  "response": ""
+                },
+                "answer_2": {
+                  "score": 0.0,
+                  "response": ""
+                },
+                "answer_1": {
+                  "score": 0.0,
+                  "response": ""
+                },
+                "answer_4": {
+                  "score": 1.0,
+                  "response": ""
+                }
+              }
+            },
+            "configFixup": [
+              {
+                "name": "questionId",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "sequenceNodeKey",
+                  "type": "ref"
+                }
+              },
+              {
+                "name": "maxAttempts",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "maxAttempts",
+                  "type": "ref"
+                }
+              }
+            ]
+          }
+        ],
+        "hookupActions": [
+          {
+            "description": "Hookup the submit manager to evaluate answers",
+            "methodName": "handleRequestsFrom",
+            "type": "method-call",
+            "args": [
+              {
+                "domain": "brix",
+                "refId": "q1",
+                "type": "ref"
+              }
+            ],
+            "instance": {
+              "type": "submit-manager"
+            }
+          },
+          {
+            "description": "Draw the question",
+            "methodName": "draw",
+            "type": "method-call",
+            "args": [
+              {
+                "selector": "#target1",
+                "type": "d3select"
+              }
+            ],
+            "instance": {
+              "domain": "brix",
+              "refId": "q1",
+              "type": "ref"
+            }
+          }
+        ]
+      }
+    ],
+    "title": "PRE 03 15"
+  }
+}

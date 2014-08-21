@@ -1,0 +1,162 @@
+{
+  "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope",
+  "@type": "Envelope",
+  "metadata": {
+    "guid": "b90a66a0-97ff-4fab-83bf-11eced9ea1a6",
+    "title": "68830_RE_C07.html",
+    "extendedMetadata": [
+      {
+        "name": "crawlable",
+        "value": "false"
+      },
+      {
+        "name": "owner",
+        "value": "Brix"
+      },
+      {
+        "name": "contentTypeTier2",
+        "value": "assessment item"
+      },
+      {
+        "name": "contentTypeTier1",
+        "value": "Test and Assessment"
+      },
+      {
+        "name": "format",
+        "value": "application/vnd.pearson.sanvan.v1.activity"
+      }
+    ],
+    "description": "68830_RE_C07.html",
+    "subject": [
+      "EnvironmentalScience"
+    ],
+    "contentTypeTier2": [
+      "AssessmentItem"
+    ],
+    "contentTypeTier1": "Assessment",
+    "format": [
+      "application/vnd.pearson.sanvan.v1.activity"
+    ],
+    "educationalAlignment": [
+      "http://purl.org/pearson/objectives/183725473384362"
+    ],
+    "version": "1.0"
+  },
+  "body": {
+    "containerConfig": [
+      {
+        "brixConfig": [
+          {
+            "config": {
+              "presenterType": "RadioGroup",
+              "question": "How does geothermal heat pump (residential) technology work?",
+              "presenterConfig": {
+                "numberFormat": ""
+              },
+              "choices": [
+                {
+                  "content": " It brings warmth from hot zones deep in the earth into homes for heating.",
+                  "answerKey": "answer1"
+                },
+                {
+                  "content": " It captures the cool temperatures of rocks that are miles deep in the earth and transports it into homes for cooling.",
+                  "answerKey": "answer2"
+                },
+                {
+                  "content": " It pumps warm ground water out of the surface of the earth and runs it through pipes in the floor to warm the house in the winter.",
+                  "answerKey": "answer3"
+                },
+                {
+                  "content": "It takes advantage of the relatively constant temperature of the surface earth to cool the house in the summer and warm it in the winter.",
+                  "answerKey": "answer4"
+                }
+              ],
+              "order": "randomized",
+              "id": "sampleQ1"
+            },
+            "answerKey": {
+              "assessmentType": "multiplechoice",
+              "answers": {
+                "answer4": {
+                  "score": 1.0,
+                  "response": ""
+                },
+                "answer1": {
+                  "score": 0.0,
+                  "response": "This is a type of geothermal energy, but is it the type asked about in this question?"
+                },
+                "answer3": {
+                  "score": 0.0,
+                  "response": "Does a geothermal heat pump use water extracted from below ground?"
+                },
+                "answer2": {
+                  "score": 0.0,
+                  "response": "The earth becomes hot miles below the surface, so would this make sense?"
+                }
+              }
+            },
+            "bricType": "MultipleChoiceQuestion",
+            "bricId": "Q1",
+            "configFixup": [
+              {
+                "type": "set-property",
+                "name": "questionId",
+                "value": {
+                  "domain": "info",
+                  "type": "ref",
+                  "refId": "sequenceNodeKey"
+                }
+              },
+              {
+                "type": "set-property",
+                "name": "maxAttempts",
+                "value": {
+                  "domain": "info",
+                  "type": "ref",
+                  "refId": "maxAttempts"
+                }
+              }
+            ]
+          }
+        ],
+        "description": "container for the sample multiple choice question",
+        "hookupActions": [
+          {
+            "instance": {
+              "type": "submit-manager"
+            },
+            "args": [
+              {
+                "domain": "brix",
+                "type": "ref",
+                "refId": "Q1"
+              }
+            ],
+            "type": "method-call",
+            "description": "Hookup the submit manager to evaluate answers",
+            "methodName": "handleRequestsFrom"
+          },
+          {
+            "instance": {
+              "domain": "brix",
+              "type": "ref",
+              "refId": "Q1"
+            },
+            "args": [
+              {
+                "type": "d3select",
+                "selector": "#target1"
+              }
+            ],
+            "type": "method-call",
+            "description": "Draw the question",
+            "methodName": "draw"
+          }
+        ],
+        "containerId": "target1"
+      }
+    ],
+    "description": "A Sample Activity containing a single multiple choice bric",
+    "title": "68830_RE_C07.html"
+  }
+}

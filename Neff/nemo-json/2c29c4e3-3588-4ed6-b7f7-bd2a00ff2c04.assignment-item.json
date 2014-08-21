@@ -1,0 +1,166 @@
+{
+  "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope",
+  "@type": "Envelope",
+  "metadata": {
+    "guid": "2c29c4e3-3588-4ed6-b7f7-bd2a00ff2c04",
+    "title": "68830_NE_C10.html",
+    "extendedMetadata": [
+      {
+        "name": "crawlable",
+        "value": "false"
+      },
+      {
+        "name": "owner",
+        "value": "Brix"
+      },
+      {
+        "name": "contentTypeTier2",
+        "value": "assessment item"
+      },
+      {
+        "name": "contentTypeTier1",
+        "value": "Test and Assessment"
+      },
+      {
+        "name": "format",
+        "value": "application/vnd.pearson.sanvan.v1.activity"
+      },
+      {
+        "name": "timeRequired",
+        "value": "PT20S"
+      }
+    ],
+    "description": "68830_NE_C10.html",
+    "subject": [
+      "EnvironmentalScience"
+    ],
+    "contentTypeTier2": [
+      "AssessmentItem"
+    ],
+    "contentTypeTier1": "Assessment",
+    "format": [
+      "application/vnd.pearson.sanvan.v1.activity"
+    ],
+    "educationalAlignment": [
+      "http://purl.org/pearson/objectives/183725473384362"
+    ],
+    "version": "1.0"
+  },
+  "body": {
+    "containerConfig": [
+      {
+        "brixConfig": [
+          {
+            "bricId": "Q1",
+            "answerKey": {
+              "answers": {
+                "answer3": {
+                  "score": 0.0,
+                  "response": "While reducing overall energy use would likely lead to a reduction of atmospheric CO\u003csub\u003e2\u003c/sub\u003e, would this be the best (and most ethical) solution if we chose this energy future?"
+                },
+                "answer2": {
+                  "score": 0.0,
+                  "response": "Does the process of obtaining and burning unconventional fossil fuel sources actually produce more or less CO\u003csub\u003e2\u003c/sub\u003e than traditional sources?"
+                },
+                "answer1": {
+                  "score": 0.0,
+                  "response": "Atmospheric CO\u003csub\u003e2\u003c/sub\u003e traps heat near the Earth. What major issue is this causing?"
+                },
+                "answer4": {
+                  "score": 1.0,
+                  "response": "This is often referred to as carbon capture and sequestration."
+                }
+              },
+              "assessmentType": "multiplechoice"
+            },
+            "bricType": "MultipleChoiceQuestion",
+            "config": {
+              "id": "sampleQ1",
+              "order": "randomized",
+              "question": "One possible future for energy use focuses on the development of the very large deposits of oil shales, methane hydrates, and other forms of unconventional fossil energy. If we were to pursue this particular energy future, how would atmospheric CO\u003csub\u003e2\u003c/sub\u003e be affected, and how might this be best addressed in an equitable way?",
+              "presenterType": "RadioGroup",
+              "presenterConfig": {
+                "numberFormat": ""
+              },
+              "choices": [
+                {
+                  "content": "Atmospheric CO\u003csub\u003e2\u003c/sub\u003e would rise, but this would not need to be addressed because atmospheric CO\u003csub\u003e2\u003c/sub\u003e is not harmful.",
+                  "answerKey": "answer1"
+                },
+                {
+                  "content": "Atmospheric CO\u003csub\u003e2\u003c/sub\u003e would decrease because these unconventional sources produce less CO\u003csub\u003e2\u003c/sub\u003e than traditional sources. Thus, the problem of having too much CO\u003csub\u003e2\u003c/sub\u003e is being addressed already by using these sources.",
+                  "answerKey": "answer2"
+                },
+                {
+                  "content": "Atmospheric CO\u003csub\u003e2\u003c/sub\u003e would rise and the only way to address this would be to restrict more and more people from using energy.",
+                  "answerKey": "answer3"
+                },
+                {
+                  "content": "Atmospheric CO\u003csub\u003e2\u003c/sub\u003e would rise and could potentially be addressed using techniques that pull CO\u003csub\u003e2\u003c/sub\u003e out of the atmosphere and store it somewhere for a long period of time.",
+                  "answerKey": "answer4"
+                }
+              ]
+            },
+            "configFixup": [
+              {
+                "value": {
+                  "domain": "info",
+                  "type": "ref",
+                  "refId": "sequenceNodeKey"
+                },
+                "type": "set-property",
+                "name": "questionId"
+              },
+              {
+                "type": "set-property",
+                "value": {
+                  "type": "ref",
+                  "refId": "maxAttempts",
+                  "domain": "info"
+                },
+                "name": "maxAttempts"
+              }
+            ]
+          }
+        ],
+        "containerId": "target1",
+        "hookupActions": [
+          {
+            "methodName": "handleRequestsFrom",
+            "instance": {
+              "type": "submit-manager"
+            },
+            "args": [
+              {
+                "domain": "brix",
+                "type": "ref",
+                "refId": "Q1"
+              }
+            ],
+            "type": "method-call",
+            "description": "Hookup the submit manager to evaluate answers"
+          },
+          {
+            "methodName": "draw",
+            "instance": {
+              "domain": "brix",
+              "type": "ref",
+              "refId": "Q1"
+            },
+            "args": [
+              {
+                "type": "d3select",
+                "selector": "#target1"
+              }
+            ],
+            "type": "method-call",
+            "description": "Draw the question"
+          }
+        ],
+        "description": "container for the sample multiple choice question"
+      }
+    ],
+    "description": "A Sample Activity containing a single multiple choice bric",
+    "title": "68830_NE_C10.html"
+  }
+}

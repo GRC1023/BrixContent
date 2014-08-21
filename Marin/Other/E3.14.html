@@ -15,7 +15,7 @@
 <body>
 <!-- Body Content -->
 	
-	<div id="b147b485daada4c18be9d724142ae7b97" ></div>
+	<div data-containerid="b147b485daada4c18be9d724142ae7b97"></div>
 	
 	
 	<script src="js/d3.v3.min.js"></script>
@@ -45,251 +45,197 @@
 	// The activity config that defines the brix and mortar for this page
     // original config replaced by config in converted json file (less legible than original)
 	a.config =
-      {
-        "containerConfig": [
-          {
-            "brixConfig": [
-              {
-                "bricId": "saturationDrop", 
-                "bricType": "SelectGroup", 
-                "config": {
-                  "choices": [
-                    {
-                      "content": "Simple (unsaturated)"
-                    }, 
-                    {
-                      "content": "Moderate (partially saturated)"
-                    }, 
-                    {
-                      "content": "Complex (highly saturated with overtones)"
-                    }
-                  ], 
-                  "id": "sat-selgrp"
-                }
-              }
-            ], 
-            "containerId": "saturation", 
-            "description": "container for saturation selector", 
-            "hookupActions": [
-              {
-                "args": [
-                  {
-                    "selector": "#b147b485daada4c18be9d724142ae7b97", 
-                    "type": "d3select"
-                  }
-                ], 
-                "description": "draw the dropdown", 
-                "instance": {
-                  "domain": "brix", 
-                  "refId": "saturationDrop", 
-                  "type": "ref"
-                }, 
-                "methodName": "draw", 
-                "type": "method-call"
-              }
-            ]
-          }, 
-          {
-            "brixConfig": [
-              {
-                "bricId": "freqSldr", 
-                "bricType": "Slider", 
-                "config": {
-                  "format": "0.0f", 
-                  "id": "sldr-freq", 
-                  "label": "Frequency f =", 
-                  "maxVal": 10000, 
-                  "minVal": 100, 
-                  "startVal": 1000, 
-                  "stepVal": 100, 
-                  "width": "60%"
-                }
-              }
-            ], 
-            "containerId": "b147b485daada4c18be9d724142ae7b97", 
-            "description": "container for freq slider", 
-            "hookupActions": [
-              {
-                "args": [
-                  {
-                    "selector": "#b147b485daada4c18be9d724142ae7b97", 
-                    "type": "d3select"
-                  }
-                ], 
-                "description": "draw the slider", 
-                "instance": {
-                  "domain": "brix", 
-                  "refId": "freqSldr", 
-                  "type": "ref"
-                }, 
-                "methodName": "draw", 
-                "type": "method-call"
-              }
-            ]
-          }, 
-          {
-            "brixConfig": [
-              {
-                "bricId": "amplitudeSldr", 
-                "bricType": "Slider", 
-                "config": {
-                  "format": "0.0f", 
-                  "id": "sldr-ampl", 
-                  "label": "Amplitude ", 
-                  "maxVal": 120, 
-                  "minVal": 0, 
-                  "startVal": 60, 
-                  "stepVal": 10, 
-                  "unit": " decibels", 
-                  "width": "60%"
-                }
-              }
-            ], 
-            "containerId": "amplitude", 
-            "description": "container for amplitude slider", 
-            "hookupActions": [
-              {
-                "args": [
-                  {
-                    "selector": "#b147b485daada4c18be9d724142ae7b97", 
-                    "type": "d3select"
-                  }
-                ], 
-                "description": "draw the slider", 
-                "instance": {
-                  "domain": "brix", 
-                  "refId": "amplitudeSldr", 
-                  "type": "ref"
-                }, 
-                "methodName": "draw", 
-                "type": "method-call"
-              }
-            ]
-          }, 
-          {
-            "brixConfig": [
-              {
-                "bricId": "wavegraph", 
-                "bricType": "LineGraph", 
-                "config": {
-                  "tracePoints": [], 
-                  "id": "lngrph-waveform", 
-                  "xAxis": {
-                    "label": "time (sec)", 
-                    "location": "bottom", 
-                    "tickmarkSettings":  {
-                      "ticks": 5
-                      }
-                    }, 
-                  "yAxis": {
-                    "label": "Age ranges", 
-                    "location": "left", 
-                    "tickmarkSettings": {
-                      "ticks": [-120,-80,-40,0,40,80,120]
-                    }
-                  }
-                }
-              }, 
-              {
-                "bricId": "cntr2", 
-                "bricType": "SvgContainer", 
-                "config": {
-                  "maxSize": {
-                    "height": 400, 
-                    "width": 577
-                  }
-                }
-              }
-            ], 
-            "containerId": "b147b485daada4c18be9d724142ae7b97", 
-            "description": "container for interactive line graph based on slider value", 
-            "hookupActions": [
-              {
-                "args": [
-                  {
-                    "selector": "#b147b485daada4c18be9d724142ae7b97", 
-                    "type": "d3select"
-                  }
-                ], 
-                "description": "Draw the svg container", 
-                "instance": {
-                  "domain": "brix", 
-                  "refId": "cntr2", 
-                  "type": "ref"
-                }, 
-                "methodName": "draw", 
-                "type": "method-call"
-              }, 
-              {
-                "args": [
-                  {
-                    "domain": "brix", 
-                    "refId": "wavegraph", 
-                    "type": "ref"
-                  }
-                ], 
-                "description": "Append the graph to the svg container", 
-                "instance": {
-                  "domain": "brix", 
-                  "refId": "cntr2", 
-                  "type": "ref"
-                }, 
-                "methodName": "append", 
-                "type": "method-call"
-              }
-            ], 
-            "mortarConfig": [
-              {
-                "config": {}, 
-                "configFixup": [
-                  {
-                    "name": "freqTopic", 
-                    "type": "set-property", 
-                    "value": {
-                      "bricType": "Slider", 
-                      "eventName": "value-changed", 
-                      "instanceId": "sldr-freq", 
-                      "type": "brix-topic"
-                    }
-                  }, 
-                  {
-                    "name": "otherTopic", 
-                    "type": "set-property", 
-                    "value": {
-                      "bricType": "SelectGroup", 
-                      "eventName": "selected", 
-                      "instanceId": "sat-selgrp", 
-                      "type": "brix-topic"
-                    }
-                  }, 
-                  {
-                    "name": "amplitudeTopic", 
-                    "type": "set-property", 
-                    "value": {
-                      "bricType": "Slider", 
-                      "eventName": "value-changed", 
-                      "instanceId": "sldr-ampl", 
-                      "type": "brix-topic"
-                    }
-                  }, 
-                  {
-                    "name": "targetBric", 
-                    "type": "set-property", 
-                    "value": {
-                      "domain": "brix", 
-                      "refId": "wavegraph", 
-                      "type": "ref"
-                    }
-                  }
-                ], 
-                "mortarId": "waveform", 
-                "mortarType": "WaveForm"
-              }
-            ]
-          }
-        ], 
-        "description": "Demonstration of wave characteristics."
-      };
+		{
+			"brixVersion": "1.1.0",
+			"description": "Demonstration of wave characteristics.",
+			"targetSelectorValues": [ "b147b485daada4c18be9d724142ae7b97" ],
+			"containerConfig":
+			[
+				{
+					"description": "container for saturation selector",
+					"containerId": "b147b485daada4c18be9d724142ae7b97",
+					"brixConfig":
+					[
+						{
+							"bricId": "saturationDrop",
+							"bricType": "SelectGroup",
+							"config":
+							{
+								"id": "sat-selgrp",
+								"choices":
+								[
+									{ "content": "Simple (unsaturated)" },
+									{ "content": "Moderate (partially saturated)" },
+									{ "content": "Complex (highly saturated with overtones)" }
+								]
+							}
+						},
+						{
+							"bricId": "freqSldr",
+							"bricType": "Slider",
+							"config":
+							{
+								"id": "sldr-freq",
+								"label": "Frequency f =",
+								"minVal": 100,
+								"maxVal": 10000,
+								"stepVal": 100,
+								"startVal": 1000,
+								"format": "0.0f",
+								"width": "60%"
+							}
+						},
+						{
+							"bricId": "amplitudeSldr",
+							"bricType": "Slider",
+							"config":
+							{
+								"id": "sldr-ampl",
+								"label": "Amplitude ",
+								"unit": " decibels",
+								"minVal": 0,
+								"maxVal": 120,
+								"startVal": 60,
+								"stepVal": 10,
+								"format": "0.0f",
+								"width": "60%"
+							}
+						},
+						{
+							"bricId": "wavegraph",
+							"bricType": "LineGraph",
+							"config":
+							{
+								"id": "lngrph-waveform",
+								"tracePoints": [],
+								"xAxis":
+								{
+									"label": "time (sec)",
+									"location": "bottom",
+									"tickmarkSettings": { "ticks": 5 }
+								},
+								"yAxis":
+								{
+									"label": "Age ranges",
+									"location": "left",
+									"tickmarkSettings": { "ticks": [ -120, -80, -40, 0, 40, 80, 120 ] }
+								}
+							}
+						},
+						{
+							"bricId": "wavegraphCntr",
+							"bricType": "SvgContainer",
+							"config":
+							{
+								"maxSize": { "height": 400, "width": 577 }
+							}
+						}
+					],
+					"mortarConfig":
+					[
+						{
+							"mortarId": "waveform",
+							"mortarType": "WaveForm",
+							"config": {},
+							"configFixup":
+							[
+								{
+									"type": "set-property",
+									"name": "freqTopic",
+									"value":
+									{
+										"type": "brix-topic",
+										"bricType": "Slider",
+										"eventName": "value-changed",
+										"instanceId": "sldr-freq"
+									}
+								},
+								{
+									"type": "set-property",
+									"name": "otherTopic",
+									"value":
+									{
+										"type": "brix-topic",
+										"bricType": "SelectGroup",
+										"eventName": "selected",
+										"instanceId": "sat-selgrp"
+									}
+								},
+								{
+									"type": "set-property",
+									"name": "amplitudeTopic",
+									"value":
+									{
+										"type": "brix-topic",
+										"bricType": "Slider",
+										"eventName": "value-changed",
+										"instanceId": "sldr-ampl"
+									}
+								},
+								{
+									"type": "set-property",
+									"name": "targetBric",
+									"value": { "type": "ref", "domain": "brix", "refId": "wavegraph" }
+								}
+							]
+						}
+					],
+					"hookupActions":
+					[
+						{
+							"description": "draw the dropdown",
+							"type": "method-call",
+							"instance": { "type": "ref", "domain": "brix", "refId": "saturationDrop" },
+							"methodName": "draw",
+							"args":
+							[
+								{ "type": "d3select", "targetSelectorIndex": 0 }
+							]
+						},
+						{
+							"description": "draw the frequency slider",
+							"type": "method-call",
+							"instance": { "type": "ref", "domain": "brix", "refId": "freqSldr" },
+							"methodName": "draw",
+							"args":
+							[
+								{ "type": "d3select", "targetSelectorIndex": 0 }
+							]
+						},
+						{
+							"description": "draw the amplitude slider",
+							"type": "method-call",
+							"instance": { "type": "ref", "domain": "brix", "refId": "amplitudeSldr" },
+							"methodName": "draw",
+							"args":
+							[
+								{ "type": "d3select", "targetSelectorIndex": 0 }
+							]
+						},
+						{
+							"description": "Draw the svg container for the waveform graph",
+							"type": "method-call",
+							"instance": { "type": "ref", "domain": "brix", "refId": "wavegraphCntr" },
+							"methodName": "draw",
+							"args":
+							[
+								{ "type": "d3select", "targetSelectorIndex": 0 }
+							]
+						},
+						{
+							"description": "Append the graph to the svg container",
+							"type": "method-call",
+							"instance": { "type": "ref", "domain": "brix", "refId": "wavegraphCntr" },
+							"methodName": "append",
+							"args":
+							[
+								{ "type": "ref", "domain": "brix", "refId": "wavegraph" }
+							]
+						}
+					]
+				}
+			]
+		};
 
 	pearson.utils.logToConsole(true, 'FINER');
 	// create the eventmanager to be used by the created brix, and the

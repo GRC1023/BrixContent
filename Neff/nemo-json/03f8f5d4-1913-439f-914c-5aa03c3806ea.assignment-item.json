@@ -1,0 +1,166 @@
+{
+  "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope",
+  "@type": "Envelope",
+  "metadata": {
+    "guid": "03f8f5d4-1913-439f-914c-5aa03c3806ea",
+    "title": "68830_NE_C13.html",
+    "extendedMetadata": [
+      {
+        "name": "crawlable",
+        "value": "false"
+      },
+      {
+        "name": "owner",
+        "value": "Brix"
+      },
+      {
+        "name": "contentTypeTier2",
+        "value": "assessment item"
+      },
+      {
+        "name": "contentTypeTier1",
+        "value": "Test and Assessment"
+      },
+      {
+        "name": "format",
+        "value": "application/vnd.pearson.sanvan.v1.activity"
+      },
+      {
+        "name": "timeRequired",
+        "value": "PT20S"
+      }
+    ],
+    "description": "68830_NE_C13.html",
+    "subject": [
+      "EnvironmentalScience"
+    ],
+    "contentTypeTier2": [
+      "AssessmentItem"
+    ],
+    "contentTypeTier1": "Assessment",
+    "format": [
+      "application/vnd.pearson.sanvan.v1.activity"
+    ],
+    "educationalAlignment": [
+      "http://purl.org/pearson/objectives/183725473384362"
+    ],
+    "version": "1.0"
+  },
+  "body": {
+    "containerConfig": [
+      {
+        "brixConfig": [
+          {
+            "bricId": "Q1",
+            "answerKey": {
+              "answers": {
+                "answer3": {
+                  "score": 0.0,
+                  "response": "What environmental impacts could arise as a result of this?"
+                },
+                "answer2": {
+                  "score": 0.0,
+                  "response": "This facility is used to store waste such as contaminated gloves and clothing-is this high level nuclear waste?"
+                },
+                "answer1": {
+                  "score": 0.0,
+                  "response": "Was this solution acceptable to Nevada government officials?"
+                },
+                "answer4": {
+                  "score": 1.0,
+                  "response": "The United States (and many other countries) are doing this while trying to figure out how to best store it in safer ways that are also acceptable to U.S. citizens and the government."
+                }
+              },
+              "assessmentType": "multiplechoice"
+            },
+            "bricType": "MultipleChoiceQuestion",
+            "config": {
+              "id": "sampleQ1",
+              "order": "randomized",
+              "question": "What does the United States currently do with its high level nuclear waste?",
+              "presenterType": "RadioGroup",
+              "presenterConfig": {
+                "numberFormat": ""
+              },
+              "choices": [
+                {
+                  "content": "Store it underground at Yucca Mountain in Nevada",
+                  "answerKey": "answer1"
+                },
+                {
+                  "content": "Store it underground in the WIPP facility in New Mexico.",
+                  "answerKey": "answer2"
+                },
+                {
+                  "content": "Bury it at sea.",
+                  "answerKey": "answer3"
+                },
+                {
+                  "content": "Store it above ground in temporary facilities.",
+                  "answerKey": "answer4"
+                }
+              ]
+            },
+            "configFixup": [
+              {
+                "value": {
+                  "domain": "info",
+                  "type": "ref",
+                  "refId": "sequenceNodeKey"
+                },
+                "type": "set-property",
+                "name": "questionId"
+              },
+              {
+                "type": "set-property",
+                "value": {
+                  "type": "ref",
+                  "refId": "maxAttempts",
+                  "domain": "info"
+                },
+                "name": "maxAttempts"
+              }
+            ]
+          }
+        ],
+        "containerId": "target1",
+        "hookupActions": [
+          {
+            "methodName": "handleRequestsFrom",
+            "instance": {
+              "type": "submit-manager"
+            },
+            "args": [
+              {
+                "domain": "brix",
+                "type": "ref",
+                "refId": "Q1"
+              }
+            ],
+            "type": "method-call",
+            "description": "Hookup the submit manager to evaluate answers"
+          },
+          {
+            "methodName": "draw",
+            "instance": {
+              "domain": "brix",
+              "type": "ref",
+              "refId": "Q1"
+            },
+            "args": [
+              {
+                "type": "d3select",
+                "selector": "#target1"
+              }
+            ],
+            "type": "method-call",
+            "description": "Draw the question"
+          }
+        ],
+        "description": "container for the sample multiple choice question"
+      }
+    ],
+    "description": "A Sample Activity containing a single multiple choice bric",
+    "title": "68830_NE_C13.html"
+  }
+}

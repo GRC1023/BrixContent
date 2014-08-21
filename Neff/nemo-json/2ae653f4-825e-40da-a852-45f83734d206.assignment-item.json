@@ -1,0 +1,128 @@
+{
+  "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope",
+  "@type": "Envelope",
+  "metadata": {
+    "guid": "2ae653f4-825e-40da-a852-45f83734d206",
+    "title": "68830_NE_GDE_04.html",
+    "extendedMetadata": [],
+    "contentTypeTier2": [
+      "AssessmentItem"
+    ],
+    "contentTypeTier1": "Assessment",
+    "format": [
+      "application/vnd.pearson.sanvan.v1.activity"
+    ],
+    "educationalAlignment": [
+      "http://purl.org/pearson/objectives/183725473384362"
+    ],
+    "version": "1.0"
+  },
+  "body": {
+    "containerConfig": [
+      {
+        "brixConfig": [
+          {
+            "config": {
+              "presenterType": "RadioGroup",
+              "question": "\u003cdiv\u003e\n\n\u003cspan\u003e\n \u003cspan\u003e\u003cspan\u003e\n  \u003cspan\u003e\n  Now, graph the recoverable\n  natural gas reserves for each country and for the total world. Estimate the\n  change in total world natural gas reserves from 2002 to 2012.\n  \u003c/span\u003e\n \u003c/span\u003e\n\u003c/span\u003e\u003c/span\u003e\n\n\u003c/div\u003e",
+              "presenterConfig": {
+                "numberFormat": ""
+              },
+              "choices": [
+                {
+                  "content": "Reserves decreased by about 25 trillion cubic meters.",
+                  "answerKey": "answer1"
+                },
+                {
+                  "content": "Reserves decreased by about 50 trillion cubic meters.",
+                  "answerKey": "answer2"
+                },
+                {
+                  "content": "Reserves increased by about 50 trillion cubic meters.",
+                  "answerKey": "answer3"
+                },
+                {
+                  "content": "Reserves increased by about 100 trillion cubic meters.",
+                  "answerKey": "answer4"
+                }
+              ],
+              "order": "randomized",
+              "id": "sampleQ1"
+            },
+            "answerKey": {
+              "assessmentType": "multiplechoice",
+              "answers": {
+                "answer4": {
+                  "score": 0.0,
+                  "response": "Look closely at the graph. Subtract the 2000 total world reserves from the 2012 total world reserves. Consider whether reserves increased or decreased over time."
+                },
+                "answer1": {
+                  "score": 0.0,
+                  "response": "Look closely at the graph. Subtract the 2000 total world reserves from the 2012 total world reserves. Consider whether reserves increased or decreased over time."
+                },
+                "answer3": {
+                  "score": 1.0,
+                  "response": ""
+                },
+                "answer2": {
+                  "score": 0.0,
+                  "response": "Look closely at the graph. Subtract the 2000 total world reserves from the 2012 total world reserves. Consider whether reserves increased or decreased over time."
+                }
+              }
+            },
+            "bricType": "MultipleChoiceQuestion",
+            "bricId": "Q1",
+            "configFixup": [
+              {
+                "type": "set-property",
+                "name": "questionId",
+                "value": {
+                  "domain": "info",
+                  "type": "ref",
+                  "refId": "sequenceNodeKey"
+                }
+              }
+            ]
+          }
+        ],
+        "description": "container for the sample multiple choice question",
+        "hookupActions": [
+          {
+            "instance": {
+              "type": "submit-manager"
+            },
+            "args": [
+              {
+                "domain": "brix",
+                "type": "ref",
+                "refId": "Q1"
+              }
+            ],
+            "type": "method-call",
+            "description": "Hookup the submit manager to evaluate answers",
+            "methodName": "handleRequestsFrom"
+          },
+          {
+            "instance": {
+              "domain": "brix",
+              "type": "ref",
+              "refId": "Q1"
+            },
+            "args": [
+              {
+                "type": "d3select",
+                "selector": "#target1"
+              }
+            ],
+            "type": "method-call",
+            "description": "Draw the question",
+            "methodName": "draw"
+          }
+        ],
+        "containerId": "target1"
+      }
+    ],
+    "description": "A Sample Activity containing a single multiple choice bric",
+    "title": "68830_NE_GDE_04.html"
+  }
+}

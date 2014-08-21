@@ -1,0 +1,173 @@
+{
+  "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope",
+  "@type": "Envelope",
+  "metadata": {
+    "guid": "4c37c6fb-9419-474e-9c19-a36a1d679323",
+    "title": "68830_EU_M01_06.html",
+    "keywords": [
+      "energy use",
+      "fossil fuels",
+      "growth in energy use",
+      "population growth",
+      "per capita energy use"
+    ],
+    "extendedMetadata": [
+      {
+        "name": "crawlable",
+        "value": "false"
+      },
+      {
+        "name": "owner",
+        "value": "Brix"
+      },
+      {
+        "name": "contentTypeTier2",
+        "value": "assessment item"
+      },
+      {
+        "name": "format",
+        "value": "application/vnd.pearson.sanvan.v1.activity"
+      },
+      {
+        "name": "contentTypeTier1",
+        "value": "Test and Assessment"
+      },
+      {
+        "name": "timeRequired",
+        "value": "PT20S"
+      }
+    ],
+    "description": "68830_EU_M01_06.html",
+    "subject": [
+      "EnvironmentalScience"
+    ],
+    "contentTypeTier2": [
+      "AssessmentItem"
+    ],
+    "contentTypeTier1": "Assessment",
+    "format": [
+      "application/vnd.pearson.sanvan.v1.activity"
+    ],
+    "educationalAlignment": [
+      "http://purl.org/pearson/objectives/183725473384362"
+    ],
+    "version": "1.0"
+  },
+  "body": {
+    "containerConfig": [
+      {
+        "brixConfig": [
+          {
+            "bricId": "Q1",
+            "answerKey": {
+              "answers": {
+                "answer3": {
+                  "score": 1.0,
+                  "response": ""
+                },
+                "answer2": {
+                  "score": 0.0,
+                  "response": ""
+                },
+                "answer1": {
+                  "score": 0.0,
+                  "response": ""
+                },
+                "answer4": {
+                  "score": 0.0,
+                  "response": ""
+                }
+              },
+              "assessmentType": "multiplechoice"
+            },
+            "bricType": "MultipleChoiceQuestion",
+            "config": {
+              "id": "sampleQ1",
+              "order": "randomized",
+              "question": "What are the two human factors that have caused the large growth in energy use over the past 200 years?",
+              "presenterType": "RadioGroup",
+              "presenterConfig": {
+                "numberFormat": ""
+              },
+              "choices": [
+                {
+                  "content": "People have gotten bigger in size and live in larger houses.",
+                  "answerKey": "answer1"
+                },
+                {
+                  "content": "People started owning more energy intensive devices and driving more.",
+                  "answerKey": "answer2"
+                },
+                {
+                  "content": "The human population has grown rapidly and per capita energy use has increased.",
+                  "answerKey": "answer3"
+                },
+                {
+                  "content": " Energy use has increased, but per capita energy use has stayed about the same.",
+                  "answerKey": "answer4"
+                }
+              ]
+            },
+            "configFixup": [
+              {
+                "value": {
+                  "domain": "info",
+                  "type": "ref",
+                  "refId": "sequenceNodeKey"
+                },
+                "type": "set-property",
+                "name": "questionId"
+              },
+              {
+                "type": "set-property",
+                "value": {
+                  "type": "ref",
+                  "refId": "maxAttempts",
+                  "domain": "info"
+                },
+                "name": "maxAttempts"
+              }
+            ]
+          }
+        ],
+        "containerId": "target1",
+        "hookupActions": [
+          {
+            "methodName": "handleRequestsFrom",
+            "instance": {
+              "type": "submit-manager"
+            },
+            "args": [
+              {
+                "domain": "brix",
+                "type": "ref",
+                "refId": "Q1"
+              }
+            ],
+            "type": "method-call",
+            "description": "Hookup the submit manager to evaluate answers"
+          },
+          {
+            "methodName": "draw",
+            "instance": {
+              "domain": "brix",
+              "type": "ref",
+              "refId": "Q1"
+            },
+            "args": [
+              {
+                "type": "d3select",
+                "selector": "#target1"
+              }
+            ],
+            "type": "method-call",
+            "description": "Draw the question"
+          }
+        ],
+        "description": "container for the sample multiple choice question"
+      }
+    ],
+    "description": "A Sample Activity containing a single multiple choice bric",
+    "title": "68830_EU_M01_06.html"
+  }
+}
