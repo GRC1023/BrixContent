@@ -1,0 +1,144 @@
+{
+  "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope",
+  "@type": "Envelope",
+  "metadata": {
+    "guid": "1b07111a-8537-4dbe-b0e6-52ca2818bb86",
+    "title": "Check Your Understanding 2.5 Q3",
+    "version": "1.0",
+    "contentTypeTier2": [
+      "AssessmentItem"
+    ],
+    "educationalAlignment": [
+      "http://purl.org/pearson/objectives/183725473384362"
+    ],
+    "format": [
+      "application/vnd.pearson.sanvan.v1.activity"
+    ],
+    "contentTypeTier1": "Assessment",
+    "keywords": [
+      "Ormrod"
+    ],
+    "extendedMetadata": [
+      {
+        "name": "Author",
+        "value": "Ormrod"
+      }
+    ]
+  },
+  "body": {
+    "containerConfig": [
+      {
+        "brixConfig": [
+          {
+            "config": {
+              "presenterType": "RadioGroup",
+              "question": "\u003cspan\u003eSome students use the formula for the Pythagorean Theorem (a2 + b2 \u003d c2) incorrectly when they are given the values for one of the sides and the hypotenuse and asked to find the value of the third side. They often do not consider that the length of the hypotenuse is always greater than the length of each side of the triangle. As a result, they use the formula incorrectly by squaring and adding the one side to the square of hypotenuse to find the value of the third side. Instead, they should subtract the square of the side from the square of the hypotenuse. Which one of the following instructional strategies is most likely to help them undergo conceptual change regarding this topic?\u003c/span\u003e",
+              "presenterConfig": {
+                "numberFormat": ""
+              },
+              "choices": [
+                {
+                  "content": "Ask students to discuss and defend why they are adding the squares of the sides of the triangle, rather than subtracting the square of the one side from the square of the hypotenuse. ",
+                  "answerKey": "answer1"
+                },
+                {
+                  "content": "Ask students to memorize this sentence: “A squared plus B squared equals C squared.”",
+                  "answerKey": "answer2"
+                },
+                {
+                  "content": "State quite emphatically and emotionally—perhaps with some mock “anger”—that, “You need to think before you use any math formula!”",
+                  "answerKey": "answer3"
+                },
+                {
+                  "content": "Move on to another topic and return to the Pythagorean Theorem a few weeks later. Students are more likely to be receptive to the correct view the second time around.",
+                  "answerKey": "answer4"
+                }
+              ],
+              "order": "randomized",
+              "id": "sampleQ1"
+            },
+            "answerKey": {
+              "assessmentType": "multiplechoice",
+              "answers": {
+                "answer4": {
+                  "score": 0,
+                  "response": "Incorrect. This won’t be helpful unless students critically reflect on their beliefs about the Pythagorean Theorem in the meantime—something that few, if any of them, are likely to do on their own."
+                },
+                "answer1": {
+                  "score": 1,
+                  "response": "Correct. Yes, this may help. One strategy for promoting conceptual change is to engage students in a discussion of the pros and cons of various explanations."
+                },
+                "answer3": {
+                  "score": 0,
+                  "response": "Incorrect. This strategy might get students’ attention, but it won’t necessarily bring about conceptual change. Engaging students in the pros and cons of the two perspectives is more likely to be effective. "
+                },
+                "answer2": {
+                  "score": 0,
+                  "response": "Incorrect because this is not the best answer. This probably won’t work well. Such a strategy is apt to lead to rote learning, which is unlikely to bring about revision of existing beliefs."
+                }
+              }
+            },
+            "bricType": "MultipleChoiceQuestion",
+            "bricId": "Q1",
+            "configFixup": [
+              {
+                "type": "set-property",
+                "name": "questionId",
+                "value": {
+                  "domain": "info",
+                  "type": "ref",
+                  "refId": "sequenceNodeKey"
+                }
+              },
+              {
+                "type": "set-property",
+                "name": "maxAttempts",
+                "value": {
+                  "type": "ref",
+                  "domain": "info",
+                  "refId": "maxAttempts"
+                }
+              }
+            ]
+          }
+        ],
+        "description": "container for the sample multiple choice question",
+        "hookupActions": [
+          {
+            "instance": {
+              "type": "submit-manager"
+            },
+            "args": [
+              {
+                "domain": "brix",
+                "type": "ref",
+                "refId": "Q1"
+              }
+            ],
+            "type": "method-call",
+            "description": "Hookup the submit manager to evaluate answers",
+            "methodName": "handleRequestsFrom"
+          },
+          {
+            "instance": {
+              "domain": "brix",
+              "type": "ref",
+              "refId": "Q1"
+            },
+            "args": [
+              {
+                "type": "d3select",
+                "selector": "#target1"
+              }
+            ],
+            "type": "method-call",
+            "description": "Draw the question",
+            "methodName": "draw"
+          }
+        ],
+        "containerId": "target1"
+      }
+    ],
+    "description": "A Sample Activity containing a single multiple choice bric"
+  }
+}

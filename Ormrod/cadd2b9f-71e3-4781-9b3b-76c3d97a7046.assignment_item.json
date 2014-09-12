@@ -1,0 +1,144 @@
+{
+  "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope",
+  "@type": "Envelope",
+  "metadata": {
+    "guid": "cadd2b9f-71e3-4781-9b3b-76c3d97a7046",
+    "title": "Check Your Understanding 2.5 Q4",
+    "version": "1.0",
+    "contentTypeTier2": [
+      "AssessmentItem"
+    ],
+    "educationalAlignment": [
+      "http://purl.org/pearson/objectives/183725473384362"
+    ],
+    "format": [
+      "application/vnd.pearson.sanvan.v1.activity"
+    ],
+    "contentTypeTier1": "Assessment",
+    "keywords": [
+      "Ormrod"
+    ],
+    "extendedMetadata": [
+      {
+        "name": "Author",
+        "value": "Ormrod"
+      }
+    ]
+  },
+  "body": {
+    "containerConfig": [
+      {
+        "brixConfig": [
+          {
+            "config": {
+              "presenterType": "RadioGroup",
+              "question": "\u003cspan\u003eMr. Dorian wants his band students to learn how to play their instruments so well that they can perform the skill almost without thinking. In other words, he wants them to learn the task to a level of automaticity. Which one of the following strategies will best help his students achieve that goal?\u003c/span\u003e",
+              "presenterConfig": {
+                "numberFormat": ""
+              },
+              "choices": [
+                {
+                  "content": "Give students a great deal of practice playing their instruments.",
+                  "answerKey": "answer1"
+                },
+                {
+                  "content": "Explain the logic behind playing each instrument one way rather than another.",
+                  "answerKey": "answer2"
+                },
+                {
+                  "content": "Tell students how important it is for them to learn to practice playing their instruments.",
+                  "answerKey": "answer3"
+                },
+                {
+                  "content": "Mr. Dorian should demonstrate playing each instrument while students observe him.",
+                  "answerKey": "answer4"
+                }
+              ],
+              "order": "randomized",
+              "id": "sampleQ1"
+            },
+            "answerKey": {
+              "assessmentType": "multiplechoice",
+              "answers": {
+                "answer4": {
+                  "score": 0,
+                  "response": "Modeling a new skill is one of the best ways to help students learn it. However, automaticity for a skill comes only through a great deal of repetition and practice."
+                },
+                "answer1": {
+                  "score": 1,
+                  "response": "Correct. Automaticity for basic knowledge and skills is best acquired through a great deal of repetition and practice."
+                },
+                "answer3": {
+                  "score": 0,
+                  "response": "Incorrect. Automaticity for basic knowledge and skills is best acquired through a great deal of repetition and practice."
+                },
+                "answer2": {
+                  "score": 0,
+                  "response": "Incorrect. Although such an explanation can promote meaningful learning, automaticity for basic knowledge and skills is best acquired through a great deal of repetition and practice."
+                }
+              }
+            },
+            "bricType": "MultipleChoiceQuestion",
+            "bricId": "Q1",
+            "configFixup": [
+              {
+                "type": "set-property",
+                "name": "questionId",
+                "value": {
+                  "domain": "info",
+                  "type": "ref",
+                  "refId": "sequenceNodeKey"
+                }
+              },
+              {
+                "type": "set-property",
+                "name": "maxAttempts",
+                "value": {
+                  "type": "ref",
+                  "domain": "info",
+                  "refId": "maxAttempts"
+                }
+              }
+            ]
+          }
+        ],
+        "description": "container for the sample multiple choice question",
+        "hookupActions": [
+          {
+            "instance": {
+              "type": "submit-manager"
+            },
+            "args": [
+              {
+                "domain": "brix",
+                "type": "ref",
+                "refId": "Q1"
+              }
+            ],
+            "type": "method-call",
+            "description": "Hookup the submit manager to evaluate answers",
+            "methodName": "handleRequestsFrom"
+          },
+          {
+            "instance": {
+              "domain": "brix",
+              "type": "ref",
+              "refId": "Q1"
+            },
+            "args": [
+              {
+                "type": "d3select",
+                "selector": "#target1"
+              }
+            ],
+            "type": "method-call",
+            "description": "Draw the question",
+            "methodName": "draw"
+          }
+        ],
+        "containerId": "target1"
+      }
+    ],
+    "description": "A Sample Activity containing a single multiple choice bric"
+  }
+}

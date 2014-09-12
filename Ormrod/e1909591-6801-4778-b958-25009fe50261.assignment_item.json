@@ -1,0 +1,144 @@
+{
+  "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope",
+  "@type": "Envelope",
+  "metadata": {
+    "guid": "e1909591-6801-4778-b958-25009fe50261",
+    "title": "Check Your Understanding 2.4 Q3",
+    "version": "1.0",
+    "contentTypeTier2": [
+      "AssessmentItem"
+    ],
+    "educationalAlignment": [
+      "http://purl.org/pearson/objectives/183725473384362"
+    ],
+    "format": [
+      "application/vnd.pearson.sanvan.v1.activity"
+    ],
+    "contentTypeTier1": "Assessment",
+    "keywords": [
+      "Ormrod"
+    ],
+    "extendedMetadata": [
+      {
+        "name": "Author",
+        "value": "Ormrod"
+      }
+    ]
+  },
+  "body": {
+    "containerConfig": [
+      {
+        "brixConfig": [
+          {
+            "config": {
+              "presenterType": "RadioGroup",
+              "question": "\u003cspan\u003eWhich one of the following scenarios best describes how decay is sometimes a factor in forgetting?\u003c/span\u003e",
+              "presenterConfig": {
+                "numberFormat": ""
+              },
+              "choices": [
+                {
+                  "content": "Reah studied French in high school. Now, as an adult, she rarely reads anything in French and can barely remember the language, which she used to know by heart.",
+                  "answerKey": "answer1"
+                },
+                {
+                  "content": "Tatyana knows that she left her keys in the house earlier that morning, but she simply can’t remember where she placed them.",
+                  "answerKey": "answer2"
+                },
+                {
+                  "content": "Dari sees a familiar face at the grocery store but can’t remember the person’s name. Later that day, she thinks about the summer camp she went to last year, which triggers her to remember that the person at the grocery store was a counselor there. She remembers his name correctly and says it out loud: “Steve!”",
+                  "answerKey": "answer3"
+                },
+                {
+                  "content": "Gregg is sitting in class working on his math test but doesn’t know how to do some of the problems because he chose to stay up late playing video games instead of studying. The problems he has the most trouble with are the ones he was supposed to study because they were not covered in class. As a result, he doesn’t know how to solve those problems.",
+                  "answerKey": "answer4"
+                }
+              ],
+              "order": "randomized",
+              "id": "sampleQ1"
+            },
+            "answerKey": {
+              "assessmentType": "multiplechoice",
+              "answers": {
+                "answer4": {
+                  "score": 0,
+                  "response": "Incorrect. Information cannot decay if it was never learned in the first place. In this case, Gregg never learned the information, so it is not an example of decay."
+                },
+                "answer1": {
+                  "score": 1,
+                  "response": "Correct. The expression “Use it or lose it” may apply to human memory."
+                },
+                "answer3": {
+                  "score": 0,
+                  "response": "Incorrect because it is not the best answer. Although it could be true that Dari’s memory weakened over time and might involve decay, it has not yet disappeared, so it seems more like a retrieval failure than simply decay. She wasn’t looking in the right place for it until her thoughts about the camp provided a needed retrieval cue."
+                },
+                "answer2": {
+                  "score": 0,
+                  "response": "Incorrect. For forgetting to be a result of decay, the information had to have been stored in memory and then forgotten over time. The time period in this alternative is too short to be considered decay because it occurred on the same day. It is possible that she didn’t pay attention to where she set her keys and the information never made it to her working memory."
+                }
+              }
+            },
+            "bricType": "MultipleChoiceQuestion",
+            "bricId": "Q1",
+            "configFixup": [
+              {
+                "type": "set-property",
+                "name": "questionId",
+                "value": {
+                  "domain": "info",
+                  "type": "ref",
+                  "refId": "sequenceNodeKey"
+                }
+              },
+              {
+                "type": "set-property",
+                "name": "maxAttempts",
+                "value": {
+                  "type": "ref",
+                  "domain": "info",
+                  "refId": "maxAttempts"
+                }
+              }
+            ]
+          }
+        ],
+        "description": "container for the sample multiple choice question",
+        "hookupActions": [
+          {
+            "instance": {
+              "type": "submit-manager"
+            },
+            "args": [
+              {
+                "domain": "brix",
+                "type": "ref",
+                "refId": "Q1"
+              }
+            ],
+            "type": "method-call",
+            "description": "Hookup the submit manager to evaluate answers",
+            "methodName": "handleRequestsFrom"
+          },
+          {
+            "instance": {
+              "domain": "brix",
+              "type": "ref",
+              "refId": "Q1"
+            },
+            "args": [
+              {
+                "type": "d3select",
+                "selector": "#target1"
+              }
+            ],
+            "type": "method-call",
+            "description": "Draw the question",
+            "methodName": "draw"
+          }
+        ],
+        "containerId": "target1"
+      }
+    ],
+    "description": "A Sample Activity containing a single multiple choice bric"
+  }
+}

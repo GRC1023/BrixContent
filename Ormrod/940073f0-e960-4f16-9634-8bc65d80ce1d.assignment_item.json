@@ -1,0 +1,144 @@
+{
+  "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope",
+  "@type": "Envelope",
+  "metadata": {
+    "guid": "940073f0-e960-4f16-9634-8bc65d80ce1d",
+    "title": "Check Your Understanding 2.4 Q4",
+    "version": "1.0",
+    "contentTypeTier2": [
+      "AssessmentItem"
+    ],
+    "educationalAlignment": [
+      "http://purl.org/pearson/objectives/183725473384362"
+    ],
+    "format": [
+      "application/vnd.pearson.sanvan.v1.activity"
+    ],
+    "contentTypeTier1": "Assessment",
+    "keywords": [
+      "Ormrod"
+    ],
+    "extendedMetadata": [
+      {
+        "name": "Author",
+        "value": "Ormrod"
+      }
+    ]
+  },
+  "body": {
+    "containerConfig": [
+      {
+        "brixConfig": [
+          {
+            "config": {
+              "presenterType": "RadioGroup",
+              "question": "\u003cspan\u003eYou’re taking a test in your educational psychology class, and there are a number of items that seem familiar to you, but you can’t quite remember the answer. You wish that, for each item on the test, the professor had provided a hint, because you know that remembering can be facilitated through the use of:\u003c/span\u003e",
+              "presenterConfig": {
+                "numberFormat": ""
+              },
+              "choices": [
+                {
+                  "content": "retrieval cues.",
+                  "answerKey": "answer1"
+                },
+                {
+                  "content": "automaticity.",
+                  "answerKey": "answer2"
+                },
+                {
+                  "content": "consolidation.",
+                  "answerKey": "answer3"
+                },
+                {
+                  "content": "elaboration.",
+                  "answerKey": "answer4"
+                }
+              ],
+              "order": "randomized",
+              "id": "sampleQ1"
+            },
+            "answerKey": {
+              "assessmentType": "multiplechoice",
+              "answers": {
+                "answer4": {
+                  "score": 0,
+                  "response": "Incorrect. When learners elaborate, they use their prior knowledge to embellish or “flesh out” a new idea, thus adding or restructuring the information in some way. The professor’s use of hints would reflect the notion of retrieval cues, which point the learner toward where the knowledge is likely to be stored in long-term memory."
+                },
+                "answer1": {
+                  "score": 1,
+                  "response": "Correct. Helping learners remember where to “look” in long-term memory can be an effective way of enhancing their ability to remember pertinent information."
+                },
+                "answer3": {
+                  "score": 0,
+                  "response": "Incorrect. Consolidation refers to the way information “solidifies” in the brain. Giving students hints to jog their memories about various educational psychology topics is an example of using retrieval cues."
+                },
+                "answer2": {
+                  "score": 0,
+                  "response": "Incorrect. Automaticity refers to information that can be retrieved virtually instantly without reliance on something like a retrieval cue, which is what is being described in this scenario. "
+                }
+              }
+            },
+            "bricType": "MultipleChoiceQuestion",
+            "bricId": "Q1",
+            "configFixup": [
+              {
+                "type": "set-property",
+                "name": "questionId",
+                "value": {
+                  "domain": "info",
+                  "type": "ref",
+                  "refId": "sequenceNodeKey"
+                }
+              },
+              {
+                "type": "set-property",
+                "name": "maxAttempts",
+                "value": {
+                  "type": "ref",
+                  "domain": "info",
+                  "refId": "maxAttempts"
+                }
+              }
+            ]
+          }
+        ],
+        "description": "container for the sample multiple choice question",
+        "hookupActions": [
+          {
+            "instance": {
+              "type": "submit-manager"
+            },
+            "args": [
+              {
+                "domain": "brix",
+                "type": "ref",
+                "refId": "Q1"
+              }
+            ],
+            "type": "method-call",
+            "description": "Hookup the submit manager to evaluate answers",
+            "methodName": "handleRequestsFrom"
+          },
+          {
+            "instance": {
+              "domain": "brix",
+              "type": "ref",
+              "refId": "Q1"
+            },
+            "args": [
+              {
+                "type": "d3select",
+                "selector": "#target1"
+              }
+            ],
+            "type": "method-call",
+            "description": "Draw the question",
+            "methodName": "draw"
+          }
+        ],
+        "containerId": "target1"
+      }
+    ],
+    "description": "A Sample Activity containing a single multiple choice bric"
+  }
+}

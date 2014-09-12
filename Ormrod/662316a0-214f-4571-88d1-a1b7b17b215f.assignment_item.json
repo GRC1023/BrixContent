@@ -1,0 +1,144 @@
+{
+  "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope",
+  "@type": "Envelope",
+  "metadata": {
+    "guid": "662316a0-214f-4571-88d1-a1b7b17b215f",
+    "title": "Check Your Understanding 2.1 Q2",
+    "version": "1.0",
+    "contentTypeTier2": [
+      "AssessmentItem"
+    ],
+    "educationalAlignment": [
+      "http://purl.org/pearson/objectives/183725473384362"
+    ],
+    "format": [
+      "application/vnd.pearson.sanvan.v1.activity"
+    ],
+    "contentTypeTier1": "Assessment",
+    "keywords": [
+      "Ormrod"
+    ],
+    "extendedMetadata": [
+      {
+        "name": "Author",
+        "value": "Ormrod"
+      }
+    ]
+  },
+  "body": {
+    "containerConfig": [
+      {
+        "brixConfig": [
+          {
+            "config": {
+              "presenterType": "RadioGroup",
+              "question": "\u003cspan\u003eWhich one of the following alternatives best illustrates explicit learning: the principle that children are often actively involved in their own learning?\u003c/span\u003e",
+              "presenterConfig": {
+                "numberFormat": ""
+              },
+              "choices": [
+                {
+                  "content": "When Beth watches a video about World War II, she thinks about many ways that civilization has been affected by the leaders of that era.",
+                  "answerKey": "answer1"
+                },
+                {
+                  "content": "After twice being stung by a bee, Ruthie now runs away any time she sees a flying bee.",
+                  "answerKey": "answer2"
+                },
+                {
+                  "content": "By the time she is 12 months old, Madison knows what “horse” and “cow” mean.",
+                  "answerKey": "answer3"
+                },
+                {
+                  "content": "When Rudy sits down to do his social studies homework, he turns the globe around and around and points to all the places that he wants to explore.",
+                  "answerKey": "answer4"
+                }
+              ],
+              "order": "randomized",
+              "id": "sampleQ1"
+            },
+            "answerKey": {
+              "assessmentType": "multiplechoice",
+              "answers": {
+                "answer4": {
+                  "score": 0,
+                  "response": "Incorrect. This really isn’t an example of learning; he is simply describing things he already knows. Explicit learning includes mental involvement—actively thinking about what one is trying to learn."
+                },
+                "answer1": {
+                  "score": 1,
+                  "response": "Correct. Beth is engaging in explicit learning because she is actively thinking about and interpreting what she sees and hears on the video."
+                },
+                "answer3": {
+                  "score": 0,
+                  "response": "Incorrect. Much language learning in the first two to three years of life involves implicit learning, a relatively unintentional, “thoughtless” form of learning."
+                },
+                "answer2": {
+                  "score": 0,
+                  "response": "Incorrect. Ruthie certainly didn’t intend to learn to be afraid of bees. Her learning to fear bees is better described as implicit learning."
+                }
+              }
+            },
+            "bricType": "MultipleChoiceQuestion",
+            "bricId": "Q1",
+            "configFixup": [
+              {
+                "type": "set-property",
+                "name": "questionId",
+                "value": {
+                  "domain": "info",
+                  "type": "ref",
+                  "refId": "sequenceNodeKey"
+                }
+              },
+              {
+                "type": "set-property",
+                "name": "maxAttempts",
+                "value": {
+                  "type": "ref",
+                  "domain": "info",
+                  "refId": "maxAttempts"
+                }
+              }
+            ]
+          }
+        ],
+        "description": "container for the sample multiple choice question",
+        "hookupActions": [
+          {
+            "instance": {
+              "type": "submit-manager"
+            },
+            "args": [
+              {
+                "domain": "brix",
+                "type": "ref",
+                "refId": "Q1"
+              }
+            ],
+            "type": "method-call",
+            "description": "Hookup the submit manager to evaluate answers",
+            "methodName": "handleRequestsFrom"
+          },
+          {
+            "instance": {
+              "domain": "brix",
+              "type": "ref",
+              "refId": "Q1"
+            },
+            "args": [
+              {
+                "type": "d3select",
+                "selector": "#target1"
+              }
+            ],
+            "type": "method-call",
+            "description": "Draw the question",
+            "methodName": "draw"
+          }
+        ],
+        "containerId": "target1"
+      }
+    ],
+    "description": "A Sample Activity containing a single multiple choice bric"
+  }
+}

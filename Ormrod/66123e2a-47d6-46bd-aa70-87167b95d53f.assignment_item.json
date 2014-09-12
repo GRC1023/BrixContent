@@ -1,0 +1,144 @@
+{
+  "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope",
+  "@type": "Envelope",
+  "metadata": {
+    "guid": "66123e2a-47d6-46bd-aa70-87167b95d53f",
+    "title": "Check Your Understanding 2.2 Q3",
+    "version": "1.0",
+    "contentTypeTier2": [
+      "AssessmentItem"
+    ],
+    "educationalAlignment": [
+      "http://purl.org/pearson/objectives/183725473384362"
+    ],
+    "format": [
+      "application/vnd.pearson.sanvan.v1.activity"
+    ],
+    "contentTypeTier1": "Assessment",
+    "keywords": [
+      "Ormrod"
+    ],
+    "extendedMetadata": [
+      {
+        "name": "Author",
+        "value": "Ormrod"
+      }
+    ]
+  },
+  "body": {
+    "containerConfig": [
+      {
+        "brixConfig": [
+          {
+            "config": {
+              "presenterType": "RadioGroup",
+              "question": "\u003cspan\u003eWhich of the following statements best describes what we know about brain research?\u003c/span\u003e",
+              "presenterConfig": {
+                "numberFormat": ""
+              },
+              "choices": [
+                {
+                  "content": "Educators often rely on inaccurate information about how brain research can inform teaching and learning.",
+                  "answerKey": "answer1"
+                },
+                {
+                  "content": "We know almost nothing about where learning happens in the brain. ",
+                  "answerKey": "answer2"
+                },
+                {
+                  "content": "To know brain research is to know how best to stimulate students’ learning.",
+                  "answerKey": "answer3"
+                },
+                {
+                  "content": "Brain research has largely been disproven as irrelevant to educators.",
+                  "answerKey": "answer4"
+                }
+              ],
+              "order": "randomized",
+              "id": "sampleQ1"
+            },
+            "answerKey": {
+              "assessmentType": "multiplechoice",
+              "answers": {
+                "answer4": {
+                  "score": 0,
+                  "response": "Incorrect. While brain research is limited in terms of its ability to help us select the most effective teaching methods, educators do benefit from having a basic understanding of how the brain works. If nothing else, reading and studying brain research may clear up commonly-held misconceptions such as the notion that people have a dominant brain hemisphere."
+                },
+                "answer1": {
+                  "score": 1,
+                  "response": "Correct. Brain research tells us about how and where learning occurs, but well-meaning educators have sometimes interpreted the research ineffectively. In fact, some commonly held (but inaccurate!) ideas about brain research persist, even in the face of evidence that disproves them."
+                },
+                "answer3": {
+                  "score": 0,
+                  "response": "Incorrect. Most of what we know about how to effectively teach is based in studies of human behavior rather than brain research."
+                },
+                "answer2": {
+                  "score": 0,
+                  "response": "Incorrect. We now know that thinking and learning are largely distributed across the entire brain, regardless of the nature of the task."
+                }
+              }
+            },
+            "bricType": "MultipleChoiceQuestion",
+            "bricId": "Q1",
+            "configFixup": [
+              {
+                "type": "set-property",
+                "name": "questionId",
+                "value": {
+                  "domain": "info",
+                  "type": "ref",
+                  "refId": "sequenceNodeKey"
+                }
+              },
+              {
+                "type": "set-property",
+                "name": "maxAttempts",
+                "value": {
+                  "type": "ref",
+                  "domain": "info",
+                  "refId": "maxAttempts"
+                }
+              }
+            ]
+          }
+        ],
+        "description": "container for the sample multiple choice question",
+        "hookupActions": [
+          {
+            "instance": {
+              "type": "submit-manager"
+            },
+            "args": [
+              {
+                "domain": "brix",
+                "type": "ref",
+                "refId": "Q1"
+              }
+            ],
+            "type": "method-call",
+            "description": "Hookup the submit manager to evaluate answers",
+            "methodName": "handleRequestsFrom"
+          },
+          {
+            "instance": {
+              "domain": "brix",
+              "type": "ref",
+              "refId": "Q1"
+            },
+            "args": [
+              {
+                "type": "d3select",
+                "selector": "#target1"
+              }
+            ],
+            "type": "method-call",
+            "description": "Draw the question",
+            "methodName": "draw"
+          }
+        ],
+        "containerId": "target1"
+      }
+    ],
+    "description": "A Sample Activity containing a single multiple choice bric"
+  }
+}

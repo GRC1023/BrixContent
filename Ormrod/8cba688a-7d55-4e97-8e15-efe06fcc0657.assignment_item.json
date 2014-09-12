@@ -1,0 +1,144 @@
+{
+  "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope",
+  "@type": "Envelope",
+  "metadata": {
+    "guid": "8cba688a-7d55-4e97-8e15-efe06fcc0657",
+    "title": "Check Your Understanding 2.5 Q2",
+    "version": "1.0",
+    "contentTypeTier2": [
+      "AssessmentItem"
+    ],
+    "educationalAlignment": [
+      "http://purl.org/pearson/objectives/183725473384362"
+    ],
+    "format": [
+      "application/vnd.pearson.sanvan.v1.activity"
+    ],
+    "contentTypeTier1": "Assessment",
+    "keywords": [
+      "Ormrod"
+    ],
+    "extendedMetadata": [
+      {
+        "name": "Author",
+        "value": "Ormrod"
+      }
+    ]
+  },
+  "body": {
+    "containerConfig": [
+      {
+        "brixConfig": [
+          {
+            "config": {
+              "presenterType": "RadioGroup",
+              "question": "\u003cspan\u003eWhich one of the following examples is the best explanation of why many experts advocate a less is more approach in the classroom?\u003c/span\u003e",
+              "presenterConfig": {
+                "numberFormat": ""
+              },
+              "choices": [
+                {
+                  "content": "Mrs. Meredith promotes conceptual understanding by having her fifth-graders reenact the Last Alamo as opposed to studying the entire history of the southwestern United States.",
+                  "answerKey": "answer1"
+                },
+                {
+                  "content": "Mrs. Jones accommodates her students’ limited working-memory capacities by giving them only 25 facts regarding the Revolutionary War, the War of 1812, and the Civil War—as opposed to her colleague, who expects her students to remember 100 facts for each war.",
+                  "answerKey": "answer2"
+                },
+                {
+                  "content": "Because Ms. Wilson’s middle-schoolers are going through puberty, she limits her class lectures to half the class period to keep them focused on the course content.",
+                  "answerKey": "answer3"
+                },
+                {
+                  "content": "Elementary students can pay attention to only one complex thing at a time, so teach them for only twenty minutes and then give them a break.",
+                  "answerKey": "answer4"
+                }
+              ],
+              "order": "randomized",
+              "id": "sampleQ1"
+            },
+            "answerKey": {
+              "assessmentType": "multiplechoice",
+              "answers": {
+                "answer4": {
+                  "score": 0,
+                  "response": "Incorrect. The less is more idea refers to teaching a few topics in depth rather than many topics superficially. Students don’t necessarily get less information overall, nor is information presented more slowly."
+                },
+                "answer1": {
+                  "score": 1,
+                  "response": "Correct. The less is more idea refers to teaching a few topics in depth rather than many topics superficially, an approach that is likely to enable students to form a rich network of connections among concepts and ideas related to each topic."
+                },
+                "answer3": {
+                  "score": 0,
+                  "response": "Incorrect. There is no evidence to show that limiting course content while students are in puberty helps them stay focused."
+                },
+                "answer2": {
+                  "score": 0,
+                  "response": "Incorrect. The less is more idea refers to teaching a few topics in depth rather than many topics superficially. It is quite likely that students encounter as much information in a less-is-more approach as they do in a cover-many-things approach, so demands on working memory might be similar either way."
+                }
+              }
+            },
+            "bricType": "MultipleChoiceQuestion",
+            "bricId": "Q1",
+            "configFixup": [
+              {
+                "type": "set-property",
+                "name": "questionId",
+                "value": {
+                  "domain": "info",
+                  "type": "ref",
+                  "refId": "sequenceNodeKey"
+                }
+              },
+              {
+                "type": "set-property",
+                "name": "maxAttempts",
+                "value": {
+                  "type": "ref",
+                  "domain": "info",
+                  "refId": "maxAttempts"
+                }
+              }
+            ]
+          }
+        ],
+        "description": "container for the sample multiple choice question",
+        "hookupActions": [
+          {
+            "instance": {
+              "type": "submit-manager"
+            },
+            "args": [
+              {
+                "domain": "brix",
+                "type": "ref",
+                "refId": "Q1"
+              }
+            ],
+            "type": "method-call",
+            "description": "Hookup the submit manager to evaluate answers",
+            "methodName": "handleRequestsFrom"
+          },
+          {
+            "instance": {
+              "domain": "brix",
+              "type": "ref",
+              "refId": "Q1"
+            },
+            "args": [
+              {
+                "type": "d3select",
+                "selector": "#target1"
+              }
+            ],
+            "type": "method-call",
+            "description": "Draw the question",
+            "methodName": "draw"
+          }
+        ],
+        "containerId": "target1"
+      }
+    ],
+    "description": "A Sample Activity containing a single multiple choice bric"
+  }
+}

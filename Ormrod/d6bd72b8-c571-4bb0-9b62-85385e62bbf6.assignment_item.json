@@ -1,0 +1,144 @@
+{
+  "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope",
+  "@type": "Envelope",
+  "metadata": {
+    "guid": "d6bd72b8-c571-4bb0-9b62-85385e62bbf6",
+    "title": "Check Your Understanding 2.2 Q2",
+    "version": "1.0",
+    "contentTypeTier2": [
+      "AssessmentItem"
+    ],
+    "educationalAlignment": [
+      "http://purl.org/pearson/objectives/183725473384362"
+    ],
+    "format": [
+      "application/vnd.pearson.sanvan.v1.activity"
+    ],
+    "contentTypeTier1": "Assessment",
+    "keywords": [
+      "Ormrod"
+    ],
+    "extendedMetadata": [
+      {
+        "name": "Author",
+        "value": "Ormrod"
+      }
+    ]
+  },
+  "body": {
+    "containerConfig": [
+      {
+        "brixConfig": [
+          {
+            "config": {
+              "presenterType": "RadioGroup",
+              "question": "\u003cspan\u003eA friend of yours says, “I have been reading a lot of interesting brain research, and I now know that it is limited in its ability to help teachers figure out\nhow to best teach their students.” Your friend’s statement is:\u003c/span\u003e",
+              "presenterConfig": {
+                "numberFormat": ""
+              },
+              "choices": [
+                {
+                  "content": "True, because much of what brain research tells us is about how the brain works, not how to teach students most effectively.",
+                  "answerKey": "answer1"
+                },
+                {
+                  "content": "False, because brain research has, in fact, led to some specific suggestions for how best to help students learn.",
+                  "answerKey": "answer2"
+                },
+                {
+                  "content": "True, because brain research has given us significant insight into how to facilitate human behavior and learning.",
+                  "answerKey": "answer3"
+                },
+                {
+                  "content": "False, because brain research tells us that stimulating the prefrontal cortex is the most effective way to enhance student learning.",
+                  "answerKey": "answer4"
+                }
+              ],
+              "order": "randomized",
+              "id": "sampleQ1"
+            },
+            "answerKey": {
+              "assessmentType": "multiplechoice",
+              "answers": {
+                "answer4": {
+                  "score": 0,
+                  "response": "Incorrect. Though the front-most part of the cortex (known as the prefrontal cortex) plays an important role in sustained attention and reasoning, brain research has not indicated that stimulating it is the best way to facilitate learning."
+                },
+                "answer1": {
+                  "score": 1,
+                  "response": "Correct. Brain research, even though it relates directly to thinking and learning, doesn’t provide teachers with information about how to best help students gain new knowledge."
+                },
+                "answer3": {
+                  "score": 0,
+                  "response": "Incorrect. In most instances, when educators speak of “using brain research,” they are, instead, referring to research into human behavior rather than anatomy and physiology."
+                },
+                "answer2": {
+                  "score": 0,
+                  "response": "Incorrect. Brain research has helped us understand how the brain functions and develops, but provides us with little insight into how to teach most effectively."
+                }
+              }
+            },
+            "bricType": "MultipleChoiceQuestion",
+            "bricId": "Q1",
+            "configFixup": [
+              {
+                "type": "set-property",
+                "name": "questionId",
+                "value": {
+                  "domain": "info",
+                  "type": "ref",
+                  "refId": "sequenceNodeKey"
+                }
+              },
+              {
+                "type": "set-property",
+                "name": "maxAttempts",
+                "value": {
+                  "type": "ref",
+                  "domain": "info",
+                  "refId": "maxAttempts"
+                }
+              }
+            ]
+          }
+        ],
+        "description": "container for the sample multiple choice question",
+        "hookupActions": [
+          {
+            "instance": {
+              "type": "submit-manager"
+            },
+            "args": [
+              {
+                "domain": "brix",
+                "type": "ref",
+                "refId": "Q1"
+              }
+            ],
+            "type": "method-call",
+            "description": "Hookup the submit manager to evaluate answers",
+            "methodName": "handleRequestsFrom"
+          },
+          {
+            "instance": {
+              "domain": "brix",
+              "type": "ref",
+              "refId": "Q1"
+            },
+            "args": [
+              {
+                "type": "d3select",
+                "selector": "#target1"
+              }
+            ],
+            "type": "method-call",
+            "description": "Draw the question",
+            "methodName": "draw"
+          }
+        ],
+        "containerId": "target1"
+      }
+    ],
+    "description": "A Sample Activity containing a single multiple choice bric"
+  }
+}

@@ -1,0 +1,144 @@
+{
+  "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope",
+  "@type": "Envelope",
+  "metadata": {
+    "guid": "8e3029b0-c67c-412d-bcd3-f08fb8a8a50b",
+    "title": "Check Your Understanding 2.4 Q1",
+    "version": "1.0",
+    "contentTypeTier2": [
+      "AssessmentItem"
+    ],
+    "educationalAlignment": [
+      "http://purl.org/pearson/objectives/183725473384362"
+    ],
+    "format": [
+      "application/vnd.pearson.sanvan.v1.activity"
+    ],
+    "contentTypeTier1": "Assessment",
+    "keywords": [
+      "Ormrod"
+    ],
+    "extendedMetadata": [
+      {
+        "name": "Author",
+        "value": "Ormrod"
+      }
+    ]
+  },
+  "body": {
+    "containerConfig": [
+      {
+        "brixConfig": [
+          {
+            "config": {
+              "presenterType": "RadioGroup",
+              "question": "\u003cspan\u003eYou taught your class the concept of inertia. You want to be sure they don’t forget or confuse this concept over the long run, because they will need that concept to help them understand new situations and solve new problems later in the class. Which one of the following instructional strategies would be most beneficial to prevent misremembering or forgetting?\u003c/span\u003e",
+              "presenterConfig": {
+                "numberFormat": ""
+              },
+              "choices": [
+                {
+                  "content": "Help students associate inertia with a wide variety of situations over a period of time.",
+                  "answerKey": "answer1"
+                },
+                {
+                  "content": "Have students memorize a definition of inertia and three good examples of it.",
+                  "answerKey": "answer2"
+                },
+                {
+                  "content": "Encourage students to keep an open mind about inertia, pointing out that, “You never know when this idea might help you explain something.” ",
+                  "answerKey": "answer3"
+                },
+                {
+                  "content": "Design a single, in-depth lesson about inertia, with a particular focus on how Sir Isaac Newton defined it.",
+                  "answerKey": "answer4"
+                }
+              ],
+              "order": "randomized",
+              "id": "sampleQ1"
+            },
+            "answerKey": {
+              "assessmentType": "multiplechoice",
+              "answers": {
+                "answer4": {
+                  "score": 0,
+                  "response": "Incorrect, because it is not the best answer. Students are less likely to forget or misremember information when they have multiple pathways to it in long-term memory. An in-depth lesson might be a good way to help students master the concept in and of itself, but to promote retrieval over the long run, the lesson would need to help students connect inertia to numerous other things in long-term memory—something this lesson isn’t necessarily doing. Furthermore, students should revisit the concept of inertia in additional lessons over time, providing the review that will enhance the likelihood of later retrieval."
+                },
+                "answer1": {
+                  "score": 1,
+                  "response": "Correct. Students are less likely to forget or misremember information when they have multiple pathways to it in long-term memory, and associations between ideas form the basis of these pathways and lead to successful retrieval."
+                },
+                "answer3": {
+                  "score": 0,
+                  "response": "Incorrect. Students are less likely to forget or misremember information when they have multiple pathways to it in long-term memory. Encouraging them to keep an open mind is unlikely, in and of itself, to help them make the all-important connections between the new concept and other things in their long-term memories."
+                },
+                "answer2": {
+                  "score": 0,
+                  "response": "Incorrect, because it is not the best answer. Students are less likely to forget or misremember information if they have multiple pathways to it in long-term memory. When students memorize classroom material—which is essentially rote learning—they form few, if any, connections with other things they know."
+                }
+              }
+            },
+            "bricType": "MultipleChoiceQuestion",
+            "bricId": "Q1",
+            "configFixup": [
+              {
+                "type": "set-property",
+                "name": "questionId",
+                "value": {
+                  "domain": "info",
+                  "type": "ref",
+                  "refId": "sequenceNodeKey"
+                }
+              },
+              {
+                "type": "set-property",
+                "name": "maxAttempts",
+                "value": {
+                  "type": "ref",
+                  "domain": "info",
+                  "refId": "maxAttempts"
+                }
+              }
+            ]
+          }
+        ],
+        "description": "container for the sample multiple choice question",
+        "hookupActions": [
+          {
+            "instance": {
+              "type": "submit-manager"
+            },
+            "args": [
+              {
+                "domain": "brix",
+                "type": "ref",
+                "refId": "Q1"
+              }
+            ],
+            "type": "method-call",
+            "description": "Hookup the submit manager to evaluate answers",
+            "methodName": "handleRequestsFrom"
+          },
+          {
+            "instance": {
+              "domain": "brix",
+              "type": "ref",
+              "refId": "Q1"
+            },
+            "args": [
+              {
+                "type": "d3select",
+                "selector": "#target1"
+              }
+            ],
+            "type": "method-call",
+            "description": "Draw the question",
+            "methodName": "draw"
+          }
+        ],
+        "containerId": "target1"
+      }
+    ],
+    "description": "A Sample Activity containing a single multiple choice bric"
+  }
+}

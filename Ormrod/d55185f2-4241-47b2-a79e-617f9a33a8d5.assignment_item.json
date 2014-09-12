@@ -1,0 +1,144 @@
+{
+  "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope",
+  "@type": "Envelope",
+  "metadata": {
+    "guid": "d55185f2-4241-47b2-a79e-617f9a33a8d5",
+    "title": "Check Your Understanding 2.3 Q2",
+    "version": "1.0",
+    "contentTypeTier2": [
+      "AssessmentItem"
+    ],
+    "educationalAlignment": [
+      "http://purl.org/pearson/objectives/183725473384362"
+    ],
+    "format": [
+      "application/vnd.pearson.sanvan.v1.activity"
+    ],
+    "contentTypeTier1": "Assessment",
+    "keywords": [
+      "Ormrod"
+    ],
+    "extendedMetadata": [
+      {
+        "name": "Author",
+        "value": "Ormrod"
+      }
+    ]
+  },
+  "body": {
+    "containerConfig": [
+      {
+        "brixConfig": [
+          {
+            "config": {
+              "presenterType": "RadioGroup",
+              "question": "\u003cspan\u003eTimothy is trying to learn information in his textbook. His eyes are focused on the words in front of him, but he is thinking about the fishing trip he has planned for this weekend. How far in Timothy’s memory does the material get?\u003c/span\u003e",
+              "presenterConfig": {
+                "numberFormat": ""
+              },
+              "choices": [
+                {
+                  "content": "It reaches his sensory register.",
+                  "answerKey": "answer1"
+                },
+                {
+                  "content": "It reaches his working memory.",
+                  "answerKey": "answer2"
+                },
+                {
+                  "content": "It reaches his long-term memory.",
+                  "answerKey": "answer3"
+                },
+                {
+                  "content": "It never gets into his memory at all.",
+                  "answerKey": "answer4"
+                }
+              ],
+              "order": "randomized",
+              "id": "sampleQ1"
+            },
+            "answerKey": {
+              "assessmentType": "multiplechoice",
+              "answers": {
+                "answer4": {
+                  "score": 0,
+                  "response": "Incorrect. Virtually any stimuli that reach people’s senses get into sensory register in some manner. However, Timothy does not pay conscious attention to the textbook, making it unlikely that the information it contains moves beyond his sensory register."
+                },
+                "answer1": {
+                  "score": 1,
+                  "response": "Correct. Timothy is looking at the page, so it certainly enters his sensory register in some form. However, because he does not pay conscious attention to the textbook, it’s unlikely that the information it contains moves beyond his sensory register."
+                },
+                "answer3": {
+                  "score": 0,
+                  "response": "Incorrect. Timothy does not pay conscious attention to the textbook, making it unlikely that the information it contains gets to working memory, and therefore would not be able to make it to long-term memory."
+                },
+                "answer2": {
+                  "score": 0,
+                  "response": "Incorrect. Timothy does not pay conscious attention to the textbook, making it unlikely that the information it contains moves beyond his sensory register."
+                }
+              }
+            },
+            "bricType": "MultipleChoiceQuestion",
+            "bricId": "Q1",
+            "configFixup": [
+              {
+                "type": "set-property",
+                "name": "questionId",
+                "value": {
+                  "domain": "info",
+                  "type": "ref",
+                  "refId": "sequenceNodeKey"
+                }
+              },
+              {
+                "type": "set-property",
+                "name": "maxAttempts",
+                "value": {
+                  "type": "ref",
+                  "domain": "info",
+                  "refId": "maxAttempts"
+                }
+              }
+            ]
+          }
+        ],
+        "description": "container for the sample multiple choice question",
+        "hookupActions": [
+          {
+            "instance": {
+              "type": "submit-manager"
+            },
+            "args": [
+              {
+                "domain": "brix",
+                "type": "ref",
+                "refId": "Q1"
+              }
+            ],
+            "type": "method-call",
+            "description": "Hookup the submit manager to evaluate answers",
+            "methodName": "handleRequestsFrom"
+          },
+          {
+            "instance": {
+              "domain": "brix",
+              "type": "ref",
+              "refId": "Q1"
+            },
+            "args": [
+              {
+                "type": "d3select",
+                "selector": "#target1"
+              }
+            ],
+            "type": "method-call",
+            "description": "Draw the question",
+            "methodName": "draw"
+          }
+        ],
+        "containerId": "target1"
+      }
+    ],
+    "description": "A Sample Activity containing a single multiple choice bric"
+  }
+}

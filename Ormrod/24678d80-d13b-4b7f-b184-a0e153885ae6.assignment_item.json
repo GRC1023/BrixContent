@@ -1,0 +1,144 @@
+{
+  "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope",
+  "@type": "Envelope",
+  "metadata": {
+    "guid": "24678d80-d13b-4b7f-b184-a0e153885ae6",
+    "title": "Check Your Understanding 2.1 Q1",
+    "version": "1.0",
+    "contentTypeTier2": [
+      "AssessmentItem"
+    ],
+    "educationalAlignment": [
+      "http://purl.org/pearson/objectives/183725473384362"
+    ],
+    "format": [
+      "application/vnd.pearson.sanvan.v1.activity"
+    ],
+    "contentTypeTier1": "Assessment",
+    "keywords": [
+      "Ormrod"
+    ],
+    "extendedMetadata": [
+      {
+        "name": "Author",
+        "value": "Ormrod"
+      }
+    ]
+  },
+  "body": {
+    "containerConfig": [
+      {
+        "brixConfig": [
+          {
+            "config": {
+              "presenterType": "RadioGroup",
+              "question": "\u003cspan\u003eWhich one of the following scenarios is the best example of “learning”, as the textbook defines it?\u003c/span\u003e",
+              "presenterConfig": {
+                "numberFormat": ""
+              },
+              "choices": [
+                {
+                  "content": "After hearing his teacher read aloud Helen Keller’s biography, Peter now believes that individuals who are deaf and blind can obtain college degrees.",
+                  "answerKey": "answer1"
+                },
+                {
+                  "content": "In second grade, Lynn-Marie’s behavior worsens with sudden outbursts of extreme anger. She is eventually diagnosed with a mental illness that can manifest itself with episodes of sudden rage.",
+                  "answerKey": "answer2"
+                },
+                {
+                  "content": "Blake’s behavior around his friends at parties is different than his normal behavior because he drinks a lot of beer at parties.",
+                  "answerKey": "answer3"
+                },
+                {
+                  "content": "When Conner was five years old, he had trouble riding a bike. When he tried again at age seven, he was able to ride much better.",
+                  "answerKey": "answer4"
+                }
+              ],
+              "order": "randomized",
+              "id": "sampleQ1"
+            },
+            "answerKey": {
+              "assessmentType": "multiplechoice",
+              "answers": {
+                "answer4": {
+                  "score": 0,
+                  "response": "Incorrect. Although some of the improvement might be the result of learning, the statements leads us to believe that he did not practice from the time he was five to the time he was seven. As a result, most of his improvement is due to physiological maturation of body that led to his improved coordination—something that usually happens innately as children get older."
+                },
+                "answer1": {
+                  "score": 1,
+                  "response": "Correct. Learning involves a relatively long-term change in mental representation or associations due to experience. In this case, Peter changed his mental representation about the possibility of certain individuals’ abilities to obtain college degrees."
+                },
+                "answer3": {
+                  "score": 0,
+                  "response": "Incorrect. Although learning involves a change of some kind, changes due to use of alcohol or drugs do not qualify."
+                },
+                "answer2": {
+                  "score": 0,
+                  "response": "Incorrect. Although learning involves a change of some kind, changes due to mental illness do not qualify."
+                }
+              }
+            },
+            "bricType": "MultipleChoiceQuestion",
+            "bricId": "Q1",
+            "configFixup": [
+              {
+                "type": "set-property",
+                "name": "questionId",
+                "value": {
+                  "domain": "info",
+                  "type": "ref",
+                  "refId": "sequenceNodeKey"
+                }
+              },
+              {
+                "type": "set-property",
+                "name": "maxAttempts",
+                "value": {
+                  "type": "ref",
+                  "domain": "info",
+                  "refId": "maxAttempts"
+                }
+              }
+            ]
+          }
+        ],
+        "description": "container for the sample multiple choice question",
+        "hookupActions": [
+          {
+            "instance": {
+              "type": "submit-manager"
+            },
+            "args": [
+              {
+                "domain": "brix",
+                "type": "ref",
+                "refId": "Q1"
+              }
+            ],
+            "type": "method-call",
+            "description": "Hookup the submit manager to evaluate answers",
+            "methodName": "handleRequestsFrom"
+          },
+          {
+            "instance": {
+              "domain": "brix",
+              "type": "ref",
+              "refId": "Q1"
+            },
+            "args": [
+              {
+                "type": "d3select",
+                "selector": "#target1"
+              }
+            ],
+            "type": "method-call",
+            "description": "Draw the question",
+            "methodName": "draw"
+          }
+        ],
+        "containerId": "target1"
+      }
+    ],
+    "description": "A Sample Activity containing a single multiple choice bric"
+  }
+}

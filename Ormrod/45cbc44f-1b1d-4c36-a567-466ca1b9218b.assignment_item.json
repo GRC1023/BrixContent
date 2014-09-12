@@ -1,0 +1,144 @@
+{
+  "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope",
+  "@type": "Envelope",
+  "metadata": {
+    "guid": "45cbc44f-1b1d-4c36-a567-466ca1b9218b",
+    "title": "Check Your Understanding 2.3 Q4",
+    "version": "1.0",
+    "contentTypeTier2": [
+      "AssessmentItem"
+    ],
+    "educationalAlignment": [
+      "http://purl.org/pearson/objectives/183725473384362"
+    ],
+    "format": [
+      "application/vnd.pearson.sanvan.v1.activity"
+    ],
+    "contentTypeTier1": "Assessment",
+    "keywords": [
+      "Ormrod"
+    ],
+    "extendedMetadata": [
+      {
+        "name": "Author",
+        "value": "Ormrod"
+      }
+    ]
+  },
+  "body": {
+    "containerConfig": [
+      {
+        "brixConfig": [
+          {
+            "config": {
+              "presenterType": "RadioGroup",
+              "question": "\u003cspan\u003eThe textbook distinguishes between declarative knowledge and procedural knowledge. Which one of the following examples best describes declarative knowledge?\u003c/span\u003e",
+              "presenterConfig": {
+                "numberFormat": ""
+              },
+              "choices": [
+                {
+                  "content": "Sean knows every fact about the Montreal Canadians hockey team—the years they won the Stanley Cup, the player’s names, each player’s standings, and so forth.",
+                  "answerKey": "answer1"
+                },
+                {
+                  "content": "Mary Beth tells her friend how to ride a bike.",
+                  "answerKey": "answer2"
+                },
+                {
+                  "content": "Samantha can sign her name almost exactly the same every time she tries.",
+                  "answerKey": "answer3"
+                },
+                {
+                  "content": "Robert loves music. He knows how to play both the piano and the guitar. When asked, he can play each instrument for his peers. ",
+                  "answerKey": "answer4"
+                }
+              ],
+              "order": "randomized",
+              "id": "sampleQ1"
+            },
+            "answerKey": {
+              "assessmentType": "multiplechoice",
+              "answers": {
+                "answer4": {
+                  "score": 0,
+                  "response": "Incorrect. This alternative describes procedural knowledge, which is how to do something. Declarative knowledge involves knowledge about what and how things are."
+                },
+                "answer1": {
+                  "score": 1,
+                  "response": "Correct. Declarative knowledge involves knowledge about what and how things are."
+                },
+                "answer3": {
+                  "score": 0,
+                  "response": "Incorrect. This alternative describes procedural knowledge because it is knowledge about how to do something (sign her name). Declarative knowledge involves knowledge about what and how things are."
+                },
+                "answer2": {
+                  "score": 0,
+                  "response": "Incorrect. This alternative describes procedural knowledge because it is knowledge about how to do something (ride a bike). Declarative knowledge involves knowledge about what and how things are."
+                }
+              }
+            },
+            "bricType": "MultipleChoiceQuestion",
+            "bricId": "Q1",
+            "configFixup": [
+              {
+                "type": "set-property",
+                "name": "questionId",
+                "value": {
+                  "domain": "info",
+                  "type": "ref",
+                  "refId": "sequenceNodeKey"
+                }
+              },
+              {
+                "type": "set-property",
+                "name": "maxAttempts",
+                "value": {
+                  "type": "ref",
+                  "domain": "info",
+                  "refId": "maxAttempts"
+                }
+              }
+            ]
+          }
+        ],
+        "description": "container for the sample multiple choice question",
+        "hookupActions": [
+          {
+            "instance": {
+              "type": "submit-manager"
+            },
+            "args": [
+              {
+                "domain": "brix",
+                "type": "ref",
+                "refId": "Q1"
+              }
+            ],
+            "type": "method-call",
+            "description": "Hookup the submit manager to evaluate answers",
+            "methodName": "handleRequestsFrom"
+          },
+          {
+            "instance": {
+              "domain": "brix",
+              "type": "ref",
+              "refId": "Q1"
+            },
+            "args": [
+              {
+                "type": "d3select",
+                "selector": "#target1"
+              }
+            ],
+            "type": "method-call",
+            "description": "Draw the question",
+            "methodName": "draw"
+          }
+        ],
+        "containerId": "target1"
+      }
+    ],
+    "description": "A Sample Activity containing a single multiple choice bric"
+  }
+}

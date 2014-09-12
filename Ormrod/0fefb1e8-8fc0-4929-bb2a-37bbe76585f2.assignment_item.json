@@ -1,0 +1,144 @@
+{
+  "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope",
+  "@type": "Envelope",
+  "metadata": {
+    "guid": "0fefb1e8-8fc0-4929-bb2a-37bbe76585f2",
+    "title": "Check Your Understanding 2.4 Q2",
+    "version": "1.0",
+    "contentTypeTier2": [
+      "AssessmentItem"
+    ],
+    "educationalAlignment": [
+      "http://purl.org/pearson/objectives/183725473384362"
+    ],
+    "format": [
+      "application/vnd.pearson.sanvan.v1.activity"
+    ],
+    "contentTypeTier1": "Assessment",
+    "keywords": [
+      "Ormrod"
+    ],
+    "extendedMetadata": [
+      {
+        "name": "Author",
+        "value": "Ormrod"
+      }
+    ]
+  },
+  "body": {
+    "containerConfig": [
+      {
+        "brixConfig": [
+          {
+            "config": {
+              "presenterType": "RadioGroup",
+              "question": "\u003cspan\u003eJohn learns that the capital of South Dakota is Pierre. A few days later, as he is trying to recall this information, he thinks for a while and then finally says, “Oh I remember now. It’s Perry.” Which one of the following statements best explains John’s error?\u003c/span\u003e",
+              "presenterConfig": {
+                "numberFormat": ""
+              },
+              "choices": [
+                {
+                  "content": "John is exhibiting construction during retrieval. He remembers parts of the capital city’s name and then fills in the rest.",
+                  "answerKey": "answer1"
+                },
+                {
+                  "content": "John uses his script for state capitals to develop a logical conclusion as to what South Dakota’s capital must be.",
+                  "answerKey": "answer2"
+                },
+                {
+                  "content": "John has developed an incorrect script for Pierre.",
+                  "answerKey": "answer3"
+                },
+                {
+                  "content": "John has undergone conceptual change between the time when he first learned the information and the time when he has to remember it.",
+                  "answerKey": "answer4"
+                }
+              ],
+              "order": "randomized",
+              "id": "sampleQ1"
+            },
+            "answerKey": {
+              "assessmentType": "multiplechoice",
+              "answers": {
+                "answer4": {
+                  "score": 0,
+                  "response": "Incorrect. Conceptual change involves revising one’s understanding of a topic in response to new information. It typically involves larger bodies of information—perhaps personal theories comprising numerous concepts and principles—rather than specific, isolated facts."
+                },
+                "answer1": {
+                  "score": 1,
+                  "response": "Correct. John remembers part of what he is trying to retrieve—the beginning P and the err in the middle—and uses those letters to construct a logical, although incorrect, city name."
+                },
+                "answer3": {
+                  "score": 0,
+                  "response": "Incorrect. A script is a schema regarding how common events typically proceed; this concept is irrelevant to state capitals."
+                },
+                "answer2": {
+                  "score": 0,
+                  "response": "Incorrect. A script is a schema regarding how common events typically proceed; this concept is irrelevant to remembering the capitals of various states."
+                }
+              }
+            },
+            "bricType": "MultipleChoiceQuestion",
+            "bricId": "Q1",
+            "configFixup": [
+              {
+                "type": "set-property",
+                "name": "questionId",
+                "value": {
+                  "domain": "info",
+                  "type": "ref",
+                  "refId": "sequenceNodeKey"
+                }
+              },
+              {
+                "type": "set-property",
+                "name": "maxAttempts",
+                "value": {
+                  "type": "ref",
+                  "domain": "info",
+                  "refId": "maxAttempts"
+                }
+              }
+            ]
+          }
+        ],
+        "description": "container for the sample multiple choice question",
+        "hookupActions": [
+          {
+            "instance": {
+              "type": "submit-manager"
+            },
+            "args": [
+              {
+                "domain": "brix",
+                "type": "ref",
+                "refId": "Q1"
+              }
+            ],
+            "type": "method-call",
+            "description": "Hookup the submit manager to evaluate answers",
+            "methodName": "handleRequestsFrom"
+          },
+          {
+            "instance": {
+              "domain": "brix",
+              "type": "ref",
+              "refId": "Q1"
+            },
+            "args": [
+              {
+                "type": "d3select",
+                "selector": "#target1"
+              }
+            ],
+            "type": "method-call",
+            "description": "Draw the question",
+            "methodName": "draw"
+          }
+        ],
+        "containerId": "target1"
+      }
+    ],
+    "description": "A Sample Activity containing a single multiple choice bric"
+  }
+}

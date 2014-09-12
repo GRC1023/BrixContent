@@ -1,0 +1,144 @@
+{
+  "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope",
+  "@type": "Envelope",
+  "metadata": {
+    "guid": "328ad43e-ff2d-4dcd-8fa0-1cd8d414de6b",
+    "title": "Check Your Understanding 2.5 Q1",
+    "version": "1.0",
+    "contentTypeTier2": [
+      "AssessmentItem"
+    ],
+    "educationalAlignment": [
+      "http://purl.org/pearson/objectives/183725473384362"
+    ],
+    "format": [
+      "application/vnd.pearson.sanvan.v1.activity"
+    ],
+    "contentTypeTier1": "Assessment",
+    "keywords": [
+      "Ormrod"
+    ],
+    "extendedMetadata": [
+      {
+        "name": "Author",
+        "value": "Ormrod"
+      }
+    ]
+  },
+  "body": {
+    "containerConfig": [
+      {
+        "brixConfig": [
+          {
+            "config": {
+              "presenterType": "RadioGroup",
+              "question": "\u003cspan\u003eAfter reading a fable aloud to his fifth graders, Mr. Osmet asks some students, “So, who can tell me the moral of this story?” When the students don’t respond immediately, he tells them, “The moral is to not judge a book by its cover.” Which one of the following appears to be a problem with the teacher’s strategy?\u003c/span\u003e",
+              "presenterConfig": {
+                "numberFormat": ""
+              },
+              "choices": [
+                {
+                  "content": "He is allowing insufficient wait time for students to retrieve or construct an answer.",
+                  "answerKey": "answer1"
+                },
+                {
+                  "content": "His question is probably exceeding most students’ working memory capacities.",
+                  "answerKey": "answer2"
+                },
+                {
+                  "content": "He is preventing students from undergoing conceptual change. They need to change the fable to a current situation in their own lives.",
+                  "answerKey": "answer3"
+                },
+                {
+                  "content": "He isn’t giving students a mnemonic to help them remember the definition of a fable.",
+                  "answerKey": "answer4"
+                }
+              ],
+              "order": "randomized",
+              "id": "sampleQ1"
+            },
+            "answerKey": {
+              "assessmentType": "multiplechoice",
+              "answers": {
+                "answer4": {
+                  "score": 0,
+                  "response": "Incorrect. Mnemonics are most helpful when specific facts or lists are difficult to make sense of. Presumably students can learn what a fable is in a relatively meaningful manner, making a mnemonic unnecessary."
+                },
+                "answer1": {
+                  "score": 1,
+                  "response": "Correct. This may be a problem with his strategy, especially if his students haven’t had time to process the fable. Students may need a few seconds or minutes to retrieve what they know about fables to draw an appropriate conclusion."
+                },
+                "answer3": {
+                  "score": 0,
+                  "response": "Incorrect. There’s no evidence that students have understandings that need revision."
+                },
+                "answer2": {
+                  "score": 0,
+                  "response": "Incorrect. The teacher isn’t presenting a great deal of information with his question, nor is he requiring his students to retrieve a great deal of their existing knowledge to answer it. He is simply asking them their opinion of the fable."
+                }
+              }
+            },
+            "bricType": "MultipleChoiceQuestion",
+            "bricId": "Q1",
+            "configFixup": [
+              {
+                "type": "set-property",
+                "name": "questionId",
+                "value": {
+                  "domain": "info",
+                  "type": "ref",
+                  "refId": "sequenceNodeKey"
+                }
+              },
+              {
+                "type": "set-property",
+                "name": "maxAttempts",
+                "value": {
+                  "type": "ref",
+                  "domain": "info",
+                  "refId": "maxAttempts"
+                }
+              }
+            ]
+          }
+        ],
+        "description": "container for the sample multiple choice question",
+        "hookupActions": [
+          {
+            "instance": {
+              "type": "submit-manager"
+            },
+            "args": [
+              {
+                "domain": "brix",
+                "type": "ref",
+                "refId": "Q1"
+              }
+            ],
+            "type": "method-call",
+            "description": "Hookup the submit manager to evaluate answers",
+            "methodName": "handleRequestsFrom"
+          },
+          {
+            "instance": {
+              "domain": "brix",
+              "type": "ref",
+              "refId": "Q1"
+            },
+            "args": [
+              {
+                "type": "d3select",
+                "selector": "#target1"
+              }
+            ],
+            "type": "method-call",
+            "description": "Draw the question",
+            "methodName": "draw"
+          }
+        ],
+        "containerId": "target1"
+      }
+    ],
+    "description": "A Sample Activity containing a single multiple choice bric"
+  }
+}

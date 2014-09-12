@@ -1,0 +1,144 @@
+{
+  "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope",
+  "@type": "Envelope",
+  "metadata": {
+    "guid": "80fbb990-7b5e-4fe5-a5f1-497b17873e20",
+    "title": "Check Your Understanding 2.3 Q1",
+    "version": "1.0",
+    "contentTypeTier2": [
+      "AssessmentItem"
+    ],
+    "educationalAlignment": [
+      "http://purl.org/pearson/objectives/183725473384362"
+    ],
+    "format": [
+      "application/vnd.pearson.sanvan.v1.activity"
+    ],
+    "contentTypeTier1": "Assessment",
+    "keywords": [
+      "Ormrod"
+    ],
+    "extendedMetadata": [
+      {
+        "name": "Author",
+        "value": "Ormrod"
+      }
+    ]
+  },
+  "body": {
+    "containerConfig": [
+      {
+        "brixConfig": [
+          {
+            "config": {
+              "presenterType": "RadioGroup",
+              "question": "\u003cspan\u003eOn a Friday earlier this month, Zach received an A grade on a proportional reasoning quiz. Three weeks later, he took a math test that included six proportional reasoning questions, all of which he failed. How far in Zach’s memory did the material get?\u003c/span\u003e",
+              "presenterConfig": {
+                "numberFormat": ""
+              },
+              "choices": [
+                {
+                  "content": "It reached his long-term memory.",
+                  "answerKey": "answer1"
+                },
+                {
+                  "content": "It reached his sensory register.",
+                  "answerKey": "answer2"
+                },
+                {
+                  "content": "It reached his working memory (sometimes called short-term memory).",
+                  "answerKey": "answer3"
+                },
+                {
+                  "content": "It never got into his memory at all.",
+                  "answerKey": "answer4"
+                }
+              ],
+              "order": "randomized",
+              "id": "sampleQ1"
+            },
+            "answerKey": {
+              "assessmentType": "multiplechoice",
+              "answers": {
+                "answer4": {
+                  "score": 0,
+                  "response": "Incorrect. Obviously it has gotten into his memory because he recalled the information long enough to get an A grade on the Friday quiz."
+                },
+                "answer1": {
+                  "score": 1,
+                  "response": "Correct. Because Zach remembers the material for more than a few minutes, it must be in his long-term memory. The other components of the human memory system hold information for much shorter time periods. It seems that although the information had been in his long-term memory, he either did not learn it well and/or he was unable to retrieve it."
+                },
+                "answer3": {
+                  "score": 0,
+                  "response": "Incorrect. Since Zach remembers the material for more than a few minutes, it must be in his long-term memory. Unless it is actively rehearsed, information in working memory (sometimes called short-term memory) lasts less than a minute."
+                },
+                "answer2": {
+                  "score": 0,
+                  "response": "Incorrect. Because Zach remembers the material for more than a few minutes, it must be in his long-term memory. Information stored in the sensory register lasts for two to three seconds at most, even less for visual information."
+                }
+              }
+            },
+            "bricType": "MultipleChoiceQuestion",
+            "bricId": "Q1",
+            "configFixup": [
+              {
+                "type": "set-property",
+                "name": "questionId",
+                "value": {
+                  "domain": "info",
+                  "type": "ref",
+                  "refId": "sequenceNodeKey"
+                }
+              },
+              {
+                "type": "set-property",
+                "name": "maxAttempts",
+                "value": {
+                  "type": "ref",
+                  "domain": "info",
+                  "refId": "maxAttempts"
+                }
+              }
+            ]
+          }
+        ],
+        "description": "container for the sample multiple choice question",
+        "hookupActions": [
+          {
+            "instance": {
+              "type": "submit-manager"
+            },
+            "args": [
+              {
+                "domain": "brix",
+                "type": "ref",
+                "refId": "Q1"
+              }
+            ],
+            "type": "method-call",
+            "description": "Hookup the submit manager to evaluate answers",
+            "methodName": "handleRequestsFrom"
+          },
+          {
+            "instance": {
+              "domain": "brix",
+              "type": "ref",
+              "refId": "Q1"
+            },
+            "args": [
+              {
+                "type": "d3select",
+                "selector": "#target1"
+              }
+            ],
+            "type": "method-call",
+            "description": "Draw the question",
+            "methodName": "draw"
+          }
+        ],
+        "containerId": "target1"
+      }
+    ],
+    "description": "A Sample Activity containing a single multiple choice bric"
+  }
+}

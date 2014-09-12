@@ -1,0 +1,144 @@
+{
+  "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope",
+  "@type": "Envelope",
+  "metadata": {
+    "guid": "f9f71c5a-bb22-4906-bcac-0f6c7a25f126",
+    "title": "Check Your Understanding 2.2 Q1",
+    "version": "1.0",
+    "contentTypeTier2": [
+      "AssessmentItem"
+    ],
+    "educationalAlignment": [
+      "http://purl.org/pearson/objectives/183725473384362"
+    ],
+    "format": [
+      "application/vnd.pearson.sanvan.v1.activity"
+    ],
+    "contentTypeTier1": "Assessment",
+    "keywords": [
+      "Ormrod"
+    ],
+    "extendedMetadata": [
+      {
+        "name": "Author",
+        "value": "Ormrod"
+      }
+    ]
+  },
+  "body": {
+    "containerConfig": [
+      {
+        "brixConfig": [
+          {
+            "config": {
+              "presenterType": "RadioGroup",
+              "question": "\u003cspan\u003eMrs. Wiggleston, the art teacher, says to you, “It really makes me happy to teach art, because I like working with people when they’re using primarily the right sides of their brains.” A response that is most consistent with what we know about how the brain works is:\u003c/span\u003e",
+              "presenterConfig": {
+                "numberFormat": ""
+              },
+              "choices": [
+                {
+                  "content": "“Believe it or not, the idea of discrete left-brain and right-brain thinking has been largelydisproved. The brain’s hemispheres collaborate, even in creative endeavors like art projects.”",
+                  "answerKey": "answer1"
+                },
+                {
+                  "content": "“Art requires the use of the left brain, not the right brain.”",
+                  "answerKey": "answer2"
+                },
+                {
+                  "content": "“Brain research has no relevance to thinking and learning.”",
+                  "answerKey": "answer3"
+                },
+                {
+                  "content": "“It’s very cool that people who have artistic ability have been demonstrated to have more fully-developed right brain hemispheres.”",
+                  "answerKey": "answer4"
+                }
+              ],
+              "order": "randomized",
+              "id": "sampleQ1"
+            },
+            "answerKey": {
+              "assessmentType": "multiplechoice",
+              "answers": {
+                "answer4": {
+                  "score": 0,
+                  "response": "Incorrect. People with artistic ability, though often thought to be relying primarily on their right brains, are actually relying on both hemispheres at once. Previous ideas about left-brain and right-brain thinking have largely been set aside."
+                },
+                "answer1": {
+                  "score": 1,
+                  "response": "Correct. Though there is a lingering common belief to the contrary, we now know that both sides of the brain are involved in virtually all thinking and learning."
+                },
+                "answer3": {
+                  "score": 0,
+                  "response": "Incorrect. In fact, brain research is decidedly relevant to thinking and learning. However, commonly held beliefs about the applicability of brain research are often inaccurate. Thinking and learning are now believed to take place across the entire brain, engaging both hemispheres simultaneously."
+                },
+                "answer2": {
+                  "score": 0,
+                  "response": "Incorrect. In fact, this answer is incorrect for two reasons. First, visual and spatial tasks have long been considered the domain of the right brain, but that belief is in error. Second, current research indicates that virtually all tasks involve both hemispheres of the brain simultaneously. So, even in art class, people use both sides of their brains."
+                }
+              }
+            },
+            "bricType": "MultipleChoiceQuestion",
+            "bricId": "Q1",
+            "configFixup": [
+              {
+                "type": "set-property",
+                "name": "questionId",
+                "value": {
+                  "domain": "info",
+                  "type": "ref",
+                  "refId": "sequenceNodeKey"
+                }
+              },
+              {
+                "type": "set-property",
+                "name": "maxAttempts",
+                "value": {
+                  "type": "ref",
+                  "domain": "info",
+                  "refId": "maxAttempts"
+                }
+              }
+            ]
+          }
+        ],
+        "description": "container for the sample multiple choice question",
+        "hookupActions": [
+          {
+            "instance": {
+              "type": "submit-manager"
+            },
+            "args": [
+              {
+                "domain": "brix",
+                "type": "ref",
+                "refId": "Q1"
+              }
+            ],
+            "type": "method-call",
+            "description": "Hookup the submit manager to evaluate answers",
+            "methodName": "handleRequestsFrom"
+          },
+          {
+            "instance": {
+              "domain": "brix",
+              "type": "ref",
+              "refId": "Q1"
+            },
+            "args": [
+              {
+                "type": "d3select",
+                "selector": "#target1"
+              }
+            ],
+            "type": "method-call",
+            "description": "Draw the question",
+            "methodName": "draw"
+          }
+        ],
+        "containerId": "target1"
+      }
+    ],
+    "description": "A Sample Activity containing a single multiple choice bric"
+  }
+}

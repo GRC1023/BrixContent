@@ -1,0 +1,144 @@
+{
+  "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope",
+  "@type": "Envelope",
+  "metadata": {
+    "guid": "b1240249-5304-486f-b77b-5716efbab5e6",
+    "title": "Check Your Understanding 2.2 Q4",
+    "version": "1.0",
+    "contentTypeTier2": [
+      "AssessmentItem"
+    ],
+    "educationalAlignment": [
+      "http://purl.org/pearson/objectives/183725473384362"
+    ],
+    "format": [
+      "application/vnd.pearson.sanvan.v1.activity"
+    ],
+    "contentTypeTier1": "Assessment",
+    "keywords": [
+      "Ormrod"
+    ],
+    "extendedMetadata": [
+      {
+        "name": "Author",
+        "value": "Ormrod"
+      }
+    ]
+  },
+  "body": {
+    "containerConfig": [
+      {
+        "brixConfig": [
+          {
+            "config": {
+              "presenterType": "RadioGroup",
+              "question": "\u003cspan\u003eComplete this sentence by choosing the best answer. “To understand how to best help children learn, we need to clearly understand the work of _____.\"\u003c/span\u003e",
+              "presenterConfig": {
+                "numberFormat": ""
+              },
+              "choices": [
+                {
+                  "content": "psychologists",
+                  "answerKey": "answer1"
+                },
+                {
+                  "content": "neurologists",
+                  "answerKey": "answer2"
+                },
+                {
+                  "content": "nutritionists",
+                  "answerKey": "answer3"
+                },
+                {
+                  "content": "exercise physiologists",
+                  "answerKey": "answer4"
+                }
+              ],
+              "order": "randomized",
+              "id": "sampleQ1"
+            },
+            "answerKey": {
+              "assessmentType": "multiplechoice",
+              "answers": {
+                "answer4": {
+                  "score": 0,
+                  "response": "Incorrect. Though thinking and learning are often intertwined with people’s physical actions and reactions, it is through studies done by psychologists (and educators!) that we learn the most about how to effectively teach."
+                },
+                "answer1": {
+                  "score": 1,
+                  "response": "Correct. Learning about behavior can inform our instructional practice in a way that learning about anatomy and physiology cannot. Further insight into effective teaching can be gained from studying the research of educators."
+                },
+                "answer3": {
+                  "score": 0,
+                  "response": "Incorrect. Though it’s obvious that the brain can’t function if the body is not appropriately fueled, most of our insight into teaching and learning comes from studies on human behavior."
+                },
+                "answer2": {
+                  "score": 0,
+                  "response": "Incorrect. Remember, brain research gives us insight into how we learn, but not into the best ways to help students acquire knowledge and skills."
+                }
+              }
+            },
+            "bricType": "MultipleChoiceQuestion",
+            "bricId": "Q1",
+            "configFixup": [
+              {
+                "type": "set-property",
+                "name": "questionId",
+                "value": {
+                  "domain": "info",
+                  "type": "ref",
+                  "refId": "sequenceNodeKey"
+                }
+              },
+              {
+                "type": "set-property",
+                "name": "maxAttempts",
+                "value": {
+                  "type": "ref",
+                  "domain": "info",
+                  "refId": "maxAttempts"
+                }
+              }
+            ]
+          }
+        ],
+        "description": "container for the sample multiple choice question",
+        "hookupActions": [
+          {
+            "instance": {
+              "type": "submit-manager"
+            },
+            "args": [
+              {
+                "domain": "brix",
+                "type": "ref",
+                "refId": "Q1"
+              }
+            ],
+            "type": "method-call",
+            "description": "Hookup the submit manager to evaluate answers",
+            "methodName": "handleRequestsFrom"
+          },
+          {
+            "instance": {
+              "domain": "brix",
+              "type": "ref",
+              "refId": "Q1"
+            },
+            "args": [
+              {
+                "type": "d3select",
+                "selector": "#target1"
+              }
+            ],
+            "type": "method-call",
+            "description": "Draw the question",
+            "methodName": "draw"
+          }
+        ],
+        "containerId": "target1"
+      }
+    ],
+    "description": "A Sample Activity containing a single multiple choice bric"
+  }
+}
