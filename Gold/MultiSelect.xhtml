@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta content="Template for Multiple Choice Question Brix" name="description">
+
+        <!-- brix.css contains styling for the interactive brix -->
+        <link href="css/brix.css" rel="stylesheet">
+    </head>
+    <body>
+        <div id="target1"></div>
+        <script src="js/d3.v3.min.js"></script>
+        <script src="js/brixlib-compiled.js"></script>
+
+        <script>
+
+            // Create an object that will contain the objects needed for the activities
+            // on this page.
+            pearson.brix.activity = {};
+            var a = pearson.brix.activity;
+
+ // The activity config that defines the brix and mortar for this page
+    a.config =
+        {
+            "description": "A Sample Activity containing a single multi-select question w/ a checkgroup presenter bric",
+            "targetSelectorValues": [ "Q1-cntr" ],
+            "sequenceNodeKey": "3eef79b9-78b9-4033-991b-60f8a5e6fd40",
+            "maxAttempts": 3,
+            "containerConfig":
+            [
+                {
+                    "description": "container for the multi-select question",
+                    "containerId": "Q1-cntr",
+                    "brixConfig":
+                    [
+                        {
+                            "bricId": "msq1_presenter",
+                            "bricType": "MCP_CheckGroup",
+                            "config":
+                            {
+                                "id": "msq1-mcp",
+                                "order": "randomized",
+                                "maxSelections": null,
+                                "numberFormat": "roman-lower-number",
+                                "choices":
+                                [
+                                    {
+                                        "content": "*Type I alveolar cell",
+                                        "answerKey": "answer1"
+                                    },
+                                    {
+                                        "content": "*Capillary wall",
+                                        "answerKey": "answer2"
+                                    },
+                                    {
+                                        "content": "Pulmonary artery",
+                                        "answerKey": "answer3"
+                                    },
+                                    {
+                                        "content": "Type II alveolar cell",
+                                        "answerKey": "answer4"
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            "bricId": "msq1",
+                            "bricType": "MultiSelectQuestion",
+                            "config":
+                            {
+                                "id": "msq-1",
+                                "question": "Which structures are part of the respiratory membrane? (Click all that apply.)"
+                            },
+                            "configFixup":
+                            [
+                                {
+                                    "type": "set-property",
+                                    "name": "questionId",
+                                    "value": { "type": "ref", "domain": "info", "refId": "sequenceNodeKey" }
+                                },
+                                {
+                                    "type": "set-property",
+                                    "name": "maxAttempts",
+                                    "value": { "type": "ref", "domain": "info", "refId": "maxAttempts" }
+                                },
+                                {
+                                    "type": "set-property",
+                                    "name": "presenter",
+                                    "value": { "type": "ref", "domain": "brix", "refId": "msq1_presenter" }
+                                }
+                            ],
+                            "answerKey":
+                            {
+                                "assessmentType": "multivalue",
+                                "answers":
+                                {
+                                    "correctValues":
+                                    [
+                                        {
+                                            "answer1": true,
+                                            "answer2": true
+                                        }
+                                    ],
+                                    "correctResponse": "We need enough more food to support the increase in population but it isn't going to quadruple by 2050.",
+                                    "incorrectResponse": "Nope, sorry try again"
+                                }
+                            }
+                        }
+                    ],
+                    "hookupActions":
+                    [
+                        {
+                            "description": "Hookup the submit manager to evaluate answers",
+                            "type": "method-call",
+                            "instance": { "type": "submit-manager" },
+                            "methodName": "handleRequestsFrom",
+                            "args":
+                            [
+                                { "type": "ref", "domain": "brix", "refId": "msq1" }
+                            ]
+                        },
+                        {
+                            "description": "Draw the question",
+                            "type": "method-call",
+                            "instance": { "type": "ref", "domain": "brix", "refId": "msq1" },
+                            "methodName": "draw",
+                            "args":
+                            [
+                                { "type": "d3select", "targetSelectorIndex": 0 }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        };
+
+  
+            // create the eventmanager to be used by the created brix, and the
+            // bricLayer which will create them, and then tell the bricLayer to build.
+            a.eventManager = new pearson.utils.EventManager();
+            a.answerMan = new pearson.brix.utils.LocalAnswerMan();
+            a.submitManager = new pearson.brix.utils.SubmitManager(a.eventManager, a.answerMan);
+
+            a.bricLayer = new pearson.brix.BricLayer(null, a.eventManager, a.submitManager);
+
+            a.building = a.bricLayer.build(a.config);
+
+            a.answerMan.registerAnswerKey(a.config.sequenceNodeKey,
+                    a.config.containerConfig[0].brixConfig[0].answerKey);
+
+        </script>
+    </body>
+</html>

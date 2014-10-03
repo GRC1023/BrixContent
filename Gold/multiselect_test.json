@@ -1,0 +1,135 @@
+{
+  "body": {
+            "description": "A Sample Activity containing a single multi-select question w/ a checkgroup presenter bric",
+            "targetSelectorValues": [ "Q1-cntr" ],
+            "containerConfig":
+            [
+                {
+                    "description": "container for the multi-select question",
+                    "containerId": "Q1-cntr",
+                    "brixConfig":
+                    [
+                        {
+                            "bricId": "msq1_presenter",
+                            "bricType": "MCP_CheckGroup",
+                            "config":
+                            {
+                                "id": "msq1-mcp",
+                                "order": "randomized",
+                                "maxSelections": null,
+                                "numberFormat": "roman-lower-number",
+                                "choices":
+                                [
+                                    {
+                                        "content": "*Type I alveolar cell",
+                                        "answerKey": "answer1"
+                                    },
+                                    {
+                                        "content": "*Capillary wall",
+                                        "answerKey": "answer2"
+                                    },
+                                    {
+                                        "content": "Pulmonary artery",
+                                        "answerKey": "answer3"
+                                    },
+                                    {
+                                        "content": "Type II alveolar cell",
+                                        "answerKey": "answer4"
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            "bricId": "msq1",
+                            "bricType": "MultiSelectQuestion",
+                            "config":
+                            {
+                                "id": "msq-1",
+                                "question": "Which structures are part of the respiratory membrane? (Click all that apply.)"
+                            },
+                            "configFixup":
+                            [
+                                {
+                                    "type": "set-property",
+                                    "name": "questionId",
+                                    "value": { "type": "ref", "domain": "info", "refId": "sequenceNodeKey" }
+                                },
+                                {
+                                    "type": "set-property",
+                                    "name": "maxAttempts",
+                                    "value": { "type": "ref", "domain": "info", "refId": "maxAttempts" }
+                                },
+                                {
+                                    "type": "set-property",
+                                    "name": "presenter",
+                                    "value": { "type": "ref", "domain": "brix", "refId": "msq1_presenter" }
+                                }
+                            ],
+                            "answerKey":
+                            {
+                                "assessmentType": "multivalue",
+                                "answers":
+                                {
+                                    "correctValues":
+                                    [
+                                        {
+                                            "answer1": true,
+                                            "answer2": true
+                                        }
+                                    ],
+                                    "correctResponse": "We need enough more food to support the increase in population but it isn't going to quadruple by 2050.",
+                                    "incorrectResponse": "Nope, sorry try again"
+                                }
+                            }
+                        }
+                    ],
+                    "hookupActions":
+                    [
+                        {
+                            "description": "Hookup the submit manager to evaluate answers",
+                            "type": "method-call",
+                            "instance": { "type": "submit-manager" },
+                            "methodName": "handleRequestsFrom",
+                            "args":
+                            [
+                                { "type": "ref", "domain": "brix", "refId": "msq1" }
+                            ]
+                        },
+                        {
+                            "description": "Draw the question",
+                            "type": "method-call",
+                            "instance": { "type": "ref", "domain": "brix", "refId": "msq1" },
+                            "methodName": "draw",
+                            "args":
+                            [
+                                { "type": "d3select", "targetSelectorIndex": 0 }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }, 
+  "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope", 
+  "@type": "Envelope", 
+  "metadata": {
+    "intendedEndUserRole": [
+      "Student"
+    ], 
+    "description": "MultiSelect Test", 
+    "format": [
+      "application/vnd.pearson.sanvan.v1.activity"
+    ], 
+    "owner": "Brix", 
+    "guid": "fb44c0b9-3013-41ca-8b3f-bcda70b77b2a", 
+    "subject": [
+      "BrixTest"
+    ], 
+    "timeRequired": "PT20S", 
+    "created": "2013-12-18T14:00:05.287596", 
+    "title": "MultiSelect Test", 
+    "contentTypeTier1": "Test and Assessment", 
+    "contentTypeTier2": [
+      "assessment item"
+    ]
+  }
+}
