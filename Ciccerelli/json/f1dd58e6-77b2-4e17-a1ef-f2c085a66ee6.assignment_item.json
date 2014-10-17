@@ -1,0 +1,191 @@
+{
+  "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope",
+  "@type": "Envelope",
+  "metadata": {
+    "guid": "f1dd58e6-77b2-4e17-a1ef-f2c085a66ee6",
+    "title": "EOM Quiz 3.4 04",
+    "version": "1.0",
+    "subject": [
+      "Psychology"
+    ],
+    "bookTitle": "Psychology",
+    "bookAuthor": "Amy J. Marin",
+    "contentTypeTier2": [
+      "AssessmentItem"
+    ],
+    "educationalAlignment": [
+      "http://purl.org/pearson/objectives/183725473384362"
+    ],
+    "format": [
+      "application/vnd.pearson.sanvan.v1.activity"
+    ],
+    "contentTypeTier1": "Assessment",
+    "keywords": [
+      "Marin",
+      "Ch03",
+      "EOM03"
+    ],
+    "extendedMetadata": [
+      {
+        "name": "chapterTitle",
+        "value": "Sensation and Perception"
+      },
+      {
+        "name": "module",
+        "value": "Perceptual Interpretation"
+      },
+      {
+        "name": "ISBN",
+        "value": "0205010415"
+      },
+      {
+        "name": "item_title",
+        "value": "0205010415_Amy J. Marin_ch03_m04_q0004"
+      },
+      {
+        "name": "M",
+        "value": "m04"
+      },
+      {
+        "name": "CH",
+        "value": "03"
+      },
+      {
+        "name": "skill",
+        "value": "Apply What You Know"
+      },
+      {
+        "name": "assessment_title",
+        "value": "Quiz: Perceptual Interpretation"
+      },
+      {
+        "name": "Topic",
+        "value": "Culture and Perception"
+      },
+      {
+        "name": "Difficulty",
+        "value": "Medium"
+      },
+      {
+        "name": "Objective",
+        "value": "LO 3.4c Describe how culture influences perception."
+      }
+    ]
+  },
+  "body": {
+    "description": "EOM Quiz 3.4-04",
+    "containerConfig": [
+      {
+        "description": "EOM Quiz 3.4-04",
+        "containerId": "target1",
+        "brixConfig": [
+          {
+            "bricId": "q1",
+            "bricType": "MultipleChoiceQuestion",
+            "config": {
+              "id": "QUE72863",
+              "question": "Which of the following provides a rationale for why Westerners from industrialized countries are more likely than people from primitive cultures to be fooled by certain optical illusions?\n\u003cbr /\u003e",
+              "order": "randomized",
+              "presenterType": "RadioGroup",
+              "presenterConfig": {
+                "numberFormat": "none"
+              },
+              "choices": [
+                {
+                  "answerKey": "answer_1",
+                  "content": "Industrial Revolution theory"
+                },
+                {
+                  "answerKey": "answer_2",
+                  "content": "urban living theory"
+                },
+                {
+                  "answerKey": "answer_3",
+                  "content": "carpentered world hypothesis"
+                },
+                {
+                  "answerKey": "answer_4",
+                  "content": "natural perception hypothesis"
+                }
+              ]
+            },
+            "answerKey": {
+              "assessmentType": "multiplechoice",
+              "answers": {
+                "answer_3": {
+                  "score": 1.0,
+                  "response": ""
+                },
+                "answer_2": {
+                  "score": 0.0,
+                  "response": "Consider This: The carpentered world hypothesis is the idea that exposure to the lines and angles common to Western design and architecture makes Westerners more susceptible to optical illusions that involve misleading lines and angles, LO 3.4c Describe how culture influences perception"
+                },
+                "answer_1": {
+                  "score": 0.0,
+                  "response": "Consider This: The carpentered world hypothesis is the idea that exposure to the lines and angles common to Western design and architecture makes Westerners more susceptible to optical illusions that involve misleading lines and angles, LO 3.4c Describe how culture influences perception."
+                },
+                "answer_4": {
+                  "score": 0.0,
+                  "response": "Consider This: The carpentered world hypothesis is the idea that exposure to the lines and angles common to Western design and architecture makes Westerners more susceptible to optical illusions that involve misleading lines and angles, LO 3.4c Describe how culture influences perception."
+                }
+              }
+            },
+            "configFixup": [
+              {
+                "name": "questionId",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "sequenceNodeKey",
+                  "type": "ref"
+                }
+              },
+              {
+                "name": "maxAttempts",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "maxAttempts",
+                  "type": "ref"
+                }
+              }
+            ]
+          }
+        ],
+        "hookupActions": [
+          {
+            "description": "Hookup the submit manager to evaluate answers",
+            "methodName": "handleRequestsFrom",
+            "type": "method-call",
+            "args": [
+              {
+                "domain": "brix",
+                "refId": "q1",
+                "type": "ref"
+              }
+            ],
+            "instance": {
+              "type": "submit-manager"
+            }
+          },
+          {
+            "description": "Draw the question",
+            "methodName": "draw",
+            "type": "method-call",
+            "args": [
+              {
+                "selector": "#target1",
+                "type": "d3select"
+              }
+            ],
+            "instance": {
+              "domain": "brix",
+              "refId": "q1",
+              "type": "ref"
+            }
+          }
+        ]
+      }
+    ]
+  }
+}

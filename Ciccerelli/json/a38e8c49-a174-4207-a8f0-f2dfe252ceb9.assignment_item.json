@@ -1,0 +1,187 @@
+{
+  "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope",
+  "@type": "Envelope",
+  "metadata": {
+    "guid": "a38e8c49-a174-4207-a8f0-f2dfe252ceb9",
+    "title": "EOM Quiz 3.1 02",
+    "version": "1.0",
+    "subject": [
+      "Psychology"
+    ],
+    "bookTitle": "Psychology",
+    "bookAuthor": "Amy J. Marin",
+    "contentTypeTier2": [
+      "AssessmentItem"
+    ],
+    "educationalAlignment": [
+      "http://purl.org/pearson/objectives/183725473384362"
+    ],
+    "format": [
+      "application/vnd.pearson.sanvan.v1.activity"
+    ],
+    "contentTypeTier1": "Assessment",
+    "keywords": [
+      "Marin",
+      "Alick",
+      "Ch03"
+    ],
+    "extendedMetadata": [
+      {
+        "name": "chapterTitle",
+        "value": "Sensation and Perception"
+      },
+      {
+        "name": "ISBN",
+        "value": "0205010415"
+      },
+      {
+        "name": "item_title",
+        "value": "0205010415_Amy J. Marin_ch03_m01_q0002"
+      },
+      {
+        "name": "M",
+        "value": "m01"
+      },
+      {
+        "name": "CH",
+        "value": "03"
+      },
+      {
+        "name": "skill",
+        "value": "Remember the Facts"
+      },
+      {
+        "name": "assessment_title",
+        "value": "Quiz: Principles of Sensation"
+      },
+      {
+        "name": "Topic",
+        "value": "Relationships Among the Sensory Systems"
+      },
+      {
+        "name": "Difficulty",
+        "value": "Easy"
+      },
+      {
+        "name": "Objective",
+        "value": "LO 3.1c Describe the relationships between our sensory systems, including top-down and bottom-up processing, sensory compensation, and synesthesia."
+      }
+    ]
+  },
+  "body": {
+    "description": "EOM Quiz 3.1-02",
+    "containerConfig": [
+      {
+        "description": "EOM Quiz 3.1-02",
+        "containerId": "target1",
+        "brixConfig": [
+          {
+            "bricId": "q1",
+            "bricType": "MultipleChoiceQuestion",
+            "config": {
+              "id": "QUE72856",
+              "question": "When we perceive by filling in the gaps, we are using\n\u003cbr /\u003e",
+              "order": "randomized",
+              "presenterType": "RadioGroup",
+              "presenterConfig": {
+                "numberFormat": "none"
+              },
+              "choices": [
+                {
+                  "answerKey": "answer_1",
+                  "content": "top-down processing"
+                },
+                {
+                  "answerKey": "answer_2",
+                  "content": "bottom-up processing"
+                },
+                {
+                  "answerKey": "answer_3",
+                  "content": "parallel processing"
+                },
+                {
+                  "answerKey": "answer_4",
+                  "content": "unilateral processing"
+                }
+              ]
+            },
+            "answerKey": {
+              "assessmentType": "multiplechoice",
+              "answers": {
+                "answer_3": {
+                  "score": 0.0,
+                  "response": "Consider This: Top-down processing is a model of information processing whereby information flows from higher-level structures in the brain to lower-level structures, LO 3.1c Describe the relationships between our sensory systems, including top-down and bottom-up processing, sensory compensation, and synesthesia."
+                },
+                "answer_2": {
+                  "score": 0.0,
+                  "response": "Consider This: Top-down processing is a model of information processing whereby information flows from higher-level structures in the brain to lower-level structures, LO 3.1c Describe the relationships between our sensory systems, including top-down and bottom-up processing, sensory compensation, and synesthesia."
+                },
+                "answer_1": {
+                  "score": 1.0,
+                  "response": ""
+                },
+                "answer_4": {
+                  "score": 0.0,
+                  "response": "Consider This: Top-down processing is a model of information processing whereby information flows from higher-level structures in the brain to lower-level structures, LO 3.1c Describe the relationships between our sensory systems, including top-down and bottom-up processing, sensory compensation, and synesthesia."
+                }
+              }
+            },
+            "configFixup": [
+              {
+                "name": "questionId",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "sequenceNodeKey",
+                  "type": "ref"
+                }
+              },
+              {
+                "name": "maxAttempts",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "maxAttempts",
+                  "type": "ref"
+                }
+              }
+            ]
+          }
+        ],
+        "hookupActions": [
+          {
+            "description": "Hookup the submit manager to evaluate answers",
+            "methodName": "handleRequestsFrom",
+            "type": "method-call",
+            "args": [
+              {
+                "domain": "brix",
+                "refId": "q1",
+                "type": "ref"
+              }
+            ],
+            "instance": {
+              "type": "submit-manager"
+            }
+          },
+          {
+            "description": "Draw the question",
+            "methodName": "draw",
+            "type": "method-call",
+            "args": [
+              {
+                "selector": "#target1",
+                "type": "d3select"
+              }
+            ],
+            "instance": {
+              "domain": "brix",
+              "refId": "q1",
+              "type": "ref"
+            }
+          }
+        ]
+      }
+    ]
+  }
+}

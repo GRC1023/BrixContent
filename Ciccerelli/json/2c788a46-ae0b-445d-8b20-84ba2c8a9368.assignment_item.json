@@ -1,0 +1,187 @@
+{
+  "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope",
+  "@type": "Envelope",
+  "metadata": {
+    "guid": "2c788a46-ae0b-445d-8b20-84ba2c8a9368",
+    "title": "Ch10 ModuleQuiz10.4 Q2",
+    "version": "1.0",
+    "subject": [
+      "Psychology"
+    ],
+    "bookTitle": "Psychology",
+    "bookAuthor": "Saundra K. Ciccarelli; J. Noland White",
+    "contentTypeTier2": [
+      "AssessmentItem"
+    ],
+    "educationalAlignment": [
+      "http://purl.org/pearson/objectives/183725473384362"
+    ],
+    "format": [
+      "application/vnd.pearson.sanvan.v1.activity"
+    ],
+    "contentTypeTier1": "Assessment",
+    "keywords": [
+      "Ciccarelli 4e",
+      "Chapter 10",
+      "alick"
+    ],
+    "extendedMetadata": [
+      {
+        "name": "ISBN",
+        "value": "0133794652"
+      },
+      {
+        "name": "M",
+        "value": "m04"
+      },
+      {
+        "name": "assessment_title",
+        "value": "Quiz: Human Sexual Behavior (part 2)"
+      },
+      {
+        "name": "chapterTitle",
+        "value": "Sexuality and Gender"
+      },
+      {
+        "name": "module",
+        "value": "Human Sexual Behavior (part 2)"
+      },
+      {
+        "name": "item_title",
+        "value": "0133794652_Saundra K. Ciccarelli; J. Noland White_ch10_m04_q0002"
+      },
+      {
+        "name": "questionlayout",
+        "value": "1"
+      },
+      {
+        "name": "LearningObjective",
+        "value": ""
+      },
+      {
+        "name": "CH",
+        "value": "10"
+      },
+      {
+        "name": "shuffle_choices",
+        "value": "Yes"
+      }
+    ]
+  },
+  "body": {
+    "description": "Ch10_ModuleQuiz10.4_Q2",
+    "containerConfig": [
+      {
+        "description": "Ch10_ModuleQuiz10.4_Q2",
+        "containerId": "target1",
+        "brixConfig": [
+          {
+            "bricId": "q1",
+            "bricType": "MultipleChoiceQuestion",
+            "config": {
+              "id": "QUE57274",
+              "question": "In Kinsey’s original data, approximately ____________ of women reported being predominantly homosexual while as many as ____________ of men reported the same.\n\u003cbr /\u003e",
+              "order": "randomized",
+              "presenterType": "RadioGroup",
+              "presenterConfig": {
+                "numberFormat": "none"
+              },
+              "choices": [
+                {
+                  "answerKey": "answer_1",
+                  "content": "6 percent; 21 percent"
+                },
+                {
+                  "answerKey": "answer_2",
+                  "content": "6 to 14 percent; 46 percent"
+                },
+                {
+                  "answerKey": "answer_3",
+                  "content": "2 percent; 22 percent"
+                },
+                {
+                  "answerKey": "answer_4",
+                  "content": "2-6 percent; 10 percent"
+                }
+              ]
+            },
+            "answerKey": {
+              "assessmentType": "multiplechoice",
+              "answers": {
+                "answer_3": {
+                  "score": 0.0,
+                  "response": ""
+                },
+                "answer_2": {
+                  "score": 0.0,
+                  "response": ""
+                },
+                "answer_1": {
+                  "score": 0.0,
+                  "response": ""
+                },
+                "answer_4": {
+                  "score": 1.0,
+                  "response": ""
+                }
+              }
+            },
+            "configFixup": [
+              {
+                "name": "questionId",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "sequenceNodeKey",
+                  "type": "ref"
+                }
+              },
+              {
+                "name": "maxAttempts",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "maxAttempts",
+                  "type": "ref"
+                }
+              }
+            ]
+          }
+        ],
+        "hookupActions": [
+          {
+            "description": "Hookup the submit manager to evaluate answers",
+            "methodName": "handleRequestsFrom",
+            "type": "method-call",
+            "args": [
+              {
+                "domain": "brix",
+                "refId": "q1",
+                "type": "ref"
+              }
+            ],
+            "instance": {
+              "type": "submit-manager"
+            }
+          },
+          {
+            "description": "Draw the question",
+            "methodName": "draw",
+            "type": "method-call",
+            "args": [
+              {
+                "selector": "#target1",
+                "type": "d3select"
+              }
+            ],
+            "instance": {
+              "domain": "brix",
+              "refId": "q1",
+              "type": "ref"
+            }
+          }
+        ]
+      }
+    ]
+  }
+}

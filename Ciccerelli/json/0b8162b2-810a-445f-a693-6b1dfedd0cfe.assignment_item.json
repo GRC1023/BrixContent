@@ -1,0 +1,182 @@
+{
+  "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope",
+  "@type": "Envelope",
+  "metadata": {
+    "guid": "0b8162b2-810a-445f-a693-6b1dfedd0cfe",
+    "title": "Ch08 ModuleQuiz8.3 Q4",
+    "version": "1.0",
+    "subject": [
+      "Psychology"
+    ],
+    "bookTitle": "Psychology",
+    "bookAuthor": "Saundra K. Ciccarelli; J. Noland White",
+    "contentTypeTier2": [
+      "AssessmentItem"
+    ],
+    "educationalAlignment": [
+      "http://purl.org/pearson/objectives/183725473384362"
+    ],
+    "format": [
+      "application/vnd.pearson.sanvan.v1.activity"
+    ],
+    "contentTypeTier1": "Assessment",
+    "extendedMetadata": [
+      {
+        "name": "ISBN",
+        "value": "0133794652"
+      },
+      {
+        "name": "M",
+        "value": "m03"
+      },
+      {
+        "name": "assessment_title",
+        "value": "Quiz: Infancy and Child Dev (part 1)"
+      },
+      {
+        "name": "chapterTitle",
+        "value": "Development Across the Life Span"
+      },
+      {
+        "name": "module",
+        "value": "Infancy and Child Dev (part 1)"
+      },
+      {
+        "name": "item_title",
+        "value": "0133794652_Saundra K. Ciccarelli; J. Noland White_ch08_m03_q0004"
+      },
+      {
+        "name": "questionlayout",
+        "value": "1"
+      },
+      {
+        "name": "LearningObjective",
+        "value": ""
+      },
+      {
+        "name": "CH",
+        "value": "8"
+      },
+      {
+        "name": "shuffle_choices",
+        "value": "Yes"
+      }
+    ]
+  },
+  "body": {
+    "description": "Ch08_ModuleQuiz8.3_Q4",
+    "containerConfig": [
+      {
+        "description": "Ch08_ModuleQuiz8.3_Q4",
+        "containerId": "target1",
+        "brixConfig": [
+          {
+            "bricId": "q1",
+            "bricType": "MultipleChoiceQuestion",
+            "config": {
+              "id": "QUE57162",
+              "question": "Vygotsky defines __________ as the process of helping less as the learner improves at a given task.\n\u003cbr /\u003e",
+              "order": "randomized",
+              "presenterType": "RadioGroup",
+              "presenterConfig": {
+                "numberFormat": "none"
+              },
+              "choices": [
+                {
+                  "answerKey": "answer_1",
+                  "content": "scaffolding"
+                },
+                {
+                  "answerKey": "answer_2",
+                  "content": "habituation"
+                },
+                {
+                  "answerKey": "answer_3",
+                  "content": "zone of proximal development"
+                },
+                {
+                  "answerKey": "answer_4",
+                  "content": "metamemory"
+                }
+              ]
+            },
+            "answerKey": {
+              "assessmentType": "multiplechoice",
+              "answers": {
+                "answer_3": {
+                  "score": 0.0,
+                  "response": ""
+                },
+                "answer_2": {
+                  "score": 0.0,
+                  "response": ""
+                },
+                "answer_1": {
+                  "score": 1.0,
+                  "response": ""
+                },
+                "answer_4": {
+                  "score": 0.0,
+                  "response": ""
+                }
+              }
+            },
+            "configFixup": [
+              {
+                "name": "questionId",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "sequenceNodeKey",
+                  "type": "ref"
+                }
+              },
+              {
+                "name": "maxAttempts",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "maxAttempts",
+                  "type": "ref"
+                }
+              }
+            ]
+          }
+        ],
+        "hookupActions": [
+          {
+            "description": "Hookup the submit manager to evaluate answers",
+            "methodName": "handleRequestsFrom",
+            "type": "method-call",
+            "args": [
+              {
+                "domain": "brix",
+                "refId": "q1",
+                "type": "ref"
+              }
+            ],
+            "instance": {
+              "type": "submit-manager"
+            }
+          },
+          {
+            "description": "Draw the question",
+            "methodName": "draw",
+            "type": "method-call",
+            "args": [
+              {
+                "selector": "#target1",
+                "type": "d3select"
+              }
+            ],
+            "instance": {
+              "domain": "brix",
+              "refId": "q1",
+              "type": "ref"
+            }
+          }
+        ]
+      }
+    ]
+  }
+}

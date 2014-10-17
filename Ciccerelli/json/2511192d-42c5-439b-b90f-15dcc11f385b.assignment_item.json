@@ -1,0 +1,182 @@
+{
+  "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope",
+  "@type": "Envelope",
+  "metadata": {
+    "guid": "2511192d-42c5-439b-b90f-15dcc11f385b",
+    "title": "Ch07 ModuleQuiz7.3 Q6",
+    "version": "1.0",
+    "subject": [
+      "Psychology"
+    ],
+    "bookTitle": "Psychology",
+    "bookAuthor": "Saundra K. Ciccarelli; J. Noland White",
+    "contentTypeTier2": [
+      "AssessmentItem"
+    ],
+    "educationalAlignment": [
+      "http://purl.org/pearson/objectives/183725473384362"
+    ],
+    "format": [
+      "application/vnd.pearson.sanvan.v1.activity"
+    ],
+    "contentTypeTier1": "Assessment",
+    "extendedMetadata": [
+      {
+        "name": "ISBN",
+        "value": "0133794652"
+      },
+      {
+        "name": "M",
+        "value": "m03"
+      },
+      {
+        "name": "assessment_title",
+        "value": "Quiz: Intelligence (part 1)"
+      },
+      {
+        "name": "chapterTitle",
+        "value": "Cognition: Thinking, Intelligence, and Language"
+      },
+      {
+        "name": "module",
+        "value": "Intelligence (part 1)"
+      },
+      {
+        "name": "item_title",
+        "value": "0133794652_Saundra K. Ciccarelli; J. Noland White_ch07_m03_q0006"
+      },
+      {
+        "name": "questionlayout",
+        "value": "1"
+      },
+      {
+        "name": "LearningObjective",
+        "value": ""
+      },
+      {
+        "name": "CH",
+        "value": "7"
+      },
+      {
+        "name": "shuffle_choices",
+        "value": "Yes"
+      }
+    ]
+  },
+  "body": {
+    "description": "Ch07_ModuleQuiz7.3_Q6",
+    "containerConfig": [
+      {
+        "description": "Ch07_ModuleQuiz7.3_Q6",
+        "containerId": "target1",
+        "brixConfig": [
+          {
+            "bricId": "q1",
+            "bricType": "MultipleChoiceQuestion",
+            "config": {
+              "id": "QUE57087",
+              "question": "In terms of differing cultures, what should be the goal of every test designer?\n\u003cbr /\u003e",
+              "order": "randomized",
+              "presenterType": "RadioGroup",
+              "presenterConfig": {
+                "numberFormat": "none"
+              },
+              "choices": [
+                {
+                  "answerKey": "answer_1",
+                  "content": "to create a test free of cultural bias"
+                },
+                {
+                  "answerKey": "answer_2",
+                  "content": "to create a test that is culturally fair"
+                },
+                {
+                  "answerKey": "answer_3",
+                  "content": "to create a test with no questions involving culture"
+                },
+                {
+                  "answerKey": "answer_4",
+                  "content": "to create a series of culture-varied tests"
+                }
+              ]
+            },
+            "answerKey": {
+              "assessmentType": "multiplechoice",
+              "answers": {
+                "answer_3": {
+                  "score": 0.0,
+                  "response": ""
+                },
+                "answer_2": {
+                  "score": 1.0,
+                  "response": ""
+                },
+                "answer_1": {
+                  "score": 0.0,
+                  "response": ""
+                },
+                "answer_4": {
+                  "score": 0.0,
+                  "response": ""
+                }
+              }
+            },
+            "configFixup": [
+              {
+                "name": "questionId",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "sequenceNodeKey",
+                  "type": "ref"
+                }
+              },
+              {
+                "name": "maxAttempts",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "maxAttempts",
+                  "type": "ref"
+                }
+              }
+            ]
+          }
+        ],
+        "hookupActions": [
+          {
+            "description": "Hookup the submit manager to evaluate answers",
+            "methodName": "handleRequestsFrom",
+            "type": "method-call",
+            "args": [
+              {
+                "domain": "brix",
+                "refId": "q1",
+                "type": "ref"
+              }
+            ],
+            "instance": {
+              "type": "submit-manager"
+            }
+          },
+          {
+            "description": "Draw the question",
+            "methodName": "draw",
+            "type": "method-call",
+            "args": [
+              {
+                "selector": "#target1",
+                "type": "d3select"
+              }
+            ],
+            "instance": {
+              "domain": "brix",
+              "refId": "q1",
+              "type": "ref"
+            }
+          }
+        ]
+      }
+    ]
+  }
+}

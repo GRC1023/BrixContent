@@ -1,0 +1,182 @@
+{
+  "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope",
+  "@type": "Envelope",
+  "metadata": {
+    "guid": "9c72de01-9bc1-405d-acd0-7f2e7b7a7be1",
+    "title": "Ch00 ChapterQuizIntro Q10",
+    "version": "1.0",
+    "subject": [
+      "Psychology"
+    ],
+    "bookTitle": "Psychology",
+    "bookAuthor": "Saundra K. Ciccarelli; J. Noland White",
+    "contentTypeTier2": [
+      "AssessmentItem"
+    ],
+    "educationalAlignment": [
+      "http://purl.org/pearson/objectives/183725473384362"
+    ],
+    "format": [
+      "application/vnd.pearson.sanvan.v1.activity"
+    ],
+    "contentTypeTier1": "Assessment",
+    "keywords": [
+      "Ciccarelli 4e",
+      "Chapter Introduction (00)"
+    ],
+    "extendedMetadata": [
+      {
+        "name": "ISBN",
+        "value": "0133794652"
+      },
+      {
+        "name": "M",
+        "value": "c01"
+      },
+      {
+        "name": "assessment_title",
+        "value": "Chapter Quiz: Psychology in Action"
+      },
+      {
+        "name": "chapterTitle",
+        "value": "Psychology in Action"
+      },
+      {
+        "name": "item_title",
+        "value": "0133794652_Saundra K. Ciccarelli; J. Noland White_ch00_c01_q0010"
+      },
+      {
+        "name": "questionlayout",
+        "value": "1"
+      },
+      {
+        "name": "LearningObjective",
+        "value": ""
+      },
+      {
+        "name": "CH",
+        "value": "0"
+      },
+      {
+        "name": "shuffle_choices",
+        "value": "Yes"
+      }
+    ]
+  },
+  "body": {
+    "description": "Ch00_ChapterQuizIntro_Q10",
+    "containerConfig": [
+      {
+        "description": "Ch00_ChapterQuizIntro_Q10",
+        "containerId": "target1",
+        "brixConfig": [
+          {
+            "bricId": "q1",
+            "bricType": "MultipleChoiceQuestion",
+            "config": {
+              "id": "QUE56764",
+              "question": "Keela has finished a draft of her research paper almost two weeks before the date it is due. What should she do now?\n\u003cbr /\u003e",
+              "order": "randomized",
+              "presenterType": "RadioGroup",
+              "presenterConfig": {
+                "numberFormat": "none"
+              },
+              "choices": [
+                {
+                  "answerKey": "answer_1",
+                  "content": "Let it sit for a few days before reviewing it."
+                },
+                {
+                  "answerKey": "answer_2",
+                  "content": "Complete the final draft immediately while the material is still fresh in her head."
+                },
+                {
+                  "answerKey": "answer_3",
+                  "content": "Hand in her rough draft as if it were the final draft. Most students tend to make their paper worse when they revise it."
+                },
+                {
+                  "answerKey": "answer_4",
+                  "content": "Keela needs to start again, since papers finished early tend not to be well written."
+                }
+              ]
+            },
+            "answerKey": {
+              "assessmentType": "multiplechoice",
+              "answers": {
+                "answer_3": {
+                  "score": 0.0,
+                  "response": "Consider this: Sometimes a little time and distance from the work we\u0027ve done helps us gain some perspective and see how it can/should be changed and improved. L.O. PIA.6: What are the key steps in writing papers for college?"
+                },
+                "answer_2": {
+                  "score": 0.0,
+                  "response": "Consider this: Sometimes a little time and distance from the work we\u0027ve done helps us gain some perspective and see how it can/should be changed and improved. L.O. PIA.6: What are the key steps in writing papers for college?"
+                },
+                "answer_1": {
+                  "score": 1.0,
+                  "response": ""
+                },
+                "answer_4": {
+                  "score": 0.0,
+                  "response": "Consider this: Sometimes a little time and distance from the work we\u0027ve done helps us gain some perspective and see how it can/should be changed and improved. L.O. PIA.6: What are the key steps in writing papers for college?"
+                }
+              }
+            },
+            "configFixup": [
+              {
+                "name": "questionId",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "sequenceNodeKey",
+                  "type": "ref"
+                }
+              },
+              {
+                "name": "maxAttempts",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "maxAttempts",
+                  "type": "ref"
+                }
+              }
+            ]
+          }
+        ],
+        "hookupActions": [
+          {
+            "description": "Hookup the submit manager to evaluate answers",
+            "methodName": "handleRequestsFrom",
+            "type": "method-call",
+            "args": [
+              {
+                "domain": "brix",
+                "refId": "q1",
+                "type": "ref"
+              }
+            ],
+            "instance": {
+              "type": "submit-manager"
+            }
+          },
+          {
+            "description": "Draw the question",
+            "methodName": "draw",
+            "type": "method-call",
+            "args": [
+              {
+                "selector": "#target1",
+                "type": "d3select"
+              }
+            ],
+            "instance": {
+              "domain": "brix",
+              "refId": "q1",
+              "type": "ref"
+            }
+          }
+        ]
+      }
+    ]
+  }
+}

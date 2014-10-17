@@ -1,0 +1,191 @@
+{
+  "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope",
+  "@type": "Envelope",
+  "metadata": {
+    "guid": "a1efbcec-fea1-4aba-a893-89283c55e4b6",
+    "title": "EOM Quiz 3.4 05",
+    "version": "1.0",
+    "subject": [
+      "Psychology"
+    ],
+    "bookTitle": "Psychology",
+    "bookAuthor": "Amy J. Marin",
+    "contentTypeTier2": [
+      "AssessmentItem"
+    ],
+    "educationalAlignment": [
+      "http://purl.org/pearson/objectives/183725473384362"
+    ],
+    "format": [
+      "application/vnd.pearson.sanvan.v1.activity"
+    ],
+    "contentTypeTier1": "Assessment",
+    "keywords": [
+      "Marin",
+      "Ch03",
+      "EOM03"
+    ],
+    "extendedMetadata": [
+      {
+        "name": "chapterTitle",
+        "value": "Sensation and Perception"
+      },
+      {
+        "name": "module",
+        "value": "Perceptual Interpretation"
+      },
+      {
+        "name": "ISBN",
+        "value": "0205010415"
+      },
+      {
+        "name": "item_title",
+        "value": "0205010415_Amy J. Marin_ch03_m04_q0005"
+      },
+      {
+        "name": "M",
+        "value": "m04"
+      },
+      {
+        "name": "CH",
+        "value": "03"
+      },
+      {
+        "name": "skill",
+        "value": "Understand the Concepts"
+      },
+      {
+        "name": "assessment_title",
+        "value": "Quiz: Perceptual Interpretation"
+      },
+      {
+        "name": "Topic",
+        "value": "Perceptual Learning"
+      },
+      {
+        "name": "Difficulty",
+        "value": "Easy"
+      },
+      {
+        "name": "Objective",
+        "value": "LO 3.4a Describe what is meant by perceptual learning, and understand the role that past experience plays in perception."
+      }
+    ]
+  },
+  "body": {
+    "description": "EOM Quiz 3.4-05",
+    "containerConfig": [
+      {
+        "description": "EOM Quiz 3.4-05",
+        "containerId": "target1",
+        "brixConfig": [
+          {
+            "bricId": "q1",
+            "bricType": "MultipleChoiceQuestion",
+            "config": {
+              "id": "QUE72864",
+              "question": "When you look at a drawing that can be interpreted in two distinct ways, the way you see it first is likely influenced by your\n\u003cbr /\u003e",
+              "order": "randomized",
+              "presenterType": "RadioGroup",
+              "presenterConfig": {
+                "numberFormat": "none"
+              },
+              "choices": [
+                {
+                  "answerKey": "answer_1",
+                  "content": "perceptual set"
+                },
+                {
+                  "answerKey": "answer_2",
+                  "content": "sensory processing"
+                },
+                {
+                  "answerKey": "answer_3",
+                  "content": "perceptual sensitivity"
+                },
+                {
+                  "answerKey": "answer_4",
+                  "content": "visual cues"
+                }
+              ]
+            },
+            "answerKey": {
+              "assessmentType": "multiplechoice",
+              "answers": {
+                "answer_3": {
+                  "score": 0.0,
+                  "response": "Consider This: Perceptual set is the expectation of a person to see or perceive something based on prior experience, LO 3.4a Describe what is meant by perceptual learning, and understand the role that past experience plays in perception."
+                },
+                "answer_2": {
+                  "score": 0.0,
+                  "response": "Consider This: Perceptual set is the expectation of a person to see or perceive something based on prior experience, LO 3.4a Describe what is meant by perceptual learning, and understand the role that past experience plays in perception."
+                },
+                "answer_1": {
+                  "score": 1.0,
+                  "response": ""
+                },
+                "answer_4": {
+                  "score": 0.0,
+                  "response": "Consider This: Perceptual set is the expectation of a person to see or perceive something based on prior experience, LO 3.4a Describe what is meant by perceptual learning, and understand the role that past experience plays in perception."
+                }
+              }
+            },
+            "configFixup": [
+              {
+                "name": "questionId",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "sequenceNodeKey",
+                  "type": "ref"
+                }
+              },
+              {
+                "name": "maxAttempts",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "maxAttempts",
+                  "type": "ref"
+                }
+              }
+            ]
+          }
+        ],
+        "hookupActions": [
+          {
+            "description": "Hookup the submit manager to evaluate answers",
+            "methodName": "handleRequestsFrom",
+            "type": "method-call",
+            "args": [
+              {
+                "domain": "brix",
+                "refId": "q1",
+                "type": "ref"
+              }
+            ],
+            "instance": {
+              "type": "submit-manager"
+            }
+          },
+          {
+            "description": "Draw the question",
+            "methodName": "draw",
+            "type": "method-call",
+            "args": [
+              {
+                "selector": "#target1",
+                "type": "d3select"
+              }
+            ],
+            "instance": {
+              "domain": "brix",
+              "refId": "q1",
+              "type": "ref"
+            }
+          }
+        ]
+      }
+    ]
+  }
+}

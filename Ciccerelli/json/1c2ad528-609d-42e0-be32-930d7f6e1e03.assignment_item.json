@@ -1,0 +1,191 @@
+{
+  "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope",
+  "@type": "Envelope",
+  "metadata": {
+    "guid": "1c2ad528-609d-42e0-be32-930d7f6e1e03",
+    "title": " EOM Quiz 3.2 03",
+    "version": "1.0",
+    "subject": [
+      "Psychology"
+    ],
+    "bookTitle": "Psychology",
+    "bookAuthor": "Amy J. Marin",
+    "contentTypeTier2": [
+      "AssessmentItem"
+    ],
+    "educationalAlignment": [
+      "http://purl.org/pearson/objectives/183725473384362"
+    ],
+    "format": [
+      "application/vnd.pearson.sanvan.v1.activity"
+    ],
+    "contentTypeTier1": "Assessment",
+    "keywords": [
+      "Marin",
+      "Ch03",
+      "EOM03"
+    ],
+    "extendedMetadata": [
+      {
+        "name": "chapterTitle",
+        "value": "Sensation and Perception"
+      },
+      {
+        "name": "module",
+        "value": "Your Sensory Equipment"
+      },
+      {
+        "name": "ISBN",
+        "value": "0205010415"
+      },
+      {
+        "name": "item_title",
+        "value": "0205010415_Amy J. Marin_ch03_m02_q0003"
+      },
+      {
+        "name": "M",
+        "value": "m02"
+      },
+      {
+        "name": "CH",
+        "value": "03"
+      },
+      {
+        "name": "skill",
+        "value": "Remember the Facts"
+      },
+      {
+        "name": "assessment_title",
+        "value": "Quiz: Your Sensory Equipment"
+      },
+      {
+        "name": "Topic",
+        "value": "Hearing"
+      },
+      {
+        "name": "Difficulty",
+        "value": "Medium"
+      },
+      {
+        "name": "Objective",
+        "value": "LO 3.2b Identify the structures in the ear, and describe how hearing works."
+      }
+    ]
+  },
+  "body": {
+    "description": "EOM Quiz 3.2-03",
+    "containerConfig": [
+      {
+        "description": "EOM Quiz 3.2-03",
+        "containerId": "target1",
+        "brixConfig": [
+          {
+            "bricId": "q1",
+            "bricType": "MultipleChoiceQuestion",
+            "config": {
+              "id": "QUE72847",
+              "question": "Which of the following receptor cells, once lost or damaged, can never be replaced?\n\u003cbr /\u003e",
+              "order": "randomized",
+              "presenterType": "RadioGroup",
+              "presenterConfig": {
+                "numberFormat": "none"
+              },
+              "choices": [
+                {
+                  "answerKey": "answer_1",
+                  "content": "olfactory receptor cells in the nose"
+                },
+                {
+                  "answerKey": "answer_2",
+                  "content": "hair cells in the inner ear"
+                },
+                {
+                  "answerKey": "answer_3",
+                  "content": "taste receptor cells on the tongue"
+                },
+                {
+                  "answerKey": "answer_4",
+                  "content": "skin cells on the fingers "
+                }
+              ]
+            },
+            "answerKey": {
+              "assessmentType": "multiplechoice",
+              "answers": {
+                "answer_3": {
+                  "score": 0.0,
+                  "response": "Consider This: Unfortunately, the tiny hair cells in the cochlea do not regenerate, so once they’re lost, they are gone forever, LO 3.2b Identify the structures in the ear, and describe how hearing works."
+                },
+                "answer_2": {
+                  "score": 1.0,
+                  "response": ""
+                },
+                "answer_1": {
+                  "score": 0.0,
+                  "response": "Consider This: Unfortunately, the tiny hair cells in the cochlea do not regenerate, so once they’re lost, they are gone forever, LO 3.2b Identify the structures in the ear, and describe how hearing works"
+                },
+                "answer_4": {
+                  "score": 0.0,
+                  "response": "Consider This: Unfortunately, the tiny hair cells in the cochlea do not regenerate, so once they’re lost, they are gone forever, LO 3.2b Identify the structures in the ear, and describe how hearing works"
+                }
+              }
+            },
+            "configFixup": [
+              {
+                "name": "questionId",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "sequenceNodeKey",
+                  "type": "ref"
+                }
+              },
+              {
+                "name": "maxAttempts",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "maxAttempts",
+                  "type": "ref"
+                }
+              }
+            ]
+          }
+        ],
+        "hookupActions": [
+          {
+            "description": "Hookup the submit manager to evaluate answers",
+            "methodName": "handleRequestsFrom",
+            "type": "method-call",
+            "args": [
+              {
+                "domain": "brix",
+                "refId": "q1",
+                "type": "ref"
+              }
+            ],
+            "instance": {
+              "type": "submit-manager"
+            }
+          },
+          {
+            "description": "Draw the question",
+            "methodName": "draw",
+            "type": "method-call",
+            "args": [
+              {
+                "selector": "#target1",
+                "type": "d3select"
+              }
+            ],
+            "instance": {
+              "domain": "brix",
+              "refId": "q1",
+              "type": "ref"
+            }
+          }
+        ]
+      }
+    ]
+  }
+}

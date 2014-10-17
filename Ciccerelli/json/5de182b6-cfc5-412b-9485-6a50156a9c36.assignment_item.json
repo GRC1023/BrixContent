@@ -1,0 +1,178 @@
+{
+  "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope",
+  "@type": "Envelope",
+  "metadata": {
+    "guid": "5de182b6-cfc5-412b-9485-6a50156a9c36",
+    "title": "Ch08 ChapterQuiz8 Q16",
+    "version": "1.0",
+    "subject": [
+      "Psychology"
+    ],
+    "bookTitle": "Psychology",
+    "bookAuthor": "Saundra K. Ciccarelli; J. Noland White",
+    "contentTypeTier2": [
+      "AssessmentItem"
+    ],
+    "educationalAlignment": [
+      "http://purl.org/pearson/objectives/183725473384362"
+    ],
+    "format": [
+      "application/vnd.pearson.sanvan.v1.activity"
+    ],
+    "contentTypeTier1": "Assessment",
+    "extendedMetadata": [
+      {
+        "name": "ISBN",
+        "value": "0133794652"
+      },
+      {
+        "name": "M",
+        "value": "c01"
+      },
+      {
+        "name": "assessment_title",
+        "value": "Chapter Quiz: Development Across the Life Span"
+      },
+      {
+        "name": "chapterTitle",
+        "value": "Development Across the Life Span"
+      },
+      {
+        "name": "item_title",
+        "value": "0133794652_Saundra K. Ciccarelli; J. Noland White_ch08_c01_q0016"
+      },
+      {
+        "name": "questionlayout",
+        "value": "1"
+      },
+      {
+        "name": "LearningObjective",
+        "value": ""
+      },
+      {
+        "name": "CH",
+        "value": "8"
+      },
+      {
+        "name": "shuffle_choices",
+        "value": "Yes"
+      }
+    ]
+  },
+  "body": {
+    "description": "Ch08_ChapterQuiz8_Q16",
+    "containerConfig": [
+      {
+        "description": "Ch08_ChapterQuiz8_Q16",
+        "containerId": "target1",
+        "brixConfig": [
+          {
+            "bricId": "q1",
+            "bricType": "MultipleChoiceQuestion",
+            "config": {
+              "id": "QUE57108",
+              "question": "What cognitive changes occurring during middle adulthood are the most noticeable?\n\u003cbr /\u003e",
+              "order": "randomized",
+              "presenterType": "RadioGroup",
+              "presenterConfig": {
+                "numberFormat": "none"
+              },
+              "choices": [
+                {
+                  "answerKey": "answer_1",
+                  "content": "Changes in memory begin to occur."
+                },
+                {
+                  "answerKey": "answer_2",
+                  "content": "Problem-solving skills diminish."
+                },
+                {
+                  "answerKey": "answer_3",
+                  "content": "Hearing begins to decline."
+                },
+                {
+                  "answerKey": "answer_4",
+                  "content": "Hair begins to turn gray."
+                }
+              ]
+            },
+            "answerKey": {
+              "assessmentType": "multiplechoice",
+              "answers": {
+                "answer_3": {
+                  "score": 0.0,
+                  "response": "Consider this: Despite common fears, slight changes or declines in this particular area do not always indicate that a person is developing Alzheimer\u0027s disease. Some decline is considered age-appropriate and normal. L.O. 8.9: What are the physical, cognitive, and personality changes that occur during adulthood and aging, including Erikson’s last three psychosocial stages, and patterns of parenting?"
+                },
+                "answer_2": {
+                  "score": 0.0,
+                  "response": "Consider this: Despite common fears, slight changes or declines in this particular area do not always indicate that a person is developing Alzheimer\u0027s disease. Some decline is considered age-appropriate and normal. L.O. 8.9: What are the physical, cognitive, and personality changes that occur during adulthood and aging, including Erikson’s last three psychosocial stages, and patterns of parenting?"
+                },
+                "answer_1": {
+                  "score": 1.0,
+                  "response": ""
+                },
+                "answer_4": {
+                  "score": 0.0,
+                  "response": "Consider this: Despite common fears, slight changes or declines in this particular area do not always indicate that a person is developing Alzheimer\u0027s disease. Some decline is considered age-appropriate and normal. L.O. 8.9: What are the physical, cognitive, and personality changes that occur during adulthood and aging, including Erikson’s last three psychosocial stages, and patterns of parenting?"
+                }
+              }
+            },
+            "configFixup": [
+              {
+                "name": "questionId",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "sequenceNodeKey",
+                  "type": "ref"
+                }
+              },
+              {
+                "name": "maxAttempts",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "maxAttempts",
+                  "type": "ref"
+                }
+              }
+            ]
+          }
+        ],
+        "hookupActions": [
+          {
+            "description": "Hookup the submit manager to evaluate answers",
+            "methodName": "handleRequestsFrom",
+            "type": "method-call",
+            "args": [
+              {
+                "domain": "brix",
+                "refId": "q1",
+                "type": "ref"
+              }
+            ],
+            "instance": {
+              "type": "submit-manager"
+            }
+          },
+          {
+            "description": "Draw the question",
+            "methodName": "draw",
+            "type": "method-call",
+            "args": [
+              {
+                "selector": "#target1",
+                "type": "d3select"
+              }
+            ],
+            "instance": {
+              "domain": "brix",
+              "refId": "q1",
+              "type": "ref"
+            }
+          }
+        ]
+      }
+    ]
+  }
+}

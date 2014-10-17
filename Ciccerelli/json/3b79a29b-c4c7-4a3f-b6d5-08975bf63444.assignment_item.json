@@ -1,0 +1,182 @@
+{
+  "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope",
+  "@type": "Envelope",
+  "metadata": {
+    "guid": "3b79a29b-c4c7-4a3f-b6d5-08975bf63444",
+    "title": "Ch05 ChapterQuiz5 Q14",
+    "version": "1.0",
+    "subject": [
+      "Psychology"
+    ],
+    "bookTitle": "Psychology",
+    "bookAuthor": "Saundra K. Ciccarelli; J. Noland White",
+    "contentTypeTier2": [
+      "AssessmentItem"
+    ],
+    "educationalAlignment": [
+      "http://purl.org/pearson/objectives/183725473384362"
+    ],
+    "format": [
+      "application/vnd.pearson.sanvan.v1.activity"
+    ],
+    "contentTypeTier1": "Assessment",
+    "keywords": [
+      "Ciccarelli 4e",
+      "Chapter 05"
+    ],
+    "extendedMetadata": [
+      {
+        "name": "ISBN",
+        "value": "0133794652"
+      },
+      {
+        "name": "M",
+        "value": "c01"
+      },
+      {
+        "name": "assessment_title",
+        "value": "Quiz: Learning"
+      },
+      {
+        "name": "chapterTitle",
+        "value": "Learning"
+      },
+      {
+        "name": "item_title",
+        "value": "0133794652_Saundra K. Ciccarelli; J. Noland White_ch05_c01_q0014"
+      },
+      {
+        "name": "questionlayout",
+        "value": "1"
+      },
+      {
+        "name": "LearningObjective",
+        "value": ""
+      },
+      {
+        "name": "CH",
+        "value": "5"
+      },
+      {
+        "name": "shuffle_choices",
+        "value": "Yes"
+      }
+    ]
+  },
+  "body": {
+    "description": "Ch05_ChapterQuiz5_Q14",
+    "containerConfig": [
+      {
+        "description": "Ch05_ChapterQuiz5_Q14",
+        "containerId": "target1",
+        "brixConfig": [
+          {
+            "bricId": "q1",
+            "bricType": "MultipleChoiceQuestion",
+            "config": {
+              "id": "QUE56924",
+              "question": "What is the relationship between negative reinforcement and punishment?\n\u003cbr /\u003e",
+              "order": "randomized",
+              "presenterType": "RadioGroup",
+              "presenterConfig": {
+                "numberFormat": "none"
+              },
+              "choices": [
+                {
+                  "answerKey": "answer_1",
+                  "content": "Both tend to strengthen a response."
+                },
+                {
+                  "answerKey": "answer_2",
+                  "content": "Both tend to weaken a response."
+                },
+                {
+                  "answerKey": "answer_3",
+                  "content": "Negative reinforcement strengthens a response while punishment weakens a response."
+                },
+                {
+                  "answerKey": "answer_4",
+                  "content": "Negative reinforcement weakens a response while punishment strengthens a response."
+                }
+              ]
+            },
+            "answerKey": {
+              "assessmentType": "multiplechoice",
+              "answers": {
+                "answer_3": {
+                  "score": 1.0,
+                  "response": ""
+                },
+                "answer_2": {
+                  "score": 0.0,
+                  "response": "Consider this: Punishment teaches someone what \n\u003cem\u003enot\u003c/em\u003e to do, while reinforcement teaches someone what \n\u003cem\u003eto\u003c/em\u003e do. L.O. 5.7: What is punishment and how does it differ from reinforcement?"
+                },
+                "answer_1": {
+                  "score": 0.0,
+                  "response": "Consider this: Punishment teaches someone what \n\u003cem\u003enot\u003c/em\u003e to do, while reinforcement teaches someone what \n\u003cem\u003eto\u003c/em\u003e do. L.O. 5.7: What is punishment and how does it differ from reinforcement?"
+                },
+                "answer_4": {
+                  "score": 0.0,
+                  "response": "Consider this: Punishment teaches someone what \n\u003cem\u003enot\u003c/em\u003e to do, while reinforcement teaches someone what \n\u003cem\u003eto\u003c/em\u003e do. L.O. 5.7: What is punishment and how does it differ from reinforcement?"
+                }
+              }
+            },
+            "configFixup": [
+              {
+                "name": "questionId",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "sequenceNodeKey",
+                  "type": "ref"
+                }
+              },
+              {
+                "name": "maxAttempts",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "maxAttempts",
+                  "type": "ref"
+                }
+              }
+            ]
+          }
+        ],
+        "hookupActions": [
+          {
+            "description": "Hookup the submit manager to evaluate answers",
+            "methodName": "handleRequestsFrom",
+            "type": "method-call",
+            "args": [
+              {
+                "domain": "brix",
+                "refId": "q1",
+                "type": "ref"
+              }
+            ],
+            "instance": {
+              "type": "submit-manager"
+            }
+          },
+          {
+            "description": "Draw the question",
+            "methodName": "draw",
+            "type": "method-call",
+            "args": [
+              {
+                "selector": "#target1",
+                "type": "d3select"
+              }
+            ],
+            "instance": {
+              "domain": "brix",
+              "refId": "q1",
+              "type": "ref"
+            }
+          }
+        ]
+      }
+    ]
+  }
+}

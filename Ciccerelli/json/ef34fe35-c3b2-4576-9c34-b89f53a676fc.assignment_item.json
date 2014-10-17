@@ -1,0 +1,183 @@
+{
+  "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope",
+  "@type": "Envelope",
+  "metadata": {
+    "guid": "ef34fe35-c3b2-4576-9c34-b89f53a676fc",
+    "title": "Ch03 ChapterQuiz3 Q6",
+    "version": "1.0",
+    "subject": [
+      "Psychology"
+    ],
+    "bookTitle": "Psychology",
+    "bookAuthor": "Saundra K. Ciccarelli; J. Noland White",
+    "contentTypeTier2": [
+      "AssessmentItem"
+    ],
+    "educationalAlignment": [
+      "http://purl.org/pearson/objectives/183725473384362"
+    ],
+    "format": [
+      "application/vnd.pearson.sanvan.v1.activity"
+    ],
+    "contentTypeTier1": "Assessment",
+    "keywords": [
+      "ciccarelli 4e",
+      "chapter 03",
+      "alick"
+    ],
+    "extendedMetadata": [
+      {
+        "name": "ISBN",
+        "value": "0133794652"
+      },
+      {
+        "name": "M",
+        "value": "c01"
+      },
+      {
+        "name": "assessment_title",
+        "value": "Chapter Quiz: Sensation and Perception"
+      },
+      {
+        "name": "chapterTitle",
+        "value": "Sensation and Perception"
+      },
+      {
+        "name": "item_title",
+        "value": "0133794652_Saundra K. Ciccarelli; J. Noland White_ch03_c01_q0006"
+      },
+      {
+        "name": "questionlayout",
+        "value": "1"
+      },
+      {
+        "name": "LearningObjective",
+        "value": ""
+      },
+      {
+        "name": "CH",
+        "value": "3"
+      },
+      {
+        "name": "shuffle_choices",
+        "value": "Yes"
+      }
+    ]
+  },
+  "body": {
+    "description": "Ch03_ChapterQuiz3_Q6",
+    "containerConfig": [
+      {
+        "description": "Ch03_ChapterQuiz3_Q6",
+        "containerId": "target1",
+        "brixConfig": [
+          {
+            "bricId": "q1",
+            "bricType": "MultipleChoiceQuestion",
+            "config": {
+              "id": "QUE56864",
+              "question": "What part of the eye hardens as we age thus causing many to suffer from presbyopia?\n\u003cbr /\u003e",
+              "order": "randomized",
+              "presenterType": "RadioGroup",
+              "presenterConfig": {
+                "numberFormat": "none"
+              },
+              "choices": [
+                {
+                  "answerKey": "answer_1",
+                  "content": "rods"
+                },
+                {
+                  "answerKey": "answer_2",
+                  "content": "cones"
+                },
+                {
+                  "answerKey": "answer_3",
+                  "content": "lens"
+                },
+                {
+                  "answerKey": "answer_4",
+                  "content": "vitreous humor"
+                }
+              ]
+            },
+            "answerKey": {
+              "assessmentType": "multiplechoice",
+              "answers": {
+                "answer_3": {
+                  "score": 1.0,
+                  "response": ""
+                },
+                "answer_2": {
+                  "score": 0.0,
+                  "response": "Consider this: This condition, commonly referred to as \"old eyes,\" impacts the ability of this eye structure to change in its thickness. L.O. 3.2: What is light, and how does it travel through the various parts of the eye?"
+                },
+                "answer_1": {
+                  "score": 0.0,
+                  "response": "Consider this: This condition, commonly referred to as \"old eyes,\" impacts the ability of this eye structure to change in its thickness. L.O. 3.2: What is light, and how does it travel through the various parts of the eye?"
+                },
+                "answer_4": {
+                  "score": 0.0,
+                  "response": "Consider this: This condition, commonly referred to as \"old eyes,\" impacts the ability of this eye structure to change in its thickness. L.O. 3.2: What is light, and how does it travel through the various parts of the eye?"
+                }
+              }
+            },
+            "configFixup": [
+              {
+                "name": "questionId",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "sequenceNodeKey",
+                  "type": "ref"
+                }
+              },
+              {
+                "name": "maxAttempts",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "maxAttempts",
+                  "type": "ref"
+                }
+              }
+            ]
+          }
+        ],
+        "hookupActions": [
+          {
+            "description": "Hookup the submit manager to evaluate answers",
+            "methodName": "handleRequestsFrom",
+            "type": "method-call",
+            "args": [
+              {
+                "domain": "brix",
+                "refId": "q1",
+                "type": "ref"
+              }
+            ],
+            "instance": {
+              "type": "submit-manager"
+            }
+          },
+          {
+            "description": "Draw the question",
+            "methodName": "draw",
+            "type": "method-call",
+            "args": [
+              {
+                "selector": "#target1",
+                "type": "d3select"
+              }
+            ],
+            "instance": {
+              "domain": "brix",
+              "refId": "q1",
+              "type": "ref"
+            }
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,182 @@
+{
+  "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope",
+  "@type": "Envelope",
+  "metadata": {
+    "guid": "b4078d79-a4bf-4223-a8ea-a4572b02252c",
+    "title": "Ch05 ChapterQuiz5 Q6",
+    "version": "1.0",
+    "subject": [
+      "Psychology"
+    ],
+    "bookTitle": "Psychology",
+    "bookAuthor": "Saundra K. Ciccarelli; J. Noland White",
+    "contentTypeTier2": [
+      "AssessmentItem"
+    ],
+    "educationalAlignment": [
+      "http://purl.org/pearson/objectives/183725473384362"
+    ],
+    "format": [
+      "application/vnd.pearson.sanvan.v1.activity"
+    ],
+    "contentTypeTier1": "Assessment",
+    "keywords": [
+      "Ciccarelli 4e",
+      "Chapter 05"
+    ],
+    "extendedMetadata": [
+      {
+        "name": "ISBN",
+        "value": "0133794652"
+      },
+      {
+        "name": "M",
+        "value": "c01"
+      },
+      {
+        "name": "assessment_title",
+        "value": "Quiz: Learning"
+      },
+      {
+        "name": "chapterTitle",
+        "value": "Learning"
+      },
+      {
+        "name": "item_title",
+        "value": "0133794652_Saundra K. Ciccarelli; J. Noland White_ch05_c01_q0006"
+      },
+      {
+        "name": "questionlayout",
+        "value": "1"
+      },
+      {
+        "name": "LearningObjective",
+        "value": ""
+      },
+      {
+        "name": "CH",
+        "value": "5"
+      },
+      {
+        "name": "shuffle_choices",
+        "value": "Yes"
+      }
+    ]
+  },
+  "body": {
+    "description": "Ch05_ChapterQuiz5_Q6",
+    "containerConfig": [
+      {
+        "description": "Ch05_ChapterQuiz5_Q6",
+        "containerId": "target1",
+        "brixConfig": [
+          {
+            "bricId": "q1",
+            "bricType": "MultipleChoiceQuestion",
+            "config": {
+              "id": "QUE56916",
+              "question": "Caitlin works in the psychology department’s rat lab. In her studies, she found that many of her lab rats would develop a conditioned taste aversion to certain foods after as little as one trial. Caitlin’s psychology professor refers to this as a classic example of\n\u003cbr /\u003e",
+              "order": "randomized",
+              "presenterType": "RadioGroup",
+              "presenterConfig": {
+                "numberFormat": "none"
+              },
+              "choices": [
+                {
+                  "answerKey": "answer_1",
+                  "content": "biological preparedness."
+                },
+                {
+                  "answerKey": "answer_2",
+                  "content": "psychological preparedness."
+                },
+                {
+                  "answerKey": "answer_3",
+                  "content": "instinctive drift."
+                },
+                {
+                  "answerKey": "answer_4",
+                  "content": "stimulus substitution."
+                }
+              ]
+            },
+            "answerKey": {
+              "assessmentType": "multiplechoice",
+              "answers": {
+                "answer_3": {
+                  "score": 0.0,
+                  "response": "Consider this: Birds, who find their food by sight, will avoid any object that simply looks like the one that made them sick. Mammals associate taste with illness and birds associate visual characteristics with illness. L.O. 5.3: What is a conditioned emotional response, and how do cognitive psychologists explain classical conditioning?"
+                },
+                "answer_2": {
+                  "score": 0.0,
+                  "response": "Consider this: Birds, who find their food by sight, will avoid any object that simply looks like the one that made them sick. Mammals associate taste with illness and birds associate visual characteristics with illness. L.O. 5.3: What is a conditioned emotional response, and how do cognitive psychologists explain classical conditioning?"
+                },
+                "answer_1": {
+                  "score": 1.0,
+                  "response": ""
+                },
+                "answer_4": {
+                  "score": 0.0,
+                  "response": "Consider this: Birds, who find their food by sight, will avoid any object that simply looks like the one that made them sick. Mammals associate taste with illness and birds associate visual characteristics with illness. L.O. 5.3: What is a conditioned emotional response, and how do cognitive psychologists explain classical conditioning?"
+                }
+              }
+            },
+            "configFixup": [
+              {
+                "name": "questionId",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "sequenceNodeKey",
+                  "type": "ref"
+                }
+              },
+              {
+                "name": "maxAttempts",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "maxAttempts",
+                  "type": "ref"
+                }
+              }
+            ]
+          }
+        ],
+        "hookupActions": [
+          {
+            "description": "Hookup the submit manager to evaluate answers",
+            "methodName": "handleRequestsFrom",
+            "type": "method-call",
+            "args": [
+              {
+                "domain": "brix",
+                "refId": "q1",
+                "type": "ref"
+              }
+            ],
+            "instance": {
+              "type": "submit-manager"
+            }
+          },
+          {
+            "description": "Draw the question",
+            "methodName": "draw",
+            "type": "method-call",
+            "args": [
+              {
+                "selector": "#target1",
+                "type": "d3select"
+              }
+            ],
+            "instance": {
+              "domain": "brix",
+              "refId": "q1",
+              "type": "ref"
+            }
+          }
+        ]
+      }
+    ]
+  }
+}

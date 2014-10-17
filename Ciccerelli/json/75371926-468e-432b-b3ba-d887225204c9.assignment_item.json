@@ -1,0 +1,183 @@
+{
+  "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope",
+  "@type": "Envelope",
+  "metadata": {
+    "guid": "75371926-468e-432b-b3ba-d887225204c9",
+    "title": "Ch10 ChapterQuiz10 Q20",
+    "version": "1.0",
+    "subject": [
+      "Psychology"
+    ],
+    "bookTitle": "Psychology",
+    "bookAuthor": "Saundra K. Ciccarelli; J. Noland White",
+    "contentTypeTier2": [
+      "AssessmentItem"
+    ],
+    "educationalAlignment": [
+      "http://purl.org/pearson/objectives/183725473384362"
+    ],
+    "format": [
+      "application/vnd.pearson.sanvan.v1.activity"
+    ],
+    "contentTypeTier1": "Assessment",
+    "keywords": [
+      "Ciccarelli 4e",
+      "Chapter 10",
+      "alick"
+    ],
+    "extendedMetadata": [
+      {
+        "name": "ISBN",
+        "value": "0133794652"
+      },
+      {
+        "name": "M",
+        "value": "c01"
+      },
+      {
+        "name": "assessment_title",
+        "value": "Chapter Quiz: Sexuality and Gender"
+      },
+      {
+        "name": "chapterTitle",
+        "value": "Sexuality and Gender"
+      },
+      {
+        "name": "item_title",
+        "value": "0133794652_Saundra K. Ciccarelli; J. Noland White_ch10_c01_q0020"
+      },
+      {
+        "name": "questionlayout",
+        "value": "1"
+      },
+      {
+        "name": "LearningObjective",
+        "value": ""
+      },
+      {
+        "name": "CH",
+        "value": "10"
+      },
+      {
+        "name": "shuffle_choices",
+        "value": "Yes"
+      }
+    ]
+  },
+  "body": {
+    "description": "Ch10_ChapterQuiz10_Q20",
+    "containerConfig": [
+      {
+        "description": "Ch10_ChapterQuiz10_Q20",
+        "containerId": "target1",
+        "brixConfig": [
+          {
+            "bricId": "q1",
+            "bricType": "MultipleChoiceQuestion",
+            "config": {
+              "id": "QUE57210",
+              "question": "Alicia is horrified to hear that her date from last night carries the human immunodeficiency virus. While they did not engage in sex, they did share a quick kiss at the end of the evening, hastened by her phone ringing in her apartment. Besides discussing her concerns with her date should they go out again, what precautions should Alicia take?\n\u003cbr /\u003e",
+              "order": "randomized",
+              "presenterType": "RadioGroup",
+              "presenterConfig": {
+                "numberFormat": "none"
+              },
+              "choices": [
+                {
+                  "answerKey": "answer_1",
+                  "content": "She should see her doctor immediately, since kissing can cause the spread of HIV."
+                },
+                {
+                  "answerKey": "answer_2",
+                  "content": "She should see her doctor only if she begins to have symptoms."
+                },
+                {
+                  "answerKey": "answer_3",
+                  "content": "She should try to calm down, since stress helps transmit HIV."
+                },
+                {
+                  "answerKey": "answer_4",
+                  "content": "She should try not to worry, since kissing has not been proven to be a successful way to transmit HIV, and follow-up with her doctor or other health-care provider if she has concerns or questions."
+                }
+              ]
+            },
+            "answerKey": {
+              "assessmentType": "multiplechoice",
+              "answers": {
+                "answer_3": {
+                  "score": 0.0,
+                  "response": "Consider this: Is kissing generally considered to be a \"high risk\" sexual behavior? L.O. 10.9: What are sexually transmitted infections, and what can be done to prevent the spread of these disorders?"
+                },
+                "answer_2": {
+                  "score": 0.0,
+                  "response": "Consider this: Is kissing generally considered to be a \"high risk\" sexual behavior? L.O. 10.9: What are sexually transmitted infections, and what can be done to prevent the spread of these disorders?"
+                },
+                "answer_1": {
+                  "score": 0.0,
+                  "response": "Consider this: Is kissing generally considered to be a \"high risk\" sexual behavior? L.O. 10.9: What are sexually transmitted infections, and what can be done to prevent the spread of these disorders?"
+                },
+                "answer_4": {
+                  "score": 1.0,
+                  "response": ""
+                }
+              }
+            },
+            "configFixup": [
+              {
+                "name": "questionId",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "sequenceNodeKey",
+                  "type": "ref"
+                }
+              },
+              {
+                "name": "maxAttempts",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "maxAttempts",
+                  "type": "ref"
+                }
+              }
+            ]
+          }
+        ],
+        "hookupActions": [
+          {
+            "description": "Hookup the submit manager to evaluate answers",
+            "methodName": "handleRequestsFrom",
+            "type": "method-call",
+            "args": [
+              {
+                "domain": "brix",
+                "refId": "q1",
+                "type": "ref"
+              }
+            ],
+            "instance": {
+              "type": "submit-manager"
+            }
+          },
+          {
+            "description": "Draw the question",
+            "methodName": "draw",
+            "type": "method-call",
+            "args": [
+              {
+                "selector": "#target1",
+                "type": "d3select"
+              }
+            ],
+            "instance": {
+              "domain": "brix",
+              "refId": "q1",
+              "type": "ref"
+            }
+          }
+        ]
+      }
+    ]
+  }
+}

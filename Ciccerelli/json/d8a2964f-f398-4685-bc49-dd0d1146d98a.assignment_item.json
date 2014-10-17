@@ -1,0 +1,187 @@
+{
+  "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope",
+  "@type": "Envelope",
+  "metadata": {
+    "guid": "d8a2964f-f398-4685-bc49-dd0d1146d98a",
+    "title": "EOC Quiz Chapter 3 08",
+    "version": "1.0",
+    "subject": [
+      "Psychology"
+    ],
+    "bookTitle": "Psychology",
+    "bookAuthor": "Amy J. Marin",
+    "contentTypeTier2": [
+      "AssessmentItem"
+    ],
+    "educationalAlignment": [
+      "http://purl.org/pearson/objectives/183725473384362"
+    ],
+    "format": [
+      "application/vnd.pearson.sanvan.v1.activity"
+    ],
+    "contentTypeTier1": "Assessment",
+    "keywords": [
+      "Marin",
+      "Alick",
+      "Ch03"
+    ],
+    "extendedMetadata": [
+      {
+        "name": "chapterTitle",
+        "value": "Sensation and Perception"
+      },
+      {
+        "name": "ISBN",
+        "value": "0205010415"
+      },
+      {
+        "name": "item_title",
+        "value": "0205010415_Amy J. Marin_ch03_c01_q0008"
+      },
+      {
+        "name": "M",
+        "value": "c01"
+      },
+      {
+        "name": "CH",
+        "value": "03"
+      },
+      {
+        "name": "skill",
+        "value": "Remember the Facts"
+      },
+      {
+        "name": "assessment_title",
+        "value": "Chapter Quiz: Sensation and Perception"
+      },
+      {
+        "name": "Topic",
+        "value": "Skin and Body Senses"
+      },
+      {
+        "name": "Difficulty",
+        "value": "Easy"
+      },
+      {
+        "name": "Objective",
+        "value": "LO 3.2d Describe the skin and body senses, including our sense of pain and the methods used to control pain."
+      }
+    ]
+  },
+  "body": {
+    "description": "EOC Quiz Chapter 3-08",
+    "containerConfig": [
+      {
+        "description": "EOC Quiz Chapter 3-08",
+        "containerId": "target1",
+        "brixConfig": [
+          {
+            "bricId": "q1",
+            "bricType": "MultipleChoiceQuestion",
+            "config": {
+              "id": "QUE72838",
+              "question": "Of the following, choose the answer that best describes the kinesthetic sense.\n\u003cbr /\u003e",
+              "order": "randomized",
+              "presenterType": "RadioGroup",
+              "presenterConfig": {
+                "numberFormat": "none"
+              },
+              "choices": [
+                {
+                  "answerKey": "answer_1",
+                  "content": "This sense allows your body to calculate its position in relationship to the sun."
+                },
+                {
+                  "answerKey": "answer_2",
+                  "content": "This sense has to do with touch pressure, temperature, and pain."
+                },
+                {
+                  "answerKey": "answer_3",
+                  "content": "This sense prevents movement and body position."
+                },
+                {
+                  "answerKey": "answer_4",
+                  "content": "This sense tracks the position and orientation of your body parts."
+                }
+              ]
+            },
+            "answerKey": {
+              "assessmentType": "multiplechoice",
+              "answers": {
+                "answer_3": {
+                  "score": 0.0,
+                  "response": "Consider This: The kinesthetic sense is a sense that tracks the position and orientation of your body parts, LO 3.2d Describe the skin and body senses, including our sense of pain and the methods used to control pain."
+                },
+                "answer_2": {
+                  "score": 0.0,
+                  "response": "Consider This: The kinesthetic sense is a sense that tracks the position and orientation of your body parts, LO 3.2d Describe the skin and body senses, including our sense of pain and the methods used to control pain."
+                },
+                "answer_1": {
+                  "score": 0.0,
+                  "response": "Consider This: The kinesthetic sense is a sense that tracks the position and orientation of your body parts, LO 3.2d Describe the skin and body senses, including our sense of pain and the methods used to control pain."
+                },
+                "answer_4": {
+                  "score": 1.0,
+                  "response": ""
+                }
+              }
+            },
+            "configFixup": [
+              {
+                "name": "questionId",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "sequenceNodeKey",
+                  "type": "ref"
+                }
+              },
+              {
+                "name": "maxAttempts",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "maxAttempts",
+                  "type": "ref"
+                }
+              }
+            ]
+          }
+        ],
+        "hookupActions": [
+          {
+            "description": "Hookup the submit manager to evaluate answers",
+            "methodName": "handleRequestsFrom",
+            "type": "method-call",
+            "args": [
+              {
+                "domain": "brix",
+                "refId": "q1",
+                "type": "ref"
+              }
+            ],
+            "instance": {
+              "type": "submit-manager"
+            }
+          },
+          {
+            "description": "Draw the question",
+            "methodName": "draw",
+            "type": "method-call",
+            "args": [
+              {
+                "selector": "#target1",
+                "type": "d3select"
+              }
+            ],
+            "instance": {
+              "domain": "brix",
+              "refId": "q1",
+              "type": "ref"
+            }
+          }
+        ]
+      }
+    ]
+  }
+}

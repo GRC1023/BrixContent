@@ -1,0 +1,187 @@
+{
+  "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope",
+  "@type": "Envelope",
+  "metadata": {
+    "guid": "4cad06b7-88d0-4f41-a592-6806b07a8ac9",
+    "title": "EOC Quiz Chapter 3 11",
+    "version": "1.0",
+    "subject": [
+      "Psychology"
+    ],
+    "bookTitle": "Psychology",
+    "bookAuthor": "Amy J. Marin",
+    "contentTypeTier2": [
+      "AssessmentItem"
+    ],
+    "educationalAlignment": [
+      "http://purl.org/pearson/objectives/183725473384362"
+    ],
+    "format": [
+      "application/vnd.pearson.sanvan.v1.activity"
+    ],
+    "contentTypeTier1": "Assessment",
+    "keywords": [
+      "Marin",
+      "Alick",
+      "Ch03"
+    ],
+    "extendedMetadata": [
+      {
+        "name": "chapterTitle",
+        "value": "Sensation and Perception"
+      },
+      {
+        "name": "ISBN",
+        "value": "0205010415"
+      },
+      {
+        "name": "item_title",
+        "value": "0205010415_Amy J. Marin_ch03_c01_q0011"
+      },
+      {
+        "name": "M",
+        "value": "c01"
+      },
+      {
+        "name": "CH",
+        "value": "03"
+      },
+      {
+        "name": "skill",
+        "value": "Apply What You Know"
+      },
+      {
+        "name": "assessment_title",
+        "value": "Chapter Quiz: Sensation and Perception"
+      },
+      {
+        "name": "Topic",
+        "value": "Depth Perception"
+      },
+      {
+        "name": "Difficulty",
+        "value": "Medium"
+      },
+      {
+        "name": "Objective",
+        "value": "LO 3.3c Discuss depth perception and the monocular and binocular cues for determining depth."
+      }
+    ]
+  },
+  "body": {
+    "description": "EOC Quiz Chapter 3-11",
+    "containerConfig": [
+      {
+        "description": "EOC Quiz Chapter 3-11",
+        "containerId": "target1",
+        "brixConfig": [
+          {
+            "bricId": "q1",
+            "bricType": "MultipleChoiceQuestion",
+            "config": {
+              "id": "QUE72843",
+              "question": "Your nephew is sitting on the couch. You notice he is covering one eye at a time, alternating from one eye to the other. You ask him what he is doing and he responds, “I am making the TV jump.” Your nephew is exploring which concept of vision?\n\u003cbr /\u003e",
+              "order": "randomized",
+              "presenterType": "RadioGroup",
+              "presenterConfig": {
+                "numberFormat": "none"
+              },
+              "choices": [
+                {
+                  "answerKey": "answer_1",
+                  "content": "the Gestalt principle of proximity"
+                },
+                {
+                  "answerKey": "answer_2",
+                  "content": "the Gestalt principle of similarity"
+                },
+                {
+                  "answerKey": "answer_3",
+                  "content": "interposition"
+                },
+                {
+                  "answerKey": "answer_4",
+                  "content": "retinal disparity"
+                }
+              ]
+            },
+            "answerKey": {
+              "assessmentType": "multiplechoice",
+              "answers": {
+                "answer_3": {
+                  "score": 0.0,
+                  "response": "Consider This: Retinal disparity is the slight difference in retinal images that arises because of the distance between the two eyes, LO 3.3c Discuss depth perception and the monocular and binocular cues for determining depth."
+                },
+                "answer_2": {
+                  "score": 0.0,
+                  "response": "Consider This: Retinal disparity is the slight difference in retinal images that arises because of the distance between the two eyes, LO 3.3c Discuss depth perception and the monocular and binocular cues for determining depth."
+                },
+                "answer_1": {
+                  "score": 0.0,
+                  "response": "Consider This: Retinal disparity is the slight difference in retinal images that arises because of the distance between the two eyes, LO 3.3c Discuss depth perception and the monocular and binocular cues for determining depth."
+                },
+                "answer_4": {
+                  "score": 1.0,
+                  "response": ""
+                }
+              }
+            },
+            "configFixup": [
+              {
+                "name": "questionId",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "sequenceNodeKey",
+                  "type": "ref"
+                }
+              },
+              {
+                "name": "maxAttempts",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "maxAttempts",
+                  "type": "ref"
+                }
+              }
+            ]
+          }
+        ],
+        "hookupActions": [
+          {
+            "description": "Hookup the submit manager to evaluate answers",
+            "methodName": "handleRequestsFrom",
+            "type": "method-call",
+            "args": [
+              {
+                "domain": "brix",
+                "refId": "q1",
+                "type": "ref"
+              }
+            ],
+            "instance": {
+              "type": "submit-manager"
+            }
+          },
+          {
+            "description": "Draw the question",
+            "methodName": "draw",
+            "type": "method-call",
+            "args": [
+              {
+                "selector": "#target1",
+                "type": "d3select"
+              }
+            ],
+            "instance": {
+              "domain": "brix",
+              "refId": "q1",
+              "type": "ref"
+            }
+          }
+        ]
+      }
+    ]
+  }
+}

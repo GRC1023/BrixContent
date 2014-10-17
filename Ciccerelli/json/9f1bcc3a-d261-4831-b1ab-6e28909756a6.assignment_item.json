@@ -1,0 +1,178 @@
+{
+  "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope",
+  "@type": "Envelope",
+  "metadata": {
+    "guid": "9f1bcc3a-d261-4831-b1ab-6e28909756a6",
+    "title": "Ch06 ChapterQuiz Q7",
+    "version": "1.0",
+    "subject": [
+      "Psychology"
+    ],
+    "bookTitle": "Psychology",
+    "bookAuthor": "Saundra K. Ciccarelli; J. Noland White",
+    "contentTypeTier2": [
+      "AssessmentItem"
+    ],
+    "educationalAlignment": [
+      "http://purl.org/pearson/objectives/183725473384362"
+    ],
+    "format": [
+      "application/vnd.pearson.sanvan.v1.activity"
+    ],
+    "contentTypeTier1": "Assessment",
+    "extendedMetadata": [
+      {
+        "name": "ISBN",
+        "value": "0133794652"
+      },
+      {
+        "name": "M",
+        "value": "c01"
+      },
+      {
+        "name": "assessment_title",
+        "value": "Quiz: Memory"
+      },
+      {
+        "name": "chapterTitle",
+        "value": "Memory"
+      },
+      {
+        "name": "item_title",
+        "value": "0133794652_Saundra K. Ciccarelli; J. Noland White_ch06_c01_q0007"
+      },
+      {
+        "name": "questionlayout",
+        "value": "1"
+      },
+      {
+        "name": "LearningObjective",
+        "value": ""
+      },
+      {
+        "name": "CH",
+        "value": "6"
+      },
+      {
+        "name": "shuffle_choices",
+        "value": "Yes"
+      }
+    ]
+  },
+  "body": {
+    "description": "Ch06_ChapterQuiz_Q7",
+    "containerConfig": [
+      {
+        "description": "Ch06_ChapterQuiz_Q7",
+        "containerId": "target1",
+        "brixConfig": [
+          {
+            "bricId": "q1",
+            "bricType": "MultipleChoiceQuestion",
+            "config": {
+              "id": "QUE57018",
+              "question": "Mary has just met an attractive man named Austin at a party. She wants to make sure she remembers his name. What should she do?\n\u003cbr /\u003e",
+              "order": "randomized",
+              "presenterType": "RadioGroup",
+              "presenterConfig": {
+                "numberFormat": "none"
+              },
+              "choices": [
+                {
+                  "answerKey": "answer_1",
+                  "content": "Mary should repeat the name continuously so as to commit it to long-term memory."
+                },
+                {
+                  "answerKey": "answer_2",
+                  "content": "Mary should chunk it by remembering the first three letters as a set and then remembering the remaining letters as a set."
+                },
+                {
+                  "answerKey": "answer_3",
+                  "content": "Mary should make it more meaningful. For example, she might remind herself that Austin has the same name as the capital of Texas."
+                },
+                {
+                  "answerKey": "answer_4",
+                  "content": "Mary should create a song to help her remember his name."
+                }
+              ]
+            },
+            "answerKey": {
+              "assessmentType": "multiplechoice",
+              "answers": {
+                "answer_3": {
+                  "score": 1.0,
+                  "response": ""
+                },
+                "answer_2": {
+                  "score": 0.0,
+                  "response": "Consider this: Another name for this is elaborative rehearsal. L.O. 6.4: How is long-term memory different from other types of memory?"
+                },
+                "answer_1": {
+                  "score": 0.0,
+                  "response": "Consider this: Another name for this is elaborative rehearsal. L.O. 6.4: How is long-term memory different from other types of memory?"
+                },
+                "answer_4": {
+                  "score": 0.0,
+                  "response": "Consider this: Another name for this is elaborative rehearsal. L.O. 6.4: How is long-term memory different from other types of memory?"
+                }
+              }
+            },
+            "configFixup": [
+              {
+                "name": "questionId",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "sequenceNodeKey",
+                  "type": "ref"
+                }
+              },
+              {
+                "name": "maxAttempts",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "maxAttempts",
+                  "type": "ref"
+                }
+              }
+            ]
+          }
+        ],
+        "hookupActions": [
+          {
+            "description": "Hookup the submit manager to evaluate answers",
+            "methodName": "handleRequestsFrom",
+            "type": "method-call",
+            "args": [
+              {
+                "domain": "brix",
+                "refId": "q1",
+                "type": "ref"
+              }
+            ],
+            "instance": {
+              "type": "submit-manager"
+            }
+          },
+          {
+            "description": "Draw the question",
+            "methodName": "draw",
+            "type": "method-call",
+            "args": [
+              {
+                "selector": "#target1",
+                "type": "d3select"
+              }
+            ],
+            "instance": {
+              "domain": "brix",
+              "refId": "q1",
+              "type": "ref"
+            }
+          }
+        ]
+      }
+    ]
+  }
+}

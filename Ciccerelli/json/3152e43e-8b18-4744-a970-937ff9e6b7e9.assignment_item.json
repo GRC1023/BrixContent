@@ -1,0 +1,183 @@
+{
+  "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope",
+  "@type": "Envelope",
+  "metadata": {
+    "guid": "3152e43e-8b18-4744-a970-937ff9e6b7e9",
+    "title": "Ch15 ChapterQuiz15 Q13",
+    "version": "1.0",
+    "subject": [
+      "Psychology"
+    ],
+    "bookTitle": "Psychology",
+    "bookAuthor": "Saundra K. Ciccarelli; J. Noland White",
+    "contentTypeTier2": [
+      "AssessmentItem"
+    ],
+    "educationalAlignment": [
+      "http://purl.org/pearson/objectives/183725473384362"
+    ],
+    "format": [
+      "application/vnd.pearson.sanvan.v1.activity"
+    ],
+    "contentTypeTier1": "Assessment",
+    "keywords": [
+      "Ciccarelli 4e",
+      "Chapter 15",
+      "alick"
+    ],
+    "extendedMetadata": [
+      {
+        "name": "ISBN",
+        "value": "0133794652"
+      },
+      {
+        "name": "M",
+        "value": "c01"
+      },
+      {
+        "name": "assessment_title",
+        "value": "Chapter Quiz: Psychological Therapies"
+      },
+      {
+        "name": "chapterTitle",
+        "value": "Psychological Therapies"
+      },
+      {
+        "name": "item_title",
+        "value": "0133794652_Saundra K. Ciccarelli; J. Noland White_ch15_c01_q0013"
+      },
+      {
+        "name": "questionlayout",
+        "value": "1"
+      },
+      {
+        "name": "LearningObjective",
+        "value": ""
+      },
+      {
+        "name": "CH",
+        "value": "15"
+      },
+      {
+        "name": "shuffle_choices",
+        "value": "Yes"
+      }
+    ]
+  },
+  "body": {
+    "description": "Ch15_ChapterQuiz15_Q13",
+    "containerConfig": [
+      {
+        "description": "Ch15_ChapterQuiz15_Q13",
+        "containerId": "target1",
+        "brixConfig": [
+          {
+            "bricId": "q1",
+            "bricType": "MultipleChoiceQuestion",
+            "config": {
+              "id": "QUE57456",
+              "question": "Which therapy style requires the therapist to actively confront a client’s irrational beliefs?\n\u003cbr /\u003e",
+              "order": "randomized",
+              "presenterType": "RadioGroup",
+              "presenterConfig": {
+                "numberFormat": "none"
+              },
+              "choices": [
+                {
+                  "answerKey": "answer_1",
+                  "content": "person-centered"
+                },
+                {
+                  "answerKey": "answer_2",
+                  "content": "frontal lobotomy"
+                },
+                {
+                  "answerKey": "answer_3",
+                  "content": "rational emotive behavior therapy (REBT)"
+                },
+                {
+                  "answerKey": "answer_4",
+                  "content": "cognitive restructuring"
+                }
+              ]
+            },
+            "answerKey": {
+              "assessmentType": "multiplechoice",
+              "answers": {
+                "answer_3": {
+                  "score": 1.0,
+                  "response": ""
+                },
+                "answer_2": {
+                  "score": 0.0,
+                  "response": "Consider this: In this type of counseling, therapists take a very directive role, challenging the client when they make irrational or unsupported statements. L.O. 15.5: What are the goals and basic elements of cognitive therapies such as cognitive–behavioral therapy and rational emotive behavior therapy?"
+                },
+                "answer_1": {
+                  "score": 0.0,
+                  "response": "Consider this: In this type of counseling, therapists take a very directive role, challenging the client when they make irrational or unsupported statements. L.O. 15.5: What are the goals and basic elements of cognitive therapies such as cognitive–behavioral therapy and rational emotive behavior therapy?"
+                },
+                "answer_4": {
+                  "score": 0.0,
+                  "response": "Consider this: In this type of counseling, therapists take a very directive role, challenging the client when they make irrational or unsupported statements. L.O. 15.5: What are the goals and basic elements of cognitive therapies such as cognitive–behavioral therapy and rational emotive behavior therapy?"
+                }
+              }
+            },
+            "configFixup": [
+              {
+                "name": "questionId",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "sequenceNodeKey",
+                  "type": "ref"
+                }
+              },
+              {
+                "name": "maxAttempts",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "maxAttempts",
+                  "type": "ref"
+                }
+              }
+            ]
+          }
+        ],
+        "hookupActions": [
+          {
+            "description": "Hookup the submit manager to evaluate answers",
+            "methodName": "handleRequestsFrom",
+            "type": "method-call",
+            "args": [
+              {
+                "domain": "brix",
+                "refId": "q1",
+                "type": "ref"
+              }
+            ],
+            "instance": {
+              "type": "submit-manager"
+            }
+          },
+          {
+            "description": "Draw the question",
+            "methodName": "draw",
+            "type": "method-call",
+            "args": [
+              {
+                "selector": "#target1",
+                "type": "d3select"
+              }
+            ],
+            "instance": {
+              "domain": "brix",
+              "refId": "q1",
+              "type": "ref"
+            }
+          }
+        ]
+      }
+    ]
+  }
+}

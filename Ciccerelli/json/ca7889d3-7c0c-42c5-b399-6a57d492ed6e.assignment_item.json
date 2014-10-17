@@ -1,0 +1,178 @@
+{
+  "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope",
+  "@type": "Envelope",
+  "metadata": {
+    "guid": "ca7889d3-7c0c-42c5-b399-6a57d492ed6e",
+    "title": "Ch07 ChapterQuiz7 Q14",
+    "version": "1.0",
+    "subject": [
+      "Psychology"
+    ],
+    "bookTitle": "Psychology",
+    "bookAuthor": "Saundra K. Ciccarelli; J. Noland White",
+    "contentTypeTier2": [
+      "AssessmentItem"
+    ],
+    "educationalAlignment": [
+      "http://purl.org/pearson/objectives/183725473384362"
+    ],
+    "format": [
+      "application/vnd.pearson.sanvan.v1.activity"
+    ],
+    "contentTypeTier1": "Assessment",
+    "extendedMetadata": [
+      {
+        "name": "ISBN",
+        "value": "0133794652"
+      },
+      {
+        "name": "M",
+        "value": "c01"
+      },
+      {
+        "name": "assessment_title",
+        "value": "Chapter Quiz: Cognition: Thinking, Intelligence, and Language"
+      },
+      {
+        "name": "chapterTitle",
+        "value": "Cognition: Thinking, Intelligence, and Language"
+      },
+      {
+        "name": "item_title",
+        "value": "0133794652_Saundra K. Ciccarelli; J. Noland White_ch07_c01_q0014"
+      },
+      {
+        "name": "questionlayout",
+        "value": "1"
+      },
+      {
+        "name": "LearningObjective",
+        "value": ""
+      },
+      {
+        "name": "CH",
+        "value": "7"
+      },
+      {
+        "name": "shuffle_choices",
+        "value": "Yes"
+      }
+    ]
+  },
+  "body": {
+    "description": "Ch07_ChapterQuiz7_Q14",
+    "containerConfig": [
+      {
+        "description": "Ch07_ChapterQuiz7_Q14",
+        "containerId": "target1",
+        "brixConfig": [
+          {
+            "bricId": "q1",
+            "bricType": "MultipleChoiceQuestion",
+            "config": {
+              "id": "QUE57025",
+              "question": "Dr. Miller works with children who have grown up in poor socioeconomic conditions. Many of her clients come from homes that do not emphasize education or social involvement, and opportunities for advancement are practically nonexistent. Many are malnourished, have been exposed to a variety of environmental toxins, and have multiple infections without adequate or timely health care. What might these children be at risk for?\n\u003cbr /\u003e",
+              "order": "randomized",
+              "presenterType": "RadioGroup",
+              "presenterConfig": {
+                "numberFormat": "none"
+              },
+              "choices": [
+                {
+                  "answerKey": "answer_1",
+                  "content": "intellectual disability"
+                },
+                {
+                  "answerKey": "answer_2",
+                  "content": "genetic inhibition"
+                },
+                {
+                  "answerKey": "answer_3",
+                  "content": "organically induced deprivation"
+                },
+                {
+                  "answerKey": "answer_4",
+                  "content": "increased emotional intelligence"
+                }
+              ]
+            },
+            "answerKey": {
+              "assessmentType": "multiplechoice",
+              "answers": {
+                "answer_3": {
+                  "score": 0.0,
+                  "response": "Consider this: Do you think these circumstances would promote or inhibit intellectual growth? L.O. 7.6: What is intellectual disability and what are its causes?"
+                },
+                "answer_2": {
+                  "score": 0.0,
+                  "response": "Consider this: Do you think these circumstances would promote or inhibit intellectual growth? L.O. 7.6: What is intellectual disability and what are its causes?"
+                },
+                "answer_1": {
+                  "score": 1.0,
+                  "response": ""
+                },
+                "answer_4": {
+                  "score": 0.0,
+                  "response": "Consider this: Do you think these circumstances would promote or inhibit intellectual growth? L.O. 7.6: What is intellectual disability and what are its causes?"
+                }
+              }
+            },
+            "configFixup": [
+              {
+                "name": "questionId",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "sequenceNodeKey",
+                  "type": "ref"
+                }
+              },
+              {
+                "name": "maxAttempts",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "maxAttempts",
+                  "type": "ref"
+                }
+              }
+            ]
+          }
+        ],
+        "hookupActions": [
+          {
+            "description": "Hookup the submit manager to evaluate answers",
+            "methodName": "handleRequestsFrom",
+            "type": "method-call",
+            "args": [
+              {
+                "domain": "brix",
+                "refId": "q1",
+                "type": "ref"
+              }
+            ],
+            "instance": {
+              "type": "submit-manager"
+            }
+          },
+          {
+            "description": "Draw the question",
+            "methodName": "draw",
+            "type": "method-call",
+            "args": [
+              {
+                "selector": "#target1",
+                "type": "d3select"
+              }
+            ],
+            "instance": {
+              "domain": "brix",
+              "refId": "q1",
+              "type": "ref"
+            }
+          }
+        ]
+      }
+    ]
+  }
+}

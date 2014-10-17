@@ -1,0 +1,187 @@
+{
+  "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope",
+  "@type": "Envelope",
+  "metadata": {
+    "guid": "335f480e-fdef-4e11-a8dd-4f13630e6f24",
+    "title": "EOM Quiz 3.1 05",
+    "version": "1.0",
+    "subject": [
+      "Psychology"
+    ],
+    "bookTitle": "Psychology",
+    "bookAuthor": "Amy J. Marin",
+    "contentTypeTier2": [
+      "AssessmentItem"
+    ],
+    "educationalAlignment": [
+      "http://purl.org/pearson/objectives/183725473384362"
+    ],
+    "format": [
+      "application/vnd.pearson.sanvan.v1.activity"
+    ],
+    "contentTypeTier1": "Assessment",
+    "keywords": [
+      "Marin",
+      "Alick",
+      "Ch03"
+    ],
+    "extendedMetadata": [
+      {
+        "name": "chapterTitle",
+        "value": "Sensation and Perception"
+      },
+      {
+        "name": "ISBN",
+        "value": "0205010415"
+      },
+      {
+        "name": "item_title",
+        "value": "0205010415_Amy J. Marin_ch03_m01_q0005"
+      },
+      {
+        "name": "M",
+        "value": "m01"
+      },
+      {
+        "name": "CH",
+        "value": "03"
+      },
+      {
+        "name": "skill",
+        "value": "Apply What You Know"
+      },
+      {
+        "name": "assessment_title",
+        "value": "Quiz: Principles of Sensation"
+      },
+      {
+        "name": "Topic",
+        "value": "Sensory Limits"
+      },
+      {
+        "name": "Difficulty",
+        "value": "Easy"
+      },
+      {
+        "name": "Objective",
+        "value": "3.1b Discuss the limitations of our senses, including thresholds and sensory adaptation."
+      }
+    ]
+  },
+  "body": {
+    "description": "EOM Quiz 3.1-05",
+    "containerConfig": [
+      {
+        "description": "EOM Quiz 3.1-05",
+        "containerId": "target1",
+        "brixConfig": [
+          {
+            "bricId": "q1",
+            "bricType": "MultipleChoiceQuestion",
+            "config": {
+              "id": "QUE72859",
+              "question": "When you first jump into a lake to swim, the water feels very cold, but you get used to it after a while. This is an example of\n\u003cbr /\u003e",
+              "order": "randomized",
+              "presenterType": "RadioGroup",
+              "presenterConfig": {
+                "numberFormat": "none"
+              },
+              "choices": [
+                {
+                  "answerKey": "answer_1",
+                  "content": "sensory limits"
+                },
+                {
+                  "answerKey": "answer_2",
+                  "content": "somatosensory limits"
+                },
+                {
+                  "answerKey": "answer_3",
+                  "content": "sensory adaptation"
+                },
+                {
+                  "answerKey": "answer_4",
+                  "content": "tactile adaption"
+                }
+              ]
+            },
+            "answerKey": {
+              "assessmentType": "multiplechoice",
+              "answers": {
+                "answer_3": {
+                  "score": 1.0,
+                  "response": ""
+                },
+                "answer_2": {
+                  "score": 0.0,
+                  "response": "Consider This: Sensory adaptation is a decline in sensitivity to a constant stimulus, LO 3.1b Discuss the limitations of our senses, including thresholds and sensory adaptation."
+                },
+                "answer_1": {
+                  "score": 0.0,
+                  "response": "Consider This: Sensory adaptation is a decline in sensitivity to a constant stimulus, LO 3.1b Discuss the limitations of our senses, including thresholds and sensory adaptation."
+                },
+                "answer_4": {
+                  "score": 0.0,
+                  "response": "Consider This: Sensory adaptation is a decline in sensitivity to a constant stimulus, LO 3.1b Discuss the limitations of our senses, including thresholds and sensory adaptation."
+                }
+              }
+            },
+            "configFixup": [
+              {
+                "name": "questionId",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "sequenceNodeKey",
+                  "type": "ref"
+                }
+              },
+              {
+                "name": "maxAttempts",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "maxAttempts",
+                  "type": "ref"
+                }
+              }
+            ]
+          }
+        ],
+        "hookupActions": [
+          {
+            "description": "Hookup the submit manager to evaluate answers",
+            "methodName": "handleRequestsFrom",
+            "type": "method-call",
+            "args": [
+              {
+                "domain": "brix",
+                "refId": "q1",
+                "type": "ref"
+              }
+            ],
+            "instance": {
+              "type": "submit-manager"
+            }
+          },
+          {
+            "description": "Draw the question",
+            "methodName": "draw",
+            "type": "method-call",
+            "args": [
+              {
+                "selector": "#target1",
+                "type": "d3select"
+              }
+            ],
+            "instance": {
+              "domain": "brix",
+              "refId": "q1",
+              "type": "ref"
+            }
+          }
+        ]
+      }
+    ]
+  }
+}

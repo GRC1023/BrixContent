@@ -1,0 +1,187 @@
+{
+  "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope",
+  "@type": "Envelope",
+  "metadata": {
+    "guid": "85836546-8fc2-45a0-bf4d-0b85933f9429",
+    "title": "EOC Quiz Chapter 3 14",
+    "version": "1.0",
+    "subject": [
+      "Psychology"
+    ],
+    "bookTitle": "Psychology",
+    "bookAuthor": "Amy J. Marin",
+    "contentTypeTier2": [
+      "AssessmentItem"
+    ],
+    "educationalAlignment": [
+      "http://purl.org/pearson/objectives/183725473384362"
+    ],
+    "format": [
+      "application/vnd.pearson.sanvan.v1.activity"
+    ],
+    "contentTypeTier1": "Assessment",
+    "keywords": [
+      "Marin",
+      "Alick",
+      "Ch03"
+    ],
+    "extendedMetadata": [
+      {
+        "name": "chapterTitle",
+        "value": "Sensation and Perception"
+      },
+      {
+        "name": "ISBN",
+        "value": "0205010415"
+      },
+      {
+        "name": "item_title",
+        "value": "0205010415_Amy J. Marin_ch03_c01_q0014"
+      },
+      {
+        "name": "M",
+        "value": "c01"
+      },
+      {
+        "name": "CH",
+        "value": "03"
+      },
+      {
+        "name": "skill",
+        "value": "Remember the Facts"
+      },
+      {
+        "name": "assessment_title",
+        "value": "Chapter Quiz: Sensation and Perception"
+      },
+      {
+        "name": "Topic",
+        "value": "Optical Illusions"
+      },
+      {
+        "name": "Difficulty",
+        "value": "Easy"
+      },
+      {
+        "name": "Objective",
+        "value": "LO 3.4b Identify types of optical illusions, how they work, and how they impact daily living."
+      }
+    ]
+  },
+  "body": {
+    "description": "EOC Quiz Chapter 3-14",
+    "containerConfig": [
+      {
+        "description": "EOC Quiz Chapter 3-14",
+        "containerId": "target1",
+        "brixConfig": [
+          {
+            "bricId": "q1",
+            "bricType": "MultipleChoiceQuestion",
+            "config": {
+              "id": "QUE72846",
+              "question": "Which of the following best describes an optical illusion?\n\u003cbr /\u003e",
+              "order": "randomized",
+              "presenterType": "RadioGroup",
+              "presenterConfig": {
+                "numberFormat": "none"
+              },
+              "choices": [
+                {
+                  "answerKey": "answer_1",
+                  "content": "synonymous with a vision"
+                },
+                {
+                  "answerKey": "answer_2",
+                  "content": "the action of the rods versus the cones in the retina"
+                },
+                {
+                  "answerKey": "answer_3",
+                  "content": "perception that corresponds directly to a dream"
+                },
+                {
+                  "answerKey": "answer_4",
+                  "content": "perception that does not correspond to reality"
+                }
+              ]
+            },
+            "answerKey": {
+              "assessmentType": "multiplechoice",
+              "answers": {
+                "answer_3": {
+                  "score": 0.0,
+                  "response": "Consider This: Optical illusions are visually perceived images that do not conform to reality, LO 3.4b Identify types of optical illusions, how they work, and how they impact daily living."
+                },
+                "answer_2": {
+                  "score": 0.0,
+                  "response": "Consider This: Optical illusions are visually perceived images that do not conform to reality, LO 3.4b Identify types of optical illusions, how they work, and how they impact daily living."
+                },
+                "answer_1": {
+                  "score": 0.0,
+                  "response": "Consider This: Optical illusions are visually perceived images that do not conform to reality, LO 3.4b Identify types of optical illusions, how they work, and how they impact daily living."
+                },
+                "answer_4": {
+                  "score": 1.0,
+                  "response": ""
+                }
+              }
+            },
+            "configFixup": [
+              {
+                "name": "questionId",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "sequenceNodeKey",
+                  "type": "ref"
+                }
+              },
+              {
+                "name": "maxAttempts",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "maxAttempts",
+                  "type": "ref"
+                }
+              }
+            ]
+          }
+        ],
+        "hookupActions": [
+          {
+            "description": "Hookup the submit manager to evaluate answers",
+            "methodName": "handleRequestsFrom",
+            "type": "method-call",
+            "args": [
+              {
+                "domain": "brix",
+                "refId": "q1",
+                "type": "ref"
+              }
+            ],
+            "instance": {
+              "type": "submit-manager"
+            }
+          },
+          {
+            "description": "Draw the question",
+            "methodName": "draw",
+            "type": "method-call",
+            "args": [
+              {
+                "selector": "#target1",
+                "type": "d3select"
+              }
+            ],
+            "instance": {
+              "domain": "brix",
+              "refId": "q1",
+              "type": "ref"
+            }
+          }
+        ]
+      }
+    ]
+  }
+}

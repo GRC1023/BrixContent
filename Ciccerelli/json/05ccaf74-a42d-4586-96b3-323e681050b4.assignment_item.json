@@ -1,0 +1,187 @@
+{
+  "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope",
+  "@type": "Envelope",
+  "metadata": {
+    "guid": "05ccaf74-a42d-4586-96b3-323e681050b4",
+    "title": "EOC Quiz Chapter 3 02",
+    "version": "1.0",
+    "subject": [
+      "Psychology"
+    ],
+    "bookTitle": "Psychology",
+    "bookAuthor": "Amy J. Marin",
+    "contentTypeTier2": [
+      "AssessmentItem"
+    ],
+    "educationalAlignment": [
+      "http://purl.org/pearson/objectives/183725473384362"
+    ],
+    "format": [
+      "application/vnd.pearson.sanvan.v1.activity"
+    ],
+    "contentTypeTier1": "Assessment",
+    "keywords": [
+      "Marin",
+      "Alick",
+      "Ch03"
+    ],
+    "extendedMetadata": [
+      {
+        "name": "chapterTitle",
+        "value": "Sensation and Perception"
+      },
+      {
+        "name": "ISBN",
+        "value": "0205010415"
+      },
+      {
+        "name": "item_title",
+        "value": "0205010415_Amy J. Marin_ch03_c01_q0002"
+      },
+      {
+        "name": "M",
+        "value": "c01"
+      },
+      {
+        "name": "CH",
+        "value": "03"
+      },
+      {
+        "name": "skill",
+        "value": "Remember the Facts"
+      },
+      {
+        "name": "assessment_title",
+        "value": "Chapter Quiz: Sensation and Perception"
+      },
+      {
+        "name": "Topic",
+        "value": "Sensory Limits"
+      },
+      {
+        "name": "Difficulty",
+        "value": "Medium"
+      },
+      {
+        "name": "Objective",
+        "value": "LO 3.1b Discuss the limitations of our senses, including thresholds and sensory adaptation."
+      }
+    ]
+  },
+  "body": {
+    "description": "EOC Quiz Chapter 3-02",
+    "containerConfig": [
+      {
+        "description": "EOC Quiz Chapter 3-02",
+        "containerId": "target1",
+        "brixConfig": [
+          {
+            "bricId": "q1",
+            "bricType": "MultipleChoiceQuestion",
+            "config": {
+              "id": "QUE72832",
+              "question": "The formulation provided by Ernst Weber is used for determining which of the following?\n\u003cbr /\u003e",
+              "order": "randomized",
+              "presenterType": "RadioGroup",
+              "presenterConfig": {
+                "numberFormat": "none"
+              },
+              "choices": [
+                {
+                  "answerKey": "answer_1",
+                  "content": "the smallest detectable stimulus"
+                },
+                {
+                  "answerKey": "answer_2",
+                  "content": "the largest detectable stimulus"
+                },
+                {
+                  "answerKey": "answer_3",
+                  "content": "the change in the smallest detectable difference between two stimuli"
+                },
+                {
+                  "answerKey": "answer_4",
+                  "content": "the largest detectable difference between two stimuli"
+                }
+              ]
+            },
+            "answerKey": {
+              "assessmentType": "multiplechoice",
+              "answers": {
+                "answer_3": {
+                  "score": 1.0,
+                  "response": ""
+                },
+                "answer_2": {
+                  "score": 0.0,
+                  "response": "Consider This: Weber’s law is the idea that a new stimulus must differ by a constant fraction or proportion from the original stimulus if a change is to be detected, LO 3.1b Discuss the limitations of our senses, including thresholds and sensory adaptation."
+                },
+                "answer_1": {
+                  "score": 0.0,
+                  "response": "Consider This: Weber’s law is the idea that a new stimulus must differ by a constant fraction or proportion from the original stimulus if a change is to be detected, LO 3.1b Discuss the limitations of our senses, including thresholds and sensory adaptation."
+                },
+                "answer_4": {
+                  "score": 0.0,
+                  "response": "Consider This: Weber’s law is the idea that a new stimulus must differ by a constant fraction or proportion from the original stimulus if a change is to be detected, LO 3.1b Discuss the limitations of our senses, including thresholds and sensory adaptation."
+                }
+              }
+            },
+            "configFixup": [
+              {
+                "name": "questionId",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "sequenceNodeKey",
+                  "type": "ref"
+                }
+              },
+              {
+                "name": "maxAttempts",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "maxAttempts",
+                  "type": "ref"
+                }
+              }
+            ]
+          }
+        ],
+        "hookupActions": [
+          {
+            "description": "Hookup the submit manager to evaluate answers",
+            "methodName": "handleRequestsFrom",
+            "type": "method-call",
+            "args": [
+              {
+                "domain": "brix",
+                "refId": "q1",
+                "type": "ref"
+              }
+            ],
+            "instance": {
+              "type": "submit-manager"
+            }
+          },
+          {
+            "description": "Draw the question",
+            "methodName": "draw",
+            "type": "method-call",
+            "args": [
+              {
+                "selector": "#target1",
+                "type": "d3select"
+              }
+            ],
+            "instance": {
+              "domain": "brix",
+              "refId": "q1",
+              "type": "ref"
+            }
+          }
+        ]
+      }
+    ]
+  }
+}

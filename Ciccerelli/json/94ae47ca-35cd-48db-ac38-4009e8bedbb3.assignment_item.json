@@ -1,0 +1,191 @@
+{
+  "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope",
+  "@type": "Envelope",
+  "metadata": {
+    "guid": "94ae47ca-35cd-48db-ac38-4009e8bedbb3",
+    "title": "EOM Quiz 3.2 05",
+    "version": "1.0",
+    "subject": [
+      "Psychology"
+    ],
+    "bookTitle": "Psychology",
+    "bookAuthor": "Amy J. Marin",
+    "contentTypeTier2": [
+      "AssessmentItem"
+    ],
+    "educationalAlignment": [
+      "http://purl.org/pearson/objectives/183725473384362"
+    ],
+    "format": [
+      "application/vnd.pearson.sanvan.v1.activity"
+    ],
+    "contentTypeTier1": "Assessment",
+    "keywords": [
+      "Marin",
+      "Ch03",
+      "EOM03"
+    ],
+    "extendedMetadata": [
+      {
+        "name": "chapterTitle",
+        "value": "Sensation and Perception"
+      },
+      {
+        "name": "module",
+        "value": "Your Sensory Equipment"
+      },
+      {
+        "name": "ISBN",
+        "value": "0205010415"
+      },
+      {
+        "name": "item_title",
+        "value": "0205010415_Amy J. Marin_ch03_m02_q0005"
+      },
+      {
+        "name": "M",
+        "value": "m02"
+      },
+      {
+        "name": "CH",
+        "value": "03"
+      },
+      {
+        "name": "skill",
+        "value": "Remember the Facts"
+      },
+      {
+        "name": "assessment_title",
+        "value": "Quiz: Your Sensory Equipment"
+      },
+      {
+        "name": "Topic",
+        "value": "The Chemical Sense"
+      },
+      {
+        "name": "Difficulty",
+        "value": "Easy"
+      },
+      {
+        "name": "Objective",
+        "value": "LO 3.2c Describe the chemical senses of taste and smell."
+      }
+    ]
+  },
+  "body": {
+    "description": "EOM Quiz 3.2-05",
+    "containerConfig": [
+      {
+        "description": "EOM Quiz 3.2-05",
+        "containerId": "target1",
+        "brixConfig": [
+          {
+            "bricId": "q1",
+            "bricType": "MultipleChoiceQuestion",
+            "config": {
+              "id": "QUE72850",
+              "question": "The papillae on your tongue are made up of clusters of taste buds. The taste buds are made up of\n\u003cbr /\u003e",
+              "order": "randomized",
+              "presenterType": "RadioGroup",
+              "presenterConfig": {
+                "numberFormat": "none"
+              },
+              "choices": [
+                {
+                  "answerKey": "answer_1",
+                  "content": "taste receiver nubs"
+                },
+                {
+                  "answerKey": "answer_2",
+                  "content": "flavor receptor buds"
+                },
+                {
+                  "answerKey": "answer_3",
+                  "content": "taste receptor cells"
+                },
+                {
+                  "answerKey": "answer_4",
+                  "content": "chemical substances"
+                }
+              ]
+            },
+            "answerKey": {
+              "assessmentType": "multiplechoice",
+              "answers": {
+                "answer_3": {
+                  "score": 1.0,
+                  "response": ""
+                },
+                "answer_2": {
+                  "score": 0.0,
+                  "response": "Consider This: Consider This: Taste receptor cells are tiny cells in the taste buds of the tongue that send information from chemicals coming into the mouth to areas of the brain, LO 3.2c Describe the chemical senses of taste and smell"
+                },
+                "answer_1": {
+                  "score": 0.0,
+                  "response": "Consider This: Taste receptor cells are tiny cells in the taste buds of the tongue that send information from chemicals coming into the mouth to areas of the brain, LO 3.2c Describe the chemical senses of taste and smell."
+                },
+                "answer_4": {
+                  "score": 0.0,
+                  "response": "Consider This: Consider This: Taste receptor cells are tiny cells in the taste buds of the tongue that send information from chemicals coming into the mouth to areas of the brain, LO 3.2c Describe the chemical senses of taste and smell"
+                }
+              }
+            },
+            "configFixup": [
+              {
+                "name": "questionId",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "sequenceNodeKey",
+                  "type": "ref"
+                }
+              },
+              {
+                "name": "maxAttempts",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "maxAttempts",
+                  "type": "ref"
+                }
+              }
+            ]
+          }
+        ],
+        "hookupActions": [
+          {
+            "description": "Hookup the submit manager to evaluate answers",
+            "methodName": "handleRequestsFrom",
+            "type": "method-call",
+            "args": [
+              {
+                "domain": "brix",
+                "refId": "q1",
+                "type": "ref"
+              }
+            ],
+            "instance": {
+              "type": "submit-manager"
+            }
+          },
+          {
+            "description": "Draw the question",
+            "methodName": "draw",
+            "type": "method-call",
+            "args": [
+              {
+                "selector": "#target1",
+                "type": "d3select"
+              }
+            ],
+            "instance": {
+              "domain": "brix",
+              "refId": "q1",
+              "type": "ref"
+            }
+          }
+        ]
+      }
+    ]
+  }
+}

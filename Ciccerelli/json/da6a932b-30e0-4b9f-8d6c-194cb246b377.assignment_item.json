@@ -1,0 +1,191 @@
+{
+  "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope",
+  "@type": "Envelope",
+  "metadata": {
+    "guid": "da6a932b-30e0-4b9f-8d6c-194cb246b377",
+    "title": "EOM Quiz 3.3 01",
+    "version": "1.0",
+    "subject": [
+      "Psychology"
+    ],
+    "bookTitle": "Psychology",
+    "bookAuthor": "Amy J. Marin",
+    "contentTypeTier2": [
+      "AssessmentItem"
+    ],
+    "educationalAlignment": [
+      "http://purl.org/pearson/objectives/183725473384362"
+    ],
+    "format": [
+      "application/vnd.pearson.sanvan.v1.activity"
+    ],
+    "contentTypeTier1": "Assessment",
+    "keywords": [
+      "Marin",
+      "Ch03",
+      "EOM03"
+    ],
+    "extendedMetadata": [
+      {
+        "name": "chapterTitle",
+        "value": "Sensation and Perception"
+      },
+      {
+        "name": "module",
+        "value": "Perception"
+      },
+      {
+        "name": "ISBN",
+        "value": "0205010415"
+      },
+      {
+        "name": "item_title",
+        "value": "0205010415_Amy J. Marin_ch03_m03_q0001"
+      },
+      {
+        "name": "M",
+        "value": "m03"
+      },
+      {
+        "name": "CH",
+        "value": "03"
+      },
+      {
+        "name": "skill",
+        "value": "Understand the Concepts"
+      },
+      {
+        "name": "assessment_title",
+        "value": "Quiz: Perception"
+      },
+      {
+        "name": "Topic",
+        "value": "Gestalt Principles"
+      },
+      {
+        "name": "Difficulty",
+        "value": "Easy"
+      },
+      {
+        "name": "Objective",
+        "value": "LO 3.3b Describe the Gestalt principles for organizing perception."
+      }
+    ]
+  },
+  "body": {
+    "description": "EOM Quiz 3.3-01",
+    "containerConfig": [
+      {
+        "description": "EOM Quiz 3.3-01",
+        "containerId": "target1",
+        "brixConfig": [
+          {
+            "bricId": "q1",
+            "bricType": "MultipleChoiceQuestion",
+            "config": {
+              "id": "QUE72851",
+              "question": "The brain prefers to see one flowing figure rather than several smaller parts. This Gestalt principle is called\n\u003cbr /\u003e",
+              "order": "randomized",
+              "presenterType": "RadioGroup",
+              "presenterConfig": {
+                "numberFormat": "none"
+              },
+              "choices": [
+                {
+                  "answerKey": "answer_1",
+                  "content": "nearness"
+                },
+                {
+                  "answerKey": "answer_2",
+                  "content": "similarity"
+                },
+                {
+                  "answerKey": "answer_3",
+                  "content": "closure"
+                },
+                {
+                  "answerKey": "answer_4",
+                  "content": "continuity"
+                }
+              ]
+            },
+            "answerKey": {
+              "assessmentType": "multiplechoice",
+              "answers": {
+                "answer_3": {
+                  "score": 0.0,
+                  "response": "Consider This: Gestalt principles help us organize and group objects, and enable us to perceive whole forms, LO 3.3b Describe the Gestalt principles for organizing perception."
+                },
+                "answer_2": {
+                  "score": 0.0,
+                  "response": "Consider This: Gestalt principles help us organize and group objects, and enable us to perceive whole forms, LO 3.3b Describe the Gestalt principles for organizing perception."
+                },
+                "answer_1": {
+                  "score": 0.0,
+                  "response": "Consider This: Gestalt principles help us organize and group objects, and enable us to perceive whole forms, LO 3.3b Describe the Gestalt principles for organizing perception."
+                },
+                "answer_4": {
+                  "score": 1.0,
+                  "response": ""
+                }
+              }
+            },
+            "configFixup": [
+              {
+                "name": "questionId",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "sequenceNodeKey",
+                  "type": "ref"
+                }
+              },
+              {
+                "name": "maxAttempts",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "maxAttempts",
+                  "type": "ref"
+                }
+              }
+            ]
+          }
+        ],
+        "hookupActions": [
+          {
+            "description": "Hookup the submit manager to evaluate answers",
+            "methodName": "handleRequestsFrom",
+            "type": "method-call",
+            "args": [
+              {
+                "domain": "brix",
+                "refId": "q1",
+                "type": "ref"
+              }
+            ],
+            "instance": {
+              "type": "submit-manager"
+            }
+          },
+          {
+            "description": "Draw the question",
+            "methodName": "draw",
+            "type": "method-call",
+            "args": [
+              {
+                "selector": "#target1",
+                "type": "d3select"
+              }
+            ],
+            "instance": {
+              "domain": "brix",
+              "refId": "q1",
+              "type": "ref"
+            }
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,187 @@
+{
+  "@context": "http://purl.org/pearson/content/v1/ctx/metadata/envelope",
+  "@type": "Envelope",
+  "metadata": {
+    "guid": "e989e3d1-6f17-41be-a0ba-862febc5b82a",
+    "title": "EOC Quiz Chapter 3 15",
+    "version": "1.0",
+    "subject": [
+      "Psychology"
+    ],
+    "bookTitle": "Psychology",
+    "bookAuthor": "Amy J. Marin",
+    "contentTypeTier2": [
+      "AssessmentItem"
+    ],
+    "educationalAlignment": [
+      "http://purl.org/pearson/objectives/183725473384362"
+    ],
+    "format": [
+      "application/vnd.pearson.sanvan.v1.activity"
+    ],
+    "contentTypeTier1": "Assessment",
+    "keywords": [
+      "Marin",
+      "Alick",
+      "Ch03"
+    ],
+    "extendedMetadata": [
+      {
+        "name": "chapterTitle",
+        "value": "Sensation and Perception"
+      },
+      {
+        "name": "ISBN",
+        "value": "0205010415"
+      },
+      {
+        "name": "item_title",
+        "value": "0205010415_Amy J. Marin_ch03_c01_q0015"
+      },
+      {
+        "name": "M",
+        "value": "c01"
+      },
+      {
+        "name": "CH",
+        "value": "03"
+      },
+      {
+        "name": "skill",
+        "value": "Understand the Concepts"
+      },
+      {
+        "name": "assessment_title",
+        "value": "Chapter Quiz: Sensation and Perception"
+      },
+      {
+        "name": "Topic",
+        "value": "Culture and Perception"
+      },
+      {
+        "name": "Difficulty",
+        "value": "Medium"
+      },
+      {
+        "name": "Objective",
+        "value": "LO 3.4c Describe how culture influences perception."
+      }
+    ]
+  },
+  "body": {
+    "description": "EOC Quiz Chapter 3-15",
+    "containerConfig": [
+      {
+        "description": "EOC Quiz Chapter 3-15",
+        "containerId": "target1",
+        "brixConfig": [
+          {
+            "bricId": "q1",
+            "bricType": "MultipleChoiceQuestion",
+            "config": {
+              "id": "QUE72848",
+              "question": "The ________ illusion is based on the idea that most individuals live in a world with many buildings and corners.\n\u003cbr /\u003e",
+              "order": "randomized",
+              "presenterType": "RadioGroup",
+              "presenterConfig": {
+                "numberFormat": "none"
+              },
+              "choices": [
+                {
+                  "answerKey": "answer_1",
+                  "content": "afterimage"
+                },
+                {
+                  "answerKey": "answer_2",
+                  "content": "child pedestrian"
+                },
+                {
+                  "answerKey": "answer_3",
+                  "content": "Hermann grid"
+                },
+                {
+                  "answerKey": "answer_4",
+                  "content": "Muller-Lyer"
+                }
+              ]
+            },
+            "answerKey": {
+              "assessmentType": "multiplechoice",
+              "answers": {
+                "answer_3": {
+                  "score": 0.0,
+                  "response": "Consider This: The carpentered world hypothesis is the idea that exposure to the lines and angles common to Western design and architecture makes Westerners more susceptible to optical illusions that involve misleading lines and angles, such as the Muller-Lyer illusion, LO 3.4c Describe how culture influences perception."
+                },
+                "answer_2": {
+                  "score": 0.0,
+                  "response": "Consider This: The carpentered world hypothesis is the idea that exposure to the lines and angles common to Western design and architecture makes Westerners more susceptible to optical illusions that involve misleading lines and angles, such as the Muller-Lyer illusion, LO 3.4c Describe how culture influences perception."
+                },
+                "answer_1": {
+                  "score": 0.0,
+                  "response": "Consider This: The carpentered world hypothesis is the idea that exposure to the lines and angles common to Western design and architecture makes Westerners more susceptible to optical illusions that involve misleading lines and angles, such as the Muller-Lyer illusion, LO 3.4c Describe how culture influences perception."
+                },
+                "answer_4": {
+                  "score": 1.0,
+                  "response": ""
+                }
+              }
+            },
+            "configFixup": [
+              {
+                "name": "questionId",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "sequenceNodeKey",
+                  "type": "ref"
+                }
+              },
+              {
+                "name": "maxAttempts",
+                "type": "set-property",
+                "value": {
+                  "domain": "info",
+                  "refId": "maxAttempts",
+                  "type": "ref"
+                }
+              }
+            ]
+          }
+        ],
+        "hookupActions": [
+          {
+            "description": "Hookup the submit manager to evaluate answers",
+            "methodName": "handleRequestsFrom",
+            "type": "method-call",
+            "args": [
+              {
+                "domain": "brix",
+                "refId": "q1",
+                "type": "ref"
+              }
+            ],
+            "instance": {
+              "type": "submit-manager"
+            }
+          },
+          {
+            "description": "Draw the question",
+            "methodName": "draw",
+            "type": "method-call",
+            "args": [
+              {
+                "selector": "#target1",
+                "type": "d3select"
+              }
+            ],
+            "instance": {
+              "domain": "brix",
+              "refId": "q1",
+              "type": "ref"
+            }
+          }
+        ]
+      }
+    ]
+  }
+}
